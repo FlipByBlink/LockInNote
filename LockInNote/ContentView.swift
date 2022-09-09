@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  LockInNote
-//
-//  Created by Mei Sei on 2022/09/09.
-//
 
 import SwiftUI
 
