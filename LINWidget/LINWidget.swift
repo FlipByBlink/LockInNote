@@ -3,58 +3,89 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct LINWidget: Widget {
-    let kind: String = "LINWidget"
-    
+struct LINWidget: WidgetBundle {
+    var body: some Widget {
+        🖼MWWidget()
+        🖼MWWidgetSub()
+    }
+}
+
+struct 🖼MWWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            LINWidgetEntryView(entry: entry)
+        StaticConfiguration(kind: "main", provider: 🤖Provider()) { ⓔntry in
+            🅆idgetEntryView(ⓔntry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("LockInNote")
+        .description("Show a note.")
+        .supportedFamilies([.accessoryInline, .accessoryRectangular, .accessoryCircular])
     }
 }
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+struct 🖼MWWidgetSub: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "sub", provider: 🤖Provider()) { ⓔntry in
+            🅆idgetEntryView(ⓔntry)
+        }
+        .configurationDisplayName("Sub widget")
+        .description("This is spare widget for the purpose of second widget.")
+        .supportedFamilies([.accessoryRectangular, .accessoryCircular])
     }
+}
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
-        completion(entry)
+struct 🤖Provider: TimelineProvider {
+    func placeholder(in context: Context) -> 🕒Entry {
+        🕒Entry(.now)
     }
-
+    
+    func getSnapshot(in context: Context, completion: @escaping (🕒Entry) -> ()) {
+        completion(🕒Entry(.now))
+    }
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
+        var ⓔntries: [🕒Entry] = []
+        for ⓒount in 0 ..< 12 {
+            let ⓞffset = ⓒount * 5
+            let ⓓate = Calendar.current.date(byAdding: .minute, value: ⓞffset, to: .now)!
+            ⓔntries.append(🕒Entry(ⓓate))
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+        completion(Timeline(entries: ⓔntries, policy: .atEnd))
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct 🕒Entry: TimelineEntry {
     let date: Date
-}
-
-struct LINWidgetEntryView : View {
-    var entry: Provider.Entry
-
-    var body: some View {
-        Text(entry.date, style: .time)
+    
+    init(_ date: Date) {
+        self.date = date
     }
 }
 
-struct LINWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        LINWidgetEntryView(entry: SimpleEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+struct 🅆idgetEntryView : View {
+    var ⓔntry: 🤖Provider.Entry
+    @Environment(\.widgetFamily) var ⓕamily: WidgetFamily
+    
+    @ViewBuilder
+    var body: some View {
+        switch ⓕamily {
+            case .accessoryRectangular:
+                ZStack {
+                    VStack(spacing: 0) {
+                        Text("accessoryRectangular")
+                            .font(.headline)
+                    }
+                    .widgetAccentable()
+                    .minimumScaleFactor(0.5)
+                }
+                .widgetURL(URL(string: UUID().uuidString)!)
+            case .accessoryInline:
+                Text("accessoryInline")
+                    .widgetURL(URL(string: UUID().uuidString)!)
+            default:
+                Text("🐛")
+        }
+    }
+    
+    init(_ ⓔntry: 🤖Provider.Entry) {
+        self.ⓔntry = ⓔntry
     }
 }
