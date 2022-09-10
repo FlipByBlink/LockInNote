@@ -67,18 +67,15 @@ struct 🅆idgetEntryView : View {
     @ViewBuilder
     var body: some View {
         switch ⓕamily {
-            case .accessoryRectangular:
-                ZStack {
-                    VStack(spacing: 0) {
-                        Text("accessoryRectangular")
-                            .font(.headline)
-                    }
-                    .widgetAccentable()
-                    .minimumScaleFactor(0.5)
-                }
-                .widgetURL(URL(string: UUID().uuidString)!)
             case .accessoryInline:
                 Text("accessoryInline")
+                    .widgetURL(URL(string: UUID().uuidString)!)
+            case .accessoryRectangular:
+                Text("accessoryRectangular")
+                    .font(.headline)
+                    .widgetURL(URL(string: UUID().uuidString)!)
+            case .accessoryCircular:
+                Text("accessoryCircular")
                     .widgetURL(URL(string: UUID().uuidString)!)
             default:
                 Text("🐛")

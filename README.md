@@ -2,7 +2,7 @@
 
 <br>
 
-![画像](MemorizeWidget/Assets.xcassets/ClipedIcon.imageset/ClipedIcon360.png)
+![画像](LockInNote/Assets.xcassets/ClipedIcon.imageset/ClipedIcon360.png)
 
 <br>
 
@@ -33,12 +33,12 @@ Japanese(native)
 
 ## 🧰 Source code link
 
-https://github.com/FlipByBlink/aaaa
+https://github.com/FlipByBlink/LockInNote
 
 
 ### Source code (Mirror) link
 
-https://gitlab.com/FlipByBlink/aaaa_Mirror
+https://gitlab.com/FlipByBlink/LockInNote_Mirror
 
 
 ## ✉️ Contact
@@ -95,7 +95,7 @@ This application don't collect user infomation.
 
 
 <!-- URL "Support page for AppStore" -->
-<!-- https://flipbyblink.github.io/aaaa/ -->
+<!-- https://flipbyblink.github.io/LockInNote/ -->
 
 <!-- URL "Privacy Policy for AppStore" -->
-<!-- https://flipbyblink.github.io/aaaa/#privacy-policy-for-appstore -->
+<!-- https://flipbyblink.github.io/LockInNote/#privacy-policy-for-appstore -->
