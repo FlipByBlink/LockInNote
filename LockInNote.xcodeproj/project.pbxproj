@@ -11,7 +11,38 @@
 		F54BE1CC28CB480900532025 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
+		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
+		F556950B28CCAB70004558FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
+		F556950E28CCAB71004558FC /* LINWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556950D28CCAB71004558FC /* LINWidget.swift */; };
+		F556951028CCAB72004558FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F556950F28CCAB72004558FC /* Assets.xcassets */; };
+		F556951428CCAB72004558FC /* LINWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* LINWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
+		F556951C28CCAC59004558FC /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F556951228CCAB72004558FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F54BE1BE28CB480900532025 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F556950628CCAB70004558FC;
+			remoteInfo = LINWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F556951828CCAB72004558FC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F556951428CCAB72004558FC /* LINWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F54BE1C628CB480900532025 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +51,15 @@
 		F54BE1CD28CB480A00532025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F55694FF28CCA88B004558FC /* LockInNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LockInNote.entitlements; sourceTree = "<group>"; };
 		F556950128CCA8A5004558FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F556950728CCAB70004558FC /* LINWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LINWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F556950828CCAB70004558FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F556950A28CCAB70004558FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F556950D28CCAB71004558FC /* LINWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LINWidget.swift; sourceTree = "<group>"; };
+		F556950F28CCAB72004558FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F556951128CCAB72004558FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F556951928CCAC33004558FC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F556951A28CCAC59004558FC /* 📱AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
+		F556951D28CCAE21004558FC /* LINWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LINWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,13 +71,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F556950428CCAB70004558FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F556950B28CCAB70004558FC /* SwiftUI.framework in Frameworks */,
+				F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		F54BE1BD28CB480900532025 = {
 			isa = PBXGroup;
 			children = (
+				F556951928CCAC33004558FC /* README.md */,
 				F54BE1C828CB480900532025 /* LockInNote */,
+				F556950C28CCAB71004558FC /* LINWidget */,
 				F54BE1C728CB480900532025 /* Products */,
 				F556950028CCA8A5004558FC /* Frameworks */,
 			);
@@ -47,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				F54BE1C628CB480900532025 /* LockInNote.app */,
+				F556950728CCAB70004558FC /* LINWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +108,7 @@
 			children = (
 				F54BE1C928CB480900532025 /* LockInNoteApp.swift */,
 				F54BE1CB28CB480900532025 /* ContentView.swift */,
+				F556951A28CCAC59004558FC /* 📱AppModel.swift */,
 				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
 				F55694FF28CCA88B004558FC /* LockInNote.entitlements */,
 			);
@@ -66,8 +119,21 @@
 			isa = PBXGroup;
 			children = (
 				F556950128CCA8A5004558FC /* StoreKit.framework */,
+				F556950828CCAB70004558FC /* WidgetKit.framework */,
+				F556950A28CCAB70004558FC /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F556950C28CCAB71004558FC /* LINWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F556950D28CCAB71004558FC /* LINWidget.swift */,
+				F556950F28CCAB72004558FC /* Assets.xcassets */,
+				F556951128CCAB72004558FC /* Info.plist */,
+				F556951D28CCAE21004558FC /* LINWidgetExtension.entitlements */,
+			);
+			path = LINWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,15 +146,34 @@
 				F54BE1C228CB480900532025 /* Sources */,
 				F54BE1C328CB480900532025 /* Frameworks */,
 				F54BE1C428CB480900532025 /* Resources */,
+				F556951828CCAB72004558FC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F556951328CCAB72004558FC /* PBXTargetDependency */,
 			);
 			name = LockInNote;
 			productName = LockInNote;
 			productReference = F54BE1C628CB480900532025 /* LockInNote.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F556950628CCAB70004558FC /* LINWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F556951528CCAB72004558FC /* Build configuration list for PBXNativeTarget "LINWidgetExtension" */;
+			buildPhases = (
+				F556950328CCAB70004558FC /* Sources */,
+				F556950428CCAB70004558FC /* Frameworks */,
+				F556950528CCAB70004558FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LINWidgetExtension;
+			productName = LINWidgetExtension;
+			productReference = F556950728CCAB70004558FC /* LINWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +186,9 @@
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					F54BE1C528CB480900532025 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					F556950628CCAB70004558FC = {
 						CreatedOnToolsVersion = 14.0;
 					};
 				};
@@ -120,6 +208,7 @@
 			projectRoot = "";
 			targets = (
 				F54BE1C528CB480900532025 /* LockInNote */,
+				F556950628CCAB70004558FC /* LINWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +222,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F556950528CCAB70004558FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F556951028CCAB72004558FC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,12 +237,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */,
 				F54BE1CC28CB480900532025 /* ContentView.swift in Sources */,
 				F54BE1CA28CB480900532025 /* LockInNoteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F556950328CCAB70004558FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F556950E28CCAB71004558FC /* LINWidget.swift in Sources */,
+				F556951C28CCAC59004558FC /* 📱AppModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F556951328CCAB72004558FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F556950628CCAB70004558FC /* LINWidgetExtension */;
+			targetProxy = F556951228CCAB72004558FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F54BE1D228CB480A00532025 /* Debug */ = {
@@ -265,6 +380,7 @@
 		F54BE1D528CB480A00532025 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LockInNote/LockInNote.entitlements;
@@ -298,6 +414,7 @@
 		F54BE1D628CB480A00532025 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LockInNote/LockInNote.entitlements;
@@ -328,6 +445,62 @@
 			};
 			name = Release;
 		};
+		F556951628CCAB72004558FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LINWidget/LINWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6696GEY228;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LINWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LINWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.LINWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F556951728CCAB72004558FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LINWidget/LINWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6696GEY228;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LINWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LINWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.LINWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -345,6 +518,15 @@
 			buildConfigurations = (
 				F54BE1D528CB480A00532025 /* Debug */,
 				F54BE1D628CB480A00532025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F556951528CCAB72004558FC /* Build configuration list for PBXNativeTarget "LINWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F556951628CCAB72004558FC /* Debug */,
+				F556951728CCAB72004558FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

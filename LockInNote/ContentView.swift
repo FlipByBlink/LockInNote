@@ -1,15 +1,27 @@
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    @State private var 🔖Tab: 🔖TabTag = .main
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView(selection: $🔖Tab) {
+            Color.gray
+                .tag(🔖TabTag.main)
+                .tabItem { Label("Notes", systemImage: "text.justify.leading") }
+            Color.red
+                .tag(🔖TabTag.option)
+                .tabItem { Label("Option", systemImage: "gearshape") }
+            Color.blue
+                .tag(🔖TabTag.about)
+                .tabItem { Label("About App", systemImage: "questionmark") }
         }
-        .padding()
+    }
+    
+    enum 🔖TabTag {
+        case main, option, about
     }
 }
 
