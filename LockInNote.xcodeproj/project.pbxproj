@@ -18,6 +18,20 @@
 		F556951428CCAB72004558FC /* LINWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* LINWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
 		F556951C28CCAC59004558FC /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
+		F556952B28CCAF7A004558FC /* 🌏AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556951F28CCAF7A004558FC /* 🌏AppStoreDescription.strings */; };
+		F556952C28CCAF7A004558FC /* 🌏AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556951F28CCAF7A004558FC /* 🌏AppStoreDescription.strings */; };
+		F556952D28CCAF7A004558FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952128CCAF7A004558FC /* Localizable.strings */; };
+		F556952E28CCAF7A004558FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952128CCAF7A004558FC /* Localizable.strings */; };
+		F556952F28CCAF7A004558FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952328CCAF7A004558FC /* InfoPlist.strings */; };
+		F556953028CCAF7A004558FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952328CCAF7A004558FC /* InfoPlist.strings */; };
+		F556953128CCAF7A004558FC /* 🌏VersionDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952528CCAF7A004558FC /* 🌏VersionDescription.strings */; };
+		F556953228CCAF7A004558FC /* 🌏VersionDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952528CCAF7A004558FC /* 🌏VersionDescription.strings */; };
+		F556953A28CCAFC3004558FC /* ℹ️AboutAppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */; };
+		F556953B28CCAFC3004558FC /* 📓SourceCodeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */; };
+		F556953C28CCAFC3004558FC /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F556953628CCAFC3004558FC /* Configuration.storekit */; };
+		F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣AD.swift */; };
+		F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556953828CCAFC3004558FC /* Launch Screen.storyboard */; };
+		F556953F28CCAFC3004558FC /* 🛒InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +74,20 @@
 		F556951928CCAC33004558FC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F556951A28CCAC59004558FC /* 📱AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
 		F556951D28CCAE21004558FC /* LINWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LINWidgetExtension.entitlements; sourceTree = "<group>"; };
+		F556952028CCAF7A004558FC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌏AppStoreDescription.strings"; sourceTree = "<group>"; };
+		F556952228CCAF7A004558FC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F556952428CCAF7A004558FC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F556952628CCAF7A004558FC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌏VersionDescription.strings"; sourceTree = "<group>"; };
+		F556952728CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌏AppStoreDescription.strings"; sourceTree = "<group>"; };
+		F556952828CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F556952928CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F556952A28CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌏VersionDescription.strings"; sourceTree = "<group>"; };
+		F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutAppMenu.swift"; sourceTree = "<group>"; };
+		F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📓SourceCodeMenu.swift"; sourceTree = "<group>"; };
+		F556953628CCAFC3004558FC /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		F556953728CCAFC3004558FC /* 📣AD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣AD.swift"; sourceTree = "<group>"; };
+		F556953828CCAFC3004558FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchase.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +137,8 @@
 				F54BE1C928CB480900532025 /* LockInNoteApp.swift */,
 				F54BE1CB28CB480900532025 /* ContentView.swift */,
 				F556951A28CCAC59004558FC /* 📱AppModel.swift */,
+				F556953328CCAFC3004558FC /* 🧰Others */,
+				F556951E28CCAF7A004558FC /* 🌏Localization */,
 				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
 				F55694FF28CCA88B004558FC /* LockInNote.entitlements */,
 			);
@@ -134,6 +164,30 @@
 				F556951D28CCAE21004558FC /* LINWidgetExtension.entitlements */,
 			);
 			path = LINWidget;
+			sourceTree = "<group>";
+		};
+		F556951E28CCAF7A004558FC /* 🌏Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F556951F28CCAF7A004558FC /* 🌏AppStoreDescription.strings */,
+				F556952128CCAF7A004558FC /* Localizable.strings */,
+				F556952328CCAF7A004558FC /* InfoPlist.strings */,
+				F556952528CCAF7A004558FC /* 🌏VersionDescription.strings */,
+			);
+			path = "🌏Localization";
+			sourceTree = "<group>";
+		};
+		F556953328CCAFC3004558FC /* 🧰Others */ = {
+			isa = PBXGroup;
+			children = (
+				F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */,
+				F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */,
+				F556953728CCAFC3004558FC /* 📣AD.swift */,
+				F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */,
+				F556953628CCAFC3004558FC /* Configuration.storekit */,
+				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
+			);
+			path = "🧰Others";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +272,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F556952B28CCAF7A004558FC /* 🌏AppStoreDescription.strings in Resources */,
+				F556953C28CCAFC3004558FC /* Configuration.storekit in Resources */,
+				F556953128CCAF7A004558FC /* 🌏VersionDescription.strings in Resources */,
+				F556952F28CCAF7A004558FC /* InfoPlist.strings in Resources */,
+				F556952D28CCAF7A004558FC /* Localizable.strings in Resources */,
 				F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */,
+				F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +286,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F556952C28CCAF7A004558FC /* 🌏AppStoreDescription.strings in Resources */,
+				F556953228CCAF7A004558FC /* 🌏VersionDescription.strings in Resources */,
+				F556953028CCAF7A004558FC /* InfoPlist.strings in Resources */,
+				F556952E28CCAF7A004558FC /* Localizable.strings in Resources */,
 				F556951028CCAB72004558FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,8 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F556953F28CCAFC3004558FC /* 🛒InAppPurchase.swift in Sources */,
+				F556953A28CCAFC3004558FC /* ℹ️AboutAppMenu.swift in Sources */,
 				F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */,
+				F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */,
 				F54BE1CC28CB480900532025 /* ContentView.swift in Sources */,
+				F556953B28CCAFC3004558FC /* 📓SourceCodeMenu.swift in Sources */,
 				F54BE1CA28CB480900532025 /* LockInNoteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +329,45 @@
 			targetProxy = F556951228CCAB72004558FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F556951F28CCAF7A004558FC /* 🌏AppStoreDescription.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F556952028CCAF7A004558FC /* ja */,
+				F556952728CCAF7A004558FC /* en */,
+			);
+			name = "🌏AppStoreDescription.strings";
+			sourceTree = "<group>";
+		};
+		F556952128CCAF7A004558FC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F556952228CCAF7A004558FC /* ja */,
+				F556952828CCAF7A004558FC /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F556952328CCAF7A004558FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F556952428CCAF7A004558FC /* ja */,
+				F556952928CCAF7A004558FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F556952528CCAF7A004558FC /* 🌏VersionDescription.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F556952628CCAF7A004558FC /* ja */,
+				F556952A28CCAF7A004558FC /* en */,
+			);
+			name = "🌏VersionDescription.strings";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F54BE1D228CB480A00532025 /* Debug */ = {
@@ -393,6 +500,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -427,6 +535,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

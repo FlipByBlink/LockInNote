@@ -10,7 +10,7 @@ struct ContentView: View {
         TabView(selection: $🔖Tab) {
             Color.gray
                 .tag(🔖TabTag.main)
-                .tabItem { Label("Notes", systemImage: "text.justify.leading") }
+                .tabItem { Label("Main", systemImage: "text.justify.leading") }
             Color.red
                 .tag(🔖TabTag.option)
                 .tabItem { Label("Option", systemImage: "gearshape") }
