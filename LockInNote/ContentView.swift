@@ -48,6 +48,7 @@ struct 📝DetailTab: View {
                                     if style == .body {
                                         Text("(default)")
                                             .foregroundStyle(.secondary)
+                                            .font(.caption)
                                     }
                                 }
                             }
@@ -65,7 +66,7 @@ struct 📝DetailTab: View {
                     }
                 }
                 
-                let weights: [Font.Weight] = [.regular, .medium, .bold, .heavy, .black]
+                let weights: [Font.Weight] = [.thin, .light, .regular, .medium, .bold, .heavy, .black]
                 NavigationLink {
                     List {
                         Picker("", selection: $🎚Weight) {
@@ -77,6 +78,7 @@ struct 📝DetailTab: View {
                                     if weight == .regular {
                                         Text("(default)")
                                             .foregroundStyle(.secondary)
+                                            .font(.caption)
                                     }
                                 }
                             }
@@ -105,9 +107,9 @@ struct 📝DetailTab: View {
                                     if design == .default {
                                         Text("(default)")
                                             .foregroundStyle(.secondary)
+                                            .font(.caption)
+                                    }
                                 }
-                            }
-
                             }
                         }
                         .pickerStyle(.inline)
@@ -145,6 +147,7 @@ struct 🎚LevelPicker: View {
                             if level == .primary {
                                 Text("(default)")
                                     .foregroundStyle(.secondary)
+                                    .font(.caption)
                             }
                         }
                     }
@@ -162,7 +165,7 @@ struct 🎚LevelPicker: View {
         }
     }
     
-    enum LevelEnum: CaseIterable, Identifiable {
+    enum LevelEnum: CaseIterable, Hashable, Identifiable {
         case primary
         case secondary
         case tertiary
