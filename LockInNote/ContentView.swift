@@ -25,7 +25,18 @@ struct ContentView: View {
     }
 }
 
-
+struct 📝DetailTab: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                TextField("text", text: $📱.📓Text, axis: .vertical)
+                    .textFieldStyle(.roundedBorder)
+            }
+        }
+    }
+}
 
 
 
