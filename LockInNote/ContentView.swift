@@ -41,9 +41,10 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Style) {
                             ForEach(Font.TextStyle.allCases, id: \.self) { style in
-                                Text("Style")
-                                    .font(.system(style))
+                                Text("Font style!")
+                                    .font(.system(style, design: 🎚Design, weight: 🎚Weight))
                                     .padding(8)
+                                    .underline(style == .body)
                             }
                         }
                         .pickerStyle(.inline)
@@ -63,10 +64,10 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Weight) {
                             ForEach(weights, id: \.self) { weight in
-                                Text("Weight")
-                                    .font(.system(size: 24))
-                                    .fontWeight(weight)
+                                Text("Font weight!")
+                                    .font(.system(🎚Style, design: 🎚Design, weight: weight))
                                     .padding(8)
+                                    .underline(weight == .regular)
                             }
                         }
                         .pickerStyle(.inline)
@@ -86,9 +87,10 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Design) {
                             ForEach(designs, id: \.self) { design in
-                                Text("Design")
-                                    .font(.system(size: 24, design: design))
+                                Text("Font design!")
+                                    .font(.system(🎚Style, design: design, weight: 🎚Weight))
                                     .padding(8)
+                                    .underline(design == .default)
                             }
                         }
                         .pickerStyle(.inline)
