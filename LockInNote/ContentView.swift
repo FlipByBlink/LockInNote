@@ -42,7 +42,7 @@ struct 📝DetailTab: View {
                         Picker("", selection: $🎚Style) {
                             ForEach(Font.TextStyle.allCases, id: \.self) { style in
                                 HStack {
-                                    Text("Font style!")
+                                    Text("Font style")
                                         .font(.system(style, design: 🎚Design, weight: 🎚Weight))
                                         .padding(8)
                                     if style == .body {
@@ -72,7 +72,7 @@ struct 📝DetailTab: View {
                         Picker("", selection: $🎚Weight) {
                             ForEach(weights, id: \.self) { weight in
                                 HStack {
-                                    Text("Font weight!")
+                                    Text("Font weight")
                                         .font(.system(🎚Style, design: 🎚Design, weight: weight))
                                         .padding(8)
                                     if weight == .regular {
@@ -101,7 +101,7 @@ struct 📝DetailTab: View {
                         Picker("", selection: $🎚Design) {
                             ForEach(designs, id: \.self) { design in
                                 HStack {
-                                    Text("Font design!")
+                                    Text("Font design")
                                         .font(.system(🎚Style, design: design, weight: 🎚Weight))
                                         .padding(8)
                                     if design == .default {
@@ -133,17 +133,17 @@ struct 📝DetailTab: View {
 
 struct 🎚LevelPicker: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @State private var 🎚Level: LevelEnum = .primary
+    @State private var 🎚Level: 🄻evelEnum = .primary
     
     var body: some View {
         NavigationLink {
             List {
                 Picker("", selection: $🎚Level) {
-                    ForEach(LevelEnum.allCases) { level in
+                    ForEach(🄻evelEnum.allCases) { level in
                         HStack {
-                            Text("Level!")
+                            Text("Level")
                                 .padding(8)
-                                .foregroundStyle(level.shape)
+                                .foregroundStyle(ⓢhape(level))
                             if level == .primary {
                                 Text("(default)")
                                     .foregroundStyle(.secondary)
@@ -156,29 +156,29 @@ struct 🎚LevelPicker: View {
             }
         } label: {
             HStack {
-                ForEach(LevelEnum.allCases) { level in
+                ForEach(🄻evelEnum.allCases) { level in
                     Text("Aa")
-                        .foregroundStyle(level.shape)
+                        .foregroundStyle(ⓢhape(level))
                         .underline(🎚Level == level)
                 }
             }
         }
     }
     
-    enum LevelEnum: CaseIterable, Hashable, Identifiable {
+    enum 🄻evelEnum: CaseIterable, Hashable, Identifiable {
         case primary
         case secondary
         case tertiary
         case quaternary
-        var id: LevelEnum { self }
-        
-        var shape: HierarchicalShapeStyle {
-            switch self {
-                case .primary: return .primary
-                case .secondary: return .secondary
-                case .tertiary: return .tertiary
-                case .quaternary: return .quaternary
-            }
+        var id: 🄻evelEnum { self }
+    }
+    
+    func ⓢhape(_ level: 🄻evelEnum) -> HierarchicalShapeStyle {
+        switch level {
+            case .primary: return .primary
+            case .secondary: return .secondary
+            case .tertiary: return .tertiary
+            case .quaternary: return .quaternary
         }
     }
 }
