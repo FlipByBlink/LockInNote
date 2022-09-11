@@ -8,6 +8,9 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $🔖Tab) {
+            📝DetailTab()
+                .tag(🔖TabTag.detail)
+                .tabItem { Label("Detail", systemImage: "doc") }
             Text("Main")
                 .tag(🔖TabTag.main)
                 .tabItem { Label("Main", systemImage: "text.justify.leading") }
@@ -21,16 +24,19 @@ struct ContentView: View {
     }
     
     enum 🔖TabTag {
-        case main, option, about
+        case detail, main, option, about
     }
 }
 
 struct 📝DetailTab: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @State private var 🎚Size: Font.TextStyle = .body
+    @State private var 🎚Weight: Font.Weight = .regular
+    @State private var 🎚Design: Font.Design = .default
     
     var body: some View {
         NavigationStack {
-            List {
+            Form {
                 TextField("text", text: $📱.📓Text, axis: .vertical)
                     .textFieldStyle(.roundedBorder)
             }
