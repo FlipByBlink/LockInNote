@@ -9,12 +9,17 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $🔖Tab) {
-            📝DetailTab()
-                .tag(🔖TabTag.detail)
-                .tabItem { Label("Detail", systemImage: "doc") }
-            Text("Main")
-                .tag(🔖TabTag.main)
-                .tabItem { Label("Main", systemImage: "text.justify.leading") }
+            if 📱.Infos.isEmpty {
+                Text("None")
+                    .tag(🔖TabTag.empty)
+                    .tabItem { Label("None", systemImage: "plus.square.dashed") }
+            } else {
+                ForEach(📱.Infos) { info in
+                    📝DetailTab()
+                        .tag(🔖TabTag.detail) //TODO: ちゃんと実装
+                        .tabItem { Label("Detail", systemImage: "doc") }
+                }
+            }
             Text("Option")
                 .tag(🔖TabTag.option)
                 .tabItem { Label("Option", systemImage: "gearshape") }
@@ -40,7 +45,7 @@ struct ContentView: View {
     }
     
     enum 🔖TabTag {
-        case detail, main, option, about
+        case detail, empty, option, about
     }
 }
 

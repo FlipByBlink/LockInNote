@@ -17,6 +17,8 @@ class 📱AppModel: ObservableObject {
 
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
+
+
 enum 🄻evelEnum: CaseIterable, Hashable, Identifiable {
     case primary
     case secondary
