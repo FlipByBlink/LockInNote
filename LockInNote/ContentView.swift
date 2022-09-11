@@ -4,7 +4,7 @@ import WidgetKit
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @State private var 🔖Tab: 🔖TabTag = .main
+    @State private var 🔖Tab: 🔖TabTag = .detail
     
     var body: some View {
         TabView(selection: $🔖Tab) {
@@ -30,15 +30,74 @@ struct ContentView: View {
 
 struct 📝DetailTab: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @State private var 🎚Size: Font.TextStyle = .body
+    @State private var 🎚Style: Font.TextStyle = .body
     @State private var 🎚Weight: Font.Weight = .regular
     @State private var 🎚Design: Font.Design = .default
     
     var body: some View {
         NavigationStack {
             Form {
-                TextField("text", text: $📱.📓Text, axis: .vertical)
-                    .textFieldStyle(.roundedBorder)
+                NavigationLink {
+                    List {
+                        Picker("", selection: $🎚Style) {
+                            ForEach(Font.TextStyle.allCases, id: \.self) { style in
+                                Text("style")
+                                    .font(.system(style))
+                            }
+                        }
+                        .pickerStyle(.inline)
+                    }
+                } label: {
+                    HStack {
+                        ForEach(Font.TextStyle.allCases, id: \.self) { style in
+                            Text("A")
+                                .font(.system(style))
+                                .foregroundStyle(🎚Style == style ? .primary : .tertiary)
+                        }
+                    }
+                }
+                
+                let weights: [Font.Weight] = [.regular, .medium, .bold, .heavy, .black]
+                NavigationLink {
+                    List {
+                        Picker("", selection: $🎚Weight) {
+                            ForEach(weights, id: \.self) { weight in
+                                Text("weight")
+                                    .fontWeight(weight)
+                            }
+                        }
+                        .pickerStyle(.inline)
+                    }
+                } label: {
+                    HStack {
+                        ForEach(weights, id: \.self) { weight in
+                            Text("Aa")
+                                .fontWeight(weight)
+                                .foregroundStyle(🎚Weight == weight ? .primary : .tertiary)
+                        }
+                    }
+                }
+                
+                let designs: [Font.Design] = [.default, .rounded, .serif, .monospaced]
+                NavigationLink {
+                    List {
+                        Picker("", selection: $🎚Design) {
+                            ForEach(designs, id: \.self) { design in
+                                Text("design")
+                                    .font(.system(.body, design: design))
+                            }
+                        }
+                        .pickerStyle(.inline)
+                    }
+                } label: {
+                    HStack {
+                        ForEach(designs, id: \.self) { design in
+                            Text("Aa")
+                                .font(.system(.body, design: design))
+                                .foregroundStyle(🎚Design == design ? .primary : .tertiary)
+                        }
+                    }
+                }
             }
         }
     }
