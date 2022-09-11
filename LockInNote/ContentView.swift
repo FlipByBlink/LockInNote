@@ -41,8 +41,9 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Style) {
                             ForEach(Font.TextStyle.allCases, id: \.self) { style in
-                                Text("style")
+                                Text("Style")
                                     .font(.system(style))
+                                    .padding(8)
                             }
                         }
                         .pickerStyle(.inline)
@@ -62,8 +63,10 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Weight) {
                             ForEach(weights, id: \.self) { weight in
-                                Text("weight")
+                                Text("Weight")
+                                    .font(.system(size: 24))
                                     .fontWeight(weight)
+                                    .padding(8)
                             }
                         }
                         .pickerStyle(.inline)
@@ -83,8 +86,9 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Design) {
                             ForEach(designs, id: \.self) { design in
-                                Text("design")
-                                    .font(.system(.body, design: design))
+                                Text("Design")
+                                    .font(.system(size: 24, design: design))
+                                    .padding(8)
                             }
                         }
                         .pickerStyle(.inline)
