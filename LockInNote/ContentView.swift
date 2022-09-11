@@ -36,7 +36,7 @@ struct 📝DetailTab: View {
     
     var body: some View {
         NavigationStack {
-            Form {
+            List {
                 NavigationLink {
                     List {
                         Picker("", selection: $🎚Style) {
@@ -104,13 +104,59 @@ struct 📝DetailTab: View {
                         }
                     }
                 }
+                
+                🎚LevelPicker()
             }
         }
     }
 }
 
 
-
+struct 🎚LevelPicker: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    @State private var 🎚Level: LevelEnum = .primary
+    
+    var body: some View {
+        NavigationLink {
+            List {
+                Picker("", selection: $🎚Level) {
+                    ForEach(LevelEnum.allCases) { level in
+                        Text("Hierarchical level!")
+                            .padding(8)
+                            .foregroundStyle(level.shape)
+                            .underline(level == .primary)
+                    }
+                }
+                .pickerStyle(.inline)
+            }
+        } label: {
+            HStack {
+                ForEach(LevelEnum.allCases) { level in
+                    Text("Aa")
+                        .foregroundStyle(level.shape)
+                        .border(.primary, width: 🎚Level == level ? 1 : 0)
+                }
+            }
+        }
+    }
+    
+    enum LevelEnum: CaseIterable, Identifiable {
+        case primary
+        case secondary
+        case tertiary
+        case quaternary
+        var id: LevelEnum { self }
+        
+        var shape: HierarchicalShapeStyle {
+            switch self {
+                case .primary: return .primary
+                case .secondary: return .secondary
+                case .tertiary: return .tertiary
+                case .quaternary: return .quaternary
+            }
+        }
+    }
+}
 
 
 
