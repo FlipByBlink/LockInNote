@@ -28,8 +28,8 @@ struct ContentView: View {
                 WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
                     switch ⓡesult {
                         case .success(let success):
-                            success.forEach { info in
-                                print(info)
+                            DispatchQueue.main.async {
+                                📱.Infos = success
                             }
                         case .failure(let failure):
                             print(failure)
@@ -179,14 +179,6 @@ struct 🎚LevelPicker: View {
                 }
             }
         }
-    }
-    
-    enum 🄻evelEnum: CaseIterable, Hashable, Identifiable {
-        case primary
-        case secondary
-        case tertiary
-        case quaternary
-        var id: 🄻evelEnum { self }
     }
     
     func ⓢhape(_ level: 🄻evelEnum) -> HierarchicalShapeStyle {
