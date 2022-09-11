@@ -4,6 +4,7 @@ import WidgetKit
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @Environment(\.scenePhase) var ⓟhase: ScenePhase
     @State private var 🔖Tab: 🔖TabTag = .detail
     
     var body: some View {
@@ -20,6 +21,21 @@ struct ContentView: View {
             ℹ️AboutAppTab()
                 .tag(🔖TabTag.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
+        }
+        .onChange(of: ⓟhase) { 🆕 in
+            print(ⓟhase,"->",🆕)
+            if 🆕 == .active {
+                WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
+                    switch ⓡesult {
+                        case .success(let success):
+                            success.forEach { info in
+                                print(info)
+                            }
+                        case .failure(let failure):
+                            print(failure)
+                    }
+                }
+            }
         }
     }
     
