@@ -41,10 +41,15 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Style) {
                             ForEach(Font.TextStyle.allCases, id: \.self) { style in
-                                Text("Font style!")
-                                    .font(.system(style, design: 🎚Design, weight: 🎚Weight))
-                                    .padding(8)
-                                    .underline(style == .body)
+                                HStack {
+                                    Text("Font style!")
+                                        .font(.system(style, design: 🎚Design, weight: 🎚Weight))
+                                        .padding(8)
+                                    if style == .body {
+                                        Text("(default)")
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
                             }
                         }
                         .pickerStyle(.inline)
@@ -54,7 +59,8 @@ struct 📝DetailTab: View {
                         ForEach(Font.TextStyle.allCases, id: \.self) { style in
                             Text("A")
                                 .font(.system(style))
-                                .foregroundStyle(🎚Style == style ? .primary : .tertiary)
+                                .underline(🎚Style == style)
+                            
                         }
                     }
                 }
@@ -64,10 +70,15 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Weight) {
                             ForEach(weights, id: \.self) { weight in
-                                Text("Font weight!")
-                                    .font(.system(🎚Style, design: 🎚Design, weight: weight))
-                                    .padding(8)
-                                    .underline(weight == .regular)
+                                HStack {
+                                    Text("Font weight!")
+                                        .font(.system(🎚Style, design: 🎚Design, weight: weight))
+                                        .padding(8)
+                                    if weight == .regular {
+                                        Text("(default)")
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
                             }
                         }
                         .pickerStyle(.inline)
@@ -77,7 +88,7 @@ struct 📝DetailTab: View {
                         ForEach(weights, id: \.self) { weight in
                             Text("Aa")
                                 .fontWeight(weight)
-                                .foregroundStyle(🎚Weight == weight ? .primary : .tertiary)
+                                .underline(🎚Weight == weight)
                         }
                     }
                 }
@@ -87,10 +98,16 @@ struct 📝DetailTab: View {
                     List {
                         Picker("", selection: $🎚Design) {
                             ForEach(designs, id: \.self) { design in
-                                Text("Font design!")
-                                    .font(.system(🎚Style, design: design, weight: 🎚Weight))
-                                    .padding(8)
-                                    .underline(design == .default)
+                                HStack {
+                                    Text("Font design!")
+                                        .font(.system(🎚Style, design: design, weight: 🎚Weight))
+                                        .padding(8)
+                                    if design == .default {
+                                        Text("(default)")
+                                            .foregroundStyle(.secondary)
+                                }
+                            }
+
                             }
                         }
                         .pickerStyle(.inline)
@@ -100,7 +117,7 @@ struct 📝DetailTab: View {
                         ForEach(designs, id: \.self) { design in
                             Text("Aa")
                                 .font(.system(.body, design: design))
-                                .foregroundStyle(🎚Design == design ? .primary : .tertiary)
+                                .underline(🎚Design == design)
                         }
                     }
                 }
@@ -121,10 +138,15 @@ struct 🎚LevelPicker: View {
             List {
                 Picker("", selection: $🎚Level) {
                     ForEach(LevelEnum.allCases) { level in
-                        Text("Hierarchical level!")
-                            .padding(8)
-                            .foregroundStyle(level.shape)
-                            .underline(level == .primary)
+                        HStack {
+                            Text("Level!")
+                                .padding(8)
+                                .foregroundStyle(level.shape)
+                            if level == .primary {
+                                Text("(default)")
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                 }
                 .pickerStyle(.inline)
@@ -134,7 +156,7 @@ struct 🎚LevelPicker: View {
                 ForEach(LevelEnum.allCases) { level in
                     Text("Aa")
                         .foregroundStyle(level.shape)
-                        .border(.primary, width: 🎚Level == level ? 1 : 0)
+                        .underline(🎚Level == level)
                 }
             }
         }
