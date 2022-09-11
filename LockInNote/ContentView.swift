@@ -5,21 +5,13 @@ import WidgetKit
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @Environment(\.scenePhase) var ⓟhase: ScenePhase
-    @State private var 🔖Tab: 🔖TabTag = .detail
+    @State private var 🔖Tab: 🔖TabTag = .widgets
     
     var body: some View {
         TabView(selection: $🔖Tab) {
-            if 📱.Infos.isEmpty {
-                Text("None")
-                    .tag(🔖TabTag.empty)
-                    .tabItem { Label("None", systemImage: "plus.square.dashed") }
-            } else {
-                ForEach(📱.Infos) { info in
-                    📝DetailTab()
-                        .tag(🔖TabTag.detail) //TODO: ちゃんと実装
-                        .tabItem { Label("Detail", systemImage: "doc") }
-                }
-            }
+            📝WidgetsTab()
+                .tag(🔖TabTag.widgets)
+                .tabItem { Label("Widgets", systemImage: "rectangle.and.pencil.and.ellipsis") }
             Text("Option")
                 .tag(🔖TabTag.option)
                 .tabItem { Label("Option", systemImage: "gearshape") }
@@ -45,11 +37,11 @@ struct ContentView: View {
     }
     
     enum 🔖TabTag {
-        case detail, empty, option, about
+        case widgets, option, about
     }
 }
 
-struct 📝DetailTab: View {
+struct 📝WidgetsTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @State private var 🎚Style: Font.TextStyle = .body
     @State private var 🎚Weight: Font.Weight = .regular
@@ -222,7 +214,7 @@ struct ℹ️AboutAppTab: View {
                                     .opacity(0.75)
                                     .lineLimit(1)
                                     .minimumScaleFactor(0.1)
-                                Text("Application for iPhone / iPad")
+                                Text("Application for iPhone")
                                     .font(.footnote)
                                     .fontWeight(.medium)
                                     .foregroundStyle(.secondary)
