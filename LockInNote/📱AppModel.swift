@@ -10,7 +10,7 @@ class 📱AppModel: ObservableObject {
     private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
     @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
     
-    @Published var ⓦidgetsData: [🎛WidgetData] = []
+    @Published var ⓦidgetsData: [🎛WidgetData] = [.init(.inline), .init(.rectangular), .init(.circular)]
     @Published var ⓐctiveFamilys: Set<🄵amily> = []
     
     func GetLatestWidgetInfo() {
@@ -20,17 +20,12 @@ class 📱AppModel: ObservableObject {
                     DispatchQueue.main.async {
                         var ⓕamilys: Set<🄵amily> = []
                         for ⓘnfo in ⓘnfos {
-                            let ⓕamily: 🄵amily
                             switch ⓘnfo.family {
-                                case .accessoryInline: ⓕamily = .inline
-                                case .accessoryRectangular: ⓕamily = .rectangular
-                                case .accessoryCircular: ⓕamily = .circular
+                                case .accessoryInline: ⓕamilys.insert(.inline)
+                                case .accessoryRectangular: ⓕamilys.insert(.rectangular)
+                                case .accessoryCircular: ⓕamilys.insert(.circular)
                                 default: continue
                             }
-                            if !self.ⓦidgetsData.contains(where: {$0.id==ⓕamily}) {
-                                self.ⓦidgetsData.append(🎛WidgetData(ⓘnfo.family))
-                            }
-                            ⓕamilys.insert(ⓕamily)
                         }
                         self.ⓐctiveFamilys = ⓕamilys
                     }
@@ -75,7 +70,7 @@ enum 🄵amily: String, Codable, CaseIterable, Identifiable {
 
 struct 🎛WidgetData: Codable, Identifiable {
     var family: 🄵amily
-    var text: String = ""
+    var text: String = "Abcd"
     var placeholder: 🄿laceholder = .threedot
     
     var id: 🄵amily { family }
@@ -134,12 +129,7 @@ struct 🎛WidgetData: Codable, Identifiable {
         return true
     }
     
-    init(_ ⓕamily: WidgetFamily) { //TODO: ?init
-        switch ⓕamily {
-            case .accessoryInline: family = .inline
-            case .accessoryRectangular: family = .rectangular
-            case .accessoryCircular: family = .circular
-            default: family = .rectangular
-        }
+    init(_ family: 🄵amily) {
+        self.family = family
     }
 }
