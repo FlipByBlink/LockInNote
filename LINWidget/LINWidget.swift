@@ -3,32 +3,14 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct LINWidget: WidgetBundle {
-    var body: some Widget {
-        🖼MWWidget()
-        🖼MWWidgetSub()
-    }
-}
-
-struct 🖼MWWidget: Widget {
+struct LINWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "main", provider: 🤖Provider()) { ⓔntry in
-            🅆idgetEntryView(ⓔntry, "main")
+            🅆idgetEntryView(ⓔntry)
         }
         .configurationDisplayName("LockInNote")
         .description("Show a note.")
         .supportedFamilies([.accessoryInline, .accessoryRectangular, .accessoryCircular])
-    }
-}
-
-struct 🖼MWWidgetSub: Widget {
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "sub", provider: 🤖Provider()) { ⓔntry in
-            🅆idgetEntryView(ⓔntry, "sub")
-        }
-        .configurationDisplayName("Sub widget")
-        .description("This is spare widget for the purpose of second widget.")
-        .supportedFamilies([.accessoryRectangular, .accessoryCircular])
     }
 }
 
@@ -62,10 +44,9 @@ struct 🕒Entry: TimelineEntry {
 
 struct 🅆idgetEntryView : View {
     var ⓔntry: 🤖Provider.Entry
-    var ⓚind: String
     @Environment(\.widgetFamily) var ⓕamily: WidgetFamily
     let 📱 = 📱AppModel()
-    var ⓦidgetData: 🎛WidgetData? { 📱.ⓦidgetsData.first { $0.🄴qual(ⓚind, ⓕamily) } }
+    var ⓦidgetData: 🎛WidgetData? { 📱.ⓦidgetsData.first { $0.🄴qual(ⓕamily) } }
     
     @ViewBuilder
     var body: some View {
@@ -94,8 +75,7 @@ struct 🅆idgetEntryView : View {
         }
     }
     
-    init(_ ⓔntry: 🤖Provider.Entry, _ ⓚind: String) {
+    init(_ ⓔntry: 🤖Provider.Entry) {
         self.ⓔntry = ⓔntry
-        self.ⓚind = ⓚind
     }
 }

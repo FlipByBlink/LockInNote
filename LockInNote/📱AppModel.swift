@@ -11,27 +11,24 @@ class 📱AppModel: ObservableObject {
     @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
     
     @Published var ⓦidgetsData: [🎛WidgetData] = []
-    @Published var ⓐctiveWidgets: Set<🅆idgetType> = []
-    
+    @Published var ⓐctiveWidgets: Set<🄵amily> = []
     
     func GetLatestWidgetInfo() {
         WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
             switch ⓡesult {
                 case .success(let ⓘnfos):
                     DispatchQueue.main.async {
-                        var ⓣypes: Set<🅆idgetType> = []
+                        var ⓣypes: Set<🄵amily> = []
                         for ⓘnfo in ⓘnfos {
-                            let ⓣype: 🅆idgetType
-                            switch (ⓘnfo.kind ,ⓘnfo.family) {
-                                case ("main", .accessoryInline): ⓣype = .mainInline
-                                case ("main", .accessoryRectangular): ⓣype = .mainRectangular
-                                case ("main", .accessoryCircular): ⓣype = .mainCircular
-                                case ("sub", .accessoryRectangular): ⓣype = .subRectangular
-                                case ("sub", .accessoryCircular): ⓣype = .subCircular
+                            let ⓣype: 🄵amily
+                            switch ⓘnfo.family {
+                                case .accessoryInline: ⓣype = .inline
+                                case .accessoryRectangular: ⓣype = .rectangular
+                                case .accessoryCircular: ⓣype = .circular
                                 default: continue
                             }
                             if !self.ⓦidgetsData.contains(where: {$0.id==ⓣype}) {
-                                self.ⓦidgetsData.append(🎛WidgetData(ⓘnfo.kind, ⓘnfo.family))
+                                self.ⓦidgetsData.append(🎛WidgetData(ⓘnfo.family))
                             }
                             ⓣypes.insert(ⓣype)
                         }
@@ -71,26 +68,17 @@ class 📱AppModel: ObservableObject {
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
 
-enum 🅆idgetType: Codable, CaseIterable, Identifiable {
-    case mainInline, mainRectangular, mainCircular, subRectangular, subCircular
+enum 🄵amily: String, Codable, CaseIterable, Identifiable {
+    case inline, rectangular, circular
     var id: Self { self }
 }
 
 struct 🎛WidgetData: Codable, Identifiable {
-    var kind: 🄺ind
     var family: 🄵amily
     var text: String = ""
     var placeholder: 🄿laceholder = .threedot
     
-    var id: 🅆idgetType {
-        switch (kind, family) {
-            case (_, .inline): return .mainInline
-            case (.main, .rectangular): return .mainRectangular
-            case (.main, .circular): return .mainCircular
-            case (.sub, .rectangular): return .subRectangular
-            case (.sub, .circular): return .subCircular
-        }
-    }
+    var id: 🄵amily { family }
     
     var customization: 🄲ustomization?
     
@@ -106,11 +94,6 @@ struct 🎛WidgetData: Codable, Identifiable {
     
     enum 🄺ind: String, Codable, CaseIterable, Identifiable {
         case main, sub
-        var id: Self { self }
-    }
-    
-    enum 🄵amily: String, Codable, CaseIterable, Identifiable {
-        case inline, rectangular, circular
         var id: Self { self }
     }
     
@@ -144,10 +127,7 @@ struct 🎛WidgetData: Codable, Identifiable {
         var id: Self { self }
     }
     
-    func 🄴qual(_ ⓚind: String, _ ⓕamily: WidgetFamily) -> Bool {
-        if kind != 🄺ind(rawValue: ⓚind) {
-            return false
-        }
+    func 🄴qual(_ ⓕamily: WidgetFamily) -> Bool {
         switch family {
             case .inline:
                 if ⓕamily != .accessoryInline { return false }
@@ -159,8 +139,7 @@ struct 🎛WidgetData: Codable, Identifiable {
         return true
     }
     
-    init(_ ⓚind: String, _ ⓕamily: WidgetFamily) {
-        kind = .init(rawValue: ⓚind) ?? .main
+    init(_ ⓕamily: WidgetFamily) {
         switch ⓕamily {
             case .accessoryInline: family = .inline
             case .accessoryRectangular: family = .rectangular

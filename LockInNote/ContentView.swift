@@ -52,9 +52,9 @@ struct 📝WidgetsTab: View {
                         .foregroundStyle(.secondary)
                         .padding(.vertical)
                 } else {
-                    ForEach(🅆idgetType.allCases) { type in
-                        if 📱.ⓐctiveWidgets.contains(type) {
-                            🅆idgetSection(type: type)
+                    ForEach(🄵amily.allCases) { family in
+                        if 📱.ⓐctiveWidgets.contains(family) {
+                            🅆idgetSection(type: family)
                         }
                     }
                 }
@@ -66,7 +66,7 @@ struct 📝WidgetsTab: View {
     
     struct 🅆idgetSection: View {
         @EnvironmentObject var 📱: 📱AppModel
-        var type: 🅆idgetType
+        var type: 🄵amily
         var body: some View {
             if let index = 📱.ⓦidgetsData.firstIndex(where: {$0.id==type}) {
                 Section {
@@ -79,7 +79,6 @@ struct 📝WidgetsTab: View {
                             WidgetCenter.shared.reloadAllTimelines()
                         }
                     NavigationLink {
-                        Text(📱.ⓦidgetsData[index].kind.rawValue)
                         Text(📱.ⓦidgetsData[index].family.rawValue)
                     } label: {
                         Label("Customize", systemImage: "slider.horizontal.3")
