@@ -3,14 +3,44 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct LINWidget: Widget {
+struct LINWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        🅁ectangularWidget()
+        🄸nlineWidget()
+        🄲ircularWidget()
+    }
+}
+
+struct 🅁ectangularWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "main", provider: 🤖Provider()) { ⓔntry in
-            🅆idgetEntryView(ⓔntry)
+        StaticConfiguration(kind: "Rectangular", provider: 🤖Provider()) { ⓔntry in
+            🅁ectangularView(ⓔntry)
         }
-        .configurationDisplayName("LockInNote")
+        .configurationDisplayName("Rectangular widget.")
         .description("Show a note.")
-        .supportedFamilies([.accessoryInline, .accessoryRectangular, .accessoryCircular])
+        .supportedFamilies([.accessoryRectangular])
+    }
+}
+
+struct 🄸nlineWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "Inline", provider: 🤖Provider()) { ⓔntry in
+            🄸nlineView(ⓔntry)
+        }
+        .configurationDisplayName("Inline widget")
+        .description("Show a note.")
+        .supportedFamilies([.accessoryInline])
+    }
+}
+
+struct 🄲ircularWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "Circular", provider: 🤖Provider()) { ⓔntry in
+            🄲ircularView(ⓔntry)
+        }
+        .configurationDisplayName("Circular widget.")
+        .description("Show a note.")
+        .supportedFamilies([.accessoryCircular])
     }
 }
 
@@ -36,57 +66,47 @@ struct 🕒Entry: TimelineEntry {
     }
 }
 
-struct 🅆idgetEntryView : View {
+struct 🅁ectangularView : View {
     var ⓔntry: 🤖Provider.Entry
-    @Environment(\.widgetFamily) var ⓕamily: WidgetFamily
     let 📱 = 📱AppModel()
-    var ⓦidgetData: 🎛WidgetData? { 📱.ⓦidgetsData.first { $0.🄴qual(ⓕamily) } }
     
-    @ViewBuilder
     var body: some View {
-        if let ⓓata = ⓦidgetData {
-            switch ⓕamily {
-                case .accessoryInline:
-                    Text(ⓓata.text)
-                        .widgetURL(URL(string: ⓕamily.rawValue.description)!)
-                case .accessoryRectangular:
-                    VStack {
-                        Text("headline")
-                            .font(.headline)
-                        Text(ⓓata.text)
-                            .font(.subheadline)
-                            .widgetURL(URL(string: ⓕamily.rawValue.description)!)
-                    }
-                case .accessoryCircular:
-                    ZStack {
-                        AccessoryWidgetBackground()
-                        Text(ⓓata.text)
-                            .multilineTextAlignment(.center)
-                            .widgetURL(URL(string: ⓕamily.rawValue.description)!)
-                    }
-                default:
-                    Text("🐛")
-            }
-        } else {
-            switch ⓕamily {
-                case .accessoryInline:
-                    Text("Inline note")
-                case .accessoryRectangular:
-                    VStack {
-                        Text("Rectangular")
-                            .font(.headline)
-                        Text("note")
-                            .font(.subheadline)
-                    }
-                case .accessoryCircular:
-                    ZStack {
-                        AccessoryWidgetBackground()
-                        Text("Circular note")
-                            .multilineTextAlignment(.center)
-                    }
-                default:
-                    Text("🐛")
-            }
+        VStack {
+            Text("headline")
+                .font(.headline)
+            Text("ⓓata.text")
+                .font(.subheadline)
+                .widgetURL(URL(string: "Rectangular")!)
+        }
+    }
+    
+    init(_ ⓔntry: 🤖Provider.Entry) {
+        self.ⓔntry = ⓔntry
+    }
+}
+
+struct 🄸nlineView : View {
+    var ⓔntry: 🤖Provider.Entry
+    let 📱 = 📱AppModel()
+    
+    var body: some View {
+        Text("Inline note")
+    }
+    
+    init(_ ⓔntry: 🤖Provider.Entry) {
+        self.ⓔntry = ⓔntry
+    }
+}
+
+struct 🄲ircularView : View {
+    var ⓔntry: 🤖Provider.Entry
+    let 📱 = 📱AppModel()
+    
+    var body: some View {
+        ZStack {
+            AccessoryWidgetBackground()
+            Text("Circular note")
+                .multilineTextAlignment(.center)
         }
     }
     

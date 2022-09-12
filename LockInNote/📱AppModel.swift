@@ -36,11 +36,6 @@ class 📱AppModel: ObservableObject {
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
 
-enum 🄵amily: String, Codable, CaseIterable, Identifiable {
-    case inline, rectangular, circular
-    var id: Self { self }
-}
-
 struct 🎛WidgetData: Codable, Identifiable {
     var family: 🄵amily
     var text: String = ""
@@ -60,36 +55,6 @@ struct 🎛WidgetData: Codable, Identifiable {
         var multilineTextAlignment: 🄼ultilineTextAlignment
     }
     
-    enum 🄿laceholder: Codable, CaseIterable, Identifiable {
-        case nothing, threedot, pencil, useredit
-        var id: Self { self }
-    }
-    
-    enum 🅂tyle: Codable, CaseIterable, Identifiable {
-        case body, title3, title2, title, largetitle, subheadline, caption
-        var id: Self { self }
-    }
-    
-    enum 🅆eight: Codable, CaseIterable, Identifiable {
-        case ultraLight, thin, light, regular, medium, semibold, bold, heavy, black
-        var id: Self { self }
-    }
-    
-    enum 🄳esign: Codable, CaseIterable, Identifiable {
-        case `default`, serif, rounded, monospaced
-        var id: Self { self }
-    }
-    
-    enum 🄻evel: Codable, CaseIterable, Identifiable {
-        case primary, secondary, tertiary, quaternary
-        var id: Self { self }
-    }
-    
-    enum 🄼ultilineTextAlignment: Codable, CaseIterable, Identifiable {
-        case leading, center, trailing
-        var id: Self { self }
-    }
-    
     func 🄴qual(_ ⓕamily: WidgetFamily) -> Bool {
         switch family {
             case .inline:
@@ -106,3 +71,38 @@ struct 🎛WidgetData: Codable, Identifiable {
         self.family = family
     }
 }
+
+enum 🄵amily: String, Codable, CaseIterable, Identifiable {
+    case inline, rectangular, circular
+    var id: Self { self }
+}
+
+enum 🄿laceholder: Codable, CaseIterable, Identifiable {
+    case nothing, threedot, pencil, useredit
+    var id: Self { self }
+}
+
+enum 🅂tyle: Codable, CaseIterable, Identifiable {
+    case body, title3, title2, title, largetitle, subheadline, caption
+    var id: Self { self }
+}
+
+enum 🅆eight: Codable, CaseIterable, Identifiable {
+    case ultraLight, thin, light, regular, medium, semibold, bold, heavy, black
+    var id: Self { self }
+}
+
+enum 🄳esign: Codable, CaseIterable, Identifiable {
+    case `default`, serif, rounded, monospaced
+    var id: Self { self }
+}
+
+enum 🄻evel: Codable, CaseIterable, Identifiable {
+    case primary, secondary, tertiary, quaternary
+    var id: Self { self }
+}
+
+enum 🄼ultilineTextAlignment: Codable, CaseIterable, Identifiable {
+    case leading, center, trailing
+    var id: Self { self }
+    }
