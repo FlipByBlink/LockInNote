@@ -50,29 +50,42 @@ struct 📝WidgetsTab: View {
                 if 📱.ⓦidgetsData.isEmpty {
                     Text("Widget is empty")
                 } else {
-                    ForEach($📱.ⓦidgetsData) { widget in
-                        Section {
-                            TextField("field", text: widget.text, axis: .vertical)
-                                .textFieldStyle(.roundedBorder)
-                                .lineLimit(3)
-                                .onSubmit {
-                                    WidgetCenter.shared.reloadAllTimelines()
-                                }
-                            NavigationLink {
-                                Text(widget.wrappedValue.kind.rawValue)
-                                Text(widget.wrappedValue.family.rawValue)
-                            } label: {
-                                Label("Customize", systemImage: "slider.horizontal.3")
-                                    .font(.caption)
-                            }
-                        } header: {
-                            Text(widget.wrappedValue.family.rawValue)
+                    ForEach(🅆idgetType.allCases) { type in
+                        if 📱.ⓐctiveWidgets.contains(type) {
+                            🅆idgetSection(type: type)
                         }
                     }
                 }
             }
             .navigationTitle("Widgets")
-            .animation(.default, value: 📱.ⓦidgetsData.count)
+            .animation(.default, value: 📱.ⓐctiveWidgets.count)
+        }
+    }
+    
+    struct 🅆idgetSection: View {
+        @EnvironmentObject var 📱: 📱AppModel
+        var type: 🅆idgetType
+        var body: some View {
+            if let index = 📱.ⓦidgetsData.firstIndex(where: {$0.id==type}) {
+                Section {
+                    TextField("field", text: $📱.ⓦidgetsData[index].text, axis: .vertical)
+                        .textFieldStyle(.roundedBorder)
+                        .lineLimit(3)
+                        .onSubmit {
+                            📱.💾SaveDatas()
+                            WidgetCenter.shared.reloadAllTimelines()
+                        }
+                    NavigationLink {
+                        Text(📱.ⓦidgetsData[index].kind.rawValue)
+                        Text(📱.ⓦidgetsData[index].family.rawValue)
+                    } label: {
+                        Label("Customize", systemImage: "slider.horizontal.3")
+                            .font(.caption)
+                    }
+                } header: {
+                    Text(📱.ⓦidgetsData[index].family.rawValue)
+                }
+            }
         }
     }
 }

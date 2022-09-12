@@ -11,17 +11,31 @@ class 📱AppModel: ObservableObject {
     @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
     
     @Published var ⓦidgetsData: [🎛WidgetData] = []
+    @Published var ⓐctiveWidgets: Set<🅆idgetType> = []
+    
     
     func GetLatestWidgetInfo() {
         WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
             switch ⓡesult {
-                case .success(let success):
+                case .success(let infos):
                     DispatchQueue.main.async {
-                        var datas: [🎛WidgetData] = []
-                        for info in success {
-                            datas.append(🎛WidgetData(info.kind, info.family))
+                        var types: Set<🅆idgetType> = []
+                        for info in infos {
+                            let type: 🅆idgetType
+                            switch (info.kind ,info.family) {
+                                case ("main", .accessoryInline): type = .mainInline
+                                case ("main", .accessoryRectangular): type = .mainRectangular
+                                case ("main", .accessoryCircular): type = .mainCircular
+                                case ("sub", .accessoryRectangular): type = .subRectangular
+                                case ("sub", .accessoryCircular): type = .subCircular
+                                default: continue
+                            }
+                            if !self.ⓦidgetsData.contains(where: {$0.id==type}) {
+                                self.ⓦidgetsData.append(🎛WidgetData(info.kind, info.family))
+                            }
+                            types.insert(type)
                         }
-                        self.ⓦidgetsData = datas
+                        self.ⓐctiveWidgets = types
                     }
                 case .failure(let failure):
                     print(failure)
@@ -57,13 +71,26 @@ class 📱AppModel: ObservableObject {
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
 
+enum 🅆idgetType: Codable, CaseIterable, Identifiable {
+    case mainInline, mainRectangular, mainCircular, subRectangular, subCircular
+    var id: Self { self }
+}
+
 struct 🎛WidgetData: Codable, Identifiable {
     var kind: 🄺ind
     var family: 🄵amily
     var text: String = ""
     var placeholder: 🄿laceholder = .threedot
     
-    var id: String { kind.rawValue + family.rawValue }
+    var id: 🅆idgetType {
+        switch (kind, family) {
+            case (_, .inline): return .mainInline
+            case (.main, .rectangular): return .mainRectangular
+            case (.main, .circular): return .mainCircular
+            case (.sub, .rectangular): return .subRectangular
+            case (.sub, .circular): return .subCircular
+        }
+    }
     
     var fontStyle: 🅂tyle?
     var fontWeight: 🅆eight?
