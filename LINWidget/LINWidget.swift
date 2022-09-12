@@ -71,12 +71,19 @@ struct 🅆idgetEntryView : View {
                 Text("accessoryInline")
                     .widgetURL(URL(string: UUID().uuidString)!)
             case .accessoryRectangular:
-                Text("accessoryRectangular")
-                    .font(.headline)
-                    .widgetURL(URL(string: UUID().uuidString)!)
+                VStack {
+                    Text("headline")
+                        .font(.headline)
+                    Text("accessoryRectangular")
+                        .font(.subheadline)
+                        .widgetURL(URL(string: UUID().uuidString)!)
+                }
             case .accessoryCircular:
-                Text("accessoryCircular")
-                    .widgetURL(URL(string: UUID().uuidString)!)
+                ZStack {
+                    AccessoryWidgetBackground()
+                    Text("accessoryCircular")
+                        .widgetURL(URL(string: UUID().uuidString)!)
+                }
             default:
                 Text("🐛")
         }

@@ -9,6 +9,8 @@ class 📱AppModel: ObservableObject {
     @Published var 📓Text: String = ""
     @Published var Infos: [WidgetInfo] = []
     
+    @Published var widgets: [🎛WidgetCustomization] = []
+    
     @Published var 🎚Style: Font.TextStyle = .body
     @Published var 🎚Weight: Font.Weight = .regular
     @Published var 🎚Design: Font.Design = .default
@@ -20,16 +22,23 @@ class 📱AppModel: ObservableObject {
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
 
-struct WidgetCustomization: Codable {
-    var text: String
+struct 🎛WidgetCustomization: Codable, Identifiable {
     var id: UUID
-    var fontStyle: 🅂tyle
-    var fontWeight: 🅆eight
-    var fontDesign: 🄳esign
-    var italic: Bool
-    var background: Bool?
-    var level: 🄻evel
+    var text: String
     var placeholder: 🄿laceholder
+    
+    var fontStyle: 🅂tyle?
+    var fontWeight: 🅆eight?
+    var fontDesign: 🄳esign?
+    var italic: Bool?
+    var background: Bool?
+    var level: 🄻evel?
+    var multilineTextAlignment: 🄼ultilineTextAlignment?
+    
+    enum 🄿laceholder: Codable, CaseIterable, Identifiable {
+        case nothing, threedot, pencil, useredit
+        var id: Self { self }
+    }
     
     enum 🅂tyle: Codable, CaseIterable, Identifiable {
         case body, title3, title2, title, largetitle, subheadline, caption
@@ -51,8 +60,8 @@ struct WidgetCustomization: Codable {
         var id: Self { self }
     }
     
-    enum 🄿laceholder: Codable, CaseIterable, Identifiable {
-        case nothing, threedot, pencil, useredit
+    enum 🄼ultilineTextAlignment: Codable, CaseIterable, Identifiable {
+        case leading, center, trailing
         var id: Self { self }
     }
 }
