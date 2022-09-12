@@ -26,7 +26,7 @@ struct ContentView: View {
             }
         }
         .onOpenURL { 🔗 in
-            if !📱.widgets.isEmpty {
+            if !📱.ⓦidgetsData.isEmpty {
                 📱.🚩ShowWidgetSheet = true
                 📱.🆔OpenedWidgetID = 🔗.description
             }
@@ -47,10 +47,10 @@ struct 📝WidgetsTab: View {
     var body: some View {
         NavigationStack {
             List {
-                if 📱.widgets.isEmpty {
+                if 📱.ⓦidgetsData.isEmpty {
                     Text("Widget is empty")
                 } else {
-                    ForEach($📱.widgets) { widget in
+                    ForEach($📱.ⓦidgetsData) { widget in
                         Section {
                             TextField("field", text: widget.text, axis: .vertical)
                                 .textFieldStyle(.roundedBorder)
@@ -72,7 +72,7 @@ struct 📝WidgetsTab: View {
                 }
             }
             .navigationTitle("Widgets")
-            .animation(.default, value: 📱.widgets.count)
+            .animation(.default, value: 📱.ⓦidgetsData.count)
         }
     }
 }

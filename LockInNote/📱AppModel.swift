@@ -10,8 +10,7 @@ class 📱AppModel: ObservableObject {
     private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
     @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
     
-    @Published var widgets: [🎛WidgetData] = []
-    //@Published var activeWidgets: [String] = []
+    @Published var ⓦidgetsData: [🎛WidgetData] = []
     
     func GetLatestWidgetInfo() {
         WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
@@ -22,12 +21,36 @@ class 📱AppModel: ObservableObject {
                         for info in success {
                             datas.append(🎛WidgetData(info.kind, info.family))
                         }
-                        self.widgets = datas
+                        self.ⓦidgetsData = datas
                     }
                 case .failure(let failure):
                     print(failure)
             }
         }
+    }
+    
+    func 💾SaveDatas() {
+        do {
+            let ⓓata = try JSONEncoder().encode(ⓦidgetsData)
+            let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
+            ⓤd?.set(ⓓata, forKey: "widgetsData")
+        } catch {
+            print("🚨Error: ", error)
+        }
+    }
+    
+    func 💾LoadDatas() {
+        let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
+        guard let ⓓata = ⓤd?.data(forKey: "widgetsData") else { return }
+        do {
+            ⓦidgetsData = try JSONDecoder().decode([🎛WidgetData].self, from: ⓓata)
+        } catch {
+            print("🚨Error: ", error)
+        }
+    }
+    
+    init() {
+        💾LoadDatas()
     }
 }
 
