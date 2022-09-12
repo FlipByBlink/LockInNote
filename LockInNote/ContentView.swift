@@ -5,13 +5,19 @@ import WidgetKit
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @Environment(\.scenePhase) var ⓟhase: ScenePhase
-    @State private var 🔖Tab: 🔖TabTag = .widgets
+    @State private var 🔖Tab: 🔖TabTag = .inlineWidget
     
     var body: some View {
         TabView(selection: $🔖Tab) {
-            📝WidgetsTab()
-                .tag(🔖TabTag.widgets)
-                .tabItem { Label("Widgets", systemImage: "rectangle.and.pencil.and.ellipsis") }
+            📝InlineWidgetTab()
+                .tag(🔖TabTag.inlineWidget)
+                .tabItem { Label("Inline", systemImage: "textformat.abc") }
+            Text("Rectangular")
+                .tag(🔖TabTag.rectangularWidget)
+                .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
+            Text("Circular")
+                .tag(🔖TabTag.circularWidget)
+                .tabItem { Label("Circular", systemImage: "circle.dashed") }
             🔩OptionTab()
                 .tag(🔖TabTag.option)
                 .tabItem { Label("Option", systemImage: "gearshape") }
@@ -21,76 +27,51 @@ struct ContentView: View {
         }
         .onChange(of: ⓟhase) { 🆕 in
             print(ⓟhase,"->",🆕)
-            if 🆕 == .active {
-                📱.GetLatestWidgetInfo()
-            }
         }
         .onOpenURL { 🔗 in
-            if !📱.ⓦidgetsData.isEmpty {
-                📱.🚩ShowWidgetSheet = true
-                📱.🆔OpenedWidgetID = 🔗.description
+            if let ⓥalue = Int(🔗.description) {
+                switch WidgetFamily(rawValue: ⓥalue) {
+                    case .accessoryInline: 🔖Tab = .inlineWidget
+                    case .accessoryRectangular: 🔖Tab = .rectangularWidget
+                    case .accessoryCircular: 🔖Tab = .circularWidget
+                    default: break
+                }
             }
-            🔖Tab = .widgets
-        }
-        .sheet(isPresented: $📱.🚩ShowWidgetSheet) {
-            Text("WidgetSheet")
         }
     }
     
     enum 🔖TabTag {
-        case widgets, option, about
+        case inlineWidget, rectangularWidget, circularWidget, option, about
     }
 }
 
-struct 📝WidgetsTab: View {
+struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
         NavigationStack {
-            List {
-                if 📱.ⓐctiveFamilys.isEmpty {
-                    Text("Widget is empty.")
-                        .foregroundStyle(.secondary)
-                        .padding(.vertical)
-                } else {
-                    ForEach(🄵amily.allCases) { ⓕamily in
-                        if 📱.ⓐctiveFamilys.contains(ⓕamily) {
-                            🅆idgetSection(ⓕamily)
+            if let index = 📱.ⓦidgetsData.firstIndex(where: { $0.id == .inline }) {
+                List {
+                    Section {
+                        TextField("note text", text: $📱.ⓦidgetsData[index].text)
+                            .font(.title3)
+                            .textFieldStyle(.roundedBorder)
+                            .scrollDismissesKeyboard(.immediately)
+                            .onSubmit {
+                                📱.💾SaveDatas()
+                                WidgetCenter.shared.reloadAllTimelines()
+                            }
+                        NavigationLink {
+                            Text(📱.ⓦidgetsData[index].family.rawValue)
+                        } label: {
+                            Label("Customize", systemImage: "slider.horizontal.3")
+                                .font(.caption)
                         }
                     }
                 }
+                .navigationTitle("Inline widget")
+            } else {
+                Text("🐛Bug")
             }
-            .navigationTitle("Widgets")
-            .animation(.default, value: 📱.ⓐctiveFamilys.count)
-        }
-    }
-    
-    struct 🅆idgetSection: View {
-        @EnvironmentObject var 📱: 📱AppModel
-        var ⓕamily: 🄵amily
-        var body: some View {
-            if let index = 📱.ⓦidgetsData.firstIndex(where: {$0.id==ⓕamily}) {
-                Section {
-                    TextField("note text", text: $📱.ⓦidgetsData[index].text)
-                        .textFieldStyle(.roundedBorder)
-                        .scrollDismissesKeyboard(.immediately)
-                        .onSubmit {
-                            📱.💾SaveDatas()
-                            WidgetCenter.shared.reloadAllTimelines()
-                        }
-                    NavigationLink {
-                        Text(📱.ⓦidgetsData[index].family.rawValue)
-                    } label: {
-                        Label("Customize", systemImage: "slider.horizontal.3")
-                            .font(.caption)
-                    }
-                } header: {
-                    Text(📱.ⓦidgetsData[index].family.rawValue)
-                }
-            }
-        }
-        
-        init(_ ⓕamily: 🄵amily) {
-            self.ⓕamily = ⓕamily
         }
     }
 }

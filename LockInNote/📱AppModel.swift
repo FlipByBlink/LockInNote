@@ -3,37 +3,10 @@ import SwiftUI
 import WidgetKit
 
 class 📱AppModel: ObservableObject {
-    
-    @Published var 🚩ShowWidgetSheet: Bool = false
-    @Published var 🆔OpenedWidgetID: String? = nil
-    
     private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
     @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
     
     @Published var ⓦidgetsData: [🎛WidgetData] = [.init(.inline), .init(.rectangular), .init(.circular)]
-    @Published var ⓐctiveFamilys: Set<🄵amily> = []
-    
-    func GetLatestWidgetInfo() {
-        WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
-            switch ⓡesult {
-                case .success(let ⓘnfos):
-                    DispatchQueue.main.async {
-                        var ⓕamilys: Set<🄵amily> = []
-                        for ⓘnfo in ⓘnfos {
-                            switch ⓘnfo.family {
-                                case .accessoryInline: ⓕamilys.insert(.inline)
-                                case .accessoryRectangular: ⓕamilys.insert(.rectangular)
-                                case .accessoryCircular: ⓕamilys.insert(.circular)
-                                default: continue
-                            }
-                        }
-                        self.ⓐctiveFamilys = ⓕamilys
-                    }
-                case .failure(let failure):
-                    print(failure)
-            }
-        }
-    }
     
     func 💾SaveDatas() {
         do {
