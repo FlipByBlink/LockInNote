@@ -22,22 +22,13 @@ struct ContentView: View {
         .onChange(of: ⓟhase) { 🆕 in
             print(ⓟhase,"->",🆕)
             if 🆕 == .active {
-                WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
-                    switch ⓡesult {
-                        case .success(let success):
-                            DispatchQueue.main.async {
-                                📱.Infos = success
-                            }
-                        case .failure(let failure):
-                            print(failure)
-                    }
-                }
+                📱.GetLatestWidgetInfo()
             }
         }
         .onOpenURL { 🔗 in
             if !📱.widgets.isEmpty {
                 📱.🚩ShowWidgetSheet = true
-                📱.🆔WidgetID = 🔗.description
+                📱.🆔OpenedWidgetID = 🔗.description
             }
             🔖Tab = .widgets
         }
@@ -56,26 +47,29 @@ struct 📝WidgetsTab: View {
     var body: some View {
         NavigationStack {
             List {
-                if 📱.Infos.isEmpty {
+                if 📱.widgets.isEmpty {
                     Text("Widget is empty")
                 } else {
-                    ForEach(📱.Infos) { info in
+                    ForEach(📱.widgets) { widget in
                         Section {
                             TextField("field", text: .constant("a"), axis: .vertical)
                                 .textFieldStyle(.roundedBorder)
                                 .lineLimit(3)
                             NavigationLink {
-                                Text(info.debugDescription)
+                                Text(widget.kind.rawValue)
+                                Text(widget.family.rawValue)
                             } label: {
                                 Label("Customize", systemImage: "slider.horizontal.3")
                                     .font(.caption)
                             }
+                        } header: {
+                            Text(widget.family.rawValue)
                         }
                     }
                 }
             }
             .navigationTitle("Widgets")
-            .animation(.default, value: 📱.Infos)
+            .animation(.default, value: 📱.widgets.count)
         }
     }
 }
@@ -99,49 +93,49 @@ struct 🔩OptionTab: View {
 }
 
 
-struct 🎚LevelPicker: View {
-    @EnvironmentObject var 📱: 📱AppModel
-    @State private var 🎚Level: 🄻evelEnum = .primary
-    
-    var body: some View {
-        NavigationLink {
-            List {
-                Picker("", selection: $🎚Level) {
-                    ForEach(🄻evelEnum.allCases) { level in
-                        HStack {
-                            Text("Level")
-                                .padding(8)
-                                .foregroundStyle(ⓢhape(level))
-                            if level == .primary {
-                                Text("(default)")
-                                    .foregroundStyle(.secondary)
-                                    .font(.caption)
-                            }
-                        }
-                    }
-                }
-                .pickerStyle(.inline)
-            }
-        } label: {
-            HStack {
-                ForEach(🄻evelEnum.allCases) { level in
-                    Text("Aa")
-                        .foregroundStyle(ⓢhape(level))
-                        .underline(🎚Level == level)
-                }
-            }
-        }
-    }
-    
-    func ⓢhape(_ level: 🄻evelEnum) -> HierarchicalShapeStyle {
-        switch level {
-            case .primary: return .primary
-            case .secondary: return .secondary
-            case .tertiary: return .tertiary
-            case .quaternary: return .quaternary
-        }
-    }
-}
+//struct 🎚LevelPicker: View {
+//    @EnvironmentObject var 📱: 📱AppModel
+//    @State private var 🎚Level: 🄻evelEnum = .primary
+//
+//    var body: some View {
+//        NavigationLink {
+//            List {
+//                Picker("", selection: $🎚Level) {
+//                    ForEach(🄻evelEnum.allCases) { level in
+//                        HStack {
+//                            Text("Level")
+//                                .padding(8)
+//                                .foregroundStyle(ⓢhape(level))
+//                            if level == .primary {
+//                                Text("(default)")
+//                                    .foregroundStyle(.secondary)
+//                                    .font(.caption)
+//                            }
+//                        }
+//                    }
+//                }
+//                .pickerStyle(.inline)
+//            }
+//        } label: {
+//            HStack {
+//                ForEach(🄻evelEnum.allCases) { level in
+//                    Text("Aa")
+//                        .foregroundStyle(ⓢhape(level))
+//                        .underline(🎚Level == level)
+//                }
+//            }
+//        }
+//    }
+//
+//    func ⓢhape(_ level: 🄻evelEnum) -> HierarchicalShapeStyle {
+//        switch level {
+//            case .primary: return .primary
+//            case .secondary: return .secondary
+//            case .tertiary: return .tertiary
+//            case .quaternary: return .quaternary
+//        }
+//    }
+//}
 
 
 
