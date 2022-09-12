@@ -101,7 +101,7 @@ struct 🔩OptionTab: View {
                     }
                 }
                 
-                let weights: [Font.Weight] = [.thin, .light, .regular, .medium, .bold, .heavy, .black]
+                let weights: [Font.Weight] = [.ultraLight, .thin, .light, .regular, .medium, .semibold, .bold, .heavy, .black]
                 NavigationLink {
                     List {
                         Picker("", selection: $🎚Weight) {
