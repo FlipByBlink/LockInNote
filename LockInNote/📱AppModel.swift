@@ -43,7 +43,7 @@ enum 🄵amily: String, Codable, CaseIterable, Identifiable {
 
 struct 🎛WidgetData: Codable, Identifiable {
     var family: 🄵amily
-    var text: String = "Abcd"
+    var text: String = ""
     var placeholder: 🄿laceholder = .threedot
     
     var id: 🄵amily { family }

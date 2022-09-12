@@ -12,7 +12,7 @@ struct ContentView: View {
             📝InlineWidgetTab()
                 .tag(🔖TabTag.inlineWidget)
                 .tabItem { Label("Inline", systemImage: "textformat.abc") }
-            Text("Rectangular")
+            📝RectangularWidgetTab()
                 .tag(🔖TabTag.rectangularWidget)
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
             Text("Circular")
@@ -54,23 +54,66 @@ struct 📝InlineWidgetTab: View {
                     Section {
                         TextField("note text", text: $📱.ⓦidgetsData[index].text)
                             .font(.title3)
-                            .textFieldStyle(.roundedBorder)
+                            .textFieldStyle(.plain)
                             .scrollDismissesKeyboard(.immediately)
                             .onSubmit {
                                 📱.💾SaveDatas()
                                 WidgetCenter.shared.reloadAllTimelines()
                             }
-                        NavigationLink {
-                            Text(📱.ⓦidgetsData[index].family.rawValue)
-                        } label: {
-                            Label("Customize", systemImage: "slider.horizontal.3")
-                                .font(.caption)
-                        }
+                            .padding(.vertical, 32)
                     }
+                    
+                    📣ADBanner()
                 }
                 .navigationTitle("Inline widget")
+                .navigationBarTitleDisplayMode(.inline)
             } else {
                 Text("🐛Bug")
+            }
+        }
+    }
+}
+
+struct 📝RectangularWidgetTab: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    var body: some View {
+        NavigationStack {
+            if let index = 📱.ⓦidgetsData.firstIndex(where: { $0.id == .rectangular }) {
+                List {
+                    Section {
+                        TextField("note text", text: $📱.ⓦidgetsData[index].text)
+                            .font(.title3)
+                            .textFieldStyle(.plain)
+                            .scrollDismissesKeyboard(.immediately)
+                            .onSubmit {
+                                📱.💾SaveDatas()
+                                WidgetCenter.shared.reloadAllTimelines()
+                            }
+                            .padding(.vertical, 32)
+                    }
+                    
+                    📣ADBanner()
+                    
+                    Text("Custom section")
+                }
+                .navigationTitle("Rectangular widget")
+                .navigationBarTitleDisplayMode(.inline)
+            } else {
+                Text("🐛Bug")
+            }
+        }
+    }
+}
+
+
+
+
+struct 📣ADBanner: View {
+    @EnvironmentObject var 🛒: 🛒StoreModel
+    var body: some View {
+        if 🛒.🚩ADisActive {
+            Section {
+                📣ADView()
             }
         }
     }
