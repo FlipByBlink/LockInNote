@@ -73,101 +73,15 @@ struct 📝WidgetsTab: View {
 
 struct 🔩OptionTab: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @State private var 🎚Style: Font.TextStyle = .body
-    @State private var 🎚Weight: Font.Weight = .regular
-    @State private var 🎚Design: Font.Design = .default
     
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink {
-                    List {
-                        Picker("", selection: $🎚Style) {
-                            ForEach(Font.TextStyle.allCases, id: \.self) { style in
-                                HStack {
-                                    Text("Font style")
-                                        .font(.system(style, design: 🎚Design, weight: 🎚Weight))
-                                        .padding(8)
-                                    if style == .body {
-                                        Text("(default)")
-                                            .foregroundStyle(.secondary)
-                                            .font(.caption)
-                                    }
-                                }
-                            }
-                        }
-                        .pickerStyle(.inline)
-                    }
-                } label: {
-                    HStack {
-                        ForEach(Font.TextStyle.allCases, id: \.self) { style in
-                            Text("A")
-                                .font(.system(style))
-                                .underline(🎚Style == style)
-                            
-                        }
-                    }
+                Toggle(isOn: $📱.🚩AutoLaunchKeyboard) {
+                    Label("Auto keyboard launch", systemImage: "keyboard")
                 }
                 
-                let weights: [Font.Weight] = [.ultraLight, .thin, .light, .regular, .medium, .semibold, .bold, .heavy, .black]
-                NavigationLink {
-                    List {
-                        Picker("", selection: $🎚Weight) {
-                            ForEach(weights, id: \.self) { weight in
-                                HStack {
-                                    Text("Font weight")
-                                        .font(.system(🎚Style, design: 🎚Design, weight: weight))
-                                        .padding(8)
-                                    if weight == .regular {
-                                        Text("(default)")
-                                            .foregroundStyle(.secondary)
-                                            .font(.caption)
-                                    }
-                                }
-                            }
-                        }
-                        .pickerStyle(.inline)
-                    }
-                } label: {
-                    HStack {
-                        ForEach(weights, id: \.self) { weight in
-                            Text("Aa")
-                                .fontWeight(weight)
-                                .underline(🎚Weight == weight)
-                        }
-                    }
-                }
-                
-                let designs: [Font.Design] = [.default, .rounded, .serif, .monospaced]
-                NavigationLink {
-                    List {
-                        Picker("", selection: $🎚Design) {
-                            ForEach(designs, id: \.self) { design in
-                                HStack {
-                                    Text("Font design")
-                                        .font(.system(🎚Style, design: design, weight: 🎚Weight))
-                                        .padding(8)
-                                    if design == .default {
-                                        Text("(default)")
-                                            .foregroundStyle(.secondary)
-                                            .font(.caption)
-                                    }
-                                }
-                            }
-                        }
-                        .pickerStyle(.inline)
-                    }
-                } label: {
-                    HStack {
-                        ForEach(designs, id: \.self) { design in
-                            Text("Aa")
-                                .font(.system(.body, design: design))
-                                .underline(🎚Design == design)
-                        }
-                    }
-                }
-                
-                🎚LevelPicker()
+                📣ADMenuLink()
             }
             .navigationTitle("Option")
         }
