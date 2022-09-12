@@ -54,6 +54,7 @@ struct 📝WidgetsTab: View {
                     }
                 }
             }
+            .animation(.default, value: 📱.Infos)
         }
     }
 }
