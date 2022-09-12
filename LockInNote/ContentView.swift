@@ -73,6 +73,7 @@ struct 📝WidgetsTab: View {
                     TextField("field", text: $📱.ⓦidgetsData[index].text, axis: .vertical)
                         .textFieldStyle(.roundedBorder)
                         .lineLimit(3)
+                        .scrollDismissesKeyboard(.immediately)
                         .onSubmit {
                             📱.💾SaveDatas()
                             WidgetCenter.shared.reloadAllTimelines()

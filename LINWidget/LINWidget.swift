@@ -13,7 +13,7 @@ struct LINWidget: WidgetBundle {
 struct 🖼MWWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "main", provider: 🤖Provider()) { ⓔntry in
-            🅆idgetEntryView(ⓔntry)
+            🅆idgetEntryView(ⓔntry, "main")
         }
         .configurationDisplayName("LockInNote")
         .description("Show a note.")
@@ -24,7 +24,7 @@ struct 🖼MWWidget: Widget {
 struct 🖼MWWidgetSub: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "sub", provider: 🤖Provider()) { ⓔntry in
-            🅆idgetEntryView(ⓔntry)
+            🅆idgetEntryView(ⓔntry, "sub")
         }
         .configurationDisplayName("Sub widget")
         .description("This is spare widget for the purpose of second widget.")
@@ -62,34 +62,40 @@ struct 🕒Entry: TimelineEntry {
 
 struct 🅆idgetEntryView : View {
     var ⓔntry: 🤖Provider.Entry
+    var ⓚind: String
     @Environment(\.widgetFamily) var ⓕamily: WidgetFamily
+    let 📱 = 📱AppModel()
+    var ⓦidgetData: 🎛WidgetData? { 📱.ⓦidgetsData.first { $0.🄴qual(ⓚind, ⓕamily) } }
     
     @ViewBuilder
     var body: some View {
-        switch ⓕamily {
-            case .accessoryInline:
-                Text("accessoryInline")
-                    .widgetURL(URL(string: UUID().uuidString)!)
-            case .accessoryRectangular:
-                VStack {
-                    Text("headline")
-                        .font(.headline)
-                    Text("accessoryRectangular")
-                        .font(.subheadline)
+        if let ⓓata = ⓦidgetData {
+            switch ⓕamily {
+                case .accessoryInline:
+                    Text(ⓓata.text)
                         .widgetURL(URL(string: UUID().uuidString)!)
-                }
-            case .accessoryCircular:
-                ZStack {
-                    AccessoryWidgetBackground()
-                    Text("accessoryCircular")
-                        .widgetURL(URL(string: UUID().uuidString)!)
-                }
-            default:
-                Text("🐛")
+                case .accessoryRectangular:
+                    VStack {
+                        Text("headline")
+                            .font(.headline)
+                        Text(ⓓata.text)
+                            .font(.subheadline)
+                            .widgetURL(URL(string: UUID().uuidString)!)
+                    }
+                case .accessoryCircular:
+                    ZStack {
+                        AccessoryWidgetBackground()
+                        Text(ⓓata.text)
+                            .widgetURL(URL(string: UUID().uuidString)!)
+                    }
+                default:
+                    Text("🐛")
+            }
         }
     }
     
-    init(_ ⓔntry: 🤖Provider.Entry) {
+    init(_ ⓔntry: 🤖Provider.Entry, _ ⓚind: String) {
         self.ⓔntry = ⓔntry
+        self.ⓚind = ⓚind
     }
 }

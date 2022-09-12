@@ -144,13 +144,28 @@ struct 🎛WidgetData: Codable, Identifiable {
         var id: Self { self }
     }
     
-    init(_ kind: String, _ family: WidgetFamily) {
-        self.kind = .init(rawValue: kind) ?? .main
+    func 🄴qual(_ ⓚind: String, _ ⓕamily: WidgetFamily) -> Bool {
+        if kind != 🄺ind(rawValue: ⓚind) {
+            return false
+        }
         switch family {
-            case .accessoryInline: self.family = .inline
-            case .accessoryRectangular: self.family = .rectangular
-            case .accessoryCircular: self.family = .circular
-            default: self.family = .rectangular
+            case .inline:
+                if ⓕamily != .accessoryInline { return false }
+            case .rectangular:
+                if ⓕamily != .accessoryRectangular { return false }
+            case .circular:
+                if ⓕamily != .accessoryCircular { return false }
+        }
+        return true
+    }
+    
+    init(_ ⓚind: String, _ ⓕamily: WidgetFamily) {
+        kind = .init(rawValue: ⓚind) ?? .main
+        switch ⓕamily {
+            case .accessoryInline: family = .inline
+            case .accessoryRectangular: family = .rectangular
+            case .accessoryCircular: family = .circular
+            default: family = .rectangular
         }
     }
 }
