@@ -12,7 +12,7 @@ struct ContentView: View {
             📝WidgetsTab()
                 .tag(🔖TabTag.widgets)
                 .tabItem { Label("Widgets", systemImage: "rectangle.and.pencil.and.ellipsis") }
-            Text("Option")
+            🔩OptionTab()
                 .tag(🔖TabTag.option)
                 .tabItem { Label("Option", systemImage: "gearshape") }
             ℹ️AboutAppTab()
@@ -42,6 +42,24 @@ struct ContentView: View {
 }
 
 struct 📝WidgetsTab: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    var body: some View {
+        NavigationStack {
+            List {
+                if 📱.Infos.isEmpty {
+                    Text("Widget is empty")
+                } else {
+                    ForEach(📱.Infos) { info in
+                        Text(info.debugDescription)
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+struct 🔩OptionTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @State private var 🎚Style: Font.TextStyle = .body
     @State private var 🎚Weight: Font.Weight = .regular
