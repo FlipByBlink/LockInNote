@@ -24,13 +24,7 @@ struct 🤖Provider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var ⓔntries: [🕒Entry] = []
-        for ⓒount in 0 ..< 12 {
-            let ⓞffset = ⓒount * 5
-            let ⓓate = Calendar.current.date(byAdding: .minute, value: ⓞffset, to: .now)!
-            ⓔntries.append(🕒Entry(ⓓate))
-        }
-        completion(Timeline(entries: ⓔntries, policy: .atEnd))
+        completion(Timeline(entries: [🕒Entry(.now)], policy: .never))
     }
 }
 
@@ -54,20 +48,41 @@ struct 🅆idgetEntryView : View {
             switch ⓕamily {
                 case .accessoryInline:
                     Text(ⓓata.text)
-                        .widgetURL(URL(string: UUID().uuidString)!)
+                        .widgetURL(URL(string: ⓕamily.rawValue.description)!)
                 case .accessoryRectangular:
                     VStack {
                         Text("headline")
                             .font(.headline)
                         Text(ⓓata.text)
                             .font(.subheadline)
-                            .widgetURL(URL(string: UUID().uuidString)!)
+                            .widgetURL(URL(string: ⓕamily.rawValue.description)!)
                     }
                 case .accessoryCircular:
                     ZStack {
                         AccessoryWidgetBackground()
                         Text(ⓓata.text)
-                            .widgetURL(URL(string: UUID().uuidString)!)
+                            .multilineTextAlignment(.center)
+                            .widgetURL(URL(string: ⓕamily.rawValue.description)!)
+                    }
+                default:
+                    Text("🐛")
+            }
+        } else {
+            switch ⓕamily {
+                case .accessoryInline:
+                    Text("Inline note")
+                case .accessoryRectangular:
+                    VStack {
+                        Text("Rectangular")
+                            .font(.headline)
+                        Text("note")
+                            .font(.subheadline)
+                    }
+                case .accessoryCircular:
+                    ZStack {
+                        AccessoryWidgetBackground()
+                        Text("Circular note")
+                            .multilineTextAlignment(.center)
                     }
                 default:
                     Text("🐛")
