@@ -47,8 +47,10 @@ struct 📝WidgetsTab: View {
     var body: some View {
         NavigationStack {
             List {
-                if 📱.ⓦidgetsData.isEmpty {
-                    Text("Widget is empty")
+                if 📱.ⓐctiveWidgets.isEmpty {
+                    Text("Widget is empty.")
+                        .foregroundStyle(.secondary)
+                        .padding(.vertical)
                 } else {
                     ForEach(🅆idgetType.allCases) { type in
                         if 📱.ⓐctiveWidgets.contains(type) {

@@ -17,25 +17,25 @@ class 📱AppModel: ObservableObject {
     func GetLatestWidgetInfo() {
         WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
             switch ⓡesult {
-                case .success(let infos):
+                case .success(let ⓘnfos):
                     DispatchQueue.main.async {
-                        var types: Set<🅆idgetType> = []
-                        for info in infos {
-                            let type: 🅆idgetType
-                            switch (info.kind ,info.family) {
-                                case ("main", .accessoryInline): type = .mainInline
-                                case ("main", .accessoryRectangular): type = .mainRectangular
-                                case ("main", .accessoryCircular): type = .mainCircular
-                                case ("sub", .accessoryRectangular): type = .subRectangular
-                                case ("sub", .accessoryCircular): type = .subCircular
+                        var ⓣypes: Set<🅆idgetType> = []
+                        for ⓘnfo in ⓘnfos {
+                            let ⓣype: 🅆idgetType
+                            switch (ⓘnfo.kind ,ⓘnfo.family) {
+                                case ("main", .accessoryInline): ⓣype = .mainInline
+                                case ("main", .accessoryRectangular): ⓣype = .mainRectangular
+                                case ("main", .accessoryCircular): ⓣype = .mainCircular
+                                case ("sub", .accessoryRectangular): ⓣype = .subRectangular
+                                case ("sub", .accessoryCircular): ⓣype = .subCircular
                                 default: continue
                             }
-                            if !self.ⓦidgetsData.contains(where: {$0.id==type}) {
-                                self.ⓦidgetsData.append(🎛WidgetData(info.kind, info.family))
+                            if !self.ⓦidgetsData.contains(where: {$0.id==ⓣype}) {
+                                self.ⓦidgetsData.append(🎛WidgetData(ⓘnfo.kind, ⓘnfo.family))
                             }
-                            types.insert(type)
+                            ⓣypes.insert(ⓣype)
                         }
-                        self.ⓐctiveWidgets = types
+                        self.ⓐctiveWidgets = ⓣypes
                     }
                 case .failure(let failure):
                     print(failure)
@@ -92,13 +92,17 @@ struct 🎛WidgetData: Codable, Identifiable {
         }
     }
     
-    var fontStyle: 🅂tyle?
-    var fontWeight: 🅆eight?
-    var fontDesign: 🄳esign?
-    var italic: Bool?
-    var background: Bool?
-    var level: 🄻evel?
-    var multilineTextAlignment: 🄼ultilineTextAlignment?
+    var customization: 🄲ustomization?
+    
+    struct 🄲ustomization: Codable {
+        var fontStyle: 🅂tyle
+        var fontWeight: 🅆eight
+        var fontDesign: 🄳esign
+        var italic: Bool
+        var background: Bool
+        var level: 🄻evel
+        var multilineTextAlignment: 🄼ultilineTextAlignment
+    }
     
     enum 🄺ind: String, Codable, CaseIterable, Identifiable {
         case main, sub
