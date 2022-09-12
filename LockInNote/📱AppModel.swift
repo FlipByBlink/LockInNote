@@ -4,6 +4,9 @@ import WidgetKit
 
 class 📱AppModel: ObservableObject {
     
+    @Published var 🚩ShowWidgetSheet: Bool = false
+    @Published var 🆔WidgetID: String? = nil
+    
     @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
     
     @Published var 📓Text: String = ""
@@ -11,12 +14,20 @@ class 📱AppModel: ObservableObject {
     
     @Published var widgets: [🎛WidgetCustomization] = []
     
-    @Published var 🎚Style: Font.TextStyle = .body
-    @Published var 🎚Weight: Font.Weight = .regular
-    @Published var 🎚Design: Font.Design = .default
-    @Published var 🎚Level: 🄻evelEnum = .primary
-    
     private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
+    
+    func GetLatestWidgetInfo() {
+        WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
+            switch ⓡesult {
+                case .success(let success):
+                    DispatchQueue.main.async {
+                        self.Infos = success
+                    }
+                case .failure(let failure):
+                    print(failure)
+            }
+        }
+    }
 }
 
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"

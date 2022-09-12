@@ -34,6 +34,16 @@ struct ContentView: View {
                 }
             }
         }
+        .onOpenURL { 🔗 in
+            if !📱.widgets.isEmpty {
+                📱.🚩ShowWidgetSheet = true
+                📱.🆔WidgetID = 🔗.description
+            }
+            🔖Tab = .widgets
+        }
+        .sheet(isPresented: $📱.🚩ShowWidgetSheet) {
+            Text("WidgetSheet")
+        }
     }
     
     enum 🔖TabTag {
