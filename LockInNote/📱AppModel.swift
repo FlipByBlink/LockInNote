@@ -11,6 +11,7 @@ class 📱AppModel: ObservableObject {
     @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
     
     @Published var widgets: [🎛WidgetData] = []
+    //@Published var activeWidgets: [String] = []
     
     func GetLatestWidgetInfo() {
         WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
@@ -36,7 +37,7 @@ let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 struct 🎛WidgetData: Codable, Identifiable {
     var kind: 🄺ind
     var family: 🄵amily
-    var text: String = "placeholder"
+    var text: String = ""
     var placeholder: 🄿laceholder = .threedot
     
     var id: String { kind.rawValue + family.rawValue }
@@ -55,7 +56,7 @@ struct 🎛WidgetData: Codable, Identifiable {
     }
     
     enum 🄵amily: String, Codable, CaseIterable, Identifiable {
-        case inline, rectangular, circle
+        case inline, rectangular, circular
         var id: Self { self }
     }
     
@@ -94,7 +95,7 @@ struct 🎛WidgetData: Codable, Identifiable {
         switch family {
             case .accessoryInline: self.family = .inline
             case .accessoryRectangular: self.family = .rectangular
-            case .accessoryCircular: self.family = .circle
+            case .accessoryCircular: self.family = .circular
             default: self.family = .rectangular
         }
     }
