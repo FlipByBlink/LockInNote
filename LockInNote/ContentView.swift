@@ -50,7 +50,10 @@ struct 📝WidgetsTab: View {
                     Text("Widget is empty")
                 } else {
                     ForEach(📱.Infos) { info in
-                        Text(info.debugDescription)
+                        VStack {
+                            TextField("field", text: .constant("a"))
+                            Text(info.debugDescription)
+                        }
                     }
                 }
             }
@@ -158,6 +161,7 @@ struct 🔩OptionTab: View {
                 
                 🎚LevelPicker()
             }
+            .navigationTitle("Option")
         }
     }
 }

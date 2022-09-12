@@ -18,6 +18,12 @@ class 📱AppModel: ObservableObject {
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
 
+struct WidgetCustomization: Codable {
+    var text: String
+//    var fontStyle: Font.TextStyle
+//    var fontWeight: Font.Weight
+//    var fontDesign: Font.Design
+}
 
 enum 🄻evelEnum: CaseIterable, Hashable, Identifiable {
     case primary
