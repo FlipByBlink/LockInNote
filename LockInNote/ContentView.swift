@@ -50,20 +50,23 @@ struct 📝WidgetsTab: View {
                 if 📱.widgets.isEmpty {
                     Text("Widget is empty")
                 } else {
-                    ForEach(📱.widgets) { widget in
+                    ForEach($📱.widgets) { widget in
                         Section {
-                            TextField("field", text: .constant("a"), axis: .vertical)
+                            TextField("field", text: widget.text, axis: .vertical)
                                 .textFieldStyle(.roundedBorder)
                                 .lineLimit(3)
+                                .onSubmit {
+                                    WidgetCenter.shared.reloadAllTimelines()
+                                }
                             NavigationLink {
-                                Text(widget.kind.rawValue)
-                                Text(widget.family.rawValue)
+                                Text(widget.wrappedValue.kind.rawValue)
+                                Text(widget.wrappedValue.family.rawValue)
                             } label: {
                                 Label("Customize", systemImage: "slider.horizontal.3")
                                     .font(.caption)
                             }
                         } header: {
-                            Text(widget.family.rawValue)
+                            Text(widget.wrappedValue.family.rawValue)
                         }
                     }
                 }
