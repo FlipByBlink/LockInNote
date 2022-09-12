@@ -47,28 +47,28 @@ struct 📝WidgetsTab: View {
     var body: some View {
         NavigationStack {
             List {
-                if 📱.ⓐctiveWidgets.isEmpty {
+                if 📱.ⓐctiveFamilys.isEmpty {
                     Text("Widget is empty.")
                         .foregroundStyle(.secondary)
                         .padding(.vertical)
                 } else {
-                    ForEach(🄵amily.allCases) { family in
-                        if 📱.ⓐctiveWidgets.contains(family) {
-                            🅆idgetSection(type: family)
+                    ForEach(🄵amily.allCases) { ⓕamily in
+                        if 📱.ⓐctiveFamilys.contains(ⓕamily) {
+                            🅆idgetSection(ⓕamily)
                         }
                     }
                 }
             }
             .navigationTitle("Widgets")
-            .animation(.default, value: 📱.ⓐctiveWidgets.count)
+            .animation(.default, value: 📱.ⓐctiveFamilys.count)
         }
     }
     
     struct 🅆idgetSection: View {
         @EnvironmentObject var 📱: 📱AppModel
-        var type: 🄵amily
+        var ⓕamily: 🄵amily
         var body: some View {
-            if let index = 📱.ⓦidgetsData.firstIndex(where: {$0.id==type}) {
+            if let index = 📱.ⓦidgetsData.firstIndex(where: {$0.id==ⓕamily}) {
                 Section {
                     TextField("field", text: $📱.ⓦidgetsData[index].text, axis: .vertical)
                         .textFieldStyle(.roundedBorder)
@@ -88,6 +88,10 @@ struct 📝WidgetsTab: View {
                     Text(📱.ⓦidgetsData[index].family.rawValue)
                 }
             }
+        }
+        
+        init(_ ⓕamily: 🄵amily) {
+            self.ⓕamily = ⓕamily
         }
     }
 }

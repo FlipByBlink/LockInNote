@@ -11,28 +11,28 @@ class 📱AppModel: ObservableObject {
     @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
     
     @Published var ⓦidgetsData: [🎛WidgetData] = []
-    @Published var ⓐctiveWidgets: Set<🄵amily> = []
+    @Published var ⓐctiveFamilys: Set<🄵amily> = []
     
     func GetLatestWidgetInfo() {
         WidgetCenter.shared.getCurrentConfigurations { ⓡesult in
             switch ⓡesult {
                 case .success(let ⓘnfos):
                     DispatchQueue.main.async {
-                        var ⓣypes: Set<🄵amily> = []
+                        var ⓕamilys: Set<🄵amily> = []
                         for ⓘnfo in ⓘnfos {
-                            let ⓣype: 🄵amily
+                            let ⓕamily: 🄵amily
                             switch ⓘnfo.family {
-                                case .accessoryInline: ⓣype = .inline
-                                case .accessoryRectangular: ⓣype = .rectangular
-                                case .accessoryCircular: ⓣype = .circular
+                                case .accessoryInline: ⓕamily = .inline
+                                case .accessoryRectangular: ⓕamily = .rectangular
+                                case .accessoryCircular: ⓕamily = .circular
                                 default: continue
                             }
-                            if !self.ⓦidgetsData.contains(where: {$0.id==ⓣype}) {
+                            if !self.ⓦidgetsData.contains(where: {$0.id==ⓕamily}) {
                                 self.ⓦidgetsData.append(🎛WidgetData(ⓘnfo.family))
                             }
-                            ⓣypes.insert(ⓣype)
+                            ⓕamilys.insert(ⓕamily)
                         }
-                        self.ⓐctiveWidgets = ⓣypes
+                        self.ⓐctiveFamilys = ⓕamilys
                     }
                 case .failure(let failure):
                     print(failure)
@@ -92,11 +92,6 @@ struct 🎛WidgetData: Codable, Identifiable {
         var multilineTextAlignment: 🄼ultilineTextAlignment
     }
     
-    enum 🄺ind: String, Codable, CaseIterable, Identifiable {
-        case main, sub
-        var id: Self { self }
-    }
-    
     enum 🄿laceholder: Codable, CaseIterable, Identifiable {
         case nothing, threedot, pencil, useredit
         var id: Self { self }
@@ -139,7 +134,7 @@ struct 🎛WidgetData: Codable, Identifiable {
         return true
     }
     
-    init(_ ⓕamily: WidgetFamily) {
+    init(_ ⓕamily: WidgetFamily) { //TODO: ?init
         switch ⓕamily {
             case .accessoryInline: family = .inline
             case .accessoryRectangular: family = .rectangular
