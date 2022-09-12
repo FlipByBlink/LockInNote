@@ -70,9 +70,8 @@ struct 📝WidgetsTab: View {
         var body: some View {
             if let index = 📱.ⓦidgetsData.firstIndex(where: {$0.id==ⓕamily}) {
                 Section {
-                    TextField("field", text: $📱.ⓦidgetsData[index].text, axis: .vertical)
+                    TextField("note text", text: $📱.ⓦidgetsData[index].text)
                         .textFieldStyle(.roundedBorder)
-                        .lineLimit(3)
                         .scrollDismissesKeyboard(.immediately)
                         .onSubmit {
                             📱.💾SaveDatas()
