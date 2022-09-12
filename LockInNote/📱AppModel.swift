@@ -4,7 +4,7 @@ import WidgetKit
 
 class 📱AppModel: ObservableObject {
     private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
-    @AppStorage("AutoLaunchKeyboard", store: ⓤd) var 🚩AutoLaunchKeyboard: Bool = false
+    @AppStorage("AutoLaunchKeyboard") var 🚩AutoLaunchKeyboard: Bool = false
     
     @Published var ⓦidgetsData: [🎛WidgetData] = [.init(.inline), .init(.rectangular), .init(.circular)]
     

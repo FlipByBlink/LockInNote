@@ -94,13 +94,26 @@ struct 📝RectangularWidgetTab: View {
                     
                     📣ADBanner()
                     
-                    Text("Custom section")
+                    🔧CustomizationSection(family: .rectangular)
                 }
                 .navigationTitle("Rectangular widget")
                 .navigationBarTitleDisplayMode(.inline)
             } else {
                 Text("🐛Bug")
             }
+        }
+    }
+}
+
+
+struct 🔧CustomizationSection: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    var family: 🄵amily
+    var body: some View {
+        Section {
+            Text("placeholder")
+        } header: {
+            Text("Customization")
         }
     }
 }
