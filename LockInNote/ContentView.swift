@@ -50,13 +50,21 @@ struct 📝WidgetsTab: View {
                     Text("Widget is empty")
                 } else {
                     ForEach(📱.Infos) { info in
-                        VStack {
-                            TextField("field", text: .constant("a"))
-                            Text(info.debugDescription)
+                        Section {
+                            TextField("field", text: .constant("a"), axis: .vertical)
+                                .textFieldStyle(.roundedBorder)
+                                .lineLimit(3)
+                            NavigationLink {
+                                Text(info.debugDescription)
+                            } label: {
+                                Label("Customize", systemImage: "slider.horizontal.3")
+                                    .font(.caption)
+                            }
                         }
                     }
                 }
             }
+            .navigationTitle("Widgets")
             .animation(.default, value: 📱.Infos)
         }
     }
