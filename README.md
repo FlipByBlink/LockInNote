@@ -17,8 +17,28 @@ https://apps.apple.com/app/id
 
 <!--==== English description ====-->
 
+Note app for lock screen widget!
+
+・Launch automatically keyboard as soon as widget is tapped.
+
+・Adjust Font size / design / weight etc.
+
+・Options of multi-text-alignment / placeholder-graphic etc.
+
+・Clear the text by swiping textfield.
+
 
 ==== Japanese(native) description ====
+
+ロック画面ウィジェット専用のノートアプリ！
+
+・ウィジェットをタップすると、すぐにキーボードが立ち上がり、ノートを編集できます。
+
+・フォントの大きさやデザイン、太さなど調整可能。
+
+・複数行の揃え方や、テキスト未入力時の表示パターンなどのオプション。
+
+・テキストフィールドをスワイプして文章を消す。
 
 
 ==== Localization: All ====
