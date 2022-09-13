@@ -37,7 +37,9 @@ struct ContentView: View {
                 }
             }
         }
-        .onSubmit { 📱.💾SaveDataAndReloadWidget() }
+        .onChange(of: 📱.🎛RectangularData) { _ in 📱.💾SaveDataAndReloadWidget() }
+        .onChange(of: 📱.🎛InlineData) { _ in 📱.💾SaveDataAndReloadWidget() }
+        .onChange(of: 📱.🎛CircularData) { _ in 📱.💾SaveDataAndReloadWidget() }
     }
     
     enum 🔖TabTag {
@@ -151,7 +153,6 @@ struct 📝CircularWidgetTab: View {
 }
 
 struct 🎚PlaceholderPicker: View {
-    @EnvironmentObject var 📱: 📱AppModel
     @Binding var ⓟlaceholder: 🄿laceholder
     var body: some View {
         Menu {
@@ -177,9 +178,6 @@ struct 🎚PlaceholderPicker: View {
                 }.foregroundColor(.secondary)
             }
         }
-        .onChange(of: ⓟlaceholder) { _ in
-            📱.💾SaveDataAndReloadWidget()
-        }
     }
     
     init(_ ⓟlaceholder: Binding<🄿laceholder>) {
@@ -188,7 +186,6 @@ struct 🎚PlaceholderPicker: View {
 }
 
 struct 🎚WeightPicker: View {
-    @EnvironmentObject var 📱: 📱AppModel
     @Binding var ⓦeight: 🅆eight
     var body: some View {
         NavigationLink {
@@ -206,9 +203,6 @@ struct 🎚WeightPicker: View {
                 .fontWeight(ⓦeight.value)
                 .badge(ⓦeight.rawValue)
         }
-        .onChange(of: ⓦeight) { _ in
-            📱.💾SaveDataAndReloadWidget()
-        }
     }
     
     init(_ ⓦeight: Binding<🅆eight>) {
@@ -217,7 +211,6 @@ struct 🎚WeightPicker: View {
 }
 
 struct 🎚DesignPicker: View {
-    @EnvironmentObject var 📱: 📱AppModel
     @Binding var ⓓesign: 🄳esign
     var body: some View {
         NavigationLink {
@@ -235,9 +228,6 @@ struct 🎚DesignPicker: View {
                 .font(.system(.body, design: ⓓesign.value, weight: nil))
                 .badge(ⓓesign.rawValue)
         }
-        .onChange(of: ⓓesign) { _ in
-            📱.💾SaveDataAndReloadWidget()
-        }
     }
     
     init(_ ⓓesign: Binding<🄳esign>) {
@@ -246,7 +236,6 @@ struct 🎚DesignPicker: View {
 }
 
 struct 🎚FontSizePicker: View {
-    @EnvironmentObject var 📱: 📱AppModel
     @Binding var ⓢize: Int
     var body: some View {
         NavigationLink {
@@ -266,9 +255,6 @@ struct 🎚FontSizePicker: View {
                 .font(.system(size: CGFloat(ⓢize)))
                 .badge(ⓢize.description)
         }
-        .onChange(of: ⓢize) { _ in
-            📱.💾SaveDataAndReloadWidget()
-        }
     }
     
     init(_ ⓢize: Binding<Int>) {
@@ -277,7 +263,6 @@ struct 🎚FontSizePicker: View {
 }
 
 struct 🎚LevelPicker: View {
-    @EnvironmentObject var 📱: 📱AppModel
     @Binding var ⓛevel: 🄻evel
     var body: some View {
         NavigationLink {
@@ -301,9 +286,6 @@ struct 🎚LevelPicker: View {
             }
             .badge(ⓛevel.rawValue)
         }
-        .onChange(of: ⓛevel) { _ in
-            📱.💾SaveDataAndReloadWidget()
-        }
     }
     
     init(_ ⓛevel: Binding<🄻evel>) {
@@ -312,7 +294,6 @@ struct 🎚LevelPicker: View {
 }
 
 struct 🎚TextAlignmentPicker: View {
-    @EnvironmentObject var 📱: 📱AppModel
     @Binding var ⓐlignment: 🄼ultilineTextAlignment
     var body: some View {
         Picker(selection: $ⓐlignment) {
@@ -326,9 +307,6 @@ struct 🎚TextAlignmentPicker: View {
                 .font(.footnote)
         }
         .pickerStyle(.automatic)
-        .onChange(of: ⓐlignment) { _ in
-            📱.💾SaveDataAndReloadWidget()
-        }
     }
     
     init(_ ⓐlignment: Binding<🄼ultilineTextAlignment>) {
@@ -337,15 +315,11 @@ struct 🎚TextAlignmentPicker: View {
 }
 
 struct 🎚ItalicPicker: View {
-    @EnvironmentObject var 📱: 📱AppModel
     @Binding var 🚩: Bool
     var body: some View {
         Toggle(isOn: $🚩) {
             Label("Italic", systemImage: "italic")
                 .italic(🚩)
-        }
-        .onChange(of: 🚩) { _ in
-            📱.💾SaveDataAndReloadWidget()
         }
     }
     

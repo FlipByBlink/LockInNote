@@ -50,7 +50,7 @@ class 📱AppModel: ObservableObject {
 
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
-struct 🎛RectangularDataModel: Codable {
+struct 🎛RectangularDataModel: Codable, Equatable {
     var text: String = ""
     
     var placeholder: 🄿laceholder = .squareAndPencil
@@ -62,12 +62,12 @@ struct 🎛RectangularDataModel: Codable {
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
-struct 🎛InlineDataModel: Codable {
+struct 🎛InlineDataModel: Codable, Equatable {
     var text: String = ""
     var placeholder: 🄿laceholder = .squareAndPencil
 }
 
-struct 🎛CircularDataModel: Codable {
+struct 🎛CircularDataModel: Codable, Equatable {
     var text: String = ""
     var background: Bool = true
     
