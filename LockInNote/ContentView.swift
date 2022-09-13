@@ -51,7 +51,7 @@ struct 📝RectangularWidgetTab: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("note text", text: $📱.🎛RectangularData.text, axis: .vertical)
+                    TextField("Note text", text: $📱.🎛RectangularData.text, axis: .vertical)
                         .focused($🚩Focus)
                         .font(.title3)
                         .padding(.vertical, 24)
@@ -96,7 +96,7 @@ struct 📝InlineWidgetTab: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("note text", text: $📱.🎛InlineData.text)
+                    TextField("Note text", text: $📱.🎛InlineData.text)
                         .focused($🚩Focus)
                         .font(.title3)
                         .padding(.vertical, 24)
@@ -126,7 +126,7 @@ struct 📝CircularWidgetTab: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("note text", text: $📱.🎛CircularData.text)
+                    TextField("Note text", text: $📱.🎛CircularData.text)
                         .focused($🚩Focus)
                         .font(.title3)
                         .padding(.vertical, 24)
@@ -168,7 +168,7 @@ struct 🎚PlaceholderPicker: View {
                     if let icon = placeholder.icon {
                         Label(placeholder.rawValue, systemImage: icon)
                     } else {
-                        Text(placeholder.rawValue)
+                        Text(LocalizedStringKey(placeholder.rawValue))
                     }
                 }
             }
@@ -180,7 +180,7 @@ struct 🎚PlaceholderPicker: View {
                     if let icon = ⓟlaceholder.icon {
                         Image(systemName: icon)
                     } else {
-                        Text(ⓟlaceholder.rawValue)
+                        Text(LocalizedStringKey(ⓟlaceholder.rawValue))
                     }
                 }.foregroundColor(.secondary)
             }

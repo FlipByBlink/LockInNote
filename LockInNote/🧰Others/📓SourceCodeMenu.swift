@@ -1,6 +1,6 @@
 
-let 🔗WebRepositoryURL = URL(string: "https://github.com/FlipByBlink/AAAA")!
-let 🔗WebRepositoryURL_Mirror = URL(string: "https://gitlab.com/FlipByBlink/AAAA_Mirror")!
+let 🔗WebRepositoryURL = URL(string: "https://github.com/FlipByBlink/LockInNote")!
+let 🔗WebRepositoryURL_Mirror = URL(string: "https://gitlab.com/FlipByBlink/LockInNote_Mirror")!
 
 
 

@@ -1,4 +1,4 @@
-# 📱 LockInNote / ノートinロック for iPhone
+# 📱 LockInNote / ロックノート for iPhone
 
 <br>
 

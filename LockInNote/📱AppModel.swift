@@ -79,13 +79,13 @@ struct 🎛CircularDataModel: Codable, Equatable {
 
 enum 🄿laceholder: String, Codable, CaseIterable, Identifiable {
     case squareAndPencil = "square and pencil"//, useredit
-    case threedot, pencil
+    case ellipsis, pencil
     case nothing = "(nothing)"
     var id: Self { self }
     var icon: String? {
         switch self {
             case .squareAndPencil: return "square.and.pencil"
-            case .threedot: return "ellipsis"
+            case .ellipsis: return "ellipsis"
             case .pencil: return "pencil"
             case .nothing: return nil
         }
