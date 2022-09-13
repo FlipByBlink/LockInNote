@@ -79,6 +79,7 @@ struct 🅁ectangularView : View {
                                   weight: 📱.🎛RectangularData.fontWeight.value))
                     .italic(📱.🎛RectangularData.italic)
                     .multilineTextAlignment(📱.🎛RectangularData.multilineTextAlignment.value)
+                    .foregroundStyle(📱.🎛RectangularData.level.value)
             } else {
                 VStack {
                     Text("headline")
@@ -126,9 +127,12 @@ struct 🄲ircularView : View {
                 ZStack {
                     AccessoryWidgetBackground()
                     Text(📱.🎛CircularData.text)
-                        .multilineTextAlignment(.center)
-                        .fontWeight(📱.🎛CircularData.fontWeight.value)
+                        .font(.system(📱.🎛CircularData.fontStyle.value,
+                                      design: 📱.🎛CircularData.fontDesign.value,
+                                      weight: 📱.🎛CircularData.fontWeight.value))
                         .italic(📱.🎛CircularData.italic)
+                        .multilineTextAlignment(📱.🎛CircularData.multilineTextAlignment.value)
+                        .foregroundStyle(📱.🎛CircularData.level.value)
                 }
             } else {
                 ZStack {
