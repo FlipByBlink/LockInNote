@@ -134,6 +134,10 @@ struct 📝CircularWidgetTab: View {
                 
                 📣ADBanner()
                 
+                Toggle(isOn: $📱.🎛CircularData.background) {
+                    Label("Background",
+                          systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                }
                 🎚WeightPicker($📱.🎛CircularData.fontWeight)
                 🎚DesignPicker($📱.🎛CircularData.fontDesign)
                 🎚FontSizePicker($📱.🎛CircularData.fontSize)

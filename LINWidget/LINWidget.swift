@@ -128,6 +128,7 @@ struct 🄲ircularView : View {
                     Text(🎛Data.text)
                         .italic(🎛Data.italic)
                         .multilineTextAlignment(🎛Data.multilineTextAlignment.value)
+                        .padding(.horizontal, 2)
                 }
             } else {
                 ZStack {
