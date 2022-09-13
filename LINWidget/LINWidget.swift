@@ -95,13 +95,13 @@ struct 🅁ectangularView : View {
 
 struct 🄸nlineView : View {
     var ⓔntry: 🤖Provider.Entry
-    let 📱 = 📱AppModel()
+    let 🎛Data: 🎛InlineDataModel
     
     var body: some View {
         Group {
-            if 📱.🎛InlineData.text != "" {
-                Text(📱.🎛InlineData.text)
-            } else if let icon = 📱.🎛InlineData.placeholder.icon {
+            if 🎛Data.text != "" {
+                Text(🎛Data.text)
+            } else if let icon = 🎛Data.placeholder.icon {
                 Image(systemName: icon)
             }
         }
@@ -110,6 +110,7 @@ struct 🄸nlineView : View {
     
     init(_ ⓔntry: 🤖Provider.Entry) {
         self.ⓔntry = ⓔntry
+        🎛Data = 📱AppModel().🎛InlineData
     }
 }
 

@@ -37,10 +37,7 @@ struct ContentView: View {
                 }
             }
         }
-        .onSubmit {
-            📱.💾SaveDatas()
-            WidgetCenter.shared.reloadAllTimelines()
-        }
+        .onSubmit { 📱.💾SaveDataAndReloadWidget() }
     }
     
     enum 🔖TabTag {
@@ -181,8 +178,7 @@ struct 🎚PlaceholderPicker: View {
             }
         }
         .onChange(of: ⓟlaceholder) { _ in
-            📱.💾SaveDatas()
-            WidgetCenter.shared.reloadAllTimelines()
+            📱.💾SaveDataAndReloadWidget()
         }
     }
     
@@ -211,8 +207,7 @@ struct 🎚WeightPicker: View {
                 .badge(ⓦeight.rawValue)
         }
         .onChange(of: ⓦeight) { _ in
-            📱.💾SaveDatas()
-            WidgetCenter.shared.reloadAllTimelines()
+            📱.💾SaveDataAndReloadWidget()
         }
     }
     
@@ -241,8 +236,7 @@ struct 🎚DesignPicker: View {
                 .badge(ⓓesign.rawValue)
         }
         .onChange(of: ⓓesign) { _ in
-            📱.💾SaveDatas()
-            WidgetCenter.shared.reloadAllTimelines()
+            📱.💾SaveDataAndReloadWidget()
         }
     }
     
@@ -273,8 +267,7 @@ struct 🎚FontSizePicker: View {
                 .badge(ⓢize.description)
         }
         .onChange(of: ⓢize) { _ in
-            📱.💾SaveDatas()
-            WidgetCenter.shared.reloadAllTimelines()
+            📱.💾SaveDataAndReloadWidget()
         }
     }
     
@@ -309,8 +302,7 @@ struct 🎚LevelPicker: View {
             .badge(ⓛevel.rawValue)
         }
         .onChange(of: ⓛevel) { _ in
-            📱.💾SaveDatas()
-            WidgetCenter.shared.reloadAllTimelines()
+            📱.💾SaveDataAndReloadWidget()
         }
     }
     
@@ -335,8 +327,7 @@ struct 🎚TextAlignmentPicker: View {
         }
         .pickerStyle(.automatic)
         .onChange(of: ⓐlignment) { _ in
-            📱.💾SaveDatas()
-            WidgetCenter.shared.reloadAllTimelines()
+            📱.💾SaveDataAndReloadWidget()
         }
     }
     
@@ -354,8 +345,7 @@ struct 🎚ItalicPicker: View {
                 .italic(🚩)
         }
         .onChange(of: 🚩) { _ in
-            📱.💾SaveDatas()
-            WidgetCenter.shared.reloadAllTimelines()
+            📱.💾SaveDataAndReloadWidget()
         }
     }
     

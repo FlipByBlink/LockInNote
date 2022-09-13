@@ -10,7 +10,7 @@ class 📱AppModel: ObservableObject {
     @Published var 🎛InlineData = 🎛InlineDataModel()
     @Published var 🎛CircularData = 🎛CircularDataModel()
     
-    func 💾SaveDatas() {
+    func 💾SaveDataAndReloadWidget() {
         do {
             let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
             var ⓓata = try JSONEncoder().encode(🎛RectangularData)
@@ -22,6 +22,7 @@ class 📱AppModel: ObservableObject {
         } catch {
             print("🚨Error: ", error)
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func 💾LoadDatas() {
