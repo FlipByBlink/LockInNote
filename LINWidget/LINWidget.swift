@@ -74,21 +74,16 @@ struct 🅁ectangularView : View {
         Group {
             if 📱.🎛RectangularData.text != "" {
                 Text(📱.🎛RectangularData.text)
-                    .font(.system(size: CGFloat(📱.🎛RectangularData.fontSize),
-                                  weight: 📱.🎛RectangularData.fontWeight.value,
-                                  design: 📱.🎛RectangularData.fontDesign.value))
                     .italic(📱.🎛RectangularData.italic)
                     .multilineTextAlignment(📱.🎛RectangularData.multilineTextAlignment.value)
-                    .foregroundStyle(📱.🎛RectangularData.level.value)
             } else {
-                VStack {
-                    Text("headline")
-                        .font(.headline)
-                    Text("ⓓata.text")
-                        .font(.subheadline)
-                }
+                Image(systemName: 📱.🎛RectangularData.placeholder.icon)
             }
         }
+        .font(.system(size: CGFloat(📱.🎛RectangularData.fontSize),
+                      weight: 📱.🎛RectangularData.fontWeight.value,
+                      design: 📱.🎛RectangularData.fontDesign.value))
+        .foregroundStyle(📱.🎛RectangularData.level.value)
         .widgetURL(URL(string: "Rectangular")!)
     }
     
@@ -106,7 +101,7 @@ struct 🄸nlineView : View {
             if 📱.🎛InlineData.text != "" {
                 Text(📱.🎛InlineData.text)
             } else {
-                Text("Inline note")
+                Image(systemName: 📱.🎛InlineData.placeholder.icon)
             }
         }
         .widgetURL(URL(string: "Inline")!)
@@ -125,23 +120,24 @@ struct 🄲ircularView : View {
         Group {
             if 📱.🎛CircularData.text != "" {
                 ZStack {
-                    AccessoryWidgetBackground()
+                    if 📱.🎛CircularData.background {
+                        AccessoryWidgetBackground()
+                    }
                     Text(📱.🎛CircularData.text)
-                        .font(.system(size: CGFloat(📱.🎛CircularData.fontSize),
-                                      weight: 📱.🎛CircularData.fontWeight.value,
-                                      design: 📱.🎛CircularData.fontDesign.value))
                         .italic(📱.🎛CircularData.italic)
                         .multilineTextAlignment(📱.🎛CircularData.multilineTextAlignment.value)
-                        .foregroundStyle(📱.🎛CircularData.level.value)
                 }
             } else {
                 ZStack {
                     AccessoryWidgetBackground()
-                    Text("Circular note")
-                        .multilineTextAlignment(.center)
+                    Image(systemName: 📱.🎛CircularData.placeholder.icon)
                 }
             }
         }
+        .font(.system(size: CGFloat(📱.🎛CircularData.fontSize),
+                      weight: 📱.🎛CircularData.fontWeight.value,
+                      design: 📱.🎛CircularData.fontDesign.value))
+        .foregroundStyle(📱.🎛CircularData.level.value)
         .widgetURL(URL(string: "Circular")!)
     }
     

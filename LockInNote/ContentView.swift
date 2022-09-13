@@ -4,7 +4,7 @@ import WidgetKit
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @Environment(\.scenePhase) var ⓟhase: ScenePhase
+    @EnvironmentObject var 🛒: 🛒StoreModel
     @State private var 🔖Tab: 🔖TabTag = .rectangularWidget
     
     var body: some View {
@@ -15,7 +15,7 @@ struct ContentView: View {
             📝InlineWidgetTab()
                 .tag(🔖TabTag.inlineWidget)
                 .tabItem { Label("Inline", systemImage: "textformat.abc") }
-            Text("Circular")
+            📝CircularWidgetTab()
                 .tag(🔖TabTag.circularWidget)
                 .tabItem { Label("Circular", systemImage: "circle.dashed") }
             🔩OptionTab()
@@ -25,9 +25,7 @@ struct ContentView: View {
                 .tag(🔖TabTag.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
         }
-        .onChange(of: ⓟhase) { 🆕 in
-            print(ⓟhase,"->",🆕)
-        }
+        .animation(.default, value: 🛒.🚩ADisActive)
         .onOpenURL { 🔗 in
             DispatchQueue.main.async {
                 switch 🔗.description {
@@ -66,6 +64,7 @@ struct 📝RectangularWidgetTab: View {
                 🎚LevelPicker($📱.🎛RectangularData.level)
                 🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
                 🎚ItalicPicker($📱.🎛RectangularData.italic)
+                🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
             }
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
@@ -87,6 +86,8 @@ struct 📝InlineWidgetTab: View {
                 }
                 
                 📣ADBanner()
+                
+                🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
             }
             .navigationTitle("Inline widget")
             .navigationBarTitleDisplayMode(.inline)
@@ -94,18 +95,59 @@ struct 📝InlineWidgetTab: View {
     }
 }
 
-
-struct 🎚ItalicPicker: View {
-    @Binding var 🚩: Bool
+struct 📝CircularWidgetTab: View {
+    @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Toggle(isOn: $🚩) {
-            Label("Italic", systemImage: "italic")
-                .italic(🚩)
+        NavigationStack {
+            List {
+                Section {
+                    TextField("note text", text: $📱.🎛CircularData.text)
+                        .font(.title3)
+                        .textFieldStyle(.plain)
+                        .scrollDismissesKeyboard(.immediately)
+                        .padding(.vertical, 32)
+                }
+                
+                📣ADBanner()
+                
+                🎚WeightPicker($📱.🎛CircularData.fontWeight)
+                🎚DesignPicker($📱.🎛CircularData.fontDesign)
+                🎚FontSizePicker($📱.🎛CircularData.fontSize)
+                🎚LevelPicker($📱.🎛CircularData.level)
+                🎚TextAlignmentPicker($📱.🎛CircularData.multilineTextAlignment)
+                🎚ItalicPicker($📱.🎛CircularData.italic)
+                🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
+            }
+            .navigationTitle("Circular widget")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+}
+
+struct 🎚PlaceholderPicker: View {
+    @Binding var ⓟlaceholder: 🄿laceholder
+    var body: some View {
+        Menu {
+            Picker("Placeholder", selection: $ⓟlaceholder) {
+                ForEach(🄿laceholder.allCases) { placeholder in
+                    Label(placeholder.rawValue, systemImage: placeholder.icon)
+                        .imageScale(.small)
+                }
+            }
+        } label: {
+            HStack {
+                Label("Placeholder", systemImage: "square.dotted")
+                Spacer()
+                Group {
+                    Image(systemName: ⓟlaceholder.icon)
+                    if ⓟlaceholder == .nothing { Text(ⓟlaceholder.rawValue)}
+                }.foregroundColor(.secondary)
+            }
         }
     }
     
-    init(_ 🚩: Binding<Bool>) {
-        self._🚩 = 🚩
+    init(_ ⓟlaceholder: Binding<🄿laceholder>) {
+        self._ⓟlaceholder = ⓟlaceholder
     }
 }
 
@@ -238,6 +280,19 @@ struct 🎚TextAlignmentPicker: View {
     }
 }
 
+struct 🎚ItalicPicker: View {
+    @Binding var 🚩: Bool
+    var body: some View {
+        Toggle(isOn: $🚩) {
+            Label("Italic", systemImage: "italic")
+                .italic(🚩)
+        }
+    }
+    
+    init(_ 🚩: Binding<Bool>) {
+        self._🚩 = 🚩
+    }
+}
 
 
 struct 📣ADBanner: View {

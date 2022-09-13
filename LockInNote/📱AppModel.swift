@@ -68,37 +68,46 @@ let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 struct 🎛RectangularDataModel: Codable {
     var text: String = ""
     
-    var placeholder: 🄿laceholder = .threedot
+    var placeholder: 🄿laceholder = .squareAndPencil
     var fontSize: Int = 17
     var fontWeight: 🅆eight = .regular
     var fontDesign: 🄳esign = .default
     var italic: Bool = false
-    var background: Bool = false
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
 struct 🎛InlineDataModel: Codable {
     var text: String = ""
-    var placeholder: 🄿laceholder = .threedot
+    var placeholder: 🄿laceholder = .squareAndPencil
 }
 
 struct 🎛CircularDataModel: Codable {
     var text: String = ""
+    var background: Bool = true
     
-    var placeholder: 🄿laceholder = .threedot
+    var placeholder: 🄿laceholder = .squareAndPencil
     var fontSize: Int = 17
     var fontWeight: 🅆eight = .regular
     var fontDesign: 🄳esign = .default
     var italic: Bool = false
-    var background: Bool = true
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
 enum 🄿laceholder: String, Codable, CaseIterable, Identifiable { //TODO: 実装
-    case nothing, threedot, pencil, useredit
+    case squareAndPencil = "square and pencil"//, useredit
+    case threedot, pencil
+    case nothing = "(nothing)"
     var id: Self { self }
+    var icon: String {
+        switch self {
+            case .squareAndPencil: return "square.and.pencil"
+            case .threedot: return "ellipsis"
+            case .pencil: return "pencil"
+            case .nothing: return ""
+        }
+    }
 }
 
 enum 🅆eight: String, Codable, CaseIterable, Identifiable {
