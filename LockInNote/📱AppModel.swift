@@ -6,26 +6,9 @@ class 📱AppModel: ObservableObject {
     private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
     @AppStorage("AutoLaunchKeyboard") var 🚩AutoLaunchKeyboard: Bool = false
     
-    @Published var 🎛RectangularData = 🎛RectangularDataModel() {
-        didSet {
-            💾SaveDatas()
-            WidgetCenter.shared.reloadTimelines(ofKind: "Rectangular")
-        }
-    }
-    
-    @Published var 🎛InlineData = 🎛InlineDataModel() {
-        didSet {
-            💾SaveDatas()
-            WidgetCenter.shared.reloadTimelines(ofKind: "Inline")
-        }
-    }
-    
-    @Published var 🎛CircularData = 🎛CircularDataModel() {
-        didSet {
-            💾SaveDatas()
-            WidgetCenter.shared.reloadTimelines(ofKind: "Circular")
-        }
-    }
+    @Published var 🎛RectangularData = 🎛RectangularDataModel()
+    @Published var 🎛InlineData = 🎛InlineDataModel()
+    @Published var 🎛CircularData = 🎛CircularDataModel()
     
     func 💾SaveDatas() {
         do {
