@@ -60,12 +60,12 @@ struct 📝RectangularWidgetTab: View {
                 
                 📣ADBanner()
                 
-                🎚ItalicPicker($📱.🎛RectangularData.italic)
                 🎚WeightPicker($📱.🎛RectangularData.fontWeight)
                 🎚DesignPicker($📱.🎛RectangularData.fontDesign)
-                🎚StylePicker($📱.🎛RectangularData.fontStyle)
+                🎚FontSizePicker($📱.🎛RectangularData.fontSize)
                 🎚LevelPicker($📱.🎛RectangularData.level)
                 🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
+                🎚ItalicPicker($📱.🎛RectangularData.italic)
             }
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
@@ -115,7 +115,7 @@ struct 🎚WeightPicker: View {
         NavigationLink {
             Picker(selection: $ⓦeight) {
                 ForEach(🅆eight.allCases) { weight in
-                    Text("Weight")
+                    Text(weight.rawValue)
                         .fontWeight(weight.value)
                 }
             } label: {
@@ -125,6 +125,7 @@ struct 🎚WeightPicker: View {
         } label: {
             Label("Weight", systemImage: "bold")
                 .fontWeight(ⓦeight.value)
+                .badge(ⓦeight.rawValue)
         }
     }
     
@@ -139,7 +140,7 @@ struct 🎚DesignPicker: View {
         NavigationLink {
             Picker(selection: $ⓓesign) {
                 ForEach(🄳esign.allCases) { design in
-                    Text("Design")
+                    Text(design.rawValue)
                         .font(.system(.body, design: design.value, weight: nil))
                 }
             } label: {
@@ -149,6 +150,7 @@ struct 🎚DesignPicker: View {
         } label: {
             Label("Design", systemImage: "a.magnify")
                 .font(.system(.body, design: ⓓesign.value, weight: nil))
+                .badge(ⓓesign.rawValue)
         }
     }
     
@@ -157,29 +159,30 @@ struct 🎚DesignPicker: View {
     }
 }
 
-struct 🎚StylePicker: View {
-    @Binding var ⓢtyle: 🅂tyle
+struct 🎚FontSizePicker: View {
+    @Binding var ⓢize: Int
     var body: some View {
         NavigationLink {
-            Picker(selection: $ⓢtyle) {
-                ForEach(🅂tyle.allCases) { style in
-                    Text("Style")
-                        .font(.system(style.value))
+            Picker(selection: $ⓢize) {
+                ForEach(8..<50, id: \.self) { size in
+                    Text(size.description)
+                        .font(.system(size: CGFloat(size)))
                 }
             } label: {
-                Label("Style", systemImage: "textformat")
+                Label("Size", systemImage: "textformat")
                     .symbolRenderingMode(.hierarchical)
             }
             .pickerStyle(.wheel)
         } label: {
-            Label("Style", systemImage: "textformat")
+            Label("Size", systemImage: "textformat")
                 .symbolRenderingMode(.hierarchical)
-                .font(.system(ⓢtyle.value))
+                .font(.system(size: CGFloat(ⓢize)))
+                .badge(ⓢize.description)
         }
     }
     
-    init(_ ⓢtyle: Binding<🅂tyle>) {
-        self._ⓢtyle = ⓢtyle
+    init(_ ⓢize: Binding<Int>) {
+        self._ⓢize = ⓢize
     }
 }
 
@@ -189,7 +192,7 @@ struct 🎚LevelPicker: View {
         NavigationLink {
             Picker(selection: $ⓛevel) {
                 ForEach(🄻evel.allCases) { level in
-                    Text("Level")
+                    Text(level.rawValue)
                         .foregroundStyle(level.value)
                 }
             } label: {
@@ -205,6 +208,7 @@ struct 🎚LevelPicker: View {
                 Image(systemName: "camera.filters")
                     .symbolRenderingMode(.hierarchical)
             }
+            .badge(ⓛevel.rawValue)
         }
     }
     
@@ -218,11 +222,7 @@ struct 🎚TextAlignmentPicker: View {
     var body: some View {
         Picker(selection: $ⓐlignment) {
             ForEach(🄼ultilineTextAlignment.allCases) { alignment in
-                switch alignment {
-                    case .leading: Label("Leading", systemImage: alignment.icon)
-                    case .center: Label("Center", systemImage: alignment.icon)
-                    case .trailing: Label("Trailing", systemImage: alignment.icon)
-                }
+                Label(alignment.rawValue, systemImage: alignment.icon)
             }
         } label: {
             Text("Multi\ntext\nalignment")

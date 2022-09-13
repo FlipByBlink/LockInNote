@@ -69,7 +69,7 @@ struct 🎛RectangularDataModel: Codable {
     var text: String = ""
     
     var placeholder: 🄿laceholder = .threedot
-    var fontStyle: 🅂tyle = .subheadline
+    var fontSize: Int = 17
     var fontWeight: 🅆eight = .regular
     var fontDesign: 🄳esign = .default
     var italic: Bool = false
@@ -87,7 +87,7 @@ struct 🎛CircularDataModel: Codable {
     var text: String = ""
     
     var placeholder: 🄿laceholder = .threedot
-    var fontStyle: 🅂tyle = .subheadline
+    var fontSize: Int = 17
     var fontWeight: 🅆eight = .regular
     var fontDesign: 🄳esign = .default
     var italic: Bool = false
@@ -96,25 +96,12 @@ struct 🎛CircularDataModel: Codable {
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
-enum 🄿laceholder: Codable, CaseIterable, Identifiable {
+enum 🄿laceholder: String, Codable, CaseIterable, Identifiable { //TODO: 実装
     case nothing, threedot, pencil, useredit
     var id: Self { self }
 }
 
-enum 🅂tyle: Codable, CaseIterable, Identifiable {
-    case caption, subheadline, body, title //title以上のフォントは同一として扱われるっぽい
-    var id: Self { self }
-    var value: Font.TextStyle {
-        switch self {
-            case .caption: return .caption
-            case .subheadline: return .subheadline
-            case .body: return .body
-            case .title: return .title
-        }
-    }
-}
-
-enum 🅆eight: Codable, CaseIterable, Identifiable {
+enum 🅆eight: String, Codable, CaseIterable, Identifiable {
     case ultraLight, thin, light, regular, medium, semibold, bold, heavy, black
     var id: Self { self }
     var value: Font.Weight {
@@ -132,7 +119,7 @@ enum 🅆eight: Codable, CaseIterable, Identifiable {
     }
 }
 
-enum 🄳esign: Codable, CaseIterable, Identifiable {
+enum 🄳esign: String, Codable, CaseIterable, Identifiable {
     case `default`, serif, rounded, monospaced
     var id: Self { self }
     var value: Font.Design {
@@ -145,7 +132,7 @@ enum 🄳esign: Codable, CaseIterable, Identifiable {
     }
 }
 
-enum 🄻evel: Codable, CaseIterable, Identifiable {
+enum 🄻evel: String, Codable, CaseIterable, Identifiable {
     case primary, secondary, tertiary, quaternary
     var id: Self { self }
     var value: HierarchicalShapeStyle {
@@ -158,7 +145,7 @@ enum 🄻evel: Codable, CaseIterable, Identifiable {
     }
 }
 
-enum 🄼ultilineTextAlignment: Codable, CaseIterable, Identifiable {
+enum 🄼ultilineTextAlignment: String, Codable, CaseIterable, Identifiable {
     case leading, center, trailing
     var id: Self { self }
     var value: TextAlignment {

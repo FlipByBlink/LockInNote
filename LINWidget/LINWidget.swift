@@ -74,9 +74,9 @@ struct 🅁ectangularView : View {
         Group {
             if 📱.🎛RectangularData.text != "" {
                 Text(📱.🎛RectangularData.text)
-                    .font(.system(📱.🎛RectangularData.fontStyle.value,
-                                  design: 📱.🎛RectangularData.fontDesign.value,
-                                  weight: 📱.🎛RectangularData.fontWeight.value))
+                    .font(.system(size: CGFloat(📱.🎛RectangularData.fontSize),
+                                  weight: 📱.🎛RectangularData.fontWeight.value,
+                                  design: 📱.🎛RectangularData.fontDesign.value))
                     .italic(📱.🎛RectangularData.italic)
                     .multilineTextAlignment(📱.🎛RectangularData.multilineTextAlignment.value)
                     .foregroundStyle(📱.🎛RectangularData.level.value)
@@ -127,9 +127,9 @@ struct 🄲ircularView : View {
                 ZStack {
                     AccessoryWidgetBackground()
                     Text(📱.🎛CircularData.text)
-                        .font(.system(📱.🎛CircularData.fontStyle.value,
-                                      design: 📱.🎛CircularData.fontDesign.value,
-                                      weight: 📱.🎛CircularData.fontWeight.value))
+                        .font(.system(size: CGFloat(📱.🎛CircularData.fontSize),
+                                      weight: 📱.🎛CircularData.fontWeight.value,
+                                      design: 📱.🎛CircularData.fontDesign.value))
                         .italic(📱.🎛CircularData.italic)
                         .multilineTextAlignment(📱.🎛CircularData.multilineTextAlignment.value)
                         .foregroundStyle(📱.🎛CircularData.level.value)
