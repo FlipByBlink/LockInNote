@@ -87,6 +87,17 @@ enum 🄿laceholder: Codable, CaseIterable, Identifiable {
 enum 🅂tyle: Codable, CaseIterable, Identifiable {
     case body, title3, title2, title, largetitle, subheadline, caption
     var id: Self { self }
+    var value: Font.TextStyle {
+        switch self {
+            case .body: return .body
+            case .title3: return .title3
+            case .title2: return .title2
+            case .title: return .title3
+            case .largetitle: return .largeTitle
+            case .subheadline: return .subheadline
+            case .caption: return .caption
+        }
+    }
 }
 
 enum 🅆eight: Codable, CaseIterable, Identifiable {
@@ -110,14 +121,37 @@ enum 🅆eight: Codable, CaseIterable, Identifiable {
 enum 🄳esign: Codable, CaseIterable, Identifiable {
     case `default`, serif, rounded, monospaced
     var id: Self { self }
+    var value: Font.Design {
+        switch self {
+            case .default: return .default
+            case .serif: return .serif
+            case .rounded: return .rounded
+            case .monospaced: return .monospaced
+        }
+    }
 }
 
 enum 🄻evel: Codable, CaseIterable, Identifiable {
     case primary, secondary, tertiary, quaternary
     var id: Self { self }
+    var value: HierarchicalShapeStyle {
+        switch self {
+            case .primary: return .primary
+            case .secondary: return .secondary
+            case .tertiary: return .tertiary
+            case .quaternary: return .quaternary
+        }
+    }
 }
 
 enum 🄼ultilineTextAlignment: Codable, CaseIterable, Identifiable {
     case leading, center, trailing
     var id: Self { self }
+    var value: Alignment {
+        switch self {
+            case .leading: return .leading
+            case .center: return .center
+            case .trailing: return .trailing
+        }
+    }
 }

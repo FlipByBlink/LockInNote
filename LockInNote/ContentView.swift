@@ -66,6 +66,7 @@ struct 📝RectangularWidgetTab: View {
                 
                 🎚ItalicPicker($📱.🎛RectangularData.italic)
                 🎚WeightPicker($📱.🎛RectangularData.fontWeight)
+                🎚DesignPicker($📱.🎛RectangularData.fontDesign)
             }
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
@@ -120,7 +121,7 @@ struct 🎚WeightPicker: View {
             Picker(selection: $ⓦeight) {
                 ForEach(🅆eight.allCases) { weight in
                     Text("Weight")
-                        .font(.body.weight(weight.value))
+                        .fontWeight(weight.value)
                 }
             } label: {
                 Label("Weight", systemImage: "bold")
@@ -135,6 +136,31 @@ struct 🎚WeightPicker: View {
         self._ⓦeight = ⓦeight
     }
 }
+
+struct 🎚DesignPicker: View {
+    @Binding var ⓓesign: 🄳esign
+    var body: some View {
+        NavigationLink {
+            Picker(selection: $ⓓesign) {
+                ForEach(🄳esign.allCases) { design in
+                    Text("Design")
+                        .font(.system(.body, design: design.value, weight: nil))
+                }
+            } label: {
+                Label("Design", systemImage: "a.magnify")
+            }
+            .pickerStyle(.wheel)
+        } label: {
+            Label("Design", systemImage: "a.magnify")
+        }
+    }
+    
+    init(_ ⓓesign: Binding<🄳esign>) {
+        self._ⓓesign = ⓓesign
+    }
+}
+
+
 
 
 struct 📣ADBanner: View {
