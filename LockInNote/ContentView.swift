@@ -63,6 +63,9 @@ struct 📝RectangularWidgetTab: View {
                                     Label("Done", systemImage: "checkmark")
                                 }
                             }
+                            ToolbarItem {
+                                🗑ClearTextButton($📱.🎛RectangularData.text)
+                            }
                         }
                 }
                 
@@ -156,6 +159,24 @@ struct 📝CircularWidgetTab: View {
                 }
             }
         }
+    }
+}
+
+struct 🗑ClearTextButton: View {
+    @Binding var 📝Text: String
+    var body: some View {
+        Button (role: .destructive) {
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            📝Text = ""
+        } label: {
+            Label("Clear text", systemImage: "eraser.line.dashed")
+        }
+        .disabled(📝Text == "")
+        .tint(.red)
+    }
+    
+    init(_ 📝Text: Binding<String>) {
+        self._📝Text = 📝Text
     }
 }
 
