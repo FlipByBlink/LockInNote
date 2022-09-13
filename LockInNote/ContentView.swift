@@ -5,16 +5,16 @@ import WidgetKit
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @Environment(\.scenePhase) var ⓟhase: ScenePhase
-    @State private var 🔖Tab: 🔖TabTag = .inlineWidget
+    @State private var 🔖Tab: 🔖TabTag = .rectangularWidget
     
     var body: some View {
         TabView(selection: $🔖Tab) {
-            📝InlineWidgetTab()
-                .tag(🔖TabTag.inlineWidget)
-                .tabItem { Label("Inline", systemImage: "textformat.abc") }
             📝RectangularWidgetTab()
                 .tag(🔖TabTag.rectangularWidget)
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
+            📝InlineWidgetTab()
+                .tag(🔖TabTag.inlineWidget)
+                .tabItem { Label("Inline", systemImage: "textformat.abc") }
             Text("Circular")
                 .tag(🔖TabTag.circularWidget)
                 .tabItem { Label("Circular", systemImage: "circle.dashed") }
@@ -29,12 +29,12 @@ struct ContentView: View {
             print(ⓟhase,"->",🆕)
         }
         .onOpenURL { 🔗 in
-            if let ⓥalue = Int(🔗.description) {
-                switch WidgetFamily(rawValue: ⓥalue) {
-                    case .accessoryInline: 🔖Tab = .inlineWidget
-                    case .accessoryRectangular: 🔖Tab = .rectangularWidget
-                    case .accessoryCircular: 🔖Tab = .circularWidget
-                    default: break
+            DispatchQueue.main.async {
+                switch 🔗.description {
+                    case "Rectangular": 🔖Tab = .rectangularWidget
+                    case "Inline": 🔖Tab = .inlineWidget
+                    case "Circular": 🔖Tab = .circularWidget
+                    default: print("🐛")
                 }
             }
         }
@@ -45,73 +45,82 @@ struct ContentView: View {
     }
 }
 
-struct 📝InlineWidgetTab: View {
-    @EnvironmentObject var 📱: 📱AppModel
-    var body: some View {
-        NavigationStack {
-            if let index = 📱.ⓦidgetsData.firstIndex(where: { $0.id == .inline }) {
-                List {
-                    Section {
-                        TextField("note text", text: $📱.ⓦidgetsData[index].text)
-                            .font(.title3)
-                            .textFieldStyle(.plain)
-                            .scrollDismissesKeyboard(.immediately)
-                            .onSubmit {
-                                📱.💾SaveDatas()
-                                WidgetCenter.shared.reloadAllTimelines()
-                            }
-                            .padding(.vertical, 32)
-                    }
-                    
-                    📣ADBanner()
-                }
-                .navigationTitle("Inline widget")
-                .navigationBarTitleDisplayMode(.inline)
-            } else {
-                Text("🐛Bug")
-            }
-        }
-    }
-}
-
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
         NavigationStack {
-            if let index = 📱.ⓦidgetsData.firstIndex(where: { $0.id == .rectangular }) {
-                List {
-                    Section {
-                        TextField("note text", text: $📱.ⓦidgetsData[index].text)
-                            .font(.title3)
-                            .textFieldStyle(.plain)
-                            .scrollDismissesKeyboard(.immediately)
-                            .onSubmit {
-                                📱.💾SaveDatas()
-                                WidgetCenter.shared.reloadAllTimelines()
-                            }
-                            .padding(.vertical, 32)
-                    }
-                    
-                    📣ADBanner()
-                    
-                    🔧CustomizationSection(family: .rectangular)
+            List {
+                Section {
+                    TextField("note text", text: $📱.🎛RectangularData.text)
+                        .font(.title3)
+                        .textFieldStyle(.plain)
+                        .scrollDismissesKeyboard(.immediately)
+                        .onSubmit {
+                            📱.💾SaveDatas()
+                            WidgetCenter.shared.reloadAllTimelines()
+                        }
+                        .padding(.vertical, 32)
                 }
-                .navigationTitle("Rectangular widget")
-                .navigationBarTitleDisplayMode(.inline)
-            } else {
-                Text("🐛Bug")
+                
+                📣ADBanner()
+                
+                🔧CustomizationSection()
             }
+            .navigationTitle("Rectangular widget")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
+struct 📝InlineWidgetTab: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    TextField("note text", text: $📱.🎛InlineData.text)
+                        .font(.title3)
+                        .textFieldStyle(.plain)
+                        .scrollDismissesKeyboard(.immediately)
+                        .onSubmit {
+                            📱.💾SaveDatas()
+                            WidgetCenter.shared.reloadAllTimelines()
+                        }
+                        .padding(.vertical, 32)
+                }
+                
+                📣ADBanner()
+            }
+            .navigationTitle("Inline widget")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+}
 
 struct 🔧CustomizationSection: View {
     @EnvironmentObject var 📱: 📱AppModel
-    var family: 🄵amily
     var body: some View {
         Section {
-            Text("placeholder")
+            Toggle(isOn: $📱.🎛RectangularData.italic) {
+                Label("Italic", systemImage: "italic")
+                    .italic(true)
+            }
+            
+            NavigationLink {
+                List {
+                    Picker(selection: $📱.🎛RectangularData.fontWeight) {
+                        ForEach(🅆eight.allCases) { weight in
+                            Text("Weight")
+                                .fontWeight(weight.value)
+                        }
+                    } label: {
+                        Label("Weight", systemImage: "bold")
+                    }
+                    .pickerStyle(.inline)
+                }
+            } label: {
+                Label("Weight", systemImage: "bold")
+            }
         } header: {
             Text("Customization")
         }
@@ -254,14 +263,5 @@ struct ℹ️AboutAppTab: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

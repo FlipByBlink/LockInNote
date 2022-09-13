@@ -6,13 +6,19 @@ class 📱AppModel: ObservableObject {
     private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
     @AppStorage("AutoLaunchKeyboard") var 🚩AutoLaunchKeyboard: Bool = false
     
-    @Published var ⓦidgetsData: [🎛WidgetData] = [.init(.inline), .init(.rectangular), .init(.circular)]
+    @Published var 🎛RectangularData = 🎛RectangularDataModel()
+    @Published var 🎛InlineData = 🎛InlineDataModel()
+    @Published var 🎛CircularData = 🎛CircularDataModel()
     
     func 💾SaveDatas() {
         do {
-            let ⓓata = try JSONEncoder().encode(ⓦidgetsData)
             let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
-            ⓤd?.set(ⓓata, forKey: "widgetsData")
+            var ⓓata = try JSONEncoder().encode(🎛RectangularData)
+            ⓤd?.set(ⓓata, forKey: "Rectangular")
+            ⓓata = try JSONEncoder().encode(🎛InlineData)
+            ⓤd?.set(ⓓata, forKey: "Inline")
+            ⓓata = try JSONEncoder().encode(🎛CircularData)
+            ⓤd?.set(ⓓata, forKey: "Circular")
         } catch {
             print("🚨Error: ", error)
         }
@@ -20,9 +26,16 @@ class 📱AppModel: ObservableObject {
     
     func 💾LoadDatas() {
         let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
-        guard let ⓓata = ⓤd?.data(forKey: "widgetsData") else { return }
         do {
-            ⓦidgetsData = try JSONDecoder().decode([🎛WidgetData].self, from: ⓓata)
+            if let ⓓata = ⓤd?.data(forKey: "Rectangular") {
+                🎛RectangularData = try JSONDecoder().decode(🎛RectangularDataModel.self, from: ⓓata)
+            }
+            if let ⓓata = ⓤd?.data(forKey: "Inline") {
+                🎛InlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
+            }
+            if let ⓓata = ⓤd?.data(forKey: "Circular") {
+                🎛CircularData = try JSONDecoder().decode(🎛CircularDataModel.self, from: ⓓata)
+            }
         } catch {
             print("🚨Error: ", error)
         }
@@ -35,46 +48,35 @@ class 📱AppModel: ObservableObject {
 
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
-
-struct 🎛WidgetData: Codable, Identifiable {
-    var family: 🄵amily
+struct 🎛RectangularDataModel: Codable {
     var text: String = ""
+    
     var placeholder: 🄿laceholder = .threedot
-    
-    var id: 🄵amily { family }
-    
-    var customization: 🄲ustomization?
-    
-    struct 🄲ustomization: Codable {
-        var fontStyle: 🅂tyle
-        var fontWeight: 🅆eight
-        var fontDesign: 🄳esign
-        var italic: Bool
-        var background: Bool
-        var level: 🄻evel
-        var multilineTextAlignment: 🄼ultilineTextAlignment
-    }
-    
-    func 🄴qual(_ ⓕamily: WidgetFamily) -> Bool {
-        switch family {
-            case .inline:
-                if ⓕamily != .accessoryInline { return false }
-            case .rectangular:
-                if ⓕamily != .accessoryRectangular { return false }
-            case .circular:
-                if ⓕamily != .accessoryCircular { return false }
-        }
-        return true
-    }
-    
-    init(_ family: 🄵amily) {
-        self.family = family
-    }
+    var fontStyle: 🅂tyle = .subheadline
+    var fontWeight: 🅆eight = .regular
+    var fontDesign: 🄳esign = .default
+    var italic: Bool = false
+    var background: Bool = false
+    var level: 🄻evel = .primary
+    var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
-enum 🄵amily: String, Codable, CaseIterable, Identifiable {
-    case inline, rectangular, circular
-    var id: Self { self }
+struct 🎛InlineDataModel: Codable {
+    var text: String = ""
+    var placeholder: 🄿laceholder = .threedot
+}
+
+struct 🎛CircularDataModel: Codable {
+    var text: String = ""
+    
+    var placeholder: 🄿laceholder = .threedot
+    var fontStyle: 🅂tyle = .subheadline
+    var fontWeight: 🅆eight = .regular
+    var fontDesign: 🄳esign = .default
+    var italic: Bool = false
+    var background: Bool = true
+    var level: 🄻evel = .primary
+    var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
 enum 🄿laceholder: Codable, CaseIterable, Identifiable {
@@ -90,6 +92,19 @@ enum 🅂tyle: Codable, CaseIterable, Identifiable {
 enum 🅆eight: Codable, CaseIterable, Identifiable {
     case ultraLight, thin, light, regular, medium, semibold, bold, heavy, black
     var id: Self { self }
+    var value: Font.Weight {
+        switch self {
+            case .ultraLight: return .ultraLight
+            case .thin: return .thin
+            case .light: return .light
+            case .regular: return .regular
+            case .medium: return .medium
+            case .semibold: return .semibold
+            case .bold: return .bold
+            case .heavy: return .heavy
+            case .black: return .black
+        }
+    }
 }
 
 enum 🄳esign: Codable, CaseIterable, Identifiable {
@@ -105,4 +120,4 @@ enum 🄻evel: Codable, CaseIterable, Identifiable {
 enum 🄼ultilineTextAlignment: Codable, CaseIterable, Identifiable {
     case leading, center, trailing
     var id: Self { self }
-    }
+}

@@ -71,13 +71,22 @@ struct 🅁ectangularView : View {
     let 📱 = 📱AppModel()
     
     var body: some View {
-        VStack {
-            Text("headline")
-                .font(.headline)
-            Text("ⓓata.text")
-                .font(.subheadline)
-                .widgetURL(URL(string: "Rectangular")!)
+        Group {
+            if 📱.🎛RectangularData.text != "" {
+                Text(📱.🎛RectangularData.text)
+                    .font(.subheadline)
+                    .fontWeight(📱.🎛RectangularData.fontWeight.value)
+                    .italic(📱.🎛RectangularData.italic)
+            } else {
+                VStack {
+                    Text("headline")
+                        .font(.headline)
+                    Text("ⓓata.text")
+                        .font(.subheadline)
+                }
+            }
         }
+        .widgetURL(URL(string: "Rectangular")!)
     }
     
     init(_ ⓔntry: 🤖Provider.Entry) {
@@ -90,7 +99,14 @@ struct 🄸nlineView : View {
     let 📱 = 📱AppModel()
     
     var body: some View {
-        Text("Inline note")
+        Group {
+            if 📱.🎛InlineData.text != "" {
+                Text(📱.🎛InlineData.text)
+            } else {
+                Text("Inline note")
+            }
+        }
+        .widgetURL(URL(string: "Inline")!)
     }
     
     init(_ ⓔntry: 🤖Provider.Entry) {
@@ -103,11 +119,24 @@ struct 🄲ircularView : View {
     let 📱 = 📱AppModel()
     
     var body: some View {
-        ZStack {
-            AccessoryWidgetBackground()
-            Text("Circular note")
-                .multilineTextAlignment(.center)
+        Group {
+            if 📱.🎛CircularData.text != "" {
+                ZStack {
+                    AccessoryWidgetBackground()
+                    Text(📱.🎛CircularData.text)
+                        .multilineTextAlignment(.center)
+                        .fontWeight(📱.🎛CircularData.fontWeight.value)
+                        .italic(📱.🎛CircularData.italic)
+                }
+            } else {
+                ZStack {
+                    AccessoryWidgetBackground()
+                    Text("Circular note")
+                        .multilineTextAlignment(.center)
+                }
+            }
         }
+        .widgetURL(URL(string: "Circular")!)
     }
     
     init(_ ⓔntry: 🤖Provider.Entry) {
