@@ -59,6 +59,7 @@ struct 📝RectangularWidgetTab: View {
                             ToolbarItem(placement: .keyboard) {
                                 Button {
                                     🚩Focus = false
+                                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                                 } label: {
                                     Label("Done", systemImage: "checkmark")
                                 }
@@ -91,6 +92,7 @@ struct 📝RectangularWidgetTab: View {
             if 🔗.description == "Rectangular" {
                 DispatchQueue.main.async {
                     🚩Focus = true
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
             }
         }
@@ -129,6 +131,7 @@ struct 📝InlineWidgetTab: View {
             if 🔗.description == "Inline" {
                 DispatchQueue.main.async {
                     🚩Focus = true
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
             }
         }
@@ -177,6 +180,7 @@ struct 📝CircularWidgetTab: View {
             if 🔗.description == "Circular" {
                 DispatchQueue.main.async {
                     🚩Focus = true
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
             }
         }
@@ -248,7 +252,7 @@ struct 🎚DesignPicker: View {
             Picker(selection: $ⓓesign) {
                 ForEach(🄳esign.allCases) { design in
                     Text(design.rawValue)
-                        .font(.system(.body, design: design.value, weight: nil))
+                        .font(.system(.title, design: design.value, weight: nil))
                 }
             } label: {
                 Label("Design", systemImage: "a.magnify")
@@ -333,7 +337,6 @@ struct 🎚TextAlignmentPicker: View {
             }
         } label: {
             Text("Multi\ntext\nalignment")
-                .padding(.leading)
                 .multilineTextAlignment(ⓐlignment.value)
                 .font(.footnote)
         }
