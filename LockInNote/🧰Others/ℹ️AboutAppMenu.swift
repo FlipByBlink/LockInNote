@@ -2,7 +2,7 @@
 let 📜VersionNumber = "1.0"
 let 📜PastVersions: [(ⓝumber: String, ⓓate: String)] = []
 
-let 🔗AppStoreProductURL = URL(string: "https://apps.apple.com/app/id")!
+let 🔗AppStoreProductURL = URL(string: "https://apps.apple.com/app/id")! //FIXME: 入力
 
 let 👤PrivacyPolicy = """
 2022-09-12

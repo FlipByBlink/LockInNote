@@ -32,6 +32,14 @@
 		F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣AD.swift */; };
 		F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556953828CCAFC3004558FC /* Launch Screen.storyboard */; };
 		F556953F28CCAFC3004558FC /* 🛒InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */; };
+		F5AA8C4228D0985F00C2047D /* LockInNoteApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* LockInNoteApp.swift */; };
+		F5AA8C4328D0985F00C2047D /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView.swift */; };
+		F5AA8C4428D0985F00C2047D /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
+		F5AA8C4528D0985F00C2047D /* LINWidget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556950D28CCAB71004558FC /* LINWidget.swift */; };
+		F5AA8C4728D0987000C2047D /* ℹ️AboutAppMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */; };
+		F5AA8C4828D0987000C2047D /* 📓SourceCodeMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */; };
+		F5AA8C4928D0987000C2047D /* 📣AD.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣AD.swift */; };
+		F5AA8C4A28D0987000C2047D /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +62,32 @@
 				F556951428CCAB72004558FC /* LINWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5AA8C4128D0985100C2047D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = main;
+			dstSubfolderSpec = 7;
+			files = (
+				F5AA8C4228D0985F00C2047D /* LockInNoteApp.swift in CopyFiles */,
+				F5AA8C4328D0985F00C2047D /* ContentView.swift in CopyFiles */,
+				F5AA8C4428D0985F00C2047D /* 📱AppModel.swift in CopyFiles */,
+				F5AA8C4528D0985F00C2047D /* LINWidget.swift in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5AA8C4628D0986300C2047D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "🧰Others";
+			dstSubfolderSpec = 7;
+			files = (
+				F5AA8C4728D0987000C2047D /* ℹ️AboutAppMenu.swift in CopyFiles */,
+				F5AA8C4828D0987000C2047D /* 📓SourceCodeMenu.swift in CopyFiles */,
+				F5AA8C4928D0987000C2047D /* 📣AD.swift in CopyFiles */,
+				F5AA8C4A28D0987000C2047D /* 🛒InAppPurchase.swift in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -201,6 +235,8 @@
 				F54BE1C328CB480900532025 /* Frameworks */,
 				F54BE1C428CB480900532025 /* Resources */,
 				F556951828CCAB72004558FC /* Embed Foundation Extensions */,
+				F5AA8C4128D0985100C2047D /* CopyFiles */,
+				F5AA8C4628D0986300C2047D /* CopyFiles */,
 			);
 			buildRules = (
 			);
