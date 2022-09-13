@@ -68,29 +68,28 @@ struct 🕒Entry: TimelineEntry {
 
 struct 🅁ectangularView : View {
     var ⓔntry: 🤖Provider.Entry
-    let 📱 = 📱AppModel()
+    let 🎛Data: 🎛RectangularDataModel
     
     var body: some View {
         Group {
-            if 📱.🎛RectangularData.text != "" {
-                Text(📱.🎛RectangularData.text)
-                    .italic(📱.🎛RectangularData.italic)
-                    .multilineTextAlignment(📱.🎛RectangularData.multilineTextAlignment.value)
-            } else {
-                if let icon = 📱.🎛RectangularData.placeholder.icon {
-                    Image(systemName: icon)
-                }
+            if 🎛Data.text != "" {
+                Text(🎛Data.text)
+                    .italic(🎛Data.italic)
+                    .multilineTextAlignment(🎛Data.multilineTextAlignment.value)
+            } else if let icon = 🎛Data.placeholder.icon {
+                Image(systemName: icon)
             }
         }
-        .font(.system(size: CGFloat(📱.🎛RectangularData.fontSize),
-                      weight: 📱.🎛RectangularData.fontWeight.value,
-                      design: 📱.🎛RectangularData.fontDesign.value))
-        .foregroundStyle(📱.🎛RectangularData.level.value)
+        .font(.system(size: CGFloat(🎛Data.fontSize),
+                      weight: 🎛Data.fontWeight.value,
+                      design: 🎛Data.fontDesign.value))
+        .foregroundStyle(🎛Data.level.value)
         .widgetURL(URL(string: "Rectangular")!)
     }
     
     init(_ ⓔntry: 🤖Provider.Entry) {
         self.ⓔntry = ⓔntry
+        🎛Data = 📱AppModel().🎛RectangularData
     }
 }
 
@@ -102,10 +101,8 @@ struct 🄸nlineView : View {
         Group {
             if 📱.🎛InlineData.text != "" {
                 Text(📱.🎛InlineData.text)
-            } else {
-                if let icon = 📱.🎛InlineData.placeholder.icon {
-                    Image(systemName: icon)
-                }
+            } else if let icon = 📱.🎛InlineData.placeholder.icon {
+                Image(systemName: icon)
             }
         }
         .widgetURL(URL(string: "Inline")!)
