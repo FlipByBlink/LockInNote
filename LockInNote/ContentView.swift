@@ -172,7 +172,7 @@ struct 🎚StylePicker: View {
             Picker(selection: $ⓢtyle) {
                 ForEach(🅂tyle.allCases) { style in
                     Text("Style")
-                        .font(style.value)
+                        .font(.system(style.value))
                 }
             } label: {
                 Label("Style", systemImage: "textformat")
@@ -182,7 +182,7 @@ struct 🎚StylePicker: View {
         } label: {
             Label("Style", systemImage: "textformat")
                 .symbolRenderingMode(.hierarchical)
-                .font(ⓢtyle.value)
+                .font(.system(ⓢtyle.value))
         }
     }
     
@@ -228,9 +228,11 @@ struct 🎚TextAlignmentPicker: View {
                     case .trailing: Label("Trailing", systemImage: alignment.icon)
                 }
             }
-            .labelStyle(.iconOnly)
         } label: {
-            Label("Alignment", systemImage: ⓐlignment.icon)
+            Text("Multi\ntext\nalignment")
+                .padding(.leading)
+                .multilineTextAlignment(ⓐlignment.value)
+                .font(.footnote)
         }
         .pickerStyle(.automatic)
     }
@@ -270,54 +272,6 @@ struct 🔩OptionTab: View {
         }
     }
 }
-
-
-//struct 🎚LevelPicker: View {
-//    @EnvironmentObject var 📱: 📱AppModel
-//    @State private var 🎚Level: 🄻evelEnum = .primary
-//
-//    var body: some View {
-//        NavigationLink {
-//            List {
-//                Picker("", selection: $🎚Level) {
-//                    ForEach(🄻evelEnum.allCases) { level in
-//                        HStack {
-//                            Text("Level")
-//                                .padding(8)
-//                                .foregroundStyle(ⓢhape(level))
-//                            if level == .primary {
-//                                Text("(default)")
-//                                    .foregroundStyle(.secondary)
-//                                    .font(.caption)
-//                            }
-//                        }
-//                    }
-//                }
-//                .pickerStyle(.inline)
-//            }
-//        } label: {
-//            HStack {
-//                ForEach(🄻evelEnum.allCases) { level in
-//                    Text("Aa")
-//                        .foregroundStyle(ⓢhape(level))
-//                        .underline(🎚Level == level)
-//                }
-//            }
-//        }
-//    }
-//
-//    func ⓢhape(_ level: 🄻evelEnum) -> HierarchicalShapeStyle {
-//        switch level {
-//            case .primary: return .primary
-//            case .secondary: return .secondary
-//            case .tertiary: return .tertiary
-//            case .quaternary: return .quaternary
-//        }
-//    }
-//}
-
-
-
 
 
 

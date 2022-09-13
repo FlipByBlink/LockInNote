@@ -74,9 +74,11 @@ struct 🅁ectangularView : View {
         Group {
             if 📱.🎛RectangularData.text != "" {
                 Text(📱.🎛RectangularData.text)
-                    .font(.subheadline)
-                    .fontWeight(📱.🎛RectangularData.fontWeight.value)
+                    .font(.system(📱.🎛RectangularData.fontStyle.value,
+                                  design: 📱.🎛RectangularData.fontDesign.value,
+                                  weight: 📱.🎛RectangularData.fontWeight.value))
                     .italic(📱.🎛RectangularData.italic)
+                    .multilineTextAlignment(📱.🎛RectangularData.multilineTextAlignment.value)
             } else {
                 VStack {
                     Text("headline")

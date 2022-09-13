@@ -87,7 +87,7 @@ enum 🄿laceholder: Codable, CaseIterable, Identifiable {
 enum 🅂tyle: Codable, CaseIterable, Identifiable {
     case caption, subheadline, body, title3, title2, title, largetitle
     var id: Self { self }
-    var value: Font {
+    var value: Font.TextStyle {
         switch self {
             case .caption: return .caption
             case .subheadline: return .subheadline
