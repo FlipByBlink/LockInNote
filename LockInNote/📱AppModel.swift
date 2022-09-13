@@ -85,17 +85,17 @@ enum 🄿laceholder: Codable, CaseIterable, Identifiable {
 }
 
 enum 🅂tyle: Codable, CaseIterable, Identifiable {
-    case body, title3, title2, title, largetitle, subheadline, caption
+    case caption, subheadline, body, title3, title2, title, largetitle
     var id: Self { self }
-    var value: Font.TextStyle {
+    var value: Font {
         switch self {
+            case .caption: return .caption
+            case .subheadline: return .subheadline
             case .body: return .body
             case .title3: return .title3
             case .title2: return .title2
-            case .title: return .title3
+            case .title: return .title
             case .largetitle: return .largeTitle
-            case .subheadline: return .subheadline
-            case .caption: return .caption
         }
     }
 }
@@ -147,11 +147,18 @@ enum 🄻evel: Codable, CaseIterable, Identifiable {
 enum 🄼ultilineTextAlignment: Codable, CaseIterable, Identifiable {
     case leading, center, trailing
     var id: Self { self }
-    var value: Alignment {
+    var value: TextAlignment {
         switch self {
             case .leading: return .leading
             case .center: return .center
             case .trailing: return .trailing
+        }
+    }
+    var icon: String {
+        switch self {
+            case .leading: return "text.justify.leading"
+            case .center: return "text.aligncenter"
+            case .trailing: return "text.justify.trailing"
         }
     }
 }

@@ -67,6 +67,9 @@ struct 📝RectangularWidgetTab: View {
                 🎚ItalicPicker($📱.🎛RectangularData.italic)
                 🎚WeightPicker($📱.🎛RectangularData.fontWeight)
                 🎚DesignPicker($📱.🎛RectangularData.fontDesign)
+                🎚StylePicker($📱.🎛RectangularData.fontStyle)
+                🎚LevelPicker($📱.🎛RectangularData.level)
+                🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
             }
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
@@ -105,7 +108,7 @@ struct 🎚ItalicPicker: View {
     var body: some View {
         Toggle(isOn: $🚩) {
             Label("Italic", systemImage: "italic")
-                .italic(true)
+                .italic(🚩)
         }
     }
     
@@ -129,6 +132,7 @@ struct 🎚WeightPicker: View {
             .pickerStyle(.wheel)
         } label: {
             Label("Weight", systemImage: "bold")
+                .fontWeight(ⓦeight.value)
         }
     }
     
@@ -152,6 +156,7 @@ struct 🎚DesignPicker: View {
             .pickerStyle(.wheel)
         } label: {
             Label("Design", systemImage: "a.magnify")
+                .font(.system(.body, design: ⓓesign.value, weight: nil))
         }
     }
     
@@ -160,6 +165,80 @@ struct 🎚DesignPicker: View {
     }
 }
 
+struct 🎚StylePicker: View {
+    @Binding var ⓢtyle: 🅂tyle
+    var body: some View {
+        NavigationLink {
+            Picker(selection: $ⓢtyle) {
+                ForEach(🅂tyle.allCases) { style in
+                    Text("Style")
+                        .font(style.value)
+                }
+            } label: {
+                Label("Style", systemImage: "textformat")
+                    .symbolRenderingMode(.hierarchical)
+            }
+            .pickerStyle(.wheel)
+        } label: {
+            Label("Style", systemImage: "textformat")
+                .symbolRenderingMode(.hierarchical)
+                .font(ⓢtyle.value)
+        }
+    }
+    
+    init(_ ⓢtyle: Binding<🅂tyle>) {
+        self._ⓢtyle = ⓢtyle
+    }
+}
+
+struct 🎚LevelPicker: View {
+    @Binding var ⓛevel: 🄻evel
+    var body: some View {
+        NavigationLink {
+            Picker(selection: $ⓛevel) {
+                ForEach(🄻evel.allCases) { level in
+                    Text("Level")
+                        .foregroundStyle(level.value)
+                }
+            } label: {
+                Label("Level", systemImage: "camera.filters")
+                    .symbolRenderingMode(.hierarchical)
+            }
+            .pickerStyle(.wheel)
+        } label: {
+            Label("Level", systemImage: "camera.filters")
+                .symbolRenderingMode(.hierarchical)
+                .foregroundStyle(ⓛevel.value)
+        }
+    }
+    
+    init(_ ⓛevel: Binding<🄻evel>) {
+        self._ⓛevel = ⓛevel
+    }
+}
+
+struct 🎚TextAlignmentPicker: View {
+    @Binding var ⓐlignment: 🄼ultilineTextAlignment
+    var body: some View {
+        Picker(selection: $ⓐlignment) {
+            ForEach(🄼ultilineTextAlignment.allCases) { alignment in
+                switch alignment {
+                    case .leading: Label("Leading", systemImage: alignment.icon)
+                    case .center: Label("Center", systemImage: alignment.icon)
+                    case .trailing: Label("Trailing", systemImage: alignment.icon)
+                }
+            }
+            .labelStyle(.iconOnly)
+        } label: {
+            Label("Alignment", systemImage: ⓐlignment.icon)
+        }
+        .pickerStyle(.automatic)
+    }
+    
+    init(_ ⓐlignment: Binding<🄼ultilineTextAlignment>) {
+        self._ⓐlignment = ⓐlignment
+    }
+}
 
 
 
