@@ -25,7 +25,8 @@ struct ContentView: View {
                 .tag(🔖TabTag.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
         }
-        .animation(.default, value: 🛒.🚩ADisActive)
+        .animation(.default.speed(0.5), value: 🛒.🚩ADisActive)
+        .scrollDismissesKeyboard(.immediately)
         .onOpenURL { 🔗 in
             DispatchQueue.main.async {
                 switch 🔗.description {
@@ -45,14 +46,15 @@ struct ContentView: View {
 
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @FocusState var 🚩Focus: Bool
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     TextField("note text", text: $📱.🎛RectangularData.text)
+                        .focused($🚩Focus)
                         .font(.title3)
                         .textFieldStyle(.plain)
-                        .scrollDismissesKeyboard(.immediately)
                         .padding(.vertical, 32)
                 }
                 
@@ -69,6 +71,13 @@ struct 📝RectangularWidgetTab: View {
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .onOpenURL { 🔗 in
+            DispatchQueue.main.async {
+                if 🔗.description == "Rectangular" {
+                    🚩Focus = true
+                }
+            }
+        }
     }
 }
 
@@ -81,7 +90,6 @@ struct 📝InlineWidgetTab: View {
                     TextField("note text", text: $📱.🎛InlineData.text)
                         .font(.title3)
                         .textFieldStyle(.plain)
-                        .scrollDismissesKeyboard(.immediately)
                         .padding(.vertical, 32)
                 }
                 
@@ -104,7 +112,6 @@ struct 📝CircularWidgetTab: View {
                     TextField("note text", text: $📱.🎛CircularData.text)
                         .font(.title3)
                         .textFieldStyle(.plain)
-                        .scrollDismissesKeyboard(.immediately)
                         .padding(.vertical, 32)
                 }
                 
