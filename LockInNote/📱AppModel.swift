@@ -101,12 +101,12 @@ enum 🄿laceholder: String, Codable, CaseIterable, Identifiable { //TODO: 実�
     case threedot, pencil
     case nothing = "(nothing)"
     var id: Self { self }
-    var icon: String {
+    var icon: String? {
         switch self {
             case .squareAndPencil: return "square.and.pencil"
             case .threedot: return "ellipsis"
             case .pencil: return "pencil"
-            case .nothing: return ""
+            case .nothing: return nil
         }
     }
 }

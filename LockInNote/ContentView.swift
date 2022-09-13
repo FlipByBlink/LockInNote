@@ -155,8 +155,11 @@ struct 🎚PlaceholderPicker: View {
         Menu {
             Picker("Placeholder", selection: $ⓟlaceholder) {
                 ForEach(🄿laceholder.allCases) { placeholder in
-                    Label(placeholder.rawValue, systemImage: placeholder.icon)
-                        .imageScale(.small)
+                    if let icon = placeholder.icon {
+                        Label(placeholder.rawValue, systemImage: icon)
+                    } else {
+                        Text(placeholder.rawValue)
+                    }
                 }
             }
         } label: {
@@ -164,8 +167,11 @@ struct 🎚PlaceholderPicker: View {
                 Label("Placeholder", systemImage: "square.dotted")
                 Spacer()
                 Group {
-                    Image(systemName: ⓟlaceholder.icon)
-                    if ⓟlaceholder == .nothing { Text(ⓟlaceholder.rawValue)}
+                    if let icon = ⓟlaceholder.icon {
+                        Image(systemName: icon)
+                    } else {
+                        Text(ⓟlaceholder.rawValue)
+                    }
                 }.foregroundColor(.secondary)
             }
         }
