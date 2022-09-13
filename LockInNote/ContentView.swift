@@ -63,8 +63,13 @@ struct 📝RectangularWidgetTab: View {
                                     Label("Done", systemImage: "checkmark")
                                 }
                             }
-                            ToolbarItem {
-                                🗑ClearTextButton($📱.🎛RectangularData.text)
+                        }
+                        .swipeActions {
+                            Button {
+                                UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                                📱.🎛RectangularData.text = ""
+                            } label: {
+                                Label("Clear", systemImage: "eraser.line.dashed")
                             }
                         }
                 }
@@ -103,6 +108,14 @@ struct 📝InlineWidgetTab: View {
                         .focused($🚩Focus)
                         .font(.title3)
                         .padding(.vertical, 24)
+                        .swipeActions {
+                            Button {
+                                UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                                📱.🎛InlineData.text = ""
+                            } label: {
+                                Label("Clear", systemImage: "eraser.line.dashed")
+                            }
+                        }
                 }
                 
                 📣ADBanner()
@@ -133,6 +146,14 @@ struct 📝CircularWidgetTab: View {
                         .focused($🚩Focus)
                         .font(.title3)
                         .padding(.vertical, 24)
+                        .swipeActions {
+                            Button {
+                                UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                                📱.🎛CircularData.text = ""
+                            } label: {
+                                Label("Clear", systemImage: "eraser.line.dashed")
+                            }
+                        }
                 }
                 
                 📣ADBanner()
@@ -159,24 +180,6 @@ struct 📝CircularWidgetTab: View {
                 }
             }
         }
-    }
-}
-
-struct 🗑ClearTextButton: View {
-    @Binding var 📝Text: String
-    var body: some View {
-        Button (role: .destructive) {
-            UIImpactFeedbackGenerator(style: .light).impactOccurred()
-            📝Text = ""
-        } label: {
-            Label("Clear text", systemImage: "eraser.line.dashed")
-        }
-        .disabled(📝Text == "")
-        .tint(.red)
-    }
-    
-    init(_ 📝Text: Binding<String>) {
-        self._📝Text = 📝Text
     }
 }
 
