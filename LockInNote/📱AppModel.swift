@@ -3,9 +3,6 @@ import SwiftUI
 import WidgetKit
 
 class 📱AppModel: ObservableObject {
-    private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
-    @AppStorage("AutoLaunchKeyboard") var 🚩AutoLaunchKeyboard: Bool = false
-    
     @Published var 🎛RectangularData = 🎛RectangularDataModel()
     @Published var 🎛InlineData = 🎛InlineDataModel()
     @Published var 🎛CircularData = 🎛CircularDataModel()
@@ -80,7 +77,7 @@ struct 🎛CircularDataModel: Codable, Equatable {
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
-enum 🄿laceholder: String, Codable, CaseIterable, Identifiable { //TODO: 実装
+enum 🄿laceholder: String, Codable, CaseIterable, Identifiable {
     case squareAndPencil = "square and pencil"//, useredit
     case threedot, pencil
     case nothing = "(nothing)"

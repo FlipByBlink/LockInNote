@@ -18,9 +18,6 @@ struct ContentView: View {
             📝CircularWidgetTab()
                 .tag(🔖TabTag.circularWidget)
                 .tabItem { Label("Circular", systemImage: "circle.dashed") }
-            🔩OptionTab()
-                .tag(🔖TabTag.option)
-                .tabItem { Label("Option", systemImage: "gearshape") }
             ℹ️AboutAppTab()
                 .tag(🔖TabTag.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
@@ -43,7 +40,7 @@ struct ContentView: View {
     }
     
     enum 🔖TabTag {
-        case inlineWidget, rectangularWidget, circularWidget, option, about
+        case inlineWidget, rectangularWidget, circularWidget, about
     }
 }
 
@@ -341,26 +338,6 @@ struct 📣ADBanner: View {
 }
 
 
-struct 🔩OptionTab: View {
-    @EnvironmentObject var 📱: 📱AppModel
-    
-    var body: some View {
-        NavigationStack {
-            List {
-                Toggle(isOn: $📱.🚩AutoLaunchKeyboard) {
-                    Label("Auto keyboard launch", systemImage: "keyboard")
-                }
-                
-                📣ADMenuLink()
-            }
-            .navigationTitle("Option")
-        }
-    }
-}
-
-
-
-
 struct ℹ️AboutAppTab: View {
     var body: some View {
         NavigationView {
@@ -410,6 +387,8 @@ struct ℹ️AboutAppTab: View {
                         Label("About App", systemImage: "doc")
                     }
                 }
+                
+                📣ADMenuLink()
             }
             .navigationBarTitleDisplayMode(.inline)
         }
