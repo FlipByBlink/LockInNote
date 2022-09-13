@@ -117,17 +117,15 @@ struct 🎚WeightPicker: View {
     @Binding var ⓦeight: 🅆eight
     var body: some View {
         NavigationLink {
-            List {
-                Picker(selection: $ⓦeight) {
-                    ForEach(🅆eight.allCases) { weight in
-                        Text("Weight")
-                            .fontWeight(weight.value)
-                    }
-                } label: {
-                    Label("Weight", systemImage: "bold")
+            Picker(selection: $ⓦeight) {
+                ForEach(🅆eight.allCases) { weight in
+                    Text("Weight")
+                        .font(.body.weight(weight.value))
                 }
-                .pickerStyle(.inline)
+            } label: {
+                Label("Weight", systemImage: "bold")
             }
+            .pickerStyle(.wheel)
         } label: {
             Label("Weight", systemImage: "bold")
         }
