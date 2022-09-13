@@ -64,7 +64,8 @@ struct 📝RectangularWidgetTab: View {
                 
                 📣ADBanner()
                 
-                🔧CustomizationSection()
+                🎚ItalicPicker($📱.🎛RectangularData.italic)
+                🎚WeightPicker($📱.🎛RectangularData.fontWeight)
             }
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
@@ -97,37 +98,45 @@ struct 📝InlineWidgetTab: View {
     }
 }
 
-struct 🔧CustomizationSection: View {
-    @EnvironmentObject var 📱: 📱AppModel
+
+struct 🎚ItalicPicker: View {
+    @Binding var 🚩: Bool
     var body: some View {
-        Section {
-            Toggle(isOn: $📱.🎛RectangularData.italic) {
-                Label("Italic", systemImage: "italic")
-                    .italic(true)
-            }
-            
-            NavigationLink {
-                List {
-                    Picker(selection: $📱.🎛RectangularData.fontWeight) {
-                        ForEach(🅆eight.allCases) { weight in
-                            Text("Weight")
-                                .fontWeight(weight.value)
-                        }
-                    } label: {
-                        Label("Weight", systemImage: "bold")
-                    }
-                    .pickerStyle(.inline)
-                }
-            } label: {
-                Label("Weight", systemImage: "bold")
-            }
-        } header: {
-            Text("Customization")
+        Toggle(isOn: $🚩) {
+            Label("Italic", systemImage: "italic")
+                .italic(true)
         }
+    }
+    
+    init(_ 🚩: Binding<Bool>) {
+        self._🚩 = 🚩
     }
 }
 
-
+struct 🎚WeightPicker: View {
+    @Binding var ⓦeight: 🅆eight
+    var body: some View {
+        NavigationLink {
+            List {
+                Picker(selection: $ⓦeight) {
+                    ForEach(🅆eight.allCases) { weight in
+                        Text("Weight")
+                            .fontWeight(weight.value)
+                    }
+                } label: {
+                    Label("Weight", systemImage: "bold")
+                }
+                .pickerStyle(.inline)
+            }
+        } label: {
+            Label("Weight", systemImage: "bold")
+        }
+    }
+    
+    init(_ ⓦeight: Binding<🅆eight>) {
+        self._ⓦeight = ⓦeight
+    }
+}
 
 
 struct 📣ADBanner: View {
