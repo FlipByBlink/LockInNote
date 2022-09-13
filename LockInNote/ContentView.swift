@@ -72,8 +72,8 @@ struct 📝RectangularWidgetTab: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .onOpenURL { 🔗 in
-            DispatchQueue.main.async {
-                if 🔗.description == "Rectangular" {
+            if 🔗.description == "Rectangular" {
+                DispatchQueue.main.async {
                     🚩Focus = true
                 }
             }
@@ -83,11 +83,13 @@ struct 📝RectangularWidgetTab: View {
 
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @FocusState var 🚩Focus: Bool
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     TextField("note text", text: $📱.🎛InlineData.text)
+                        .focused($🚩Focus)
                         .font(.title3)
                         .textFieldStyle(.plain)
                         .padding(.vertical, 32)
@@ -100,16 +102,25 @@ struct 📝InlineWidgetTab: View {
             .navigationTitle("Inline widget")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .onOpenURL { 🔗 in
+            if 🔗.description == "Inline" {
+                DispatchQueue.main.async {
+                    🚩Focus = true
+                }
+            }
+        }
     }
 }
 
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @FocusState var 🚩Focus: Bool
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     TextField("note text", text: $📱.🎛CircularData.text)
+                        .focused($🚩Focus)
                         .font(.title3)
                         .textFieldStyle(.plain)
                         .padding(.vertical, 32)
@@ -127,6 +138,13 @@ struct 📝CircularWidgetTab: View {
             }
             .navigationTitle("Circular widget")
             .navigationBarTitleDisplayMode(.inline)
+        }
+        .onOpenURL { 🔗 in
+            if 🔗.description == "Circular" {
+                DispatchQueue.main.async {
+                    🚩Focus = true
+                }
+            }
         }
     }
 }
