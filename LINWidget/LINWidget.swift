@@ -116,38 +116,39 @@ struct 🄸nlineView : View {
 
 struct 🄲ircularView : View {
     var ⓔntry: 🤖Provider.Entry
-    let 📱 = 📱AppModel()
+    let 🎛Data: 🎛CircularDataModel
     
     var body: some View {
         Group {
-            if 📱.🎛CircularData.text != "" {
+            if 🎛Data.text != "" {
                 ZStack {
-                    if 📱.🎛CircularData.background {
+                    if 🎛Data.background {
                         AccessoryWidgetBackground()
                     }
-                    Text(📱.🎛CircularData.text)
-                        .italic(📱.🎛CircularData.italic)
-                        .multilineTextAlignment(📱.🎛CircularData.multilineTextAlignment.value)
+                    Text(🎛Data.text)
+                        .italic(🎛Data.italic)
+                        .multilineTextAlignment(🎛Data.multilineTextAlignment.value)
                 }
             } else {
                 ZStack {
-                    if 📱.🎛CircularData.background {
+                    if 🎛Data.background {
                         AccessoryWidgetBackground()
                     }
-                    if let icon = 📱.🎛CircularData.placeholder.icon {
+                    if let icon = 🎛Data.placeholder.icon {
                         Image(systemName: icon)
                     }
                 }
             }
         }
-        .font(.system(size: CGFloat(📱.🎛CircularData.fontSize),
-                      weight: 📱.🎛CircularData.fontWeight.value,
-                      design: 📱.🎛CircularData.fontDesign.value))
-        .foregroundStyle(📱.🎛CircularData.level.value)
+        .font(.system(size: CGFloat(🎛Data.fontSize),
+                      weight: 🎛Data.fontWeight.value,
+                      design: 🎛Data.fontDesign.value))
+        .foregroundStyle(🎛Data.level.value)
         .widgetURL(URL(string: "Circular")!)
     }
     
     init(_ ⓔntry: 🤖Provider.Entry) {
         self.ⓔntry = ⓔntry
+        🎛Data = 📱AppModel().🎛CircularData
     }
 }
