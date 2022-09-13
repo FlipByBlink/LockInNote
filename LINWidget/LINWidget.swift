@@ -129,7 +129,9 @@ struct 🄲ircularView : View {
                 }
             } else {
                 ZStack {
-                    AccessoryWidgetBackground()
+                    if 📱.🎛CircularData.background {
+                        AccessoryWidgetBackground()
+                    }
                     Image(systemName: 📱.🎛CircularData.placeholder.icon)
                 }
             }

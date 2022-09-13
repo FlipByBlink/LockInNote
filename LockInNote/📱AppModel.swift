@@ -42,17 +42,18 @@ class 📱AppModel: ObservableObject {
     }
     
     func 💾LoadDatas() {
+        enum 🚨LoadError: Error { case Rectangular, Inline, Circular }
         let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
         do {
             if let ⓓata = ⓤd?.data(forKey: "Rectangular") {
                 🎛RectangularData = try JSONDecoder().decode(🎛RectangularDataModel.self, from: ⓓata)
-            }
+            } else { throw 🚨LoadError.Rectangular }
             if let ⓓata = ⓤd?.data(forKey: "Inline") {
                 🎛InlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
-            }
+            } else { throw 🚨LoadError.Inline }
             if let ⓓata = ⓤd?.data(forKey: "Circular") {
                 🎛CircularData = try JSONDecoder().decode(🎛CircularDataModel.self, from: ⓓata)
-            }
+            } else { throw 🚨LoadError.Circular }
         } catch {
             print("🚨Error: ", error)
         }
