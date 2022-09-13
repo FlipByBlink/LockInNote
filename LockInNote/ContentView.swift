@@ -51,11 +51,19 @@ struct 📝RectangularWidgetTab: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("note text", text: $📱.🎛RectangularData.text)
+                    TextField("note text", text: $📱.🎛RectangularData.text, axis: .vertical)
                         .focused($🚩Focus)
                         .font(.title3)
-                        .textFieldStyle(.plain)
-                        .padding(.vertical, 32)
+                        .padding(.vertical, 24)
+                        .toolbar {
+                            ToolbarItem(placement: .keyboard) {
+                                Button {
+                                    🚩Focus = false
+                                } label: {
+                                    Label("Done", systemImage: "checkmark")
+                                }
+                            }
+                        }
                 }
                 
                 📣ADBanner()
@@ -91,8 +99,7 @@ struct 📝InlineWidgetTab: View {
                     TextField("note text", text: $📱.🎛InlineData.text)
                         .focused($🚩Focus)
                         .font(.title3)
-                        .textFieldStyle(.plain)
-                        .padding(.vertical, 32)
+                        .padding(.vertical, 24)
                 }
                 
                 📣ADBanner()
@@ -122,8 +129,7 @@ struct 📝CircularWidgetTab: View {
                     TextField("note text", text: $📱.🎛CircularData.text)
                         .focused($🚩Focus)
                         .font(.title3)
-                        .textFieldStyle(.plain)
-                        .padding(.vertical, 32)
+                        .padding(.vertical, 24)
                 }
                 
                 📣ADBanner()
