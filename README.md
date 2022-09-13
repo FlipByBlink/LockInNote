@@ -2,13 +2,13 @@
 
 <br>
 
-![画像](LockInNote/Assets.xcassets/ClipedIcon.imageset/ClipedIcon360.png)
+![画像](LockInNote/Assets.xcassets/ClipedIcon.imageset/360.png)
 
 <br>
 
 ## 🔗 AppStore link
 
-https://apps.apple.com/app/id
+https://apps.apple.com/app/id1644879340
 
 
 <!-- Manually sync below text between "/README.md(here)" and "Localizable.strings" and "AppStoreConnect/_/Description". -->
