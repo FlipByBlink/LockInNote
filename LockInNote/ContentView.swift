@@ -55,10 +55,6 @@ struct 📝RectangularWidgetTab: View {
                         .font(.title3)
                         .textFieldStyle(.plain)
                         .scrollDismissesKeyboard(.immediately)
-                        .onSubmit {
-                            📱.💾SaveDatas()
-                            WidgetCenter.shared.reloadAllTimelines()
-                        }
                         .padding(.vertical, 32)
                 }
                 
@@ -87,10 +83,6 @@ struct 📝InlineWidgetTab: View {
                         .font(.title3)
                         .textFieldStyle(.plain)
                         .scrollDismissesKeyboard(.immediately)
-                        .onSubmit {
-                            📱.💾SaveDatas()
-                            WidgetCenter.shared.reloadAllTimelines()
-                        }
                         .padding(.vertical, 32)
                 }
                 
@@ -206,9 +198,13 @@ struct 🎚LevelPicker: View {
             }
             .pickerStyle(.wheel)
         } label: {
-            Label("Level", systemImage: "camera.filters")
-                .symbolRenderingMode(.hierarchical)
-                .foregroundStyle(ⓛevel.value)
+            Label {
+                Text("Level")
+                    .foregroundStyle(ⓛevel.value)
+            } icon: {
+                Image(systemName: "camera.filters")
+                    .symbolRenderingMode(.hierarchical)
+            }
         }
     }
     

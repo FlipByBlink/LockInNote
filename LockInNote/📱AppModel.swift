@@ -6,9 +6,26 @@ class 📱AppModel: ObservableObject {
     private static let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
     @AppStorage("AutoLaunchKeyboard") var 🚩AutoLaunchKeyboard: Bool = false
     
-    @Published var 🎛RectangularData = 🎛RectangularDataModel()
-    @Published var 🎛InlineData = 🎛InlineDataModel()
-    @Published var 🎛CircularData = 🎛CircularDataModel()
+    @Published var 🎛RectangularData = 🎛RectangularDataModel() {
+        didSet {
+            💾SaveDatas()
+            WidgetCenter.shared.reloadTimelines(ofKind: "Rectangular")
+        }
+    }
+    
+    @Published var 🎛InlineData = 🎛InlineDataModel() {
+        didSet {
+            💾SaveDatas()
+            WidgetCenter.shared.reloadTimelines(ofKind: "Inline")
+        }
+    }
+    
+    @Published var 🎛CircularData = 🎛CircularDataModel() {
+        didSet {
+            💾SaveDatas()
+            WidgetCenter.shared.reloadTimelines(ofKind: "Circular")
+        }
+    }
     
     func 💾SaveDatas() {
         do {
@@ -85,17 +102,14 @@ enum 🄿laceholder: Codable, CaseIterable, Identifiable {
 }
 
 enum 🅂tyle: Codable, CaseIterable, Identifiable {
-    case caption, subheadline, body, title3, title2, title, largetitle
+    case caption, subheadline, body, title //title以上のフォントは同一として扱われるっぽい
     var id: Self { self }
     var value: Font.TextStyle {
         switch self {
             case .caption: return .caption
             case .subheadline: return .subheadline
             case .body: return .body
-            case .title3: return .title3
-            case .title2: return .title2
             case .title: return .title
-            case .largetitle: return .largeTitle
         }
     }
 }
