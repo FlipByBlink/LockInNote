@@ -14,7 +14,7 @@ struct ContentView: View {
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
             📝InlineWidgetTab()
                 .tag(🔖TabTag.inlineWidget)
-                .tabItem { Label("Inline", systemImage: "textformat.abc") }
+                .tabItem { Label("Inline", systemImage: "rectangle.and.pencil.and.ellipsis") }
             📝CircularWidgetTab()
                 .tag(🔖TabTag.circularWidget)
                 .tabItem { Label("Circular", systemImage: "circle.dashed") }
@@ -53,8 +53,7 @@ struct 📝RectangularWidgetTab: View {
                 Section {
                     TextField("Note text", text: $📱.🎛RectangularData.text, axis: .vertical)
                         .focused($🚩Focus)
-                        .font(.title3)
-                        .padding(.vertical, 24)
+                        .frame(minHeight: 180)
                         .toolbar {
                             ToolbarItem(placement: .keyboard) {
                                 Button {
@@ -85,7 +84,7 @@ struct 📝RectangularWidgetTab: View {
                 🎚ItalicPicker($📱.🎛RectangularData.italic)
                 🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
             }
-            .navigationTitle("Rectangular widget")
+            .navigationTitle("□⃞  Rectangular")
             .navigationBarTitleDisplayMode(.inline)
         }
         .onOpenURL { 🔗 in
@@ -108,8 +107,7 @@ struct 📝InlineWidgetTab: View {
                 Section {
                     TextField("Note text", text: $📱.🎛InlineData.text)
                         .focused($🚩Focus)
-                        .font(.title3)
-                        .padding(.vertical, 24)
+                        .padding(.vertical, 8)
                         .swipeActions {
                             Button {
                                 UINotificationFeedbackGenerator().notificationOccurred(.warning)
@@ -124,7 +122,7 @@ struct 📝InlineWidgetTab: View {
                 
                 🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
             }
-            .navigationTitle("Inline widget")
+            .navigationTitle("▷  Inline")
             .navigationBarTitleDisplayMode(.inline)
         }
         .onOpenURL { 🔗 in
@@ -147,7 +145,6 @@ struct 📝CircularWidgetTab: View {
                 Section {
                     TextField("Note text", text: $📱.🎛CircularData.text)
                         .focused($🚩Focus)
-                        .font(.title3)
                         .padding(.vertical, 24)
                         .swipeActions {
                             Button {
@@ -173,7 +170,7 @@ struct 📝CircularWidgetTab: View {
                 🎚ItalicPicker($📱.🎛CircularData.italic)
                 🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
             }
-            .navigationTitle("Circular widget")
+            .navigationTitle("○  Circular")
             .navigationBarTitleDisplayMode(.inline)
         }
         .onOpenURL { 🔗 in
@@ -190,28 +187,16 @@ struct 📝CircularWidgetTab: View {
 struct 🎚PlaceholderPicker: View {
     @Binding var ⓟlaceholder: 🄿laceholder
     var body: some View {
-        Menu {
-            Picker("Placeholder", selection: $ⓟlaceholder) {
-                ForEach(🄿laceholder.allCases) { placeholder in
-                    if let icon = placeholder.icon {
-                        Label(placeholder.rawValue, systemImage: icon)
-                    } else {
-                        Text(LocalizedStringKey(placeholder.rawValue))
-                    }
+        Picker(selection: $ⓟlaceholder) {
+            ForEach(🄿laceholder.allCases) { placeholder in
+                if let icon = placeholder.icon {
+                    Label(placeholder.rawValue, systemImage: icon)
+                } else {
+                    Text(LocalizedStringKey(placeholder.rawValue))
                 }
             }
         } label: {
-            HStack {
-                Label("Placeholder", systemImage: "square.dotted")
-                Spacer()
-                Group {
-                    if let icon = ⓟlaceholder.icon {
-                        Image(systemName: icon)
-                    } else {
-                        Text(LocalizedStringKey(ⓟlaceholder.rawValue))
-                    }
-                }.foregroundColor(.secondary)
-            }
+            Label("Placeholder", systemImage: "square.dotted")
         }
     }
     

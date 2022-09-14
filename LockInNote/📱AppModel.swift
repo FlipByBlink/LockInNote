@@ -69,7 +69,7 @@ struct 🎛CircularDataModel: Codable, Equatable {
     var background: Bool = true
     
     var placeholder: 🄿laceholder = .squareAndPencil
-    var fontSize: Int = 17
+    var fontSize: Int = 13
     var fontWeight: 🅆eight = .regular
     var fontDesign: 🄳esign = .default
     var italic: Bool = false

@@ -3,9 +3,9 @@
 "Inline" = "インライン";
 "Circular" = "丸";
 "Note text" = "ノート テキスト";
-"Rectangular widget" = "長方形ウィジェット";
-"Inline widget" = "インラインウィジェット";
-"Circular widget" = "丸ウィジェット";
+"□⃞  Rectangular" = "□⃞  長方形";
+"▷  Inline" = "▷  インライン";
+"○  Circular" = "○  丸ウィジェット";
 "Clear" = "消す";
 "Background" = "背景";
 "Placeholder" = "プレースホルダー";
