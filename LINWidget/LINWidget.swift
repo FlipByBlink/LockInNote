@@ -76,8 +76,8 @@ struct 🅁ectangularView : View {
                 Text(🎛Data.text)
                     .italic(🎛Data.italic)
                     .multilineTextAlignment(🎛Data.multilineTextAlignment.value)
-            } else if let icon = 🎛Data.placeholder.icon {
-                Image(systemName: icon)
+            } else if 🎛Data.placeholder != .nothing {
+                Image(systemName: 🎛Data.placeholder.icon)
             }
         }
         .font(.system(size: CGFloat(🎛Data.fontSize),
@@ -101,8 +101,8 @@ struct 🄸nlineView : View {
         Group {
             if 🎛Data.text != "" {
                 Text(🎛Data.text)
-            } else if let icon = 🎛Data.placeholder.icon {
-                Image(systemName: icon)
+            } else if 🎛Data.placeholder != .nothing {
+                Image(systemName: 🎛Data.placeholder.icon)
             }
         }
         .widgetURL(URL(string: "Inline")!)
@@ -135,8 +135,8 @@ struct 🄲ircularView : View {
                     if 🎛Data.background {
                         AccessoryWidgetBackground()
                     }
-                    if let icon = 🎛Data.placeholder.icon {
-                        Image(systemName: icon)
+                    if 🎛Data.placeholder != .nothing {
+                        Image(systemName: 🎛Data.placeholder.icon)
                     }
                 }
             }
