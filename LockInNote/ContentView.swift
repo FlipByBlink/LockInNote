@@ -22,7 +22,7 @@ struct ContentView: View {
                 .tabItem { Label("About App", systemImage: "questionmark") }
         }
         .animation(.default.speed(0.5), value: 🛒.🚩ADisActive)
-        .scrollDismissesKeyboard(.immediately)
+        .scrollDismissesKeyboard(.interactively)
         .onOpenURL { 🔗 in
             DispatchQueue.main.async {
                 switch 🔗.description {
