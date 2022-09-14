@@ -40,7 +40,7 @@ struct ContentView: View {
     }
     
     enum 🔖TabTag {
-        case inlineWidget, rectangularWidget, circularWidget, about
+        case rectangularWidget, inlineWidget, circularWidget, about
     }
 }
 
@@ -196,7 +196,7 @@ struct 🎚PlaceholderPicker: View {
                 }
             }
         } label: {
-            Label("Placeholder", systemImage: "square.dotted")
+            Label("Placeholder", systemImage: "questionmark.square.dashed")
         }
     }
     
