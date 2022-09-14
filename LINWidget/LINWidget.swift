@@ -16,7 +16,7 @@ struct 🅁ectangularWidget: Widget {
         StaticConfiguration(kind: "Rectangular", provider: 🤖Provider()) { ⓔntry in
             🅁ectangularView(ⓔntry)
         }
-        .configurationDisplayName("Rectangular widget")
+        .configurationDisplayName("□⃞  Rectangular")
         .description("Show a note.")
         .supportedFamilies([.accessoryRectangular])
     }
@@ -27,7 +27,7 @@ struct 🄸nlineWidget: Widget {
         StaticConfiguration(kind: "Inline", provider: 🤖Provider()) { ⓔntry in
             🄸nlineView(ⓔntry)
         }
-        .configurationDisplayName("Inline widget")
+        .configurationDisplayName("▷  Inline")
         .description("Show a note.")
         .supportedFamilies([.accessoryInline])
     }
@@ -38,7 +38,7 @@ struct 🄲ircularWidget: Widget {
         StaticConfiguration(kind: "Circular", provider: 🤖Provider()) { ⓔntry in
             🄲ircularView(ⓔntry)
         }
-        .configurationDisplayName("Circular widget")
+        .configurationDisplayName("○  Circular")
         .description("Show a note.")
         .supportedFamilies([.accessoryCircular])
     }

@@ -1,11 +1,11 @@
 
 "Rectangular" = "長方形";
 "Inline" = "インライン";
-"Circular" = "丸";
+"Circular" = "円形";
 "Note text" = "ノート テキスト";
 "□⃞  Rectangular" = "□⃞  長方形";
 "▷  Inline" = "▷  インライン";
-"○  Circular" = "○  丸ウィジェット";
+"○  Circular" = "○  円形";
 "Clear" = "消す";
 "Background" = "背景";
 "Placeholder" = "プレースホルダー";
