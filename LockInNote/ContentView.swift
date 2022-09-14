@@ -6,7 +6,6 @@ struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @EnvironmentObject var 🛒: 🛒StoreModel
     @State private var 🔖Tab: 🔖TabTag = .rectangularWidget
-    
     var body: some View {
         TabView(selection: $🔖Tab) {
             📝RectangularWidgetTab()
@@ -52,8 +51,9 @@ struct 📝RectangularWidgetTab: View {
             List {
                 Section {
                     TextField("Note text", text: $📱.🎛RectangularData.text, axis: .vertical)
+                        .swipeActions { 🗑ClearTextButton($📱.🎛RectangularData.text) }
                         .focused($🚩Focus)
-                        .frame(minHeight: 180)
+                        .frame(minHeight: 160)
                         .toolbar {
                             ToolbarItem(placement: .keyboard) {
                                 Button {
@@ -62,14 +62,6 @@ struct 📝RectangularWidgetTab: View {
                                 } label: {
                                     Label("Done", systemImage: "checkmark")
                                 }
-                            }
-                        }
-                        .swipeActions {
-                            Button {
-                                UINotificationFeedbackGenerator().notificationOccurred(.warning)
-                                📱.🎛RectangularData.text = ""
-                            } label: {
-                                Label("Clear", systemImage: "eraser.line.dashed")
                             }
                         }
                 }
@@ -106,16 +98,9 @@ struct 📝InlineWidgetTab: View {
             List {
                 Section {
                     TextField("Note text", text: $📱.🎛InlineData.text)
+                        .swipeActions { 🗑ClearTextButton($📱.🎛InlineData.text) }
                         .focused($🚩Focus)
-                        .padding(.vertical, 8)
-                        .swipeActions {
-                            Button {
-                                UINotificationFeedbackGenerator().notificationOccurred(.warning)
-                                📱.🎛InlineData.text = ""
-                            } label: {
-                                Label("Clear", systemImage: "eraser.line.dashed")
-                            }
-                        }
+                        .padding(.vertical, 24)
                 }
                 
                 📣ADBanner()
@@ -144,16 +129,9 @@ struct 📝CircularWidgetTab: View {
             List {
                 Section {
                     TextField("Note text", text: $📱.🎛CircularData.text)
+                        .swipeActions { 🗑ClearTextButton($📱.🎛CircularData.text) }
                         .focused($🚩Focus)
                         .padding(.vertical, 24)
-                        .swipeActions {
-                            Button {
-                                UINotificationFeedbackGenerator().notificationOccurred(.warning)
-                                📱.🎛CircularData.text = ""
-                            } label: {
-                                Label("Clear", systemImage: "eraser.line.dashed")
-                            }
-                        }
                 }
                 
                 📣ADBanner()
@@ -161,6 +139,7 @@ struct 📝CircularWidgetTab: View {
                 Toggle(isOn: $📱.🎛CircularData.background) {
                     Label("Background",
                           systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                    .animation(.default, value: 📱.🎛CircularData.background)
                 }
                 🎚WeightPicker($📱.🎛CircularData.fontWeight)
                 🎚DesignPicker($📱.🎛CircularData.fontDesign)
@@ -181,6 +160,21 @@ struct 📝CircularWidgetTab: View {
                 }
             }
         }
+    }
+}
+
+struct 🗑ClearTextButton: View {
+    @Binding var ⓣext: String
+    var body: some View {
+        Button {
+            UINotificationFeedbackGenerator().notificationOccurred(.warning)
+            ⓣext = ""
+        } label: {
+            Label("Clear", systemImage: "eraser.line.dashed")
+        }
+    }
+    init(_ ⓣext: Binding<String>) {
+        self._ⓣext = ⓣext
     }
 }
 
@@ -322,10 +316,10 @@ struct 🎚TextAlignmentPicker: View {
             }
         } label: {
             Text("Multi\ntext\nalignment")
+                .animation(.default, value: ⓐlignment)
                 .multilineTextAlignment(ⓐlignment.value)
                 .font(.footnote)
         }
-        .pickerStyle(.automatic)
     }
     
     init(_ ⓐlignment: Binding<🄼ultilineTextAlignment>) {
@@ -362,7 +356,7 @@ struct 📣ADBanner: View {
 
 struct ℹ️AboutAppTab: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section {
                     ZStack {
@@ -414,6 +408,5 @@ struct ℹ️AboutAppTab: View {
             }
             .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
