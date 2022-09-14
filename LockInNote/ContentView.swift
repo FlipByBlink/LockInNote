@@ -333,6 +333,7 @@ struct 🎚ItalicPicker: View {
         Toggle(isOn: $🚩) {
             Label("Italic", systemImage: "italic")
                 .italic(🚩)
+                .animation(.default, value: 🚩)
         }
     }
     
