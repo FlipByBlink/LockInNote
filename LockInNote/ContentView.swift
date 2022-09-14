@@ -181,16 +181,16 @@ struct 🗑ClearTextButton: View {
 struct 🎚PlaceholderPicker: View {
     @Binding var ⓟlaceholder: 🄿laceholder
     var body: some View {
-        Picker(selection: $ⓟlaceholder) {
-            ForEach(🄿laceholder.allCases) { placeholder in
-                if let icon = placeholder.icon {
-                    Label(placeholder.rawValue, systemImage: icon)
-                } else {
-                    Text(LocalizedStringKey(placeholder.rawValue))
+        NavigationLink {
+            Picker("Placeholder", selection: $ⓟlaceholder) {
+                ForEach(🄿laceholder.allCases) { placeholder in
+                    Label(placeholder.rawValue, systemImage: placeholder.icon)
                 }
             }
+            .pickerStyle(.wheel)
         } label: {
-            Label("Placeholder", systemImage: "questionmark.square.dashed")
+            Label("Placeholder", systemImage: ⓟlaceholder.icon)
+                .strikethrough(ⓟlaceholder == .nothing)
         }
     }
     
@@ -203,13 +203,11 @@ struct 🎚WeightPicker: View {
     @Binding var ⓦeight: 🅆eight
     var body: some View {
         NavigationLink {
-            Picker(selection: $ⓦeight) {
+            Picker("Weight", selection: $ⓦeight) {
                 ForEach(🅆eight.allCases) { weight in
                     Text(weight.rawValue)
                         .fontWeight(weight.value)
                 }
-            } label: {
-                Label("Weight", systemImage: "bold")
             }
             .pickerStyle(.wheel)
         } label: {
@@ -228,13 +226,11 @@ struct 🎚DesignPicker: View {
     @Binding var ⓓesign: 🄳esign
     var body: some View {
         NavigationLink {
-            Picker(selection: $ⓓesign) {
+            Picker("Design", selection: $ⓓesign) {
                 ForEach(🄳esign.allCases) { design in
                     Text(design.rawValue)
                         .font(.system(.title, design: design.value, weight: nil))
                 }
-            } label: {
-                Label("Design", systemImage: "a.magnify")
             }
             .pickerStyle(.wheel)
         } label: {
@@ -253,14 +249,11 @@ struct 🎚FontSizePicker: View {
     @Binding var ⓢize: Int
     var body: some View {
         NavigationLink {
-            Picker(selection: $ⓢize) {
+            Picker("Size", selection: $ⓢize) {
                 ForEach(8..<50, id: \.self) { size in
                     Text(size.description)
                         .font(.system(size: CGFloat(size)))
                 }
-            } label: {
-                Label("Size", systemImage: "textformat")
-                    .symbolRenderingMode(.hierarchical)
             }
             .pickerStyle(.wheel)
         } label: {
@@ -280,14 +273,11 @@ struct 🎚LevelPicker: View {
     @Binding var ⓛevel: 🄻evel
     var body: some View {
         NavigationLink {
-            Picker(selection: $ⓛevel) {
+            Picker("Level", selection: $ⓛevel) {
                 ForEach(🄻evel.allCases) { level in
                     Text(level.rawValue)
                         .foregroundStyle(level.value)
                 }
-            } label: {
-                Label("Level", systemImage: "camera.filters")
-                    .symbolRenderingMode(.hierarchical)
             }
             .pickerStyle(.wheel)
         } label: {
