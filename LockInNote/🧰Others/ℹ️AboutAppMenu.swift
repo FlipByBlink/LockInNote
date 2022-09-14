@@ -1,6 +1,6 @@
 
-let 📜VersionNumber = "1.0"
-let 📜PastVersions: [(ⓝumber: String, ⓓate: String)] = []
+let 📜VersionNumber = "1.0.1"
+let 📜PastVersions: [(ⓝumber: String, ⓓate: String)] = [("1.0", "2022-09-13")]
 
 let 🔗AppStoreProductURL = URL(string: "https://apps.apple.com/app/id1644879340")!
 
