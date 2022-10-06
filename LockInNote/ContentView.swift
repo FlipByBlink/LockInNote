@@ -60,7 +60,7 @@ struct 📝RectangularWidgetTab: View {
                                     🚩Focus = false
                                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                                 } label: {
-                                    Label("Done", systemImage: "checkmark")
+                                    Label("Done", systemImage: "keyboard.chevron.compact.down")
                                 }
                             }
                         }
@@ -78,6 +78,7 @@ struct 📝RectangularWidgetTab: View {
                     🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
                 } label: {
                     Label("Customize", systemImage: "slider.horizontal.3")
+                        .font(.caption)
                 }
             }
             .navigationTitle("□⃞  Rectangular")
@@ -113,6 +114,7 @@ struct 📝InlineWidgetTab: View {
                     🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
                 } label: {
                     Label("Customize", systemImage: "slider.horizontal.3")
+                        .font(.caption)
                 }
             }
             .navigationTitle("▷  Inline")
@@ -159,6 +161,7 @@ struct 📝CircularWidgetTab: View {
                     🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
                 } label: {
                     Label("Customize", systemImage: "slider.horizontal.3")
+                        .font(.caption)
                 }
             }
             .navigationTitle("○  Circular")
@@ -408,6 +411,12 @@ struct ℹ️AboutAppTab: View {
                 }
                 
                 📣ADMenuLink()
+                
+                Section {
+                    Text("If lock screen widgets don't update, please close this app or switch to another app.")
+                } header: {
+                    Text("Directions")
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
         }
