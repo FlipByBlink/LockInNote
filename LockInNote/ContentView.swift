@@ -68,13 +68,17 @@ struct 📝RectangularWidgetTab: View {
                 
                 📣ADBanner()
                 
-                🎚WeightPicker($📱.🎛RectangularData.fontWeight)
-                🎚DesignPicker($📱.🎛RectangularData.fontDesign)
-                🎚FontSizePicker($📱.🎛RectangularData.fontSize)
-                🎚LevelPicker($📱.🎛RectangularData.level)
-                🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
-                🎚ItalicPicker($📱.🎛RectangularData.italic)
-                🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
+                DisclosureGroup {
+                    🎚WeightPicker($📱.🎛RectangularData.fontWeight)
+                    🎚DesignPicker($📱.🎛RectangularData.fontDesign)
+                    🎚FontSizePicker($📱.🎛RectangularData.fontSize)
+                    🎚LevelPicker($📱.🎛RectangularData.level)
+                    🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
+                    🎚ItalicPicker($📱.🎛RectangularData.italic)
+                    🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
+                } label: {
+                    Label("Customize", systemImage: "slider.horizontal.3")
+                }
             }
             .navigationTitle("□⃞  Rectangular")
             .navigationBarTitleDisplayMode(.inline)
@@ -105,7 +109,11 @@ struct 📝InlineWidgetTab: View {
                 
                 📣ADBanner()
                 
-                🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
+                DisclosureGroup {
+                    🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
+                } label: {
+                    Label("Customize", systemImage: "slider.horizontal.3")
+                }
             }
             .navigationTitle("▷  Inline")
             .navigationBarTitleDisplayMode(.inline)
@@ -136,18 +144,22 @@ struct 📝CircularWidgetTab: View {
                 
                 📣ADBanner()
                 
-                Toggle(isOn: $📱.🎛CircularData.background) {
-                    Label("Background",
-                          systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
-                    .animation(.default, value: 📱.🎛CircularData.background)
+                DisclosureGroup {
+                    Toggle(isOn: $📱.🎛CircularData.background) {
+                        Label("Background",
+                              systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                        .animation(.default, value: 📱.🎛CircularData.background)
+                    }
+                    🎚WeightPicker($📱.🎛CircularData.fontWeight)
+                    🎚DesignPicker($📱.🎛CircularData.fontDesign)
+                    🎚FontSizePicker($📱.🎛CircularData.fontSize)
+                    🎚LevelPicker($📱.🎛CircularData.level)
+                    🎚TextAlignmentPicker($📱.🎛CircularData.multilineTextAlignment)
+                    🎚ItalicPicker($📱.🎛CircularData.italic)
+                    🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
+                } label: {
+                    Label("Customize", systemImage: "slider.horizontal.3")
                 }
-                🎚WeightPicker($📱.🎛CircularData.fontWeight)
-                🎚DesignPicker($📱.🎛CircularData.fontDesign)
-                🎚FontSizePicker($📱.🎛CircularData.fontSize)
-                🎚LevelPicker($📱.🎛CircularData.level)
-                🎚TextAlignmentPicker($📱.🎛CircularData.multilineTextAlignment)
-                🎚ItalicPicker($📱.🎛CircularData.italic)
-                🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
             }
             .navigationTitle("○  Circular")
             .navigationBarTitleDisplayMode(.inline)
