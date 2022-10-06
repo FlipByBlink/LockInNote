@@ -93,6 +93,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F50D9B0228EEDE390089E680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54BE1C628CB480900532025 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54BE1C928CB480900532025 /* LockInNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockInNoteApp.swift; sourceTree = "<group>"; };
 		F54BE1CB28CB480900532025 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -218,6 +219,7 @@
 				F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */,
 				F556953728CCAFC3004558FC /* 📣AD.swift */,
 				F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */,
+				F50D9B0228EEDE390089E680 /* Info.plist */,
 				F556953628CCAFC3004558FC /* Configuration.storekit */,
 				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 			);
@@ -532,6 +534,7 @@
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LockInNote/🧰Others/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -567,6 +570,7 @@
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LockInNote/🧰Others/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
