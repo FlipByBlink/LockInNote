@@ -11,12 +11,12 @@ struct ContentView: View {
             📝RectangularWidgetTab()
                 .tag(🔖TabTag.rectangularWidget)
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
-            📝InlineWidgetTab()
-                .tag(🔖TabTag.inlineWidget)
-                .tabItem { Label("Inline", systemImage: "rectangle.and.pencil.and.ellipsis") }
             📝CircularWidgetTab()
                 .tag(🔖TabTag.circularWidget)
                 .tabItem { Label("Circular", systemImage: "circle.dashed") }
+            📝InlineWidgetTab()
+                .tag(🔖TabTag.inlineWidget)
+                .tabItem { Label("Inline", systemImage: "rectangle.and.pencil.and.ellipsis") }
             ℹ️AboutAppTab()
                 .tag(🔖TabTag.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
@@ -27,19 +27,19 @@ struct ContentView: View {
             DispatchQueue.main.async {
                 switch 🔗.description {
                     case "Rectangular": 🔖Tab = .rectangularWidget
-                    case "Inline": 🔖Tab = .inlineWidget
                     case "Circular": 🔖Tab = .circularWidget
+                    case "Inline": 🔖Tab = .inlineWidget
                     default: print("🐛")
                 }
             }
         }
         .onChange(of: 📱.🎛RectangularData) { _ in 📱.💾SaveDataAndReloadWidget() }
-        .onChange(of: 📱.🎛InlineData) { _ in 📱.💾SaveDataAndReloadWidget() }
         .onChange(of: 📱.🎛CircularData) { _ in 📱.💾SaveDataAndReloadWidget() }
+        .onChange(of: 📱.🎛InlineData) { _ in 📱.💾SaveDataAndReloadWidget() }
     }
     
     enum 🔖TabTag {
-        case rectangularWidget, inlineWidget, circularWidget, about
+        case rectangularWidget, circularWidget, inlineWidget, about
     }
 }
 
@@ -95,42 +95,6 @@ struct 📝RectangularWidgetTab: View {
     }
 }
 
-struct 📝InlineWidgetTab: View {
-    @EnvironmentObject var 📱: 📱AppModel
-    @FocusState var 🚩Focus: Bool
-    var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    TextField("Note text", text: $📱.🎛InlineData.text)
-                        .swipeActions { 🗑ClearTextButton($📱.🎛InlineData.text) }
-                        .focused($🚩Focus)
-                        .padding(.vertical, 24)
-                }
-                
-                📣ADBanner()
-                
-                DisclosureGroup {
-                    🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
-                } label: {
-                    Label("Customize", systemImage: "slider.horizontal.3")
-                        .font(.caption)
-                }
-            }
-            .navigationTitle("▷  Inline")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-        .onOpenURL { 🔗 in
-            if 🔗.description == "Inline" {
-                DispatchQueue.main.async {
-                    🚩Focus = true
-                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                }
-            }
-        }
-    }
-}
-
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @FocusState var 🚩Focus: Bool
@@ -169,6 +133,42 @@ struct 📝CircularWidgetTab: View {
         }
         .onOpenURL { 🔗 in
             if 🔗.description == "Circular" {
+                DispatchQueue.main.async {
+                    🚩Focus = true
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                }
+            }
+        }
+    }
+}
+
+struct 📝InlineWidgetTab: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    @FocusState var 🚩Focus: Bool
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    TextField("Note text", text: $📱.🎛InlineData.text)
+                        .swipeActions { 🗑ClearTextButton($📱.🎛InlineData.text) }
+                        .focused($🚩Focus)
+                        .padding(.vertical, 24)
+                }
+                
+                📣ADBanner()
+                
+                DisclosureGroup {
+                    🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
+                } label: {
+                    Label("Customize", systemImage: "slider.horizontal.3")
+                        .font(.caption)
+                }
+            }
+            .navigationTitle("▷  Inline")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onOpenURL { 🔗 in
+            if 🔗.description == "Inline" {
                 DispatchQueue.main.async {
                     🚩Focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()

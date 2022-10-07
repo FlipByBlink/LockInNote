@@ -6,8 +6,8 @@ import SwiftUI
 struct LINWidgetBundle: WidgetBundle {
     var body: some Widget {
         🅁ectangularWidget()
-        🄸nlineWidget()
         🄲ircularWidget()
+        🄸nlineWidget()
     }
 }
 
@@ -22,17 +22,6 @@ struct 🅁ectangularWidget: Widget {
     }
 }
 
-struct 🄸nlineWidget: Widget {
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "Inline", provider: 🤖Provider()) { ⓔntry in
-            🄸nlineView(ⓔntry)
-        }
-        .configurationDisplayName("▷  Inline")
-        .description("Show a note.")
-        .supportedFamilies([.accessoryInline])
-    }
-}
-
 struct 🄲ircularWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "Circular", provider: 🤖Provider()) { ⓔntry in
@@ -41,6 +30,17 @@ struct 🄲ircularWidget: Widget {
         .configurationDisplayName("○  Circular")
         .description("Show a note.")
         .supportedFamilies([.accessoryCircular])
+    }
+}
+
+struct 🄸nlineWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "Inline", provider: 🤖Provider()) { ⓔntry in
+            🄸nlineView(ⓔntry)
+        }
+        .configurationDisplayName("▷  Inline")
+        .description("Show a note.")
+        .supportedFamilies([.accessoryInline])
     }
 }
 
@@ -93,27 +93,6 @@ struct 🅁ectangularView : View {
     }
 }
 
-struct 🄸nlineView : View {
-    var ⓔntry: 🤖Provider.Entry
-    let 🎛Data: 🎛InlineDataModel
-    
-    var body: some View {
-        Group {
-            if 🎛Data.text != "" {
-                Text(🎛Data.text)
-            } else if 🎛Data.placeholder != .nothing {
-                Image(systemName: 🎛Data.placeholder.icon)
-            }
-        }
-        .widgetURL(URL(string: "Inline")!)
-    }
-    
-    init(_ ⓔntry: 🤖Provider.Entry) {
-        self.ⓔntry = ⓔntry
-        🎛Data = 📱AppModel().🎛InlineData
-    }
-}
-
 struct 🄲ircularView : View {
     var ⓔntry: 🤖Provider.Entry
     let 🎛Data: 🎛CircularDataModel
@@ -151,5 +130,26 @@ struct 🄲ircularView : View {
     init(_ ⓔntry: 🤖Provider.Entry) {
         self.ⓔntry = ⓔntry
         🎛Data = 📱AppModel().🎛CircularData
+    }
+}
+
+struct 🄸nlineView : View {
+    var ⓔntry: 🤖Provider.Entry
+    let 🎛Data: 🎛InlineDataModel
+    
+    var body: some View {
+        Group {
+            if 🎛Data.text != "" {
+                Text(🎛Data.text)
+            } else if 🎛Data.placeholder != .nothing {
+                Image(systemName: 🎛Data.placeholder.icon)
+            }
+        }
+        .widgetURL(URL(string: "Inline")!)
+    }
+    
+    init(_ ⓔntry: 🤖Provider.Entry) {
+        self.ⓔntry = ⓔntry
+        🎛Data = 📱AppModel().🎛InlineData
     }
 }

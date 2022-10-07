@@ -4,18 +4,18 @@ import WidgetKit
 
 class 📱AppModel: ObservableObject {
     @Published var 🎛RectangularData = 🎛RectangularDataModel()
-    @Published var 🎛InlineData = 🎛InlineDataModel()
     @Published var 🎛CircularData = 🎛CircularDataModel()
+    @Published var 🎛InlineData = 🎛InlineDataModel()
     
     func 💾SaveDataAndReloadWidget() {
         do {
             let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
             var ⓓata = try JSONEncoder().encode(🎛RectangularData)
             ⓤd?.set(ⓓata, forKey: "Rectangular")
-            ⓓata = try JSONEncoder().encode(🎛InlineData)
-            ⓤd?.set(ⓓata, forKey: "Inline")
             ⓓata = try JSONEncoder().encode(🎛CircularData)
             ⓤd?.set(ⓓata, forKey: "Circular")
+            ⓓata = try JSONEncoder().encode(🎛InlineData)
+            ⓤd?.set(ⓓata, forKey: "Inline")
         } catch {
             print("🚨Error: ", error)
         }
@@ -23,18 +23,18 @@ class 📱AppModel: ObservableObject {
     }
     
     func 💾LoadDatas() {
-        enum 🚨LoadError: Error { case Rectangular, Inline, Circular }
+        enum 🚨LoadError: Error { case Rectangular, Circular, Inline }
         let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
         do {
             if let ⓓata = ⓤd?.data(forKey: "Rectangular") {
                 🎛RectangularData = try JSONDecoder().decode(🎛RectangularDataModel.self, from: ⓓata)
             } else { throw 🚨LoadError.Rectangular }
-            if let ⓓata = ⓤd?.data(forKey: "Inline") {
-                🎛InlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
-            } else { throw 🚨LoadError.Inline }
             if let ⓓata = ⓤd?.data(forKey: "Circular") {
                 🎛CircularData = try JSONDecoder().decode(🎛CircularDataModel.self, from: ⓓata)
             } else { throw 🚨LoadError.Circular }
+            if let ⓓata = ⓤd?.data(forKey: "Inline") {
+                🎛InlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
+            } else { throw 🚨LoadError.Inline }
         } catch {
             print("🚨Error: ", error)
         }
@@ -59,11 +59,6 @@ struct 🎛RectangularDataModel: Codable, Equatable {
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
-struct 🎛InlineDataModel: Codable, Equatable {
-    var text: String = ""
-    var placeholder: 🄿laceholder = .squareAndPencil
-}
-
 struct 🎛CircularDataModel: Codable, Equatable {
     var text: String = ""
     var background: Bool = true
@@ -75,6 +70,11 @@ struct 🎛CircularDataModel: Codable, Equatable {
     var italic: Bool = false
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
+}
+
+struct 🎛InlineDataModel: Codable, Equatable {
+    var text: String = ""
+    var placeholder: 🄿laceholder = .squareAndPencil
 }
 
 enum 🄿laceholder: String, Codable, CaseIterable, Identifiable {

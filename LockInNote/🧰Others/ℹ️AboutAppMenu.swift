@@ -7,9 +7,9 @@ let 🔗AppStoreProductURL = URL(string: "https://apps.apple.com/app/id164487934
 let 👤PrivacyPolicy = """
 2022-09-12
 
-(English)This application don't collect user infomation.
+(English) This application don't collect user infomation.
 
-(Japanese)このアプリ自身において、ユーザーの情報を一切収集しません。
+(Japanese) このアプリ自身において、ユーザーの情報を一切収集しません。
 """
 
 
