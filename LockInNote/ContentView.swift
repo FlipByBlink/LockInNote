@@ -150,10 +150,16 @@ struct 📝InlineWidgetTab: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("Note text", text: $📱.🎛InlineData.text)
-                        .toolbar { 🗑EraseTextButton($📱.🎛InlineData.text) }
-                        .focused($🚩Focus)
-                        .padding(.vertical, 24)
+                    HStack {
+                        Text(Date.now.formatted(.dateTime.day().weekday(.abbreviated)))
+                            .font(.headline)
+                            .foregroundStyle(.tertiary)
+                        TextField("Note text", text: $📱.🎛InlineData.text)
+                            .toolbar { 🗑EraseTextButton($📱.🎛InlineData.text) }
+                            .focused($🚩Focus)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                    .listRowBackground(Color.clear)
                 }
                 📣ADBanner($🚩ShowADMenuSheet)
                 DisclosureGroup {
