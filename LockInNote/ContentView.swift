@@ -52,10 +52,10 @@ struct 📝RectangularWidgetTab: View {
             List {
                 Section {
                     TextField("Note text", text: $📱.🎛RectangularData.text, axis: .vertical)
-                        .swipeActions { 🗑ClearTextButton($📱.🎛RectangularData.text) }
                         .focused($🚩Focus)
                         .frame(minHeight: 160)
                         .toolbar {
+                            🗑EraseTextButton($📱.🎛RectangularData.text)
                             ToolbarItem(placement: .keyboard) {
                                 Button {
                                     🚩Focus = false
@@ -66,9 +66,7 @@ struct 📝RectangularWidgetTab: View {
                             }
                         }
                 }
-                
                 📣ADBanner($🚩ShowADMenuSheet)
-                
                 DisclosureGroup {
                     🎚WeightPicker($📱.🎛RectangularData.fontWeight)
                     🎚DesignPicker($📱.🎛RectangularData.fontDesign)
@@ -106,13 +104,11 @@ struct 📝CircularWidgetTab: View {
             List {
                 Section {
                     TextField("Note text", text: $📱.🎛CircularData.text)
-                        .swipeActions { 🗑ClearTextButton($📱.🎛CircularData.text) }
+                        .toolbar { 🗑EraseTextButton($📱.🎛CircularData.text) }
                         .focused($🚩Focus)
                         .padding(.vertical, 24)
                 }
-                
                 📣ADBanner($🚩ShowADMenuSheet)
-                
                 DisclosureGroup {
                     Toggle(isOn: $📱.🎛CircularData.background) {
                         Label("Background",
@@ -155,13 +151,11 @@ struct 📝InlineWidgetTab: View {
             List {
                 Section {
                     TextField("Note text", text: $📱.🎛InlineData.text)
-                        .swipeActions { 🗑ClearTextButton($📱.🎛InlineData.text) }
+                        .toolbar { 🗑EraseTextButton($📱.🎛InlineData.text) }
                         .focused($🚩Focus)
                         .padding(.vertical, 24)
                 }
-                
                 📣ADBanner($🚩ShowADMenuSheet)
-                
                 DisclosureGroup {
                     🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
                 } label: {
@@ -184,14 +178,39 @@ struct 📝InlineWidgetTab: View {
     }
 }
 
-struct 🗑ClearTextButton: View {
+struct 🗑EraseTextButton: ToolbarContent {
+    @State private var ⓞffsetX: CGFloat = 0
+    @State private var 🚩EraseNow: Bool = false
     @Binding var ⓣext: String
-    var body: some View {
-        Button {
-            UINotificationFeedbackGenerator().notificationOccurred(.warning)
-            ⓣext = ""
-        } label: {
-            Label("Clear", systemImage: "eraser.line.dashed")
+    var body: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                🚩EraseNow = true
+                withAnimation {
+                    ⓞffsetX = -32
+                    ⓣext = ""
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    withAnimation(.default.speed(0.5)) {
+                        🚩EraseNow = false
+                        ⓞffsetX = 0
+                    }
+                }
+            } label: {
+                Label("Erase", systemImage: "eraser.line.dashed")
+                    .opacity(🚩EraseNow ? 0 : 1)
+            }
+            .disabled(ⓣext.isEmpty)
+            .foregroundStyle(ⓣext.isEmpty ? .tertiary : .secondary)
+            .overlay {
+                if 🚩EraseNow {
+                    Image(systemName: "eraser.line.dashed")
+                        .foregroundStyle(.secondary)
+                        .offset(x: ⓞffsetX)
+                        .transition(.opacity)
+                }
+            }
         }
     }
     init(_ ⓣext: Binding<String>) {
