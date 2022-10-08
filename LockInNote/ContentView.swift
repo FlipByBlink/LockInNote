@@ -56,7 +56,7 @@ struct 📝RectangularWidgetTab: View {
                             .foregroundStyle(.background)
                             .onTapGesture { 🚩Focus = true }
                             .shadow(radius: 1)
-                        TextField("Note text", text: $📱.🎛RectangularData.text, axis: .vertical)
+                        TextField("Input text", text: $📱.🎛RectangularData.text, axis: .vertical)
                             .focused($🚩Focus)
                             .frame(height: 150)
                             .padding()
@@ -117,7 +117,7 @@ struct 📝CircularWidgetTab: View {
                             Circle().foregroundStyle(.background)
                                 .shadow(radius: 1)
                                 .onTapGesture { 🚩Focus = true }
-                            TextField("Note text", text: $📱.🎛CircularData.text, axis: .vertical)
+                            TextField("Input text", text: $📱.🎛CircularData.text, axis: .vertical)
                                 .focused($🚩Focus)
                                 .frame(width: (ⓢize * 5/7) - 6, height: (ⓢize * 5/7) - 6)
                                 .toolbar {
@@ -181,7 +181,7 @@ struct 📝InlineWidgetTab: View {
                         Text(Date.now.formatted(.dateTime.day().weekday(.abbreviated)))
                             .font(.headline)
                             .foregroundStyle(.tertiary)
-                        TextField("Note text", text: $📱.🎛InlineData.text)
+                        TextField("Input text", text: $📱.🎛InlineData.text)
                             .toolbar { 🗑EraseTextButton($📱.🎛InlineData.text) }
                             .focused($🚩Focus)
                             .textFieldStyle(.roundedBorder)

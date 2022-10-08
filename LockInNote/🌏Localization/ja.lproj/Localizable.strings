@@ -2,7 +2,7 @@
 "Rectangular" = "長方形";
 "Circular" = "円形";
 "Inline" = "インライン";
-"Note text" = "ノートテキスト";
+"Input text" = "テキストを入力";
 "□⃞  Rectangular" = "□⃞  長方形";
 "○  Circular" = "○  円形";
 "▷  Inline" = "▷  インライン";
