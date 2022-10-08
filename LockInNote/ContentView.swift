@@ -223,8 +223,8 @@ struct 🗑EraseTextButton: ToolbarContent {
                     ⓞffsetX = -32
                     ⓣext = ""
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    withAnimation(.default.speed(0.5)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    withAnimation(.default.speed(0.8)) {
                         🚩EraseNow = false
                         ⓞffsetX = 0
                     }
