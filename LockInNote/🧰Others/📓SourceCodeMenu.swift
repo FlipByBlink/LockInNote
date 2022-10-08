@@ -2,17 +2,16 @@
 let 🔗WebRepositoryURL = URL(string: "https://github.com/FlipByBlink/LockInNote")!
 let 🔗WebRepositoryURL_Mirror = URL(string: "https://gitlab.com/FlipByBlink/LockInNote_Mirror")!
 
+enum 📁SourceFolder: String, CaseIterable, Identifiable {
+    case main
+    case 🧰Others
+    var id: String { self.rawValue }
+}
+
 
 
 
 import SwiftUI
-
-enum 📁SourceFolder: String, CaseIterable, Identifiable {
-    case main
-    case 🧩Sub
-    case 🧰Others
-    var id: String { self.rawValue }
-}
 
 struct 📓SourceCodeLink: View {
     var body: some View {
