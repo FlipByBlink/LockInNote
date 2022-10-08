@@ -51,21 +51,29 @@ struct 📝RectangularWidgetTab: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("Note text", text: $📱.🎛RectangularData.text, axis: .vertical)
-                        .focused($🚩Focus)
-                        .frame(minHeight: 160)
-                        .toolbar {
-                            🗑EraseTextButton($📱.🎛RectangularData.text)
-                            ToolbarItem(placement: .keyboard) {
-                                Button {
-                                    🚩Focus = false
-                                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                                } label: {
-                                    Label("Done", systemImage: "keyboard.chevron.compact.down")
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .foregroundStyle(.background)
+                            .onTapGesture { 🚩Focus = true }
+                            .shadow(radius: 1)
+                        TextField("Note text", text: $📱.🎛RectangularData.text, axis: .vertical)
+                            .focused($🚩Focus)
+                            .frame(height: 150)
+                            .padding()
+                            .toolbar {
+                                🗑EraseTextButton($📱.🎛RectangularData.text)
+                                ToolbarItem(placement: .keyboard) {
+                                    Button {
+                                        🚩Focus = false
+                                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                                    } label: {
+                                        Label("Done", systemImage: "keyboard.chevron.compact.down")
+                                    }
                                 }
                             }
-                        }
+                    }
                 }
+                .listRowBackground(Color.clear)
                 📣ADBanner($🚩ShowADMenuSheet)
                 DisclosureGroup {
                     🎚WeightPicker($📱.🎛RectangularData.fontWeight)
@@ -107,7 +115,7 @@ struct 📝CircularWidgetTab: View {
                         let ⓢize: CGFloat = 220
                         ZStack {
                             Circle().foregroundStyle(.background)
-                                .shadow(radius: 2)
+                                .shadow(radius: 1)
                             TextField("Note text", text: $📱.🎛CircularData.text, axis: .vertical)
                                 .focused($🚩Focus)
                                 .frame(width: (ⓢize * 5/7) - 6, height: (ⓢize * 5/7) - 6)
@@ -214,7 +222,7 @@ struct 🗑EraseTextButton: ToolbarContent {
                     ⓞffsetX = -32
                     ⓣext = ""
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     withAnimation(.default.speed(0.5)) {
                         🚩EraseNow = false
                         ⓞffsetX = 0
