@@ -21,7 +21,7 @@ struct ContentView: View {
                 .tag(🔖TabTag.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
         }
-        .animation(.default.speed(0.5), value: 🛒.🚩ADisActive)
+        .animation(.default.speed(0.5), value: 🛒.🚩ADIsActive)
         .scrollDismissesKeyboard(.interactively)
         .onOpenURL { 🔗 in
             DispatchQueue.main.async {
@@ -46,6 +46,7 @@ struct ContentView: View {
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @FocusState var 🚩Focus: Bool
+    @State private var 🚩ShowADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
             List {
@@ -66,7 +67,7 @@ struct 📝RectangularWidgetTab: View {
                         }
                 }
                 
-                📣ADBanner()
+                📣ADBanner($🚩ShowADMenuSheet)
                 
                 DisclosureGroup {
                     🎚WeightPicker($📱.🎛RectangularData.fontWeight)
@@ -81,6 +82,7 @@ struct 📝RectangularWidgetTab: View {
                         .font(.caption)
                 }
             }
+            .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
             .navigationTitle("□⃞  Rectangular")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -98,6 +100,7 @@ struct 📝RectangularWidgetTab: View {
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @FocusState var 🚩Focus: Bool
+    @State private var 🚩ShowADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
             List {
@@ -108,7 +111,7 @@ struct 📝CircularWidgetTab: View {
                         .padding(.vertical, 24)
                 }
                 
-                📣ADBanner()
+                📣ADBanner($🚩ShowADMenuSheet)
                 
                 DisclosureGroup {
                     Toggle(isOn: $📱.🎛CircularData.background) {
@@ -128,6 +131,7 @@ struct 📝CircularWidgetTab: View {
                         .font(.caption)
                 }
             }
+            .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
             .navigationTitle("○  Circular")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -145,6 +149,7 @@ struct 📝CircularWidgetTab: View {
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @FocusState var 🚩Focus: Bool
+    @State private var 🚩ShowADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
             List {
@@ -155,7 +160,7 @@ struct 📝InlineWidgetTab: View {
                         .padding(.vertical, 24)
                 }
                 
-                📣ADBanner()
+                📣ADBanner($🚩ShowADMenuSheet)
                 
                 DisclosureGroup {
                     🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
@@ -164,6 +169,7 @@ struct 📝InlineWidgetTab: View {
                         .font(.caption)
                 }
             }
+            .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
             .navigationTitle("▷  Inline")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -349,13 +355,14 @@ struct 🎚ItalicPicker: View {
 
 
 struct 📣ADBanner: View {
-    @EnvironmentObject var 🛒: 🛒StoreModel
+    @Binding var 🚩ShowADMenuSheet: Bool
     var body: some View {
-        if 🛒.🚩ADisActive {
-            Section {
-                📣ADView()
-            }
+        Section {
+            📣ADView(without: .LockInNote, $🚩ShowADMenuSheet)
         }
+    }
+    init(_ 🚩ShowADMenuSheet: Binding<Bool>) {
+        self._🚩ShowADMenuSheet = 🚩ShowADMenuSheet
     }
 }
 

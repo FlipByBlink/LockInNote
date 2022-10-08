@@ -9,18 +9,16 @@ struct 🛒PurchaseView: View {
     @State private var 🚩BuyingNow = false
     @State private var 🚨ShowError = false
     @State private var 🚨ErrorMessage = ""
-    
     var body: some View {
         HStack {
             Label(🛒.🎫Name, systemImage: "cart")
             Spacer()
-            if 🛒.🚩Purchased ?? false {
+            if 🛒.🚩Purchased {
                 Image(systemName: "checkmark")
                     .imageScale(.small)
                     .foregroundStyle(.tertiary)
                     .transition(.slide)
             }
-            
             Button(🛒.🎫Price) {
                 Task {
                     do {
@@ -50,27 +48,25 @@ struct 🛒PurchaseView: View {
         }
         .padding(.vertical)
         .disabled(🛒.🚩Unconnected)
-        .disabled(🛒.🚩Purchased ?? false)
+        .disabled(🛒.🚩Purchased)
         .animation(.default, value: 🛒.🚩Purchased)
     }
 }
 
 struct 🛒IAPSection: View {
     @EnvironmentObject var 🛒: 🛒StoreModel
-    
     var body: some View {
         Section {
             🛒PurchaseView()
             🛒ProductPreview()
-            🛒RestoreButton()
         } header: {
             Text("In-App Purchase")
         }
+        🛒RestoreButton()
     }
-    
     struct 🛒ProductPreview: View {
         var body: some View {
-            HStack {
+            HStack(spacing: 4) {
                 Image("ProductPreview_Before")
                     .resizable()
                     .scaledToFit()
@@ -81,18 +77,15 @@ struct 🛒IAPSection: View {
                     .resizable()
                     .scaledToFit()
             }
-            .padding(.horizontal)
             .padding(24)
         }
     }
-    
     struct 🛒RestoreButton: View {
         @EnvironmentObject var 🛒: 🛒StoreModel
         @State private var 🚩RestoringNow = false
         @State private var 🚨ShowAlert = false
         @State private var 🚨SyncSuccess = false
         @State private var 🚨Message = ""
-        
         var body: some View {
             Section {
                 Button {
@@ -115,7 +108,7 @@ struct 🛒IAPSection: View {
                         Label("Restore Purchases", systemImage: "arrow.clockwise")
                             .font(.footnote)
                             .foregroundColor(🛒.🚩Unconnected ? .secondary : nil)
-                            .grayscale(🛒.🚩Purchased ?? false ? 1 : 0)
+                            .grayscale(🛒.🚩Purchased ? 1 : 0)
                         if 🚩RestoringNow {
                             Spacer()
                             ProgressView()
@@ -142,13 +135,13 @@ class 🛒StoreModel: ObservableObject {
     
     var 🆔ProductID: String
     
-    var 🚩ADisActive: Bool {
-        !(🚩Purchased ?? true) && ( 🄻aunchCount > 5 )
+    var 🚩ADIsActive: Bool {
+        !🚩Purchased && ( ⓛaunchCount > 5 )
     }
     
     @Published private(set) var 🎫Product: Product?
-    @Published private(set) var 🚩Purchased: Bool? = nil
-    @AppStorage("🄻aunchCount") var 🄻aunchCount: Int = 0
+    @AppStorage("Purchased") var 🚩Purchased: Bool = false
+    @AppStorage("launchCount") var ⓛaunchCount: Int = 0
     var 🚩Unconnected: Bool { 🎫Product == nil }
     var 🤖UpdateListenerTask: Task<Void, Error>? = nil
     
@@ -166,7 +159,7 @@ class 🛒StoreModel: ObservableObject {
             await 🅄pdateCustomerProductStatus()
         }
         
-        🄻aunchCount += 1
+        ⓛaunchCount += 1
     }
     
     deinit { 🤖UpdateListenerTask?.cancel() }
@@ -194,8 +187,8 @@ class 🛒StoreModel: ObservableObject {
     @MainActor
     func 🅁equestProducts() async {
         do {
-            if let 📦 = try await Product.products(for: [🆔ProductID]).first {
-                🎫Product = 📦
+            if let ⓟroduct = try await Product.products(for: [🆔ProductID]).first {
+                🎫Product = ⓟroduct
             }
         } catch {
             print(#function, "Failed product request from the App Store server: \(error)")
@@ -251,7 +244,9 @@ class 🛒StoreModel: ObservableObject {
             }
         }
         
-        🚩Purchased = ⓟurchased
+        withAnimation {
+            🚩Purchased = ⓟurchased
+        }
     }
     
     var 🎫Name: String {
