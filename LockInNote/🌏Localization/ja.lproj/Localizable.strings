@@ -2,6 +2,9 @@
 "Rectangular" = "長方形";
 "Circular" = "円形";
 "Inline" = "インライン";
+"Rectangular widget" = "長方形ウィジェット";
+"Circular widget" = "円形ウィジェット";
+"Inline widget" = "インラインウィジェット";
 "Input text" = "テキストを入力";
 "□⃞  Rectangular" = "□⃞  長方形";
 "○  Circular" = "○  円形";

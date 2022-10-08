@@ -96,7 +96,8 @@ struct 📝RectangularWidgetTab: View {
                 }
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
-            .toolbar(.visible, for: .navigationBar)
+            .navigationTitle("Rectangular widget")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .onOpenURL { 🔗 in
             if 🔗.description == "Rectangular" {
@@ -170,7 +171,8 @@ struct 📝CircularWidgetTab: View {
                 }
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
-            .toolbar(.visible, for: .navigationBar)
+            .navigationTitle("Circular widget")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .onOpenURL { 🔗 in
             if 🔗.description == "Circular" {
@@ -220,7 +222,8 @@ struct 📝InlineWidgetTab: View {
                 }
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
-            .toolbar(.visible, for: .navigationBar)
+            .navigationTitle("Inline widget")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .onOpenURL { 🔗 in
             if 🔗.description == "Inline" {
