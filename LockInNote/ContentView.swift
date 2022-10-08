@@ -103,10 +103,30 @@ struct 📝CircularWidgetTab: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("Note text", text: $📱.🎛CircularData.text)
-                        .toolbar { 🗑EraseTextButton($📱.🎛CircularData.text) }
-                        .focused($🚩Focus)
-                        .padding(.vertical, 24)
+                    ZStack {
+                        Color.clear
+                        let ⓢize: CGFloat = 220
+                        ZStack {
+                            Circle().foregroundStyle(.background)
+                                .shadow(radius: 2)
+                            TextField("Note text", text: $📱.🎛CircularData.text, axis: .vertical)
+                                .focused($🚩Focus)
+                                .frame(width: (ⓢize * 5/7) - 6, height: (ⓢize * 5/7) - 6)
+                                .toolbar {
+                                    🗑EraseTextButton($📱.🎛CircularData.text)
+                                    ToolbarItem(placement: .keyboard) {
+                                        Button {
+                                            🚩Focus = false
+                                            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                                        } label: {
+                                            Label("Done", systemImage: "keyboard.chevron.compact.down")
+                                        }
+                                    }
+                                }
+                        }
+                        .frame(width: ⓢize, height: ⓢize)
+                    }
+                    .listRowBackground(Color.clear)
                 }
                 📣ADBanner($🚩ShowADMenuSheet)
                 DisclosureGroup {
