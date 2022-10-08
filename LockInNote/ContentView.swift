@@ -55,7 +55,7 @@ struct 📝RectangularWidgetTab: View {
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .foregroundStyle(.background)
                             .onTapGesture { 🚩Focus = true }
-                            .shadow(radius: 1)
+                            .shadow(color: .secondary, radius: 1)
                         TextField("Input text", text: $📱.🎛RectangularData.text, axis: .vertical)
                             .font(.title2)
                             .focused($🚩Focus)
@@ -116,7 +116,7 @@ struct 📝CircularWidgetTab: View {
                         let ⓢize: CGFloat = 220
                         ZStack {
                             Circle().foregroundStyle(.background)
-                                .shadow(radius: 1)
+                                .shadow(color: .secondary, radius: 1)
                                 .onTapGesture { 🚩Focus = true }
                             TextField("Input text", text: $📱.🎛CircularData.text, axis: .vertical)
                                 .font(.title2)
