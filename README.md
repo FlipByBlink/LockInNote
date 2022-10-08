@@ -25,8 +25,6 @@ Note app for lock screen widget!
 
 ・Options of multi-text-alignment / placeholder-graphic etc.
 
-・Clear the text by swiping textfield.
-
 
 ==== Japanese(native) description ====
 
@@ -37,8 +35,6 @@ Note app for lock screen widget!
 ・フォントの大きさやデザイン、太さなど調整可能。
 
 ・複数行の揃え方や、テキスト未入力時の表示パターンなどのオプション。
-
-・テキストフィールドをスワイプして文章を消す。
 
 
 ==== Localization: All ====
