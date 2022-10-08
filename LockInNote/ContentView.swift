@@ -116,6 +116,7 @@ struct 📝CircularWidgetTab: View {
                         ZStack {
                             Circle().foregroundStyle(.background)
                                 .shadow(radius: 1)
+                                .onTapGesture { 🚩Focus = true }
                             TextField("Note text", text: $📱.🎛CircularData.text, axis: .vertical)
                                 .focused($🚩Focus)
                                 .frame(width: (ⓢize * 5/7) - 6, height: (ⓢize * 5/7) - 6)
