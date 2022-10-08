@@ -2,16 +2,6 @@
 import SwiftUI
 import StoreKit
 
-/// ParentView: View {
-///  @State private var 🚩ShowADMenuSheet: Bool = false
-///  var body: some View {
-///     ...
-///     📣ADBanner($🚩ShowADMenuSheet)
-///     ...
-///     .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
-///  }
-/// }
-
 struct 📣ADView: View {
     @EnvironmentObject var 🛒: 🛒StoreModel
     @State private var ⓐppName: 📣AppName
