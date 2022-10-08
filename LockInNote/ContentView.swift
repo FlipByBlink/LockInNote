@@ -71,6 +71,12 @@ struct 📝RectangularWidgetTab: View {
                                         Label("Done", systemImage: "keyboard.chevron.compact.down")
                                     }
                                 }
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    ShareLink(item: 📱.🎛RectangularData.text)
+                                        .disabled(📱.🎛RectangularData.text.isEmpty)
+                                        .grayscale(1)
+                                        .accessibilityLabel("Share")
+                                }
                             }
                     }
                 }
@@ -132,6 +138,12 @@ struct 📝CircularWidgetTab: View {
                                             Label("Done", systemImage: "keyboard.chevron.compact.down")
                                         }
                                     }
+                                    ToolbarItem(placement: .navigationBarLeading) {
+                                        ShareLink(item: 📱.🎛CircularData.text)
+                                            .disabled(📱.🎛CircularData.text.isEmpty)
+                                            .grayscale(1)
+                                            .accessibilityLabel("Share")
+                                    }
                                 }
                         }
                         .frame(width: ⓢize, height: ⓢize)
@@ -185,9 +197,17 @@ struct 📝InlineWidgetTab: View {
                             .foregroundStyle(.tertiary)
                         TextField("Input text", text: $📱.🎛InlineData.text)
                             .font(.title2)
-                            .toolbar { 🗑EraseTextButton($📱.🎛InlineData.text) }
                             .focused($🚩Focus)
                             .textFieldStyle(.roundedBorder)
+                            .toolbar {
+                                🗑EraseTextButton($📱.🎛InlineData.text)
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    ShareLink(item: 📱.🎛InlineData.text)
+                                        .disabled(📱.🎛InlineData.text.isEmpty)
+                                        .grayscale(1)
+                                        .accessibilityLabel("Share")
+                                }
+                            }
                     }
                     .listRowBackground(Color.clear)
                 }
