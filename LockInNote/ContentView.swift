@@ -496,11 +496,12 @@ struct ℹ️AboutAppTab: View {
                 
                 📣ADMenuLink()
                 
-                Section {
-                    Text("If lock screen widgets don't update, please close this app or switch to another app.")
-                } header: {
-                    Text("Directions")
-                }
+                // Reject を受けて一旦 コメントアウト
+                //Section {
+                //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
+                //} header: {
+                //    Text("Directions")
+                //}
             }
             .navigationBarTitleDisplayMode(.inline)
         }
