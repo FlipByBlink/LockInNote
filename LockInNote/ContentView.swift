@@ -82,18 +82,7 @@ struct 📝RectangularWidgetTab: View {
                 }
                 .listRowBackground(Color.clear)
                 📣ADBanner($🚩ShowADMenuSheet)
-                DisclosureGroup {
-                    🎚WeightPicker($📱.🎛RectangularData.fontWeight)
-                    🎚DesignPicker($📱.🎛RectangularData.fontDesign)
-                    🎚FontSizePicker($📱.🎛RectangularData.fontSize)
-                    🎚LevelPicker($📱.🎛RectangularData.level)
-                    🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
-                    🎚ItalicPicker($📱.🎛RectangularData.italic)
-                    🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
-                } label: {
-                    Label("Customize", systemImage: "slider.horizontal.3")
-                        .font(.caption)
-                }
+                🎚CustomizeSection()
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
             .navigationTitle("Rectangular widget")
@@ -105,6 +94,24 @@ struct 📝RectangularWidgetTab: View {
                     🚩Focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
+            }
+        }
+    }
+    struct 🎚CustomizeSection: View {
+        @EnvironmentObject var 📱: 📱AppModel
+        @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
+        var body: some View {
+            DisclosureGroup(isExpanded: $🚩UnfoldSection) {
+                🎚WeightPicker($📱.🎛RectangularData.fontWeight)
+                🎚DesignPicker($📱.🎛RectangularData.fontDesign)
+                🎚FontSizePicker($📱.🎛RectangularData.fontSize)
+                🎚LevelPicker($📱.🎛RectangularData.level)
+                🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
+                🎚ItalicPicker($📱.🎛RectangularData.italic)
+                🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
+            } label: {
+                Label("Customize", systemImage: "slider.horizontal.3")
+                    .font(.caption)
             }
         }
     }
@@ -152,23 +159,7 @@ struct 📝CircularWidgetTab: View {
                     .listRowBackground(Color.clear)
                 }
                 📣ADBanner($🚩ShowADMenuSheet)
-                DisclosureGroup {
-                    Toggle(isOn: $📱.🎛CircularData.background) {
-                        Label("Background",
-                              systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
-                        .animation(.default, value: 📱.🎛CircularData.background)
-                    }
-                    🎚WeightPicker($📱.🎛CircularData.fontWeight)
-                    🎚DesignPicker($📱.🎛CircularData.fontDesign)
-                    🎚FontSizePicker($📱.🎛CircularData.fontSize)
-                    🎚LevelPicker($📱.🎛CircularData.level)
-                    🎚TextAlignmentPicker($📱.🎛CircularData.multilineTextAlignment)
-                    🎚ItalicPicker($📱.🎛CircularData.italic)
-                    🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
-                } label: {
-                    Label("Customize", systemImage: "slider.horizontal.3")
-                        .font(.caption)
-                }
+                🎚CustomizeSection()
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
             .navigationTitle("Circular widget")
@@ -180,6 +171,29 @@ struct 📝CircularWidgetTab: View {
                     🚩Focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
+            }
+        }
+    }
+    struct 🎚CustomizeSection: View {
+        @EnvironmentObject var 📱: 📱AppModel
+        @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
+        var body: some View {
+            DisclosureGroup(isExpanded: $🚩UnfoldSection) {
+                Toggle(isOn: $📱.🎛CircularData.background) {
+                    Label("Background",
+                          systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                    .animation(.default, value: 📱.🎛CircularData.background)
+                }
+                🎚WeightPicker($📱.🎛CircularData.fontWeight)
+                🎚DesignPicker($📱.🎛CircularData.fontDesign)
+                🎚FontSizePicker($📱.🎛CircularData.fontSize)
+                🎚LevelPicker($📱.🎛CircularData.level)
+                🎚TextAlignmentPicker($📱.🎛CircularData.multilineTextAlignment)
+                🎚ItalicPicker($📱.🎛CircularData.italic)
+                🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
+            } label: {
+                Label("Customize", systemImage: "slider.horizontal.3")
+                    .font(.caption)
             }
         }
     }
@@ -214,12 +228,7 @@ struct 📝InlineWidgetTab: View {
                     .listRowBackground(Color.clear)
                 }
                 📣ADBanner($🚩ShowADMenuSheet)
-                DisclosureGroup {
-                    🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
-                } label: {
-                    Label("Customize", systemImage: "slider.horizontal.3")
-                        .font(.caption)
-                }
+                🎚CustomizeSection()
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
             .navigationTitle("Inline widget")
@@ -231,6 +240,18 @@ struct 📝InlineWidgetTab: View {
                     🚩Focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
+            }
+        }
+    }
+    struct 🎚CustomizeSection: View {
+        @EnvironmentObject var 📱: 📱AppModel
+        @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
+        var body: some View {
+            DisclosureGroup(isExpanded: $🚩UnfoldSection) {
+                🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
+            } label: {
+                Label("Customize", systemImage: "slider.horizontal.3")
+                    .font(.caption)
             }
         }
     }
