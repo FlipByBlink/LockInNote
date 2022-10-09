@@ -17,6 +17,9 @@ struct ContentView: View {
             📝InlineWidgetTab()
                 .tag(🔖TabTag.inlineWidget)
                 .tabItem { Label("Inline", systemImage: "rectangle.and.pencil.and.ellipsis") }
+            🛠OptionTab()
+                .tag(🔖TabTag.option)
+                .tabItem { Label("Option", systemImage: "gearshape") }
             ℹ️AboutAppTab()
                 .tag(🔖TabTag.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
@@ -39,7 +42,7 @@ struct ContentView: View {
     }
     
     enum 🔖TabTag {
-        case rectangularWidget, circularWidget, inlineWidget, about
+        case rectangularWidget, circularWidget, inlineWidget, option ,about
     }
 }
 
@@ -465,6 +468,22 @@ struct 📣ADBanner: View {
 }
 
 
+//TODO: WIP
+struct 🛠OptionTab: View { // ⚙️
+    @EnvironmentObject var 📱: 📱AppModel
+    var body: some View {
+        📣ADMenuLink()
+        
+        // Reject を受けて一旦 コメントアウト
+        //Section {
+        //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
+        //} header: {
+        //    Text("Directions")
+        //}
+    }
+}
+
+
 struct ℹ️AboutAppTab: View {
     var body: some View {
         NavigationStack {
@@ -514,15 +533,6 @@ struct ℹ️AboutAppTab: View {
                         Label("About App", systemImage: "doc")
                     }
                 }
-                
-                📣ADMenuLink()
-                
-                // Reject を受けて一旦 コメントアウト
-                //Section {
-                //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
-                //} header: {
-                //    Text("Directions")
-                //}
             }
             .navigationBarTitleDisplayMode(.inline)
         }
