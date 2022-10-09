@@ -7,6 +7,9 @@ class 📱AppModel: ObservableObject {
     @Published var 🎛CircularData = 🎛CircularDataModel()
     @Published var 🎛InlineData = 🎛InlineDataModel()
     
+    @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
+    @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
+    
     func 💾SaveDataAndReloadWidget() {
         do {
             let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)

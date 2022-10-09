@@ -471,15 +471,41 @@ struct 📣ADBanner: View {
 //TODO: WIP
 struct 🛠OptionTab: View { // ⚙️
     @EnvironmentObject var 📱: 📱AppModel
+    var ⓛeading: String { 📱.🔗Leading.isEmpty ? "① + " : 📱.🔗Leading}
+    var ⓣrailing: String { 📱.🔗Trailing.isEmpty ? " + ②" : 📱.🔗Trailing}
     var body: some View {
-        📣ADMenuLink()
-        
-        // Reject を受けて一旦 コメントアウト
-        //Section {
-        //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
-        //} header: {
-        //    Text("Directions")
-        //}
+        NavigationStack {
+            List {
+                📣ADMenuLink()
+                
+                Section {
+                    VStack {
+                        Text(ⓛeading + "TEXT" + ⓣrailing)
+                            .italic()
+                            .font(.system(.subheadline, design: .monospaced))
+                            .multilineTextAlignment(.center)
+                            .padding(8)
+                            .frame(minHeight: 100)
+                        TextField("① URL scheme", text: $📱.🔗Leading)
+                        TextField("② Trailing component", text: $📱.🔗Trailing)
+                            .font(.subheadline)
+                            .padding(.bottom, 4)
+                    }
+                    .textFieldStyle(.roundedBorder)
+                } header: {
+                    Label("Customize URL scheme action", systemImage: "command")
+                }
+                .headerProminence(.increased)
+                
+                // Reject を受けて一旦 コメントアウト
+                //Section {
+                //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
+                //} header: {
+                //    Text("Directions")
+                //}
+            }
+            .navigationTitle("Option")
+        }
     }
 }
 
