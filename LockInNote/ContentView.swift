@@ -569,18 +569,22 @@ struct 🛠OptionTab: View { // ⚙️
                     Text("To run one shortcut of Shortcuts App with the text.")
                 }
                 Section {
-                    Text(verbatim: "https://duckduckgo.com/?q=TEXT")
-                        .font(.system(.subheadline, design: .monospaced, weight: .medium))
-                        .multilineTextAlignment(.center)
-                        .padding(.vertical)
-                        .foregroundStyle(.secondary)
+                    HStack {
+                        Spacer()
+                        Text(verbatim: "https://duckduckgo.com/?q=TEXT")
+                            .font(.system(.subheadline, design: .monospaced, weight: .medium))
+                            .multilineTextAlignment(.center)
+                            .padding(.vertical)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
                 } header: {
                     Text("Example 2")
                 } footer: {
                     Text("To search the text on DuckDuckGo.")
                 }
             }
-            .navigationTitle("URL Scheme Action")
+            .navigationTitle("Customize Action")
         }
     }
 }
@@ -617,7 +621,6 @@ struct ℹ️AboutAppTab: View {
                         .padding(48)
                     }
                 }
-                
                 Section {
                     Link(destination: 🔗AppStoreProductURL) {
                         HStack {
@@ -628,7 +631,6 @@ struct ℹ️AboutAppTab: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
-                    
                     NavigationLink  {
                         ℹ️AboutAppMenu()
                     } label: {
@@ -636,7 +638,7 @@ struct ℹ️AboutAppTab: View {
                     }
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(.visible, for: .navigationBar)
         }
     }
 }
@@ -649,7 +651,6 @@ struct 🔗URLSchemeActionButton: View {
     @AppStorage("EraseTextAfterAction") var 🚩EraseTextAfterAction: Bool = false
     @Environment(\.openURL) var ⓞpenURL: OpenURLAction
     @Binding var ⓠuery: String
-    var ⓣitle: String { 🪧ButtonTitle.isEmpty ? "URL scheme action" : 🪧ButtonTitle }
     var ⓤrl: URL? {
         let ⓣext = 🔗Leading + ⓠuery + 🔗Trailing
         guard let ⓔncodedText = ⓣext.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
@@ -669,13 +670,14 @@ struct 🔗URLSchemeActionButton: View {
                             }
                         }
                     } label: {
-                        Label(ⓣitle, systemImage: "command")
+                        Label(LocalizedStringKey(🪧ButtonTitle.isEmpty ? "URL Scheme Action" : 🪧ButtonTitle),
+                              systemImage: "command")
                             .font(.headline)
                     }
                     .disabled(ⓠuery.isEmpty)
                 } header: {
                     if !🪧ButtonTitle.isEmpty {
-                        Text("URL scheme action")
+                        Text("URL Scheme Action")
                     }
                 }
             }
