@@ -9,6 +9,8 @@ class 📱AppModel: ObservableObject {
     
     @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
     @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
+    @AppStorage("URLSchemeTitle") var 🔗SchemeTitle: String = ""
+    @AppStorage("ClearTextAfterAction") var 🚩ClearTextAfterAction: Bool = false
     
     func 💾SaveDataAndReloadWidget() {
         do {

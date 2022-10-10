@@ -85,6 +85,7 @@ struct 📝RectangularWidgetTab: View {
                 }
                 .listRowBackground(Color.clear)
                 📣ADBanner($🚩ShowADMenuSheet)
+                🔗URLSchemeActionButton($📱.🎛RectangularData.text)
                 🎚CustomizeSection()
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
@@ -470,32 +471,11 @@ struct 📣ADBanner: View {
 
 //TODO: WIP
 struct 🛠OptionTab: View { // ⚙️
-    @EnvironmentObject var 📱: 📱AppModel
-    var ⓛeading: String { 📱.🔗Leading.isEmpty ? "① + " : 📱.🔗Leading}
-    var ⓣrailing: String { 📱.🔗Trailing.isEmpty ? " + ②" : 📱.🔗Trailing}
     var body: some View {
         NavigationStack {
             List {
                 📣ADMenuLink()
-                
-                Section {
-                    VStack {
-                        Text(ⓛeading + "TEXT" + ⓣrailing)
-                            .italic()
-                            .font(.system(.subheadline, design: .monospaced))
-                            .multilineTextAlignment(.center)
-                            .padding(8)
-                            .frame(minHeight: 100)
-                        TextField("① URL scheme", text: $📱.🔗Leading)
-                        TextField("② Trailing component", text: $📱.🔗Trailing)
-                            .font(.subheadline)
-                            .padding(.bottom, 4)
-                    }
-                    .textFieldStyle(.roundedBorder)
-                } header: {
-                    Label("Customize URL scheme action", systemImage: "command")
-                }
-                .headerProminence(.increased)
+                🔗URLSchemeActionSection()
                 
                 // Reject を受けて一旦 コメントアウト
                 //Section {
@@ -505,6 +485,37 @@ struct 🛠OptionTab: View { // ⚙️
                 //}
             }
             .navigationTitle("Option")
+        }
+    }
+    struct 🔗URLSchemeActionSection: View {
+        @EnvironmentObject var 📱: 📱AppModel
+        var ⓛeading: String { 📱.🔗Leading.isEmpty ? "① + " : 📱.🔗Leading}
+        var ⓣrailing: String { 📱.🔗Trailing.isEmpty ? " + ②" : 📱.🔗Trailing}
+        var body: some View {
+            Section {
+                VStack {
+                    Text(ⓛeading + "TEXT" + ⓣrailing)
+                        .italic()
+                        .font(.system(.subheadline, design: .monospaced))
+                        .multilineTextAlignment(.center)
+                        .padding(8)
+                        .frame(minHeight: 100)
+                    TextField("① URL scheme", text: $📱.🔗Leading)
+                    TextField("② Trailing component", text: $📱.🔗Trailing)
+                        .font(.subheadline)
+                        .padding(.bottom, 4)
+                }
+                .textFieldStyle(.roundedBorder)
+                
+                TextField("Button text", text: $📱.🔗SchemeTitle)
+                
+                Toggle(isOn: $📱.🚩ClearTextAfterAction) {
+                    Label("Clear text after action", systemImage: "eraser.line.dashed")
+                }
+            } header: {
+                Label("Customize URL scheme action", systemImage: "command")
+            }
+            .headerProminence(.increased)
         }
     }
 }
@@ -562,5 +573,37 @@ struct ℹ️AboutAppTab: View {
             }
             .navigationBarTitleDisplayMode(.inline)
         }
+    }
+}
+
+
+struct 🔗URLSchemeActionButton: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    @Environment(\.openURL) var ⓞpenURL: OpenURLAction
+    @Binding var ⓠuery: String
+    var ⓣitle: String { 📱.🔗SchemeTitle.isEmpty ? "URL scheme action" : 📱.🔗SchemeTitle }
+    var body: some View {
+        if !📱.🔗Leading.isEmpty {
+            if let 🔗 = URL(string: 📱.🔗Leading + ⓠuery + 📱.🔗Trailing) {
+                Section {
+                    Button {
+                        ⓞpenURL.callAsFunction(🔗) { ⓐccepted in
+                            if ⓐccepted && 📱.🚩ClearTextAfterAction {
+                                withAnimation { ⓠuery = "" }
+                            }
+                        }
+                    } label: {
+                        Label(ⓣitle, systemImage: "command")
+                            .font(.headline)
+                    }
+                    .disabled(ⓠuery.isEmpty)
+                } header: {
+                    Text("URL scheme action")
+                }
+            }
+        }
+    }
+    init(_ ⓠuery: Binding<String>) {
+        self._ⓠuery = ⓠuery
     }
 }
