@@ -7,11 +7,6 @@ class 📱AppModel: ObservableObject {
     @Published var 🎛CircularData = 🎛CircularDataModel()
     @Published var 🎛InlineData = 🎛InlineDataModel()
     
-    @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
-    @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
-    @AppStorage("URLSchemeTitle") var 🔗SchemeTitle: String = ""
-    @AppStorage("ClearTextAfterAction") var 🚩ClearTextAfterAction: Bool = false
-    
     func 💾SaveDataAndReloadWidget() {
         do {
             let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)

@@ -477,8 +477,7 @@ struct 🛠OptionTab: View { // ⚙️
                 📣ADMenuLink()
                 🔗URLSchemeActionSection()
                 
-                // Reject を受けて一旦 コメントアウト
-                //Section {
+                //Section { // reject を受けて一旦 comment out
                 //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
                 //} header: {
                 //    Text("Directions")
@@ -488,9 +487,12 @@ struct 🛠OptionTab: View { // ⚙️
         }
     }
     struct 🔗URLSchemeActionSection: View {
-        @EnvironmentObject var 📱: 📱AppModel
-        var ⓛeading: String { 📱.🔗Leading.isEmpty ? "① + " : 📱.🔗Leading}
-        var ⓣrailing: String { 📱.🔗Trailing.isEmpty ? " + ②" : 📱.🔗Trailing}
+        @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
+        @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
+        @AppStorage("URLSchemeTitle") var 🔗SchemeTitle: String = ""
+        @AppStorage("ClearTextAfterAction") var 🚩ClearTextAfterAction: Bool = false
+        var ⓛeading: String { 🔗Leading.isEmpty ? "① + " : 🔗Leading}
+        var ⓣrailing: String { 🔗Trailing.isEmpty ? " + ②" : 🔗Trailing}
         var body: some View {
             Section {
                 VStack {
@@ -500,16 +502,16 @@ struct 🛠OptionTab: View { // ⚙️
                         .multilineTextAlignment(.center)
                         .padding(8)
                         .frame(minHeight: 100)
-                    TextField("① URL scheme", text: $📱.🔗Leading)
-                    TextField("② Trailing component", text: $📱.🔗Trailing)
+                    TextField("① URL scheme", text: $🔗Leading)
+                    TextField("② Trailing component", text: $🔗Trailing)
                         .font(.subheadline)
                         .padding(.bottom, 4)
                 }
                 .textFieldStyle(.roundedBorder)
                 
-                TextField("Button text", text: $📱.🔗SchemeTitle)
+                TextField("Button text", text: $🔗SchemeTitle)
                 
-                Toggle(isOn: $📱.🚩ClearTextAfterAction) {
+                Toggle(isOn: $🚩ClearTextAfterAction) {
                     Label("Clear text after action", systemImage: "eraser.line.dashed")
                 }
             } header: {
@@ -578,18 +580,23 @@ struct ℹ️AboutAppTab: View {
 
 
 struct 🔗URLSchemeActionButton: View {
-    @EnvironmentObject var 📱: 📱AppModel
+    @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
+    @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
+    @AppStorage("URLSchemeTitle") var 🔗SchemeTitle: String = ""
+    @AppStorage("ClearTextAfterAction") var 🚩ClearTextAfterAction: Bool = false
     @Environment(\.openURL) var ⓞpenURL: OpenURLAction
     @Binding var ⓠuery: String
-    var ⓣitle: String { 📱.🔗SchemeTitle.isEmpty ? "URL scheme action" : 📱.🔗SchemeTitle }
+    var ⓣitle: String { 🔗SchemeTitle.isEmpty ? "URL scheme action" : 🔗SchemeTitle }
     var body: some View {
-        if !📱.🔗Leading.isEmpty {
-            if let 🔗 = URL(string: 📱.🔗Leading + ⓠuery + 📱.🔗Trailing) {
+        if !🔗Leading.isEmpty {
+            if let 🔗 = URL(string: 🔗Leading + ⓠuery + 🔗Trailing) {
                 Section {
                     Button {
                         ⓞpenURL.callAsFunction(🔗) { ⓐccepted in
-                            if ⓐccepted && 📱.🚩ClearTextAfterAction {
-                                withAnimation { ⓠuery = "" }
+                            if ⓐccepted && 🚩ClearTextAfterAction {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    ⓠuery = ""
+                                }
                             }
                         }
                     } label: {
