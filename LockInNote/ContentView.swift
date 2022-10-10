@@ -597,6 +597,7 @@ struct 🔗URLSchemeActionButton: View {
             if let ⓤrl {
                 Section {
                     Button {
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
                         ⓞpenURL.callAsFunction(ⓤrl) { ⓐccepted in
                             if ⓐccepted && 🚩ClearTextAfterAction {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
