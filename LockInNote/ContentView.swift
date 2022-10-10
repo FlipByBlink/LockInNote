@@ -587,12 +587,17 @@ struct 🔗URLSchemeActionButton: View {
     @Environment(\.openURL) var ⓞpenURL: OpenURLAction
     @Binding var ⓠuery: String
     var ⓣitle: String { 🔗SchemeTitle.isEmpty ? "URL scheme action" : 🔗SchemeTitle }
+    var ⓤrl: URL? {
+        let ⓣext = 🔗Leading + ⓠuery + 🔗Trailing
+        guard let ⓔncodedText = ⓣext.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
+        return URL(string: ⓔncodedText)
+    }
     var body: some View {
         if !🔗Leading.isEmpty {
-            if let 🔗 = URL(string: 🔗Leading + ⓠuery + 🔗Trailing) {
+            if let ⓤrl {
                 Section {
                     Button {
-                        ⓞpenURL.callAsFunction(🔗) { ⓐccepted in
+                        ⓞpenURL.callAsFunction(ⓤrl) { ⓐccepted in
                             if ⓐccepted && 🚩ClearTextAfterAction {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     ⓠuery = ""
