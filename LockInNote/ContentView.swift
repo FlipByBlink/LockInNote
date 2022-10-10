@@ -48,6 +48,7 @@ struct ContentView: View {
 
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
     @FocusState var 🚩Focus: Bool
     @State private var 🚩ShowADMenuSheet: Bool = false
     var body: some View {
@@ -86,9 +87,21 @@ struct 📝RectangularWidgetTab: View {
                 .listRowBackground(Color.clear)
                 📣ADBanner($🚩ShowADMenuSheet)
                 🔗URLSchemeActionButton($📱.🎛RectangularData.text)
-                🎚CustomizeSection()
+                DisclosureGroup(isExpanded: $🚩UnfoldSection) {
+                    🎚WeightPicker($📱.🎛RectangularData.fontWeight)
+                    🎚DesignPicker($📱.🎛RectangularData.fontDesign)
+                    🎚FontSizePicker($📱.🎛RectangularData.fontSize)
+                    🎚LevelPicker($📱.🎛RectangularData.level)
+                    🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
+                    🎚ItalicPicker($📱.🎛RectangularData.italic)
+                    🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
+                } label: {
+                    Label("Customize", systemImage: "slider.horizontal.3")
+                        .font(.caption)
+                }
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
+            .animation(.default, value: 🚩UnfoldSection)
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -101,28 +114,11 @@ struct 📝RectangularWidgetTab: View {
             }
         }
     }
-    struct 🎚CustomizeSection: View {
-        @EnvironmentObject var 📱: 📱AppModel
-        @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
-        var body: some View {
-            DisclosureGroup(isExpanded: $🚩UnfoldSection) {
-                🎚WeightPicker($📱.🎛RectangularData.fontWeight)
-                🎚DesignPicker($📱.🎛RectangularData.fontDesign)
-                🎚FontSizePicker($📱.🎛RectangularData.fontSize)
-                🎚LevelPicker($📱.🎛RectangularData.level)
-                🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
-                🎚ItalicPicker($📱.🎛RectangularData.italic)
-                🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
-            } label: {
-                Label("Customize", systemImage: "slider.horizontal.3")
-                    .font(.caption)
-            }
-        }
-    }
 }
 
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
     @FocusState var 🚩Focus: Bool
     @State private var 🚩ShowADMenuSheet: Bool = false
     var body: some View {
@@ -164,9 +160,26 @@ struct 📝CircularWidgetTab: View {
                 }
                 📣ADBanner($🚩ShowADMenuSheet)
                 🔗URLSchemeActionButton($📱.🎛CircularData.text)
-                🎚CustomizeSection()
+                DisclosureGroup(isExpanded: $🚩UnfoldSection) {
+                    Toggle(isOn: $📱.🎛CircularData.background) {
+                        Label("Background",
+                              systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                        .animation(.default, value: 📱.🎛CircularData.background)
+                    }
+                    🎚WeightPicker($📱.🎛CircularData.fontWeight)
+                    🎚DesignPicker($📱.🎛CircularData.fontDesign)
+                    🎚FontSizePicker($📱.🎛CircularData.fontSize)
+                    🎚LevelPicker($📱.🎛CircularData.level)
+                    🎚TextAlignmentPicker($📱.🎛CircularData.multilineTextAlignment)
+                    🎚ItalicPicker($📱.🎛CircularData.italic)
+                    🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
+                } label: {
+                    Label("Customize", systemImage: "slider.horizontal.3")
+                        .font(.caption)
+                }
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
+            .animation(.default, value: 🚩UnfoldSection)
             .navigationTitle("Circular widget")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -179,33 +192,11 @@ struct 📝CircularWidgetTab: View {
             }
         }
     }
-    struct 🎚CustomizeSection: View {
-        @EnvironmentObject var 📱: 📱AppModel
-        @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
-        var body: some View {
-            DisclosureGroup(isExpanded: $🚩UnfoldSection) {
-                Toggle(isOn: $📱.🎛CircularData.background) {
-                    Label("Background",
-                          systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
-                    .animation(.default, value: 📱.🎛CircularData.background)
-                }
-                🎚WeightPicker($📱.🎛CircularData.fontWeight)
-                🎚DesignPicker($📱.🎛CircularData.fontDesign)
-                🎚FontSizePicker($📱.🎛CircularData.fontSize)
-                🎚LevelPicker($📱.🎛CircularData.level)
-                🎚TextAlignmentPicker($📱.🎛CircularData.multilineTextAlignment)
-                🎚ItalicPicker($📱.🎛CircularData.italic)
-                🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
-            } label: {
-                Label("Customize", systemImage: "slider.horizontal.3")
-                    .font(.caption)
-            }
-        }
-    }
 }
 
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
     @FocusState var 🚩Focus: Bool
     @State private var 🚩ShowADMenuSheet: Bool = false
     var body: some View {
@@ -234,9 +225,15 @@ struct 📝InlineWidgetTab: View {
                 }
                 📣ADBanner($🚩ShowADMenuSheet)
                 🔗URLSchemeActionButton($📱.🎛InlineData.text)
-                🎚CustomizeSection()
+                DisclosureGroup(isExpanded: $🚩UnfoldSection) {
+                    🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
+                } label: {
+                    Label("Customize", systemImage: "slider.horizontal.3")
+                        .font(.caption)
+                }
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
+            .animation(.default, value: 🚩UnfoldSection)
             .navigationTitle("Inline widget")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -246,18 +243,6 @@ struct 📝InlineWidgetTab: View {
                     🚩Focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
-            }
-        }
-    }
-    struct 🎚CustomizeSection: View {
-        @EnvironmentObject var 📱: 📱AppModel
-        @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
-        var body: some View {
-            DisclosureGroup(isExpanded: $🚩UnfoldSection) {
-                🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
-            } label: {
-                Label("Customize", systemImage: "slider.horizontal.3")
-                    .font(.caption)
             }
         }
     }
