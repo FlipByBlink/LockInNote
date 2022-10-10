@@ -17,7 +17,7 @@ class 📱AppModel: ObservableObject {
             ⓓata = try JSONEncoder().encode(🎛InlineData)
             ⓤd?.set(ⓓata, forKey: "Inline")
         } catch {
-            print("🚨Error: ", error)
+            print("🚨Encode error: ", error)
         }
         WidgetCenter.shared.reloadAllTimelines()
     }
@@ -36,7 +36,7 @@ class 📱AppModel: ObservableObject {
                 🎛InlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
             } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Inline")"#, "is nil.") }
         } catch {
-            print("🚨Error: ", error)
+            print("🚨Decode error: ", error)
         }
     }
     
