@@ -25,6 +25,10 @@ Note app for lock screen widget!
 
 ・Options of multi-text-alignment / placeholder-graphic etc.
 
+・Support share sheet with text.
+
+・Support URL scheme action with text.
+
 
 ==== Japanese(native) description ====
 
@@ -35,6 +39,10 @@ Note app for lock screen widget!
 ・フォントの大きさやデザイン、太さなど調整可能。
 
 ・複数行の揃え方や、テキスト未入力時の表示パターンなどのオプション。
+
+・テキストをシェアシートで共有できます。
+
+・テキストと連携する任意のURLスキームを呼ぶことができます。
 
 
 ==== Localization: All ====

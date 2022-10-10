@@ -1,5 +1,7 @@
 
-"1.0.2" = "・Rebuild UI
-・small fix";
+"1.0.2" = "・Rebuild UI.
+・Add support share sheet.
+・Add support URL scheme action.
+・small fix.";
 "1.0.1" = "small fix";
 "1.0" = "Initial release";
