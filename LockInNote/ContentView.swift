@@ -163,6 +163,7 @@ struct 📝CircularWidgetTab: View {
                     .listRowBackground(Color.clear)
                 }
                 📣ADBanner($🚩ShowADMenuSheet)
+                🔗URLSchemeActionButton($📱.🎛CircularData.text)
                 🎚CustomizeSection()
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
@@ -232,6 +233,7 @@ struct 📝InlineWidgetTab: View {
                     .listRowBackground(Color.clear)
                 }
                 📣ADBanner($🚩ShowADMenuSheet)
+                🔗URLSchemeActionButton($📱.🎛InlineData.text)
                 🎚CustomizeSection()
             }
             .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
@@ -475,7 +477,11 @@ struct 🛠OptionTab: View { // ⚙️
         NavigationStack {
             List {
                 📣ADMenuLink()
-                🔗URLSchemeActionSection()
+                NavigationLink {
+                    🔗URLSchemeActionSettingSection()
+                } label: {
+                    Label("Setting URL scheme action", systemImage: "command")
+                }
                 
                 //Section { // reject を受けて一旦 comment out
                 //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
@@ -486,7 +492,7 @@ struct 🛠OptionTab: View { // ⚙️
             .navigationTitle("Option")
         }
     }
-    struct 🔗URLSchemeActionSection: View {
+    struct 🔗URLSchemeActionSettingSection: View {
         @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
         @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
         @AppStorage("URLSchemeTitle") var 🔗SchemeTitle: String = ""
@@ -494,40 +500,62 @@ struct 🛠OptionTab: View { // ⚙️
         var ⓛeading: String { 🔗Leading.isEmpty ? "① + " : 🔗Leading }
         var ⓣrailing: String { 🔗Trailing.isEmpty ? " + ②" : 🔗Trailing }
         var body: some View {
-            Section {
-                VStack {
-                    HStack {
-                        if 🔗Leading.isEmpty {
-                            Text("① +")
-                                .foregroundStyle(.secondary)
+            List {
+                Section {
+                    VStack {
+                        HStack {
+                            if 🔗Leading.isEmpty {
+                                Text("① +")
+                                    .foregroundStyle(.secondary)
+                            }
+                            Text(🔗Leading + "TEXT" + 🔗Trailing)
+                                .italic()
+                                .font(.system(.subheadline, design: .monospaced))
+                                .multilineTextAlignment(.center)
+                                .padding(8)
+                                .frame(minHeight: 100)
+                            if 🔗Trailing.isEmpty {
+                                Text("+ ②")
+                                    .foregroundStyle(.secondary)
+                            }
                         }
-                        Text(🔗Leading + "TEXT" + 🔗Trailing)
-                            .italic()
-                            .font(.system(.subheadline, design: .monospaced))
-                            .multilineTextAlignment(.center)
-                            .padding(8)
-                            .frame(minHeight: 100)
-                        if 🔗Trailing.isEmpty {
-                            Text("+ ②")
-                                .foregroundStyle(.secondary)
-                        }
+                        TextField("① URL scheme", text: $🔗Leading)
+                        TextField("② Trailing component", text: $🔗Trailing)
+                            .font(.subheadline)
+                            .padding(.bottom, 4)
                     }
-                    TextField("① URL scheme", text: $🔗Leading)
-                    TextField("② Trailing component", text: $🔗Trailing)
-                        .font(.subheadline)
-                        .padding(.bottom, 4)
+                    .textFieldStyle(.roundedBorder)
+                } header: {
+                    Text("URL scheme")
                 }
-                .textFieldStyle(.roundedBorder)
                 
-                TextField("Button text", text: $🔗SchemeTitle)
-                
-                Toggle(isOn: $🚩ClearTextAfterAction) {
-                    Label("Clear text after action", systemImage: "eraser.line.dashed")
+                Section {
+                    TextField("Input text of button", text: $🔗SchemeTitle)
+                } header: {
+                    Text("Button label")
                 }
-            } header: {
-                Label("Customize URL scheme action", systemImage: "command")
+                
+                Section {
+                    Toggle(isOn: $🚩ClearTextAfterAction) {
+                        Label("Clear text after action", systemImage: "eraser.line.dashed")
+                    }
+                }
+                
+                Section {
+                    Text("placeholder")
+                        .redacted(reason: .placeholder)
+                } header: {
+                    Text("Example 1")
+                }
+                
+                Section {
+                    Text("placeholder")
+                        .redacted(reason: .placeholder)
+                } header: {
+                    Text("Example 2")
+                }
             }
-            .headerProminence(.increased)
+            .navigationTitle("URL Scheme Action")
         }
     }
 }
@@ -621,7 +649,9 @@ struct 🔗URLSchemeActionButton: View {
                     }
                     .disabled(ⓠuery.isEmpty)
                 } header: {
-                    Text("URL scheme action")
+                    if !🔗SchemeTitle.isEmpty {
+                        Text("URL scheme action")
+                    }
                 }
             }
         }
