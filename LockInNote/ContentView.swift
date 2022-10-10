@@ -477,12 +477,30 @@ struct 🛠OptionTab: View { // ⚙️
         NavigationStack {
             List {
                 📣ADMenuLink()
-                NavigationLink {
-                    🔗URLSchemeActionSettingSection()
-                } label: {
-                    Label("Setting URL scheme action", systemImage: "command")
+                Section {
+                    NavigationLink {
+                        🔗URLSchemeActionSettingSection()
+                    } label: {
+                        Label("Setting URL scheme action", systemImage: "command")
+                    }
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Text("shortcuts://run-shortcut?nam...")
+                                .rotationEffect(.degrees(-1))
+                            Text(verbatim: "https://duckduckgo.com/?q=...")
+                                .rotationEffect(.degrees(-1))
+                            Text("etc.")
+                                .rotationEffect(.degrees(-1))
+                        }
+                        Spacer()
+                    }
+                    .font(.subheadline.weight(.heavy).italic())
+                    .lineLimit(1)
+                    .foregroundStyle(.tertiary)
+                    .scaleEffect(y: 1.33)
+                    .padding(.vertical, 24)
                 }
-                
                 //Section { // reject を受けて一旦 comment out
                 //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
                 //} header: {
@@ -528,26 +546,22 @@ struct 🛠OptionTab: View { // ⚙️
                 } header: {
                     Text("URL scheme")
                 }
-                
                 Section {
                     TextField("Input text of button", text: $🪧ButtonTitle)
                 } header: {
                     Text("Button label")
                 }
-                
                 Section {
                     Toggle(isOn: $🚩EraseTextAfterAction) {
                         Label("Erase text after action", systemImage: "eraser.line.dashed")
                     }
                 }
-                
                 Section {
                     Text("placeholder")
                         .redacted(reason: .placeholder)
                 } header: {
                     Text("Example 1")
                 }
-                
                 Section {
                     Text("placeholder")
                         .redacted(reason: .placeholder)
