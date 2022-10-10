@@ -491,17 +491,27 @@ struct 🛠OptionTab: View { // ⚙️
         @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
         @AppStorage("URLSchemeTitle") var 🔗SchemeTitle: String = ""
         @AppStorage("ClearTextAfterAction") var 🚩ClearTextAfterAction: Bool = false
-        var ⓛeading: String { 🔗Leading.isEmpty ? "① + " : 🔗Leading}
-        var ⓣrailing: String { 🔗Trailing.isEmpty ? " + ②" : 🔗Trailing}
+        var ⓛeading: String { 🔗Leading.isEmpty ? "① + " : 🔗Leading }
+        var ⓣrailing: String { 🔗Trailing.isEmpty ? " + ②" : 🔗Trailing }
         var body: some View {
             Section {
                 VStack {
-                    Text(ⓛeading + "TEXT" + ⓣrailing)
-                        .italic()
-                        .font(.system(.subheadline, design: .monospaced))
-                        .multilineTextAlignment(.center)
-                        .padding(8)
-                        .frame(minHeight: 100)
+                    HStack {
+                        if 🔗Leading.isEmpty {
+                            Text("① +")
+                                .foregroundStyle(.secondary)
+                        }
+                        Text(🔗Leading + "TEXT" + 🔗Trailing)
+                            .italic()
+                            .font(.system(.subheadline, design: .monospaced))
+                            .multilineTextAlignment(.center)
+                            .padding(8)
+                            .frame(minHeight: 100)
+                        if 🔗Trailing.isEmpty {
+                            Text("+ ②")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
                     TextField("① URL scheme", text: $🔗Leading)
                     TextField("② Trailing component", text: $🔗Trailing)
                         .font(.subheadline)
