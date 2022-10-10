@@ -471,7 +471,6 @@ struct 📣ADBanner: View {
 }
 
 
-//TODO: WIP
 struct 🛠OptionTab: View { // ⚙️
     var body: some View {
         NavigationStack {
@@ -487,17 +486,17 @@ struct 🛠OptionTab: View { // ⚙️
                         Spacer()
                         VStack {
                             Text("shortcuts://run-shortcut?nam...")
-                                .rotationEffect(.degrees(-1))
+                                .rotationEffect(.degrees(-1.5))
                             Text(verbatim: "https://duckduckgo.com/?q=...")
-                                .rotationEffect(.degrees(-1))
+                                .rotationEffect(.degrees(-1.5))
                             Text("etc.")
-                                .rotationEffect(.degrees(-1))
+                                .rotationEffect(.degrees(-1.5))
                         }
                         Spacer()
                     }
                     .font(.subheadline.weight(.heavy).italic())
                     .lineLimit(1)
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
                     .scaleEffect(y: 1.33)
                     .padding(.vertical, 32)
                 }
