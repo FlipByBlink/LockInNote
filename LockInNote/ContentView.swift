@@ -495,8 +495,8 @@ struct 🛠OptionTab: View { // ⚙️
     struct 🔗URLSchemeActionSettingSection: View {
         @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
         @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
-        @AppStorage("URLSchemeTitle") var 🔗SchemeTitle: String = ""
-        @AppStorage("ClearTextAfterAction") var 🚩ClearTextAfterAction: Bool = false
+        @AppStorage("URLSchemeButtonTitle") var 🪧ButtonTitle: String = ""
+        @AppStorage("EraseTextAfterAction") var 🚩EraseTextAfterAction: Bool = false
         var ⓛeading: String { 🔗Leading.isEmpty ? "① + " : 🔗Leading }
         var ⓣrailing: String { 🔗Trailing.isEmpty ? " + ②" : 🔗Trailing }
         var body: some View {
@@ -530,14 +530,14 @@ struct 🛠OptionTab: View { // ⚙️
                 }
                 
                 Section {
-                    TextField("Input text of button", text: $🔗SchemeTitle)
+                    TextField("Input text of button", text: $🪧ButtonTitle)
                 } header: {
                     Text("Button label")
                 }
                 
                 Section {
-                    Toggle(isOn: $🚩ClearTextAfterAction) {
-                        Label("Clear text after action", systemImage: "eraser.line.dashed")
+                    Toggle(isOn: $🚩EraseTextAfterAction) {
+                        Label("Erase text after action", systemImage: "eraser.line.dashed")
                     }
                 }
                 
@@ -620,11 +620,11 @@ struct ℹ️AboutAppTab: View {
 struct 🔗URLSchemeActionButton: View {
     @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
     @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
-    @AppStorage("URLSchemeTitle") var 🔗SchemeTitle: String = ""
-    @AppStorage("ClearTextAfterAction") var 🚩ClearTextAfterAction: Bool = false
+    @AppStorage("URLSchemeButtonTitle") var 🪧ButtonTitle: String = ""
+    @AppStorage("EraseTextAfterAction") var 🚩EraseTextAfterAction: Bool = false
     @Environment(\.openURL) var ⓞpenURL: OpenURLAction
     @Binding var ⓠuery: String
-    var ⓣitle: String { 🔗SchemeTitle.isEmpty ? "URL scheme action" : 🔗SchemeTitle }
+    var ⓣitle: String { 🪧ButtonTitle.isEmpty ? "URL scheme action" : 🪧ButtonTitle }
     var ⓤrl: URL? {
         let ⓣext = 🔗Leading + ⓠuery + 🔗Trailing
         guard let ⓔncodedText = ⓣext.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
@@ -637,7 +637,7 @@ struct 🔗URLSchemeActionButton: View {
                     Button {
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                         ⓞpenURL.callAsFunction(ⓤrl) { ⓐccepted in
-                            if ⓐccepted && 🚩ClearTextAfterAction {
+                            if ⓐccepted && 🚩EraseTextAfterAction {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     ⓠuery = ""
                                 }
@@ -649,7 +649,7 @@ struct 🔗URLSchemeActionButton: View {
                     }
                     .disabled(ⓠuery.isEmpty)
                 } header: {
-                    if !🔗SchemeTitle.isEmpty {
+                    if !🪧ButtonTitle.isEmpty {
                         Text("URL scheme action")
                     }
                 }
