@@ -28,13 +28,13 @@ class 📱AppModel: ObservableObject {
         do {
             if let ⓓata = ⓤd?.data(forKey: "Rectangular") {
                 🎛RectangularData = try JSONDecoder().decode(🎛RectangularDataModel.self, from: ⓓata)
-            } else { throw 🚨LoadError.Rectangular }
+            } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Rectangular")"#, "is nil.") }
             if let ⓓata = ⓤd?.data(forKey: "Circular") {
                 🎛CircularData = try JSONDecoder().decode(🎛CircularDataModel.self, from: ⓓata)
-            } else { throw 🚨LoadError.Circular }
+            } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Circular")"#, "is nil.") }
             if let ⓓata = ⓤd?.data(forKey: "Inline") {
                 🎛InlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
-            } else { throw 🚨LoadError.Inline }
+            } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Inline")"#, "is nil.") }
         } catch {
             print("🚨Error: ", error)
         }
