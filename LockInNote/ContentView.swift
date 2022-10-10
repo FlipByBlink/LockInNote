@@ -499,7 +499,7 @@ struct 🛠OptionTab: View { // ⚙️
                     .lineLimit(1)
                     .foregroundStyle(.tertiary)
                     .scaleEffect(y: 1.33)
-                    .padding(.vertical, 24)
+                    .padding(.vertical, 32)
                 }
                 //Section { // reject を受けて一旦 comment out
                 //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
@@ -548,6 +548,7 @@ struct 🛠OptionTab: View { // ⚙️
                 }
                 Section {
                     TextField("Input text of button", text: $🪧ButtonTitle)
+                        .textFieldStyle(.roundedBorder)
                 } header: {
                     Text("Button label")
                 }
@@ -557,16 +558,26 @@ struct 🛠OptionTab: View { // ⚙️
                     }
                 }
                 Section {
-                    Text("placeholder")
-                        .redacted(reason: .placeholder)
+                    Text("shortcuts://run-shortcut?name=SHORTCUTTITLE&input=text&text=TEXT")
+                        .font(.system(.subheadline, design: .monospaced, weight: .medium))
+                        .multilineTextAlignment(.center)
+                        .padding(.vertical)
+                        .foregroundStyle(.secondary)
                 } header: {
                     Text("Example 1")
+                } footer: {
+                    Text("To run one shortcut of Shortcuts App with the text.")
                 }
                 Section {
-                    Text("placeholder")
-                        .redacted(reason: .placeholder)
+                    Text(verbatim: "https://duckduckgo.com/?q=TEXT")
+                        .font(.system(.subheadline, design: .monospaced, weight: .medium))
+                        .multilineTextAlignment(.center)
+                        .padding(.vertical)
+                        .foregroundStyle(.secondary)
                 } header: {
                     Text("Example 2")
+                } footer: {
+                    Text("To search the text on DuckDuckGo.")
                 }
             }
             .navigationTitle("URL Scheme Action")
