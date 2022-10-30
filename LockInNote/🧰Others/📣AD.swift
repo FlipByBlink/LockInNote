@@ -2,6 +2,14 @@
 import SwiftUI
 import StoreKit
 
+///#Example
+///struct ParentView: View {
+/// @State private var 🚩ShowADMenuSheet: Bool = false
+/// var body: some View {
+///     ... 📣ADView($🚩ShowADMenuSheet) ...
+///     .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
+///} }
+
 struct 📣ADView: View {
     @EnvironmentObject var 🛒: 🛒StoreModel
     @State private var ⓐppName: 📣AppName
@@ -9,7 +17,7 @@ struct 📣ADView: View {
     var body: some View {
         if 🛒.🚩ADIsActive {
             HStack {
-                🔗LinkButton(ⓐppName)
+                🔗LinkButton()
                 Spacer()
                 Button {
                     🚩ShowADMenuSheet = true
@@ -38,41 +46,35 @@ struct 📣ADView: View {
             EmptyView()
         }
     }
-    struct 🔗LinkButton: View {
-        var ⓐppName: 📣AppName
-        var body: some View {
-            Link(destination: ⓐppName.🔗URL) {
-                HStack(spacing: 12) {
-                    Image(ⓐppName.rawValue)
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .shadow(radius: 1.5, y: 0.5)
-                        .padding(.vertical, 40)
-                    VStack(alignment: .leading, spacing: 2) {
-                        HStack {
-                            Text(ⓐppName.rawValue)
-                                .font(.headline)
-                                .lineLimit(1)
-                            Image(systemName: "arrow.up.forward.app")
-                                .resizable()
-                                .frame(width: 15, height: 15)
-                        }
-                        .minimumScaleFactor(0.1)
-                        .padding(.trailing, 32)
-                        Text(ⓐppName.📄About)
-                            .font(.subheadline)
-                            .multilineTextAlignment(.leading)
-                            .minimumScaleFactor(0.1)
+    func 🔗LinkButton() -> some View {
+        Link(destination: ⓐppName.🔗URL) {
+            HStack(spacing: 12) {
+                Image(ⓐppName.rawValue)
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .shadow(radius: 1.5, y: 0.5)
+                    .padding(.vertical, 40)
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack {
+                        Text(ⓐppName.rawValue)
+                            .font(.headline)
+                            .lineLimit(1)
+                        Image(systemName: "arrow.up.forward.app")
+                            .resizable()
+                            .frame(width: 15, height: 15)
                     }
-                    .padding(.vertical)
+                    .minimumScaleFactor(0.1)
+                    .padding(.trailing, 32)
+                    Text(ⓐppName.📄About)
+                        .font(.subheadline)
+                        .multilineTextAlignment(.leading)
+                        .minimumScaleFactor(0.1)
                 }
+                .padding(.vertical)
             }
-            .accessibilityLabel("Open AD link")
         }
-        init(_ ⓐppName: 📣AppName) {
-            self.ⓐppName = ⓐppName
-        }
+        .accessibilityLabel("Open AD link")
     }
     init(without: 📣AppName, _ 🚩ShowADMenuSheet: Binding<Bool>) {
         let ⓐpps = 📣AppName.allCases.filter { $0 != without }

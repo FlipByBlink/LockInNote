@@ -27,7 +27,6 @@
 		F556953128CCAF7A004558FC /* 🌏VersionDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952528CCAF7A004558FC /* 🌏VersionDescription.strings */; };
 		F556953228CCAF7A004558FC /* 🌏VersionDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952528CCAF7A004558FC /* 🌏VersionDescription.strings */; };
 		F556953A28CCAFC3004558FC /* ℹ️AboutAppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */; };
-		F556953B28CCAFC3004558FC /* 📓SourceCodeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */; };
 		F556953C28CCAFC3004558FC /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F556953628CCAFC3004558FC /* Configuration.storekit */; };
 		F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣AD.swift */; };
 		F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556953828CCAFC3004558FC /* Launch Screen.storyboard */; };
@@ -37,7 +36,6 @@
 		F5AA8C4428D0985F00C2047D /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
 		F5AA8C4528D0985F00C2047D /* LINWidget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556950D28CCAB71004558FC /* LINWidget.swift */; };
 		F5AA8C4728D0987000C2047D /* ℹ️AboutAppMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */; };
-		F5AA8C4828D0987000C2047D /* 📓SourceCodeMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */; };
 		F5AA8C4928D0987000C2047D /* 📣AD.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣AD.swift */; };
 		F5AA8C4A28D0987000C2047D /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */; };
 /* End PBXBuildFile section */
@@ -84,7 +82,6 @@
 			dstSubfolderSpec = 7;
 			files = (
 				F5AA8C4728D0987000C2047D /* ℹ️AboutAppMenu.swift in CopyFiles */,
-				F5AA8C4828D0987000C2047D /* 📓SourceCodeMenu.swift in CopyFiles */,
 				F5AA8C4928D0987000C2047D /* 📣AD.swift in CopyFiles */,
 				F5AA8C4A28D0987000C2047D /* 🛒InAppPurchase.swift in CopyFiles */,
 			);
@@ -118,7 +115,6 @@
 		F556952928CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F556952A28CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌏VersionDescription.strings"; sourceTree = "<group>"; };
 		F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutAppMenu.swift"; sourceTree = "<group>"; };
-		F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📓SourceCodeMenu.swift"; sourceTree = "<group>"; };
 		F556953628CCAFC3004558FC /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		F556953728CCAFC3004558FC /* 📣AD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣AD.swift"; sourceTree = "<group>"; };
 		F556953828CCAFC3004558FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -216,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */,
-				F556953528CCAFC3004558FC /* 📓SourceCodeMenu.swift */,
 				F556953728CCAFC3004558FC /* 📣AD.swift */,
 				F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
@@ -344,7 +339,6 @@
 				F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */,
 				F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */,
 				F54BE1CC28CB480900532025 /* ContentView.swift in Sources */,
-				F556953B28CCAFC3004558FC /* 📓SourceCodeMenu.swift in Sources */,
 				F54BE1CA28CB480900532025 /* LockInNoteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
