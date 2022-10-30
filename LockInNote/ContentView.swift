@@ -291,19 +291,15 @@ struct 🗑EraseTextButton: ToolbarContent {
 struct 🎚PlaceholderPicker: View {
     @Binding var ⓟlaceholder: 🄿laceholder
     var body: some View {
-        NavigationLink {
-            Picker("Placeholder", selection: $ⓟlaceholder) {
-                ForEach(🄿laceholder.allCases) { placeholder in
-                    Label(placeholder.rawValue, systemImage: placeholder.icon)
-                }
+        Picker(selection: $ⓟlaceholder) {
+            ForEach(🄿laceholder.allCases) { 🄿 in
+                Label(🄿.rawValue, systemImage: 🄿.icon)
             }
-            .pickerStyle(.wheel)
         } label: {
-            Label("Placeholder", systemImage: ⓟlaceholder.icon)
+            Label("Placeholder", systemImage: "questionmark")
                 .strikethrough(ⓟlaceholder == .nothing)
         }
     }
-    
     init(_ ⓟlaceholder: Binding<🄿laceholder>) {
         self._ⓟlaceholder = ⓟlaceholder
     }
@@ -313,20 +309,21 @@ struct 🎚WeightPicker: View {
     @Binding var ⓦeight: 🅆eight
     var body: some View {
         NavigationLink {
-            Picker("Weight", selection: $ⓦeight) {
-                ForEach(🅆eight.allCases) { weight in
-                    Text(weight.rawValue)
-                        .fontWeight(weight.value)
+            List {
+                Picker("Weight", selection: $ⓦeight) {
+                    ForEach(🅆eight.allCases) { 🅆 in
+                        Text(🅆.rawValue)
+                            .fontWeight(🅆.value)
+                    }
                 }
+                .pickerStyle(.inline)
             }
-            .pickerStyle(.wheel)
         } label: {
             Label("Weight", systemImage: "bold")
                 .fontWeight(ⓦeight.value)
                 .badge(ⓦeight.rawValue)
         }
     }
-    
     init(_ ⓦeight: Binding<🅆eight>) {
         self._ⓦeight = ⓦeight
     }
@@ -336,20 +333,22 @@ struct 🎚DesignPicker: View {
     @Binding var ⓓesign: 🄳esign
     var body: some View {
         NavigationLink {
-            Picker("Design", selection: $ⓓesign) {
-                ForEach(🄳esign.allCases) { design in
-                    Text(design.rawValue)
-                        .font(.system(.title, design: design.value, weight: nil))
+            List {
+                Picker("Design", selection: $ⓓesign) {
+                    ForEach(🄳esign.allCases) { 🄳 in
+                        Text(🄳.rawValue)
+                            .font(.system(.title2, design: 🄳.value, weight: nil))
+                            .padding(6)
+                    }
                 }
+                .pickerStyle(.inline)
             }
-            .pickerStyle(.wheel)
         } label: {
             Label("Design", systemImage: "a.magnify")
                 .font(.system(.body, design: ⓓesign.value, weight: nil))
                 .badge(ⓓesign.rawValue)
         }
     }
-    
     init(_ ⓓesign: Binding<🄳esign>) {
         self._ⓓesign = ⓓesign
     }
@@ -359,13 +358,15 @@ struct 🎚FontSizePicker: View {
     @Binding var ⓢize: Int
     var body: some View {
         NavigationLink {
-            Picker("Size", selection: $ⓢize) {
-                ForEach(8..<50, id: \.self) { size in
-                    Text(size.description)
-                        .font(.system(size: CGFloat(size)))
+            List {
+                Picker("Size", selection: $ⓢize) {
+                    ForEach(8..<50, id: \.self) { ⓟoint in
+                        Text(ⓟoint.description)
+                            .font(.system(size: CGFloat(ⓟoint)))
+                    }
                 }
+                .pickerStyle(.inline)
             }
-            .pickerStyle(.wheel)
         } label: {
             Label("Size", systemImage: "textformat")
                 .symbolRenderingMode(.hierarchical)
@@ -373,7 +374,6 @@ struct 🎚FontSizePicker: View {
                 .badge(ⓢize.description)
         }
     }
-    
     init(_ ⓢize: Binding<Int>) {
         self._ⓢize = ⓢize
     }
@@ -383,13 +383,15 @@ struct 🎚LevelPicker: View {
     @Binding var ⓛevel: 🄻evel
     var body: some View {
         NavigationLink {
-            Picker("Level", selection: $ⓛevel) {
-                ForEach(🄻evel.allCases) { level in
-                    Text(level.rawValue)
-                        .foregroundStyle(level.value)
+            List {
+                Picker("Level", selection: $ⓛevel) {
+                    ForEach(🄻evel.allCases) { 🄻 in
+                        Text(🄻.rawValue)
+                            .foregroundStyle(🄻.value)
+                    }
                 }
+                .pickerStyle(.inline)
             }
-            .pickerStyle(.wheel)
         } label: {
             Label {
                 Text("Level")
@@ -401,7 +403,6 @@ struct 🎚LevelPicker: View {
             .badge(ⓛevel.rawValue)
         }
     }
-    
     init(_ ⓛevel: Binding<🄻evel>) {
         self._ⓛevel = ⓛevel
     }
@@ -411,8 +412,8 @@ struct 🎚TextAlignmentPicker: View {
     @Binding var ⓐlignment: 🄼ultilineTextAlignment
     var body: some View {
         Picker(selection: $ⓐlignment) {
-            ForEach(🄼ultilineTextAlignment.allCases) { alignment in
-                Label(alignment.rawValue, systemImage: alignment.icon)
+            ForEach(🄼ultilineTextAlignment.allCases) { 🄼 in
+                Label(🄼.rawValue, systemImage: 🄼.icon)
             }
         } label: {
             Text("Multi\ntext\nalignment")
@@ -421,7 +422,6 @@ struct 🎚TextAlignmentPicker: View {
                 .font(.footnote)
         }
     }
-    
     init(_ ⓐlignment: Binding<🄼ultilineTextAlignment>) {
         self._ⓐlignment = ⓐlignment
     }
@@ -436,7 +436,6 @@ struct 🎚ItalicPicker: View {
                 .animation(.default, value: 🚩)
         }
     }
-    
     init(_ 🚩: Binding<Bool>) {
         self._🚩 = 🚩
     }
