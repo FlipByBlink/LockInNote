@@ -443,10 +443,13 @@ struct 🎚ItalicPicker: View {
 
 
 struct 📣ADBanner: View {
+    @EnvironmentObject var 🛒: 🛒StoreModel
     @Binding var 🚩ShowADMenuSheet: Bool
     var body: some View {
-        Section {
-            📣ADView(without: .LockInNote, $🚩ShowADMenuSheet)
+        if 🛒.🚩ADIsActive {
+            Section {
+                📣ADView(without: .LockInNote, $🚩ShowADMenuSheet)
+            }
         }
     }
     init(_ 🚩ShowADMenuSheet: Binding<Bool>) {
