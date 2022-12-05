@@ -658,10 +658,8 @@ struct 🔗URLSchemeActionButton: View {
                             .font(.headline)
                     }
                     .disabled(ⓠuery.isEmpty)
-                } header: {
-                    if !🪧ButtonTitle.isEmpty {
-                        Text("URL Scheme Action")
-                    }
+                } footer: {
+                    Text(ⓤrl.description)
                 }
             }
         }
