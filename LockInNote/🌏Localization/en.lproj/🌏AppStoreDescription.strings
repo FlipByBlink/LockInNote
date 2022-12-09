@@ -1,12 +1,22 @@
 
-"AppStoreDescription" = "Note app for lock screen widget!
+"AppStoreDescription" = "Memo note app specialized for lock screen widgets.
 
-・Launch automatically keyboard as soon as widget is tapped.
+When you want to take a memo, you can write it out right away on the lock screen, and you can easily check the memo on the lock screen anytime!
 
-・Adjust Font size / design / weight etc.
+The design of the memo note on the lock screen can be flexibly customized, so it can be used for various purposes.
 
-・Options of multi-text-alignment / placeholder-graphic etc.
 
-・Support share sheet with text.
+- Tap the widget to immediately launch the keyboard and edit the memo note.
 
-・Support URL scheme action with text.";
+- Font \"size\", \"design\", and \"weight\" can be adjusted.
+
+- You can also select the alignment of multiple lines, the display pattern when no text is entered, and more.
+
+- Share sheets allow you to easily share text to other applications.
+
+- You can set any \"URL scheme action\" to link with other apps.
+
+
+Recommended for the latest iPhone 14 Pro models!
+
+The iPhone 14 Pro with Always On Display turns your iPhone into your most accessible notepad.";
