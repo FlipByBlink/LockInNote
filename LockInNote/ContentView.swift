@@ -72,6 +72,18 @@ struct 📝RectangularWidgetTab: View {
             .animation(.default, value: self.🚩unfoldSection)
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
+            .safeAreaInset(edge: .bottom) {
+                if self.🚩focus {
+                    HStack {
+                        🗑TrashButton($📱.🎛rectangularData.text)
+                        📮ShareButton(📱.🎛rectangularData.text)
+                        Spacer()
+                        👆DoneButton { self.🚩focus = false }
+                    }
+                    .padding()
+                }
+            }
+            .animation(.default, value: self.🚩focus)
         }
         .onOpenURL { ⓤrl in
             if ⓤrl.description == "Rectangular" {
@@ -94,23 +106,6 @@ struct 📝RectangularWidgetTab: View {
                     .focused(self.$🚩focus)
                     .frame(height: 150)
                     .padding()
-                    .toolbar {
-                        🗑EraseTextButton($📱.🎛rectangularData.text)
-                        ToolbarItem(placement: .keyboard) {
-                            Button {
-                                self.🚩focus = false
-                                UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                            } label: {
-                                Label("Done", systemImage: "keyboard.chevron.compact.down")
-                            }
-                        }
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            ShareLink(item: 📱.🎛rectangularData.text)
-                                .disabled(📱.🎛rectangularData.text.isEmpty)
-                                .grayscale(1)
-                                .accessibilityLabel("Share")
-                        }
-                    }
             }
         }
         .listRowBackground(Color.clear)
@@ -253,6 +248,77 @@ struct 📝InlineWidgetTab: View {
             }
             .listRowBackground(Color.clear)
         }
+    }
+}
+
+struct 👆DoneButton: View {
+    private var ⓐction: () -> Void
+    var body: some View {
+        Button {
+            self.ⓐction()
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        } label: {
+            Image(systemName: "checkmark")
+                .foregroundColor(.white)
+                .font(.largeTitle.weight(.semibold))
+                .padding()
+        }
+        .background(Circle().foregroundColor(.accentColor))
+        .shadow(radius: 3)
+    }
+    init(_ action: @escaping () -> Void) {
+        self.ⓐction = action
+    }
+}
+
+struct 🗑TrashButton: View {
+    @Binding private var ⓣext: String
+    private var ⓓisable: Bool { self.ⓣext.isEmpty }
+    var body: some View {
+        Button {
+            withAnimation {
+                self.ⓣext = ""
+                UINotificationFeedbackGenerator().notificationOccurred(.warning)
+            }
+        } label: {
+            Label("Erase", systemImage: "trash")
+                .foregroundColor(.white)
+                .labelStyle(.iconOnly)
+                .font(.largeTitle.weight(.semibold))
+                .padding()
+        }
+        .background {
+            Circle()
+                .foregroundColor(.red)
+        }
+        .grayscale(self.ⓓisable ? 1 : 0)
+        .shadow(radius: 3)
+        .animation(.default, value: self.ⓓisable)
+    }
+    init(_ text: Binding<String>) {
+        self._ⓣext = text
+    }
+}
+
+struct 📮ShareButton: View {
+    private var ⓣext: String
+    private var ⓓisable: Bool { self.ⓣext.isEmpty }
+    var body: some View {
+        ShareLink(item: self.ⓣext)
+            .disabled(self.ⓓisable)
+            .labelStyle(.iconOnly)
+            .foregroundColor(.white)
+            .font(.largeTitle.weight(.semibold))
+            .padding()
+            .background {
+                Circle()
+                    .foregroundColor(.teal)
+            }
+            .grayscale(self.ⓓisable ? 1 : 0)
+            .shadow(radius: 3)
+    }
+    init(_ text: String) {
+        self.ⓣext = text
     }
 }
 
