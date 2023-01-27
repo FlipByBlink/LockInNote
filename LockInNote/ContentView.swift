@@ -52,37 +52,7 @@ struct 📝RectangularWidgetTab: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .foregroundStyle(.background)
-                            .onTapGesture { self.🚩focus = true }
-                            .shadow(color: .secondary, radius: 1)
-                        TextField("Input text", text: $📱.🎛rectangularData.text, axis: .vertical)
-                            .font(.title2)
-                            .focused(self.$🚩focus)
-                            .frame(height: 150)
-                            .padding()
-                            .toolbar {
-                                🗑EraseTextButton($📱.🎛rectangularData.text)
-                                ToolbarItem(placement: .keyboard) {
-                                    Button {
-                                        self.🚩focus = false
-                                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                                    } label: {
-                                        Label("Done", systemImage: "keyboard.chevron.compact.down")
-                                    }
-                                }
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    ShareLink(item: 📱.🎛rectangularData.text)
-                                        .disabled(📱.🎛rectangularData.text.isEmpty)
-                                        .grayscale(1)
-                                        .accessibilityLabel("Share")
-                                }
-                            }
-                    }
-                }
-                .listRowBackground(Color.clear)
+                self.ⓘnputField()
                 📣ADBanner(self.$🚩showADMenuSheet)
                 🔗URLSchemeActionButton($📱.🎛rectangularData.text)
                 DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
@@ -112,6 +82,39 @@ struct 📝RectangularWidgetTab: View {
             }
         }
     }
+    private func ⓘnputField() -> some View {
+        Section {
+            ZStack {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .foregroundStyle(.background)
+                    .onTapGesture { self.🚩focus = true }
+                    .shadow(color: .secondary, radius: 1)
+                TextField("Input text", text: $📱.🎛rectangularData.text, axis: .vertical)
+                    .font(.title2)
+                    .focused(self.$🚩focus)
+                    .frame(height: 150)
+                    .padding()
+                    .toolbar {
+                        🗑EraseTextButton($📱.🎛rectangularData.text)
+                        ToolbarItem(placement: .keyboard) {
+                            Button {
+                                self.🚩focus = false
+                                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                            } label: {
+                                Label("Done", systemImage: "keyboard.chevron.compact.down")
+                            }
+                        }
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            ShareLink(item: 📱.🎛rectangularData.text)
+                                .disabled(📱.🎛rectangularData.text.isEmpty)
+                                .grayscale(1)
+                                .accessibilityLabel("Share")
+                        }
+                    }
+            }
+        }
+        .listRowBackground(Color.clear)
+    }
 }
 
 struct 📝CircularWidgetTab: View {
@@ -122,40 +125,7 @@ struct 📝CircularWidgetTab: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    ZStack {
-                        Color.clear
-                        let ⓢize: CGFloat = 220
-                        ZStack {
-                            Circle().foregroundStyle(.background)
-                                .shadow(color: .secondary, radius: 1)
-                                .onTapGesture { self.🚩focus = true }
-                            TextField("Input text", text: $📱.🎛circularData.text, axis: .vertical)
-                                .font(.title2)
-                                .focused(self.$🚩focus)
-                                .frame(width: (ⓢize * 5/7) - 6, height: (ⓢize * 5/7) - 6)
-                                .toolbar {
-                                    🗑EraseTextButton($📱.🎛circularData.text)
-                                    ToolbarItem(placement: .keyboard) {
-                                        Button {
-                                            self.🚩focus = false
-                                            UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                                        } label: {
-                                            Label("Done", systemImage: "keyboard.chevron.compact.down")
-                                        }
-                                    }
-                                    ToolbarItem(placement: .navigationBarLeading) {
-                                        ShareLink(item: 📱.🎛circularData.text)
-                                            .disabled(📱.🎛circularData.text.isEmpty)
-                                            .grayscale(1)
-                                            .accessibilityLabel("Share")
-                                    }
-                                }
-                        }
-                        .frame(width: ⓢize, height: ⓢize)
-                    }
-                    .listRowBackground(Color.clear)
-                }
+                self.ⓘnputField()
                 📣ADBanner(self.$🚩showADMenuSheet)
                 🔗URLSchemeActionButton($📱.🎛circularData.text)
                 DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
@@ -190,6 +160,42 @@ struct 📝CircularWidgetTab: View {
             }
         }
     }
+    private func ⓘnputField() -> some View {
+        Section {
+            ZStack {
+                Color.clear
+                let ⓢize: CGFloat = 220
+                ZStack {
+                    Circle().foregroundStyle(.background)
+                        .shadow(color: .secondary, radius: 1)
+                        .onTapGesture { self.🚩focus = true }
+                    TextField("Input text", text: $📱.🎛circularData.text, axis: .vertical)
+                        .font(.title2)
+                        .focused(self.$🚩focus)
+                        .frame(width: (ⓢize * 5/7) - 6, height: (ⓢize * 5/7) - 6)
+                        .toolbar {
+                            🗑EraseTextButton($📱.🎛circularData.text)
+                            ToolbarItem(placement: .keyboard) {
+                                Button {
+                                    self.🚩focus = false
+                                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                                } label: {
+                                    Label("Done", systemImage: "keyboard.chevron.compact.down")
+                                }
+                            }
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                ShareLink(item: 📱.🎛circularData.text)
+                                    .disabled(📱.🎛circularData.text.isEmpty)
+                                    .grayscale(1)
+                                    .accessibilityLabel("Share")
+                            }
+                        }
+                }
+                .frame(width: ⓢize, height: ⓢize)
+            }
+            .listRowBackground(Color.clear)
+        }
+    }
 }
 
 struct 📝InlineWidgetTab: View {
@@ -200,28 +206,7 @@ struct 📝InlineWidgetTab: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    HStack {
-                        Text(Date.now.formatted(.dateTime.day().weekday(.abbreviated)))
-                            .font(.title2.bold())
-                            .foregroundStyle(.tertiary)
-                        TextField("Input text", text: $📱.🎛inlineData.text)
-                            .font(.title2)
-                            .focused(self.$🚩focus)
-                            .textFieldStyle(.roundedBorder)
-                            .submitLabel(.done)
-                            .toolbar {
-                                🗑EraseTextButton($📱.🎛inlineData.text)
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    ShareLink(item: 📱.🎛inlineData.text)
-                                        .disabled(📱.🎛inlineData.text.isEmpty)
-                                        .grayscale(1)
-                                        .accessibilityLabel("Share")
-                                }
-                            }
-                    }
-                    .listRowBackground(Color.clear)
-                }
+                self.ⓘnputField()
                 📣ADBanner(self.$🚩showADMenuSheet)
                 🔗URLSchemeActionButton($📱.🎛inlineData.text)
                 DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
@@ -243,6 +228,30 @@ struct 📝InlineWidgetTab: View {
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
             }
+        }
+    }
+    private func ⓘnputField() -> some View {
+        Section {
+            HStack {
+                Text(Date.now.formatted(.dateTime.day().weekday(.abbreviated)))
+                    .font(.title2.bold())
+                    .foregroundStyle(.tertiary)
+                TextField("Input text", text: $📱.🎛inlineData.text)
+                    .font(.title2)
+                    .focused(self.$🚩focus)
+                    .textFieldStyle(.roundedBorder)
+                    .submitLabel(.done)
+                    .toolbar {
+                        🗑EraseTextButton($📱.🎛inlineData.text)
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            ShareLink(item: 📱.🎛inlineData.text)
+                                .disabled(📱.🎛inlineData.text.isEmpty)
+                                .grayscale(1)
+                                .accessibilityLabel("Share")
+                        }
+                    }
+            }
+            .listRowBackground(Color.clear)
         }
     }
 }
