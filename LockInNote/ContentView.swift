@@ -7,7 +7,7 @@ struct ContentView: View {
     @State private var 🔖tab: 🔖Tab = .rectangularWidget
     var body: some View {
         TabView(selection: self.$🔖tab) {
-            📝RectangularWidgetTab()
+            📝RectangularWidgetTab($📱.🎛rectangularData)
                 .tag(🔖Tab.rectangularWidget)
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
             📝CircularWidgetTab()
@@ -45,7 +45,7 @@ struct ContentView: View {
 }
 
 struct 📝RectangularWidgetTab: View {
-    @EnvironmentObject var 📱: 📱AppModel
+    @Binding private var 🎛: 🎛RectangularDataModel
     @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
     @FocusState private var 🚩focus: Bool
     @State private var 🚩showADMenuSheet: Bool = false
@@ -53,17 +53,17 @@ struct 📝RectangularWidgetTab: View {
         NavigationStack {
             List {
                 self.ⓘnputField()
-                🔗URLSchemeActionButton($📱.🎛rectangularData.text)
+                🔗URLSchemeActionButton($🎛.text)
                 if !self.🚩focus {
                     📣ADBanner(self.$🚩showADMenuSheet)
                     DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
-                        🎚WeightPicker($📱.🎛rectangularData.fontWeight)
-                        🎚DesignPicker($📱.🎛rectangularData.fontDesign)
-                        🎚FontSizePicker($📱.🎛rectangularData.fontSize)
-                        🎚LevelPicker($📱.🎛rectangularData.level)
-                        🎚TextAlignmentPicker($📱.🎛rectangularData.multilineTextAlignment)
-                        🎚ItalicPicker($📱.🎛rectangularData.italic)
-                        🎚PlaceholderPicker($📱.🎛rectangularData.placeholder)
+                        🎚WeightPicker($🎛.fontWeight)
+                        🎚DesignPicker($🎛.fontDesign)
+                        🎚FontSizePicker($🎛.fontSize)
+                        🎚LevelPicker($🎛.level)
+                        🎚TextAlignmentPicker($🎛.multilineTextAlignment)
+                        🎚ItalicPicker($🎛.italic)
+                        🎚PlaceholderPicker($🎛.placeholder)
                     } label: {
                         Label("Customize", systemImage: "slider.horizontal.3")
                     }
@@ -82,8 +82,8 @@ struct 📝RectangularWidgetTab: View {
             .safeAreaInset(edge: .bottom) {
                 if self.🚩focus {
                     HStack {
-                        🗑TrashButton($📱.🎛rectangularData.text)
-                        📮ShareButton(📱.🎛rectangularData.text)
+                        🗑TrashButton($🎛.text)
+                        📮ShareButton(🎛.text)
                         Spacer()
                         👆DoneButton { self.🚩focus = false }
                     }
@@ -103,17 +103,20 @@ struct 📝RectangularWidgetTab: View {
     }
     private func ⓘnputField() -> some View {
         Section {
-            TextField("Input text", text: $📱.🎛rectangularData.text, axis: .vertical)
+            TextField("Input text", text: $🎛.text, axis: .vertical)
                 .font(.title3)
                 .focused(self.$🚩focus)
                 .background(alignment: .trailing) {
-                    if !self.🚩focus && 📱.🎛rectangularData.text.isEmpty {
+                    if !self.🚩focus && 🎛.text.isEmpty {
                         Image(systemName: "pencil")
                             .font(.title3.bold())
                             .foregroundStyle(.tertiary)
                     }
                 }
         }
+    }
+    init(_ model: Binding<🎛RectangularDataModel>) {
+        self._🎛 = model
     }
 }
 
