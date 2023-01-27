@@ -47,7 +47,7 @@ struct ContentView: View {
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
-    @FocusState var 🚩focus: Bool
+    @FocusState private var 🚩focus: Bool
     @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
@@ -117,7 +117,7 @@ struct 📝RectangularWidgetTab: View {
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
-    @FocusState var 🚩focus: Bool
+    @FocusState private var 🚩focus: Bool
     @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
@@ -195,7 +195,7 @@ struct 📝CircularWidgetTab: View {
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
-    @FocusState var 🚩focus: Bool
+    @FocusState private var 🚩focus: Bool
     @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
@@ -209,6 +209,7 @@ struct 📝InlineWidgetTab: View {
                             .font(.title2)
                             .focused(self.$🚩focus)
                             .textFieldStyle(.roundedBorder)
+                            .submitLabel(.done)
                             .toolbar {
                                 🗑EraseTextButton($📱.🎛inlineData.text)
                                 ToolbarItem(placement: .navigationBarLeading) {
@@ -426,16 +427,16 @@ struct 🎚TextAlignmentPicker: View {
 }
 
 struct 🎚ItalicPicker: View {
-    @Binding var 🚩: Bool
+    @Binding var 🚩italic: Bool
     var body: some View {
-        Toggle(isOn: self.$🚩) {
+        Toggle(isOn: self.$🚩italic) {
             Label("Italic", systemImage: "italic")
-                .italic(self.🚩)
-                .animation(.default, value: self.🚩)
+                .italic(self.🚩italic)
+                .animation(.default, value: self.🚩italic)
         }
     }
     init(_ 🚩: Binding<Bool>) {
-        self._🚩 = 🚩
+        self._🚩italic = 🚩
     }
 }
 
@@ -497,8 +498,8 @@ struct 🛠OptionTab: View { // ⚙️
         @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
         @AppStorage("URLSchemeButtonTitle") var 🪧buttonTitle: String = ""
         @AppStorage("EraseTextAfterAction") var 🚩eraseTextAfterAction: Bool = false
-        var ⓛeading: String { self.🔗leading.isEmpty ? "① + " : self.🔗leading }
-        var ⓣrailing: String { self.🔗trailing.isEmpty ? " + ②" : self.🔗trailing }
+        private var ⓛeading: String { self.🔗leading.isEmpty ? "① + " : self.🔗leading }
+        private var ⓣrailing: String { self.🔗trailing.isEmpty ? " + ②" : self.🔗trailing }
         var body: some View {
             List {
                 Section {
