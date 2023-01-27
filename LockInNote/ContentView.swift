@@ -53,24 +53,31 @@ struct 📝RectangularWidgetTab: View {
         NavigationStack {
             List {
                 self.ⓘnputField()
-                📣ADBanner(self.$🚩showADMenuSheet)
                 🔗URLSchemeActionButton($📱.🎛rectangularData.text)
-                DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
-                    🎚WeightPicker($📱.🎛rectangularData.fontWeight)
-                    🎚DesignPicker($📱.🎛rectangularData.fontDesign)
-                    🎚FontSizePicker($📱.🎛rectangularData.fontSize)
-                    🎚LevelPicker($📱.🎛rectangularData.level)
-                    🎚TextAlignmentPicker($📱.🎛rectangularData.multilineTextAlignment)
-                    🎚ItalicPicker($📱.🎛rectangularData.italic)
-                    🎚PlaceholderPicker($📱.🎛rectangularData.placeholder)
-                } label: {
-                    Label("Customize", systemImage: "slider.horizontal.3")
-                        .font(.caption)
+                if !self.🚩focus {
+                    📣ADBanner(self.$🚩showADMenuSheet)
+                    DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
+                        🎚WeightPicker($📱.🎛rectangularData.fontWeight)
+                        🎚DesignPicker($📱.🎛rectangularData.fontDesign)
+                        🎚FontSizePicker($📱.🎛rectangularData.fontSize)
+                        🎚LevelPicker($📱.🎛rectangularData.level)
+                        🎚TextAlignmentPicker($📱.🎛rectangularData.multilineTextAlignment)
+                        🎚ItalicPicker($📱.🎛rectangularData.italic)
+                        🎚PlaceholderPicker($📱.🎛rectangularData.placeholder)
+                    } label: {
+                        Label("Customize", systemImage: "slider.horizontal.3")
+                    }
                 }
             }
             .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
             .animation(.default, value: self.🚩unfoldSection)
-            .navigationTitle("Rectangular widget")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Rectangular widget")
+                        .font(.headline)
+                        .opacity(self.🚩focus ? 0.33 : 1)
+                }
+            }
             .navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) {
                 if self.🚩focus {
@@ -96,19 +103,17 @@ struct 📝RectangularWidgetTab: View {
     }
     private func ⓘnputField() -> some View {
         Section {
-            ZStack {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .foregroundStyle(.background)
-                    .onTapGesture { self.🚩focus = true }
-                    .shadow(color: .secondary, radius: 1)
-                TextField("Input text", text: $📱.🎛rectangularData.text, axis: .vertical)
-                    .font(.title2)
-                    .focused(self.$🚩focus)
-                    .frame(height: 150)
-                    .padding()
-            }
+            TextField("Input text", text: $📱.🎛rectangularData.text, axis: .vertical)
+                .font(.title3)
+                .focused(self.$🚩focus)
+                .background(alignment: .trailing) {
+                    if !self.🚩focus && 📱.🎛rectangularData.text.isEmpty {
+                        Image(systemName: "pencil")
+                            .font(.title3.bold())
+                            .foregroundStyle(.tertiary)
+                    }
+                }
         }
-        .listRowBackground(Color.clear)
     }
 }
 
