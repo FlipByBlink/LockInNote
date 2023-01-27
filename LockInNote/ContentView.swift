@@ -1,56 +1,54 @@
-
 import SwiftUI
 import WidgetKit
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @EnvironmentObject var 🛒: 🛒StoreModel
-    @State private var 🔖Tab: 🔖TabTag = .rectangularWidget
+    @State private var 🔖tab: 🔖Tab = .rectangularWidget
     var body: some View {
-        TabView(selection: $🔖Tab) {
+        TabView(selection: self.$🔖tab) {
             📝RectangularWidgetTab()
-                .tag(🔖TabTag.rectangularWidget)
+                .tag(🔖Tab.rectangularWidget)
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
             📝CircularWidgetTab()
-                .tag(🔖TabTag.circularWidget)
+                .tag(🔖Tab.circularWidget)
                 .tabItem { Label("Circular", systemImage: "circle.dashed") }
             📝InlineWidgetTab()
-                .tag(🔖TabTag.inlineWidget)
+                .tag(🔖Tab.inlineWidget)
                 .tabItem { Label("Inline", systemImage: "rectangle.and.pencil.and.ellipsis") }
             🛠OptionTab()
-                .tag(🔖TabTag.option)
+                .tag(🔖Tab.option)
                 .tabItem { Label("Option", systemImage: "gearshape") }
             ℹ️AboutAppTab()
-                .tag(🔖TabTag.about)
+                .tag(🔖Tab.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
         }
         .animation(.default.speed(0.5), value: 🛒.🚩ADIsActive)
         .scrollDismissesKeyboard(.interactively)
-        .onOpenURL { 🔗 in
+        .onOpenURL { ⓤrl in
             DispatchQueue.main.async {
-                switch 🔗.description {
-                    case "Rectangular": 🔖Tab = .rectangularWidget
-                    case "Circular": 🔖Tab = .circularWidget
-                    case "Inline": 🔖Tab = .inlineWidget
+                switch ⓤrl.description {
+                    case "Rectangular": self.🔖tab = .rectangularWidget
+                    case "Circular": self.🔖tab = .circularWidget
+                    case "Inline": self.🔖tab = .inlineWidget
                     default: print("🐛")
                 }
             }
         }
-        .onChange(of: 📱.🎛RectangularData) { _ in 📱.💾SaveDataAndReloadWidget() }
-        .onChange(of: 📱.🎛CircularData) { _ in 📱.💾SaveDataAndReloadWidget() }
-        .onChange(of: 📱.🎛InlineData) { _ in 📱.💾SaveDataAndReloadWidget() }
+        .onChange(of: 📱.🎛rectangularData) { _ in 📱.💾saveDataAndReloadWidget() }
+        .onChange(of: 📱.🎛circularData) { _ in 📱.💾saveDataAndReloadWidget() }
+        .onChange(of: 📱.🎛inlineData) { _ in 📱.💾saveDataAndReloadWidget() }
     }
-    
-    enum 🔖TabTag {
-        case rectangularWidget, circularWidget, inlineWidget, option ,about
+    enum 🔖Tab {
+        case rectangularWidget, circularWidget, inlineWidget, option, about
     }
 }
 
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
-    @FocusState var 🚩Focus: Bool
-    @State private var 🚩ShowADMenuSheet: Bool = false
+    @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
+    @FocusState var 🚩focus: Bool
+    @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
             List {
@@ -58,26 +56,26 @@ struct 📝RectangularWidgetTab: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .foregroundStyle(.background)
-                            .onTapGesture { 🚩Focus = true }
+                            .onTapGesture { self.🚩focus = true }
                             .shadow(color: .secondary, radius: 1)
-                        TextField("Input text", text: $📱.🎛RectangularData.text, axis: .vertical)
+                        TextField("Input text", text: $📱.🎛rectangularData.text, axis: .vertical)
                             .font(.title2)
-                            .focused($🚩Focus)
+                            .focused(self.$🚩focus)
                             .frame(height: 150)
                             .padding()
                             .toolbar {
-                                🗑EraseTextButton($📱.🎛RectangularData.text)
+                                🗑EraseTextButton($📱.🎛rectangularData.text)
                                 ToolbarItem(placement: .keyboard) {
                                     Button {
-                                        🚩Focus = false
+                                        self.🚩focus = false
                                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                                     } label: {
                                         Label("Done", systemImage: "keyboard.chevron.compact.down")
                                     }
                                 }
                                 ToolbarItem(placement: .navigationBarLeading) {
-                                    ShareLink(item: 📱.🎛RectangularData.text)
-                                        .disabled(📱.🎛RectangularData.text.isEmpty)
+                                    ShareLink(item: 📱.🎛rectangularData.text)
+                                        .disabled(📱.🎛rectangularData.text.isEmpty)
                                         .grayscale(1)
                                         .accessibilityLabel("Share")
                                 }
@@ -85,30 +83,30 @@ struct 📝RectangularWidgetTab: View {
                     }
                 }
                 .listRowBackground(Color.clear)
-                📣ADBanner($🚩ShowADMenuSheet)
-                🔗URLSchemeActionButton($📱.🎛RectangularData.text)
-                DisclosureGroup(isExpanded: $🚩UnfoldSection) {
-                    🎚WeightPicker($📱.🎛RectangularData.fontWeight)
-                    🎚DesignPicker($📱.🎛RectangularData.fontDesign)
-                    🎚FontSizePicker($📱.🎛RectangularData.fontSize)
-                    🎚LevelPicker($📱.🎛RectangularData.level)
-                    🎚TextAlignmentPicker($📱.🎛RectangularData.multilineTextAlignment)
-                    🎚ItalicPicker($📱.🎛RectangularData.italic)
-                    🎚PlaceholderPicker($📱.🎛RectangularData.placeholder)
+                📣ADBanner(self.$🚩showADMenuSheet)
+                🔗URLSchemeActionButton($📱.🎛rectangularData.text)
+                DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
+                    🎚WeightPicker($📱.🎛rectangularData.fontWeight)
+                    🎚DesignPicker($📱.🎛rectangularData.fontDesign)
+                    🎚FontSizePicker($📱.🎛rectangularData.fontSize)
+                    🎚LevelPicker($📱.🎛rectangularData.level)
+                    🎚TextAlignmentPicker($📱.🎛rectangularData.multilineTextAlignment)
+                    🎚ItalicPicker($📱.🎛rectangularData.italic)
+                    🎚PlaceholderPicker($📱.🎛rectangularData.placeholder)
                 } label: {
                     Label("Customize", systemImage: "slider.horizontal.3")
                         .font(.caption)
                 }
             }
-            .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
-            .animation(.default, value: 🚩UnfoldSection)
+            .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
+            .animation(.default, value: self.🚩unfoldSection)
             .navigationTitle("Rectangular widget")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onOpenURL { 🔗 in
-            if 🔗.description == "Rectangular" {
+        .onOpenURL { ⓤrl in
+            if ⓤrl.description == "Rectangular" {
                 DispatchQueue.main.async {
-                    🚩Focus = true
+                    self.🚩focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
             }
@@ -118,9 +116,9 @@ struct 📝RectangularWidgetTab: View {
 
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
-    @FocusState var 🚩Focus: Bool
-    @State private var 🚩ShowADMenuSheet: Bool = false
+    @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
+    @FocusState var 🚩focus: Bool
+    @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
             List {
@@ -131,24 +129,24 @@ struct 📝CircularWidgetTab: View {
                         ZStack {
                             Circle().foregroundStyle(.background)
                                 .shadow(color: .secondary, radius: 1)
-                                .onTapGesture { 🚩Focus = true }
-                            TextField("Input text", text: $📱.🎛CircularData.text, axis: .vertical)
+                                .onTapGesture { self.🚩focus = true }
+                            TextField("Input text", text: $📱.🎛circularData.text, axis: .vertical)
                                 .font(.title2)
-                                .focused($🚩Focus)
+                                .focused(self.$🚩focus)
                                 .frame(width: (ⓢize * 5/7) - 6, height: (ⓢize * 5/7) - 6)
                                 .toolbar {
-                                    🗑EraseTextButton($📱.🎛CircularData.text)
+                                    🗑EraseTextButton($📱.🎛circularData.text)
                                     ToolbarItem(placement: .keyboard) {
                                         Button {
-                                            🚩Focus = false
+                                            self.🚩focus = false
                                             UIImpactFeedbackGenerator(style: .light).impactOccurred()
                                         } label: {
                                             Label("Done", systemImage: "keyboard.chevron.compact.down")
                                         }
                                     }
                                     ToolbarItem(placement: .navigationBarLeading) {
-                                        ShareLink(item: 📱.🎛CircularData.text)
-                                            .disabled(📱.🎛CircularData.text.isEmpty)
+                                        ShareLink(item: 📱.🎛circularData.text)
+                                            .disabled(📱.🎛circularData.text.isEmpty)
                                             .grayscale(1)
                                             .accessibilityLabel("Share")
                                     }
@@ -158,35 +156,35 @@ struct 📝CircularWidgetTab: View {
                     }
                     .listRowBackground(Color.clear)
                 }
-                📣ADBanner($🚩ShowADMenuSheet)
-                🔗URLSchemeActionButton($📱.🎛CircularData.text)
-                DisclosureGroup(isExpanded: $🚩UnfoldSection) {
-                    Toggle(isOn: $📱.🎛CircularData.background) {
+                📣ADBanner(self.$🚩showADMenuSheet)
+                🔗URLSchemeActionButton($📱.🎛circularData.text)
+                DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
+                    Toggle(isOn: $📱.🎛circularData.background) {
                         Label("Background",
-                              systemImage: 📱.🎛CircularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
-                        .animation(.default, value: 📱.🎛CircularData.background)
+                              systemImage: 📱.🎛circularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                        .animation(.default, value: 📱.🎛circularData.background)
                     }
-                    🎚WeightPicker($📱.🎛CircularData.fontWeight)
-                    🎚DesignPicker($📱.🎛CircularData.fontDesign)
-                    🎚FontSizePicker($📱.🎛CircularData.fontSize)
-                    🎚LevelPicker($📱.🎛CircularData.level)
-                    🎚TextAlignmentPicker($📱.🎛CircularData.multilineTextAlignment)
-                    🎚ItalicPicker($📱.🎛CircularData.italic)
-                    🎚PlaceholderPicker($📱.🎛CircularData.placeholder)
+                    🎚WeightPicker($📱.🎛circularData.fontWeight)
+                    🎚DesignPicker($📱.🎛circularData.fontDesign)
+                    🎚FontSizePicker($📱.🎛circularData.fontSize)
+                    🎚LevelPicker($📱.🎛circularData.level)
+                    🎚TextAlignmentPicker($📱.🎛circularData.multilineTextAlignment)
+                    🎚ItalicPicker($📱.🎛circularData.italic)
+                    🎚PlaceholderPicker($📱.🎛circularData.placeholder)
                 } label: {
                     Label("Customize", systemImage: "slider.horizontal.3")
                         .font(.caption)
                 }
             }
-            .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
-            .animation(.default, value: 🚩UnfoldSection)
+            .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
+            .animation(.default, value: self.🚩unfoldSection)
             .navigationTitle("Circular widget")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onOpenURL { 🔗 in
-            if 🔗.description == "Circular" {
+        .onOpenURL { ⓤrl in
+            if ⓤrl.description == "Circular" {
                 DispatchQueue.main.async {
-                    🚩Focus = true
+                    self.🚩focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
             }
@@ -196,9 +194,9 @@ struct 📝CircularWidgetTab: View {
 
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @AppStorage("UnfoldSection") var 🚩UnfoldSection: Bool = true
-    @FocusState var 🚩Focus: Bool
-    @State private var 🚩ShowADMenuSheet: Bool = false
+    @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
+    @FocusState var 🚩focus: Bool
+    @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
             List {
@@ -207,15 +205,15 @@ struct 📝InlineWidgetTab: View {
                         Text(Date.now.formatted(.dateTime.day().weekday(.abbreviated)))
                             .font(.title2.bold())
                             .foregroundStyle(.tertiary)
-                        TextField("Input text", text: $📱.🎛InlineData.text)
+                        TextField("Input text", text: $📱.🎛inlineData.text)
                             .font(.title2)
-                            .focused($🚩Focus)
+                            .focused(self.$🚩focus)
                             .textFieldStyle(.roundedBorder)
                             .toolbar {
-                                🗑EraseTextButton($📱.🎛InlineData.text)
+                                🗑EraseTextButton($📱.🎛inlineData.text)
                                 ToolbarItem(placement: .navigationBarLeading) {
-                                    ShareLink(item: 📱.🎛InlineData.text)
-                                        .disabled(📱.🎛InlineData.text.isEmpty)
+                                    ShareLink(item: 📱.🎛inlineData.text)
+                                        .disabled(📱.🎛inlineData.text.isEmpty)
                                         .grayscale(1)
                                         .accessibilityLabel("Share")
                                 }
@@ -223,24 +221,24 @@ struct 📝InlineWidgetTab: View {
                     }
                     .listRowBackground(Color.clear)
                 }
-                📣ADBanner($🚩ShowADMenuSheet)
-                🔗URLSchemeActionButton($📱.🎛InlineData.text)
-                DisclosureGroup(isExpanded: $🚩UnfoldSection) {
-                    🎚PlaceholderPicker($📱.🎛InlineData.placeholder)
+                📣ADBanner(self.$🚩showADMenuSheet)
+                🔗URLSchemeActionButton($📱.🎛inlineData.text)
+                DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
+                    🎚PlaceholderPicker($📱.🎛inlineData.placeholder)
                 } label: {
                     Label("Customize", systemImage: "slider.horizontal.3")
                         .font(.caption)
                 }
             }
-            .modifier(📣ADMenuSheet($🚩ShowADMenuSheet))
-            .animation(.default, value: 🚩UnfoldSection)
+            .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
+            .animation(.default, value: self.🚩unfoldSection)
             .navigationTitle("Inline widget")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onOpenURL { 🔗 in
-            if 🔗.description == "Inline" {
+        .onOpenURL { ⓤrl in
+            if ⓤrl.description == "Inline" {
                 DispatchQueue.main.async {
-                    🚩Focus = true
+                    self.🚩focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
             }
@@ -250,34 +248,34 @@ struct 📝InlineWidgetTab: View {
 
 struct 🗑EraseTextButton: ToolbarContent {
     @State private var ⓞffsetX: CGFloat = 0
-    @State private var 🚩EraseNow: Bool = false
+    @State private var 🚩eraseNow: Bool = false
     @Binding var ⓣext: String
     var body: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             Button {
                 UINotificationFeedbackGenerator().notificationOccurred(.warning)
-                🚩EraseNow = true
+                self.🚩eraseNow = true
                 withAnimation {
-                    ⓞffsetX = -32
-                    ⓣext = ""
+                    self.ⓞffsetX = -32
+                    self.ⓣext = ""
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                     withAnimation(.default.speed(0.8)) {
-                        🚩EraseNow = false
-                        ⓞffsetX = 0
+                        self.🚩eraseNow = false
+                        self.ⓞffsetX = 0
                     }
                 }
             } label: {
                 Label("Erase", systemImage: "eraser.line.dashed")
-                    .opacity(🚩EraseNow ? 0 : 1)
+                    .opacity(self.🚩eraseNow ? 0 : 1)
             }
-            .disabled(ⓣext.isEmpty)
-            .foregroundStyle(ⓣext.isEmpty ? .tertiary : .secondary)
+            .disabled(self.ⓣext.isEmpty)
+            .foregroundStyle(self.ⓣext.isEmpty ? .tertiary : .secondary)
             .overlay {
-                if 🚩EraseNow {
+                if self.🚩eraseNow {
                     Image(systemName: "eraser.line.dashed")
                         .foregroundStyle(.secondary)
-                        .offset(x: ⓞffsetX)
+                        .offset(x: self.ⓞffsetX)
                         .transition(.opacity)
                 }
             }
@@ -291,13 +289,13 @@ struct 🗑EraseTextButton: ToolbarContent {
 struct 🎚PlaceholderPicker: View {
     @Binding var ⓟlaceholder: 🄿laceholder
     var body: some View {
-        Picker(selection: $ⓟlaceholder) {
+        Picker(selection: self.$ⓟlaceholder) {
             ForEach(🄿laceholder.allCases) { 🄿 in
                 Label(🄿.rawValue, systemImage: 🄿.icon)
             }
         } label: {
             Label("Placeholder", systemImage: "questionmark")
-                .strikethrough(ⓟlaceholder == .nothing)
+                .strikethrough(self.ⓟlaceholder == .nothing)
         }
     }
     init(_ ⓟlaceholder: Binding<🄿laceholder>) {
@@ -310,7 +308,7 @@ struct 🎚WeightPicker: View {
     var body: some View {
         NavigationLink {
             List {
-                Picker("Weight", selection: $ⓦeight) {
+                Picker("Weight", selection: self.$ⓦeight) {
                     ForEach(🅆eight.allCases) { 🅆 in
                         Text(🅆.rawValue)
                             .fontWeight(🅆.value)
@@ -320,8 +318,8 @@ struct 🎚WeightPicker: View {
             }
         } label: {
             Label("Weight", systemImage: "bold")
-                .fontWeight(ⓦeight.value)
-                .badge(ⓦeight.rawValue)
+                .fontWeight(self.ⓦeight.value)
+                .badge(self.ⓦeight.rawValue)
         }
     }
     init(_ ⓦeight: Binding<🅆eight>) {
@@ -334,7 +332,7 @@ struct 🎚DesignPicker: View {
     var body: some View {
         NavigationLink {
             List {
-                Picker("Design", selection: $ⓓesign) {
+                Picker("Design", selection: self.$ⓓesign) {
                     ForEach(🄳esign.allCases) { 🄳 in
                         Text(🄳.rawValue)
                             .font(.system(.title2, design: 🄳.value, weight: nil))
@@ -345,8 +343,8 @@ struct 🎚DesignPicker: View {
             }
         } label: {
             Label("Design", systemImage: "a.magnify")
-                .font(.system(.body, design: ⓓesign.value, weight: nil))
-                .badge(ⓓesign.rawValue)
+                .font(.system(.body, design: self.ⓓesign.value, weight: nil))
+                .badge(self.ⓓesign.rawValue)
         }
     }
     init(_ ⓓesign: Binding<🄳esign>) {
@@ -359,7 +357,7 @@ struct 🎚FontSizePicker: View {
     var body: some View {
         NavigationLink {
             List {
-                Picker("Size", selection: $ⓢize) {
+                Picker("Size", selection: self.$ⓢize) {
                     ForEach(8..<50, id: \.self) { ⓟoint in
                         Text(ⓟoint.description)
                             .font(.system(size: CGFloat(ⓟoint)))
@@ -370,8 +368,8 @@ struct 🎚FontSizePicker: View {
         } label: {
             Label("Size", systemImage: "textformat")
                 .symbolRenderingMode(.hierarchical)
-                .font(.system(size: CGFloat(ⓢize)))
-                .badge(ⓢize.description)
+                .font(.system(size: CGFloat(self.ⓢize)))
+                .badge(self.ⓢize.description)
         }
     }
     init(_ ⓢize: Binding<Int>) {
@@ -384,7 +382,7 @@ struct 🎚LevelPicker: View {
     var body: some View {
         NavigationLink {
             List {
-                Picker("Level", selection: $ⓛevel) {
+                Picker("Level", selection: self.$ⓛevel) {
                     ForEach(🄻evel.allCases) { 🄻 in
                         Text(🄻.rawValue)
                             .foregroundStyle(🄻.value)
@@ -395,12 +393,12 @@ struct 🎚LevelPicker: View {
         } label: {
             Label {
                 Text("Level")
-                    .foregroundStyle(ⓛevel.value)
+                    .foregroundStyle(self.ⓛevel.value)
             } icon: {
                 Image(systemName: "camera.filters")
                     .symbolRenderingMode(.hierarchical)
             }
-            .badge(ⓛevel.rawValue)
+            .badge(self.ⓛevel.rawValue)
         }
     }
     init(_ ⓛevel: Binding<🄻evel>) {
@@ -411,14 +409,14 @@ struct 🎚LevelPicker: View {
 struct 🎚TextAlignmentPicker: View {
     @Binding var ⓐlignment: 🄼ultilineTextAlignment
     var body: some View {
-        Picker(selection: $ⓐlignment) {
+        Picker(selection: self.$ⓐlignment) {
             ForEach(🄼ultilineTextAlignment.allCases) { 🄼 in
                 Label(🄼.rawValue, systemImage: 🄼.icon)
             }
         } label: {
             Text("Multi\ntext\nalignment")
-                .animation(.default, value: ⓐlignment)
-                .multilineTextAlignment(ⓐlignment.value)
+                .animation(.default, value: self.ⓐlignment)
+                .multilineTextAlignment(self.ⓐlignment.value)
                 .font(.footnote)
         }
     }
@@ -430,10 +428,10 @@ struct 🎚TextAlignmentPicker: View {
 struct 🎚ItalicPicker: View {
     @Binding var 🚩: Bool
     var body: some View {
-        Toggle(isOn: $🚩) {
+        Toggle(isOn: self.$🚩) {
             Label("Italic", systemImage: "italic")
-                .italic(🚩)
-                .animation(.default, value: 🚩)
+                .italic(self.🚩)
+                .animation(.default, value: self.🚩)
         }
     }
     init(_ 🚩: Binding<Bool>) {
@@ -441,22 +439,20 @@ struct 🎚ItalicPicker: View {
     }
 }
 
-
 struct 📣ADBanner: View {
     @EnvironmentObject var 🛒: 🛒StoreModel
-    @Binding var 🚩ShowADMenuSheet: Bool
+    @Binding var 🚩showADMenuSheet: Bool
     var body: some View {
         if 🛒.🚩ADIsActive {
             Section {
-                📣ADView(without: .LockInNote, $🚩ShowADMenuSheet)
+                📣ADView(without: .LockInNote, self.$🚩showADMenuSheet)
             }
         }
     }
-    init(_ 🚩ShowADMenuSheet: Binding<Bool>) {
-        self._🚩ShowADMenuSheet = 🚩ShowADMenuSheet
+    init(_ 🚩showADMenuSheet: Binding<Bool>) {
+        self._🚩showADMenuSheet = 🚩showADMenuSheet
     }
 }
-
 
 struct 🛠OptionTab: View { // ⚙️
     var body: some View {
@@ -497,34 +493,34 @@ struct 🛠OptionTab: View { // ⚙️
         }
     }
     struct 🔗URLSchemeActionSettingSection: View {
-        @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
-        @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
-        @AppStorage("URLSchemeButtonTitle") var 🪧ButtonTitle: String = ""
-        @AppStorage("EraseTextAfterAction") var 🚩EraseTextAfterAction: Bool = false
-        var ⓛeading: String { 🔗Leading.isEmpty ? "① + " : 🔗Leading }
-        var ⓣrailing: String { 🔗Trailing.isEmpty ? " + ②" : 🔗Trailing }
+        @AppStorage("URLSchemeLeading") var 🔗leading: String = ""
+        @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
+        @AppStorage("URLSchemeButtonTitle") var 🪧buttonTitle: String = ""
+        @AppStorage("EraseTextAfterAction") var 🚩eraseTextAfterAction: Bool = false
+        var ⓛeading: String { self.🔗leading.isEmpty ? "① + " : self.🔗leading }
+        var ⓣrailing: String { self.🔗trailing.isEmpty ? " + ②" : self.🔗trailing }
         var body: some View {
             List {
                 Section {
                     VStack {
                         HStack {
-                            if 🔗Leading.isEmpty {
+                            if self.🔗leading.isEmpty {
                                 Text("① +")
                                     .foregroundStyle(.secondary)
                             }
-                            Text(🔗Leading + "TEXT" + 🔗Trailing)
+                            Text(self.🔗leading + "TEXT" + self.🔗trailing)
                                 .italic()
                                 .font(.system(.subheadline, design: .monospaced))
                                 .multilineTextAlignment(.center)
                                 .padding(8)
                                 .frame(minHeight: 100)
-                            if 🔗Trailing.isEmpty {
+                            if self.🔗trailing.isEmpty {
                                 Text("+ ②")
                                     .foregroundStyle(.secondary)
                             }
                         }
-                        TextField("① URL scheme", text: $🔗Leading)
-                        TextField("② Trailing component", text: $🔗Trailing)
+                        TextField("① URL scheme", text: self.$🔗leading)
+                        TextField("② Trailing component", text: self.$🔗trailing)
                             .font(.subheadline)
                             .padding(.bottom, 4)
                     }
@@ -533,13 +529,13 @@ struct 🛠OptionTab: View { // ⚙️
                     Text("URL scheme")
                 }
                 Section {
-                    TextField("Input text of button", text: $🪧ButtonTitle)
+                    TextField("Input text of button", text: self.$🪧buttonTitle)
                         .textFieldStyle(.roundedBorder)
                 } header: {
                     Text("Button label")
                 }
                 Section {
-                    Toggle(isOn: $🚩EraseTextAfterAction) {
+                    Toggle(isOn: self.$🚩eraseTextAfterAction) {
                         Label("Erase text after action", systemImage: "eraser.line.dashed")
                     }
                 }
@@ -574,7 +570,6 @@ struct 🛠OptionTab: View { // ⚙️
         }
     }
 }
-
 
 struct ℹ️AboutAppTab: View {
     var body: some View {
@@ -629,38 +624,37 @@ struct ℹ️AboutAppTab: View {
     }
 }
 
-
 struct 🔗URLSchemeActionButton: View {
-    @AppStorage("URLSchemeLeading") var 🔗Leading: String = ""
-    @AppStorage("URLSchemeTrailing") var 🔗Trailing: String = ""
-    @AppStorage("URLSchemeButtonTitle") var 🪧ButtonTitle: String = ""
-    @AppStorage("EraseTextAfterAction") var 🚩EraseTextAfterAction: Bool = false
+    @AppStorage("URLSchemeLeading") var 🔗leading: String = ""
+    @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
+    @AppStorage("URLSchemeButtonTitle") var 🪧buttonTitle: String = ""
+    @AppStorage("EraseTextAfterAction") var 🚩eraseTextAfterAction: Bool = false
     @Environment(\.openURL) var ⓞpenURL: OpenURLAction
     @Binding var ⓠuery: String
-    var ⓤrl: URL? {
-        let ⓣext = 🔗Leading + ⓠuery + 🔗Trailing
+    private var ⓤrl: URL? {
+        let ⓣext = self.🔗leading + self.ⓠuery + self.🔗trailing
         guard let ⓔncodedText = ⓣext.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
         return URL(string: ⓔncodedText)
     }
     var body: some View {
-        if !🔗Leading.isEmpty {
+        if !self.🔗leading.isEmpty {
             if let ⓤrl {
                 Section {
                     Button {
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                        ⓞpenURL.callAsFunction(ⓤrl) { ⓐccepted in
-                            if ⓐccepted && 🚩EraseTextAfterAction {
+                        self.ⓞpenURL.callAsFunction(ⓤrl) { ⓐccepted in
+                            if ⓐccepted && self.🚩eraseTextAfterAction {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                    ⓠuery = ""
+                                    self.ⓠuery = ""
                                 }
                             }
                         }
                     } label: {
-                        Label(LocalizedStringKey(🪧ButtonTitle.isEmpty ? "URL Scheme Action" : 🪧ButtonTitle),
+                        Label(LocalizedStringKey(self.🪧buttonTitle.isEmpty ? "URL Scheme Action" : self.🪧buttonTitle),
                               systemImage: "command")
                             .font(.headline)
                     }
-                    .disabled(ⓠuery.isEmpty)
+                    .disabled(self.ⓠuery.isEmpty)
                 } footer: {
                     Text(ⓤrl.description)
                 }

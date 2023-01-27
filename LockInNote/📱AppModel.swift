@@ -1,20 +1,19 @@
-
 import SwiftUI
 import WidgetKit
 
 class 📱AppModel: ObservableObject {
-    @Published var 🎛RectangularData = 🎛RectangularDataModel()
-    @Published var 🎛CircularData = 🎛CircularDataModel()
-    @Published var 🎛InlineData = 🎛InlineDataModel()
+    @Published var 🎛rectangularData = 🎛RectangularDataModel()
+    @Published var 🎛circularData = 🎛CircularDataModel()
+    @Published var 🎛inlineData = 🎛InlineDataModel()
     
-    func 💾SaveDataAndReloadWidget() {
+    func 💾saveDataAndReloadWidget() {
         do {
             let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
-            var ⓓata = try JSONEncoder().encode(🎛RectangularData)
+            var ⓓata = try JSONEncoder().encode(🎛rectangularData)
             ⓤd?.set(ⓓata, forKey: "Rectangular")
-            ⓓata = try JSONEncoder().encode(🎛CircularData)
+            ⓓata = try JSONEncoder().encode(🎛circularData)
             ⓤd?.set(ⓓata, forKey: "Circular")
-            ⓓata = try JSONEncoder().encode(🎛InlineData)
+            ⓓata = try JSONEncoder().encode(🎛inlineData)
             ⓤd?.set(ⓓata, forKey: "Inline")
         } catch {
             print("🚨Encode error: ", error)
@@ -22,18 +21,17 @@ class 📱AppModel: ObservableObject {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    func 💾LoadDatas() {
-        enum 🚨LoadError: Error { case Rectangular, Circular, Inline }
+    func 💾loadDatas() {
         let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
         do {
             if let ⓓata = ⓤd?.data(forKey: "Rectangular") {
-                🎛RectangularData = try JSONDecoder().decode(🎛RectangularDataModel.self, from: ⓓata)
+                🎛rectangularData = try JSONDecoder().decode(🎛RectangularDataModel.self, from: ⓓata)
             } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Rectangular")"#, "is nil.") }
             if let ⓓata = ⓤd?.data(forKey: "Circular") {
-                🎛CircularData = try JSONDecoder().decode(🎛CircularDataModel.self, from: ⓓata)
+                🎛circularData = try JSONDecoder().decode(🎛CircularDataModel.self, from: ⓓata)
             } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Circular")"#, "is nil.") }
             if let ⓓata = ⓤd?.data(forKey: "Inline") {
-                🎛InlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
+                🎛inlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
             } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Inline")"#, "is nil.") }
         } catch {
             print("🚨Decode error: ", error)
@@ -41,7 +39,7 @@ class 📱AppModel: ObservableObject {
     }
     
     init() {
-        💾LoadDatas()
+        💾loadDatas()
     }
 }
 

@@ -1,4 +1,3 @@
-
 import WidgetKit
 import SwiftUI
 
@@ -67,89 +66,83 @@ struct 🕒Entry: TimelineEntry {
 }
 
 struct 🅁ectangularView : View {
-    var ⓔntry: 🤖Provider.Entry
-    let 🎛Data: 🎛RectangularDataModel
-    
+    private var ⓔntry: 🤖Provider.Entry
+    private let 🎛data: 🎛RectangularDataModel
     var body: some View {
         Group {
-            if 🎛Data.text != "" {
-                Text(🎛Data.text)
-                    .italic(🎛Data.italic)
-                    .multilineTextAlignment(🎛Data.multilineTextAlignment.value)
-            } else if 🎛Data.placeholder != .nothing {
-                Image(systemName: 🎛Data.placeholder.icon)
+            if 🎛data.text != "" {
+                Text(🎛data.text)
+                    .italic(🎛data.italic)
+                    .multilineTextAlignment(🎛data.multilineTextAlignment.value)
+            } else if 🎛data.placeholder != .nothing {
+                Image(systemName: 🎛data.placeholder.icon)
             }
         }
-        .font(.system(size: CGFloat(🎛Data.fontSize),
-                      weight: 🎛Data.fontWeight.value,
-                      design: 🎛Data.fontDesign.value))
-        .foregroundStyle(🎛Data.level.value)
+        .font(.system(size: CGFloat(🎛data.fontSize),
+                      weight: 🎛data.fontWeight.value,
+                      design: 🎛data.fontDesign.value))
+        .foregroundStyle(🎛data.level.value)
         .widgetURL(URL(string: "Rectangular")!)
     }
-    
     init(_ ⓔntry: 🤖Provider.Entry) {
         self.ⓔntry = ⓔntry
-        🎛Data = 📱AppModel().🎛RectangularData
+        🎛data = 📱AppModel().🎛rectangularData
     }
 }
 
 struct 🄲ircularView : View {
-    var ⓔntry: 🤖Provider.Entry
-    let 🎛Data: 🎛CircularDataModel
-    
+    private var ⓔntry: 🤖Provider.Entry
+    private let 🎛data: 🎛CircularDataModel
     var body: some View {
         Group {
-            if 🎛Data.text != "" {
+            if 🎛data.text != "" {
                 ZStack {
-                    if 🎛Data.background {
+                    if 🎛data.background {
                         AccessoryWidgetBackground()
                     }
-                    Text(🎛Data.text)
-                        .italic(🎛Data.italic)
-                        .multilineTextAlignment(🎛Data.multilineTextAlignment.value)
+                    Text(🎛data.text)
+                        .italic(🎛data.italic)
+                        .multilineTextAlignment(🎛data.multilineTextAlignment.value)
                         .padding(.horizontal, 2)
                 }
             } else {
                 ZStack {
-                    if 🎛Data.background {
+                    if 🎛data.background {
                         AccessoryWidgetBackground()
                     }
-                    if 🎛Data.placeholder != .nothing {
-                        Image(systemName: 🎛Data.placeholder.icon)
+                    if 🎛data.placeholder != .nothing {
+                        Image(systemName: 🎛data.placeholder.icon)
                     }
                 }
             }
         }
-        .font(.system(size: CGFloat(🎛Data.fontSize),
-                      weight: 🎛Data.fontWeight.value,
-                      design: 🎛Data.fontDesign.value))
-        .foregroundStyle(🎛Data.level.value)
+        .font(.system(size: CGFloat(🎛data.fontSize),
+                      weight: 🎛data.fontWeight.value,
+                      design: 🎛data.fontDesign.value))
+        .foregroundStyle(🎛data.level.value)
         .widgetURL(URL(string: "Circular")!)
     }
-    
     init(_ ⓔntry: 🤖Provider.Entry) {
         self.ⓔntry = ⓔntry
-        🎛Data = 📱AppModel().🎛CircularData
+        🎛data = 📱AppModel().🎛circularData
     }
 }
 
 struct 🄸nlineView : View {
-    var ⓔntry: 🤖Provider.Entry
-    let 🎛Data: 🎛InlineDataModel
-    
+    private var ⓔntry: 🤖Provider.Entry
+    private let 🎛data: 🎛InlineDataModel
     var body: some View {
         Group {
-            if 🎛Data.text != "" {
-                Text(🎛Data.text)
-            } else if 🎛Data.placeholder != .nothing {
-                Image(systemName: 🎛Data.placeholder.icon)
+            if 🎛data.text != "" {
+                Text(🎛data.text)
+            } else if 🎛data.placeholder != .nothing {
+                Image(systemName: 🎛data.placeholder.icon)
             }
         }
         .widgetURL(URL(string: "Inline")!)
     }
-    
     init(_ ⓔntry: 🤖Provider.Entry) {
         self.ⓔntry = ⓔntry
-        🎛Data = 📱AppModel().🎛InlineData
+        🎛data = 📱AppModel().🎛inlineData
     }
 }

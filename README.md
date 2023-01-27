@@ -1,16 +1,13 @@
-# 📱 LockInNote / ロックノート for iPhone
+# LockInNote / ロックノート for iPhone
 
 <br>
 
-![画像](LockInNote/Assets.xcassets/ClipedIcon.imageset/360.png)
+![App icon](LockInNote/Assets.xcassets/ClipedIcon.imageset/360.png)
 
 <br>
 
-## 🔗 AppStore link
+## AppStore link
 https://apps.apple.com/app/id1644879340
-
-
-<!-- Manually sync below text between "/README.md(here)" and "Localizable.strings" and "AppStoreConnect/_/Description". -->
 
 ## Description
 Note app for lock screen widget!
@@ -25,7 +22,6 @@ Note app for lock screen widget!
 
 - Support URL scheme action with text.
 
-
 ## 概要
 ロック画面ウィジェット専用のノートアプリ！
 
@@ -39,44 +35,31 @@ Note app for lock screen widget!
 
 - テキストと連携する任意のURLスキームを呼ぶことができます。
 
-
 ## Localization: All
 - English
 
 - Japanese(native)
 
-
 <br>
 
-
-## 🧰 Source code link
+## Source code link
 https://github.com/FlipByBlink/LockInNote
-
 
 ### Source code (Mirror) link
 https://gitlab.com/FlipByBlink/LockInNote_Mirror
 
-
-## ✉️ Contact
+## Contact
 sear_pandora_0x@icloud.com
 
-
-
-
 <br>
-
 <br>
 
 ------
 
 <br>
-
 <br>
-
 <br>
-
 <br>
-
 
 ## Privacy Policy for AppStore
 2022-09-12
@@ -87,24 +70,17 @@ sear_pandora_0x@icloud.com
 ### English
 This application don't collect user infomation.
 
-
 <br>
-
 <br>
-
 <br>
-
 <br>
 
 ------
 
 <br>
-
 <br>
-
 
 <!-- URL "Support page for AppStore" -->
 <!-- https://flipbyblink.github.io/LockInNote/ -->
-
 <!-- URL "Privacy Policy for AppStore" -->
 <!-- https://flipbyblink.github.io/LockInNote/#privacy-policy-for-appstore -->
