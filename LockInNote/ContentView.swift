@@ -26,7 +26,7 @@ struct ContentView: View {
         .animation(.default.speed(0.5), value: 🛒.🚩ADIsActive)
         .scrollDismissesKeyboard(.interactively)
         .onOpenURL { ⓤrl in
-            DispatchQueue.main.async {
+            Task {
                 switch ⓤrl.description {
                     case "Rectangular": self.🔖tab = .rectangularWidget
                     case "Circular": self.🔖tab = .circularWidget
@@ -105,7 +105,7 @@ struct 📝RectangularWidgetTab: View {
         }
         .onOpenURL { ⓤrl in
             if ⓤrl.description == "Rectangular" {
-                DispatchQueue.main.async {
+                Task {
                     self.🚩focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
@@ -183,7 +183,7 @@ struct 📝CircularWidgetTab: View {
         }
         .onOpenURL { ⓤrl in
             if ⓤrl.description == "Circular" {
-                DispatchQueue.main.async {
+                Task {
                     self.🚩focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
@@ -238,7 +238,7 @@ struct 📝InlineWidgetTab: View {
         }
         .onOpenURL { ⓤrl in
             if ⓤrl.description == "Inline" {
-                DispatchQueue.main.async {
+                Task {
                     self.🚩focus = true
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
@@ -634,8 +634,11 @@ struct 🔗URLSchemeActionButton: View {
     @Binding var ⓠuery: String
     private var ⓤrl: URL? {
         let ⓣext = self.🔗leading + self.ⓠuery + self.🔗trailing
-        guard let ⓔncodedText = ⓣext.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
-        return URL(string: ⓔncodedText)
+        if let ⓔncodedText = ⓣext.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            return URL(string: ⓔncodedText)
+        } else {
+            return nil
+        }
     }
     var body: some View {
         if !self.🔗leading.isEmpty {
