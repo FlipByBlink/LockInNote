@@ -114,13 +114,6 @@ struct 📝RectangularWidgetTab: View {
             TextField("Input text", text: $🎛.text, axis: .vertical)
                 .font(.title3)
                 .focused(self.$🚩focus)
-                .background(alignment: .trailing) {
-                    if !self.🚩focus && 🎛.text.isEmpty {
-                        Image(systemName: "pencil")
-                            .font(.title3.bold())
-                            .foregroundStyle(.tertiary)
-                    }
-                }
         }
     }
     init(_ model: Binding<🎛RectangularDataModel>) {
@@ -321,17 +314,17 @@ struct 🗑TrashButton: View {
             }
         } label: {
             Label("Erase", systemImage: "trash")
-                .foregroundColor(.white)
+                .foregroundColor(self.ⓓisable ? .gray : .white)
                 .labelStyle(.iconOnly)
                 .font(.largeTitle.weight(.semibold))
                 .padding()
+                .shadow(radius: self.ⓓisable ? 0 : 3)
         }
         .background {
             Circle()
-                .foregroundColor(.red)
+                .foregroundColor(self.ⓓisable ? Color(.darkGray) : .red)
+                .shadow(radius: 3)
         }
-        .grayscale(self.ⓓisable ? 1 : 0)
-        .shadow(radius: 3)
         .animation(.default, value: self.ⓓisable)
     }
     init(_ text: Binding<String>) {
@@ -344,17 +337,17 @@ struct 📮ShareButton: View {
     private var ⓓisable: Bool { self.ⓣext.isEmpty }
     var body: some View {
         ShareLink(item: self.ⓣext)
-            .disabled(self.ⓓisable)
             .labelStyle(.iconOnly)
-            .foregroundColor(.white)
+            .disabled(self.ⓓisable)
+            .shadow(radius: self.ⓓisable ? 0 : 3)
+            .foregroundColor(self.ⓓisable ? .gray : .white)
             .font(.largeTitle.weight(.semibold))
             .padding()
             .background {
                 Circle()
-                    .foregroundColor(.teal)
+                    .foregroundColor(self.ⓓisable ? Color(.darkGray) : .teal)
+                    .shadow(radius: 3)
             }
-            .grayscale(self.ⓓisable ? 1 : 0)
-            .shadow(radius: 3)
     }
     init(_ text: String) {
         self.ⓣext = text
