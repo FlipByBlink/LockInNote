@@ -81,7 +81,7 @@ struct 📝RectangularWidgetTab: View {
             .navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) {
                 if self.🚩focus {
-                    HStack {
+                    HStack(spacing: 12) {
                         🗑TrashButton($🎛.text)
                         📮ShareButton(🎛.text)
                         Spacer()
