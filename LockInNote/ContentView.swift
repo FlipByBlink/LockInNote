@@ -289,12 +289,12 @@ struct 👆EditButton: View {
         } label: {
             Image(systemName: "pencil")
                 .foregroundColor(.white)
-                .font(.largeTitle.weight(.semibold))
+                .font(.largeTitle.weight(.black))
                 .padding()
         }
         .background {
             Circle()
-                .fill(Color(.darkGray))
+                .fill(Color(white: 0.45))
         }
         .shadow(radius: 3)
     }
