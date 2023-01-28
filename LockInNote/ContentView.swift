@@ -90,7 +90,15 @@ struct 📝RectangularWidgetTab: View {
                     .padding()
                 }
             }
+            .overlay(alignment: .bottom) {
+                if !self.🚩focus {
+                    👆EditButton { self.🚩focus = true }
+                        .padding()
+                }
+            }
+            .animation(.default, value: 🎛.text.isEmpty)
             .animation(.default, value: self.🚩focus)
+            .background { Color(.secondarySystemBackground) }
         }
         .onOpenURL { ⓤrl in
             if ⓤrl.description == "Rectangular" {
@@ -272,6 +280,29 @@ struct 👆DoneButton: View {
                 .padding()
         }
         .background(Circle().foregroundColor(.accentColor))
+        .shadow(radius: 3)
+    }
+    init(_ action: @escaping () -> Void) {
+        self.ⓐction = action
+    }
+}
+
+struct 👆EditButton: View {
+    private var ⓐction: () -> Void
+    var body: some View {
+        Button {
+            self.ⓐction()
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        } label: {
+            Image(systemName: "pencil")
+                .foregroundColor(.white)
+                .font(.largeTitle.weight(.semibold))
+                .padding()
+        }
+        .background {
+            Circle()
+                .fill(Color(.darkGray))
+        }
         .shadow(radius: 3)
     }
     init(_ action: @escaping () -> Void) {
