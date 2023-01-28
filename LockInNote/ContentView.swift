@@ -314,7 +314,7 @@ struct 🗑TrashButton: View {
             }
         } label: {
             Label("Erase", systemImage: "trash")
-                .foregroundColor(self.ⓓisable ? .gray : .white)
+                .foregroundColor(self.ⓓisable ? Color(white: 0.9) : .white)
                 .labelStyle(.iconOnly)
                 .font(.largeTitle.weight(.semibold))
                 .padding()
@@ -322,7 +322,7 @@ struct 🗑TrashButton: View {
         }
         .background {
             Circle()
-                .foregroundColor(self.ⓓisable ? Color(.darkGray) : .red)
+                .foregroundColor(self.ⓓisable ? Color(white: 0.6) : .red)
                 .shadow(radius: 3)
         }
         .animation(.default, value: self.ⓓisable)
@@ -340,12 +340,12 @@ struct 📮ShareButton: View {
             .labelStyle(.iconOnly)
             .disabled(self.ⓓisable)
             .shadow(radius: self.ⓓisable ? 0 : 3)
-            .foregroundColor(self.ⓓisable ? .gray : .white)
+            .foregroundColor(self.ⓓisable ? Color(white: 0.9) : .white)
             .font(.largeTitle.weight(.semibold))
             .padding()
             .background {
                 Circle()
-                    .foregroundColor(self.ⓓisable ? Color(.darkGray) : .teal)
+                    .foregroundColor(self.ⓓisable ? Color(white: 0.6) : .teal)
                     .shadow(radius: 3)
             }
     }
