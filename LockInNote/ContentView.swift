@@ -117,14 +117,6 @@ struct 📝RectangularWidgetTab: View {
     }
 }
 
-struct MyPreviewProvider_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            🄲ustomizeForm(.constant(🎛RectangularDataModel()))
-        }
-    }
-}
-
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
@@ -208,26 +200,44 @@ struct 📝CircularWidgetTab: View {
 
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
     @FocusState private var 🚩focus: Bool
     @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
             List {
                 self.ⓘnputField()
-                📣ADBanner(self.$🚩showADMenuSheet)
                 🔗URLSchemeActionButton($📱.🎛inlineData.text)
-                DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
+                if !self.🚩focus {
+                    📣ADBanner(self.$🚩showADMenuSheet)
                     🎚PlaceholderPicker($📱.🎛inlineData.placeholder)
-                } label: {
-                    Label("Customize", systemImage: "slider.horizontal.3")
-                        .font(.caption)
                 }
             }
             .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
-            .animation(.default, value: self.🚩unfoldSection)
-            .navigationTitle("Inline widget")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Inline widget")
+                        .font(.headline)
+                        .opacity(self.🚩focus ? 0.33 : 1)
+                }
+            }
             .navigationBarTitleDisplayMode(.inline)
+            .safeAreaInset(edge: .bottom) {
+                if self.🚩focus {
+                    HStack(spacing: 12) {
+                        🗑TrashButton($📱.🎛inlineData.text)
+                        📮ShareButton(📱.🎛inlineData.text)
+                        Spacer()
+                        👆DoneButton { self.🚩focus = false }
+                    }
+                    .padding()
+                } else {
+                    👆EditButton { self.🚩focus = true }
+                        .padding()
+                }
+            }
+            .animation(.default, value: 📱.🎛inlineData.text.isEmpty)
+            .animation(.default, value: self.🚩focus)
+            .background { Color(.secondarySystemBackground) }
         }
         .onOpenURL { ⓤrl in
             if ⓤrl.description == "Inline" {
@@ -240,26 +250,9 @@ struct 📝InlineWidgetTab: View {
     }
     private func ⓘnputField() -> some View {
         Section {
-            HStack {
-                Text(Date.now.formatted(.dateTime.day().weekday(.abbreviated)))
-                    .font(.title2.bold())
-                    .foregroundStyle(.tertiary)
-                TextField("Input text", text: $📱.🎛inlineData.text)
-                    .font(.title2)
-                    .focused(self.$🚩focus)
-                    .textFieldStyle(.roundedBorder)
-                    .submitLabel(.done)
-                    .toolbar {
-                        🗑EraseTextButton($📱.🎛inlineData.text)
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            ShareLink(item: 📱.🎛inlineData.text)
-                                .disabled(📱.🎛inlineData.text.isEmpty)
-                                .grayscale(1)
-                                .accessibilityLabel("Share")
-                        }
-                    }
-            }
-            .listRowBackground(Color.clear)
+            TextField("Input text", text: $📱.🎛inlineData.text, axis: .vertical)
+                .font(.title3)
+                .focused(self.$🚩focus)
         }
     }
 }
@@ -355,46 +348,6 @@ struct 📮ShareButton: View {
     }
     init(_ text: String) {
         self.ⓣext = text
-    }
-}
-
-struct 🗑EraseTextButton: ToolbarContent {
-    @State private var ⓞffsetX: CGFloat = 0
-    @State private var 🚩eraseNow: Bool = false
-    @Binding var ⓣext: String
-    var body: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
-            Button {
-                UINotificationFeedbackGenerator().notificationOccurred(.warning)
-                self.🚩eraseNow = true
-                withAnimation {
-                    self.ⓞffsetX = -32
-                    self.ⓣext = ""
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                    withAnimation(.default.speed(0.8)) {
-                        self.🚩eraseNow = false
-                        self.ⓞffsetX = 0
-                    }
-                }
-            } label: {
-                Label("Erase", systemImage: "eraser.line.dashed")
-                    .opacity(self.🚩eraseNow ? 0 : 1)
-            }
-            .disabled(self.ⓣext.isEmpty)
-            .foregroundStyle(self.ⓣext.isEmpty ? .tertiary : .secondary)
-            .overlay {
-                if self.🚩eraseNow {
-                    Image(systemName: "eraser.line.dashed")
-                        .foregroundStyle(.secondary)
-                        .offset(x: self.ⓞffsetX)
-                        .transition(.opacity)
-                }
-            }
-        }
-    }
-    init(_ ⓣext: Binding<String>) {
-        self._ⓣext = ⓣext
     }
 }
 
