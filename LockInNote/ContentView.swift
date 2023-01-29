@@ -7,10 +7,10 @@ struct ContentView: View {
     @State private var 🔖tab: 🔖Tab = .rectangularWidget
     var body: some View {
         TabView(selection: self.$🔖tab) {
-            📝RectangularWidgetTab($📱.🎛rectangularData)
+            📝RectangularWidgetTab()
                 .tag(🔖Tab.rectangularWidget)
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
-            📝CircularWidgetTab($📱.🎛circularData)
+            📝CircularWidgetTab()
                 .tag(🔖Tab.circularWidget)
                 .tabItem { Label("Circular", systemImage: "circle.dashed") }
             📝InlineWidgetTab()
@@ -45,71 +45,75 @@ struct ContentView: View {
 }
 
 struct 📝RectangularWidgetTab: View {
-    @Binding private var 🎛: 🎛RectangularDataModel
-    @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
-    @FocusState private var 🚩focus: Bool
-    @State private var 🚩showADMenuSheet: Bool = false
+    @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        NavigationStack {
-            List {
-                self.ⓘnputField()
-                🔗URLSchemeActionButton($🎛.text)
-                if !self.🚩focus {
-                    📣ADBanner(self.$🚩showADMenuSheet)
-                    NavigationLink {
-                        🄲ustomizeForm($🎛)
-                    } label: {
-                        Label("Customize Font", systemImage: "slider.horizontal.3")
+        Self.🄲ontent($📱.🎛rectangularData)
+    }
+    private struct 🄲ontent: View {
+        @Binding private var 🎛: 🎛RectangularDataModel
+        @FocusState private var 🚩focus: Bool
+        @State private var 🚩showADMenuSheet: Bool = false
+        var body: some View {
+            NavigationStack {
+                List {
+                    self.ⓘnputField()
+                    🔗URLSchemeActionButton($🎛.text)
+                    if !self.🚩focus {
+                        📣ADBanner(self.$🚩showADMenuSheet)
+                        NavigationLink {
+                            🄲ustomizeForm($🎛)
+                        } label: {
+                            Label("Customize Font", systemImage: "slider.horizontal.3")
+                        }
+                        🎚PlaceholderPicker($🎛.placeholder)
                     }
-                    🎚PlaceholderPicker($🎛.placeholder)
                 }
-            }
-            .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
-            .animation(.default, value: self.🚩unfoldSection)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Rectangular widget")
-                        .font(.headline)
-                        .opacity(self.🚩focus ? 0.33 : 1)
-                }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .safeAreaInset(edge: .bottom) {
-                if self.🚩focus {
-                    HStack(spacing: 12) {
-                        🗑TrashButton($🎛.text)
-                        📮ShareButton(🎛.text)
-                        Spacer()
-                        👆DoneButton { self.🚩focus = false }
+                .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Rectangular widget")
+                            .font(.headline)
+                            .opacity(self.🚩focus ? 0.33 : 1)
                     }
-                    .padding()
-                } else {
-                    👆EditButton { self.🚩focus = true }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .safeAreaInset(edge: .bottom) {
+                    if self.🚩focus {
+                        HStack(spacing: 12) {
+                            🗑TrashButton($🎛.text)
+                            📮ShareButton(🎛.text)
+                            Spacer()
+                            👆DoneButton { self.🚩focus = false }
+                        }
                         .padding()
+                    } else {
+                        👆EditButton { self.🚩focus = true }
+                            .padding()
+                    }
+                }
+                .animation(.default, value: 🎛.text.isEmpty)
+                .animation(.default, value: self.🚩focus)
+                .background { Color(.secondarySystemBackground) }
+            }
+            .onOpenURL { ⓤrl in
+                if ⓤrl.description == "Rectangular" {
+                    Task {
+                        self.🚩focus = true
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    }
                 }
             }
-            .animation(.default, value: 🎛.text.isEmpty)
-            .animation(.default, value: self.🚩focus)
-            .background { Color(.secondarySystemBackground) }
         }
-        .onOpenURL { ⓤrl in
-            if ⓤrl.description == "Rectangular" {
-                Task {
-                    self.🚩focus = true
-                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                }
+        private func ⓘnputField() -> some View {
+            Section {
+                TextField("Input text", text: $🎛.text, axis: .vertical)
+                    .font(.title3)
+                    .focused(self.$🚩focus)
             }
         }
-    }
-    private func ⓘnputField() -> some View {
-        Section {
-            TextField("Input text", text: $🎛.text, axis: .vertical)
-                .font(.title3)
-                .focused(self.$🚩focus)
+        init(_ model: Binding<🎛RectangularDataModel>) {
+            self._🎛 = model
         }
-    }
-    init(_ model: Binding<🎛RectangularDataModel>) {
-        self._🎛 = model
     }
 }
 
@@ -123,79 +127,82 @@ struct MyPreviewProvider_Previews: PreviewProvider {
 
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @Binding private var 🎛: 🎛CircularDataModel
-    @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
-    @FocusState private var 🚩focus: Bool
-    @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
-        NavigationStack {
-            List {
-                self.ⓘnputField()
-                🔗URLSchemeActionButton($🎛.text)
-                if !self.🚩focus {
-                    📣ADBanner(self.$🚩showADMenuSheet)
-                    NavigationLink {
-                        🄲ustomizeForm($🎛)
-                    } label: {
-                        Label("Customize Font", systemImage: "slider.horizontal.3")
+        Self.🄲ontent($📱.🎛circularData)
+    }
+    private struct 🄲ontent: View {
+        @Binding private var 🎛: 🎛CircularDataModel
+        @FocusState private var 🚩focus: Bool
+        @State private var 🚩showADMenuSheet: Bool = false
+        var body: some View {
+            NavigationStack {
+                List {
+                    self.ⓘnputField()
+                    🔗URLSchemeActionButton($🎛.text)
+                    if !self.🚩focus {
+                        📣ADBanner(self.$🚩showADMenuSheet)
+                        NavigationLink {
+                            🄲ustomizeForm($🎛)
+                        } label: {
+                            Label("Customize Font", systemImage: "slider.horizontal.3")
+                        }
+                        self.ⓑackgroundOption()
+                        🎚PlaceholderPicker($🎛.placeholder)
                     }
-                    self.ⓑackgroundOption()
-                    🎚PlaceholderPicker($🎛.placeholder)
                 }
-            }
-            .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
-            .animation(.default, value: self.🚩unfoldSection)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Circular widget")
-                        .font(.headline)
-                        .opacity(self.🚩focus ? 0.33 : 1)
-                }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .safeAreaInset(edge: .bottom) {
-                if self.🚩focus {
-                    HStack(spacing: 12) {
-                        🗑TrashButton($🎛.text)
-                        📮ShareButton(🎛.text)
-                        Spacer()
-                        👆DoneButton { self.🚩focus = false }
+                .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Circular widget")
+                            .font(.headline)
+                            .opacity(self.🚩focus ? 0.33 : 1)
                     }
-                    .padding()
-                } else {
-                    👆EditButton { self.🚩focus = true }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .safeAreaInset(edge: .bottom) {
+                    if self.🚩focus {
+                        HStack(spacing: 12) {
+                            🗑TrashButton($🎛.text)
+                            📮ShareButton(🎛.text)
+                            Spacer()
+                            👆DoneButton { self.🚩focus = false }
+                        }
                         .padding()
+                    } else {
+                        👆EditButton { self.🚩focus = true }
+                            .padding()
+                    }
+                }
+                .animation(.default, value: 🎛.text.isEmpty)
+                .animation(.default, value: self.🚩focus)
+                .background { Color(.secondarySystemBackground) }
+            }
+            .onOpenURL { ⓤrl in
+                if ⓤrl.description == "Circular" {
+                    Task {
+                        self.🚩focus = true
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    }
                 }
             }
-            .animation(.default, value: 🎛.text.isEmpty)
-            .animation(.default, value: self.🚩focus)
-            .background { Color(.secondarySystemBackground) }
         }
-        .onOpenURL { ⓤrl in
-            if ⓤrl.description == "Circular" {
-                Task {
-                    self.🚩focus = true
-                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                }
+        private func ⓘnputField() -> some View {
+            Section {
+                TextField("Input text", text: $🎛.text, axis: .vertical)
+                    .font(.title3)
+                    .focused(self.$🚩focus)
             }
         }
-    }
-    private func ⓘnputField() -> some View {
-        Section {
-            TextField("Input text", text: $🎛.text, axis: .vertical)
-                .font(.title3)
-                .focused(self.$🚩focus)
+        private func ⓑackgroundOption() -> some View {
+            Toggle(isOn: $🎛.background) {
+                Label("Background",
+                      systemImage: 🎛.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                .animation(.default, value: 🎛.background)
+            }
         }
-    }
-    private func ⓑackgroundOption() -> some View {
-        Toggle(isOn: $📱.🎛circularData.background) {
-            Label("Background",
-                  systemImage: 📱.🎛circularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
-            .animation(.default, value: 📱.🎛circularData.background)
+        init(_ model: Binding<🎛CircularDataModel>) {
+            self._🎛 = model
         }
-    }
-    init(_ model: Binding<🎛CircularDataModel>) {
-        self._🎛 = model
     }
 }
 
