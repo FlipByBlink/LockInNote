@@ -406,7 +406,7 @@ struct 🛠️CustomizeFontLink<T: 🄵ontOptions>: View {
             }
             .navigationBarTitle("Customize font")
         } label: {
-            Label("Customize Font", systemImage: "slider.horizontal.3")
+            Label("Customize font", systemImage: "slider.horizontal.3")
                 .padding(.vertical, 6)
         }
     }
