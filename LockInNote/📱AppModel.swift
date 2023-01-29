@@ -45,7 +45,17 @@ class 📱AppModel: ObservableObject {
 
 let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
 
-struct 🎛RectangularDataModel: Codable, Equatable {
+protocol 🄵ontOptions {
+    var placeholder: 🄿laceholder { get set }
+    var fontSize: Int { get set }
+    var fontWeight: 🅆eight { get set }
+    var fontDesign: 🄳esign { get set }
+    var italic: Bool { get set }
+    var level: 🄻evel { get set }
+    var multilineTextAlignment: 🄼ultilineTextAlignment { get set }
+}
+
+struct 🎛RectangularDataModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""
     
     var placeholder: 🄿laceholder = .squareAndPencil
@@ -57,7 +67,7 @@ struct 🎛RectangularDataModel: Codable, Equatable {
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
 }
 
-struct 🎛CircularDataModel: Codable, Equatable {
+struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""
     var background: Bool = true
     

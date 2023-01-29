@@ -10,7 +10,7 @@ struct ContentView: View {
             📝RectangularWidgetTab($📱.🎛rectangularData)
                 .tag(🔖Tab.rectangularWidget)
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
-            📝CircularWidgetTab()
+            📝CircularWidgetTab($📱.🎛circularData)
                 .tag(🔖Tab.circularWidget)
                 .tabItem { Label("Circular", systemImage: "circle.dashed") }
             📝InlineWidgetTab()
@@ -57,7 +57,7 @@ struct 📝RectangularWidgetTab: View {
                 if !self.🚩focus {
                     📣ADBanner(self.$🚩showADMenuSheet)
                     NavigationLink {
-                        Self.ⓒustomizeForm(self.$🎛)
+                        🄲ustomizeForm($🎛)
                     } label: {
                         Label("Customize Font", systemImage: "slider.horizontal.3")
                     }
@@ -108,47 +108,6 @@ struct 📝RectangularWidgetTab: View {
                 .focused(self.$🚩focus)
         }
     }
-    struct ⓒustomizeForm: View {
-        @Binding private var 🎛: 🎛RectangularDataModel
-        var body: some View {
-            VStack(spacing: 0) {
-                GroupBox("Preview") {
-                    Text("""
-                This is sample.
-                これは仮の文章です。
-                이것은 플레이스 홀더입니다.
-                """)
-                    .font(.system(size: CGFloat(🎛.fontSize),
-                                  weight: 🎛.fontWeight.value,
-                                  design: 🎛.fontDesign.value))
-                    .italic(🎛.italic)
-                    .foregroundStyle(🎛.level.value)
-                    .multilineTextAlignment(🎛.multilineTextAlignment.value)
-                }
-                .padding()
-                .padding(.horizontal)
-                .padding(.top, 8)
-                .animation(.default, value: 🎛.multilineTextAlignment)
-                List {
-                    Section {
-                        🎚WeightPicker($🎛.fontWeight)
-                        🎚DesignPicker($🎛.fontDesign)
-                        🎚FontSizePicker($🎛.fontSize)
-                        🎚LevelPicker($🎛.level)
-                        🎚TextAlignmentPicker($🎛.multilineTextAlignment)
-                        🎚ItalicPicker($🎛.italic)
-                    } header: {
-                        Text("Option")
-                    }
-                }
-                .listStyle(.plain)
-            }
-            .navigationBarTitle("Customize font")
-        }
-        init(_ model: Binding<🎛RectangularDataModel>) {
-            self._🎛 = model
-        }
-    }
     init(_ model: Binding<🎛RectangularDataModel>) {
         self._🎛 = model
     }
@@ -157,13 +116,14 @@ struct 📝RectangularWidgetTab: View {
 struct MyPreviewProvider_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            📝RectangularWidgetTab.ⓒustomizeForm(.constant(.init()))
+            🄲ustomizeForm(.constant(🎛RectangularDataModel()))
         }
     }
 }
 
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
+    @Binding private var 🎛: 🎛CircularDataModel
     @AppStorage("UnfoldSection") var 🚩unfoldSection: Bool = true
     @FocusState private var 🚩focus: Bool
     @State private var 🚩showADMenuSheet: Bool = false
@@ -171,30 +131,45 @@ struct 📝CircularWidgetTab: View {
         NavigationStack {
             List {
                 self.ⓘnputField()
-                📣ADBanner(self.$🚩showADMenuSheet)
-                🔗URLSchemeActionButton($📱.🎛circularData.text)
-                DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
-                    Toggle(isOn: $📱.🎛circularData.background) {
-                        Label("Background",
-                              systemImage: 📱.🎛circularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
-                        .animation(.default, value: 📱.🎛circularData.background)
+                🔗URLSchemeActionButton($🎛.text)
+                if !self.🚩focus {
+                    📣ADBanner(self.$🚩showADMenuSheet)
+                    NavigationLink {
+                        🄲ustomizeForm($🎛)
+                    } label: {
+                        Label("Customize Font", systemImage: "slider.horizontal.3")
                     }
-                    🎚WeightPicker($📱.🎛circularData.fontWeight)
-                    🎚DesignPicker($📱.🎛circularData.fontDesign)
-                    🎚FontSizePicker($📱.🎛circularData.fontSize)
-                    🎚LevelPicker($📱.🎛circularData.level)
-                    🎚TextAlignmentPicker($📱.🎛circularData.multilineTextAlignment)
-                    🎚ItalicPicker($📱.🎛circularData.italic)
-                    🎚PlaceholderPicker($📱.🎛circularData.placeholder)
-                } label: {
-                    Label("Customize", systemImage: "slider.horizontal.3")
-                        .font(.caption)
+                    self.ⓑackgroundOption()
+                    🎚PlaceholderPicker($🎛.placeholder)
                 }
             }
             .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
             .animation(.default, value: self.🚩unfoldSection)
-            .navigationTitle("Circular widget")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Circular widget")
+                        .font(.headline)
+                        .opacity(self.🚩focus ? 0.33 : 1)
+                }
+            }
             .navigationBarTitleDisplayMode(.inline)
+            .safeAreaInset(edge: .bottom) {
+                if self.🚩focus {
+                    HStack(spacing: 12) {
+                        🗑TrashButton($🎛.text)
+                        📮ShareButton(🎛.text)
+                        Spacer()
+                        👆DoneButton { self.🚩focus = false }
+                    }
+                    .padding()
+                } else {
+                    👆EditButton { self.🚩focus = true }
+                        .padding()
+                }
+            }
+            .animation(.default, value: 🎛.text.isEmpty)
+            .animation(.default, value: self.🚩focus)
+            .background { Color(.secondarySystemBackground) }
         }
         .onOpenURL { ⓤrl in
             if ⓤrl.description == "Circular" {
@@ -207,39 +182,20 @@ struct 📝CircularWidgetTab: View {
     }
     private func ⓘnputField() -> some View {
         Section {
-            ZStack {
-                Color.clear
-                let ⓢize: CGFloat = 220
-                ZStack {
-                    Circle().foregroundStyle(.background)
-                        .shadow(color: .secondary, radius: 1)
-                        .onTapGesture { self.🚩focus = true }
-                    TextField("Input text", text: $📱.🎛circularData.text, axis: .vertical)
-                        .font(.title2)
-                        .focused(self.$🚩focus)
-                        .frame(width: (ⓢize * 5/7) - 6, height: (ⓢize * 5/7) - 6)
-                        .toolbar {
-                            🗑EraseTextButton($📱.🎛circularData.text)
-                            ToolbarItem(placement: .keyboard) {
-                                Button {
-                                    self.🚩focus = false
-                                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                                } label: {
-                                    Label("Done", systemImage: "keyboard.chevron.compact.down")
-                                }
-                            }
-                            ToolbarItem(placement: .navigationBarLeading) {
-                                ShareLink(item: 📱.🎛circularData.text)
-                                    .disabled(📱.🎛circularData.text.isEmpty)
-                                    .grayscale(1)
-                                    .accessibilityLabel("Share")
-                            }
-                        }
-                }
-                .frame(width: ⓢize, height: ⓢize)
-            }
-            .listRowBackground(Color.clear)
+            TextField("Input text", text: $🎛.text, axis: .vertical)
+                .font(.title3)
+                .focused(self.$🚩focus)
         }
+    }
+    private func ⓑackgroundOption() -> some View {
+        Toggle(isOn: $📱.🎛circularData.background) {
+            Label("Background",
+                  systemImage: 📱.🎛circularData.background ? "circle.dashed.inset.filled" : "circle.dashed")
+            .animation(.default, value: 📱.🎛circularData.background)
+        }
+    }
+    init(_ model: Binding<🎛CircularDataModel>) {
+        self._🎛 = model
     }
 }
 
@@ -432,6 +388,48 @@ struct 🗑EraseTextButton: ToolbarContent {
     }
     init(_ ⓣext: Binding<String>) {
         self._ⓣext = ⓣext
+    }
+}
+
+struct 🄲ustomizeForm<T: 🄵ontOptions>: View {
+    @Binding private var 🎛: T
+    var body: some View {
+        VStack(spacing: 0) {
+            GroupBox("Preview") {
+                Text("""
+                This is sample.
+                これは仮の文章です。
+                이것은 플레이스 홀더입니다.
+                """)
+                .font(.system(size: CGFloat(🎛.fontSize),
+                              weight: 🎛.fontWeight.value,
+                              design: 🎛.fontDesign.value))
+                .italic(🎛.italic)
+                .foregroundStyle(🎛.level.value)
+                .multilineTextAlignment(🎛.multilineTextAlignment.value)
+            }
+            .padding()
+            .padding(.horizontal)
+            .padding(.top, 8)
+            .animation(.default, value: 🎛.multilineTextAlignment)
+            List {
+                Section {
+                    🎚WeightPicker($🎛.fontWeight)
+                    🎚DesignPicker($🎛.fontDesign)
+                    🎚FontSizePicker($🎛.fontSize)
+                    🎚LevelPicker($🎛.level)
+                    🎚TextAlignmentPicker($🎛.multilineTextAlignment)
+                    🎚ItalicPicker($🎛.italic)
+                } header: {
+                    Text("Option")
+                }
+            }
+            .listStyle(.plain)
+        }
+        .navigationBarTitle("Customize font")
+    }
+    init(_ model: Binding<T>) {
+        self._🎛 = model
     }
 }
 
