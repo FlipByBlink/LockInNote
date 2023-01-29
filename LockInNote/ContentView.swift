@@ -83,10 +83,7 @@ struct 📝RectangularWidgetTab: View {
                         👆DoneButton { self.🚩focus = false }
                     }
                     .padding()
-                }
-            }
-            .overlay(alignment: .bottom) {
-                if !self.🚩focus {
+                } else {
                     👆EditButton { self.🚩focus = true }
                         .padding()
                 }
