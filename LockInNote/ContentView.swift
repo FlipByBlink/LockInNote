@@ -57,7 +57,7 @@ struct 📝RectangularWidgetTab: View {
                 if !self.🚩focus {
                     📣ADBanner(self.$🚩showADMenuSheet)
                     NavigationLink {
-                        self.ⓒustomizeForm()
+                        Self.ⓒustomizeForm(self.$🎛)
                     } label: {
                         Label("Customize Font", systemImage: "slider.horizontal.3")
                     }
@@ -111,41 +111,57 @@ struct 📝RectangularWidgetTab: View {
                 .focused(self.$🚩focus)
         }
     }
-    private func ⓒustomizeForm() -> some View {
-        VStack {
-            GroupBox("Preview") {
-                Text("""
+    struct ⓒustomizeForm: View {
+        @Binding private var 🎛: 🎛RectangularDataModel
+        var body: some View {
+            VStack(spacing: 0) {
+                GroupBox("Preview") {
+                    Text("""
                 This is sample.
                 これは仮の文章です。
                 이것은 플레이스 홀더입니다.
                 """)
-                .font(.system(size: CGFloat(🎛.fontSize),
-                              weight: 🎛.fontWeight.value,
-                              design: 🎛.fontDesign.value))
-                .italic(🎛.italic)
-                .foregroundStyle(🎛.level.value)
-                .multilineTextAlignment(🎛.multilineTextAlignment.value)
-            }
-            .padding()
-            .padding(.horizontal)
-            List {
-                Section {
-                    🎚WeightPicker($🎛.fontWeight)
-                    🎚DesignPicker($🎛.fontDesign)
-                    🎚FontSizePicker($🎛.fontSize)
-                    🎚LevelPicker($🎛.level)
-                    🎚TextAlignmentPicker($🎛.multilineTextAlignment)
-                    🎚ItalicPicker($🎛.italic)
-                } header: {
-                    Text("Option")
+                    .font(.system(size: CGFloat(🎛.fontSize),
+                                  weight: 🎛.fontWeight.value,
+                                  design: 🎛.fontDesign.value))
+                    .italic(🎛.italic)
+                    .foregroundStyle(🎛.level.value)
+                    .multilineTextAlignment(🎛.multilineTextAlignment.value)
                 }
+                .padding()
+                .padding(.horizontal)
+                .padding(.top, 8)
+                .animation(.default, value: 🎛.multilineTextAlignment)
+                List {
+                    Section {
+                        🎚WeightPicker($🎛.fontWeight)
+                        🎚DesignPicker($🎛.fontDesign)
+                        🎚FontSizePicker($🎛.fontSize)
+                        🎚LevelPicker($🎛.level)
+                        🎚TextAlignmentPicker($🎛.multilineTextAlignment)
+                        🎚ItalicPicker($🎛.italic)
+                    } header: {
+                        Text("Option")
+                    }
+                }
+                .listStyle(.plain)
             }
-            .listStyle(.plain)
+            .navigationBarTitle("Customize font")
         }
-        .navigationBarTitle("Customize font")
+        init(_ model: Binding<🎛RectangularDataModel>) {
+            self._🎛 = model
+        }
     }
     init(_ model: Binding<🎛RectangularDataModel>) {
         self._🎛 = model
+    }
+}
+
+struct MyPreviewProvider_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            📝RectangularWidgetTab.ⓒustomizeForm(.constant(.init()))
+        }
     }
 }
 
@@ -443,20 +459,15 @@ struct 🎚PlaceholderPicker: View {
 struct 🎚WeightPicker: View {
     @Binding var ⓦeight: 🅆eight
     var body: some View {
-        NavigationLink {
-            List {
-                Picker("Weight", selection: self.$ⓦeight) {
-                    ForEach(🅆eight.allCases) { 🅆 in
-                        Text(🅆.rawValue)
-                            .fontWeight(🅆.value)
-                    }
+        HStack {
+            🄾ptionIcon(name: "bold")
+            Picker("Weight", selection: self.$ⓦeight) {
+                ForEach(🅆eight.allCases) { 🅆 in
+                    Text(🅆.rawValue)
+                        .fontWeight(🅆.value)
                 }
-                .pickerStyle(.inline)
             }
-        } label: {
-            Label("Weight", systemImage: "bold")
-                .fontWeight(self.ⓦeight.value)
-                .badge(self.ⓦeight.rawValue)
+            .pickerStyle(.navigationLink)
         }
     }
     init(_ ⓦeight: Binding<🅆eight>) {
@@ -467,21 +478,15 @@ struct 🎚WeightPicker: View {
 struct 🎚DesignPicker: View {
     @Binding var ⓓesign: 🄳esign
     var body: some View {
-        NavigationLink {
-            List {
-                Picker("Design", selection: self.$ⓓesign) {
-                    ForEach(🄳esign.allCases) { 🄳 in
-                        Text(🄳.rawValue)
-                            .font(.system(.title2, design: 🄳.value, weight: nil))
-                            .padding(6)
-                    }
+        HStack {
+            🄾ptionIcon(name: "a.magnify")
+            Picker("Design", selection: self.$ⓓesign) {
+                ForEach(🄳esign.allCases) { 🄳 in
+                    Text(🄳.rawValue)
+                        .font(.system(.body, design: 🄳.value))
                 }
-                .pickerStyle(.inline)
             }
-        } label: {
-            Label("Design", systemImage: "a.magnify")
-                .font(.system(.body, design: self.ⓓesign.value, weight: nil))
-                .badge(self.ⓓesign.rawValue)
+            .pickerStyle(.navigationLink)
         }
     }
     init(_ ⓓesign: Binding<🄳esign>) {
@@ -492,21 +497,15 @@ struct 🎚DesignPicker: View {
 struct 🎚FontSizePicker: View {
     @Binding var ⓢize: Int
     var body: some View {
-        NavigationLink {
-            List {
-                Picker("Size", selection: self.$ⓢize) {
-                    ForEach(8..<50, id: \.self) { ⓟoint in
-                        Text(ⓟoint.description)
-                            .font(.system(size: CGFloat(ⓟoint)))
-                    }
+        HStack {
+            🄾ptionIcon(name: "textformat")
+            Picker("Size", selection: self.$ⓢize) {
+                ForEach(8..<50, id: \.self) { ⓟoint in
+                    Text(ⓟoint.description)
+                        .font(.system(size: CGFloat(ⓟoint)))
                 }
-                .pickerStyle(.inline)
             }
-        } label: {
-            Label("Size", systemImage: "textformat")
-                .symbolRenderingMode(.hierarchical)
-                .font(.system(size: CGFloat(self.ⓢize)))
-                .badge(self.ⓢize.description)
+            .pickerStyle(.navigationLink)
         }
     }
     init(_ ⓢize: Binding<Int>) {
@@ -517,25 +516,16 @@ struct 🎚FontSizePicker: View {
 struct 🎚LevelPicker: View {
     @Binding var ⓛevel: 🄻evel
     var body: some View {
-        NavigationLink {
-            List {
-                Picker("Level", selection: self.$ⓛevel) {
-                    ForEach(🄻evel.allCases) { 🄻 in
-                        Text(🄻.rawValue)
-                            .foregroundStyle(🄻.value)
-                    }
+        HStack {
+            🄾ptionIcon(name: "camera.filters")
+                .symbolRenderingMode(.hierarchical)
+            Picker("Level", selection: self.$ⓛevel) {
+                ForEach(🄻evel.allCases) { 🄻 in
+                    Text(🄻.rawValue)
+                        .foregroundStyle(🄻.value)
                 }
-                .pickerStyle(.inline)
             }
-        } label: {
-            Label {
-                Text("Level")
-                    .foregroundStyle(self.ⓛevel.value)
-            } icon: {
-                Image(systemName: "camera.filters")
-                    .symbolRenderingMode(.hierarchical)
-            }
-            .badge(self.ⓛevel.rawValue)
+            .pickerStyle(.navigationLink)
         }
     }
     init(_ ⓛevel: Binding<🄻evel>) {
@@ -546,16 +536,14 @@ struct 🎚LevelPicker: View {
 struct 🎚TextAlignmentPicker: View {
     @Binding var ⓐlignment: 🄼ultilineTextAlignment
     var body: some View {
-        Picker(selection: self.$ⓐlignment) {
-            ForEach(🄼ultilineTextAlignment.allCases) { 🄼 in
-                Label(🄼.rawValue, systemImage: 🄼.icon)
-                    .labelStyle(.iconOnly)
+        HStack {
+            🄾ptionIcon(name: "text.justify")
+            Picker("Multi text alignment", selection: self.$ⓐlignment) {
+                ForEach(🄼ultilineTextAlignment.allCases) { 🄼 in
+                    Label(🄼.rawValue, systemImage: 🄼.icon)
+                        .labelStyle(.iconOnly)
+                }
             }
-        } label: {
-            Text("Multi\ntext\nalignment")
-                .animation(.default, value: self.ⓐlignment)
-                .multilineTextAlignment(self.ⓐlignment.value)
-                .font(.footnote)
         }
     }
     init(_ ⓐlignment: Binding<🄼ultilineTextAlignment>) {
@@ -566,14 +554,27 @@ struct 🎚TextAlignmentPicker: View {
 struct 🎚ItalicPicker: View {
     @Binding var 🚩italic: Bool
     var body: some View {
-        Toggle(isOn: self.$🚩italic) {
-            Label("Italic", systemImage: "italic")
-                .italic(self.🚩italic)
-                .animation(.default, value: self.🚩italic)
+        HStack {
+            🄾ptionIcon(name: "italic")
+            Toggle(isOn: self.$🚩italic) {
+                Text("Italic")
+            }
         }
     }
     init(_ 🚩: Binding<Bool>) {
         self._🚩italic = 🚩
+    }
+}
+
+struct 🄾ptionIcon: View {
+    var name: String
+    var body: some View {
+        Image(systemName: self.name)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 16, height: 16)
+            .padding(.horizontal, 10)
+            .foregroundColor(.accentColor)
     }
 }
 
