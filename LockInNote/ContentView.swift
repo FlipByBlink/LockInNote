@@ -250,7 +250,7 @@ struct 📝InlineWidgetTab: View {
     }
     private func ⓘnputField() -> some View {
         Section {
-            TextField("Input text", text: $📱.🎛inlineData.text, axis: .vertical)
+            TextField("Input text", text: $📱.🎛inlineData.text)
                 .font(.title3)
                 .focused(self.$🚩focus)
         }
