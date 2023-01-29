@@ -26,20 +26,18 @@ struct ContentView: View {
         .animation(.default.speed(0.5), value: 🛒.🚩ADIsActive)
         .scrollDismissesKeyboard(.interactively)
         .onOpenURL { ⓤrl in
-            Task {
-                switch ⓤrl.description {
-                    case "Rectangular": self.🔖tab = .rectangularWidget
-                    case "Circular": self.🔖tab = .circularWidget
-                    case "Inline": self.🔖tab = .inlineWidget
-                    default: print("🐛")
-                }
+            switch ⓤrl.description {
+                case "Rectangular": self.🔖tab = .rectangularWidget
+                case "Circular": self.🔖tab = .circularWidget
+                case "Inline": self.🔖tab = .inlineWidget
+                default: print("🐛")
             }
         }
         .onChange(of: 📱.🎛rectangularData) { _ in 📱.💾saveDataAndReloadWidget() }
         .onChange(of: 📱.🎛circularData) { _ in 📱.💾saveDataAndReloadWidget() }
         .onChange(of: 📱.🎛inlineData) { _ in 📱.💾saveDataAndReloadWidget() }
     }
-    enum 🔖Tab {
+    private enum 🔖Tab {
         case rectangularWidget, circularWidget, inlineWidget, option, about
     }
 }
@@ -86,7 +84,6 @@ struct 📝RectangularWidgetTab: View {
                         .padding()
                     } else {
                         👆EditButton { self.🚩focus = true }
-                            .padding()
                     }
                 }
                 .animation(.default, value: 🎛.text.isEmpty)
@@ -164,7 +161,6 @@ struct 📝CircularWidgetTab: View {
                         .padding()
                     } else {
                         👆EditButton { self.🚩focus = true }
-                            .padding()
                     }
                 }
                 .animation(.default, value: 🎛.text.isEmpty)
@@ -243,7 +239,6 @@ struct 📝InlineWidgetTab: View {
                     .padding()
                 } else {
                     👆EditButton { self.🚩focus = true }
-                        .padding()
                 }
             }
             .animation(.default, value: 📱.🎛inlineData.text.isEmpty)
@@ -291,6 +286,7 @@ struct 👆EditButton: View {
                 .foregroundColor(.accentColor)
         }
         .shadow(radius: 3)
+        .padding()
     }
     init(_ action: @escaping () -> Void) {
         self.ⓐction = action
@@ -417,7 +413,7 @@ struct 🛠️CustomizeFontLink<T: 🄵ontOptions>: View {
     }
 }
 
-struct 🎚PlaceholderPicker: View {
+struct 🎚PlaceholderPicker: View {//Blank icon
     @Binding var ⓟlaceholder: 🄿laceholder
     var body: some View {
         Picker(selection: self.$ⓟlaceholder) {
@@ -479,7 +475,7 @@ struct 🎚FontSizePicker: View {
         HStack {
             🄾ptionIcon(name: "textformat")
             Picker("Size", selection: self.$ⓢize) {
-                ForEach(8..<50, id: \.self) { ⓟoint in
+                ForEach(8 ..< 50, id: \.self) { ⓟoint in
                     Text(ⓟoint.description)
                         .font(.system(size: CGFloat(ⓟoint)))
                 }
@@ -610,7 +606,7 @@ struct 🛠OptionTab: View { // ⚙️
             .navigationTitle("Option")
         }
     }
-    struct 🔗URLSchemeActionSettingSection: View {
+    private struct 🔗URLSchemeActionSettingSection: View {
         @AppStorage("URLSchemeLeading") var 🔗leading: String = ""
         @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
         @AppStorage("URLSchemeButtonTitle") var 🪧buttonTitle: String = ""

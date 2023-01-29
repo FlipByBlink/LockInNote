@@ -10,14 +10,14 @@
 "○  Circular" = "○  円形";
 "▷  Inline" = "▷  インライン";
 "Erase" = "消す";
-"Customize font" = "カスタマイズ";
+"Customize font" = "フォントをカスタマイズ";
 "Background" = "背景";
 "Blank icon" = "未入力時のアイコン";
 "(nothing)" = "(何も無し)";
 "Weight" = "太さ";
 "Design" = "デザイン";
 "Size" = "サイズ";
-"Level" = "レベル";
+"Level" = "濃淡";
 "Multi text alignment" = "複数行の揃え方";
 "Italic" = "イタリック";
 "Share" = "共有";
