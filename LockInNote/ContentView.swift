@@ -52,6 +52,8 @@ struct 📝RectangularWidgetTab: View {
     private struct 🄲ontent: View {
         @Binding private var 🎛: 🎛RectangularDataModel
         @FocusState private var 🚩focus: Bool
+        @Environment(\.scenePhase) var scenePhase
+        @State private var 🚩launchedFromWidget: Bool = false
         @State private var 🚩showADMenuSheet: Bool = false
         var body: some View {
             NavigationStack {
@@ -93,10 +95,7 @@ struct 📝RectangularWidgetTab: View {
             }
             .onOpenURL { ⓤrl in
                 if ⓤrl.description == "Rectangular" {
-                    Task {
-                        self.🚩focus = true
-                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                    }
+                    self.🚩launchedFromWidget = true
                 }
             }
         }
@@ -105,6 +104,15 @@ struct 📝RectangularWidgetTab: View {
                 TextField("Input text", text: $🎛.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
+                    .onChange(of: self.scenePhase) { ⓝewValue in
+                        if ⓝewValue == .active {
+                            if self.🚩launchedFromWidget {
+                                self.🚩focus = true
+                                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                                self.🚩launchedFromWidget = false
+                            }
+                        }
+                    }//Workaround: Keyboard safe area bug
             }
         }
         init(_ model: Binding<🎛RectangularDataModel>) {
