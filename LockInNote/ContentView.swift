@@ -304,7 +304,8 @@ struct 👆DoneButton: View {
             self.ⓐction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
         } label: {
-            Image(systemName: "checkmark")
+            Label("Done", systemImage: "checkmark")
+                .labelStyle(.iconOnly)
                 .foregroundColor(.white)
                 .font(.largeTitle.weight(.bold))
                 .padding()
@@ -334,6 +335,7 @@ struct 🗑TrashButton: View {
                 .padding()
                 .shadow(radius: self.ⓓisable ? 0 : 3)
         }
+        .disabled(self.ⓓisable)
         .background {
             Circle()
                 .foregroundColor(self.ⓓisable ? Color(white: 0.6) : .red)
