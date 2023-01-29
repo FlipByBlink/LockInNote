@@ -355,7 +355,7 @@ struct 🄲ustomizeForm<T: 🄵ontOptions>: View {
     @Binding private var 🎛: T
     var body: some View {
         VStack(spacing: 0) {
-            GroupBox("Preview") {
+            GroupBox {
                 Text("""
                 This is sample.
                 これは仮の文章です。
