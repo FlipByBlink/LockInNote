@@ -274,26 +274,6 @@ struct 📝InlineWidgetTab: View {
     }
 }
 
-struct 👆DoneButton: View {
-    private var ⓐction: () -> Void
-    var body: some View {
-        Button {
-            self.ⓐction()
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
-        } label: {
-            Image(systemName: "checkmark")
-                .foregroundColor(.white)
-                .font(.largeTitle.weight(.semibold))
-                .padding()
-        }
-        .background(Circle().foregroundColor(.accentColor))
-        .shadow(radius: 3)
-    }
-    init(_ action: @escaping () -> Void) {
-        self.ⓐction = action
-    }
-}
-
 struct 👆EditButton: View {
     private var ⓐction: () -> Void
     var body: some View {
@@ -310,6 +290,26 @@ struct 👆EditButton: View {
             Circle()
                 .foregroundColor(.accentColor)
         }
+        .shadow(radius: 3)
+    }
+    init(_ action: @escaping () -> Void) {
+        self.ⓐction = action
+    }
+}
+
+struct 👆DoneButton: View {
+    private var ⓐction: () -> Void
+    var body: some View {
+        Button {
+            self.ⓐction()
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        } label: {
+            Image(systemName: "checkmark")
+                .foregroundColor(.white)
+                .font(.largeTitle.weight(.bold))
+                .padding()
+        }
+        .background(Circle().foregroundColor(.accentColor))
         .shadow(radius: 3)
     }
     init(_ action: @escaping () -> Void) {
