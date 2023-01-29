@@ -93,19 +93,19 @@ struct 📝RectangularWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .background { Color(.secondarySystemBackground) }
             }
-            .onOpenURL { ⓤrl in
-                if ⓤrl.description == "Rectangular" {
-                    self.🚩launchedFromWidget = true
-                }
-            }
         }
         private func ⓘnputField() -> some View {
             Section {
                 TextField("Input text", text: $🎛.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
-                    .onChange(of: self.scenePhase) { ⓝewValue in
-                        if ⓝewValue == .active {
+                    .onOpenURL { ⓤrl in
+                        if ⓤrl.description == "Rectangular" {
+                            self.🚩launchedFromWidget = true
+                        }
+                    }
+                    .onChange(of: self.scenePhase) {
+                        if $0 == .active {
                             if self.🚩launchedFromWidget {
                                 self.🚩focus = true
                                 UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -129,6 +129,8 @@ struct 📝CircularWidgetTab: View {
     private struct 🄲ontent: View {
         @Binding private var 🎛: 🎛CircularDataModel
         @FocusState private var 🚩focus: Bool
+        @Environment(\.scenePhase) var scenePhase
+        @State private var 🚩launchedFromWidget: Bool = false
         @State private var 🚩showADMenuSheet: Bool = false
         var body: some View {
             NavigationStack {
@@ -169,20 +171,26 @@ struct 📝CircularWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .background { Color(.secondarySystemBackground) }
             }
-            .onOpenURL { ⓤrl in
-                if ⓤrl.description == "Circular" {
-                    Task {
-                        self.🚩focus = true
-                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                    }
-                }
-            }
         }
         private func ⓘnputField() -> some View {
             Section {
                 TextField("Input text", text: $🎛.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
+                    .onOpenURL { ⓤrl in
+                        if ⓤrl.description == "Circular" {
+                            self.🚩launchedFromWidget = true
+                        }
+                    }
+                    .onChange(of: self.scenePhase) {
+                        if $0 == .active {
+                            if self.🚩launchedFromWidget {
+                                self.🚩focus = true
+                                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                                self.🚩launchedFromWidget = false
+                            }
+                        }
+                    }//Workaround: Keyboard safe area bug
             }
         }
         private func ⓑackgroundOption() -> some View {
