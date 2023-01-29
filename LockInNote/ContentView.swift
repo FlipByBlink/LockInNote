@@ -210,6 +210,8 @@ struct 📝CircularWidgetTab: View {
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @FocusState private var 🚩focus: Bool
+    @Environment(\.scenePhase) var scenePhase
+    @State private var 🚩launchedFromWidget: Bool = false
     @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
@@ -250,12 +252,18 @@ struct 📝InlineWidgetTab: View {
         }
         .onOpenURL { ⓤrl in
             if ⓤrl.description == "Inline" {
-                Task {
-                    self.🚩focus = true
-                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                }
+                self.🚩launchedFromWidget = true
             }
         }
+        .onChange(of: self.scenePhase) {
+            if $0 == .active {
+                if self.🚩launchedFromWidget {
+                    self.🚩focus = true
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    self.🚩launchedFromWidget = false
+                }
+            }
+        }//Workaround: Keyboard safe area bug
     }
     private func ⓘnputField() -> some View {
         Section {
