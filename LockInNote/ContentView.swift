@@ -60,11 +60,7 @@ struct 📝RectangularWidgetTab: View {
                     🔗URLSchemeActionButton($🎛.text)
                     if !self.🚩focus {
                         📣ADBanner(self.$🚩showADMenuSheet)
-                        NavigationLink {
-                            🄲ustomizeForm($🎛)
-                        } label: {
-                            Label("Customize Font", systemImage: "slider.horizontal.3")
-                        }
+                        🛠️CustomizeFontLink($🎛)
                         🎚PlaceholderPicker($🎛.placeholder)
                     }
                 }
@@ -133,11 +129,7 @@ struct 📝CircularWidgetTab: View {
                     🔗URLSchemeActionButton($🎛.text)
                     if !self.🚩focus {
                         📣ADBanner(self.$🚩showADMenuSheet)
-                        NavigationLink {
-                            🄲ustomizeForm($🎛)
-                        } label: {
-                            Label("Customize Font", systemImage: "slider.horizontal.3")
-                        }
+                        🛠️CustomizeFontLink($🎛)
                         self.ⓑackgroundOption()
                         🎚PlaceholderPicker($🎛.placeholder)
                     }
@@ -190,6 +182,7 @@ struct 📝CircularWidgetTab: View {
                 Label("Background",
                       systemImage: 🎛.background ? "circle.dashed.inset.filled" : "circle.dashed")
                 .animation(.default, value: 🎛.background)
+                .padding(.vertical, 6)
             }
         }
         init(_ model: Binding<🎛CircularDataModel>) {
@@ -351,42 +344,47 @@ struct 📮ShareButton: View {
     }
 }
 
-struct 🄲ustomizeForm<T: 🄵ontOptions>: View {
+struct 🛠️CustomizeFontLink<T: 🄵ontOptions>: View {
     @Binding private var 🎛: T
     var body: some View {
-        VStack(spacing: 0) {
-            GroupBox {
-                Text("""
-                This is sample.
-                これは仮の文章です。
-                이것은 플레이스 홀더입니다.
-                """)
-                .font(.system(size: CGFloat(🎛.fontSize),
-                              weight: 🎛.fontWeight.value,
-                              design: 🎛.fontDesign.value))
-                .italic(🎛.italic)
-                .foregroundStyle(🎛.level.value)
-                .multilineTextAlignment(🎛.multilineTextAlignment.value)
-            }
-            .padding()
-            .padding(.horizontal)
-            .padding(.top, 8)
-            .animation(.default, value: 🎛.multilineTextAlignment)
-            List {
-                Section {
-                    🎚WeightPicker($🎛.fontWeight)
-                    🎚DesignPicker($🎛.fontDesign)
-                    🎚FontSizePicker($🎛.fontSize)
-                    🎚LevelPicker($🎛.level)
-                    🎚TextAlignmentPicker($🎛.multilineTextAlignment)
-                    🎚ItalicPicker($🎛.italic)
-                } header: {
-                    Text("Option")
+        NavigationLink {
+            VStack(spacing: 0) {
+                GroupBox {
+                    Text("""
+                    This is sample.
+                    これは仮の文章です。
+                    이것은 플레이스 홀더입니다.
+                    """)
+                    .font(.system(size: CGFloat(🎛.fontSize),
+                                  weight: 🎛.fontWeight.value,
+                                  design: 🎛.fontDesign.value))
+                    .italic(🎛.italic)
+                    .foregroundStyle(🎛.level.value)
+                    .multilineTextAlignment(🎛.multilineTextAlignment.value)
                 }
+                .padding()
+                .padding(.horizontal)
+                .padding(.top, 8)
+                .animation(.default, value: 🎛.multilineTextAlignment)
+                List {
+                    Section {
+                        🎚WeightPicker($🎛.fontWeight)
+                        🎚DesignPicker($🎛.fontDesign)
+                        🎚FontSizePicker($🎛.fontSize)
+                        🎚LevelPicker($🎛.level)
+                        🎚TextAlignmentPicker($🎛.multilineTextAlignment)
+                        🎚ItalicPicker($🎛.italic)
+                    } header: {
+                        Text("Option")
+                    }
+                }
+                .listStyle(.plain)
             }
-            .listStyle(.plain)
+            .navigationBarTitle("Customize font")
+        } label: {
+            Label("Customize Font", systemImage: "slider.horizontal.3")
+                .padding(.vertical, 6)
         }
-        .navigationBarTitle("Customize font")
     }
     init(_ model: Binding<T>) {
         self._🎛 = model
