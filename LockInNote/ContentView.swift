@@ -428,9 +428,10 @@ struct 🎚PlaceholderPicker: View {
         Picker(selection: self.$ⓟlaceholder) {
             ForEach(🄿laceholder.allCases) { 🄿 in
                 Label(🄿.rawValue, systemImage: 🄿.icon)
+                    .labelStyle(.iconOnly)
             }
         } label: {
-            Label("Placeholder", systemImage: "questionmark")
+            Label("Blank icon", systemImage: "questionmark")
                 .strikethrough(self.ⓟlaceholder == .nothing)
         }
     }
@@ -548,6 +549,7 @@ struct 🎚TextAlignmentPicker: View {
         Picker(selection: self.$ⓐlignment) {
             ForEach(🄼ultilineTextAlignment.allCases) { 🄼 in
                 Label(🄼.rawValue, systemImage: 🄼.icon)
+                    .labelStyle(.iconOnly)
             }
         } label: {
             Text("Multi\ntext\nalignment")
