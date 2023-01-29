@@ -93,26 +93,26 @@ struct 📝RectangularWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .background { Color(.secondarySystemBackground) }
             }
+            .onOpenURL { ⓤrl in
+                if ⓤrl.description == "Rectangular" {
+                    self.🚩launchedFromWidget = true
+                }
+            }
+            .onChange(of: self.scenePhase) {
+                if $0 == .active {
+                    if self.🚩launchedFromWidget {
+                        self.🚩focus = true
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                        self.🚩launchedFromWidget = false
+                    }
+                }
+            }//Workaround: Keyboard safe area bug
         }
         private func ⓘnputField() -> some View {
             Section {
                 TextField("Input text", text: $🎛.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
-                    .onOpenURL { ⓤrl in
-                        if ⓤrl.description == "Rectangular" {
-                            self.🚩launchedFromWidget = true
-                        }
-                    }
-                    .onChange(of: self.scenePhase) {
-                        if $0 == .active {
-                            if self.🚩launchedFromWidget {
-                                self.🚩focus = true
-                                UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                                self.🚩launchedFromWidget = false
-                            }
-                        }
-                    }//Workaround: Keyboard safe area bug
             }
         }
         init(_ model: Binding<🎛RectangularDataModel>) {
@@ -171,26 +171,26 @@ struct 📝CircularWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .background { Color(.secondarySystemBackground) }
             }
+            .onOpenURL { ⓤrl in
+                if ⓤrl.description == "Circular" {
+                    self.🚩launchedFromWidget = true
+                }
+            }
+            .onChange(of: self.scenePhase) {
+                if $0 == .active {
+                    if self.🚩launchedFromWidget {
+                        self.🚩focus = true
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                        self.🚩launchedFromWidget = false
+                    }
+                }
+            }//Workaround: Keyboard safe area bug
         }
         private func ⓘnputField() -> some View {
             Section {
                 TextField("Input text", text: $🎛.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
-                    .onOpenURL { ⓤrl in
-                        if ⓤrl.description == "Circular" {
-                            self.🚩launchedFromWidget = true
-                        }
-                    }
-                    .onChange(of: self.scenePhase) {
-                        if $0 == .active {
-                            if self.🚩launchedFromWidget {
-                                self.🚩focus = true
-                                UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                                self.🚩launchedFromWidget = false
-                            }
-                        }
-                    }//Workaround: Keyboard safe area bug
             }
         }
         private func ⓑackgroundOption() -> some View {
