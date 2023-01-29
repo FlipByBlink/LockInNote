@@ -300,7 +300,7 @@ struct 👆EditButton: View {
         }
         .background {
             Circle()
-                .fill(Color(white: 0.45))
+                .foregroundColor(.accentColor)
         }
         .shadow(radius: 3)
     }
