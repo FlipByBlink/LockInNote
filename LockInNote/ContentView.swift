@@ -56,17 +56,12 @@ struct 📝RectangularWidgetTab: View {
                 🔗URLSchemeActionButton($🎛.text)
                 if !self.🚩focus {
                     📣ADBanner(self.$🚩showADMenuSheet)
-                    DisclosureGroup(isExpanded: self.$🚩unfoldSection) {
-                        🎚WeightPicker($🎛.fontWeight)
-                        🎚DesignPicker($🎛.fontDesign)
-                        🎚FontSizePicker($🎛.fontSize)
-                        🎚LevelPicker($🎛.level)
-                        🎚TextAlignmentPicker($🎛.multilineTextAlignment)
-                        🎚ItalicPicker($🎛.italic)
-                        🎚PlaceholderPicker($🎛.placeholder)
+                    NavigationLink {
+                        self.ⓒustomizeForm()
                     } label: {
-                        Label("Customize", systemImage: "slider.horizontal.3")
+                        Label("Customize Font", systemImage: "slider.horizontal.3")
                     }
+                    🎚PlaceholderPicker($🎛.placeholder)
                 }
             }
             .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
@@ -115,6 +110,39 @@ struct 📝RectangularWidgetTab: View {
                 .font(.title3)
                 .focused(self.$🚩focus)
         }
+    }
+    private func ⓒustomizeForm() -> some View {
+        VStack {
+            GroupBox("Preview") {
+                Text("""
+                This is sample.
+                これは仮の文章です。
+                이것은 플레이스 홀더입니다.
+                """)
+                .font(.system(size: CGFloat(🎛.fontSize),
+                              weight: 🎛.fontWeight.value,
+                              design: 🎛.fontDesign.value))
+                .italic(🎛.italic)
+                .foregroundStyle(🎛.level.value)
+                .multilineTextAlignment(🎛.multilineTextAlignment.value)
+            }
+            .padding()
+            .padding(.horizontal)
+            List {
+                Section {
+                    🎚WeightPicker($🎛.fontWeight)
+                    🎚DesignPicker($🎛.fontDesign)
+                    🎚FontSizePicker($🎛.fontSize)
+                    🎚LevelPicker($🎛.level)
+                    🎚TextAlignmentPicker($🎛.multilineTextAlignment)
+                    🎚ItalicPicker($🎛.italic)
+                } header: {
+                    Text("Option")
+                }
+            }
+            .listStyle(.plain)
+        }
+        .navigationBarTitle("Customize font")
     }
     init(_ model: Binding<🎛RectangularDataModel>) {
         self._🎛 = model
