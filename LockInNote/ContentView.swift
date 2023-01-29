@@ -50,8 +50,6 @@ struct 📝RectangularWidgetTab: View {
     private struct 🄲ontent: View {
         @Binding private var 🎛: 🎛RectangularDataModel
         @FocusState private var 🚩focus: Bool
-        @Environment(\.scenePhase) var scenePhase
-        @State private var 🚩launchedFromWidget: Bool = false
         @State private var 🚩showADMenuSheet: Bool = false
         var body: some View {
             NavigationStack {
@@ -90,20 +88,7 @@ struct 📝RectangularWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .background { Color(.secondarySystemBackground) }
             }
-            .onOpenURL { ⓤrl in
-                if ⓤrl.description == "Rectangular" {
-                    self.🚩launchedFromWidget = true
-                }
-            }
-            .onChange(of: self.scenePhase) {
-                if $0 == .active {
-                    if self.🚩launchedFromWidget {
-                        self.🚩focus = true
-                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                        self.🚩launchedFromWidget = false
-                    }
-                }
-            }//Workaround: Keyboard safe area bug
+            .modifier(🄷andleLaunchFromWidget("Rectangular") { self.🚩focus = true })
         }
         private func ⓘnputField() -> some View {
             Section {
@@ -126,8 +111,6 @@ struct 📝CircularWidgetTab: View {
     private struct 🄲ontent: View {
         @Binding private var 🎛: 🎛CircularDataModel
         @FocusState private var 🚩focus: Bool
-        @Environment(\.scenePhase) var scenePhase
-        @State private var 🚩launchedFromWidget: Bool = false
         @State private var 🚩showADMenuSheet: Bool = false
         var body: some View {
             NavigationStack {
@@ -167,20 +150,7 @@ struct 📝CircularWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .background { Color(.secondarySystemBackground) }
             }
-            .onOpenURL { ⓤrl in
-                if ⓤrl.description == "Circular" {
-                    self.🚩launchedFromWidget = true
-                }
-            }
-            .onChange(of: self.scenePhase) {
-                if $0 == .active {
-                    if self.🚩launchedFromWidget {
-                        self.🚩focus = true
-                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                        self.🚩launchedFromWidget = false
-                    }
-                }
-            }//Workaround: Keyboard safe area bug
+            .modifier(🄷andleLaunchFromWidget("Circular") { self.🚩focus = true })
         }
         private func ⓘnputField() -> some View {
             Section {
@@ -206,8 +176,6 @@ struct 📝CircularWidgetTab: View {
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @FocusState private var 🚩focus: Bool
-    @Environment(\.scenePhase) var scenePhase
-    @State private var 🚩launchedFromWidget: Bool = false
     @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
@@ -245,20 +213,7 @@ struct 📝InlineWidgetTab: View {
             .animation(.default, value: self.🚩focus)
             .background { Color(.secondarySystemBackground) }
         }
-        .onOpenURL { ⓤrl in
-            if ⓤrl.description == "Inline" {
-                self.🚩launchedFromWidget = true
-            }
-        }
-        .onChange(of: self.scenePhase) {
-            if $0 == .active {
-                if self.🚩launchedFromWidget {
-                    self.🚩focus = true
-                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                    self.🚩launchedFromWidget = false
-                }
-            }
-        }//Workaround: Keyboard safe area bug
+        .modifier(🄷andleLaunchFromWidget("Inline") { self.🚩focus = true })
     }
     private func ⓘnputField() -> some View {
         Section {
@@ -266,6 +221,34 @@ struct 📝InlineWidgetTab: View {
                 .font(.title3)
                 .focused(self.$🚩focus)
         }
+    }
+}
+
+struct 🄷andleLaunchFromWidget: ViewModifier {
+    @Environment(\.scenePhase) var scenePhase
+    private var ⓘd: String
+    private var ⓕocusAction: () -> Void
+    @State private var 🚩launchedFromWidget: Bool = false
+    func body(content: Content) -> some View {
+        content
+            .onOpenURL { ⓤrl in
+                if ⓤrl.description == self.ⓘd {
+                    self.🚩launchedFromWidget = true
+                }
+            }
+            .onChange(of: self.scenePhase) {
+                if $0 == .active {
+                    if self.🚩launchedFromWidget {
+                        self.ⓕocusAction()
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                        self.🚩launchedFromWidget = false
+                    }
+                }
+            }//Workaround: Keyboard safe area bug
+    }
+    init(_ id: String, _ focusAction: @escaping () -> Void) {
+        self.ⓘd = id
+        self.ⓕocusAction = focusAction
     }
 }
 
