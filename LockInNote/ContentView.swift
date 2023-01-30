@@ -70,9 +70,8 @@ struct 📝RectangularWidgetTab: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
-                        HStack(spacing: 12) {
-                            🗑EraseButton($🎛.text)
-                            📮ShareButton(🎛.text)
+                        HStack {
+                            👆EraseButtonAndShareButton($🎛.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -129,9 +128,8 @@ struct 📝CircularWidgetTab: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
-                        HStack(spacing: 12) {
-                            🗑EraseButton($🎛.text)
-                            📮ShareButton(🎛.text)
+                        HStack {
+                            👆EraseButtonAndShareButton($🎛.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -194,9 +192,8 @@ struct 📝InlineWidgetTab: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
-                        HStack(spacing: 12) {
-                            🗑EraseButton($🎛.text)
-                            📮ShareButton(🎛.text)
+                        HStack {
+                            👆EraseButtonAndShareButton($🎛.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -302,55 +299,70 @@ struct 👆DoneButton: View {
     }
 }
 
-struct 🗑EraseButton: View {
+struct 👆EraseButtonAndShareButton: View {
     @Binding private var ⓣext: String
     private var ⓓisable: Bool { self.ⓣext.isEmpty }
-    var body: some View {
-        Button {
-            withAnimation {
-                self.ⓣext = ""
-                UINotificationFeedbackGenerator().notificationOccurred(.warning)
+    @Environment(\.colorScheme) var colorScheme
+    private var ⓘconColor: Color {
+        if self.ⓓisable {
+            switch self.colorScheme {
+                case .light: return Color(white: 0.9)
+                case .dark: return Color(white: 0.6)
+                @unknown default: return Color(white: 0.9)
             }
-        } label: {
-            Label("Erase", systemImage: "trash")
-                .foregroundColor(self.ⓓisable ? Color(white: 0.9) : .white)
+        } else {
+            return .white
+        }
+    }
+    private func ⓑackgroundColor(_ ⓒolor: Color) -> Color {
+        if self.ⓓisable {
+            switch self.colorScheme {
+                case .light: return Color(white: 0.6)
+                case .dark: return Color(white: 0.4)
+                @unknown default: return Color(white: 0.6)
+            }
+        } else {
+            return ⓒolor
+        }
+    }
+    var body: some View {
+        HStack(spacing: 12) {
+            Button {
+                withAnimation {
+                    self.ⓣext = ""
+                    UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                }
+            } label: {
+                Label("Erase", systemImage: "trash")
+                    .foregroundColor(self.ⓘconColor)
+                    .labelStyle(.iconOnly)
+                    .font(.largeTitle.weight(.semibold))
+                    .padding()
+                    .shadow(radius: self.ⓓisable ? 0 : 3)
+            }
+            .disabled(self.ⓓisable)
+            .background {
+                Circle()
+                    .foregroundColor(self.ⓑackgroundColor(.red))
+                    .shadow(radius: 3)
+            }
+            .animation(.default, value: self.ⓓisable)
+            ShareLink(item: self.ⓣext)
                 .labelStyle(.iconOnly)
+                .disabled(self.ⓓisable)
+                .shadow(radius: self.ⓓisable ? 0 : 3)
+                .foregroundColor(self.ⓘconColor)
                 .font(.largeTitle.weight(.semibold))
                 .padding()
-                .shadow(radius: self.ⓓisable ? 0 : 3)
+                .background {
+                    Circle()
+                        .foregroundColor(self.ⓑackgroundColor(.teal))
+                        .shadow(radius: 3)
+                }
         }
-        .disabled(self.ⓓisable)
-        .background {
-            Circle()
-                .foregroundColor(self.ⓓisable ? Color(white: 0.6) : .red)
-                .shadow(radius: 3)
-        }
-        .animation(.default, value: self.ⓓisable)
     }
     init(_ text: Binding<String>) {
         self._ⓣext = text
-    }
-}
-
-struct 📮ShareButton: View {
-    private var ⓣext: String
-    private var ⓓisable: Bool { self.ⓣext.isEmpty }
-    var body: some View {
-        ShareLink(item: self.ⓣext)
-            .labelStyle(.iconOnly)
-            .disabled(self.ⓓisable)
-            .shadow(radius: self.ⓓisable ? 0 : 3)
-            .foregroundColor(self.ⓓisable ? Color(white: 0.9) : .white)
-            .font(.largeTitle.weight(.semibold))
-            .padding()
-            .background {
-                Circle()
-                    .foregroundColor(self.ⓓisable ? Color(white: 0.6) : .teal)
-                    .shadow(radius: 3)
-            }
-    }
-    init(_ text: String) {
-        self.ⓣext = text
     }
 }
 
