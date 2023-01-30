@@ -71,7 +71,7 @@ struct 📝RectangularWidgetTab: View {
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
                         HStack(spacing: 12) {
-                            🗑TrashButton($🎛.text)
+                            🗑EraseButton($🎛.text)
                             📮ShareButton(🎛.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
@@ -130,7 +130,7 @@ struct 📝CircularWidgetTab: View {
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
                         HStack(spacing: 12) {
-                            🗑TrashButton($🎛.text)
+                            🗑EraseButton($🎛.text)
                             📮ShareButton(🎛.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
@@ -190,7 +190,7 @@ struct 📝InlineWidgetTab: View {
             .safeAreaInset(edge: .bottom) {
                 if self.🚩focus {
                     HStack(spacing: 12) {
-                        🗑TrashButton($📱.🎛inlineData.text)
+                        🗑EraseButton($📱.🎛inlineData.text)
                         📮ShareButton(📱.🎛inlineData.text)
                         Spacer()
                         👆DoneButton { self.🚩focus = false }
@@ -275,7 +275,7 @@ struct 👆DoneButton: View {
             self.ⓕocusAction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             Task {
-                try await Task.sleep(for: .seconds(0.66))
+                try await Task.sleep(for: .seconds(0.45))
                 🛒.checkToShowADSheetOnLaunch()
             }
         } label: {
@@ -293,7 +293,7 @@ struct 👆DoneButton: View {
     }
 }
 
-struct 🗑TrashButton: View {
+struct 🗑EraseButton: View {
     @Binding private var ⓣext: String
     private var ⓓisable: Bool { self.ⓣext.isEmpty }
     var body: some View {
