@@ -83,7 +83,7 @@ struct 📝RectangularWidgetTab: View {
                 }
                 .animation(.default, value: 🎛.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
-                .background { Color(.secondarySystemBackground) }
+                .modifier(🄰djustButtonsBackground())
             }
             .modifier(🄷andleLaunchFromWidget("Rectangular") { self.🚩focus = true })
         }
@@ -142,7 +142,7 @@ struct 📝CircularWidgetTab: View {
                 }
                 .animation(.default, value: 🎛.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
-                .background { Color(.secondarySystemBackground) }
+                .modifier(🄰djustButtonsBackground())
             }
             .modifier(🄷andleLaunchFromWidget("Circular") { self.🚩focus = true })
         }
@@ -207,7 +207,7 @@ struct 📝InlineWidgetTab: View {
                 }
                 .animation(.default, value: 🎛.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
-                .background { Color(.secondarySystemBackground) }
+                .modifier(🄰djustButtonsBackground())
             }
             .modifier(🄷andleLaunchFromWidget("Inline") { self.🚩focus = true })
         }
@@ -351,6 +351,18 @@ struct 📮ShareButton: View {
     }
     init(_ text: String) {
         self.ⓣext = text
+    }
+}
+
+struct 🄰djustButtonsBackground: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    func body(content: Content) -> some View {
+        content
+            .background {
+                if self.colorScheme == .light {
+                    Color(.secondarySystemBackground)
+                }
+            }
     }
 }
 
