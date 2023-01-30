@@ -23,7 +23,6 @@ struct ContentView: View {
                 .tag(🔖Tab.about)
                 .tabItem { Label("About App", systemImage: "questionmark") }
         }
-        .animation(.default.speed(0.5), value: 🛒.🚩ADIsActive)
         .scrollDismissesKeyboard(.interactively)
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {
@@ -36,6 +35,7 @@ struct ContentView: View {
         .onChange(of: 📱.🎛rectangularData) { _ in 📱.💾saveDataAndReloadWidget() }
         .onChange(of: 📱.🎛circularData) { _ in 📱.💾saveDataAndReloadWidget() }
         .onChange(of: 📱.🎛inlineData) { _ in 📱.💾saveDataAndReloadWidget() }
+        .modifier(📣ADContent())
     }
     private enum 🔖Tab {
         case rectangularWidget, circularWidget, inlineWidget, option, about
@@ -50,19 +50,16 @@ struct 📝RectangularWidgetTab: View {
     private struct 🄲ontent: View {
         @Binding private var 🎛: 🎛RectangularDataModel
         @FocusState private var 🚩focus: Bool
-        @State private var 🚩showADMenuSheet: Bool = false
         var body: some View {
             NavigationStack {
                 List {
                     self.ⓘnputField()
                     🔗URLSchemeActionButton($🎛.text)
                     if !self.🚩focus {
-                        📣ADBanner(self.$🚩showADMenuSheet)
                         🛠️CustomizeFontLink($🎛)
                         🎚PlaceholderPicker($🎛.placeholder)
                     }
                 }
-                .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         Text("Rectangular widget")
@@ -111,20 +108,17 @@ struct 📝CircularWidgetTab: View {
     private struct 🄲ontent: View {
         @Binding private var 🎛: 🎛CircularDataModel
         @FocusState private var 🚩focus: Bool
-        @State private var 🚩showADMenuSheet: Bool = false
         var body: some View {
             NavigationStack {
                 List {
                     self.ⓘnputField()
                     🔗URLSchemeActionButton($🎛.text)
                     if !self.🚩focus {
-                        📣ADBanner(self.$🚩showADMenuSheet)
                         🛠️CustomizeFontLink($🎛)
                         self.ⓑackgroundOption()
                         🎚PlaceholderPicker($🎛.placeholder)
                     }
                 }
-                .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         Text("Circular widget")
@@ -176,18 +170,15 @@ struct 📝CircularWidgetTab: View {
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @FocusState private var 🚩focus: Bool
-    @State private var 🚩showADMenuSheet: Bool = false
     var body: some View {
         NavigationStack {
             List {
                 self.ⓘnputField()
                 🔗URLSchemeActionButton($📱.🎛inlineData.text)
                 if !self.🚩focus {
-                    📣ADBanner(self.$🚩showADMenuSheet)
                     🎚PlaceholderPicker($📱.🎛inlineData.placeholder)
                 }
             }
-            .modifier(📣ADMenuSheet(self.$🚩showADMenuSheet))
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Inline widget")
@@ -277,11 +268,16 @@ struct 👆EditButton: View {
 }
 
 struct 👆DoneButton: View {
+    @EnvironmentObject var 🛒: 🛒StoreModel
     private var ⓕocusAction: () -> Void
     var body: some View {
         Button {
             self.ⓕocusAction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
+            Task {
+                try await Task.sleep(for: .seconds(0.66))
+                🛒.checkToShowADSheetOnLaunch()
+            }
         } label: {
             Label("Done", systemImage: "checkmark")
                 .labelStyle(.iconOnly)
@@ -536,21 +532,6 @@ struct 🄾ptionIcon: View {
     }
 }
 
-struct 📣ADBanner: View {
-    @EnvironmentObject var 🛒: 🛒StoreModel
-    @Binding var 🚩showADMenuSheet: Bool
-    var body: some View {
-        if 🛒.🚩ADIsActive {
-            Section {
-                📣ADView(without: .LockInNote, self.$🚩showADMenuSheet)
-            }
-        }
-    }
-    init(_ showADMenuSheet: Binding<Bool>) {
-        self._🚩showADMenuSheet = showADMenuSheet
-    }
-}
-
 struct 🛠OptionTab: View { // ⚙️
     var body: some View {
         NavigationStack {
@@ -673,12 +654,10 @@ struct ℹ️AboutAppTab: View {
         NavigationStack {
             List {
                 Section {
-                    ZStack {
-                        Color.clear
+                    GeometryReader { 📐 in
                         VStack(spacing: 12) {
-                            Image("ClipedIcon")
+                            Image("RoundedIcon")
                                 .resizable()
-                                .shadow(radius: 4, y: 1)
                                 .frame(width: 100, height: 100)
                             VStack(spacing: 6) {
                                 Text("LockInNote")
@@ -688,7 +667,7 @@ struct ℹ️AboutAppTab: View {
                                     .opacity(0.75)
                                     .lineLimit(1)
                                     .minimumScaleFactor(0.1)
-                                Text("Application for iPhone")
+                                Text("App for iPhone")
                                     .font(.footnote)
                                     .fontWeight(.medium)
                                     .foregroundStyle(.secondary)
@@ -696,19 +675,12 @@ struct ℹ️AboutAppTab: View {
                             .lineLimit(1)
                             .minimumScaleFactor(0.1)
                         }
-                        .padding(48)
+                        .padding(20)
+                        .padding(.top, 8)
+                        .frame(width: 📐.size.width)
                     }
-                }
-                Section {
-                    Link(destination: 🔗AppStoreProductURL) {
-                        HStack {
-                            Label("Open AppStore page", systemImage: "link")
-                            Spacer()
-                            Image(systemName: "arrow.up.forward.app")
-                                .imageScale(.small)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
+                    .frame(height: 200)
+                    🔗AppStoreLink()
                     NavigationLink  {
                         ℹ️AboutAppMenu()
                     } label: {
@@ -763,5 +735,16 @@ struct 🔗URLSchemeActionButton: View {
     }
     init(_ query: Binding<String>) {
         self._ⓠuery = query
+    }
+}
+
+struct 📣ADContent: ViewModifier {
+    @EnvironmentObject var 🛒: 🛒StoreModel
+    @State private var ⓐpp: 📣MyApp = .pickUpAppWithout(.LockInNote)
+    func body(content: Content) -> some View {
+        content
+            .sheet(isPresented: $🛒.🚩showADSheet) {
+                📣ADSheet(self.ⓐpp)
+            }
     }
 }

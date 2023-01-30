@@ -1,0 +1,20 @@
+{
+  "images" : [
+    {
+      "filename" : "tt（大）.heic",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "tt（大） 1.heic",
+      "idiom" : "universal",
+      "locale" : "ja"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

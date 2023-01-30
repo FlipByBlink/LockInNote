@@ -26,7 +26,6 @@
 		F556953028CCAF7A004558FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952328CCAF7A004558FC /* InfoPlist.strings */; };
 		F556953128CCAF7A004558FC /* 🌏VersionDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952528CCAF7A004558FC /* 🌏VersionDescription.strings */; };
 		F556953228CCAF7A004558FC /* 🌏VersionDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952528CCAF7A004558FC /* 🌏VersionDescription.strings */; };
-		F556953A28CCAFC3004558FC /* ℹ️AboutAppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */; };
 		F556953C28CCAFC3004558FC /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F556953628CCAFC3004558FC /* Configuration.storekit */; };
 		F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣AD.swift */; };
 		F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556953828CCAFC3004558FC /* Launch Screen.storyboard */; };
@@ -35,9 +34,12 @@
 		F5AA8C4328D0985F00C2047D /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView.swift */; };
 		F5AA8C4428D0985F00C2047D /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
 		F5AA8C4528D0985F00C2047D /* LINWidget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556950D28CCAB71004558FC /* LINWidget.swift */; };
-		F5AA8C4728D0987000C2047D /* ℹ️AboutAppMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */; };
 		F5AA8C4928D0987000C2047D /* 📣AD.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣AD.swift */; };
 		F5AA8C4A28D0987000C2047D /* 🛒InAppPurchase.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */; };
+		F5F53179298741D200E531E2 /* 🧰MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F53178298741D200E531E2 /* 🧰MetaData.swift */; };
+		F5F5317B2987425800E531E2 /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */; };
+		F5F5317C2987432000E531E2 /* 🧰MetaData.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F53178298741D200E531E2 /* 🧰MetaData.swift */; };
+		F5F5317D2987432000E531E2 /* ℹ️AboutApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +83,8 @@
 			dstPath = "🧰Others";
 			dstSubfolderSpec = 7;
 			files = (
-				F5AA8C4728D0987000C2047D /* ℹ️AboutAppMenu.swift in CopyFiles */,
+				F5F5317C2987432000E531E2 /* 🧰MetaData.swift in CopyFiles */,
+				F5F5317D2987432000E531E2 /* ℹ️AboutApp.swift in CopyFiles */,
 				F5AA8C4928D0987000C2047D /* 📣AD.swift in CopyFiles */,
 				F5AA8C4A28D0987000C2047D /* 🛒InAppPurchase.swift in CopyFiles */,
 			);
@@ -114,11 +117,12 @@
 		F556952828CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F556952928CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F556952A28CCAF7A004558FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/🌏VersionDescription.strings"; sourceTree = "<group>"; };
-		F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutAppMenu.swift"; sourceTree = "<group>"; };
 		F556953628CCAFC3004558FC /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		F556953728CCAFC3004558FC /* 📣AD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣AD.swift"; sourceTree = "<group>"; };
 		F556953828CCAFC3004558FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchase.swift"; sourceTree = "<group>"; };
+		F5F53178298741D200E531E2 /* 🧰MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🧰MetaData.swift"; sourceTree = "<group>"; };
+		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +215,8 @@
 		F556953328CCAFC3004558FC /* 🧰Others */ = {
 			isa = PBXGroup;
 			children = (
-				F556953428CCAFC3004558FC /* ℹ️AboutAppMenu.swift */,
+				F5F53178298741D200E531E2 /* 🧰MetaData.swift */,
+				F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */,
 				F556953728CCAFC3004558FC /* 📣AD.swift */,
 				F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
@@ -335,11 +340,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F556953F28CCAFC3004558FC /* 🛒InAppPurchase.swift in Sources */,
-				F556953A28CCAFC3004558FC /* ℹ️AboutAppMenu.swift in Sources */,
 				F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */,
 				F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */,
 				F54BE1CC28CB480900532025 /* ContentView.swift in Sources */,
+				F5F53179298741D200E531E2 /* 🧰MetaData.swift in Sources */,
 				F54BE1CA28CB480900532025 /* LockInNoteApp.swift in Sources */,
+				F5F5317B2987425800E531E2 /* ℹ️AboutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

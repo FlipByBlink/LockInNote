@@ -3,7 +3,7 @@ iPhone App: LockInNote ロックノート
 
 <br>
 
-![App icon](LockInNote/Assets.xcassets/ClipedIcon.imageset/360.png)
+![App icon](LockInNote/Assets.xcassets/RoundedIcon.imageset/360.png)
 
 <br>
 
