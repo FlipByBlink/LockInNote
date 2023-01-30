@@ -417,7 +417,7 @@ struct 🎚WeightPicker: View {
             🄾ptionIcon(name: "bold")
             Picker("Weight", selection: self.$ⓦeight) {
                 ForEach(🅆eight.allCases) { 🅆 in
-                    Text(🅆.rawValue)
+                    Text(LocalizedStringKey(🅆.rawValue))
                         .fontWeight(🅆.value)
                 }
             }
@@ -436,7 +436,7 @@ struct 🎚DesignPicker: View {
             🄾ptionIcon(name: "a.magnify")
             Picker("Design", selection: self.$ⓓesign) {
                 ForEach(🄳esign.allCases) { 🄳 in
-                    Text(🄳.rawValue)
+                    Text(LocalizedStringKey(🄳.rawValue))
                         .font(.system(.body, design: 🄳.value))
                 }
             }
@@ -475,7 +475,7 @@ struct 🎚LevelPicker: View {
                 .symbolRenderingMode(.hierarchical)
             Picker("Level", selection: self.$ⓛevel) {
                 ForEach(🄻evel.allCases) { 🄻 in
-                    Text(🄻.rawValue)
+                    Text(LocalizedStringKey(🄻.rawValue))
                         .foregroundStyle(🄻.value)
                 }
             }
