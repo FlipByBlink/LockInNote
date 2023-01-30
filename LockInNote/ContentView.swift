@@ -397,7 +397,7 @@ struct 🎚PlaceholderPicker: View {//Blank icon
     var body: some View {
         Picker(selection: self.$ⓟlaceholder) {
             ForEach(🄿laceholder.allCases) { 🄿 in
-                Label(🄿.rawValue, systemImage: 🄿.icon)
+                Label(LocalizedStringKey(🄿.rawValue), systemImage: 🄿.icon)
                     .labelStyle(.iconOnly)
             }
         } label: {
@@ -494,7 +494,7 @@ struct 🎚TextAlignmentPicker: View {
             🄾ptionIcon(name: "text.justify")
             Picker("Multi text alignment", selection: self.$ⓐlignment) {
                 ForEach(🄼ultilineTextAlignment.allCases) { 🄼 in
-                    Label(🄼.rawValue, systemImage: 🄼.icon)
+                    Label(LocalizedStringKey(🄼.rawValue), systemImage: 🄼.icon)
                         .labelStyle(.iconOnly)
                 }
             }
