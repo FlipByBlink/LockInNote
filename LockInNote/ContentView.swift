@@ -757,7 +757,7 @@ struct 📣ADContent: ViewModifier {
                 📣ADSheet(self.ⓐpp)
             }
             .onChange(of: self.scenePhase) {
-                if $0 == .background {
+                if $0 == .inactive {
                     🛒.🚩showADSheet = false
                 }
             }
