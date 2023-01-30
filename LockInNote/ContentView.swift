@@ -169,48 +169,57 @@ struct 📝CircularWidgetTab: View {
 
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @FocusState private var 🚩focus: Bool
     var body: some View {
-        NavigationStack {
-            List {
-                self.ⓘnputField()
-                🔗URLSchemeActionButton($📱.🎛inlineData.text)
-                if !self.🚩focus {
-                    🎚PlaceholderPicker($📱.🎛inlineData.placeholder)
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Inline widget")
-                        .font(.headline)
-                        .opacity(self.🚩focus ? 0.33 : 1)
-                }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .safeAreaInset(edge: .bottom) {
-                if self.🚩focus {
-                    HStack(spacing: 12) {
-                        🗑EraseButton($📱.🎛inlineData.text)
-                        📮ShareButton(📱.🎛inlineData.text)
-                        Spacer()
-                        👆DoneButton { self.🚩focus = false }
-                    }
-                    .padding()
-                } else {
-                    👆EditButton { self.🚩focus = true }
-                }
-            }
-            .animation(.default, value: 📱.🎛inlineData.text.isEmpty)
-            .animation(.default, value: self.🚩focus)
-            .background { Color(.secondarySystemBackground) }
-        }
-        .modifier(🄷andleLaunchFromWidget("Inline") { self.🚩focus = true })
+        Self.🄲ontent($📱.🎛inlineData)
     }
-    private func ⓘnputField() -> some View {
-        Section {
-            TextField("Input text", text: $📱.🎛inlineData.text)
-                .font(.title3)
-                .focused(self.$🚩focus)
+    private struct 🄲ontent: View {
+        @Binding private var 🎛: 🎛InlineDataModel
+        @FocusState private var 🚩focus: Bool
+        var body: some View {
+            NavigationStack {
+                List {
+                    self.ⓘnputField()
+                    🔗URLSchemeActionButton($🎛.text)
+                    if !self.🚩focus {
+                        🎚PlaceholderPicker($🎛.placeholder)
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Inline widget")
+                            .font(.headline)
+                            .opacity(self.🚩focus ? 0.33 : 1)
+                    }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .safeAreaInset(edge: .bottom) {
+                    if self.🚩focus {
+                        HStack(spacing: 12) {
+                            🗑EraseButton($🎛.text)
+                            📮ShareButton(🎛.text)
+                            Spacer()
+                            👆DoneButton { self.🚩focus = false }
+                        }
+                        .padding()
+                    } else {
+                        👆EditButton { self.🚩focus = true }
+                    }
+                }
+                .animation(.default, value: 🎛.text.isEmpty)
+                .animation(.default, value: self.🚩focus)
+                .background { Color(.secondarySystemBackground) }
+            }
+            .modifier(🄷andleLaunchFromWidget("Inline") { self.🚩focus = true })
+        }
+        private func ⓘnputField() -> some View {
+            Section {
+                TextField("Input text", text: $🎛.text)
+                    .font(.title3)
+                    .focused(self.$🚩focus)
+            }
+        }
+        init(_ model: Binding<🎛InlineDataModel>) {
+            self._🎛 = model
         }
     }
 }
