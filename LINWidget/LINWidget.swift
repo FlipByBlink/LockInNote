@@ -84,8 +84,8 @@ struct 🅁ectangularView : View {
         .foregroundStyle(🎛.level.value)
         .widgetURL(URL(string: "Rectangular")!)
     }
-    init(_ ⓔntry: 🤖Provider.Entry) {
-        self.ⓔntry = ⓔntry
+    init(_ entry: 🤖Provider.Entry) {
+        self.ⓔntry = entry
         self.🎛 = 📱AppModel().🎛rectangularData
     }
 }
@@ -122,8 +122,8 @@ struct 🄲ircularView : View {
         .foregroundStyle(🎛.level.value)
         .widgetURL(URL(string: "Circular")!)
     }
-    init(_ ⓔntry: 🤖Provider.Entry) {
-        self.ⓔntry = ⓔntry
+    init(_ entry: 🤖Provider.Entry) {
+        self.ⓔntry = entry
         self.🎛 = 📱AppModel().🎛circularData
     }
 }
@@ -141,8 +141,8 @@ struct 🄸nlineView : View {
         }
         .widgetURL(URL(string: "Inline")!)
     }
-    init(_ ⓔntry: 🤖Provider.Entry) {
-        self.ⓔntry = ⓔntry
+    init(_ entry: 🤖Provider.Entry) {
+        self.ⓔntry = entry
         self.🎛 = 📱AppModel().🎛inlineData
     }
 }

@@ -1,4 +1,5 @@
-# LockInNote / ロックノート for iPhone
+iPhone App: LockInNote ロックノート
+=================================
 
 <br>
 
@@ -6,10 +7,12 @@
 
 <br>
 
-## AppStore link
+AppStore link
+--------------
 https://apps.apple.com/app/id1644879340
 
-## Description
+Description
+-------------
 Note app for lock screen widget!
 
 - Launch automatically keyboard as soon as widget is tapped.
@@ -22,7 +25,8 @@ Note app for lock screen widget!
 
 - Support URL scheme action with text.
 
-## 概要
+概要
+----------
 ロック画面ウィジェット専用のノートアプリ！
 
 - ウィジェットをタップすると、すぐにキーボードが立ち上がり、ノートを編集できます。
@@ -35,20 +39,23 @@ Note app for lock screen widget!
 
 - テキストと連携する任意のURLスキームを呼ぶことができます。
 
-## Localization: All
+Localization: All
+------------------
 - English
 
 - Japanese(native)
 
 <br>
 
-## Source code link
+Source code link
+-------------------
 https://github.com/FlipByBlink/LockInNote
 
 ### Source code (Mirror) link
 https://gitlab.com/FlipByBlink/LockInNote_Mirror
 
-## Contact
+Contact
+---------
 sear_pandora_0x@icloud.com
 
 <br>
@@ -61,7 +68,8 @@ sear_pandora_0x@icloud.com
 <br>
 <br>
 
-## Privacy Policy for AppStore
+Privacy Policy for AppStore
+----------------------------
 2022-09-12
 
 ### Japanese

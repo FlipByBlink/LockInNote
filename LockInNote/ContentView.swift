@@ -253,10 +253,10 @@ struct 🄷andleLaunchFromWidget: ViewModifier {
 }
 
 struct 👆EditButton: View {
-    private var ⓐction: () -> Void
+    private var ⓕocusAction: () -> Void
     var body: some View {
         Button {
-            self.ⓐction()
+            self.ⓕocusAction()
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
         } label: {
             Image(systemName: "pencil")
@@ -271,16 +271,16 @@ struct 👆EditButton: View {
         .shadow(radius: 3)
         .padding()
     }
-    init(_ action: @escaping () -> Void) {
-        self.ⓐction = action
+    init(_ focusAction: @escaping () -> Void) {
+        self.ⓕocusAction = focusAction
     }
 }
 
 struct 👆DoneButton: View {
-    private var ⓐction: () -> Void
+    private var ⓕocusAction: () -> Void
     var body: some View {
         Button {
-            self.ⓐction()
+            self.ⓕocusAction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
         } label: {
             Label("Done", systemImage: "checkmark")
@@ -292,8 +292,8 @@ struct 👆DoneButton: View {
         .background(Circle().foregroundColor(.accentColor))
         .shadow(radius: 3)
     }
-    init(_ action: @escaping () -> Void) {
-        self.ⓐction = action
+    init(_ focusAction: @escaping () -> Void) {
+        self.ⓕocusAction = focusAction
     }
 }
 
@@ -409,8 +409,8 @@ struct 🎚PlaceholderPicker: View {//Blank icon
                 .strikethrough(self.ⓟlaceholder == .nothing)
         }
     }
-    init(_ ⓟlaceholder: Binding<🄿laceholder>) {
-        self._ⓟlaceholder = ⓟlaceholder
+    init(_ placeholder: Binding<🄿laceholder>) {
+        self._ⓟlaceholder = placeholder
     }
 }
 
@@ -428,8 +428,8 @@ struct 🎚WeightPicker: View {
             .pickerStyle(.navigationLink)
         }
     }
-    init(_ ⓦeight: Binding<🅆eight>) {
-        self._ⓦeight = ⓦeight
+    init(_ weight: Binding<🅆eight>) {
+        self._ⓦeight = weight
     }
 }
 
@@ -447,8 +447,8 @@ struct 🎚DesignPicker: View {
             .pickerStyle(.navigationLink)
         }
     }
-    init(_ ⓓesign: Binding<🄳esign>) {
-        self._ⓓesign = ⓓesign
+    init(_ design: Binding<🄳esign>) {
+        self._ⓓesign = design
     }
 }
 
@@ -466,8 +466,8 @@ struct 🎚FontSizePicker: View {
             .pickerStyle(.navigationLink)
         }
     }
-    init(_ ⓢize: Binding<Int>) {
-        self._ⓢize = ⓢize
+    init(_ size: Binding<Int>) {
+        self._ⓢize = size
     }
 }
 
@@ -486,8 +486,8 @@ struct 🎚LevelPicker: View {
             .pickerStyle(.navigationLink)
         }
     }
-    init(_ ⓛevel: Binding<🄻evel>) {
-        self._ⓛevel = ⓛevel
+    init(_ level: Binding<🄻evel>) {
+        self._ⓛevel = level
     }
 }
 
@@ -504,8 +504,8 @@ struct 🎚TextAlignmentPicker: View {
             }
         }
     }
-    init(_ ⓐlignment: Binding<🄼ultilineTextAlignment>) {
-        self._ⓐlignment = ⓐlignment
+    init(_ alignment: Binding<🄼ultilineTextAlignment>) {
+        self._ⓐlignment = alignment
     }
 }
 
@@ -519,8 +519,8 @@ struct 🎚ItalicPicker: View {
             }
         }
     }
-    init(_ 🚩: Binding<Bool>) {
-        self._🚩italic = 🚩
+    init(_ italic: Binding<Bool>) {
+        self._🚩italic = italic
     }
 }
 
@@ -546,8 +546,8 @@ struct 📣ADBanner: View {
             }
         }
     }
-    init(_ 🚩showADMenuSheet: Binding<Bool>) {
-        self._🚩showADMenuSheet = 🚩showADMenuSheet
+    init(_ showADMenuSheet: Binding<Bool>) {
+        self._🚩showADMenuSheet = showADMenuSheet
     }
 }
 
@@ -761,7 +761,7 @@ struct 🔗URLSchemeActionButton: View {
             }
         }
     }
-    init(_ ⓠuery: Binding<String>) {
-        self._ⓠuery = ⓠuery
+    init(_ query: Binding<String>) {
+        self._ⓠuery = query
     }
 }
