@@ -1,11 +1,11 @@
 iPhone App: LockInNote ロックノート
 =================================
 
-<br>
+<img src="LockInNote/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
 
-![App icon](LockInNote/Assets.xcassets/RoundedIcon.imageset/360.png)
-
-<br>
+<a href="https://apps.apple.com/app/id1644879340" target="blank">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+</a>
 
 AppStore link
 --------------
