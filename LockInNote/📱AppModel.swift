@@ -2,48 +2,40 @@ import SwiftUI
 import WidgetKit
 
 class 📱AppModel: ObservableObject {
-    @Published var 🎛rectangularData = 🎛RectangularDataModel()
-    @Published var 🎛circularData = 🎛CircularDataModel()
-    @Published var 🎛inlineData = 🎛InlineDataModel()
+    @Published var 🎛rectangularData: 🎛RectangularDataModel
+    @Published var 🎛circularData: 🎛CircularDataModel
+    @Published var 🎛inlineData: 🎛InlineDataModel
     
     func 💾saveDataAndReloadWidget() {
-        do {
-            let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
-            var ⓓata = try JSONEncoder().encode(🎛rectangularData)
-            ⓤd?.set(ⓓata, forKey: "Rectangular")
-            ⓓata = try JSONEncoder().encode(🎛circularData)
-            ⓤd?.set(ⓓata, forKey: "Circular")
-            ⓓata = try JSONEncoder().encode(🎛inlineData)
-            ⓤd?.set(ⓓata, forKey: "Inline")
-        } catch {
-            print("🚨Encode error: ", error)
-        }
+        self.🎛rectangularData.save()
+        self.🎛circularData.save()
+        self.🎛inlineData.save()
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    func 💾loadDatas() {
-        let ⓤd = UserDefaults(suiteName: 🆔AppGroupID)
-        do {
-            if let ⓓata = ⓤd?.data(forKey: "Rectangular") {
-                🎛rectangularData = try JSONDecoder().decode(🎛RectangularDataModel.self, from: ⓓata)
-            } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Rectangular")"#, "is nil.") }
-            if let ⓓata = ⓤd?.data(forKey: "Circular") {
-                🎛circularData = try JSONDecoder().decode(🎛CircularDataModel.self, from: ⓓata)
-            } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Circular")"#, "is nil.") }
-            if let ⓓata = ⓤd?.data(forKey: "Inline") {
-                🎛inlineData = try JSONDecoder().decode(🎛InlineDataModel.self, from: ⓓata)
-            } else { print(#"UserDefaults(suiteName: 🆔AppGroupID).data(forKey: "Inline")"#, "is nil.") }
-        } catch {
-            print("🚨Decode error: ", error)
-        }
-    }
-    
     init() {
-        💾loadDatas()
+        self.🎛rectangularData = .load()
+        self.🎛circularData = .load()
+        self.🎛inlineData = .load()
     }
 }
 
-let 🆔AppGroupID = "group.net.aaaakkkkssssttttnnnn.LockInNote"
+enum 💾UserDefaults {
+    static let userDefaults = UserDefaults(suiteName: "group.net.aaaakkkkssssttttnnnn.LockInNote")
+    enum 🄺ey: String {
+        case Rectangular, Circular, Inline
+    }
+    static func loadData(_ ⓚey: Self.🄺ey) -> Data? {
+        Self.userDefaults?.data(forKey: ⓚey.rawValue)
+    }
+    static func saveData(_ ⓚey: Self.🄺ey, _ ⓜodel: Codable) {
+        do {
+            Self.userDefaults?.set(try JSONEncoder().encode(ⓜodel.self), forKey: ⓚey.rawValue)
+        } catch {
+            assertionFailure()
+        }
+    }
+}
 
 protocol 🄵ontOptions {
     var placeholder: 🄿laceholder { get set }
@@ -65,6 +57,19 @@ struct 🎛RectangularDataModel: Codable, Equatable, 🄵ontOptions {
     var italic: Bool = false
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
+    
+    static func load() -> Self {
+        guard let ⓓata = 💾UserDefaults.loadData(.Rectangular) else { return Self() }
+        do {
+            return try JSONDecoder().decode(Self.self, from: ⓓata)
+        } catch {
+            assertionFailure(); return Self()
+        }
+    }
+    
+    func save() {
+        💾UserDefaults.saveData(.Rectangular, self)
+    }
 }
 
 struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
@@ -78,11 +83,37 @@ struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
     var italic: Bool = false
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
+    
+    static func load() -> Self {
+        guard let ⓓata = 💾UserDefaults.loadData(.Circular) else { return Self() }
+        do {
+            return try JSONDecoder().decode(Self.self, from: ⓓata)
+        } catch {
+            assertionFailure(); return Self()
+        }
+    }
+    
+    func save() {
+        💾UserDefaults.saveData(.Circular, self)
+    }
 }
 
 struct 🎛InlineDataModel: Codable, Equatable {
     var text: String = ""
     var placeholder: 🄿laceholder = .squareAndPencil
+    
+    static func load() -> Self {
+        guard let ⓓata = 💾UserDefaults.loadData(.Inline) else { return Self() }
+        do {
+            return try JSONDecoder().decode(Self.self, from: ⓓata)
+        } catch {
+            assertionFailure(); return Self()
+        }
+    }
+    
+    func save() {
+        💾UserDefaults.saveData(.Inline, self)
+    }
 }
 
 enum 🄿laceholder: String, Codable, CaseIterable, Identifiable {
