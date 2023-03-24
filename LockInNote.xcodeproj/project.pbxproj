@@ -185,7 +185,6 @@
 				F50D9B0228EEDE390089E680 /* Info.plist */,
 				F55694FF28CCA88B004558FC /* LockInNote.entitlements */,
 				F556953628CCAFC3004558FC /* Configuration.storekit */,
-				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 				F556953328CCAFC3004558FC /* 🧰Others */,
 			);
 			path = "🧩Sub";
@@ -230,6 +229,7 @@
 				F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */,
 				F556953728CCAFC3004558FC /* 📣AD.swift */,
 				F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */,
+				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 			);
 			path = "🧰Others";
 			sourceTree = "<group>";
