@@ -83,7 +83,7 @@ struct 🅁ectangularView : View {
     }
     init(_ entry: 🕒Entry) {
         self.ⓔntry = entry
-        self.🎛 = 📱AppModel().rectangularData
+        self.🎛 = .load() ?? .default
     }
 }
 
@@ -120,7 +120,7 @@ struct 🄲ircularView : View {
     }
     init(_ entry: 🕒Entry) {
         self.ⓔntry = entry
-        self.🎛 = 📱AppModel().circularData
+        self.🎛 = .load() ?? .default
     }
 }
 
@@ -139,6 +139,6 @@ struct 🄸nlineView : View {
     }
     init(_ entry: 🕒Entry) {
         self.ⓔntry = entry
-        self.🎛 = 📱AppModel().inlineData
+        self.🎛 = .load() ?? .default
     }
 }

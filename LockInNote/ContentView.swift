@@ -367,7 +367,7 @@ struct 👆EraseButtonAndShareButton: View {
 }
 
 struct 🄰djustButtonsBackground: ViewModifier {
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @Environment(\.colorScheme) var colorScheme
     func body(content: Content) -> some View {
         content
             .background {
@@ -429,8 +429,8 @@ struct 🎚PlaceholderPicker: View {//Blank icon
     @Binding var ⓟlaceholder: 🄿laceholder
     var body: some View {
         Picker(selection: self.$ⓟlaceholder) {
-            ForEach(🄿laceholder.allCases) { 🄿 in
-                Label(LocalizedStringKey(🄿.rawValue), systemImage: 🄿.icon)
+            ForEach(🄿laceholder.allCases) { ⓒase in
+                Label(LocalizedStringKey(ⓒase.rawValue), systemImage: ⓒase.icon)
                     .labelStyle(.iconOnly)
             }
         } label: {
@@ -449,9 +449,9 @@ struct 🎚WeightPicker: View {
         HStack {
             🄾ptionIcon(name: "bold")
             Picker("Weight", selection: self.$ⓦeight) {
-                ForEach(🅆eight.allCases) { 🅆 in
-                    Text(LocalizedStringKey(🅆.rawValue))
-                        .fontWeight(🅆.value)
+                ForEach(🅆eight.allCases) { ⓒase in
+                    Text(LocalizedStringKey(ⓒase.rawValue))
+                        .fontWeight(ⓒase.value)
                 }
             }
             .pickerStyle(.navigationLink)
@@ -468,9 +468,9 @@ struct 🎚DesignPicker: View {
         HStack {
             🄾ptionIcon(name: "a.magnify")
             Picker("Design", selection: self.$ⓓesign) {
-                ForEach(🄳esign.allCases) { 🄳 in
-                    Text(LocalizedStringKey(🄳.rawValue))
-                        .font(.system(.body, design: 🄳.value))
+                ForEach(🄳esign.allCases) { ⓒase in
+                    Text(LocalizedStringKey(ⓒase.rawValue))
+                        .font(.system(.body, design: ⓒase.value))
                 }
             }
             .pickerStyle(.navigationLink)
@@ -507,9 +507,9 @@ struct 🎚LevelPicker: View {
             🄾ptionIcon(name: "camera.filters")
                 .symbolRenderingMode(.hierarchical)
             Picker("Level", selection: self.$ⓛevel) {
-                ForEach(🄻evel.allCases) { 🄻 in
-                    Text(LocalizedStringKey(🄻.rawValue))
-                        .foregroundStyle(🄻.value)
+                ForEach(🄻evel.allCases) { ⓒase in
+                    Text(LocalizedStringKey(ⓒase.rawValue))
+                        .foregroundStyle(ⓒase.value)
                 }
             }
             .pickerStyle(.navigationLink)
@@ -526,8 +526,8 @@ struct 🎚TextAlignmentPicker: View {
         HStack {
             🄾ptionIcon(name: "text.justify")
             Picker("Multi text alignment", selection: self.$ⓐlignment) {
-                ForEach(🄼ultilineTextAlignment.allCases) { 🄼 in
-                    Label(LocalizedStringKey(🄼.rawValue), systemImage: 🄼.icon)
+                ForEach(🄼ultilineTextAlignment.allCases) { ⓒase in
+                    Label(LocalizedStringKey(ⓒase.rawValue), systemImage: ⓒase.icon)
                         .labelStyle(.iconOnly)
                 }
             }

@@ -20,28 +20,6 @@ class 📱AppModel: ObservableObject {
     }
 }
 
-enum 💾UserDefaults {
-    private static let userDefaults = UserDefaults(suiteName: "group.net.aaaakkkkssssttttnnnn.LockInNote")
-    enum 🄺ey: String {
-        case Rectangular, Circular, Inline
-    }
-    static func load<T: Codable>(_ ⓚey: Self.🄺ey, _ ⓜodelType: T.Type) -> T? {
-        guard let ⓓata = Self.userDefaults?.data(forKey: ⓚey.rawValue) else { return nil }
-        do {
-            return try JSONDecoder().decode(ⓜodelType.self, from: ⓓata)
-        } catch {
-            assertionFailure(); return nil
-        }
-    }
-    static func saveData(_ ⓚey: Self.🄺ey, _ ⓜodel: Codable) {
-        do {
-            Self.userDefaults?.set(try JSONEncoder().encode(ⓜodel.self), forKey: ⓚey.rawValue)
-        } catch {
-            assertionFailure()
-        }
-    }
-}
-
 struct 🎛RectangularDataModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""
     
@@ -55,7 +33,7 @@ struct 🎛RectangularDataModel: Codable, Equatable, 🄵ontOptions {
     
     static var `default`: Self { Self() }
     static func load() -> Self? { 💾UserDefaults.load(.Rectangular, Self.self) }
-    func save() { 💾UserDefaults.saveData(.Rectangular, self) }
+    func save() { 💾UserDefaults.save(.Rectangular, self) }
 }
 
 struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
@@ -72,7 +50,7 @@ struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
     
     static var `default`: Self { Self() }
     static func load() -> Self? { 💾UserDefaults.load(.Circular, Self.self) }
-    func save() { 💾UserDefaults.saveData(.Circular, self) }
+    func save() { 💾UserDefaults.save(.Circular, self) }
 }
 
 struct 🎛InlineDataModel: Codable, Equatable {
@@ -81,7 +59,29 @@ struct 🎛InlineDataModel: Codable, Equatable {
     
     static var `default`: Self { Self() }
     static func load() -> Self? { 💾UserDefaults.load(.Inline, Self.self) }
-    func save() { 💾UserDefaults.saveData(.Inline, self) }
+    func save() { 💾UserDefaults.save(.Inline, self) }
+}
+
+enum 💾UserDefaults {
+    private static let userDefaults = UserDefaults(suiteName: "group.net.aaaakkkkssssttttnnnn.LockInNote")
+    enum 🄺ey: String {
+        case Rectangular, Circular, Inline
+    }
+    static func load<T: Codable>(_ ⓚey: Self.🄺ey, _ ⓜodelType: T.Type) -> T? {
+        guard let ⓓata = Self.userDefaults?.data(forKey: ⓚey.rawValue) else { return nil }
+        do {
+            return try JSONDecoder().decode(ⓜodelType.self, from: ⓓata)
+        } catch {
+            assertionFailure(); return nil
+        }
+    }
+    static func save(_ ⓚey: Self.🄺ey, _ ⓜodel: Codable) {
+        do {
+            Self.userDefaults?.set(try JSONEncoder().encode(ⓜodel.self), forKey: ⓚey.rawValue)
+        } catch {
+            assertionFailure()
+        }
+    }
 }
 
 protocol 🄵ontOptions {
