@@ -45,28 +45,24 @@ struct 🄸nlineWidget: Widget {
 
 struct 🤖Provider: TimelineProvider {
     func placeholder(in context: Context) -> 🕒Entry {
-        🕒Entry(.now)
+        🕒Entry(date: .now)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (🕒Entry) -> ()) {
-        completion(🕒Entry(.now))
+        completion(🕒Entry(date: .now))
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        completion(Timeline(entries: [🕒Entry(.now)], policy: .never))
+        completion(Timeline(entries: [🕒Entry(date: .now)], policy: .never))
     }
 }
 
 struct 🕒Entry: TimelineEntry {
     let date: Date
-    
-    init(_ date: Date) {
-        self.date = date
-    }
 }
 
 struct 🅁ectangularView : View {
-    private var ⓔntry: 🤖Provider.Entry
+    private var ⓔntry: 🕒Entry
     private let 🎛: 🎛RectangularDataModel
     var body: some View {
         Group {
@@ -76,6 +72,7 @@ struct 🅁ectangularView : View {
                     .multilineTextAlignment(🎛.multilineTextAlignment.value)
             } else if 🎛.placeholder != .nothing {
                 Image(systemName: 🎛.placeholder.icon)
+                    .imageScale(.large)
             }
         }
         .font(.system(size: CGFloat(🎛.fontSize),
@@ -84,14 +81,14 @@ struct 🅁ectangularView : View {
         .foregroundStyle(🎛.level.value)
         .widgetURL(URL(string: "Rectangular")!)
     }
-    init(_ entry: 🤖Provider.Entry) {
+    init(_ entry: 🕒Entry) {
         self.ⓔntry = entry
         self.🎛 = 📱AppModel().rectangularData
     }
 }
 
 struct 🄲ircularView : View {
-    private var ⓔntry: 🤖Provider.Entry
+    private var ⓔntry: 🕒Entry
     private let 🎛: 🎛CircularDataModel
     var body: some View {
         Group {
@@ -107,11 +104,10 @@ struct 🄲ircularView : View {
                 }
             } else {
                 ZStack {
-                    if 🎛.background {
-                        AccessoryWidgetBackground()
-                    }
+                    if 🎛.background { AccessoryWidgetBackground() }
                     if 🎛.placeholder != .nothing {
                         Image(systemName: 🎛.placeholder.icon)
+                            .imageScale(.large)
                     }
                 }
             }
@@ -122,14 +118,14 @@ struct 🄲ircularView : View {
         .foregroundStyle(🎛.level.value)
         .widgetURL(URL(string: "Circular")!)
     }
-    init(_ entry: 🤖Provider.Entry) {
+    init(_ entry: 🕒Entry) {
         self.ⓔntry = entry
         self.🎛 = 📱AppModel().circularData
     }
 }
 
 struct 🄸nlineView : View {
-    private var ⓔntry: 🤖Provider.Entry
+    private var ⓔntry: 🕒Entry
     private let 🎛: 🎛InlineDataModel
     var body: some View {
         Group {
@@ -141,7 +137,7 @@ struct 🄸nlineView : View {
         }
         .widgetURL(URL(string: "Inline")!)
     }
-    init(_ entry: 🤖Provider.Entry) {
+    init(_ entry: 🕒Entry) {
         self.ⓔntry = entry
         self.🎛 = 📱AppModel().inlineData
     }
