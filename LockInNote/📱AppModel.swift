@@ -14,9 +14,9 @@ class 📱AppModel: ObservableObject {
     }
     
     init() {
-        self.🎛rectangularData = .load()
-        self.🎛circularData = .load()
-        self.🎛inlineData = .load()
+        self.🎛rectangularData = .load() ?? .default
+        self.🎛circularData = .load() ?? .default
+        self.🎛inlineData = .load() ?? .default
     }
 }
 
@@ -25,8 +25,13 @@ enum 💾UserDefaults {
     enum 🄺ey: String {
         case Rectangular, Circular, Inline
     }
-    static func loadData(_ ⓚey: Self.🄺ey) -> Data? {
-        Self.userDefaults?.data(forKey: ⓚey.rawValue)
+    static func load<T: Codable>(_ ⓚey: Self.🄺ey, _ ⓜodelType: T.Type) -> T? {
+        guard let ⓓata = Self.userDefaults?.data(forKey: ⓚey.rawValue) else { return nil }
+        do {
+            return try JSONDecoder().decode(ⓜodelType.self, from: ⓓata)
+        } catch {
+            assertionFailure(); return nil
+        }
     }
     static func saveData(_ ⓚey: Self.🄺ey, _ ⓜodel: Codable) {
         do {
@@ -58,18 +63,9 @@ struct 🎛RectangularDataModel: Codable, Equatable, 🄵ontOptions {
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
     
-    static func load() -> Self {
-        guard let ⓓata = 💾UserDefaults.loadData(.Rectangular) else { return Self() }
-        do {
-            return try JSONDecoder().decode(Self.self, from: ⓓata)
-        } catch {
-            assertionFailure(); return Self()
-        }
-    }
-    
-    func save() {
-        💾UserDefaults.saveData(.Rectangular, self)
-    }
+    static var `default`: Self { Self() }
+    static func load() -> Self? { 💾UserDefaults.load(.Rectangular, Self.self) }
+    func save() { 💾UserDefaults.saveData(.Rectangular, self) }
 }
 
 struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
@@ -84,36 +80,18 @@ struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
     
-    static func load() -> Self {
-        guard let ⓓata = 💾UserDefaults.loadData(.Circular) else { return Self() }
-        do {
-            return try JSONDecoder().decode(Self.self, from: ⓓata)
-        } catch {
-            assertionFailure(); return Self()
-        }
-    }
-    
-    func save() {
-        💾UserDefaults.saveData(.Circular, self)
-    }
+    static var `default`: Self { Self() }
+    static func load() -> Self? { 💾UserDefaults.load(.Circular, Self.self) }
+    func save() { 💾UserDefaults.saveData(.Circular, self) }
 }
 
 struct 🎛InlineDataModel: Codable, Equatable {
     var text: String = ""
     var placeholder: 🄿laceholder = .squareAndPencil
     
-    static func load() -> Self {
-        guard let ⓓata = 💾UserDefaults.loadData(.Inline) else { return Self() }
-        do {
-            return try JSONDecoder().decode(Self.self, from: ⓓata)
-        } catch {
-            assertionFailure(); return Self()
-        }
-    }
-    
-    func save() {
-        💾UserDefaults.saveData(.Inline, self)
-    }
+    static var `default`: Self { Self() }
+    static func load() -> Self? { 💾UserDefaults.load(.Inline, Self.self) }
+    func save() { 💾UserDefaults.saveData(.Inline, self) }
 }
 
 enum 🄿laceholder: String, Codable, CaseIterable, Identifiable {
