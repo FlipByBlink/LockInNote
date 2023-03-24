@@ -2,21 +2,15 @@ import SwiftUI
 import WidgetKit
 
 class 📱AppModel: ObservableObject {
-    @Published var rectangularData: 🎛RectangularDataModel
-    @Published var circularData: 🎛CircularDataModel
-    @Published var inlineData: 🎛InlineDataModel
+    @Published var rectangularData: 🎛RectangularDataModel = .load() ?? .default
+    @Published var circularData: 🎛CircularDataModel = .load() ?? .default
+    @Published var inlineData: 🎛InlineDataModel = .load() ?? .default
     
     func saveDataAndReloadWidget() {
         self.rectangularData.save()
         self.circularData.save()
         self.inlineData.save()
         WidgetCenter.shared.reloadAllTimelines()
-    }
-    
-    init() {
-        self.rectangularData = .load() ?? .default
-        self.circularData = .load() ?? .default
-        self.inlineData = .load() ?? .default
     }
 }
 
