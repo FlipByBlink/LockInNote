@@ -45,20 +45,18 @@ struct 🄸nlineWidget: Widget {
 
 struct 🤖Provider: TimelineProvider {
     func placeholder(in context: Context) -> 🕒Entry {
-        🕒Entry(date: .now)
+        🕒Entry()
     }
-    
     func getSnapshot(in context: Context, completion: @escaping (🕒Entry) -> ()) {
-        completion(🕒Entry(date: .now))
+        completion(🕒Entry())
     }
-    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        completion(Timeline(entries: [🕒Entry(date: .now)], policy: .never))
+        completion(Timeline(entries: [🕒Entry()], policy: .never))
     }
 }
 
 struct 🕒Entry: TimelineEntry {
-    let date: Date
+    let date: Date = .now
 }
 
 struct 🅁ectangularView : View {
