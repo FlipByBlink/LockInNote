@@ -69,7 +69,7 @@ enum 💾UserDefaults {
             assertionFailure(); return nil
         }
     }
-    static func save(_ ⓚey: Self.🄺ey, _ ⓜodel: Codable) {
+    static func save(_ ⓚey: Self.🄺ey, _ ⓜodel: some Codable) {
         do {
             Self.ⓤserDefaults?.set(try JSONEncoder().encode(ⓜodel.self), forKey: ⓚey.rawValue)
         } catch {
