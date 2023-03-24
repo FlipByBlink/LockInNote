@@ -2,26 +2,26 @@ import SwiftUI
 import WidgetKit
 
 class 📱AppModel: ObservableObject {
-    @Published var 🎛rectangularData: 🎛RectangularDataModel
-    @Published var 🎛circularData: 🎛CircularDataModel
-    @Published var 🎛inlineData: 🎛InlineDataModel
+    @Published var rectangularData: 🎛RectangularDataModel
+    @Published var circularData: 🎛CircularDataModel
+    @Published var inlineData: 🎛InlineDataModel
     
-    func 💾saveDataAndReloadWidget() {
-        self.🎛rectangularData.save()
-        self.🎛circularData.save()
-        self.🎛inlineData.save()
+    func saveDataAndReloadWidget() {
+        self.rectangularData.save()
+        self.circularData.save()
+        self.inlineData.save()
         WidgetCenter.shared.reloadAllTimelines()
     }
     
     init() {
-        self.🎛rectangularData = .load() ?? .default
-        self.🎛circularData = .load() ?? .default
-        self.🎛inlineData = .load() ?? .default
+        self.rectangularData = .load() ?? .default
+        self.circularData = .load() ?? .default
+        self.inlineData = .load() ?? .default
     }
 }
 
 enum 💾UserDefaults {
-    static let userDefaults = UserDefaults(suiteName: "group.net.aaaakkkkssssttttnnnn.LockInNote")
+    private static let userDefaults = UserDefaults(suiteName: "group.net.aaaakkkkssssttttnnnn.LockInNote")
     enum 🄺ey: String {
         case Rectangular, Circular, Inline
     }
@@ -40,16 +40,6 @@ enum 💾UserDefaults {
             assertionFailure()
         }
     }
-}
-
-protocol 🄵ontOptions {
-    var placeholder: 🄿laceholder { get set }
-    var fontSize: Int { get set }
-    var fontWeight: 🅆eight { get set }
-    var fontDesign: 🄳esign { get set }
-    var italic: Bool { get set }
-    var level: 🄻evel { get set }
-    var multilineTextAlignment: 🄼ultilineTextAlignment { get set }
 }
 
 struct 🎛RectangularDataModel: Codable, Equatable, 🄵ontOptions {
@@ -92,6 +82,16 @@ struct 🎛InlineDataModel: Codable, Equatable {
     static var `default`: Self { Self() }
     static func load() -> Self? { 💾UserDefaults.load(.Inline, Self.self) }
     func save() { 💾UserDefaults.saveData(.Inline, self) }
+}
+
+protocol 🄵ontOptions {
+    var placeholder: 🄿laceholder { get set }
+    var fontSize: Int { get set }
+    var fontWeight: 🅆eight { get set }
+    var fontDesign: 🄳esign { get set }
+    var italic: Bool { get set }
+    var level: 🄻evel { get set }
+    var multilineTextAlignment: 🄼ultilineTextAlignment { get set }
 }
 
 enum 🄿laceholder: String, Codable, CaseIterable, Identifiable {

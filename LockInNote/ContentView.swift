@@ -32,9 +32,9 @@ struct ContentView: View {
                 default: print("🐛")
             }
         }
-        .onChange(of: 📱.🎛rectangularData) { _ in 📱.💾saveDataAndReloadWidget() }
-        .onChange(of: 📱.🎛circularData) { _ in 📱.💾saveDataAndReloadWidget() }
-        .onChange(of: 📱.🎛inlineData) { _ in 📱.💾saveDataAndReloadWidget() }
+        .onChange(of: 📱.rectangularData) { _ in 📱.saveDataAndReloadWidget() }
+        .onChange(of: 📱.circularData) { _ in 📱.saveDataAndReloadWidget() }
+        .onChange(of: 📱.inlineData) { _ in 📱.saveDataAndReloadWidget() }
         .modifier(📣ADContent())
     }
     private enum 🔖Tab {
@@ -45,19 +45,19 @@ struct ContentView: View {
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.🎛rectangularData)
+        Self.🄲ontent($📱.rectangularData)
     }
     private struct 🄲ontent: View {
-        @Binding private var 🎛: 🎛RectangularDataModel
+        @Binding private var ⓓataModel: 🎛RectangularDataModel
         @FocusState private var 🚩focus: Bool
         var body: some View {
             NavigationStack {
                 List {
                     self.ⓘnputField()
-                    🔗URLSchemeActionButton($🎛.text)
+                    🔗URLSchemeActionButton(self.$ⓓataModel.text)
                     if !self.🚩focus {
-                        🛠️CustomizeFontLink($🎛)
-                        🎚PlaceholderPicker($🎛.placeholder)
+                        🛠️CustomizeFontLink(self.$ⓓataModel)
+                        🎚PlaceholderPicker(self.$ⓓataModel.placeholder)
                     }
                 }
                 .toolbar {
@@ -71,7 +71,7 @@ struct 📝RectangularWidgetTab: View {
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
                         HStack {
-                            👆EraseButtonAndShareButton($🎛.text)
+                            👆EraseButtonAndShareButton(self.$ⓓataModel.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -80,7 +80,7 @@ struct 📝RectangularWidgetTab: View {
                         👆EditButton { self.🚩focus = true }
                     }
                 }
-                .animation(.default, value: 🎛.text.isEmpty)
+                .animation(.default, value: self.ⓓataModel.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
@@ -88,13 +88,13 @@ struct 📝RectangularWidgetTab: View {
         }
         private func ⓘnputField() -> some View {
             Section {
-                TextField("Input text", text: $🎛.text, axis: .vertical)
+                TextField("Input text", text: self.$ⓓataModel.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
             }
         }
-        init(_ model: Binding<🎛RectangularDataModel>) {
-            self._🎛 = model
+        init(_ dataModel: Binding<🎛RectangularDataModel>) {
+            self._ⓓataModel = dataModel
         }
     }
 }
@@ -102,20 +102,20 @@ struct 📝RectangularWidgetTab: View {
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.🎛circularData)
+        Self.🄲ontent($📱.circularData)
     }
     private struct 🄲ontent: View {
-        @Binding private var 🎛: 🎛CircularDataModel
+        @Binding private var ⓓataModel: 🎛CircularDataModel
         @FocusState private var 🚩focus: Bool
         var body: some View {
             NavigationStack {
                 List {
                     self.ⓘnputField()
-                    🔗URLSchemeActionButton($🎛.text)
+                    🔗URLSchemeActionButton(self.$ⓓataModel.text)
                     if !self.🚩focus {
-                        🛠️CustomizeFontLink($🎛)
+                        🛠️CustomizeFontLink(self.$ⓓataModel)
                         self.ⓑackgroundOption()
-                        🎚PlaceholderPicker($🎛.placeholder)
+                        🎚PlaceholderPicker(self.$ⓓataModel.placeholder)
                     }
                 }
                 .toolbar {
@@ -129,7 +129,7 @@ struct 📝CircularWidgetTab: View {
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
                         HStack {
-                            👆EraseButtonAndShareButton($🎛.text)
+                            👆EraseButtonAndShareButton(self.$ⓓataModel.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -138,7 +138,7 @@ struct 📝CircularWidgetTab: View {
                         👆EditButton { self.🚩focus = true }
                     }
                 }
-                .animation(.default, value: 🎛.text.isEmpty)
+                .animation(.default, value: self.ⓓataModel.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
@@ -146,21 +146,21 @@ struct 📝CircularWidgetTab: View {
         }
         private func ⓘnputField() -> some View {
             Section {
-                TextField("Input text", text: $🎛.text, axis: .vertical)
+                TextField("Input text", text: self.$ⓓataModel.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
             }
         }
         private func ⓑackgroundOption() -> some View {
-            Toggle(isOn: $🎛.background) {
+            Toggle(isOn: self.$ⓓataModel.background) {
                 Label("Background",
-                      systemImage: 🎛.background ? "circle.dashed.inset.filled" : "circle.dashed")
-                .animation(.default, value: 🎛.background)
+                      systemImage: self.ⓓataModel.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                .animation(.default, value: self.ⓓataModel.background)
                 .padding(.vertical, 6)
             }
         }
-        init(_ model: Binding<🎛CircularDataModel>) {
-            self._🎛 = model
+        init(_ dataModel: Binding<🎛CircularDataModel>) {
+            self._ⓓataModel = dataModel
         }
     }
 }
@@ -168,18 +168,18 @@ struct 📝CircularWidgetTab: View {
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.🎛inlineData)
+        Self.🄲ontent($📱.inlineData)
     }
     private struct 🄲ontent: View {
-        @Binding private var 🎛: 🎛InlineDataModel
+        @Binding private var ⓓataModel: 🎛InlineDataModel
         @FocusState private var 🚩focus: Bool
         var body: some View {
             NavigationStack {
                 List {
                     self.ⓘnputField()
-                    🔗URLSchemeActionButton($🎛.text)
+                    🔗URLSchemeActionButton(self.$ⓓataModel.text)
                     if !self.🚩focus {
-                        🎚PlaceholderPicker($🎛.placeholder)
+                        🎚PlaceholderPicker(self.$ⓓataModel.placeholder)
                     }
                 }
                 .toolbar {
@@ -193,7 +193,7 @@ struct 📝InlineWidgetTab: View {
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
                         HStack {
-                            👆EraseButtonAndShareButton($🎛.text)
+                            👆EraseButtonAndShareButton(self.$ⓓataModel.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -202,7 +202,7 @@ struct 📝InlineWidgetTab: View {
                         👆EditButton { self.🚩focus = true }
                     }
                 }
-                .animation(.default, value: 🎛.text.isEmpty)
+                .animation(.default, value: self.ⓓataModel.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
@@ -210,13 +210,13 @@ struct 📝InlineWidgetTab: View {
         }
         private func ⓘnputField() -> some View {
             Section {
-                TextField("Input text", text: $🎛.text)
+                TextField("Input text", text: self.$ⓓataModel.text)
                     .font(.title3)
                     .focused(self.$🚩focus)
             }
         }
-        init(_ model: Binding<🎛InlineDataModel>) {
-            self._🎛 = model
+        init(_ dataModel: Binding<🎛InlineDataModel>) {
+            self._ⓓataModel = dataModel
         }
     }
 }
@@ -379,7 +379,7 @@ struct 🄰djustButtonsBackground: ViewModifier {
 }
 
 struct 🛠️CustomizeFontLink<T: 🄵ontOptions>: View {
-    @Binding private var 🎛: T
+    @Binding private var ⓕontOptions: T
     var body: some View {
         NavigationLink {
             VStack(spacing: 0) {
@@ -389,25 +389,25 @@ struct 🛠️CustomizeFontLink<T: 🄵ontOptions>: View {
                     これは仮の文章です。
                     이것은 플레이스 홀더입니다.
                     """)
-                    .font(.system(size: CGFloat(🎛.fontSize),
-                                  weight: 🎛.fontWeight.value,
-                                  design: 🎛.fontDesign.value))
-                    .italic(🎛.italic)
-                    .foregroundStyle(🎛.level.value)
-                    .multilineTextAlignment(🎛.multilineTextAlignment.value)
+                    .font(.system(size: CGFloat(self.ⓕontOptions.fontSize),
+                                  weight: self.ⓕontOptions.fontWeight.value,
+                                  design: self.ⓕontOptions.fontDesign.value))
+                    .italic(self.ⓕontOptions.italic)
+                    .foregroundStyle(self.ⓕontOptions.level.value)
+                    .multilineTextAlignment(self.ⓕontOptions.multilineTextAlignment.value)
                 }
                 .padding()
                 .padding(.horizontal)
                 .padding(.top, 8)
-                .animation(.default, value: 🎛.multilineTextAlignment)
+                .animation(.default, value: self.ⓕontOptions.multilineTextAlignment)
                 List {
                     Section {
-                        🎚WeightPicker($🎛.fontWeight)
-                        🎚DesignPicker($🎛.fontDesign)
-                        🎚FontSizePicker($🎛.fontSize)
-                        🎚LevelPicker($🎛.level)
-                        🎚TextAlignmentPicker($🎛.multilineTextAlignment)
-                        🎚ItalicPicker($🎛.italic)
+                        🎚WeightPicker(self.$ⓕontOptions.fontWeight)
+                        🎚DesignPicker(self.$ⓕontOptions.fontDesign)
+                        🎚FontSizePicker(self.$ⓕontOptions.fontSize)
+                        🎚LevelPicker(self.$ⓕontOptions.level)
+                        🎚TextAlignmentPicker(self.$ⓕontOptions.multilineTextAlignment)
+                        🎚ItalicPicker(self.$ⓕontOptions.italic)
                     } header: {
                         Text("Option")
                     }
@@ -420,8 +420,8 @@ struct 🛠️CustomizeFontLink<T: 🄵ontOptions>: View {
                 .padding(.vertical, 6)
         }
     }
-    init(_ model: Binding<T>) {
-        self._🎛 = model
+    init(_ fontOptions: Binding<T>) {
+        self._ⓕontOptions = fontOptions
     }
 }
 

@@ -86,7 +86,7 @@ struct 🅁ectangularView : View {
     }
     init(_ entry: 🤖Provider.Entry) {
         self.ⓔntry = entry
-        self.🎛 = 📱AppModel().🎛rectangularData
+        self.🎛 = 📱AppModel().rectangularData
     }
 }
 
@@ -124,7 +124,7 @@ struct 🄲ircularView : View {
     }
     init(_ entry: 🤖Provider.Entry) {
         self.ⓔntry = entry
-        self.🎛 = 📱AppModel().🎛circularData
+        self.🎛 = 📱AppModel().circularData
     }
 }
 
@@ -143,6 +143,6 @@ struct 🄸nlineView : View {
     }
     init(_ entry: 🤖Provider.Entry) {
         self.ⓔntry = entry
-        self.🎛 = 📱AppModel().🎛inlineData
+        self.🎛 = 📱AppModel().inlineData
     }
 }
