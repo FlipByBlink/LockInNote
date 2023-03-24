@@ -172,12 +172,23 @@
 				F54BE1C928CB480900532025 /* LockInNoteApp.swift */,
 				F54BE1CB28CB480900532025 /* ContentView.swift */,
 				F556951A28CCAC59004558FC /* 📱AppModel.swift */,
-				F556953328CCAFC3004558FC /* 🧰Others */,
+				F5514EF829CDDA7900FCA7EA /* 🧩Sub */,
 				F556951E28CCAF7A004558FC /* 🌏Localization */,
 				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
-				F55694FF28CCA88B004558FC /* LockInNote.entitlements */,
 			);
 			path = LockInNote;
+			sourceTree = "<group>";
+		};
+		F5514EF829CDDA7900FCA7EA /* 🧩Sub */ = {
+			isa = PBXGroup;
+			children = (
+				F50D9B0228EEDE390089E680 /* Info.plist */,
+				F55694FF28CCA88B004558FC /* LockInNote.entitlements */,
+				F556953628CCAFC3004558FC /* Configuration.storekit */,
+				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
+				F556953328CCAFC3004558FC /* 🧰Others */,
+			);
+			path = "🧩Sub";
 			sourceTree = "<group>";
 		};
 		F556950028CCA8A5004558FC /* Frameworks */ = {
@@ -219,9 +230,6 @@
 				F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */,
 				F556953728CCAFC3004558FC /* 📣AD.swift */,
 				F556953928CCAFC3004558FC /* 🛒InAppPurchase.swift */,
-				F50D9B0228EEDE390089E680 /* Info.plist */,
-				F556953628CCAFC3004558FC /* Configuration.storekit */,
-				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 			);
 			path = "🧰Others";
 			sourceTree = "<group>";
@@ -530,13 +538,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LockInNote/LockInNote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "LockInNote/🧩Sub/LockInNote.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "LockInNote/🧰Others/Info.plist";
+				INFOPLIST_FILE = "LockInNote/🧩Sub/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -566,13 +574,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LockInNote/LockInNote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "LockInNote/🧩Sub/LockInNote.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "LockInNote/🧰Others/Info.plist";
+				INFOPLIST_FILE = "LockInNote/🧩Sub/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
