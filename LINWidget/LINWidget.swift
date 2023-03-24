@@ -12,8 +12,8 @@ struct LINWidgetBundle: WidgetBundle {
 
 struct 🅁ectangularWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "Rectangular", provider: 🤖Provider()) { ⓔntry in
-            🅁ectangularView(ⓔntry)
+        StaticConfiguration(kind: "Rectangular", provider: 🤖Provider()) { _ in
+            🅁ectangularView()
         }
         .configurationDisplayName("□⃞  Rectangular")
         .description("Show a note.")
@@ -23,8 +23,8 @@ struct 🅁ectangularWidget: Widget {
 
 struct 🄲ircularWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "Circular", provider: 🤖Provider()) { ⓔntry in
-            🄲ircularView(ⓔntry)
+        StaticConfiguration(kind: "Circular", provider: 🤖Provider()) { _ in
+            🄲ircularView()
         }
         .configurationDisplayName("○  Circular")
         .description("Show a note.")
@@ -34,8 +34,8 @@ struct 🄲ircularWidget: Widget {
 
 struct 🄸nlineWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "Inline", provider: 🤖Provider()) { ⓔntry in
-            🄸nlineView(ⓔntry)
+        StaticConfiguration(kind: "Inline", provider: 🤖Provider()) { _ in
+            🄸nlineView()
         }
         .configurationDisplayName("▷  Inline")
         .description("Show a note.")
@@ -62,8 +62,7 @@ struct 🕒Entry: TimelineEntry {
 }
 
 struct 🅁ectangularView : View {
-    private var ⓔntry: 🕒Entry
-    private let 🎛: 🎛RectangularDataModel
+    private let 🎛: 🎛RectangularDataModel = .load() ?? .default
     var body: some View {
         Group {
             if 🎛.text != "" {
@@ -81,22 +80,15 @@ struct 🅁ectangularView : View {
         .foregroundStyle(🎛.level.value)
         .widgetURL(URL(string: "Rectangular")!)
     }
-    init(_ entry: 🕒Entry) {
-        self.ⓔntry = entry
-        self.🎛 = .load() ?? .default
-    }
 }
 
 struct 🄲ircularView : View {
-    private var ⓔntry: 🕒Entry
-    private let 🎛: 🎛CircularDataModel
+    private let 🎛: 🎛CircularDataModel = .load() ?? .default
     var body: some View {
         Group {
             if 🎛.text != "" {
                 ZStack {
-                    if 🎛.background {
-                        AccessoryWidgetBackground()
-                    }
+                    if 🎛.background { AccessoryWidgetBackground() }
                     Text(🎛.text)
                         .italic(🎛.italic)
                         .multilineTextAlignment(🎛.multilineTextAlignment.value)
@@ -118,15 +110,10 @@ struct 🄲ircularView : View {
         .foregroundStyle(🎛.level.value)
         .widgetURL(URL(string: "Circular")!)
     }
-    init(_ entry: 🕒Entry) {
-        self.ⓔntry = entry
-        self.🎛 = .load() ?? .default
-    }
 }
 
 struct 🄸nlineView : View {
-    private var ⓔntry: 🕒Entry
-    private let 🎛: 🎛InlineDataModel
+    private let 🎛: 🎛InlineDataModel = .load() ?? .default
     var body: some View {
         Group {
             if 🎛.text != "" {
@@ -136,9 +123,5 @@ struct 🄸nlineView : View {
             }
         }
         .widgetURL(URL(string: "Inline")!)
-    }
-    init(_ entry: 🕒Entry) {
-        self.ⓔntry = entry
-        self.🎛 = .load() ?? .default
     }
 }
