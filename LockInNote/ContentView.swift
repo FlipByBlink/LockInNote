@@ -271,10 +271,10 @@ struct 👆EditButton: View {
 
 struct 👆DoneButton: View {
     @EnvironmentObject var 🛒: 🛒StoreModel
-    private var ⓕocusAction: () -> Void
+    private var ⓤnfocusAction: () -> Void
     var body: some View {
         Button {
-            self.ⓕocusAction()
+            self.ⓤnfocusAction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
         } label: {
             Label("Done", systemImage: "checkmark")
@@ -286,8 +286,8 @@ struct 👆DoneButton: View {
         .background(Circle().foregroundColor(.accentColor))
         .shadow(radius: 3)
     }
-    init(_ focusAction: @escaping () -> Void) {
-        self.ⓕocusAction = focusAction
+    init(_ unfocusAction: @escaping () -> Void) {
+        self.ⓤnfocusAction = unfocusAction
     }
 }
 
@@ -554,21 +554,5 @@ struct 🄾ptionIcon: View {
             .frame(width: 16, height: 16)
             .padding(.horizontal, 10)
             .foregroundColor(.accentColor)
-    }
-}
-
-struct 🛠MenuTab: View { // ⚙️
-    var body: some View {
-        NavigationStack {
-            List {
-                ℹ️AboutAppLink(name: "LockInNote", subtitle: "App for iPhone / Apple Watch")
-                📣ADMenuLink()
-                🔗URLSchemeActionMenuLink()
-                //Section { // reject を受けて一旦 comment out
-                //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
-                //} header: { Text("Directions") }
-            }
-            .navigationTitle("Menu")
-        }
     }
 }
