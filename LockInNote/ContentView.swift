@@ -32,7 +32,6 @@ struct ContentView: View {
         .onChange(of: 📱.rectangularData) { _ in 📱.saveDataAndReloadWidget() }
         .onChange(of: 📱.circularData) { _ in 📱.saveDataAndReloadWidget() }
         .onChange(of: 📱.inlineData) { _ in 📱.saveDataAndReloadWidget() }
-        .modifier(📣ADSheet())
     }
     private enum 🔖Tab {
         case rectangularWidget, circularWidget, inlineWidget, menu
@@ -277,11 +276,6 @@ struct 👆DoneButton: View {
         Button {
             self.ⓕocusAction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
-            Task {
-                try await Task.sleep(for: .seconds(0.45))
-                🛒.checkToShowADSheet()
-                //v1.0.4: 🛒.checkToShowADSheetOnLaunch()
-            }
         } label: {
             Label("Done", systemImage: "checkmark")
                 .labelStyle(.iconOnly)

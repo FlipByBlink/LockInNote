@@ -7,6 +7,8 @@ struct LockInNoteApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modifier(📣ADSheet())
+                .modifier(💬RequestUserReview())
                 .environmentObject(📱)
                 .environmentObject(🛒)
         }
