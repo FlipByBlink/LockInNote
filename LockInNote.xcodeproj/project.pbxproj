@@ -12,6 +12,7 @@
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F5514EFA29CE8AB100FCA7EA /* 📣ADContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5514EF929CE8AB000FCA7EA /* 📣ADContent.swift */; };
 		F5514EFC29CE8B5D00FCA7EA /* ℹ️AboutAppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5514EFB29CE8B5D00FCA7EA /* ℹ️AboutAppSection.swift */; };
+		F5514EFE29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F556950B28CCAB70004558FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
@@ -102,6 +103,7 @@
 		F54BE1CD28CB480A00532025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5514EF929CE8AB000FCA7EA /* 📣ADContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📣ADContent.swift"; sourceTree = "<group>"; };
 		F5514EFB29CE8B5D00FCA7EA /* ℹ️AboutAppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutAppSection.swift"; sourceTree = "<group>"; };
+		F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗URLSchemeAction.swift"; sourceTree = "<group>"; };
 		F55694FF28CCA88B004558FC /* LockInNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LockInNote.entitlements; sourceTree = "<group>"; };
 		F556950128CCA8A5004558FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F556950728CCAB70004558FC /* LINWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LINWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 		F5514EF829CDDA7900FCA7EA /* 🧩Sub */ = {
 			isa = PBXGroup;
 			children = (
+				F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */,
 				F5514EFB29CE8B5D00FCA7EA /* ℹ️AboutAppSection.swift */,
 				F5514EF929CE8AB000FCA7EA /* 📣ADContent.swift */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
@@ -355,6 +358,7 @@
 			files = (
 				F556953F28CCAFC3004558FC /* 🛒InAppPurchase.swift in Sources */,
 				F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */,
+				F5514EFE29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift in Sources */,
 				F5514EFA29CE8AB100FCA7EA /* 📣ADContent.swift in Sources */,
 				F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */,
 				F54BE1CC28CB480900532025 /* ContentView.swift in Sources */,
