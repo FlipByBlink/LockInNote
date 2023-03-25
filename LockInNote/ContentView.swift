@@ -273,6 +273,10 @@ struct 👆DoneButton: View {
         Button {
             self.ⓤnfocusAction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
+            Task {
+                try await Task.sleep(for: .seconds(0.45))
+                🛒.checkToShowADSheet()
+            }
         } label: {
             Label("Done", systemImage: "checkmark")
                 .labelStyle(.iconOnly)
