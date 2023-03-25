@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F54BE1CA28CB480900532025 /* LockInNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* LockInNoteApp.swift */; };
-		F54BE1CC28CB480900532025 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView.swift */; };
+		F54BE1CC28CB480900532025 /* ContentView_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView_iOS.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F5514EFA29CE8AB100FCA7EA /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5514EF929CE8AB000FCA7EA /* 📣ADSheet.swift */; };
 		F5514EFE29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */; };
@@ -18,8 +18,8 @@
 		F556950E28CCAB71004558FC /* LINWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556950D28CCAB71004558FC /* LINWidget.swift */; };
 		F556951028CCAB72004558FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F556950F28CCAB72004558FC /* Assets.xcassets */; };
 		F556951428CCAB72004558FC /* LINWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* LINWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
-		F556951C28CCAC59004558FC /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
+		F556951B28CCAC59004558FC /* 📱AppModel_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel_iOS.swift */; };
+		F556951C28CCAC59004558FC /* 📱AppModel_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel_iOS.swift */; };
 		F556952B28CCAF7A004558FC /* 🌏AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556951F28CCAF7A004558FC /* 🌏AppStoreDescription.strings */; };
 		F556952C28CCAF7A004558FC /* 🌏AppStoreDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556951F28CCAF7A004558FC /* 🌏AppStoreDescription.strings */; };
 		F556952D28CCAF7A004558FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952128CCAF7A004558FC /* Localizable.strings */; };
@@ -45,8 +45,8 @@
 		F566A85C29CED1A300ACCC63 /* 🄱aseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */; };
 		F566A85D29CED1C000ACCC63 /* 🄱aseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */; };
 		F566A85E29CED27F00ACCC63 /* 🄱aseModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */; };
-		F566A8FC29CEDA1200ACCC63 /* LINApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A8FB29CEDA1200ACCC63 /* LINApp.swift */; };
-		F566A8FE29CEDA1200ACCC63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A8FD29CEDA1200ACCC63 /* ContentView.swift */; };
+		F566A8FC29CEDA1200ACCC63 /* LIN_Watch_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A8FB29CEDA1200ACCC63 /* LIN_Watch_App.swift */; };
+		F566A8FE29CEDA1200ACCC63 /* ContentView_watchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A8FD29CEDA1200ACCC63 /* ContentView_watchOS.swift */; };
 		F566A90029CEDA1300ACCC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */; };
 		F566A90329CEDA1300ACCC63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F566A90229CEDA1300ACCC63 /* Preview Assets.xcassets */; };
 		F566A90729CEDA2100ACCC63 /* LockInNote.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F566A8F929CEDA1200ACCC63 /* LockInNote.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -57,10 +57,14 @@
 		F566A91A29CEDA3000ACCC63 /* LINComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F566A90F29CEDA2F00ACCC63 /* LINComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F566A91F29CEDB1E00ACCC63 /* 🄱aseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */; };
 		F566A92029CEDB1F00ACCC63 /* 🄱aseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */; };
-		F566A92229CEDB3500ACCC63 /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */; };
+		F566A92229CEDB3500ACCC63 /* 📱AppModel_watchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A92129CEDB3500ACCC63 /* 📱AppModel_watchOS.swift */; };
+		F566A92429CFBDC900ACCC63 /* LIN_Watch_App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A8FB29CEDA1200ACCC63 /* LIN_Watch_App.swift */; };
+		F566A92529CFBDC900ACCC63 /* 📱AppModel_watchOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A92129CEDB3500ACCC63 /* 📱AppModel_watchOS.swift */; };
+		F566A92629CFBDC900ACCC63 /* ContentView_watchOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A8FD29CEDA1200ACCC63 /* ContentView_watchOS.swift */; };
+		F566A92729CFBDC900ACCC63 /* LINComplication.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A91329CEDA2F00ACCC63 /* LINComplication.swift */; };
 		F5AA8C4228D0985F00C2047D /* LockInNoteApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* LockInNoteApp.swift */; };
-		F5AA8C4328D0985F00C2047D /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView.swift */; };
-		F5AA8C4428D0985F00C2047D /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
+		F5AA8C4328D0985F00C2047D /* ContentView_iOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView_iOS.swift */; };
+		F5AA8C4428D0985F00C2047D /* 📱AppModel_iOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel_iOS.swift */; };
 		F5AA8C4528D0985F00C2047D /* LINWidget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556950D28CCAB71004558FC /* LINWidget.swift */; };
 		F5F53179298741D200E531E2 /* 🧰MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F53178298741D200E531E2 /* 🧰MetaData.swift */; };
 		F5F5317B2987425800E531E2 /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */; };
@@ -130,6 +134,10 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F566A92429CFBDC900ACCC63 /* LIN_Watch_App.swift in CopyFiles */,
+				F566A92529CFBDC900ACCC63 /* 📱AppModel_watchOS.swift in CopyFiles */,
+				F566A92629CFBDC900ACCC63 /* ContentView_watchOS.swift in CopyFiles */,
+				F566A92729CFBDC900ACCC63 /* LINComplication.swift in CopyFiles */,
 				F566A85E29CED27F00ACCC63 /* 🄱aseModel.swift in CopyFiles */,
 				F566A85929CE9A3E00ACCC63 /* 🛠MenuTab.swift in CopyFiles */,
 				F566A85029CE94B000ACCC63 /* 🔗URLSchemeAction.swift in CopyFiles */,
@@ -140,8 +148,8 @@
 				F566A85529CE94B000ACCC63 /* 📣AD.swift in CopyFiles */,
 				F566A85629CE94B000ACCC63 /* 🛒InAppPurchase.swift in CopyFiles */,
 				F5AA8C4228D0985F00C2047D /* LockInNoteApp.swift in CopyFiles */,
-				F5AA8C4328D0985F00C2047D /* ContentView.swift in CopyFiles */,
-				F5AA8C4428D0985F00C2047D /* 📱AppModel.swift in CopyFiles */,
+				F5AA8C4328D0985F00C2047D /* ContentView_iOS.swift in CopyFiles */,
+				F5AA8C4428D0985F00C2047D /* 📱AppModel_iOS.swift in CopyFiles */,
 				F5AA8C4528D0985F00C2047D /* LINWidget.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +160,7 @@
 		F50D9B0228EEDE390089E680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54BE1C628CB480900532025 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54BE1C928CB480900532025 /* LockInNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockInNoteApp.swift; sourceTree = "<group>"; };
-		F54BE1CB28CB480900532025 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F54BE1CB28CB480900532025 /* ContentView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_iOS.swift; sourceTree = "<group>"; };
 		F54BE1CD28CB480A00532025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5514EF929CE8AB000FCA7EA /* 📣ADSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
 		F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗URLSchemeAction.swift"; sourceTree = "<group>"; };
@@ -165,7 +173,7 @@
 		F556950F28CCAB72004558FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F556951128CCAB72004558FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F556951928CCAC33004558FC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F556951A28CCAC59004558FC /* 📱AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
+		F556951A28CCAC59004558FC /* 📱AppModel_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📱AppModel_iOS.swift"; sourceTree = "<group>"; };
 		F556951D28CCAE21004558FC /* LINWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LINWidgetExtension.entitlements; sourceTree = "<group>"; };
 		F556952028CCAF7A004558FC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/🌏AppStoreDescription.strings"; sourceTree = "<group>"; };
 		F556952228CCAF7A004558FC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -183,15 +191,15 @@
 		F566A85729CE9A0200ACCC63 /* 🛠MenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠MenuTab.swift"; sourceTree = "<group>"; };
 		F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🄱aseModel.swift"; sourceTree = "<group>"; };
 		F566A8F929CEDA1200ACCC63 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F566A8FB29CEDA1200ACCC63 /* LINApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LINApp.swift; sourceTree = "<group>"; };
-		F566A8FD29CEDA1200ACCC63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F566A8FB29CEDA1200ACCC63 /* LIN_Watch_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIN_Watch_App.swift; sourceTree = "<group>"; };
+		F566A8FD29CEDA1200ACCC63 /* ContentView_watchOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_watchOS.swift; sourceTree = "<group>"; };
 		F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F566A90229CEDA1300ACCC63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F566A90F29CEDA2F00ACCC63 /* LINComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LINComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566A91329CEDA2F00ACCC63 /* LINComplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LINComplication.swift; sourceTree = "<group>"; };
 		F566A91529CEDA3000ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F566A91729CEDA3000ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
+		F566A92129CEDB3500ACCC63 /* 📱AppModel_watchOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel_watchOS.swift"; sourceTree = "<group>"; };
 		F566A92329CEDE4300ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F53178298741D200E531E2 /* 🧰MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🧰MetaData.swift"; sourceTree = "<group>"; };
 		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
@@ -263,8 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				F54BE1C928CB480900532025 /* LockInNoteApp.swift */,
-				F54BE1CB28CB480900532025 /* ContentView.swift */,
-				F556951A28CCAC59004558FC /* 📱AppModel.swift */,
+				F54BE1CB28CB480900532025 /* ContentView_iOS.swift */,
+				F556951A28CCAC59004558FC /* 📱AppModel_iOS.swift */,
 				F5514EF829CDDA7900FCA7EA /* 🧩Sub */,
 				F556951E28CCAF7A004558FC /* 🌏Localization */,
 				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
@@ -342,9 +350,9 @@
 		F566A8FA29CEDA1200ACCC63 /* LIN Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				F566A8FB29CEDA1200ACCC63 /* LINApp.swift */,
-				F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */,
-				F566A8FD29CEDA1200ACCC63 /* ContentView.swift */,
+				F566A8FB29CEDA1200ACCC63 /* LIN_Watch_App.swift */,
+				F566A92129CEDB3500ACCC63 /* 📱AppModel_watchOS.swift */,
+				F566A8FD29CEDA1200ACCC63 /* ContentView_watchOS.swift */,
 				F566A92329CEDE4300ACCC63 /* Info.plist */,
 				F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */,
 				F566A90129CEDA1300ACCC63 /* Preview Content */,
@@ -547,12 +555,12 @@
 			files = (
 				F556953F28CCAFC3004558FC /* 🛒InAppPurchase.swift in Sources */,
 				F566A85829CE9A0200ACCC63 /* 🛠MenuTab.swift in Sources */,
-				F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */,
+				F556951B28CCAC59004558FC /* 📱AppModel_iOS.swift in Sources */,
 				F5514EFE29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift in Sources */,
 				F5514EFA29CE8AB100FCA7EA /* 📣ADSheet.swift in Sources */,
 				F556953D28CCAFC3004558FC /* 📣AD.swift in Sources */,
 				F566A85C29CED1A300ACCC63 /* 🄱aseModel.swift in Sources */,
-				F54BE1CC28CB480900532025 /* ContentView.swift in Sources */,
+				F54BE1CC28CB480900532025 /* ContentView_iOS.swift in Sources */,
 				F5F53179298741D200E531E2 /* 🧰MetaData.swift in Sources */,
 				F54BE1CA28CB480900532025 /* LockInNoteApp.swift in Sources */,
 				F5F5317B2987425800E531E2 /* ℹ️AboutApp.swift in Sources */,
@@ -565,7 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F556950E28CCAB71004558FC /* LINWidget.swift in Sources */,
-				F556951C28CCAC59004558FC /* 📱AppModel.swift in Sources */,
+				F556951C28CCAC59004558FC /* 📱AppModel_iOS.swift in Sources */,
 				F566A85D29CED1C000ACCC63 /* 🄱aseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,10 +582,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F566A8FE29CEDA1200ACCC63 /* ContentView.swift in Sources */,
-				F566A8FC29CEDA1200ACCC63 /* LINApp.swift in Sources */,
+				F566A8FE29CEDA1200ACCC63 /* ContentView_watchOS.swift in Sources */,
+				F566A8FC29CEDA1200ACCC63 /* LIN_Watch_App.swift in Sources */,
 				F566A91F29CEDB1E00ACCC63 /* 🄱aseModel.swift in Sources */,
-				F566A92229CEDB3500ACCC63 /* 📱AppModel.swift in Sources */,
+				F566A92229CEDB3500ACCC63 /* 📱AppModel_watchOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

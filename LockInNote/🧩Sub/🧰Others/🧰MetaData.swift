@@ -33,8 +33,8 @@ enum 📁SourceCodeCategory: String, CaseIterable, Identifiable {
         switch self {
             case .main:
                 return ["LockInNoteApp.swift",
-                        "📱AppModel.swift",
-                        "ContentView.swift"]
+                        "📱AppModel_iOS.swift",
+                        "ContentView_iOS.swift"]
             case .Shared:
                 return ["🄱aseModel.swift"]
             case .Sub:
@@ -50,9 +50,11 @@ enum 📁SourceCodeCategory: String, CaseIterable, Identifiable {
             case .Widget:
                 return ["LINWidget.swift"]
             case .WatchApp:
-                return []
+                return ["LIN_Watch_App.swift",
+                        "📱AppModel_watchOS.swift",
+                        "ContentView_watchOS.swift"]
             case .WatchComplication:
-                return []
+                return ["LINComplication.swift"]
         }
     }
 }
