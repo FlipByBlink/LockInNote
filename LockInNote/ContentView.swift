@@ -242,7 +242,7 @@ struct 🄷andleLaunchFromWidget: ViewModifier {
     }
 }
 
-struct 👆EditButton: View {
+struct 👆EditButton: View { // 🖊️
     private var ⓕocusAction: () -> Void
     var body: some View {
         Button {
@@ -266,7 +266,7 @@ struct 👆EditButton: View {
     }
 }
 
-struct 👆DoneButton: View {
+struct 👆DoneButton: View { // ☑️
     @EnvironmentObject var 🛒: 🛒StoreModel
     private var ⓤnfocusAction: () -> Void
     var body: some View {
@@ -292,7 +292,7 @@ struct 👆DoneButton: View {
     }
 }
 
-struct 👆EraseButtonAndShareButton: View {
+struct 👆EraseButtonAndShareButton: View { // 🗑 📤
     @Binding private var ⓣext: String
     private var ⓓisable: Bool { self.ⓣext.isEmpty }
     @Environment(\.colorScheme) var colorScheme
