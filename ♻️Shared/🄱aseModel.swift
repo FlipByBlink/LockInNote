@@ -1,5 +1,16 @@
 import SwiftUI
 
+struct 🎛WidgetsModel: Codable, Equatable {
+    var rectangular: 🎛RectangularWidgetModel = .load() ?? .default
+    var circular: 🎛CircularWidgetModel = .load() ?? .default
+    var inline: 🎛InlineWidgetModel = .load() ?? .default
+    
+    func save() {
+        self.rectangular.save()
+        self.circular.save()
+        self.inline.save()
+    }
+}
 struct 🎛RectangularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""
     

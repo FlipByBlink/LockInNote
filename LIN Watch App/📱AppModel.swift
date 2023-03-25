@@ -3,16 +3,12 @@ import WidgetKit
 import WatchConnectivity
 
 class 📱AppModel: NSObject, ObservableObject {
-    @Published var rectangularModel: 🎛RectangularWidgetModel = .load() ?? .default
-    @Published var circularModel: 🎛CircularWidgetModel = .load() ?? .default
-    @Published var inlineModel: 🎛InlineWidgetModel = .load() ?? .default
+    @Published var widgetsModel = 🎛WidgetsModel()
     
     @Published var ⓣasks: Set<WKRefreshBackgroundTask> = []
     
     func saveDataAndReloadWidget() {
-        self.rectangularModel.save()
-        self.circularModel.save()
-        self.inlineModel.save()
+        self.widgetsModel.save()
         WidgetCenter.shared.reloadAllTimelines()
     }
 }

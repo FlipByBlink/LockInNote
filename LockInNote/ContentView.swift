@@ -21,6 +21,7 @@ struct ContentView: View {
                 .tabItem { Label("Menu", systemImage: "gearshape") }
         }
         .scrollDismissesKeyboard(.interactively)
+        .onChange(of: 📱.widgetsModel) { _ in 📱.saveDataAndReloadWidget() }
         .modifier(💬RequestUserReview(self.$🔖tab))
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {
@@ -40,7 +41,7 @@ enum 🔖Tab {
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.rectangularModel)
+        Self.🄲ontent($📱.widgetsModel.rectangular)
     }
     private struct 🄲ontent: View {
         @Binding private var ⓜodel: 🎛RectangularWidgetModel
@@ -97,7 +98,7 @@ struct 📝RectangularWidgetTab: View {
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.circularModel)
+        Self.🄲ontent($📱.widgetsModel.circular)
     }
     private struct 🄲ontent: View {
         @Binding private var ⓜodel: 🎛CircularWidgetModel
@@ -163,7 +164,7 @@ struct 📝CircularWidgetTab: View {
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.inlineModel)
+        Self.🄲ontent($📱.widgetsModel.inline)
     }
     private struct 🄲ontent: View {
         @Binding private var ⓜodel: 🎛InlineWidgetModel
@@ -557,15 +558,5 @@ struct 🄾ptionIcon: View {
             .frame(width: 16, height: 16)
             .padding(.horizontal, 10)
             .foregroundColor(.accentColor)
-    }
-}
-
-struct 🅂aveDataAndReloadWidget: ViewModifier {
-    @EnvironmentObject var 📱: 📱AppModel
-    func body(content: Content) -> some View {
-        content
-            .onChange(of: 📱.rectangularModel) { _ in 📱.saveDataAndReloadWidget() }
-            .onChange(of: 📱.circularModel) { _ in 📱.saveDataAndReloadWidget() }
-            .onChange(of: 📱.inlineModel) { _ in 📱.saveDataAndReloadWidget() }
     }
 }
