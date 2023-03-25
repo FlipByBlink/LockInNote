@@ -19,9 +19,6 @@ struct ContentView: View {
             🛠OptionTab()
                 .tag(🔖Tab.option)
                 .tabItem { Label("Option", systemImage: "gearshape") }
-            ℹ️AboutAppTab()
-                .tag(🔖Tab.about)
-                .tabItem { Label("About App", systemImage: "questionmark") }
         }
         .scrollDismissesKeyboard(.interactively)
         .onOpenURL { ⓤrl in
@@ -38,7 +35,7 @@ struct ContentView: View {
         .modifier(📣ADContent())
     }
     private enum 🔖Tab {
-        case rectangularWidget, circularWidget, inlineWidget, option, about
+        case rectangularWidget, circularWidget, inlineWidget, option
     }
 }
 
@@ -569,41 +566,43 @@ struct 🛠OptionTab: View { // ⚙️
     var body: some View {
         NavigationStack {
             List {
+                ℹ️AboutAppSection()
                 📣ADMenuLink()
-                Section {
-                    NavigationLink {
-                        🔗URLSchemeActionSettingSection()
-                    } label: {
-                        Label("Setting URL scheme action", systemImage: "command")
-                    }
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Text("shortcuts://run-shortcut?nam...")
-                                .rotationEffect(.degrees(-1.5))
-                            Text(verbatim: "https://duckduckgo.com/?q=...")
-                                .rotationEffect(.degrees(-1.5))
-                            Text("etc.")
-                                .rotationEffect(.degrees(-1.5))
-                        }
-                        Spacer()
-                    }
-                    .font(.subheadline.weight(.heavy).italic())
-                    .lineLimit(1)
-                    .foregroundStyle(.secondary)
-                    .scaleEffect(y: 1.33)
-                    .padding(.vertical, 32)
-                }
+                self.🔗URLSchemeActionSection()
                 //Section { // reject を受けて一旦 comment out
                 //    Text("If lock screen widgets don't update, please close this app or switch to another app.")
-                //} header: {
-                //    Text("Directions")
-                //}
+                //} header: { Text("Directions") }
             }
-            .navigationTitle("Option")
+            .navigationTitle("Menu")
         }
     }
-    private struct 🔗URLSchemeActionSettingSection: View {
+    private func 🔗URLSchemeActionSection() -> some View {
+        Section {
+            NavigationLink {
+                🔗URLSchemeActionSettingMenu()
+            } label: {
+                Label("Setting URL scheme action", systemImage: "command")
+            }
+            HStack {
+                Spacer()
+                VStack {
+                    Text("shortcuts://run-shortcut?nam...")
+                        .rotationEffect(.degrees(-1.5))
+                    Text(verbatim: "https://duckduckgo.com/?q=...")
+                        .rotationEffect(.degrees(-1.5))
+                    Text("etc.")
+                        .rotationEffect(.degrees(-1.5))
+                }
+                Spacer()
+            }
+            .font(.subheadline.weight(.heavy).italic())
+            .lineLimit(1)
+            .foregroundStyle(.secondary)
+            .scaleEffect(y: 1.33)
+            .padding(.vertical, 32)
+        }
+    }
+    private struct 🔗URLSchemeActionSettingMenu: View {
         @AppStorage("URLSchemeLeading") var 🔗leading: String = ""
         @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
         @AppStorage("URLSchemeButtonTitle") var 🪧buttonTitle: String = ""
@@ -682,50 +681,6 @@ struct 🛠OptionTab: View { // ⚙️
     }
 }
 
-struct ℹ️AboutAppTab: View {
-    var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    GeometryReader { 📐 in
-                        VStack(spacing: 12) {
-                            Image("RoundedIcon")
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                            VStack(spacing: 6) {
-                                Text("LockInNote")
-                                    .font(.system(.title2, design: .rounded))
-                                    .fontWeight(.bold)
-                                    .tracking(1.5)
-                                    .opacity(0.75)
-                                    .lineLimit(1)
-                                    .minimumScaleFactor(0.1)
-                                Text("App for iPhone")
-                                    .font(.footnote)
-                                    .fontWeight(.medium)
-                                    .foregroundStyle(.secondary)
-                            }
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.1)
-                        }
-                        .padding(20)
-                        .padding(.top, 8)
-                        .frame(width: 📐.size.width)
-                    }
-                    .frame(height: 200)
-                    🔗AppStoreLink()
-                    NavigationLink  {
-                        ℹ️AboutAppMenu()
-                    } label: {
-                        Label("About App", systemImage: "doc")
-                    }
-                }
-            }
-            .toolbar(.visible, for: .navigationBar)
-        }
-    }
-}
-
 struct 🔗URLSchemeActionButton: View {
     @AppStorage("URLSchemeLeading") var 🔗leading: String = ""
     @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
@@ -768,22 +723,5 @@ struct 🔗URLSchemeActionButton: View {
     }
     init(_ query: Binding<String>) {
         self._ⓠuery = query
-    }
-}
-
-struct 📣ADContent: ViewModifier {
-    @EnvironmentObject var 🛒: 🛒StoreModel
-    @Environment(\.scenePhase) var scenePhase: ScenePhase
-    @State private var ⓐpp: 📣MyApp = .pickUpAppWithout(.LockInNote)
-    func body(content: Content) -> some View {
-        content
-            .sheet(isPresented: $🛒.🚩showADSheet) {
-                📣ADSheet(self.ⓐpp)
-            }
-            .onChange(of: self.scenePhase) {
-                if $0 == .inactive {
-                    🛒.🚩showADSheet = false
-                }
-            }
     }
 }
