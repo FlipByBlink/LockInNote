@@ -1,5 +1,5 @@
-iPhone App: LockInNote ロックノート
-=================================
+LockInNote: iPhone / Apple Watch app
+------------------------------------
 
 <img src="LockInNote/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
 
@@ -10,6 +10,7 @@ iPhone App: LockInNote ロックノート
 AppStore link
 --------------
 https://apps.apple.com/app/id1644879340
+
 
 Description
 -------------
@@ -25,19 +26,6 @@ Note app for lock screen widget!
 
 - Support URL scheme action with text.
 
-概要
-----------
-ロック画面ウィジェット専用のノートアプリ！
-
-- ウィジェットをタップすると、すぐにキーボードが立ち上がり、ノートを編集できます。
-
-- フォントの大きさやデザイン、太さなど調整可能。
-
-- 複数行の揃え方や、テキスト未入力時の表示パターンなどのオプション。
-
-- テキストをシェアシートで共有できます。
-
-- テキストと連携する任意のURLスキームを呼ぶことができます。
 
 Localization: All
 ------------------
@@ -45,7 +33,6 @@ Localization: All
 
 - Japanese(native)
 
-<br>
 
 Source code link
 -------------------
@@ -54,36 +41,44 @@ https://github.com/FlipByBlink/LockInNote
 ### Source code (Mirror) link
 https://gitlab.com/FlipByBlink/LockInNote_Mirror
 
+
 Contact
 ---------
 sear_pandora_0x@icloud.com
 
-<br>
-<br>
-
-------
 
 <br>
 <br>
+
+* * *
+
 <br>
 <br>
+<br>
+<br>
+
 
 Privacy Policy for AppStore
 ----------------------------
 2022-09-12
 
-### Japanese
-このアプリ自身において、ユーザーの情報を一切収集しません。
 
-### English
+English
+
 This application don't collect user infomation.
 
+
+(日本語)Japanese
+
+このアプリ自身において、ユーザーの情報を一切収集しません。
+
+
 <br>
 <br>
 <br>
 <br>
 
-------
+* * *
 
 <br>
 <br>

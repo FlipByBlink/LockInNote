@@ -11,9 +11,15 @@ let 🔗appStoreProductURL = URL(string: "https://apps.apple.com/app/id164487934
 let 👤privacyPolicy = """
 2022-09-12
 
-(English) This application don't collect user infomation.
 
-(Japanese) このアプリ自身において、ユーザーの情報を一切収集しません。
+English
+
+This application don't collect user infomation.
+
+
+(日本語)Japanese
+
+このアプリ自身において、ユーザーの情報を一切収集しません。
 """
 
 let 🔗webRepositoryURL = URL(string: "https://github.com/FlipByBlink/LockInNote")!
