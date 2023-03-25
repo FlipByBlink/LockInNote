@@ -10,6 +10,21 @@ struct 🎛WidgetsModel: Codable, Equatable {
         self.circular.save()
         self.inline.save()
     }
+    
+    static func decode(_ ⓒontext: [String: Any]) -> Self? {
+        if let ⓓata = ⓒontext["ⓒontext"] as? Data {
+            do {
+                return try JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata)
+            } catch {
+                print("🚨 Decode error", error.localizedDescription)
+                assertionFailure()
+                return nil
+            }
+        } else {
+            assertionFailure()
+            return nil
+        }
+    }
 }
 struct 🎛RectangularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""

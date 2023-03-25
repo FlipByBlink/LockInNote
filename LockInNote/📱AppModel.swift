@@ -37,11 +37,11 @@ extension 📱AppModel: WCSessionDelegate {
     //Optional
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         Task { @MainActor in
-//            if let ⓒontext = 🄲ontext.decode(applicationContext) {
-//                self.ⓐpplyContext(ⓒontext)
-//            } else {
-//                assertionFailure()
-//            }
+            if let ⓜodel = 🎛WidgetsModel.decode(applicationContext) {
+                self.widgetsModel = ⓜodel
+            } else {
+                assertionFailure()
+            }
         }
     }
 }
