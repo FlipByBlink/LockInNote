@@ -1,16 +1,44 @@
 import SwiftUI
 import StoreKit
 
-struct 📣ADSheet: View {
-    @Environment(\.verticalSizeClass) var verticalSizeClass
+//struct 📣ADSheet: ViewModifier {
+//    @EnvironmentObject var 🛒: 🛒StoreModel
+//    @State private var ⓐpp: 📣MyApp = .pickUpAppWithout(.ONESELF)
+//    func body(content: Content) -> some View {
+//        content
+//            .sheet(isPresented: $🛒.🚩showADSheet) { 📣ADView(self.ⓐpp) }
+//            .onAppear { 🛒.checkToShowADSheet() }
+//    }
+//}
+
+struct 📣ADView: View {
     @EnvironmentObject var 🛒: 🛒StoreModel
+    @Environment(\.scenePhase) var scenePhase
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    @State private var 🚩disableDismiss: Bool = true
+    private let 🕒timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
+    @State private var 🕒countdown: Int
     private var ⓐpp: 📣MyApp
     var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStack { self.ⓒontent() }
-        } else {
-            NavigationView { self.ⓒontent() }
-                .navigationViewStyle(.stack)
+        Group {
+            if #available(iOS 16.0, *) {
+                NavigationStack { self.ⓒontent() }
+                    .presentationDetents([.height(640)])
+            } else {
+                NavigationView { self.ⓒontent() }
+                    .navigationViewStyle(.stack)
+            }
+        }
+        .onChange(of: self.scenePhase) {
+            if $0 == .background { 🛒.🚩showADSheet = false }
+        }
+        .interactiveDismissDisabled(self.🚩disableDismiss)
+        .onReceive(self.🕒timer) { _ in
+            if self.🕒countdown > 1 {
+                self.🕒countdown -= 1
+            } else {
+                self.🚩disableDismiss = false
+            }
         }
     }
     private func ⓒontent() -> some View {
@@ -35,16 +63,16 @@ struct 📣ADSheet: View {
     }
     private func ⓥerticalLayout() -> some View {
         VStack(spacing: 16) {
-            Spacer()
+            Spacer(minLength: 0)
             self.ⓜockImage()
-            Spacer()
+            Spacer(minLength: 0)
             self.ⓘcon()
             self.ⓝame()
-            Spacer()
+            Spacer(minLength: 0)
             self.ⓓescription()
-            Spacer()
+            Spacer(minLength: 0)
             self.ⓐppStoreBadge()
-            Spacer()
+            Spacer(minLength: 0)
         }
         .padding()
     }
@@ -75,9 +103,14 @@ struct 📣ADSheet: View {
     }
     private func ⓘcon() -> some View {
         Link(destination: self.ⓐpp.url) {
-            Image(self.ⓐpp.iconImageName)
-                .resizable()
-                .frame(width: 60, height: 60)
+            HStack(spacing: 16) {
+                Image(self.ⓐpp.iconImageName)
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                if self.ⓐpp.isHealthKitApp {
+                    Image("apple_health_badge")
+                }
+            }
         }
         .accessibilityHidden(true)
         .disabled(🛒.🚩purchased)
@@ -123,12 +156,19 @@ struct 📣ADSheet: View {
             🛒.🚩showADSheet = false
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
         } label: {
-            Image(systemName: "chevron.down")
+            if self.🚩disableDismiss {
+                Image(systemName: "\(self.🕒countdown.description).circle")
+            } else {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.body.weight(.medium))
+            }
         }
-        .foregroundStyle(.primary)
+        .foregroundStyle(self.🚩disableDismiss ? .tertiary : .primary)
+        .disabled(self.🚩disableDismiss)
+        .animation(.default, value: self.🚩disableDismiss)
         .accessibilityLabel("Dismiss")
     }
-    struct ⓟurchasedEffect: ViewModifier {
+    private struct ⓟurchasedEffect: ViewModifier {
         @EnvironmentObject var 🛒: 🛒StoreModel
         func body(content: Content) -> some View {
             if 🛒.🚩purchased {
@@ -141,31 +181,16 @@ struct 📣ADSheet: View {
                             .foregroundStyle(.white, .red)
                             .frame(width: 160, height: 160)
                             .rotationEffect(.degrees(5))
-                            .shadow(radius: 12)
+                            .shadow(radius: 8)
                     }
             } else {
                 content
             }
         }
     }
-    init(_ ⓐpp: 📣MyApp) {
-        self.ⓐpp = ⓐpp
-    }
-}
-
-struct 📣ADMenu: View {
-    @EnvironmentObject var 🛒: 🛒StoreModel
-    var body: some View {
-        List {
-            Section {
-                Text("This App shows advertisement about applications on AppStore. These are several Apps by this app's developer. It is activated after you launch this app 5 times.")
-                    .padding()
-            } header: {
-                Text("Description")
-            }
-            🛒IAPSection()
-        }
-        .navigationTitle("About AD")
+    init(_ app: 📣MyApp, second: Int) {
+        self.ⓐpp = app
+        self._🕒countdown = State(initialValue: second)
     }
 }
 
@@ -185,6 +210,22 @@ struct 📣ADMenuLink: View {
     }
 }
 
+private struct 📣ADMenu: View {
+    @EnvironmentObject var 🛒: 🛒StoreModel
+    var body: some View {
+        List {
+            Section {
+                Text("This App shows advertisement about applications on AppStore. These are several Apps by this app's developer. It is activated after you launch this app 5 times.")
+                    .padding()
+            } header: {
+                Text("Description")
+            }
+            🛒IAPSection()
+        }
+        .navigationTitle("About AD")
+    }
+}
+
 enum 📣MyApp: String, CaseIterable {
     case FlipByBlink
     case FadeInAlarm
@@ -194,9 +235,7 @@ enum 📣MyApp: String, CaseIterable {
     case MemorizeWidget
     case LockInNote
     
-    var name: LocalizedStringKey {
-        LocalizedStringKey(self.rawValue)
-    }
+    var name: LocalizedStringKey { LocalizedStringKey(self.rawValue) }
     
     var url: URL {
         switch self {
@@ -212,26 +251,26 @@ enum 📣MyApp: String, CaseIterable {
     
     var description: LocalizedStringKey {
         switch self {
-            case .FlipByBlink: return "Simple and normal ebook reader (for fixed-layout). Only a special feature. Turn a page with slightly longish voluntary blink."
+            case .FlipByBlink: return "E-book reader that can turn a page with slightly longish voluntary blink."
             case .FadeInAlarm: return "Alarm clock with taking a long time from small volume to max volume."
-            case .PlainShogiBoard: return "Simple Shogi board App. Based on iOS system UI design. Supported SharePlay."
-            case .TapWeight: return "Register weight data to the Apple \"Health\" application pre-installed on iPhone in the fastest possible way (as manual)."
-            case .TapTemperature: return "Register body temperature data to the \"Health\" app pre-installed on iPhone in the fastest possible way (as manual)."
+            case .PlainShogiBoard: return "Simplest Shogi board App. Supported SharePlay."
+            case .TapWeight: return "Register weight data to \"Health\" app pre-installed on iPhone in the fastest way (as manual)."
+            case .TapTemperature: return "Register body temperature data to \"Health\" app pre-installed on iPhone in the fastest way (as manual)."
             case .MemorizeWidget: return "Flashcard on widget. Memorize a note in everyday life."
             case .LockInNote: return "Notes widget on lock screen."
         }
     }
     
-    var mockImageName: String {
-        "mock/" + self.rawValue
-    }
+    var mockImageName: String { "mock/" + self.rawValue }
     
-    var iconImageName: String {
-        "icon/" + self.rawValue
-    }
+    var iconImageName: String { "icon/" + self.rawValue }
     
     static func pickUpAppWithout(_ ⓜySelf: Self) -> Self {
         let ⓐpps = 📣MyApp.allCases.filter { $0 != ⓜySelf }
         return ⓐpps.randomElement()!
+    }
+    
+    var isHealthKitApp: Bool {
+        self == .TapTemperature || self == .TapWeight
     }
 }

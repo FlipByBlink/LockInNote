@@ -32,7 +32,7 @@ struct ContentView: View {
         .onChange(of: 📱.rectangularData) { _ in 📱.saveDataAndReloadWidget() }
         .onChange(of: 📱.circularData) { _ in 📱.saveDataAndReloadWidget() }
         .onChange(of: 📱.inlineData) { _ in 📱.saveDataAndReloadWidget() }
-        .modifier(📣ADContent())
+        .modifier(📣ADSheet())
     }
     private enum 🔖Tab {
         case rectangularWidget, circularWidget, inlineWidget, menu
@@ -279,7 +279,8 @@ struct 👆DoneButton: View {
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             Task {
                 try await Task.sleep(for: .seconds(0.45))
-                🛒.checkToShowADSheetOnLaunch()
+                🛒.checkToShowADSheet()
+                //v1.0.4: 🛒.checkToShowADSheetOnLaunch()
             }
         } label: {
             Label("Done", systemImage: "checkmark")
@@ -566,7 +567,7 @@ struct 🛠MenuTab: View { // ⚙️
     var body: some View {
         NavigationStack {
             List {
-                ℹ️AboutAppSection()
+                ℹ️AboutAppLink(name: "LockInNote", subtitle: "App for iPhone / Apple Watch")
                 📣ADMenuLink()
                 🔗URLSchemeActionMenuLink()
                 //Section { // reject を受けて一旦 comment out
