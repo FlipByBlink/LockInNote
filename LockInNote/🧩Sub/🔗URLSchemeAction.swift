@@ -5,7 +5,7 @@ struct 🔗URLSchemeActionButton: View {
     @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
     @AppStorage("URLSchemeButtonTitle") var 🪧buttonTitle: String = ""
     @AppStorage("EraseTextAfterAction") var 🚩eraseTextAfterAction: Bool = false
-    @Environment(\.openURL) var ⓞpenURL: OpenURLAction
+    @Environment(\.openURL) var openURL
     @Binding var ⓠuery: String
     private var ⓤrl: URL? {
         let ⓣext = self.🔗leading + self.ⓠuery + self.🔗trailing
@@ -21,7 +21,7 @@ struct 🔗URLSchemeActionButton: View {
                 Section {
                     Button {
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                        self.ⓞpenURL.callAsFunction(ⓤrl) { ⓐccepted in
+                        self.openURL(ⓤrl) { ⓐccepted in
                             if ⓐccepted && self.🚩eraseTextAfterAction {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     self.ⓠuery = ""
@@ -150,4 +150,4 @@ private struct 🔗URLSchemeActionMenu: View {
         }
         .navigationTitle("Customize Action")
     }
-    }
+}

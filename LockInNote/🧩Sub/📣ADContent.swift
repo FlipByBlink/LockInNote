@@ -2,7 +2,7 @@ import SwiftUI
 
 struct 📣ADContent: ViewModifier {
     @EnvironmentObject var 🛒: 🛒StoreModel
-    @Environment(\.scenePhase) var scenePhase: ScenePhase
+    @Environment(\.scenePhase) var scenePhase
     @State private var ⓐpp: 📣MyApp = .pickUpAppWithout(.LockInNote)
     func body(content: Content) -> some View {
         content
