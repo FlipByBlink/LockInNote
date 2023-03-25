@@ -29,9 +29,6 @@ struct ContentView: View {
                 default: print("🐛")
             }
         }
-        .onChange(of: 📱.rectangularData) { _ in 📱.saveDataAndReloadWidget() }
-        .onChange(of: 📱.circularData) { _ in 📱.saveDataAndReloadWidget() }
-        .onChange(of: 📱.inlineData) { _ in 📱.saveDataAndReloadWidget() }
     }
     private enum 🔖Tab {
         case rectangularWidget, circularWidget, inlineWidget, menu
@@ -554,5 +551,15 @@ struct 🄾ptionIcon: View {
             .frame(width: 16, height: 16)
             .padding(.horizontal, 10)
             .foregroundColor(.accentColor)
+    }
+}
+
+struct 🅂aveDataAndReloadWidget: ViewModifier {
+    @EnvironmentObject var 📱: 📱AppModel
+    func body(content: Content) -> some View {
+        content
+            .onChange(of: 📱.rectangularData) { _ in 📱.saveDataAndReloadWidget() }
+            .onChange(of: 📱.circularData) { _ in 📱.saveDataAndReloadWidget() }
+            .onChange(of: 📱.inlineData) { _ in 📱.saveDataAndReloadWidget() }
     }
 }
