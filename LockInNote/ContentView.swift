@@ -21,6 +21,7 @@ struct ContentView: View {
                 .tabItem { Label("Menu", systemImage: "gearshape") }
         }
         .scrollDismissesKeyboard(.interactively)
+        .modifier(💬RequestUserReview(self.$🔖tab))
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {
                 case "Rectangular": self.🔖tab = .rectangularWidget
@@ -30,9 +31,10 @@ struct ContentView: View {
             }
         }
     }
-    private enum 🔖Tab {
-        case rectangularWidget, circularWidget, inlineWidget, menu
-    }
+}
+
+enum 🔖Tab {
+    case rectangularWidget, circularWidget, inlineWidget, menu
 }
 
 struct 📝RectangularWidgetTab: View {

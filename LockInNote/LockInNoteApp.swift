@@ -9,7 +9,6 @@ struct LockInNoteApp: App {
             ContentView()
                 .modifier(🅂aveDataAndReloadWidget())
                 .modifier(📣ADSheet())
-                .modifier(💬RequestUserReview())
                 .environmentObject(📱)
                 .environmentObject(🛒)
         }

@@ -1,14 +1,18 @@
 import SwiftUI
 
-//リクエスト発生させるViewで以下を実装
-//@State private var checkToRequestReview: Bool = false
-//.modifier(💬PrepareToRequestUserReview(self.$checkToRequestReview))
-//self.checkToRequestReview = true
-struct 💬RequestUserReview: ViewModifier {//アプリ毎に個別に実装する
+struct 💬RequestUserReview: ViewModifier {
     @State private var ⓒheckToRequest: Bool = false
+    @Binding private var 🔖tab: 🔖Tab
     func body(content: Content) -> some View {
         content
             .modifier(💬PrepareToRequestUserReview(self.$ⓒheckToRequest))
-            .onAppear { self.ⓒheckToRequest = true }
+            .onChange(of: self.🔖tab) {
+                if $0 == .menu {
+                    self.ⓒheckToRequest = true
+                }
+            }
+    }
+    init(_ tab: Binding<🔖Tab>) {
+        self._🔖tab = tab
     }
 }
