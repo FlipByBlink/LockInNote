@@ -1,14 +1,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    @AppStorage("TEXT", store: UserDefaults(suiteName: "group.net.aaaakkkkssssttttnnnn.AppTemplate"))
+    private var ⓣext = "placeholder"
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            TextField("Input text", text: self.$ⓣext)
         }
-        .padding()
     }
 }
 

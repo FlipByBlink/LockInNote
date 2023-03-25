@@ -192,6 +192,7 @@
 		F566A91529CEDA3000ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F566A91729CEDA3000ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
+		F566A92329CEDE4300ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F53178298741D200E531E2 /* 🧰MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🧰MetaData.swift"; sourceTree = "<group>"; };
 		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,6 +345,7 @@
 				F566A8FB29CEDA1200ACCC63 /* LINApp.swift */,
 				F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */,
 				F566A8FD29CEDA1200ACCC63 /* ContentView.swift */,
+				F566A92329CEDE4300ACCC63 /* Info.plist */,
 				F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */,
 				F566A90129CEDA1300ACCC63 /* Preview Content */,
 			);
@@ -904,6 +906,7 @@
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LIN Watch App/Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = net.aaaakkkkssssttttnnnn.LockInNote;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -934,6 +937,7 @@
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LIN Watch App/Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = net.aaaakkkkssssttttnnnn.LockInNote;
 				LD_RUNPATH_SEARCH_PATHS = (
