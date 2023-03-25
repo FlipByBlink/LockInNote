@@ -25,13 +25,6 @@ extension 📱AppModel: WKApplicationDelegate {
             switch ⓣask {
                 case let ⓦatchConnectivityTask as WKWatchConnectivityRefreshBackgroundTask:
                     self.ⓣasks.insert(ⓦatchConnectivityTask)
-                case let ⓢnapshotTask as WKSnapshotRefreshBackgroundTask:
-                    if !WCSession.default.hasContentPending {
-                        self.ⓣasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
-                    }
-                    ⓢnapshotTask.setTaskCompleted(restoredDefaultState: false,
-                                                  estimatedSnapshotExpiration: .distantFuture,
-                                                  userInfo: nil)
                 default:
                     ⓣask.setTaskCompletedWithSnapshot(false)
             }
