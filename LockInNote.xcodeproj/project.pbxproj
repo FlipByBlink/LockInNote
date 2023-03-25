@@ -44,6 +44,7 @@
 		F566A85929CE9A3E00ACCC63 /* 🛠MenuTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A85729CE9A0200ACCC63 /* 🛠MenuTab.swift */; };
 		F566A85C29CED1A300ACCC63 /* 🄱aseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */; };
 		F566A85D29CED1C000ACCC63 /* 🄱aseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */; };
+		F566A85E29CED27F00ACCC63 /* 🄱aseModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* 🄱aseModel.swift */; };
 		F5AA8C4228D0985F00C2047D /* LockInNoteApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* LockInNoteApp.swift */; };
 		F5AA8C4328D0985F00C2047D /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView.swift */; };
 		F5AA8C4428D0985F00C2047D /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
@@ -80,6 +81,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F566A85E29CED27F00ACCC63 /* 🄱aseModel.swift in CopyFiles */,
 				F566A85929CE9A3E00ACCC63 /* 🛠MenuTab.swift in CopyFiles */,
 				F566A85029CE94B000ACCC63 /* 🔗URLSchemeAction.swift in CopyFiles */,
 				F566A85129CE94B000ACCC63 /* 📣ADSheet.swift in CopyFiles */,
