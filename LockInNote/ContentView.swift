@@ -40,19 +40,19 @@ enum 🔖Tab {
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.rectangularData)
+        Self.🄲ontent($📱.rectangularModel)
     }
     private struct 🄲ontent: View {
-        @Binding private var ⓓataModel: 🎛RectangularDataModel
+        @Binding private var ⓜodel: 🎛RectangularWidgetModel
         @FocusState private var 🚩focus: Bool
         var body: some View {
             NavigationStack {
                 List {
                     self.ⓘnputField()
-                    🔗URLSchemeActionButton(self.$ⓓataModel.text)
+                    🔗URLSchemeActionButton(self.$ⓜodel.text)
                     if !self.🚩focus {
-                        🛠️CustomizeFontLink(self.$ⓓataModel)
-                        🎚PlaceholderPicker(self.$ⓓataModel.placeholder)
+                        🛠️CustomizeFontLink(self.$ⓜodel)
+                        🎚PlaceholderPicker(self.$ⓜodel.placeholder)
                     }
                 }
                 .toolbar {
@@ -66,7 +66,7 @@ struct 📝RectangularWidgetTab: View {
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
                         HStack {
-                            👆EraseButtonAndShareButton(self.$ⓓataModel.text)
+                            👆EraseButtonAndShareButton(self.$ⓜodel.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -75,7 +75,7 @@ struct 📝RectangularWidgetTab: View {
                         👆EditButton { self.🚩focus = true }
                     }
                 }
-                .animation(.default, value: self.ⓓataModel.text.isEmpty)
+                .animation(.default, value: self.ⓜodel.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
@@ -83,13 +83,13 @@ struct 📝RectangularWidgetTab: View {
         }
         private func ⓘnputField() -> some View {
             Section {
-                TextField("Input text", text: self.$ⓓataModel.text, axis: .vertical)
+                TextField("Input text", text: self.$ⓜodel.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
             }
         }
-        init(_ dataModel: Binding<🎛RectangularDataModel>) {
-            self._ⓓataModel = dataModel
+        init(_ model: Binding<🎛RectangularWidgetModel>) {
+            self._ⓜodel = model
         }
     }
 }
@@ -97,20 +97,20 @@ struct 📝RectangularWidgetTab: View {
 struct 📝CircularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.circularData)
+        Self.🄲ontent($📱.circularModel)
     }
     private struct 🄲ontent: View {
-        @Binding private var ⓓataModel: 🎛CircularDataModel
+        @Binding private var ⓜodel: 🎛CircularWidgetModel
         @FocusState private var 🚩focus: Bool
         var body: some View {
             NavigationStack {
                 List {
                     self.ⓘnputField()
-                    🔗URLSchemeActionButton(self.$ⓓataModel.text)
+                    🔗URLSchemeActionButton(self.$ⓜodel.text)
                     if !self.🚩focus {
-                        🛠️CustomizeFontLink(self.$ⓓataModel)
+                        🛠️CustomizeFontLink(self.$ⓜodel)
                         self.ⓑackgroundOption()
-                        🎚PlaceholderPicker(self.$ⓓataModel.placeholder)
+                        🎚PlaceholderPicker(self.$ⓜodel.placeholder)
                     }
                 }
                 .toolbar {
@@ -124,7 +124,7 @@ struct 📝CircularWidgetTab: View {
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
                         HStack {
-                            👆EraseButtonAndShareButton(self.$ⓓataModel.text)
+                            👆EraseButtonAndShareButton(self.$ⓜodel.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -133,7 +133,7 @@ struct 📝CircularWidgetTab: View {
                         👆EditButton { self.🚩focus = true }
                     }
                 }
-                .animation(.default, value: self.ⓓataModel.text.isEmpty)
+                .animation(.default, value: self.ⓜodel.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
@@ -141,21 +141,21 @@ struct 📝CircularWidgetTab: View {
         }
         private func ⓘnputField() -> some View {
             Section {
-                TextField("Input text", text: self.$ⓓataModel.text, axis: .vertical)
+                TextField("Input text", text: self.$ⓜodel.text, axis: .vertical)
                     .font(.title3)
                     .focused(self.$🚩focus)
             }
         }
         private func ⓑackgroundOption() -> some View {
-            Toggle(isOn: self.$ⓓataModel.background) {
+            Toggle(isOn: self.$ⓜodel.background) {
                 Label("Background",
-                      systemImage: self.ⓓataModel.background ? "circle.dashed.inset.filled" : "circle.dashed")
-                .animation(.default, value: self.ⓓataModel.background)
+                      systemImage: self.ⓜodel.background ? "circle.dashed.inset.filled" : "circle.dashed")
+                .animation(.default, value: self.ⓜodel.background)
                 .padding(.vertical, 6)
             }
         }
-        init(_ dataModel: Binding<🎛CircularDataModel>) {
-            self._ⓓataModel = dataModel
+        init(_ model: Binding<🎛CircularWidgetModel>) {
+            self._ⓜodel = model
         }
     }
 }
@@ -163,18 +163,18 @@ struct 📝CircularWidgetTab: View {
 struct 📝InlineWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {
-        Self.🄲ontent($📱.inlineData)
+        Self.🄲ontent($📱.inlineModel)
     }
     private struct 🄲ontent: View {
-        @Binding private var ⓓataModel: 🎛InlineDataModel
+        @Binding private var ⓜodel: 🎛InlineWidgetModel
         @FocusState private var 🚩focus: Bool
         var body: some View {
             NavigationStack {
                 List {
                     self.ⓘnputField()
-                    🔗URLSchemeActionButton(self.$ⓓataModel.text)
+                    🔗URLSchemeActionButton(self.$ⓜodel.text)
                     if !self.🚩focus {
-                        🎚PlaceholderPicker(self.$ⓓataModel.placeholder)
+                        🎚PlaceholderPicker(self.$ⓜodel.placeholder)
                     }
                 }
                 .toolbar {
@@ -188,7 +188,7 @@ struct 📝InlineWidgetTab: View {
                 .safeAreaInset(edge: .bottom) {
                     if self.🚩focus {
                         HStack {
-                            👆EraseButtonAndShareButton(self.$ⓓataModel.text)
+                            👆EraseButtonAndShareButton(self.$ⓜodel.text)
                             Spacer()
                             👆DoneButton { self.🚩focus = false }
                         }
@@ -197,7 +197,7 @@ struct 📝InlineWidgetTab: View {
                         👆EditButton { self.🚩focus = true }
                     }
                 }
-                .animation(.default, value: self.ⓓataModel.text.isEmpty)
+                .animation(.default, value: self.ⓜodel.text.isEmpty)
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
@@ -205,13 +205,13 @@ struct 📝InlineWidgetTab: View {
         }
         private func ⓘnputField() -> some View {
             Section {
-                TextField("Input text", text: self.$ⓓataModel.text)
+                TextField("Input text", text: self.$ⓜodel.text)
                     .font(.title3)
                     .focused(self.$🚩focus)
             }
         }
-        init(_ dataModel: Binding<🎛InlineDataModel>) {
-            self._ⓓataModel = dataModel
+        init(_ model: Binding<🎛InlineWidgetModel>) {
+            self._ⓜodel = model
         }
     }
 }
@@ -564,8 +564,8 @@ struct 🅂aveDataAndReloadWidget: ViewModifier {
     @EnvironmentObject var 📱: 📱AppModel
     func body(content: Content) -> some View {
         content
-            .onChange(of: 📱.rectangularData) { _ in 📱.saveDataAndReloadWidget() }
-            .onChange(of: 📱.circularData) { _ in 📱.saveDataAndReloadWidget() }
-            .onChange(of: 📱.inlineData) { _ in 📱.saveDataAndReloadWidget() }
+            .onChange(of: 📱.rectangularModel) { _ in 📱.saveDataAndReloadWidget() }
+            .onChange(of: 📱.circularModel) { _ in 📱.saveDataAndReloadWidget() }
+            .onChange(of: 📱.inlineModel) { _ in 📱.saveDataAndReloadWidget() }
     }
 }

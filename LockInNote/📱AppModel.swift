@@ -2,19 +2,19 @@ import SwiftUI
 import WidgetKit
 
 class 📱AppModel: ObservableObject {
-    @Published var rectangularData: 🎛RectangularDataModel = .load() ?? .default
-    @Published var circularData: 🎛CircularDataModel = .load() ?? .default
-    @Published var inlineData: 🎛InlineDataModel = .load() ?? .default
+    @Published var rectangularModel: 🎛RectangularWidgetModel = .load() ?? .default
+    @Published var circularModel: 🎛CircularWidgetModel = .load() ?? .default
+    @Published var inlineModel: 🎛InlineWidgetModel = .load() ?? .default
     
     func saveDataAndReloadWidget() {
-        self.rectangularData.save()
-        self.circularData.save()
-        self.inlineData.save()
+        self.rectangularModel.save()
+        self.circularModel.save()
+        self.inlineModel.save()
         WidgetCenter.shared.reloadAllTimelines()
     }
 }
 
-struct 🎛RectangularDataModel: Codable, Equatable, 🄵ontOptions {
+struct 🎛RectangularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""
     
     var placeholder: 🄿laceholder = .squareAndPencil
@@ -30,7 +30,7 @@ struct 🎛RectangularDataModel: Codable, Equatable, 🄵ontOptions {
     func save() { 💾UserDefaults.save(.Rectangular, self) }
 }
 
-struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
+struct 🎛CircularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""
     var background: Bool = true
     
@@ -47,7 +47,7 @@ struct 🎛CircularDataModel: Codable, Equatable, 🄵ontOptions {
     func save() { 💾UserDefaults.save(.Circular, self) }
 }
 
-struct 🎛InlineDataModel: Codable, Equatable {
+struct 🎛InlineWidgetModel: Codable, Equatable {
     var text: String = ""
     var placeholder: 🄿laceholder = .squareAndPencil
     

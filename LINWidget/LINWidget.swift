@@ -60,7 +60,7 @@ struct 🕒Entry: TimelineEntry {
 }
 
 struct 🅁ectangularView : View {
-    private let 🎛: 🎛RectangularDataModel = .load() ?? .default
+    private let 🎛: 🎛RectangularWidgetModel = .load() ?? .default
     var body: some View {
         Group {
             if 🎛.text != "" {
@@ -81,7 +81,7 @@ struct 🅁ectangularView : View {
 }
 
 struct 🄲ircularView : View {
-    private let 🎛: 🎛CircularDataModel = .load() ?? .default
+    private let 🎛: 🎛CircularWidgetModel = .load() ?? .default
     var body: some View {
         Group {
             if 🎛.text != "" {
@@ -111,7 +111,7 @@ struct 🄲ircularView : View {
 }
 
 struct 🄸nlineView : View {
-    private let 🎛: 🎛InlineDataModel = .load() ?? .default
+    private let 🎛: 🎛InlineWidgetModel = .load() ?? .default
     var body: some View {
         Group {
             if 🎛.text != "" {
