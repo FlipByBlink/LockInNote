@@ -21,7 +21,7 @@ struct ContentView: View {
                 .tabItem { Label("Menu", systemImage: "gearshape") }
         }
         .scrollDismissesKeyboard(.interactively)
-        .onChange(of: 📱.widgetsModel) { _ in 📱.saveDataAndReloadWidget() }
+        .onChange(of: 📱.widgetsModel) { _ in 📱.saveAndReloadWidgetAndUpdateWCContext() }
         .modifier(💬RequestUserReview(self.$🔖tab))
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {

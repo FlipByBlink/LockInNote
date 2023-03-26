@@ -6,6 +6,9 @@ struct ContentView: View {
         NavigationStack {
             TextField("Input text",
                       text: self.$📱.widgetsModel.rectangular.text)
+            .onSubmit {
+                self.📱.saveAndReloadWidgetAndUpdateWCContext()
+            }
         }
     }
 }

@@ -3,16 +3,12 @@ import WidgetKit
 import WatchConnectivity
 
 class 📱AppModel: NSObject, ObservableObject {
-    @Published var widgetsModel: 🎛WidgetsModel = .init()
+    @Published var widgetsModel = 🎛WidgetsModel()
     
-    func saveDataAndReloadWidget() {
+    func saveAndReloadWidgetAndUpdateWCContext() {
         self.widgetsModel.save()
         WidgetCenter.shared.reloadAllTimelines()
-        do {
-            try WCSession.default.updateApplicationContext(self.widgetsModel.asContext)
-        } catch {
-            print("🚨", error)
-        }
+        self.widgetsModel.updateWCContext()
     }
 }
 
@@ -42,11 +38,9 @@ extension 📱AppModel: WCSessionDelegate {
     //Optional
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         Task { @MainActor in
-            if let ⓜodel = 🎛WidgetsModel.decode(applicationContext) {
-                self.widgetsModel = ⓜodel
-            } else {
-                assertionFailure()
-            }
+            self.widgetsModel.receiveWCContext(applicationContext)
+            self.widgetsModel.save()
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 }

@@ -1,37 +1,33 @@
 import SwiftUI
+import WatchConnectivity
 
 struct 🎛WidgetsModel: Codable, Equatable {
     var rectangular: 🎛RectangularWidgetModel = .load() ?? .default
     var circular: 🎛CircularWidgetModel = .load() ?? .default
     var inline: 🎛InlineWidgetModel = .load() ?? .default
-    
     func save() {
         self.rectangular.save()
         self.circular.save()
         self.inline.save()
     }
-    
-    static func decode(_ ⓒontext: [String: Any]) -> Self? {
+    mutating func receiveWCContext(_ ⓒontext: [String: Any]) {
         if let ⓓata = ⓒontext["ⓒontext"] as? Data {
             do {
-                return try JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata)
+                self = try JSONDecoder().decode(Self.self, from: ⓓata)
             } catch {
                 print("🚨 Decode error", error.localizedDescription)
                 assertionFailure()
-                return nil
             }
         } else {
             assertionFailure()
-            return nil
         }
     }
-    
-    var asContext: [String: Any] {
+    func updateWCContext() {
         do {
-            return ["ⓒontext": try JSONEncoder().encode(self)]
+            let ⓓata = try JSONEncoder().encode(self)
+            try? WCSession.default.updateApplicationContext(["ⓒontext": ⓓata])
         } catch {
             assertionFailure()
-            return [:]
         }
     }
 }
