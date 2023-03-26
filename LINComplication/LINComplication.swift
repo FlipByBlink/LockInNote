@@ -1,41 +1,29 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+struct 🄿rovider: TimelineProvider {
+    func placeholder(in context: Context) -> 🅂impleEntry {
+        🅂impleEntry(date: .now)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
-        completion(entry)
+    func getSnapshot(in context: Context, completion: @escaping (🅂impleEntry) -> ()) {
+        completion(🅂impleEntry(date: .now))
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+        completion(Timeline(entries: [🅂impleEntry(date: .now)], policy: .never))
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct 🅂impleEntry: TimelineEntry {
     let date: Date
 }
 
-struct LINComplicationEntryView : View {
-    var entry: Provider.Entry
-
+struct 🄴ntryView : View {
+    var entry: 🄿rovider.Entry
+    private let ⓜodel = 🎛WidgetsModel()
     var body: some View {
-        Text(entry.date, style: .time)
+        Text(ⓜodel.rectangular.text)
     }
 }
 
@@ -44,8 +32,8 @@ struct LINComplication: Widget {
     let kind: String = "LINComplication"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            LINComplicationEntryView(entry: entry)
+        StaticConfiguration(kind: kind, provider: 🄿rovider()) { ⓔntry in
+            🄴ntryView(entry: ⓔntry)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")

@@ -201,6 +201,8 @@
 		F566A91729CEDA3000ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F566A92129CEDB3500ACCC63 /* 📱AppModel_watchOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel_watchOS.swift"; sourceTree = "<group>"; };
 		F566A92329CEDE4300ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5ABF3B929CFC69B006C4F66 /* LINComplicationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LINComplicationExtension.entitlements; sourceTree = "<group>"; };
+		F5ABF3BA29CFC6AC006C4F66 /* LIN Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIN Watch App.entitlements"; sourceTree = "<group>"; };
 		F5F53178298741D200E531E2 /* 🧰MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🧰MetaData.swift"; sourceTree = "<group>"; };
 		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -354,6 +356,7 @@
 				F566A92129CEDB3500ACCC63 /* 📱AppModel_watchOS.swift */,
 				F566A8FD29CEDA1200ACCC63 /* ContentView_watchOS.swift */,
 				F566A92329CEDE4300ACCC63 /* Info.plist */,
+				F5ABF3BA29CFC6AC006C4F66 /* LIN Watch App.entitlements */,
 				F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */,
 				F566A90129CEDA1300ACCC63 /* Preview Content */,
 			);
@@ -372,8 +375,9 @@
 			isa = PBXGroup;
 			children = (
 				F566A91329CEDA2F00ACCC63 /* LINComplication.swift */,
-				F566A91529CEDA3000ACCC63 /* Assets.xcassets */,
 				F566A91729CEDA3000ACCC63 /* Info.plist */,
+				F5ABF3B929CFC69B006C4F66 /* LINComplicationExtension.entitlements */,
+				F566A91529CEDA3000ACCC63 /* Assets.xcassets */,
 			);
 			path = LINComplication;
 			sourceTree = "<group>";
@@ -908,6 +912,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "LIN Watch App/LIN Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LIN Watch App/Preview Content\"";
@@ -939,6 +944,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "LIN Watch App/LIN Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LIN Watch App/Preview Content\"";
@@ -969,6 +975,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LINComplication/LINComplicationExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6696GEY228;
@@ -999,6 +1006,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LINComplication/LINComplicationExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6696GEY228;

@@ -2,11 +2,10 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @AppStorage("TEXT", store: UserDefaults(suiteName: "group.net.aaaakkkkssssttttnnnn.AppTemplate"))
-    private var ⓣext = "placeholder"
     var body: some View {
         NavigationStack {
-            TextField("Input text", text: self.$ⓣext)
+            TextField("Input text",
+                      text: self.$📱.widgetsModel.rectangular.text)
         }
     }
 }

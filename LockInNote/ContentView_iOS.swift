@@ -276,7 +276,7 @@ struct 👆DoneButton: View { // ☑️
         Button {
             self.ⓤnfocusAction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
-            Task {
+            Task { @MainActor in
                 try await Task.sleep(for: .seconds(0.45))
                 🛒.checkToShowADSheet()
             }

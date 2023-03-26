@@ -42,6 +42,8 @@ extension 📱AppModel: WCSessionDelegate {
         Task { @MainActor in
             if let ⓜodel = 🎛WidgetsModel.decode(applicationContext) {
                 self.widgetsModel = ⓜodel
+                self.saveDataAndReloadWidget()
+                self.ⓣasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
             } else {
                 assertionFailure()
             }

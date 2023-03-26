@@ -25,6 +25,15 @@ struct 🎛WidgetsModel: Codable, Equatable {
             return nil
         }
     }
+    
+    var asContext: [String: Any] {
+        do {
+            return ["ⓒontext": try JSONEncoder().encode(self)]
+        } catch {
+            assertionFailure()
+            return [:]
+        }
+    }
 }
 struct 🎛RectangularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""

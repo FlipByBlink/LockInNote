@@ -8,6 +8,11 @@ class 📱AppModel: NSObject, ObservableObject {
     func saveDataAndReloadWidget() {
         self.widgetsModel.save()
         WidgetCenter.shared.reloadAllTimelines()
+        do {
+            try WCSession.default.updateApplicationContext(self.widgetsModel.asContext)
+        } catch {
+            print("🚨", error)
+        }
     }
 }
 
