@@ -42,7 +42,6 @@ extension 📱AppModel: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         Task { @MainActor in
             self.widgetsModel.receiveWCContext(applicationContext)
-            self.widgetsModel.save()
             WidgetCenter.shared.reloadAllTimelines()
             self.ⓣasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
         }

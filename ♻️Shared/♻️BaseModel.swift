@@ -14,6 +14,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
         if let ⓓata = ⓒontext["ⓒontext"] as? Data {
             do {
                 self = try JSONDecoder().decode(Self.self, from: ⓓata)
+                self.save()
             } catch {
                 print("🚨 Decode error", error.localizedDescription)
                 assertionFailure()
