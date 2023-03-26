@@ -24,8 +24,10 @@ struct ContentView: View {
         .scrollDismissesKeyboard(.interactively)
         .modifier(💬RequestUserReview(self.$🔖tab))
         .onSubmit { 📱.saveAndReloadWidgetAndUpdateWCContext() }
-        .onChange(of: self.scenePhase) {
-            if $0 == .inactive { 📱.saveAndReloadWidgetAndUpdateWCContext() }
+        .onChange(of: self.scenePhase) { [scenePhase] ⓝewValue in
+            if scenePhase == .active, ⓝewValue == .inactive {
+                📱.saveAndReloadWidgetAndUpdateWCContext()
+            }
         }
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {

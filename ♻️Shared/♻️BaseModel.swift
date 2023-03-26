@@ -20,7 +20,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
                 assertionFailure()
             }
         } else {
-            assertionFailure()
+            //assertionFailure()
         }
     }
     func updateWCContext() {
@@ -32,6 +32,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
         }
     }
 }
+
 struct 🎛RectangularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var text: String = ""
     
