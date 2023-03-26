@@ -21,9 +21,23 @@ struct 🅂impleEntry: TimelineEntry {
 
 struct 🄴ntryView : View {
     var entry: 🄿rovider.Entry
-    private let ⓜodel = 🎛WidgetsModel()
+    private let 🎛 = 🎛WidgetsModel().rectangular
     var body: some View {
-        Text(ⓜodel.rectangular.text)
+        Group {
+            if 🎛.text != "" {
+                Text(🎛.text)
+                    .italic(🎛.italic)
+                    .multilineTextAlignment(🎛.multilineTextAlignment.value)
+            } else if 🎛.placeholder != .nothing {
+                Image(systemName: 🎛.placeholder.icon)
+                    .imageScale(.large)
+            }
+        }
+        .font(.system(size: CGFloat(🎛.fontSize),
+                      weight: 🎛.fontWeight.value,
+                      design: 🎛.fontDesign.value))
+        .foregroundStyle(🎛.level.value)
+        .widgetURL(URL(string: "Rectangular")!)
     }
 }
 
@@ -37,5 +51,9 @@ struct LINComplication: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+        .supportedFamilies([.accessoryInline,
+                            .accessoryRectangular,
+                            .accessoryCircular,
+                            .accessoryCorner])
     }
 }
