@@ -2,6 +2,7 @@ import SwiftUI
 import WidgetKit
 import WatchConnectivity
 
+@MainActor
 class 📱AppModel: NSObject, ObservableObject {
     @Published var widgetsModel = 🎛WidgetsModel()
     

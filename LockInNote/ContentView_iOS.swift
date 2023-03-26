@@ -4,6 +4,7 @@ import WidgetKit
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @EnvironmentObject var 🛒: 🛒StoreModel
+    @Environment(\.scenePhase) var scenePhase
     @State private var 🔖tab: 🔖Tab = .rectangularWidget
     var body: some View {
         TabView(selection: self.$🔖tab) {
@@ -21,7 +22,7 @@ struct ContentView: View {
                 .tabItem { Label("Menu", systemImage: "gearshape") }
         }
         .scrollDismissesKeyboard(.interactively)
-        .onChange(of: 📱.widgetsModel) { _ in 📱.saveAndReloadWidgetAndUpdateWCContext() }
+        .onChange(of: self.scenePhase) { if $0 == .inactive { 📱.saveAndReloadWidgetAndUpdateWCContext() } }
         .modifier(💬RequestUserReview(self.$🔖tab))
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {
