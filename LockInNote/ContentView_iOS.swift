@@ -22,8 +22,11 @@ struct ContentView: View {
                 .tabItem { Label("Menu", systemImage: "gearshape") }
         }
         .scrollDismissesKeyboard(.interactively)
-        .onChange(of: self.scenePhase) { if $0 == .inactive { 📱.saveAndReloadWidgetAndUpdateWCContext() } }
         .modifier(💬RequestUserReview(self.$🔖tab))
+        .onSubmit { 📱.saveAndReloadWidgetAndUpdateWCContext() }
+        .onChange(of: self.scenePhase) {
+            if $0 == .inactive { 📱.saveAndReloadWidgetAndUpdateWCContext() }
+        }
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {
                 case "Rectangular": self.🔖tab = .rectangularWidget
