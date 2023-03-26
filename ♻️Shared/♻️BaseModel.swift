@@ -16,11 +16,10 @@ struct 🎛WidgetsModel: Codable, Equatable {
                 self = try JSONDecoder().decode(Self.self, from: ⓓata)
                 self.save()
             } catch {
-                print("🚨 Decode error", error.localizedDescription)
-                assertionFailure()
+                print("🚨", error); assertionFailure()
             }
         } else {
-            //assertionFailure()
+            //assertionFailure() シミュレーターだとダメ
         }
     }
     func updateWCContext() {

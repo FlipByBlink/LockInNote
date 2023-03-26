@@ -31,12 +31,11 @@ extension 📱AppModel: WKApplicationDelegate {
         }
     }
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        self.ⓣasks.forEach { ⓣask in
-            switch ⓣask {
-                case let ⓦatchConnectivityTask as WKWatchConnectivityRefreshBackgroundTask:
-                    self.ⓣasks.insert(ⓦatchConnectivityTask)
-                default:
-                    ⓣask.setTaskCompletedWithSnapshot(false)
+        for ⓣask in backgroundTasks {
+            if let ⓦcTask = ⓣask as? WKWatchConnectivityRefreshBackgroundTask {
+                self.ⓣasks.insert(ⓦcTask)
+            } else {
+                ⓣask.setTaskCompletedWithSnapshot(false)
             }
         }
     }
