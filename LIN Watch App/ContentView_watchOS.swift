@@ -30,8 +30,10 @@ struct ContentView: View {
                             ScrollView {
                                 Text(self.📱.widgetsModel.rectangular.text)
                                     .font(.title2)
-                                    .padding()
+                                    .padding(.vertical, 24)
                             }
+                            .toolbar(.hidden, for: .automatic)
+                            .onTapGesture { self.ⓢhowFullText = false }
                         }
                     }
                 }
