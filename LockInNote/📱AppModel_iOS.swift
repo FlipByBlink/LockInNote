@@ -37,10 +37,12 @@ extension 📱AppModel: WCSessionDelegate {
         session.activate()
     }
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        if let ⓓata = message["ⓒontextWithNewText"] as? Data {
-            if let ⓜodel = try? JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata) {
-                self.widgetsModel = ⓜodel
-                self.saveAndReloadWidgetAndUpdateWCContext()
+        Task { @MainActor in
+            if let ⓓata = message["ⓒontextWithNewText"] as? Data {
+                if let ⓜodel = try? JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata) {
+                    self.widgetsModel = ⓜodel
+                    self.saveAndReloadWidgetAndUpdateWCContext()
+                }
             }
         }
     }

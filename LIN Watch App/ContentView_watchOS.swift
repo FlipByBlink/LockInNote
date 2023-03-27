@@ -15,17 +15,20 @@ struct ContentView: View {
                     HStack {
                         Button(role: .destructive) {
                             self.📱.widgetsModel.rectangular.text = ""
+                            self.📱.sendContextWithNewText()
                             WKInterfaceDevice.current().play(.success)
                         } label: {
                             Image(systemName: "trash")
+                                .fontWeight(.medium)
                         }
+                        .disabled(self.📱.widgetsModel.rectangular.text.isEmpty)
                         Button {
                             self.ⓢhowFullText = true
                             WKInterfaceDevice.current().play(.directionUp)
                         } label: {
                             Image(systemName: "doc.text.magnifyingglass")
                                 .fontWeight(.medium)
-                                .padding(4)
+                                .foregroundStyle(self.📱.widgetsModel.rectangular.text.isEmpty ? .secondary : .primary)
                         }
                         .disabled(self.📱.widgetsModel.rectangular.text.isEmpty)
                         .sheet(isPresented: self.$ⓢhowFullText) {
