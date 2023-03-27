@@ -10,7 +10,7 @@ class 📱AppModel: NSObject, ObservableObject {
         self.widgetsModel.save()
         WidgetCenter.shared.reloadAllTimelines()
         self.widgetsModel.updateWCContext()
-        WCSession.default.transferCurrentComplicationUserInfo(["placeholder": "placeholder"])
+        //WCSession.default.transferCurrentComplicationUserInfo(["placeholder": "placeholder"])
     }
 }
 
