@@ -7,5 +7,7 @@ struct LIN_Watch_App: App {
         WindowGroup {
             ContentView()
         }
+        //.backgroundTask(.watchConnectivity) { _ in
+        //}
     }
 }
