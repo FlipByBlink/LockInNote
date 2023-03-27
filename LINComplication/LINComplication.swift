@@ -21,7 +21,7 @@ struct 🅂impleEntry: TimelineEntry {
 
 struct 🄴ntryView : View {
     var entry: 🄿rovider.Entry
-    private let 🎛 = 🎛WidgetsModel().rectangular
+    private let 🎛: 🎛RectangularWidgetModel = .load() ?? .default
     var body: some View {
         Group {
             if 🎛.text != "" {
@@ -35,7 +35,7 @@ struct 🄴ntryView : View {
         }
         .font(.system(size: CGFloat(🎛.fontSize),
                       weight: 🎛.fontWeight.value,
-                      design: 🎛.fontDesign.value))
+                      design: 🎛.fontDesign.value)) //watchComplicationでは日本語等はserifFontに対応してないかも。英字は対応してる。
         .foregroundStyle(🎛.level.value)
         .widgetURL(URL(string: "Rectangular")!)
     }
