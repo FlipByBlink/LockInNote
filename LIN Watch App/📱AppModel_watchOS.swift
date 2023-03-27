@@ -19,6 +19,7 @@ class 📱AppModel: NSObject, ObservableObject {
             self.widgetsModel.receiveWCContext(ⓒontext)
             WidgetCenter.shared.reloadAllTimelines()
             self.ⓣasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
+            self.ⓣasks.removeAll()
         }
     }
 }
