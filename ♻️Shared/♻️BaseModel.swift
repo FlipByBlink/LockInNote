@@ -10,6 +10,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
         self.circular.save()
         self.inline.save()
     }
+    var asData: Data? { try? JSONEncoder().encode(self) }
     mutating func receiveWCContext(_ ⓒontext: [String: Any]) {
         if let ⓓata = ⓒontext["ⓒontext"] as? Data {
             do {

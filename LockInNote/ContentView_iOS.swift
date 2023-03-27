@@ -24,10 +24,8 @@ struct ContentView: View {
         .scrollDismissesKeyboard(.interactively)
         .modifier(💬RequestUserReview(self.$🔖tab))
         .onSubmit { 📱.saveAndReloadWidgetAndUpdateWCContext() }
-        .onChange(of: self.scenePhase) { [scenePhase] ⓝewValue in
-            if scenePhase == .active, ⓝewValue == .inactive {
-                📱.saveAndReloadWidgetAndUpdateWCContext()
-            }
+        .onChange(of: self.scenePhase) {
+            if $0 == .background { 📱.saveAndReloadWidgetAndUpdateWCContext() }
         }
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {
@@ -276,11 +274,13 @@ struct 👆EditButton: View { // 🖊️
 }
 
 struct 👆DoneButton: View { // ☑️
+    @EnvironmentObject var 📱: 📱AppModel
     @EnvironmentObject var 🛒: 🛒StoreModel
     private var ⓤnfocusAction: () -> Void
     var body: some View {
         Button {
             self.ⓤnfocusAction()
+            📱.saveAndReloadWidgetAndUpdateWCContext()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             Task { @MainActor in
                 try await Task.sleep(for: .seconds(0.45))

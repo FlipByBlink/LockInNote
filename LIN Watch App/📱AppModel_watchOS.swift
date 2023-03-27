@@ -51,4 +51,7 @@ extension 📱AppModel: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         self.applyReceivedWCContext(applicationContext)
     }
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        self.applyReceivedWCContext(session.receivedApplicationContext)
+    }
 }
