@@ -78,6 +78,7 @@ struct 🅁ectangularView : View {
                       weight: 🎛.fontWeight.value,
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
+        .widgetAccentable()
         .widgetURL(URL(string: "Rectangular")!)
     }
 }
@@ -108,6 +109,7 @@ struct 🄲ircularView : View {
                       weight: 🎛.fontWeight.value,
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
+        .widgetAccentable()
         .widgetURL(URL(string: "Circular")!)
     }
 }
@@ -122,6 +124,7 @@ struct 🄸nlineView : View {
                 Image(systemName: 🎛.placeholder.icon)
             }
         }
+        .widgetAccentable()
         .widgetURL(URL(string: "Inline")!)
     }
 }
