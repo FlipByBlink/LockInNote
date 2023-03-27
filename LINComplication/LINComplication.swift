@@ -28,9 +28,7 @@ struct 🄲ircularWidget: Widget {
         }
         .configurationDisplayName("○  Circular")
         .description("Show a note.")
-        #if os(watchOS)
-        .supportedFamilies([.accessoryCircular, .accessoryCorner])
-        #endif
+        .supportedFamilies([.accessoryCircular, .accessoryCorner]) //MARK: DiffFromIOSWidget
     }
 }
 
@@ -78,7 +76,7 @@ struct 🅁ectangularView : View {
                       weight: 🎛.fontWeight.value,
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
-        .widgetAccentable()
+        .widgetAccentable() //MARK: DiffFromIOSWidget
         .widgetURL(URL(string: "Rectangular")!)
     }
 }
@@ -109,7 +107,7 @@ struct 🄲ircularView : View {
                       weight: 🎛.fontWeight.value,
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
-        .widgetAccentable()
+        .widgetAccentable() //MARK: DiffFromIOSWidget
         .widgetURL(URL(string: "Circular")!)
     }
 }
@@ -124,7 +122,7 @@ struct 🄸nlineView : View {
                 Image(systemName: 🎛.placeholder.icon)
             }
         }
-        .widgetAccentable()
+        .widgetAccentable() //MARK: DiffFromIOSWidget
         .widgetURL(URL(string: "Inline")!)
     }
 }
