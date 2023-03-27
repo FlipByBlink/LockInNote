@@ -3,59 +3,19 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @State private var 🔖tab: 🔖Tab = .rectangularWidget
-    @State private var ⓢhowFullText: Bool = false
     var body: some View {
         NavigationStack {
             TabView {
-                VStack {
-                    Spacer()
-                    TextField("Input text", text: self.$📱.widgetsModel.rectangular.text)
-                        .font(.title3)
-                    Spacer()
-                    HStack {
-                        Button(role: .destructive) {
-                            self.📱.widgetsModel.rectangular.text = ""
-                            self.📱.sendContextWithNewText()
-                            WKInterfaceDevice.current().play(.success)
-                        } label: {
-                            Image(systemName: "trash")
-                                .fontWeight(.medium)
-                        }
-                        .disabled(self.📱.widgetsModel.rectangular.text.isEmpty)
-                        Button {
-                            self.ⓢhowFullText = true
-                            WKInterfaceDevice.current().play(.directionUp)
-                        } label: {
-                            Image(systemName: "doc.text.magnifyingglass")
-                                .fontWeight(.medium)
-                                .foregroundStyle(self.📱.widgetsModel.rectangular.text.isEmpty ? .secondary : .primary)
-                        }
-                        .disabled(self.📱.widgetsModel.rectangular.text.isEmpty)
-                        .sheet(isPresented: self.$ⓢhowFullText) {
-                            ScrollView {
-                                Text(self.📱.widgetsModel.rectangular.text)
-                                    .font(.title2)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.vertical, 24)
-                            }
-                            .toolbar(.hidden, for: .automatic)
-                            .onTapGesture {
-                                self.ⓢhowFullText = false
-                                WKInterfaceDevice.current().play(.directionDown)
-                            }
-                        }
-                    }
-                }
-                .tag(🔖Tab.rectangularWidget)
-                .navigationTitle("Rectangular")
-                TextField("Input text", text: self.$📱.widgetsModel.circular.text)
-                    .navigationTitle("Circular")
+                🅆idgetTab(ⓣext: self.$📱.widgetsModel.rectangular.text)
+                    .tag(🔖Tab.rectangularWidget)
+                    .navigationTitle("Rectangular")
+                🅆idgetTab(ⓣext: self.$📱.widgetsModel.circular.text)
                     .tag(🔖Tab.circularWidget)
-                TextField("Input text", text: self.$📱.widgetsModel.inline.text)
-                    .navigationTitle("Inline")
+                    .navigationTitle("Circular")
+                🅆idgetTab(ⓣext: self.$📱.widgetsModel.inline.text)
                     .tag(🔖Tab.inlineWidget)
+                    .navigationTitle("Inline")
             }
-            .onSubmit { self.📱.sendContextWithNewText() }
         }
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {
@@ -70,4 +30,52 @@ struct ContentView: View {
 
 enum 🔖Tab {
     case rectangularWidget, circularWidget, inlineWidget
+}
+
+struct 🅆idgetTab: View {
+    @EnvironmentObject var 📱: 📱AppModel
+    @Binding var ⓣext: String
+    @State private var ⓢhowFullText: Bool = false
+    var body: some View {
+        VStack {
+            Spacer()
+            TextField("Input text", text: self.$ⓣext)
+                .font(.title3)
+                .onSubmit { self.📱.sendContextWithNewText() }
+            Spacer()
+            HStack {
+                Button(role: .destructive) {
+                    self.ⓣext = ""
+                    self.📱.sendContextWithNewText()
+                    WKInterfaceDevice.current().play(.success)
+                } label: {
+                    Image(systemName: "trash")
+                        .fontWeight(.medium)
+                }
+                .disabled(self.ⓣext.isEmpty)
+                Button {
+                    self.ⓢhowFullText = true
+                    WKInterfaceDevice.current().play(.directionUp)
+                } label: {
+                    Image(systemName: "doc.text.magnifyingglass")
+                        .fontWeight(.medium)
+                        .foregroundStyle(self.ⓣext.isEmpty ? .secondary : .primary)
+                }
+                .disabled(self.ⓣext.isEmpty)
+                .sheet(isPresented: self.$ⓢhowFullText) {
+                    ScrollView {
+                        Text(self.ⓣext)
+                            .font(.title2)
+                            .multilineTextAlignment(.center)
+                            .padding(.vertical, 24)
+                    }
+                    .toolbar(.hidden, for: .automatic)
+                    .onTapGesture {
+                        self.ⓢhowFullText = false
+                        WKInterfaceDevice.current().play(.directionDown)
+                    }
+                }
+            }
+        }
+    }
 }
