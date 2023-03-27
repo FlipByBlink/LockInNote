@@ -5,7 +5,7 @@ struct ContentView: View {
     @State private var 🔖tab: 🔖Tab = .rectangularWidget
     var body: some View {
         NavigationStack {
-            TabView {
+            TabView(selection: self.$🔖tab) {
                 🅆idgetTab(ⓣext: self.$📱.widgetsModel.rectangular.text)
                     .tag(🔖Tab.rectangularWidget)
                     .navigationTitle("Rectangular")
