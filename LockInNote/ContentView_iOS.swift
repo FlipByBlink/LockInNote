@@ -320,7 +320,7 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
         if self.ⓓisable {
             switch self.colorScheme {
                 case .light: return Color(white: 0.6)
-                case .dark: return Color(white: 0.4)
+                case .dark: return Color(white: 0.3)
                 @unknown default: return Color(white: 0.6)
             }
         } else {
