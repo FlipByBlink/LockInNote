@@ -15,11 +15,13 @@ struct ContentView: View {
                     HStack {
                         Button(role: .destructive) {
                             self.📱.widgetsModel.rectangular.text = ""
+                            WKInterfaceDevice.current().play(.success)
                         } label: {
                             Image(systemName: "trash")
                         }
                         Button {
                             self.ⓢhowFullText = true
+                            WKInterfaceDevice.current().play(.directionUp)
                         } label: {
                             Image(systemName: "doc.text.magnifyingglass")
                                 .fontWeight(.medium)
@@ -30,10 +32,14 @@ struct ContentView: View {
                             ScrollView {
                                 Text(self.📱.widgetsModel.rectangular.text)
                                     .font(.title2)
+                                    .multilineTextAlignment(.center)
                                     .padding(.vertical, 24)
                             }
                             .toolbar(.hidden, for: .automatic)
-                            .onTapGesture { self.ⓢhowFullText = false }
+                            .onTapGesture {
+                                self.ⓢhowFullText = false
+                                WKInterfaceDevice.current().play(.directionDown)
+                            }
                         }
                     }
                 }
