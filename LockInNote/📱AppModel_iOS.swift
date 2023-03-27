@@ -10,7 +10,6 @@ class 📱AppModel: NSObject, ObservableObject {
         self.widgetsModel.save()
         WidgetCenter.shared.reloadAllTimelines()
         self.widgetsModel.updateWCContext()
-        //WCSession.default.transferCurrentComplicationUserInfo(["placeholder": "placeholder"])
     }
 }
 
@@ -37,11 +36,12 @@ extension 📱AppModel: WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {
         session.activate()
     }
-    //Optional
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        Task { @MainActor in
-            self.widgetsModel.receiveWCContext(applicationContext)
-            WidgetCenter.shared.reloadAllTimelines()
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        if let ⓓata = message["ⓒontextWithNewText"] as? Data {
+            if let ⓜodel = try? JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata) {
+                self.widgetsModel = ⓜodel
+                self.saveAndReloadWidgetAndUpdateWCContext()
+            }
         }
     }
 }

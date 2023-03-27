@@ -8,12 +8,6 @@ class 📱AppModel: NSObject, ObservableObject {
     
     @Published var ⓣasks: Set<WKRefreshBackgroundTask> = []
     
-    func saveAndReloadWidgetAndUpdateWCContext() {
-        self.widgetsModel.save()
-        WidgetCenter.shared.reloadAllTimelines()
-        self.widgetsModel.updateWCContext()
-    }
-    
     func applyReceivedWCContext(_ ⓒontext: [String: Any]) {
         Task { @MainActor in
             self.widgetsModel.receiveWCContext(ⓒontext)
@@ -21,6 +15,11 @@ class 📱AppModel: NSObject, ObservableObject {
             self.ⓣasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
             self.ⓣasks.removeAll()
         }
+    }
+    
+    func sendContextWithNewText() {
+        guard let ⓓata = self.widgetsModel.asData else { return }
+        WCSession.default.sendMessage(["ⓒontextWithNewText": ⓓata], replyHandler: nil)
     }
 }
 
@@ -51,7 +50,4 @@ extension 📱AppModel: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         self.applyReceivedWCContext(applicationContext)
     }
-    //func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-    //    self.applyReceivedWCContext(session.receivedApplicationContext)
-    //}
 }

@@ -52,7 +52,7 @@ struct ContentView: View {
                     .navigationTitle("Inline")
                     .tag(🔖Tab.inlineWidget)
             }
-            .onSubmit { self.📱.saveAndReloadWidgetAndUpdateWCContext() }
+            .onSubmit { self.📱.sendContextWithNewText() }
         }
         .onOpenURL { ⓤrl in
             switch ⓤrl.description {
