@@ -1,26 +1,67 @@
 import WidgetKit
 import SwiftUI
 
-struct 🄿rovider: TimelineProvider {
-    func placeholder(in context: Context) -> 🅂impleEntry {
-        🅂impleEntry(date: .now)
+@main
+struct LINWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        🅁ectangularWidget()
+        🄲ircularWidget()
+        🄸nlineWidget()
     }
+}
 
-    func getSnapshot(in context: Context, completion: @escaping (🅂impleEntry) -> ()) {
-        completion(🅂impleEntry(date: .now))
+struct 🅁ectangularWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "Rectangular", provider: 🤖Provider()) { _ in
+            🅁ectangularView()
+        }
+        .configurationDisplayName("□⃞  Rectangular")
+        .description("Show a note.")
+        .supportedFamilies([.accessoryRectangular])
     }
+}
 
+struct 🄲ircularWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "Circular", provider: 🤖Provider()) { _ in
+            🄲ircularView()
+        }
+        .configurationDisplayName("○  Circular")
+        .description("Show a note.")
+        #if os(watchOS)
+        .supportedFamilies([.accessoryCircular, .accessoryCorner])
+        #endif
+    }
+}
+
+struct 🄸nlineWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "Inline", provider: 🤖Provider()) { _ in
+            🄸nlineView()
+        }
+        .configurationDisplayName("▷  Inline")
+        .description("Show a note.")
+        .supportedFamilies([.accessoryInline])
+    }
+}
+
+struct 🤖Provider: TimelineProvider {
+    func placeholder(in context: Context) -> 🕒Entry {
+        🕒Entry()
+    }
+    func getSnapshot(in context: Context, completion: @escaping (🕒Entry) -> ()) {
+        completion(🕒Entry())
+    }
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        completion(Timeline(entries: [🅂impleEntry(date: .now)], policy: .never))
+        completion(Timeline(entries: [🕒Entry()], policy: .never))
     }
 }
 
-struct 🅂impleEntry: TimelineEntry {
-    let date: Date
+struct 🕒Entry: TimelineEntry {
+    let date: Date = .now
 }
 
-struct 🄴ntryView : View {
-    var entry: 🄿rovider.Entry
+struct 🅁ectangularView : View {
     private let 🎛: 🎛RectangularWidgetModel = .load() ?? .default
     var body: some View {
         Group {
@@ -35,25 +76,52 @@ struct 🄴ntryView : View {
         }
         .font(.system(size: CGFloat(🎛.fontSize),
                       weight: 🎛.fontWeight.value,
-                      design: 🎛.fontDesign.value)) //watchComplicationでは日本語等はserifFontに対応してないかも。英字は対応してる。
+                      design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
         .widgetURL(URL(string: "Rectangular")!)
     }
 }
 
-@main
-struct LINComplication: Widget {
-    let kind: String = "LINComplication"
-
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: 🄿rovider()) { ⓔntry in
-            🄴ntryView(entry: ⓔntry)
+struct 🄲ircularView : View {
+    private let 🎛: 🎛CircularWidgetModel = .load() ?? .default
+    var body: some View {
+        Group {
+            if 🎛.text != "" {
+                ZStack {
+                    if 🎛.background { AccessoryWidgetBackground() }
+                    Text(🎛.text)
+                        .italic(🎛.italic)
+                        .multilineTextAlignment(🎛.multilineTextAlignment.value)
+                        .padding(.horizontal, 2)
+                }
+            } else {
+                ZStack {
+                    if 🎛.background { AccessoryWidgetBackground() }
+                    if 🎛.placeholder != .nothing {
+                        Image(systemName: 🎛.placeholder.icon)
+                            .imageScale(.large)
+                    }
+                }
+            }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-        .supportedFamilies([.accessoryInline,
-                            .accessoryRectangular,
-                            .accessoryCircular,
-                            .accessoryCorner])
+        .font(.system(size: CGFloat(🎛.fontSize),
+                      weight: 🎛.fontWeight.value,
+                      design: 🎛.fontDesign.value))
+        .foregroundStyle(🎛.level.value)
+        .widgetURL(URL(string: "Circular")!)
+    }
+}
+
+struct 🄸nlineView : View {
+    private let 🎛: 🎛InlineWidgetModel = .load() ?? .default
+    var body: some View {
+        Group {
+            if 🎛.text != "" {
+                Text(🎛.text)
+            } else if 🎛.placeholder != .nothing {
+                Image(systemName: 🎛.placeholder.icon)
+            }
+        }
+        .widgetURL(URL(string: "Inline")!)
     }
 }
