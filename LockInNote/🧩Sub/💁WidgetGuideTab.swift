@@ -16,12 +16,13 @@ struct 💁WidgetGuideTab: View {
     private func ⓢupportPageLinkSection() -> some View {
         Section {
             Link(destination: URL(string: "https://support.apple.com/HT207122")!) {
-                Label("Apple Support page", systemImage: "link")
+                Label("How to add and edit widgets on your iPhone", systemImage: "link")
+            }
+            Link(destination: URL(string: "https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")!) {
+                Label("Create a custom iPhone Lock Screen", systemImage: "link")
             }
         } header: {
-            Text("Link")
-        } footer: {
-            Text("https://support.apple.com/HT207122")
+            Label("support.apple.com", systemImage: "arrow.up.forward.app")
         }
     }
 }
@@ -42,13 +43,14 @@ private struct 💁StepByStepSection: View {
                         Text(self.ⓢteps[ⓘndex - 1])
                     } icon: {
                         Text("\(ⓘndex).")
-                            .font(.system(.body, design: .rounded, weight: .semibold))
+                            .font(.system(.title3, design: .rounded, weight: .semibold))
                     }
                     Spacer()
                     Image("WidgetGuide/\(ⓘndex)")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 120)
+                        .padding(.vertical, 4)
                 }
             }
         } header: {

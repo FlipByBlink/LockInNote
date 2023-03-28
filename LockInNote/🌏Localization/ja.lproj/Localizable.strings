@@ -54,11 +54,14 @@
 "If lock screen widgets don't update, please close this app or switch to another app." = "ロック画面ウィジェットが更新されない場合は、アプリを閉じたりアプリを切り替えたりすると変更が反映されます。";
 "Show a note." = "ノートを表示する。";
 
-"WidgetGuide1" = "Touch and hold the Lock Screen until the Customize button appears, then tap Customize.";
-"WidgetGuide2" = "Select Lock Screen.";
-"WidgetGuide3" = "Tap Add Widgets.";
-"WidgetGuide4" = "Tap or drag the widgets that you want to add to the Lock Screen.";
-"WidgetGuide5" = "When you're finished, tap the close button, then tap Done.";
+"Touch and hold the Lock Screen until the Customize button appears, then tap Customize." = "ロック画面を長押しして、「カスタマイズ」ボタンが表示されたら、そのボタンをタップします。";
+"Select Lock Screen." = "「ロック画面」を選択します。";
+"Tap Add Widgets." = "「ウィジェットを追加」をタップします。";
+"Tap or drag the widgets that you want to add to the Lock Screen." = "ロック画面に追加したいウィジェットをタップまたはドラッグします。";
+"When you're finished, tap the close button, then tap Done." = "終わったら、閉じるボタンをタップして、「完了」をタップします。";
+
+"How to add and edit widgets on your iPhone" = "iPhone でウィジェットを追加・編集する方法";
+"Create a custom iPhone Lock Screen" = "iPhoneのロック画面をパーソナライズする";
 
 
 "App for iPhone / Apple Watch" = "iPhone/Apple Watch向けアプリ";
