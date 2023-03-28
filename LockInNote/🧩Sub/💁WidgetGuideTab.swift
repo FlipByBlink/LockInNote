@@ -15,15 +15,27 @@ struct 💁WidgetGuideTab: View {
     }
     private func ⓢupportPageLinkSection() -> some View {
         Section {
-            Link(destination: URL(string: "https://support.apple.com/HT207122")!) {
-                Label("How to add and edit widgets on your iPhone", systemImage: "link")
+            VStack(spacing: 6) {
+                Link(destination: URL(string: "https://support.apple.com/HT207122")!) {
+                    Label("How to add and edit widgets on your iPhone", systemImage: "link")
+                }
+                Text("https://support.apple.com/HT207122")
+                    .font(.caption2.italic())
             }
-            Link(destination: URL(string: "https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")!) {
-                Label("Create a custom iPhone Lock Screen", systemImage: "link")
+            .padding(.vertical, 4)
+            VStack(spacing: 6) {
+                Link(destination: URL(string: "https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")!) {
+                    Label("Create a custom iPhone Lock Screen", systemImage: "link")
+                }
+                Text("https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")
+                    .font(.caption2.italic())
             }
+            .padding(.vertical, 4)
         } header: {
-            Label("support.apple.com", systemImage: "arrow.up.forward.app")
+            Text("Apple Support Page Link")//, systemImage: "arrow.up.forward.app")
         }
+        .headerProminence(.increased)
+        .multilineTextAlignment(.center)
     }
 }
 
