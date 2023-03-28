@@ -65,6 +65,10 @@
 		F57E85BB29D28FD000927561 /* 🔖Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85B829D28FD000927561 /* 🔖Tab.swift */; };
 		F57E85BC29D28FD000927561 /* 🔖Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85B829D28FD000927561 /* 🔖Tab.swift */; };
 		F57E85BD29D2951D00927561 /* LINWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556950D28CCAB71004558FC /* LINWidget.swift */; };
+		F57E85BE29D29BAC00927561 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952128CCAF7A004558FC /* Localizable.strings */; };
+		F57E85BF29D29BAC00927561 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952328CCAF7A004558FC /* InfoPlist.strings */; };
+		F57E85C029D29BAD00927561 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952128CCAF7A004558FC /* Localizable.strings */; };
+		F57E85C129D29BAD00927561 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952328CCAF7A004558FC /* InfoPlist.strings */; };
 		F5AA8C4228D0985F00C2047D /* LockInNoteApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* LockInNoteApp.swift */; };
 		F5AA8C4328D0985F00C2047D /* ContentView_iOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView_iOS.swift */; };
 		F5AA8C4428D0985F00C2047D /* 📱AppModel_iOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel_iOS.swift */; };
@@ -540,6 +544,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F566A90329CEDA1300ACCC63 /* Preview Assets.xcassets in Resources */,
+				F57E85BF29D29BAC00927561 /* InfoPlist.strings in Resources */,
+				F57E85BE29D29BAC00927561 /* Localizable.strings in Resources */,
 				F566A90029CEDA1300ACCC63 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +555,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F566A91629CEDA3000ACCC63 /* Assets.xcassets in Resources */,
+				F57E85C129D29BAD00927561 /* InfoPlist.strings in Resources */,
+				F57E85C029D29BAD00927561 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
