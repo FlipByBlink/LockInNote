@@ -54,6 +54,9 @@
 "If lock screen widgets don't update, please close this app or switch to another app." = "ロック画面ウィジェットが更新されない場合は、アプリを閉じたりアプリを切り替えたりすると変更が反映されます。";
 "Show a note." = "ノートを表示する。";
 
+"How to add widgets" = "ウィジェット設定方法";
+"Lock Screen Widgets" = "ロック画面ウィジェット";
+
 "Touch and hold the Lock Screen until the Customize button appears, then tap Customize." = "ロック画面を長押しして、「カスタマイズ」ボタンが表示されたら、そのボタンをタップします。";
 "Select Lock Screen." = "「ロック画面」を選択します。";
 "Tap Add Widgets." = "「ウィジェットを追加」をタップします。";

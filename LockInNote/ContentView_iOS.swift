@@ -8,6 +8,9 @@ struct ContentView: View {
     @State private var 🔖tab: 🔖Tab = .guide
     var body: some View {
         TabView(selection: self.$🔖tab) {
+            💁WidgetGuideTab()
+                .tag(🔖Tab.guide)
+                .tabItem { Label("Guide", systemImage: "questionmark") }
             📝RectangularWidgetTab()
                 .tag(🔖Tab.rectangularWidget)
                 .tabItem { Label("Rectangular", systemImage: "rectangle.dashed") }
@@ -17,9 +20,6 @@ struct ContentView: View {
             📝InlineWidgetTab()
                 .tag(🔖Tab.inlineWidget)
                 .tabItem { Label("Inline", systemImage: "rectangle.and.pencil.and.ellipsis") }
-            💁WidgetGuideTab()
-                .tag(🔖Tab.guide)
-                .tabItem { Label("Guide", systemImage: "questionmark") }
             🛠MenuTab()
                 .tag(🔖Tab.menu)
                 .tabItem { Label("Menu", systemImage: "gearshape") }
