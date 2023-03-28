@@ -69,6 +69,10 @@
 		F57E85BF29D29BAC00927561 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952328CCAF7A004558FC /* InfoPlist.strings */; };
 		F57E85C029D29BAD00927561 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952128CCAF7A004558FC /* Localizable.strings */; };
 		F57E85C129D29BAD00927561 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F556952328CCAF7A004558FC /* InfoPlist.strings */; };
+		F57E85C829D2B98400927561 /* 💾UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaults.swift */; };
+		F57E85C929D2B98400927561 /* 💾UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaults.swift */; };
+		F57E85CA29D2B98400927561 /* 💾UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaults.swift */; };
+		F57E85CB29D2B98400927561 /* 💾UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaults.swift */; };
 		F5AA8C4228D0985F00C2047D /* LockInNoteApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* LockInNoteApp.swift */; };
 		F5AA8C4328D0985F00C2047D /* ContentView_iOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView_iOS.swift */; };
 		F5AA8C4428D0985F00C2047D /* 📱AppModel_iOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel_iOS.swift */; };
@@ -207,6 +211,7 @@
 		F566A92129CEDB3500ACCC63 /* 📱AppModel_watchOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel_watchOS.swift"; sourceTree = "<group>"; };
 		F566A92329CEDE4300ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F57E85B829D28FD000927561 /* 🔖Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔖Tab.swift"; sourceTree = "<group>"; };
+		F57E85C729D2B98400927561 /* 💾UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaults.swift"; sourceTree = "<group>"; };
 		F5ABF3B929CFC69B006C4F66 /* LINComplicationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LINComplicationExtension.entitlements; sourceTree = "<group>"; };
 		F5ABF3BA29CFC6AC006C4F66 /* LIN Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIN Watch App.entitlements"; sourceTree = "<group>"; };
 		F5F53178298741D200E531E2 /* 🧰MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🧰MetaData.swift"; sourceTree = "<group>"; };
@@ -351,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				F566A85B29CED1A300ACCC63 /* ♻️BaseModel.swift */,
+				F57E85C729D2B98400927561 /* 💾UserDefaults.swift */,
 				F57E85B829D28FD000927561 /* 🔖Tab.swift */,
 			);
 			path = "♻️Shared";
@@ -579,6 +585,7 @@
 				F5F53179298741D200E531E2 /* 🧰MetaData.swift in Sources */,
 				F54BE1CA28CB480900532025 /* LockInNoteApp.swift in Sources */,
 				F5F5317B2987425800E531E2 /* ℹ️AboutApp.swift in Sources */,
+				F57E85C829D2B98400927561 /* 💾UserDefaults.swift in Sources */,
 				F566A84F29CE939B00ACCC63 /* 💬RequestUserReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F556950E28CCAB71004558FC /* LINWidget.swift in Sources */,
+				F57E85C929D2B98400927561 /* 💾UserDefaults.swift in Sources */,
 				F556951C28CCAC59004558FC /* 📱AppModel_iOS.swift in Sources */,
 				F566A85D29CED1C000ACCC63 /* ♻️BaseModel.swift in Sources */,
 				F57E85BA29D28FD000927561 /* 🔖Tab.swift in Sources */,
@@ -600,6 +608,7 @@
 			files = (
 				F566A8FE29CEDA1200ACCC63 /* ContentView_watchOS.swift in Sources */,
 				F566A8FC29CEDA1200ACCC63 /* LIN_Watch_App.swift in Sources */,
+				F57E85CA29D2B98400927561 /* 💾UserDefaults.swift in Sources */,
 				F57E85BB29D28FD000927561 /* 🔖Tab.swift in Sources */,
 				F566A91F29CEDB1E00ACCC63 /* ♻️BaseModel.swift in Sources */,
 				F566A92229CEDB3500ACCC63 /* 📱AppModel_watchOS.swift in Sources */,
@@ -610,6 +619,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F57E85CB29D2B98400927561 /* 💾UserDefaults.swift in Sources */,
 				F57E85BC29D28FD000927561 /* 🔖Tab.swift in Sources */,
 				F57E85BD29D2951D00927561 /* LINWidget.swift in Sources */,
 				F566A92029CEDB1F00ACCC63 /* ♻️BaseModel.swift in Sources */,
