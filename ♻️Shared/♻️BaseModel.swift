@@ -1,29 +1,23 @@
 import SwiftUI
 import WatchConnectivity
+import WidgetKit
 
 struct 🎛WidgetsModel: Codable, Equatable {
     var rectangular: 🎛RectangularWidgetModel = .load() ?? .default
     var circular: 🎛CircularWidgetModel = .load() ?? .default
     var inline: 🎛InlineWidgetModel = .load() ?? .default
-    func save() {
+    private func save() {
         self.rectangular.save()
         self.circular.save()
         self.inline.save()
     }
-    var asData: Data? { try? JSONEncoder().encode(self) }
-    mutating func receiveWCContext(_ ⓒontext: [String: Any]) {
-        if let ⓓata = ⓒontext["ⓒontext"] as? Data {
-            do {
-                self = try JSONDecoder().decode(Self.self, from: ⓓata)
-                self.save()
-            } catch {
-                print("🚨", error); assertionFailure()
-            }
-        } else {
-            //assertionFailure() シミュレーターだとダメ
-        }
+#if os(iOS)
+    func saveData_reloadWidget_updateWCContext() {
+        self.save()
+        WidgetCenter.shared.reloadAllTimelines()
+        self.updateWCContext()
     }
-    func updateWCContext() {
+    private func updateWCContext() {
         do {
             let ⓓata = try JSONEncoder().encode(self)
             try? WCSession.default.updateApplicationContext(["ⓒontext": ⓓata])
@@ -31,6 +25,33 @@ struct 🎛WidgetsModel: Codable, Equatable {
             assertionFailure()
         }
     }
+    mutating func receiveWCMessageWithNewText(_ ⓜessage: [String : Any]) {
+        if let ⓓata = ⓜessage["ⓜodelWithNewText"] as? Data {
+            if let ⓜodel = try? JSONDecoder().decode(Self.self, from: ⓓata) {
+                self = ⓜodel
+                self.saveData_reloadWidget_updateWCContext()
+            }
+        }
+    }
+#elseif os(watchOS)
+    func sendWCMessageWithNewText() {
+        guard let ⓓata = try? JSONEncoder().encode(self) else { return }
+        WCSession.default.sendMessage(["ⓜodelWithNewText": ⓓata], replyHandler: nil)
+    }
+    mutating func receiveWCContext(_ ⓒontext: [String: Any]) {
+        if let ⓓata = ⓒontext["ⓒontext"] as? Data {
+            do {
+                self = try JSONDecoder().decode(Self.self, from: ⓓata)
+                self.save()
+                WidgetCenter.shared.reloadAllTimelines()
+            } catch {
+                print("🚨", error); assertionFailure()
+            }
+        } else {
+            //assertionFailure() シミュレーターだとダメ
+        }
+    }
+#endif
 }
 
 struct 🎛RectangularWidgetModel: Codable, Equatable, 🄵ontOptions {

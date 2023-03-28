@@ -23,9 +23,9 @@ struct ContentView: View {
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(💬RequestUserReview(self.$🔖tab))
-        .onSubmit { 📱.saveAndReloadWidgetAndUpdateWCContext() }
+        .onSubmit { 📱.widgetsModel.saveData_reloadWidget_updateWCContext() }
         .onChange(of: self.scenePhase) {
-            if $0 == .background { 📱.saveAndReloadWidgetAndUpdateWCContext() }
+            if $0 == .background { 📱.widgetsModel.saveData_reloadWidget_updateWCContext() }
         }
         .onOpenURL { self.🔖tab.handleURL($0) }
     }
@@ -269,7 +269,7 @@ struct 👆DoneButton: View { // ☑️
     var body: some View {
         Button {
             self.ⓤnfocusAction()
-            📱.saveAndReloadWidgetAndUpdateWCContext()
+            📱.widgetsModel.saveData_reloadWidget_updateWCContext()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             Task { @MainActor in
                 try await Task.sleep(for: .seconds(0.45))

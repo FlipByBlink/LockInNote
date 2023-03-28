@@ -6,20 +6,9 @@ import WatchConnectivity
 class 📱AppModel: NSObject, ObservableObject {
     @Published var widgetsModel = 🎛WidgetsModel()
     
-    func saveAndReloadWidgetAndUpdateWCContext() {
-        self.widgetsModel.save()
-        WidgetCenter.shared.reloadAllTimelines()
-        self.widgetsModel.updateWCContext()
-    }
-    
-    func receiveWCMessageWithNewText(_ ⓜessage: [String : Any]) {
+    func applyReceivedWCMessage(_ ⓜessage: [String: Any]) {
         Task { @MainActor in
-            if let ⓓata = ⓜessage["ⓜodelWithNewText"] as? Data {
-                if let ⓜodel = try? JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata) {
-                    self.widgetsModel = ⓜodel
-                    self.saveAndReloadWidgetAndUpdateWCContext()
-                }
-            }
+            self.widgetsModel.receiveWCMessageWithNewText(ⓜessage)
         }
     }
 }
@@ -37,11 +26,11 @@ extension 📱AppModel: UIApplicationDelegate {
 extension 📱AppModel: WCSessionDelegate {
     //Required
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        //Do something
+        //Nothing to do
     }
     //Required
     func sessionDidBecomeInactive(_ session: WCSession) {
-        //Nothing
+        //Nothing to do
     }
     //Required
     func sessionDidDeactivate(_ session: WCSession) {
@@ -49,6 +38,6 @@ extension 📱AppModel: WCSessionDelegate {
     }
     //Optional
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        self.receiveWCMessageWithNewText(message)
+        self.applyReceivedWCMessage(message)
     }
 }

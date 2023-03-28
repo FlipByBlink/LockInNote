@@ -12,15 +12,15 @@ class 📱AppModel: NSObject, ObservableObject {
     func applyReceivedWCContext(_ ⓒontext: [String: Any]) {
         Task { @MainActor in
             self.widgetsModel.receiveWCContext(ⓒontext)
-            WidgetCenter.shared.reloadAllTimelines()
             self.ⓣasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
             self.ⓣasks.removeAll()
         }
     }
     
-    func sendWCMessageWithNewText() {
-        guard let ⓓata = self.widgetsModel.asData else { return }
-        WCSession.default.sendMessage(["ⓜodelWithNewText": ⓓata], replyHandler: nil)
+    func updateReachablity(_ ⓢession: WCSession) {
+        Task { @MainActor in
+            self.ⓡeachable = ⓢession.isReachable
+        }
     }
 }
 
@@ -46,7 +46,7 @@ extension 📱AppModel: WCSessionDelegate {
     //Required
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         self.applyReceivedWCContext(session.receivedApplicationContext)
-        Task { @MainActor in self.ⓡeachable = session.isReachable }
+        self.updateReachablity(session)
     }
     //Optional
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
@@ -54,6 +54,6 @@ extension 📱AppModel: WCSessionDelegate {
     }
     //Optional
     func sessionReachabilityDidChange(_ session: WCSession) {
-        Task { @MainActor in self.ⓡeachable = session.isReachable }
+        self.updateReachablity(session)
     }
 }
