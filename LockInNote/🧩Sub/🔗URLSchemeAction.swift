@@ -127,6 +127,7 @@ private struct 🔗URLSchemeActionMenu: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical)
                     .foregroundStyle(.secondary)
+                    .textSelection(.enabled)
             } header: {
                 Text("Example 1")
             } footer: {
@@ -140,6 +141,7 @@ private struct 🔗URLSchemeActionMenu: View {
                         .multilineTextAlignment(.center)
                         .padding(.vertical)
                         .foregroundStyle(.secondary)
+                        .textSelection(.enabled)
                     Spacer()
                 }
             } header: {
@@ -147,6 +149,13 @@ private struct 🔗URLSchemeActionMenu: View {
             } footer: {
                 Text("To search the text on DuckDuckGo.")
             }
+            Image("URLSchemeActionExample")
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(32)
+                .shadow(radius: 4)
+                .padding()
+                .listRowBackground(Color.clear)
         }
         .navigationTitle("Customize Action")
     }
