@@ -8,7 +8,5 @@ struct LIN_Watch_App: App {
             ContentView()
                 .task { self.📱.loadICloudTheFirstTime() }
         }
-        //.backgroundTask(.watchConnectivity) { _ in
-        //}
     }
 }

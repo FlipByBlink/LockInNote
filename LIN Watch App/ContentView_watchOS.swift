@@ -16,7 +16,13 @@ struct ContentView: View {
             }
             .navigationTitle(self.🔖tab.navigationTitle)
         }
-        .onOpenURL { self.🔖tab.handleURL($0) }
+        .onOpenURL { ⓤrl in
+            Task { @MainActor in
+                //Adjust the tab movement
+                try? await Task.sleep(for: .seconds(0.66))
+                self.🔖tab.handleURL(ⓤrl)
+            }
+        }
     }
 }
 
