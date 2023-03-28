@@ -28,19 +28,21 @@ struct 💁WidgetGuideTab: View {
 }
 
 private struct 💁StepByStepSection: View {
-    private let ⓢteps: [LocalizedStringKey] = [
-        "Touch and hold the Lock Screen until the Customize button appears, then tap Customize.",
-        "Select Lock Screen.",
-        "Tap Add Widgets.",
-        "Tap or drag the widgets that you want to add to the Lock Screen.",
-        "When you're finished, tap the close button, then tap Done."
+    private let ⓢteps: [Int: LocalizedStringKey] = [
+        1: "Touch and hold the Lock Screen until the Customize button appears, then tap Customize.",
+        2: "Select Lock Screen.",
+        3: "Tap Add Widgets.",
+        4: "Tap or drag the widgets that you want to add to the Lock Screen.",
+        5: "When you're finished, tap the close button, then tap Done."
     ]
     var body: some View {
         Section {
             ForEach(1 ... 5, id: \.self) { ⓘndex in
                 HStack {
                     Label {
-                        Text(self.ⓢteps[ⓘndex - 1])
+                        if let ⓣext = self.ⓢteps[ⓘndex] {
+                            Text(ⓣext)
+                        }
                     } icon: {
                         Text("\(ⓘndex).")
                             .font(.system(.title3, design: .rounded, weight: .semibold))
