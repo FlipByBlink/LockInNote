@@ -31,18 +31,6 @@ struct ContentView: View {
     }
 }
 
-enum 🔖Tab {
-    case rectangularWidget, circularWidget, inlineWidget, menu
-    mutating func handleURL(_ ⓤrl: URL) {
-        switch ⓤrl.description {
-            case "Rectangular": self = .rectangularWidget
-            case "Circular": self = .circularWidget
-            case "Inline": self = .inlineWidget
-            default: print(ⓤrl); assertionFailure()
-        }
-    }
-}
-
 struct 📝RectangularWidgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     var body: some View {

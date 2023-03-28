@@ -20,25 +20,6 @@ struct ContentView: View {
     }
 }
 
-enum 🔖Tab {
-    case rectangularWidget, circularWidget, inlineWidget
-    var navigationTitle: LocalizedStringKey {
-        switch self {
-            case .rectangularWidget: return "Rectangular"
-            case .circularWidget: return "Circular"
-            case .inlineWidget: return "Inline"
-        }
-    }
-    mutating func handleURL(_ ⓤrl: URL) {
-        switch ⓤrl.description {
-            case "example:Rectangular": self = .rectangularWidget
-            case "example:Circular": self = .circularWidget
-            case "example:Inline": self = .inlineWidget
-            default: print(ⓤrl); assertionFailure()
-        }
-    }
-}
-
 struct 🅆idgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @Binding var text: String
