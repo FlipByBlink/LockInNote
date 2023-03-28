@@ -8,6 +8,8 @@ The design of the memo note on the lock screen can be flexibly customized, so it
 
 - Tap the widget to immediately launch the keyboard and edit the memo note.
 
+- Apple Watch complication support.
+
 - Font \"size\", \"design\", and \"weight\" can be adjusted.
 
 - You can also select the alignment of multiple lines, the display pattern when no text is entered, and more.
