@@ -42,6 +42,7 @@ enum 📁SourceCodeCategory: String, CaseIterable, Identifiable {
             case .Sub:
                 return ["🛠MenuTab.swift",
                         "🔗URLSchemeAction.swift",
+                        "💁WidgetGuideTab.swift",
                         "📣ADSheet.swift",
                         "💬RequestUserReview.swift"]
             case .Others:

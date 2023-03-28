@@ -76,6 +76,7 @@
 		F57E85CC29D2BA2000927561 /* 💾UserDefaults.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaults.swift */; };
 		F57E85CD29D2BA2000927561 /* 🔖Tab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F57E85B829D28FD000927561 /* 🔖Tab.swift */; };
 		F57E85CF29D2C3D600927561 /* 💁WidgetGuideTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */; };
+		F57E85D029D30A9200927561 /* 💁WidgetGuideTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */; };
 		F5AA8C4228D0985F00C2047D /* LockInNoteApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* LockInNoteApp.swift */; };
 		F5AA8C4328D0985F00C2047D /* ContentView_iOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView_iOS.swift */; };
 		F5AA8C4428D0985F00C2047D /* 📱AppModel_iOS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel_iOS.swift */; };
@@ -148,6 +149,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F57E85D029D30A9200927561 /* 💁WidgetGuideTab.swift in CopyFiles */,
 				F57E85CC29D2BA2000927561 /* 💾UserDefaults.swift in CopyFiles */,
 				F57E85CD29D2BA2000927561 /* 🔖Tab.swift in CopyFiles */,
 				F566A92429CFBDC900ACCC63 /* LIN_Watch_App.swift in CopyFiles */,

@@ -21,20 +21,26 @@ private struct 💁AppleSupportLinkSection: View {
                 Link(destination: URL(string: "https://support.apple.com/HT207122")!) {
                     Label("How to add and edit widgets on your iPhone", systemImage: "link")
                 }
-                Text("https://support.apple.com/HT207122")
-                    .font(.caption2.italic())
-                    .padding(.leading, 24)
-                    .multilineTextAlignment(.center)
+                HStack {
+                    Spacer()
+                    Text("https://support.apple.com/HT207122")
+                        .font(.caption2.italic())
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                }
             }
             .padding(.vertical, 4)
             VStack(alignment: .leading, spacing: 6) {
                 Link(destination: URL(string: "https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")!) {
                     Label("Create a custom iPhone Lock Screen", systemImage: "link")
                 }
-                Text("https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")
-                    .font(.caption2.italic())
-                    .padding(.leading, 24)
-                    .multilineTextAlignment(.center)
+                HStack {
+                    Spacer()
+                    Text("https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")
+                        .font(.caption2.italic())
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                }
             }
             .padding(.vertical, 4)
         } header: {
@@ -91,7 +97,7 @@ private struct 💁AppleWatchSection: View {
                                 .scaledToFit()
                                 .frame(width: 120)
                         }
-                        .padding(.vertical, 12)
+                        .padding(.vertical, 24)
                     }
                     Section {
                         Label("The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes.",
