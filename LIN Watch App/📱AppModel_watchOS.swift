@@ -6,7 +6,7 @@ import WatchConnectivity
 class 📱AppModel: NSObject, ObservableObject {
     @Published var widgetsModel = 🎛WidgetsModel()
     
-    @Published var ⓡeachable: Bool = false
+    @Published var ⓡeachable: Bool = true
     @Published var ⓣasks: Set<WKRefreshBackgroundTask> = []
     
     func applyReceivedWCContext(_ ⓒontext: [String: Any]) {
@@ -18,9 +18,9 @@ class 📱AppModel: NSObject, ObservableObject {
         }
     }
     
-    func sendContextWithNewText() {
+    func sendWCMessageWithNewText() {
         guard let ⓓata = self.widgetsModel.asData else { return }
-        WCSession.default.sendMessage(["ⓒontextWithNewText": ⓓata], replyHandler: nil)
+        WCSession.default.sendMessage(["ⓜodelWithNewText": ⓓata], replyHandler: nil)
     }
 }
 
@@ -52,6 +52,7 @@ extension 📱AppModel: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         self.applyReceivedWCContext(applicationContext)
     }
+    //Optional
     func sessionReachabilityDidChange(_ session: WCSession) {
         Task { @MainActor in self.ⓡeachable = session.isReachable }
     }

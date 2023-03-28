@@ -11,6 +11,17 @@ class 📱AppModel: NSObject, ObservableObject {
         WidgetCenter.shared.reloadAllTimelines()
         self.widgetsModel.updateWCContext()
     }
+    
+    func receiveWCMessageWithNewText(_ ⓜessage: [String : Any]) {
+        Task { @MainActor in
+            if let ⓓata = ⓜessage["ⓜodelWithNewText"] as? Data {
+                if let ⓜodel = try? JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata) {
+                    self.widgetsModel = ⓜodel
+                    self.saveAndReloadWidgetAndUpdateWCContext()
+                }
+            }
+        }
+    }
 }
 
 extension 📱AppModel: UIApplicationDelegate {
@@ -36,14 +47,8 @@ extension 📱AppModel: WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {
         session.activate()
     }
+    //Optional
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        Task { @MainActor in
-            if let ⓓata = message["ⓒontextWithNewText"] as? Data {
-                if let ⓜodel = try? JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata) {
-                    self.widgetsModel = ⓜodel
-                    self.saveAndReloadWidgetAndUpdateWCContext()
-                }
-            }
-        }
+        self.receiveWCMessageWithNewText(message)
     }
 }

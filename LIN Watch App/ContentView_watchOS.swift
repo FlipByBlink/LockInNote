@@ -29,13 +29,13 @@ struct 🅆idgetTab: View {
             Spacer()
             TextField("Input text", text: self.$text)
                 .font(.title3)
-                .onSubmit { self.📱.sendContextWithNewText() }
+                .onSubmit { self.📱.sendWCMessageWithNewText() }
                 .disabled(!📱.ⓡeachable)
             Spacer()
             HStack {
                 Button(role: .destructive) {
                     self.text = ""
-                    self.📱.sendContextWithNewText()
+                    self.📱.sendWCMessageWithNewText()
                     WKInterfaceDevice.current().play(.success)
                 } label: {
                     Image(systemName: "trash")
