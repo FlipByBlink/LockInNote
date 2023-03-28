@@ -46,13 +46,13 @@ extension 📱AppModel: WCSessionDelegate {
     //Required
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         self.applyReceivedWCContext(session.receivedApplicationContext)
-        self.ⓡeachable = session.isReachable
+        Task { @MainActor in self.ⓡeachable = session.isReachable }
     }
     //Optional
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         self.applyReceivedWCContext(applicationContext)
     }
     func sessionReachabilityDidChange(_ session: WCSession) {
-        self.ⓡeachable = session.isReachable
+        Task { @MainActor in self.ⓡeachable = session.isReachable }
     }
 }

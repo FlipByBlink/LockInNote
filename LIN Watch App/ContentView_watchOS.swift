@@ -19,10 +19,11 @@ struct ContentView: View {
             }
         }
         .onOpenURL { ⓤrl in
+            print("🖨️ ⓤrl: ", ⓤrl)
             switch ⓤrl.description {
-                case "Rectangular": self.🔖tab = .rectangularWidget
-                case "Circular": self.🔖tab = .circularWidget
-                case "Inline": self.🔖tab = .inlineWidget
+                case "example:Rectangular": self.🔖tab = .rectangularWidget
+                case "example:Circular": self.🔖tab = .circularWidget
+                case "example:Inline": self.🔖tab = .inlineWidget
                 default: print("🐛")
             }
         }

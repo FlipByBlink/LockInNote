@@ -77,7 +77,7 @@ struct 🅁ectangularView : View {
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
         .widgetAccentable() //MARK: DiffFromIOSWidget
-        .widgetURL(URL(string: "Rectangular")!)//FIXME: ただの文字列だとダメそう
+        .widgetURL(URL(string: "example:Rectangular")!)//FIXME: ただの文字列だとダメそう
     }
 }
 
@@ -108,7 +108,7 @@ struct 🄲ircularView : View {
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
         .widgetAccentable() //MARK: DiffFromIOSWidget
-        .widgetURL(URL(string: "Circular")!)
+        .widgetURL(URL(string: "example:Circular")!)
     }
 }
 
@@ -123,6 +123,6 @@ struct 🄸nlineView : View {
             }
         }
         .widgetAccentable() //MARK: DiffFromIOSWidget
-        .widgetURL(URL(string: "Inline")!)
+        .widgetURL(URL(string: "example:Inline")!)
     }
 }
