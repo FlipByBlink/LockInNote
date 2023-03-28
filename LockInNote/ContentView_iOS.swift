@@ -27,19 +27,20 @@ struct ContentView: View {
         .onChange(of: self.scenePhase) {
             if $0 == .background { 📱.saveAndReloadWidgetAndUpdateWCContext() }
         }
-        .onOpenURL { ⓤrl in
-            switch ⓤrl.description {
-                case "Rectangular": self.🔖tab = .rectangularWidget
-                case "Circular": self.🔖tab = .circularWidget
-                case "Inline": self.🔖tab = .inlineWidget
-                default: print("🐛")
-            }
-        }
+        .onOpenURL { self.🔖tab.handleURL($0) }
     }
 }
 
 enum 🔖Tab {
     case rectangularWidget, circularWidget, inlineWidget, menu
+    mutating func handleURL(_ ⓤrl: URL) {
+        switch ⓤrl.description {
+            case "Rectangular": self = .rectangularWidget
+            case "Circular": self = .circularWidget
+            case "Inline": self = .inlineWidget
+            default: print(ⓤrl); assertionFailure()
+        }
+    }
 }
 
 struct 📝RectangularWidgetTab: View {
