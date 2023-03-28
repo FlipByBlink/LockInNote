@@ -38,7 +38,8 @@ enum 📁SourceCodeCategory: String, CaseIterable, Identifiable {
             case .Shared:
                 return ["♻️BaseModel.swift",
                         "💾UserDefaults.swift",
-                        "🔖Tab.swift"]
+                        "🔖Tab.swift",
+                        "🔗WidgetLink.swift"]
             case .Sub:
                 return ["🛠MenuTab.swift",
                         "🔗URLSchemeAction.swift",

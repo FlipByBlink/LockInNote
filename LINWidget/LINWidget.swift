@@ -81,7 +81,7 @@ struct 🅁ectangularView : View {
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
         .widgetAccentable()
-        .widgetURL(🔖Tab.rectangularWidget.url)
+        .widgetURL(🔗WidgetLink.rectangular.url)
     }
 }
 
@@ -112,7 +112,7 @@ struct 🄲ircularView : View {
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
         .widgetAccentable()
-        .widgetURL(🔖Tab.circularWidget.url)
+        .widgetURL(🔗WidgetLink.circular.url)
     }
 }
 
@@ -127,6 +127,6 @@ struct 🄸nlineView : View {
             }
         }
         .widgetAccentable()
-        .widgetURL(🔖Tab.inlineWidget.url)
+        .widgetURL(🔗WidgetLink.inline.url)
     }
 }

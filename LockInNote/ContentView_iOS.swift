@@ -76,7 +76,7 @@ struct 📝RectangularWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
-            .modifier(🄷andleLaunchFromWidget("Rectangular") { self.🚩focus = true })
+            .modifier(🄷andleLaunchFromWidget(🔗WidgetLink.rectangular) { self.🚩focus = true })
         }
         private func ⓘnputField() -> some View {
             Section {
@@ -134,7 +134,7 @@ struct 📝CircularWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
-            .modifier(🄷andleLaunchFromWidget("Circular") { self.🚩focus = true })
+            .modifier(🄷andleLaunchFromWidget(🔗WidgetLink.circular) { self.🚩focus = true })
         }
         private func ⓘnputField() -> some View {
             Section {
@@ -198,7 +198,7 @@ struct 📝InlineWidgetTab: View {
                 .animation(.default, value: self.🚩focus)
                 .modifier(🄰djustButtonsBackground())
             }
-            .modifier(🄷andleLaunchFromWidget("Inline") { self.🚩focus = true })
+            .modifier(🄷andleLaunchFromWidget(🔗WidgetLink.inline) { self.🚩focus = true })
         }
         private func ⓘnputField() -> some View {
             Section {
@@ -215,13 +215,13 @@ struct 📝InlineWidgetTab: View {
 
 struct 🄷andleLaunchFromWidget: ViewModifier {
     @Environment(\.scenePhase) var scenePhase
-    private var ⓘd: String
+    private var ⓛink: 🔗WidgetLink
     private var ⓕocusAction: () -> Void
     @State private var 🚩launchedFromWidget: Bool = false
     func body(content: Content) -> some View {
         content
-            .onOpenURL { ⓤrl in
-                if ⓤrl.description == self.ⓘd {
+            .onOpenURL {
+                if $0 == self.ⓛink.url {
                     self.🚩launchedFromWidget = true
                 }
             }
@@ -235,8 +235,8 @@ struct 🄷andleLaunchFromWidget: ViewModifier {
                 }
             }//Workaround: Keyboard safe area bug
     }
-    init(_ id: String, _ focusAction: @escaping () -> Void) {
-        self.ⓘd = id
+    init(_ link: 🔗WidgetLink, _ focusAction: @escaping () -> Void) {
+        self.ⓛink = link
         self.ⓕocusAction = focusAction
     }
 }
