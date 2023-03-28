@@ -77,7 +77,7 @@ struct 🅁ectangularView : View {
                       design: 🎛.fontDesign.value))
         .foregroundStyle(🎛.level.value)
         .widgetAccentable() //MARK: DiffFromIOSWidget
-        .widgetURL(URL(string: "Rectangular")!)
+        .widgetURL(URL(string: "Rectangular")!)//FIXME: ただの文字列だとダメそう
     }
 }
 

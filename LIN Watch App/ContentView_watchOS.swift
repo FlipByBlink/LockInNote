@@ -1,4 +1,5 @@
 import SwiftUI
+import WatchConnectivity
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
@@ -42,6 +43,7 @@ struct 🅆idgetTab: View {
             TextField("Input text", text: self.$ⓣext)
                 .font(.title3)
                 .onSubmit { self.📱.sendContextWithNewText() }
+                .disabled(!📱.ⓡeachable)
             Spacer()
             HStack {
                 Button(role: .destructive) {
@@ -53,6 +55,7 @@ struct 🅆idgetTab: View {
                         .fontWeight(.medium)
                 }
                 .disabled(self.ⓣext.isEmpty)
+                .disabled(!📱.ⓡeachable)
                 Button {
                     self.ⓢhowFullText = true
                     WKInterfaceDevice.current().play(.directionUp)
