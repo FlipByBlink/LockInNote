@@ -4,38 +4,43 @@ import WidgetKit
 struct 💁WidgetGuideTab: View {
     var body: some View {
         NavigationStack {
-            GeometryReader { 📐 in
-                List {
-                    💁StepByStepSection()
-                    self.ⓢupportPageLinkSection()
-                }
+            List {
+                💁StepByStepSection()
+                💁AppleSupportLinkSection()
+                💁AppleWatchSection()
             }
             .navigationTitle("How to add widgets")
         }
     }
-    private func ⓢupportPageLinkSection() -> some View {
+}
+
+private struct 💁AppleSupportLinkSection: View {
+    var body: some View {
         Section {
-            VStack(spacing: 6) {
+            VStack(alignment: .leading, spacing: 6) {
                 Link(destination: URL(string: "https://support.apple.com/HT207122")!) {
                     Label("How to add and edit widgets on your iPhone", systemImage: "link")
                 }
                 Text("https://support.apple.com/HT207122")
                     .font(.caption2.italic())
+                    .padding(.leading, 24)
+                    .multilineTextAlignment(.center)
             }
             .padding(.vertical, 4)
-            VStack(spacing: 6) {
+            VStack(alignment: .leading, spacing: 6) {
                 Link(destination: URL(string: "https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")!) {
                     Label("Create a custom iPhone Lock Screen", systemImage: "link")
                 }
                 Text("https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")
                     .font(.caption2.italic())
+                    .padding(.leading, 24)
+                    .multilineTextAlignment(.center)
             }
             .padding(.vertical, 4)
         } header: {
             Text("Apple Support Page Link")//, systemImage: "arrow.up.forward.app")
         }
         .headerProminence(.increased)
-        .multilineTextAlignment(.center)
     }
 }
 
@@ -69,6 +74,35 @@ private struct 💁StepByStepSection: View {
             }
         } header: {
             Text("Lock Screen Widgets")
+        }
+    }
+}
+
+private struct 💁AppleWatchSection: View {
+    var body: some View {
+        Section {
+            NavigationLink {
+                List {
+                    Section {
+                        HStack {
+                            Text("Mirror the lock screen widget to the Apple Watch complication.")
+                            Image("WatchExample")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 120)
+                        }
+                        .padding(.vertical, 12)
+                    }
+                    Section {
+                        Label("The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes.",
+                              systemImage: "exclamationmark.applewatch")
+                        .padding(.vertical, 8)
+                    }
+                }
+                .navigationTitle("Apple Watch app")
+            } label: {
+                Label("About Apple Watch app", systemImage: "applewatch")
+            }
         }
     }
 }

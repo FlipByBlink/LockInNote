@@ -68,6 +68,11 @@
 "How to add and edit widgets on your iPhone" = "iPhone でウィジェットを追加・編集する方法";
 "Create a custom iPhone Lock Screen" = "iPhoneのロック画面をパーソナライズする";
 
+"About Apple Watch app" = "Apple Watchアプリについて";
+"Apple Watch app" = "Apple Watchアプリ";
+"Mirror the lock screen widget to the Apple Watch complication." = "ロック画面ウィジェットをApple Watchのコンプリケーションにも表示します。";
+"The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes." = "Apple Watchのコンプリケーションにすぐに反映されない場合があります。遅くても10分程度で変更が適用されます。";
+
 
 "App for iPhone / Apple Watch" = "iPhone/Apple Watch向けアプリ";
 
