@@ -5,7 +5,7 @@ struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
     @EnvironmentObject var 🛒: 🛒StoreModel
     @Environment(\.scenePhase) var scenePhase
-    @State private var 🔖tab: 🔖Tab = .rectangularWidget
+    @State private var 🔖tab: 🔖Tab = .guide
     var body: some View {
         TabView(selection: self.$🔖tab) {
             📝RectangularWidgetTab()

@@ -54,6 +54,12 @@
 "If lock screen widgets don't update, please close this app or switch to another app." = "ロック画面ウィジェットが更新されない場合は、アプリを閉じたりアプリを切り替えたりすると変更が反映されます。";
 "Show a note." = "ノートを表示する。";
 
+"WidgetGuide1" = "Touch and hold the Lock Screen until the Customize button appears, then tap Customize.";
+"WidgetGuide2" = "Select Lock Screen.";
+"WidgetGuide3" = "Tap Add Widgets.";
+"WidgetGuide4" = "Tap or drag the widgets that you want to add to the Lock Screen.";
+"WidgetGuide5" = "When you're finished, tap the close button, then tap Done.";
+
 
 "App for iPhone / Apple Watch" = "iPhone/Apple Watch向けアプリ";
 
