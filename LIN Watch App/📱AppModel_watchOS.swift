@@ -11,7 +11,7 @@ class 📱AppModel: NSObject, ObservableObject {
     
     func applyReceivedWCContext(_ ⓒontext: [String: Any]) {
         Task { @MainActor in
-            self.widgetsModel.receiveWCContext(ⓒontext)
+            self.widgetsModel.receiveWCContext_saveData_reloadWidget(ⓒontext)
             self.ⓣasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
             self.ⓣasks.removeAll()
         }

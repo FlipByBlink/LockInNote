@@ -20,7 +20,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
     private func updateWCContext() {
         do {
             let ⓓata = try JSONEncoder().encode(self)
-            try? WCSession.default.updateApplicationContext(["ⓒontext": ⓓata])
+            try? WCSession.default.updateApplicationContext(["ⓝewModel": ⓓata])
         } catch {
             assertionFailure()
         }
@@ -38,8 +38,8 @@ struct 🎛WidgetsModel: Codable, Equatable {
         guard let ⓓata = try? JSONEncoder().encode(self) else { return }
         WCSession.default.sendMessage(["ⓜodelWithNewText": ⓓata], replyHandler: nil)
     }
-    mutating func receiveWCContext(_ ⓒontext: [String: Any]) {
-        if let ⓓata = ⓒontext["ⓒontext"] as? Data {
+    mutating func receiveWCContext_saveData_reloadWidget(_ ⓒontext: [String: Any]) {
+        if let ⓓata = ⓒontext["ⓝewModel"] as? Data {
             do {
                 self = try JSONDecoder().decode(Self.self, from: ⓓata)
                 self.save()
