@@ -14,6 +14,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
 #if os(iOS)
     func saveData_reloadWidget_updateWCContext() {
         self.save()
+        💾iCloud.save(self)
         WidgetCenter.shared.reloadAllTimelines()
         self.updateWCContext()
     }
@@ -34,6 +35,10 @@ struct 🎛WidgetsModel: Codable, Equatable {
         }
     }
 #elseif os(watchOS)
+    func saveData_reloadWidget() {
+        self.save()
+        WidgetCenter.shared.reloadAllTimelines()
+    }
     func sendWCMessageWithNewText() {
         guard let ⓓata = try? JSONEncoder().encode(self) else { return }
         WCSession.default.sendMessage(["ⓜodelWithNewText": ⓓata], replyHandler: nil)
@@ -42,8 +47,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
         if let ⓓata = ⓒontext["ⓝewModel"] as? Data {
             do {
                 self = try JSONDecoder().decode(Self.self, from: ⓓata)
-                self.save()
-                WidgetCenter.shared.reloadAllTimelines()
+                self.saveData_reloadWidget()
             } catch {
                 print("🚨", error); assertionFailure()
             }
@@ -51,6 +55,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
             //assertionFailure() シミュレーターだとダメ
         }
     }
+    
 #endif
 }
 
@@ -116,6 +121,9 @@ enum 💾UserDefaults {
         } catch {
             assertionFailure()
         }
+    }
+    static var notExists: Bool {
+        Self.ⓐpi?.data(forKey: Self.🄺ey.Rectangular.rawValue) == nil
     }
 }
 
@@ -203,6 +211,26 @@ enum 🄼ultilineTextAlignment: String, Codable, CaseIterable, Identifiable {
             case .leading: return "text.justify.leading"
             case .center: return "text.aligncenter"
             case .trailing: return "text.justify.trailing"
+        }
+    }
+}
+
+enum 💾iCloud {
+    private static let ⓐpi = NSUbiquitousKeyValueStore.default
+    static func load() -> 🎛WidgetsModel? {
+        guard let ⓓata = Self.ⓐpi.data(forKey: "ⓦidgetsModel") else { return nil }
+        do {
+            return try JSONDecoder().decode(🎛WidgetsModel.self, from: ⓓata)
+        } catch {
+            assertionFailure(); return nil
+        }
+    }
+    static func save(_ ⓜodel: 🎛WidgetsModel) {
+        do {
+            let ⓓata = try JSONEncoder().encode(ⓜodel)
+            Self.ⓐpi.set(ⓓata, forKey: "ⓦidgetsModel")
+        } catch {
+            assertionFailure()
         }
     }
 }

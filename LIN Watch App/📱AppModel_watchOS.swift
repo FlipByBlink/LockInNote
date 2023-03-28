@@ -22,6 +22,15 @@ class 📱AppModel: NSObject, ObservableObject {
             self.ⓡeachable = ⓢession.isReachable
         }
     }
+    
+    func loadICloudTheFirstTime() {
+        if 💾UserDefaults.notExists {
+            if let ⓜodel = 💾iCloud.load() {
+                self.widgetsModel = ⓜodel
+                self.widgetsModel.saveData_reloadWidget()
+            }
+        }
+    }
 }
 
 extension 📱AppModel: WKApplicationDelegate {
