@@ -17,6 +17,9 @@ struct ContentView: View {
             📝InlineWidgetTab()
                 .tag(🔖Tab.inlineWidget)
                 .tabItem { Label("Inline", systemImage: "rectangle.and.pencil.and.ellipsis") }
+            💁WidgetGuideTab()
+                .tag(🔖Tab.guide)
+                .tabItem { Label("Guide", systemImage: "questionmark") }
             🛠MenuTab()
                 .tag(🔖Tab.menu)
                 .tabItem { Label("Menu", systemImage: "gearshape") }

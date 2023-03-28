@@ -1,7 +1,7 @@
 import SwiftUI
 
 enum 🔖Tab {
-    case rectangularWidget, circularWidget, inlineWidget, menu
+    case rectangularWidget, circularWidget, inlineWidget, guide, menu
     mutating func handleURL(_ ⓤrl: URL) {
         switch ⓤrl.description {
             case "example://Rectangular": self = .rectangularWidget
@@ -15,7 +15,7 @@ enum 🔖Tab {
             case .rectangularWidget: return URL(string: "example://Rectangular")!
             case .circularWidget: return URL(string: "example://Circular")!
             case .inlineWidget: return URL(string: "example://Inline")!
-            case .menu: assertionFailure(); return URL(string: "🐛")!
+            default: assertionFailure(); return URL(string: "🐛")!
         }
     }
 }
@@ -27,7 +27,7 @@ extension 🔖Tab {
             case .rectangularWidget: return "Rectangular"
             case .circularWidget: return "Circular"
             case .inlineWidget: return "Inline"
-            case .menu: return "🐛"
+            default: return "🐛"
         }
     }
 }
