@@ -19,8 +19,8 @@ struct ContentView: View {
         .onOpenURL { ⓤrl in
             Task { @MainActor in
                 //Adjust the tab movement bug
-                try? await Task.sleep(for: .seconds(0.33))
-                withAnimation(.default.speed(2)) { self.🔖tab.handleURL(ⓤrl) }
+                try? await Task.sleep(for: .seconds(0.15))
+                self.🔖tab.handleURL(ⓤrl)
             }
         }
     }
