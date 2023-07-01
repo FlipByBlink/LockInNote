@@ -1,4 +1,4 @@
-LockInNote: iPhone / Apple Watch app
+LockInNote - iPhone, Apple Watch
 ------------------------------------
 
 <img src="LockInNote/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
@@ -7,9 +7,7 @@ LockInNote: iPhone / Apple Watch app
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
 </a>
 
-AppStore link
---------------
-https://apps.apple.com/app/id1644879340
+<img src="LockInNote/Assets.xcassets/ConceptImage.imageset/ConceptImage.png" width="600">
 
 
 Description
@@ -57,6 +55,11 @@ https://gitlab.com/FlipByBlink/LockInNote_Mirror
 Contact
 ---------
 sear_pandora_0x@icloud.com
+
+
+AppStore link
+--------------
+https://apps.apple.com/app/id1644879340
 
 
 <br>
