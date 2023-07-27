@@ -47,7 +47,7 @@ struct 🎚CustomizeFontLink<T: 🄵ontOptions>: View {
     }
 }
 
-struct 🎚PlaceholderPicker: View {//Blank icon
+struct 🎚PlaceholderPicker: View { //Blank icon
     @Binding var placeholder: 🄿laceholder
     var body: some View {
         Picker(selection: self.$placeholder) {

@@ -6,6 +6,9 @@ struct 🎛WidgetsModel: Codable, Equatable {
     var rectangular: 🎛RectangularWidgetModel = .load() ?? .default
     var circular: 🎛CircularWidgetModel = .load() ?? .default
     var inline: 🎛InlineWidgetModel = .load() ?? .default
+}
+
+extension 🎛WidgetsModel {
     private func save() {
         self.rectangular.save()
         self.circular.save()
@@ -55,7 +58,6 @@ struct 🎛WidgetsModel: Codable, Equatable {
             //assertionFailure() シミュレーターだとダメ
         }
     }
-    
 #endif
 }
 

@@ -1,14 +1,14 @@
 import SwiftUI
-import WidgetKit
 import WatchConnectivity
 
 @MainActor
 class 📱AppModel: NSObject, ObservableObject {
     @Published var widgetsModel = 🎛WidgetsModel()
-    
     @Published var reachable: Bool = true
     @Published var tasks: Set<WKRefreshBackgroundTask> = []
-    
+}
+
+extension 📱AppModel {
     func applyReceivedWCContext(_ ⓒontext: [String: Any]) {
         Task { @MainActor in
             self.widgetsModel.receiveWCContext_saveData_reloadWidget(ⓒontext)
@@ -16,13 +16,11 @@ class 📱AppModel: NSObject, ObservableObject {
             self.tasks.removeAll()
         }
     }
-    
     func updateReachablity(_ ⓢession: WCSession) {
         Task { @MainActor in
             self.reachable = ⓢession.isReachable
         }
     }
-    
     func loadICloudTheFirstTime() {
         if 💾UserDefaults.notExists {
             if let ⓜodel = 💾ICloud.load() {

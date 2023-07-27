@@ -1,5 +1,4 @@
 import SwiftUI
-import WatchConnectivity
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel

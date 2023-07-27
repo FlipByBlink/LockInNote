@@ -1,5 +1,4 @@
 import SwiftUI
-import WidgetKit
 
 struct 💁WidgetGuideTab: View {
     var body: some View {
@@ -84,7 +83,6 @@ private extension 💁WidgetGuideTab {
             .headerProminence(.increased)
         }
     }
-    
     private struct AppleWatchSection: View {
         var body: some View {
             Section {
