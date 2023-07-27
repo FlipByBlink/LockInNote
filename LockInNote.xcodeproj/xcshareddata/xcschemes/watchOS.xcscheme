@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F566A8F829CEDA1200ACCC63"
                BuildableName = "LockInNote.app"
-               BlueprintName = "LIN Watch App"
+               BlueprintName = "watchOS"
                ReferencedContainer = "container:LockInNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F54BE1C528CB480900532025"
-               BuildableName = "LockInNote.app"
-               BlueprintName = "LockInNote"
+               BuildableName = "iOS.app"
+               BlueprintName = "iOS"
                ReferencedContainer = "container:LockInNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -59,7 +59,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F566A8F829CEDA1200ACCC63"
             BuildableName = "LockInNote.app"
-            BlueprintName = "LIN Watch App"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,7 +76,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F566A8F829CEDA1200ACCC63"
             BuildableName = "LockInNote.app"
-            BlueprintName = "LIN Watch App"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

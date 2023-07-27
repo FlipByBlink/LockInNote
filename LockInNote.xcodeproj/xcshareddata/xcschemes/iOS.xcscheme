@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F54BE1C528CB480900532025"
-               BuildableName = "LockInNote.app"
-               BlueprintName = "LockInNote"
+               BuildableName = "iOS.app"
+               BlueprintName = "iOS"
                ReferencedContainer = "container:LockInNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F54BE1C528CB480900532025"
-            BuildableName = "LockInNote.app"
-            BlueprintName = "LockInNote"
+            BuildableName = "iOS.app"
+            BlueprintName = "iOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F54BE1C528CB480900532025"
-            BuildableName = "LockInNote.app"
-            BlueprintName = "LockInNote"
+            BuildableName = "iOS.app"
+            BlueprintName = "iOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
