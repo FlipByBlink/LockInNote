@@ -25,7 +25,7 @@ class 📱AppModel: NSObject, ObservableObject {
     
     func loadICloudTheFirstTime() {
         if 💾UserDefaults.notExists {
-            if let ⓜodel = 💾iCloud.load() {
+            if let ⓜodel = 💾ICloud.load() {
                 self.widgetsModel = ⓜodel
                 self.widgetsModel.saveData_reloadWidget()
             }

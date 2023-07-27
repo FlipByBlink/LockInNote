@@ -47,6 +47,7 @@ extension 🗒️StaticInfo {
                              "📱AppModel.swift",
                              "♻️BaseModel.swift"]
                 case .Sub: ["💾UserDefaults.swift",
+                            "💾ICloud.swift",
                             "🔖TabModel.swift",
                             "🔖TabView.swift",
                             "📝WidgetTab.swift",

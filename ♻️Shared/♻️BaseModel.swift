@@ -14,7 +14,7 @@ struct 🎛WidgetsModel: Codable, Equatable {
 #if os(iOS)
     func saveData_reloadWidget_updateWCContext() {
         self.save()
-        💾iCloud.save(self)
+        💾ICloud.save(self)
         WidgetCenter.shared.reloadAllTimelines()
         self.updateWCContext()
     }
