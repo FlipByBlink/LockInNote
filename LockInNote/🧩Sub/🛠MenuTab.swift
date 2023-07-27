@@ -12,10 +12,3 @@ struct 🛠MenuTab: View { // ⚙️
         }
     }
 }
-
-//appReview reject を受けて一旦 commentOut
-//Section {
-//    Text("If lock screen widgets don't update, please close this app or switch to another app.")
-//} header: {
-//    Text("Directions")
-//}

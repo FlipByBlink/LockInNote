@@ -3,10 +3,10 @@ import WatchConnectivity
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @State private var 🔖tab: 🔖Tab = .rectangularWidget
+    @State private var tab: 🔖Tab = .rectangularWidget
     var body: some View {
         NavigationStack {
-            TabView(selection: self.$🔖tab) {
+            TabView(selection: self.$tab) {
                 🅆idgetTab(text: self.$📱.widgetsModel.rectangular.text)
                     .tag(🔖Tab.rectangularWidget)
                 🅆idgetTab(text: self.$📱.widgetsModel.circular.text)
@@ -14,14 +14,14 @@ struct ContentView: View {
                 🅆idgetTab(text: self.$📱.widgetsModel.inline.text)
                     .tag(🔖Tab.inlineWidget)
             }
-            .navigationTitle(self.🔖tab.navigationTitle)
+            .navigationTitle(self.tab.navigationTitle)
         }
         .onOpenURL { ⓤrl in
             Task { @MainActor in
                 //Adjust the tab movement bug
                 try? await Task.sleep(for: .seconds(0.1))
                 withAnimation(.default.speed(2)) {
-                    self.🔖tab.handleURL(ⓤrl)
+                    self.tab.handleURL(ⓤrl)
                 }
             }
         }
@@ -31,14 +31,14 @@ struct ContentView: View {
 struct 🅆idgetTab: View {
     @EnvironmentObject var 📱: 📱AppModel
     @Binding var text: String
-    @State private var ⓢhowFullText: Bool = false
+    @State private var showFullText: Bool = false
     var body: some View {
         VStack {
             Spacer()
             TextField("Input text", text: self.$text)
                 .font(.title3)
                 .onSubmit { self.📱.widgetsModel.sendWCMessageWithNewText() }
-                .disabled(!📱.ⓡeachable)
+                .disabled(!📱.reachable)
             Spacer()
             HStack {
                 Button(role: .destructive) {
@@ -50,9 +50,9 @@ struct 🅆idgetTab: View {
                         .fontWeight(.medium)
                 }
                 .disabled(self.text.isEmpty)
-                .disabled(!📱.ⓡeachable)
+                .disabled(!📱.reachable)
                 Button {
-                    self.ⓢhowFullText = true
+                    self.showFullText = true
                     WKInterfaceDevice.current().play(.directionUp)
                 } label: {
                     Image(systemName: "doc.text.magnifyingglass")
@@ -60,7 +60,7 @@ struct 🅆idgetTab: View {
                         .foregroundStyle(self.text.isEmpty ? .secondary : .primary)
                 }
                 .disabled(self.text.isEmpty)
-                .sheet(isPresented: self.$ⓢhowFullText) {
+                .sheet(isPresented: self.$showFullText) {
                     ScrollView {
                         Text(self.text)
                             .font(.title2)
@@ -69,7 +69,7 @@ struct 🅆idgetTab: View {
                     }
                     .toolbar(.hidden, for: .automatic)
                     .onTapGesture {
-                        self.ⓢhowFullText = false
+                        self.showFullText = false
                         WKInterfaceDevice.current().play(.directionDown)
                     }
                 }

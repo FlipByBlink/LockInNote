@@ -6,20 +6,20 @@ import WatchConnectivity
 class 📱AppModel: NSObject, ObservableObject {
     @Published var widgetsModel = 🎛WidgetsModel()
     
-    @Published var ⓡeachable: Bool = true
-    @Published var ⓣasks: Set<WKRefreshBackgroundTask> = []
+    @Published var reachable: Bool = true
+    @Published var tasks: Set<WKRefreshBackgroundTask> = []
     
     func applyReceivedWCContext(_ ⓒontext: [String: Any]) {
         Task { @MainActor in
             self.widgetsModel.receiveWCContext_saveData_reloadWidget(ⓒontext)
-            self.ⓣasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
-            self.ⓣasks.removeAll()
+            self.tasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
+            self.tasks.removeAll()
         }
     }
     
     func updateReachablity(_ ⓢession: WCSession) {
         Task { @MainActor in
-            self.ⓡeachable = ⓢession.isReachable
+            self.reachable = ⓢession.isReachable
         }
     }
     
@@ -43,7 +43,7 @@ extension 📱AppModel: WKApplicationDelegate {
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         for ⓣask in backgroundTasks {
             if let ⓦcTask = ⓣask as? WKWatchConnectivityRefreshBackgroundTask {
-                self.ⓣasks.insert(ⓦcTask)
+                self.tasks.insert(ⓦcTask)
             } else {
                 ⓣask.setTaskCompletedWithSnapshot(false)
             }

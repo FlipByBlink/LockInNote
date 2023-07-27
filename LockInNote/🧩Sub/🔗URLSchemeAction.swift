@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct 🔗URLSchemeActionButton: View {
-    @AppStorage("URLSchemeLeading") var 🔗leading: String = ""
-    @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
-    @AppStorage("URLSchemeButtonTitle") var 🪧buttonTitle: String = ""
-    @AppStorage("EraseTextAfterAction") var 🚩eraseTextAfterAction: Bool = false
+    @AppStorage("URLSchemeLeading") var leadingComponent: String = ""
+    @AppStorage("URLSchemeTrailing") var trailingComponent: String = ""
+    @AppStorage("URLSchemeButtonTitle") var buttonTitle: String = ""
+    @AppStorage("EraseTextAfterAction") var eraseTextAfterAction: Bool = false
     @Environment(\.openURL) var openURL
-    @Binding var ⓠuery: String
+    @Binding var query: String
     private var ⓤrl: URL? {
-        let ⓣext = self.🔗leading + self.ⓠuery + self.🔗trailing
+        let ⓣext = self.leadingComponent + self.query + self.trailingComponent
         if let ⓔncodedText = ⓣext.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             return URL(string: ⓔncodedText)
         } else {
@@ -16,24 +16,24 @@ struct 🔗URLSchemeActionButton: View {
         }
     }
     var body: some View {
-        if !self.🔗leading.isEmpty {
+        if !self.leadingComponent.isEmpty {
             if let ⓤrl {
                 Section {
                     Button {
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                         self.openURL(ⓤrl) { ⓐccepted in
-                            if ⓐccepted && self.🚩eraseTextAfterAction {
+                            if ⓐccepted && self.eraseTextAfterAction {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                    self.ⓠuery = ""
+                                    self.query = ""
                                 }
                             }
                         }
                     } label: {
-                        Label(LocalizedStringKey(self.🪧buttonTitle.isEmpty ? "URL Scheme Action" : self.🪧buttonTitle),
+                        Label(LocalizedStringKey(self.buttonTitle.isEmpty ? "URL Scheme Action" : self.buttonTitle),
                               systemImage: "command")
                         .font(.headline)
                     }
-                    .disabled(self.ⓠuery.isEmpty)
+                    .disabled(self.query.isEmpty)
                 } footer: {
                     Text(ⓤrl.description)
                 }
@@ -41,7 +41,7 @@ struct 🔗URLSchemeActionButton: View {
         }
     }
     init(_ query: Binding<String>) {
-        self._ⓠuery = query
+        self._query = query
     }
 }
 
@@ -75,34 +75,32 @@ struct 🔗URLSchemeActionMenuLink: View {
 }
 
 private struct 🔗URLSchemeActionMenu: View {
-    @AppStorage("URLSchemeLeading") var 🔗leading: String = ""
-    @AppStorage("URLSchemeTrailing") var 🔗trailing: String = ""
-    @AppStorage("URLSchemeButtonTitle") var 🪧buttonTitle: String = ""
-    @AppStorage("EraseTextAfterAction") var 🚩eraseTextAfterAction: Bool = false
-    private var ⓛeading: String { self.🔗leading.isEmpty ? "① + " : self.🔗leading }
-    private var ⓣrailing: String { self.🔗trailing.isEmpty ? " + ②" : self.🔗trailing }
+    @AppStorage("URLSchemeLeading") var leadingComponent: String = ""
+    @AppStorage("URLSchemeTrailing") var trailingComponent: String = ""
+    @AppStorage("URLSchemeButtonTitle") var buttonTitle: String = ""
+    @AppStorage("EraseTextAfterAction") var eraseTextAfterAction: Bool = false
     var body: some View {
         List {
             Section {
                 VStack {
                     HStack {
-                        if self.🔗leading.isEmpty {
+                        if self.leadingComponent.isEmpty {
                             Text("① +")
                                 .foregroundStyle(.secondary)
                         }
-                        Text(self.🔗leading + "TEXT" + self.🔗trailing)
+                        Text(self.leadingComponent + "TEXT" + self.trailingComponent)
                             .italic()
                             .font(.system(.subheadline, design: .monospaced))
                             .multilineTextAlignment(.center)
                             .padding(8)
                             .frame(minHeight: 100)
-                        if self.🔗trailing.isEmpty {
+                        if self.trailingComponent.isEmpty {
                             Text("+ ②")
                                 .foregroundStyle(.secondary)
                         }
                     }
-                    TextField("① URL scheme", text: self.$🔗leading)
-                    TextField("② Trailing component", text: self.$🔗trailing)
+                    TextField("① URL scheme", text: self.$leadingComponent)
+                    TextField("② Trailing component", text: self.$trailingComponent)
                         .font(.subheadline)
                         .padding(.bottom, 4)
                 }
@@ -111,13 +109,13 @@ private struct 🔗URLSchemeActionMenu: View {
                 Text("URL scheme")
             }
             Section {
-                TextField("Input text of button", text: self.$🪧buttonTitle)
+                TextField("Input text of button", text: self.$buttonTitle)
                     .textFieldStyle(.roundedBorder)
             } header: {
                 Text("Button label")
             }
             Section {
-                Toggle(isOn: self.$🚩eraseTextAfterAction) {
+                Toggle(isOn: self.$eraseTextAfterAction) {
                     Label("Erase text after action", systemImage: "eraser.line.dashed")
                 }
             }
@@ -149,7 +147,7 @@ private struct 🔗URLSchemeActionMenu: View {
             } footer: {
                 Text("To search the text on DuckDuckGo.")
             }
-            Image("URLSchemeActionExample")
+            Image(.urlSchemeActionExample)
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(32)

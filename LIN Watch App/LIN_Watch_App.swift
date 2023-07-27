@@ -6,7 +6,7 @@ struct LIN_Watch_App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .task { self.📱.loadICloudTheFirstTime() }
+                .task { 📱.loadICloudTheFirstTime() }
         }
     }
 }

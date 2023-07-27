@@ -16,10 +16,10 @@ enum 🔖Tab {
 extension 🔖Tab {
     var navigationTitle: LocalizedStringKey {
         switch self {
-            case .rectangularWidget: return "Rectangular"
-            case .circularWidget: return "Circular"
-            case .inlineWidget: return "Inline"
-            default: return "🐛"
+            case .rectangularWidget: "Rectangular"
+            case .circularWidget: "Circular"
+            case .inlineWidget: "Inline"
+            default: "🐛"
         }
     }
 }

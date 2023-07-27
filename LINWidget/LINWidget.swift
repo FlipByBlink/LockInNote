@@ -64,66 +64,66 @@ struct 🕒Entry: TimelineEntry {
 }
 
 struct 🅁ectangularView : View {
-    private let 🎛: 🎛RectangularWidgetModel = .load() ?? .default
+    private let model: 🎛RectangularWidgetModel = .load() ?? .default
     var body: some View {
         Group {
-            if 🎛.text != "" {
-                Text(🎛.text)
-                    .italic(🎛.italic)
-                    .multilineTextAlignment(🎛.multilineTextAlignment.value)
-            } else if 🎛.placeholder != .nothing {
-                Image(systemName: 🎛.placeholder.icon)
+            if self.model.text != "" {
+                Text(self.model.text)
+                    .italic(self.model.italic)
+                    .multilineTextAlignment(self.model.multilineTextAlignment.value)
+            } else if self.model.placeholder != .nothing {
+                Image(systemName: self.model.placeholder.icon)
                     .imageScale(.large)
             }
         }
-        .font(.system(size: CGFloat(🎛.fontSize),
-                      weight: 🎛.fontWeight.value,
-                      design: 🎛.fontDesign.value))
-        .foregroundStyle(🎛.level.value)
+        .font(.system(size: CGFloat(self.model.fontSize),
+                      weight: self.model.fontWeight.value,
+                      design: self.model.fontDesign.value))
+        .foregroundStyle(self.model.level.value)
         .widgetAccentable()
         .widgetURL(🔗WidgetLink.rectangular.url)
     }
 }
 
 struct 🄲ircularView : View {
-    private let 🎛: 🎛CircularWidgetModel = .load() ?? .default
+    private let model: 🎛CircularWidgetModel = .load() ?? .default
     var body: some View {
         Group {
-            if 🎛.text != "" {
+            if self.model.text != "" {
                 ZStack {
-                    if 🎛.background { AccessoryWidgetBackground() }
-                    Text(🎛.text)
-                        .italic(🎛.italic)
-                        .multilineTextAlignment(🎛.multilineTextAlignment.value)
+                    if self.model.background { AccessoryWidgetBackground() }
+                    Text(self.model.text)
+                        .italic(self.model.italic)
+                        .multilineTextAlignment(self.model.multilineTextAlignment.value)
                         .padding(.horizontal, 2)
                 }
             } else {
                 ZStack {
-                    if 🎛.background { AccessoryWidgetBackground() }
-                    if 🎛.placeholder != .nothing {
-                        Image(systemName: 🎛.placeholder.icon)
+                    if self.model.background { AccessoryWidgetBackground() }
+                    if self.model.placeholder != .nothing {
+                        Image(systemName: self.model.placeholder.icon)
                             .imageScale(.large)
                     }
                 }
             }
         }
-        .font(.system(size: CGFloat(🎛.fontSize),
-                      weight: 🎛.fontWeight.value,
-                      design: 🎛.fontDesign.value))
-        .foregroundStyle(🎛.level.value)
+        .font(.system(size: CGFloat(self.model.fontSize),
+                      weight: self.model.fontWeight.value,
+                      design: self.model.fontDesign.value))
+        .foregroundStyle(self.model.level.value)
         .widgetAccentable()
         .widgetURL(🔗WidgetLink.circular.url)
     }
 }
 
 struct 🄸nlineView : View {
-    private let 🎛: 🎛InlineWidgetModel = .load() ?? .default
+    private let model: 🎛InlineWidgetModel = .load() ?? .default
     var body: some View {
         Group {
-            if 🎛.text != "" {
-                Text(🎛.text)
-            } else if 🎛.placeholder != .nothing {
-                Image(systemName: 🎛.placeholder.icon)
+            if self.model.text != "" {
+                Text(self.model.text)
+            } else if self.model.placeholder != .nothing {
+                Image(systemName: self.model.placeholder.icon)
             }
         }
         .widgetAccentable()

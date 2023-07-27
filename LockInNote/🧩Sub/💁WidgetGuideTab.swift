@@ -51,7 +51,7 @@ private struct 💁AppleSupportLinkSection: View {
 }
 
 private struct 💁StepByStepSection: View {
-    private let ⓢteps: [Int: LocalizedStringKey] = [
+    private let steps: [Int: LocalizedStringKey] = [
         1: "Touch and hold the Lock Screen until the Customize button appears, then tap Customize.",
         2: "Select Lock Screen.",
         3: "Tap Add Widgets.",
@@ -63,7 +63,7 @@ private struct 💁StepByStepSection: View {
             ForEach(1 ... 5, id: \.self) { ⓘndex in
                 HStack {
                     Label {
-                        if let ⓣext = self.ⓢteps[ⓘndex] {
+                        if let ⓣext = self.steps[ⓘndex] {
                             Text(ⓣext)
                         }
                     } icon: {
@@ -92,7 +92,7 @@ private struct 💁AppleWatchSection: View {
                     Section {
                         HStack {
                             Text("Mirror the lock screen widget to the Apple Watch complication.")
-                            Image("WatchExample")
+                            Image(.watchExample)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 120)

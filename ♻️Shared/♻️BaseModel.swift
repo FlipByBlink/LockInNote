@@ -118,10 +118,10 @@ enum 🄿laceholder: String, Codable, CaseIterable, Identifiable {
     var id: Self { self }
     var icon: String {
         switch self {
-            case .squareAndPencil: return "square.and.pencil"
-            case .ellipsis: return "ellipsis"
-            case .pencil: return "pencil"
-            case .nothing: return "questionmark.square.dashed"
+            case .squareAndPencil: "square.and.pencil"
+            case .ellipsis: "ellipsis"
+            case .pencil: "pencil"
+            case .nothing: "questionmark.square.dashed"
         }
     }
 }
@@ -131,15 +131,15 @@ enum 🅆eight: String, Codable, CaseIterable, Identifiable {
     var id: Self { self }
     var value: Font.Weight {
         switch self {
-            case .ultraLight: return .ultraLight
-            case .thin: return .thin
-            case .light: return .light
-            case .regular: return .regular
-            case .medium: return .medium
-            case .semibold: return .semibold
-            case .bold: return .bold
-            case .heavy: return .heavy
-            case .black: return .black
+            case .ultraLight: .ultraLight
+            case .thin: .thin
+            case .light: .light
+            case .regular: .regular
+            case .medium: .medium
+            case .semibold: .semibold
+            case .bold: .bold
+            case .heavy: .heavy
+            case .black: .black
         }
     }
 }
@@ -149,10 +149,10 @@ enum 🄳esign: String, Codable, CaseIterable, Identifiable {
     var id: Self { self }
     var value: Font.Design {
         switch self {
-            case .default: return .default
-            case .serif: return .serif
-            case .rounded: return .rounded
-            case .monospaced: return .monospaced
+            case .default: .default
+            case .serif: .serif
+            case .rounded: .rounded
+            case .monospaced: .monospaced
         }
     }
 }
@@ -162,10 +162,10 @@ enum 🄻evel: String, Codable, CaseIterable, Identifiable {
     var id: Self { self }
     var value: HierarchicalShapeStyle {
         switch self {
-            case .primary: return .primary
-            case .secondary: return .secondary
-            case .tertiary: return .tertiary
-            case .quaternary: return .quaternary
+            case .primary: .primary
+            case .secondary: .secondary
+            case .tertiary: .tertiary
+            case .quaternary: .quaternary
         }
     }
 }
@@ -175,16 +175,16 @@ enum 🄼ultilineTextAlignment: String, Codable, CaseIterable, Identifiable {
     var id: Self { self }
     var value: TextAlignment {
         switch self {
-            case .leading: return .leading
-            case .center: return .center
-            case .trailing: return .trailing
+            case .leading: .leading
+            case .center: .center
+            case .trailing: .trailing
         }
     }
     var icon: String {
         switch self {
-            case .leading: return "text.justify.leading"
-            case .center: return "text.aligncenter"
-            case .trailing: return "text.justify.trailing"
+            case .leading: "text.justify.leading"
+            case .center: "text.aligncenter"
+            case .trailing: "text.justify.trailing"
         }
     }
 }
