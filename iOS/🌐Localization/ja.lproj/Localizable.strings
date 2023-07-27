@@ -1,0 +1,87 @@
+
+"Rectangular" = "長方形";
+"Circular" = "円形";
+"Inline" = "インライン";
+"Rectangular widget" = "長方形ウィジェット";
+"Circular widget" = "円形ウィジェット";
+"Inline widget" = "インラインウィジェット";
+"Input text" = "テキストを入力";
+"□⃞  Rectangular" = "□⃞  長方形";
+"○  Circular" = "○  円形";
+"▷  Inline" = "▷  インライン";
+"Erase" = "消す";
+"Customize font" = "フォントをカスタマイズ";
+"Background" = "背景";
+"Blank icon" = "未入力時のアイコン";
+"square and pencil" = "ペンと四角";
+"ellipsis" = "3点ドット";
+"pencil" = "ペン";
+"(nothing)" = "(何も無し)";
+"Weight" = "太さ";
+"regular" = "regular(標準)";
+"Design" = "デザイン";
+"default" = "デフォルト";
+"serif" = "セリフ体";
+"rounded" = "ラウンド体";
+"monospaced" = "等幅フォント";
+"Size" = "サイズ";
+"Level" = "濃淡";
+"primary" = "標準";
+"secondary" = "2番目";
+"tertiary" = "3番目";
+"quaternary" = "4番目";
+"Multi text alignment" = "複数行の揃え方";
+"leading" = "先頭";
+"center" = "中心";
+"trailing" = "末尾";
+"Italic" = "イタリック";
+"Share" = "共有";
+"Setting URL scheme action" = "URLスキームアクションを設定する";
+"URL Scheme Action" = "URLスキームアクション";
+"Customize Action" = "アクションを設定";
+"TEXT" = "テキスト";
+"① URL scheme" = "① URLスキーム";
+"② Trailing component" = "② 末尾部分";
+"URL scheme" = "URLスキーム";
+"Button label" = "ボタンラベル";
+"Input text of button" = "ボタンに表示される文字列";
+"Erase text after action" = "動作後にテキストを削除する";
+"Example 1" = "例 1";
+"To run one shortcut of Shortcuts App with the text." = "「ショートカット」アプリの任意のショートカットを実行します。";
+"Example 2" = "例 2";
+"To search the text on DuckDuckGo." = "DuckDuckGoでテキストを検索します。";
+"Directions" = "注記";
+"If lock screen widgets don't update, please close this app or switch to another app." = "ロック画面ウィジェットが更新されない場合は、アプリを閉じたりアプリを切り替えたりすると変更が反映されます。";
+"Show a note." = "ノートを表示する。";
+
+"Guide" = "ガイド";
+"How to add widgets" = "ウィジェット設定方法";
+"Lock Screen Widgets" = "ロック画面ウィジェット";
+
+"Touch and hold the Lock Screen until the Customize button appears, then tap Customize." = "ロック画面を長押しして、「カスタマイズ」ボタンが表示されたら、そのボタンをタップします。";
+"Select Lock Screen." = "「ロック画面」を選択します。";
+"Tap Add Widgets." = "「ウィジェットを追加」をタップします。";
+"Tap or drag the widgets that you want to add to the Lock Screen." = "ロック画面に追加したいウィジェットをタップまたはドラッグします。";
+"When you're finished, tap the close button, then tap Done." = "終わったら、閉じるボタンをタップして、「完了」をタップします。";
+
+"Apple Support Page Link" = "Apple公式サポートサイトリンク";
+"How to add and edit widgets on your iPhone" = "iPhone でウィジェットを追加・編集する方法";
+"Create a custom iPhone Lock Screen" = "iPhoneのロック画面をパーソナライズする";
+
+"About Apple Watch app" = "Apple Watchアプリについて";
+"Apple Watch app" = "Apple Watchアプリ";
+"Mirror the lock screen widget to the Apple Watch complication." = "ロック画面ウィジェットをApple Watchのコンプリケーションにも表示できます。";
+"The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes." = "Apple Watchのコンプリケーションにすぐに反映されない場合があります。遅くても10分程度で変更が適用されます。";
+
+
+"App for iPhone / Apple Watch" = "iPhone/Apple Watch向けアプリ";
+
+"Menu" = "メニュー";
+"Open menu" = "メニューを開く";
+"Option" = "オプション";
+"Done" = "完了";
+"Dismiss" = "閉じる";
+"Cancel" = "取り消す";
+"Error" = "エラー";
+"OK" = "了解しました";
+"Description" = "概要";

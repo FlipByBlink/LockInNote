@@ -4,8 +4,18 @@ struct 🛠MenuTab: View { // ⚙️
     var body: some View {
         NavigationStack {
             List {
-                ℹ️AboutAppLink(name: "LockInNote", subtitle: "App for iPhone / Apple Watch")
-                📣ADMenuLink()
+                Section {
+                    ℹ️IconAndName()
+                    ℹ️AppStoreLink()
+                    NavigationLink {
+                        List { ℹ️AboutAppContent() }
+                            .navigationTitle(String(localized: "LockInNote", table: "🌐AboutApp"))
+                    } label: {
+                        Label(String(localized: "About App", table: "🌐AboutApp"),
+                              systemImage: "doc")
+                    }
+                }
+                🛒InAppPurchaseMenuLink()
                 🔗URLSchemeActionMenuLink()
             }
             .navigationTitle("Menu")

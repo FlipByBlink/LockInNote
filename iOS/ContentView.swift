@@ -3,7 +3,7 @@ import WidgetKit
 
 struct ContentView: View {
     @EnvironmentObject var 📱: 📱AppModel
-    @EnvironmentObject var 🛒: 🛒StoreModel
+    @EnvironmentObject var 🛒: 🛒InAppPurchaseModel
     @Environment(\.scenePhase) var scenePhase
     @State private var tab: 🔖Tab = .rectangularWidget
     var body: some View {
@@ -25,8 +25,8 @@ struct ContentView: View {
                 .tabItem { Label("Menu", systemImage: "gearshape") }
         }
         .scrollDismissesKeyboard(.interactively)
-        .modifier(💬RequestUserReview(self.$tab))
-        .modifier(📣ADSheet())
+        .modifier(💬RequestUserReview())
+//        .modifier(📣ADSheet())
         .onSubmit { 📱.widgetsModel.saveData_reloadWidget_updateWCContext() }
         .onChange(of: self.scenePhase) {
             if $0 == .background { 📱.widgetsModel.saveData_reloadWidget_updateWCContext() }
@@ -268,7 +268,7 @@ struct 👆EditButton: View { // 🖊️
 
 struct 👆DoneButton: View { // ☑️
     @EnvironmentObject var 📱: 📱AppModel
-    @EnvironmentObject var 🛒: 🛒StoreModel
+    //@EnvironmentObject var 🛒: 🛒InAppPurchaseModel
     private var unfocusAction: () -> Void
     var body: some View {
         Button {
@@ -277,13 +277,13 @@ struct 👆DoneButton: View { // ☑️
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             Task { @MainActor in
                 try await Task.sleep(for: .seconds(0.45))
-                🛒.checkToShowADSheet()
+                //if 🛒.checkToShowADSheet() { self.showAD = true }
             }
         } label: {
             Label("Done", systemImage: "checkmark")
                 .labelStyle(.iconOnly)
                 .foregroundColor(.white)
-                .font(.largeTitle.weight(.bold))
+                .font(.largeTitle.weight(.bold))o
                 .padding()
         }
         .background(Circle().foregroundColor(.accentColor))

@@ -1,188 +1,52 @@
 import SwiftUI
 import StoreKit
 
-//MARK: ======== View ========
-struct 🛒PurchaseView: View {
-    @EnvironmentObject var 🛒: 🛒StoreModel
-    @State private var 🚩buyingNow = false
-    @State private var 🚨showError = false
-    @State private var 🚨errorMessage = ""
-    var body: some View {
-        HStack {
-            Label(🛒.🎫name, systemImage: "cart")
-            Spacer()
-            if 🛒.🚩purchased {
-                Image(systemName: "checkmark")
-                    .imageScale(.small)
-                    .foregroundStyle(.tertiary)
-                    .transition(.slide)
-            }
-            Button(🛒.🎫price) {
-                Task {
-                    do {
-                        self.🚩buyingNow = true
-                        try await 🛒.👆purchase()
-                    } catch 🚨StoreError.failedVerification {
-                        self.🚨errorMessage = "Your purchase could not be verified by the App Store."
-                        self.🚨showError = true
-                    } catch {
-                        print("Failed purchase: \(error)")
-                        self.🚨errorMessage = error.localizedDescription
-                        self.🚨showError = true
-                    }
-                    self.🚩buyingNow = false
-                }
-            }
-            .accessibilityLabel("Buy")
-            .disabled(self.🚩buyingNow)
-            .buttonStyle(.borderedProminent)
-            .overlay {
-                if self.🚩buyingNow { ProgressView() }
-            }
-            .alert(isPresented: self.$🚨showError) {
-                Alert(title: Text("Error"),
-                      message: Text(self.🚨errorMessage),
-                      dismissButton: .default(Text("OK")))
-            }
-        }
-        .padding(.vertical)
-        .disabled(🛒.🚩unconnected)
-        .disabled(🛒.🚩purchased)
-        .animation(.default, value: 🛒.🚩purchased)
-    }
-}
-
-struct 🛒IAPSection: View {
-    @EnvironmentObject var 🛒: 🛒StoreModel
-    var body: some View {
-        Section {
-            🛒PurchaseView()
-            self.🛒adPreview()
-        } header: {
-            Text("In-App Purchase")
-        }
-        .headerProminence(.increased)
-        Self.🛒RestoreButton()
-    }
-    private func 🛒adPreview() -> some View {
-        HStack(alignment: .bottom) {
-            Spacer()
-            Image("ADPreview")
-                .resizable()
-                .scaledToFit()
-                .frame(maxHeight: 300)
-                .padding(.leading, 45)
-            Image(systemName: "trash.square.fill")
-                .resizable()
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(.white, .red)
-                .frame(width: 60, height: 60)
-                .rotationEffect(.degrees(8))
-                .offset(x: -45)
-                .shadow(radius: 5)
-                .padding(.bottom, 60)
-            Spacer()
-        }
-        .padding(24)
-    }
-    private struct 🛒RestoreButton: View {
-        @EnvironmentObject var 🛒: 🛒StoreModel
-        @State private var 🚩restoringNow = false
-        @State private var 🚨showAlert = false
-        @State private var 🚨syncSuccess = false
-        @State private var 🚨message = ""
-        var body: some View {
-            Section {
-                Button {
-                    Task {
-                        do {
-                            self.🚩restoringNow = true
-                            try await AppStore.sync()
-                            self.🚨syncSuccess = true
-                            self.🚨message = "Restored transactions"
-                        } catch {
-                            print("Failed sync: \(error)")
-                            self.🚨syncSuccess = false
-                            self.🚨message = error.localizedDescription
-                        }
-                        self.🚨showAlert = true
-                        self.🚩restoringNow = false
-                    }
-                } label: {
-                    HStack {
-                        Label("Restore Purchases", systemImage: "arrow.clockwise")
-                            .font(.footnote)
-                            .foregroundColor(🛒.🚩unconnected ? .secondary : nil)
-                            .grayscale(🛒.🚩purchased ? 1 : 0)
-                        if self.🚩restoringNow {
-                            Spacer()
-                            ProgressView()
-                        }
-                    }
-                }
-                .disabled(self.🚩restoringNow)
-                .alert(isPresented: self.$🚨showAlert) {
-                    Alert(title: Text(self.🚨syncSuccess ? "Done" : "Error"),
-                          message: Text(LocalizedStringKey(self.🚨message)),
-                          dismissButton: .default(Text("OK")))
-                }
-            }
-        }
-    }
-}
-
-//MARK: ======== Model ========
-typealias Transaction = StoreKit.Transaction
-
-class 🛒StoreModel: ObservableObject {
+class 🛒InAppPurchaseModel: ObservableObject {
     
-    private let 🆔productID: String
+    private let productID: String
     
-    @Published var 🚩showADSheet: Bool = false
-    
-    func checkToShowADSheet() {
-        if !self.🚩purchased && (self.ⓛaunchCount > 5) {
-            self.🚩showADSheet = true
-        }
+    func checkToShowADSheet() -> Bool {
+        !self.purchased && (self.launchCount > 5)
     }
     
-    @Published private(set) var 🎫product: Product?
-    @AppStorage("Purchased") private(set) var 🚩purchased: Bool = false
-    @AppStorage("launchCount") private var ⓛaunchCount: Int = 0
-    var 🚩unconnected: Bool { self.🎫product == nil }
-    private var 🤖updateListenerTask: Task<Void, Error>? = nil
+    @Published private(set) var product: Product?
+    @AppStorage("Purchased") private(set) var purchased: Bool = false
+    @AppStorage("launchCount") private var launchCount: Int = 0
+    var unconnected: Bool { self.product == nil }
+    
+    private var updateListenerTask: Task<Void, Error>? = nil
     
     init(id: String) {
-        self.🆔productID = id
+        self.productID = id
         
         //Start a transaction listener as close to app launch as possible so you don't miss any transactions.
-        self.🤖updateListenerTask = self.📪listenForTransactions()
+        self.updateListenerTask = self.listenForTransactions()
         
         Task {
             //During store initialization, request products from the App Store.
-            await self.ⓡequestProducts()
+            await self.requestProducts()
             
             //Deliver products that the customer purchases.
-            await self.ⓤpdateCustomerProductStatus()
+            await self.updateCustomerProductStatus()
         }
         
-        self.ⓛaunchCount += 1
+        self.launchCount += 1
     }
     
-    deinit { self.🤖updateListenerTask?.cancel() }
+    deinit { self.updateListenerTask?.cancel() }
     
-    private func 📪listenForTransactions() -> Task<Void, Error> {
-        return Task.detached {
+    private func listenForTransactions() -> Task<Void, Error> {
+        Task.detached {
             //Iterate through any transactions that don't come from a direct call to `purchase()`.
-            for await 📦 in Transaction.updates {
+            for await ⓡesult in Transaction.updates {
                 do {
-                    let 🧾transaction = try self.🔍checkVerified(📦)
+                    let ⓣransaction = try self.checkVerified(ⓡesult)
                     
                     //Deliver products to the user.
-                    await self.ⓤpdateCustomerProductStatus()
+                    await self.updateCustomerProductStatus()
                     
                     //Always finish a transaction.
-                    await 🧾transaction.finish()
+                    await ⓣransaction.finish()
                 } catch {
                     //StoreKit has a transaction that fails verification. Don't deliver content to the user.
                     print("Transaction failed verification")
@@ -192,58 +56,58 @@ class 🛒StoreModel: ObservableObject {
     }
     
     @MainActor
-    private func ⓡequestProducts() async {
+    private func requestProducts() async {
         do {
-            if let ⓟroduct = try await Product.products(for: [self.🆔productID]).first {
-                self.🎫product = ⓟroduct
+            if let ⓟroduct = try await Product.products(for: [self.productID]).first {
+                self.product = ⓟroduct
             }
         } catch {
             print(#function, "Failed product request from the App Store server: \(error)")
         }
     }
     
-    func 👆purchase() async throws {
-        guard let 🎫 = self.🎫product else { return }
+    func purchase() async throws {
+        guard let ⓟroduct = self.product else { return }
         
-        let 📦result = try await 🎫.purchase()
+        let ⓡesult = try await ⓟroduct.purchase()
         
-        switch 📦result {
-            case .success(let 📦):
+        switch ⓡesult {
+            case .success(let ⓥerification):
                 //Check whether the transaction is verified. If it isn't,
                 //this function rethrows the verification error.
-                let 🧾transaction = try self.🔍checkVerified(📦)
+                let ⓣransaction = try self.checkVerified(ⓥerification)
                 
                 //The transaction is verified. Deliver content to the user.
-                await ⓤpdateCustomerProductStatus()
+                await updateCustomerProductStatus()
                 
                 //Always finish a transaction.
-                await 🧾transaction.finish()
+                await ⓣransaction.finish()
             case .userCancelled, .pending: return
             default: return
         }
     }
     
-    private func 🔍checkVerified<T>(_ 📦result: VerificationResult<T>) throws -> T {
+    private func checkVerified<T>(_ ⓡesult: VerificationResult<T>) throws -> T {
         //Check whether the JWS passes StoreKit verification.
-        switch 📦result {
+        switch ⓡesult {
             case .unverified:
                 //StoreKit parses the JWS, but it fails verification.
-                throw 🚨StoreError.failedVerification
-            case .verified(let 📦):
+                throw 🛒Error.failedVerification
+            case .verified(let ⓢafe):
                 //The result is verified. Return the unwrapped value.
-                return 📦
+                return ⓢafe
         }
     }
     
     @MainActor
-    private func ⓤpdateCustomerProductStatus() async {
+    private func updateCustomerProductStatus() async {
         var ⓟurchased = false
         
-        for await 📦 in Transaction.currentEntitlements {
+        for await ⓡesult in Transaction.currentEntitlements {
             do {
                 //Check whether the transaction is verified. If it isn’t, catch `failedVerification` error.
-                let 🧾transaction = try self.🔍checkVerified(📦)
-                if 🧾transaction.productID == self.🆔productID {
+                let ⓣransaction = try self.checkVerified(ⓡesult)
+                if ⓣransaction.productID == self.productID {
                     ⓟurchased = true
                 }
             } catch {
@@ -251,28 +115,24 @@ class 🛒StoreModel: ObservableObject {
             }
         }
         
-        withAnimation {
-            self.🚩purchased = ⓟurchased
-        }
+        withAnimation { self.purchased = ⓟurchased }
     }
     
-    var 🎫name: String {
-        guard let 🎫 = self.🎫product else { return "(Placeholder)" }
-        return 🎫.displayName
+    var productName: String {
+        self.product?.displayName ?? "(Placeholder)"
     }
     
-    var 🎫price: String {
-        guard let 🎫 = self.🎫product else { return "…" }
-        return 🎫.displayPrice
+    var productPrice: String {
+        self.product?.displayPrice ?? "…"
     }
 }
 
-public enum 🚨StoreError: Error {
+enum 🛒Error: Error {
     case failedVerification
 }
 
 
-//Ref: Sample code "Implementing a store in your app using the StoreKit API | Apple Developer Documentation"
+//MARK: Sample code "Implementing a store in your app using the StoreKit API | Apple Developer Documentation"
 //https://developer.apple.com/documentation/storekit/in-app_purchase/implementing_a_store_in_your_app_using_the_storekit_api
 //========================================================================
 //import StoreKit
