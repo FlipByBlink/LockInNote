@@ -379,11 +379,11 @@ struct 🛠️CustomizeFontLink<T: 🄵ontOptions>: View {
         NavigationLink {
             VStack(spacing: 0) {
                 GroupBox {
-                    Text("""
-                    This is sample.
-                    これは仮の文章です。
-                    이것은 플레이스 홀더입니다.
-                    """)
+                    Text(verbatim: """
+                        This is sample.
+                        これは仮の文章です。
+                        이것은 플레이스 홀더입니다.
+                        """)
                     .font(.system(size: CGFloat(self.fontOptions.fontSize),
                                   weight: self.fontOptions.fontWeight.value,
                                   design: self.fontOptions.fontDesign.value))

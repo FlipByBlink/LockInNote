@@ -23,7 +23,7 @@ private struct 💁AppleSupportLinkSection: View {
                 }
                 HStack {
                     Spacer()
-                    Text("https://support.apple.com/HT207122")
+                    Text(verbatim: "https://support.apple.com/HT207122")
                         .font(.caption2.italic())
                         .multilineTextAlignment(.center)
                     Spacer()
@@ -36,7 +36,7 @@ private struct 💁AppleSupportLinkSection: View {
                 }
                 HStack {
                     Spacer()
-                    Text("https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")
+                    Text(verbatim: "https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios")
                         .font(.caption2.italic())
                         .multilineTextAlignment(.center)
                     Spacer()
@@ -67,7 +67,7 @@ private struct 💁StepByStepSection: View {
                             Text(ⓣext)
                         }
                     } icon: {
-                        Text("\(ⓘndex).")
+                        Text(verbatim: "\(ⓘndex).")
                             .font(.system(.title3, design: .rounded, weight: .semibold))
                     }
                     Spacer()

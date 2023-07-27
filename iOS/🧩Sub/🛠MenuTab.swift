@@ -9,7 +9,7 @@ struct 🛠MenuTab: View { // ⚙️
                     ℹ️AppStoreLink()
                     NavigationLink {
                         List { ℹ️AboutAppContent() }
-                            .navigationTitle(String(localized: "LockInNote", table: "🌐AboutApp"))
+                            .navigationTitle(String(localized: "About App", table: "🌐AboutApp"))
                     } label: {
                         Label(String(localized: "About App", table: "🌐AboutApp"),
                               systemImage: "doc")

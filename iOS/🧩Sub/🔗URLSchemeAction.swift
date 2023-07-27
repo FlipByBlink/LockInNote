@@ -56,11 +56,11 @@ struct 🔗URLSchemeActionMenuLink: View {
             HStack {
                 Spacer()
                 VStack {
-                    Text("shortcuts://run-shortcut?nam...")
+                    Text(verbatim: "shortcuts://run-shortcut?nam...")
                         .rotationEffect(.degrees(-1.5))
                     Text(verbatim: "https://duckduckgo.com/?q=...")
                         .rotationEffect(.degrees(-1.5))
-                    Text("etc.")
+                    Text(verbatim: "etc.")
                         .rotationEffect(.degrees(-1.5))
                 }
                 Spacer()
@@ -85,7 +85,7 @@ private struct 🔗URLSchemeActionMenu: View {
                 VStack {
                     HStack {
                         if self.leadingComponent.isEmpty {
-                            Text("① +")
+                            Text(verbatim: "① +")
                                 .foregroundStyle(.secondary)
                         }
                         Text(self.leadingComponent + "TEXT" + self.trailingComponent)
@@ -95,7 +95,7 @@ private struct 🔗URLSchemeActionMenu: View {
                             .padding(8)
                             .frame(minHeight: 100)
                         if self.trailingComponent.isEmpty {
-                            Text("+ ②")
+                            Text(verbatim: "+ ②")
                                 .foregroundStyle(.secondary)
                         }
                     }
@@ -120,7 +120,7 @@ private struct 🔗URLSchemeActionMenu: View {
                 }
             }
             Section {
-                Text("shortcuts://run-shortcut?name=SHORTCUTTITLE&input=text&text=TEXT")
+                Text(verbatim: "shortcuts://run-shortcut?name=SHORTCUTTITLE&input=text&text=TEXT")
                     .font(.system(.subheadline, design: .monospaced, weight: .medium))
                     .multilineTextAlignment(.center)
                     .padding(.vertical)

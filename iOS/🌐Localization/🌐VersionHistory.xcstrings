@@ -1,0 +1,108 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "1.0" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initial release"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1回目のリリース"
+          }
+        }
+      }
+    },
+    "1.0.1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "small fix"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "細かな修正"
+          }
+        }
+      }
+    },
+    "1.0.2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "・Rebuild UI.\n・Add support share sheet.\n・Add support URL scheme action.\n・small fix."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "・UIの大幅な見直し。\n・テキストをシェアシートで共有できる機能を追加。\n・テキストと連携するURLスキームを呼ぶ機能を追加。\n・細かな修正。"
+          }
+        }
+      }
+    },
+    "1.0.3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "small UI improve"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "軽微なUI改善"
+          }
+        }
+      }
+    },
+    "1.0.4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebuild UI.\nNo change of functionality.\nChange AD design."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UIを大幅に改善。\n機能面の変更は無し。\n広告デザインの変更。"
+          }
+        }
+      }
+    },
+    "1.1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support Apple Watch.\nAdd how-to-document in app.\nSmall improve/fix."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Watchをサポートしました。\nアプリ内にウィジェット設定方法についての説明を載せました。\nその他、細かな修正や変更をしました。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
