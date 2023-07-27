@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct 🔖TabView: View {
-//    @Binding private var tab: 🔖Tab
     @State private var tab: 🔖Tab = .rectangularWidget
     var body: some View {
         TabView(selection: self.$tab) {
@@ -23,7 +22,4 @@ struct 🔖TabView: View {
         }
         .onOpenURL { self.tab.handleURL($0) }
     }
-//    init(_ tab: Binding<🔖Tab>) {
-//        self._tab = tab
-//    }
 }

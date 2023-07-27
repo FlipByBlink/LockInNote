@@ -14,7 +14,7 @@ struct 📝RectangularWidgetTab: View {
                     self.inputField()
                     🔗URLSchemeActionButton(self.$model.text)
                     if !self.focus {
-                        🛠️CustomizeFontLink(self.$model)
+                        🎚CustomizeFontLink(self.$model)
                         🎚PlaceholderPicker(self.$model.placeholder)
                     }
                 }
@@ -71,7 +71,7 @@ struct 📝CircularWidgetTab: View {
                     self.inputField()
                     🔗URLSchemeActionButton(self.$model.text)
                     if !self.focus {
-                        🛠️CustomizeFontLink(self.$model)
+                        🎚CustomizeFontLink(self.$model)
                         self.backgroundOption()
                         🎚PlaceholderPicker(self.$model.placeholder)
                     }

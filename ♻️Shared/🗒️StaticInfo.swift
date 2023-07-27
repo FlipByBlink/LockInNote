@@ -50,7 +50,7 @@ extension 🗒️StaticInfo {
                             "🔖TabView.swift",
                             "📝WidgetTab.swift",
                             "👆Buttons.swift",
-                            "🛠️ViewCustomize.swift",
+                            "🎚ViewCustomize.swift",
                             "🔗WidgetLink.swift",
                             "🛠MenuTab.swift",
                             "🔗URLSchemeAction.swift",

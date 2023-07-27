@@ -93,11 +93,11 @@
 		F58F3BEA2A724C8A008659F9 /* 🔖TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3BE92A724C8A008659F9 /* 🔖TabView.swift */; };
 		F58F3BEC2A724DCC008659F9 /* 📝WidgetTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */; };
 		F58F3BF02A724ECD008659F9 /* 👆Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */; };
-		F58F3BF22A724F2E008659F9 /* 🛠️ViewCustomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3BF12A724F2E008659F9 /* 🛠️ViewCustomize.swift */; };
+		F58F3BF22A724F2E008659F9 /* 🎚ViewCustomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3BF12A724F2E008659F9 /* 🎚ViewCustomize.swift */; };
 		F58F3BF32A725044008659F9 /* 🔖TabView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3BE92A724C8A008659F9 /* 🔖TabView.swift */; };
 		F58F3BF42A725044008659F9 /* 📝WidgetTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */; };
 		F58F3BF52A725044008659F9 /* 👆Buttons.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */; };
-		F58F3BF62A725044008659F9 /* 🛠️ViewCustomize.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3BF12A724F2E008659F9 /* 🛠️ViewCustomize.swift */; };
+		F58F3BF62A725044008659F9 /* 🎚ViewCustomize.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3BF12A724F2E008659F9 /* 🎚ViewCustomize.swift */; };
 		F58F3C2D2A7251B2008659F9 /* 🖼️View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */; };
 		F58F3C2E2A7251B2008659F9 /* 🖼️View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */; };
 		F58F3C2F2A7251B2008659F9 /* 🖼️View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */; };
@@ -177,7 +177,7 @@
 				F58F3BF32A725044008659F9 /* 🔖TabView.swift in CopyFiles */,
 				F58F3BF42A725044008659F9 /* 📝WidgetTab.swift in CopyFiles */,
 				F58F3BF52A725044008659F9 /* 👆Buttons.swift in CopyFiles */,
-				F58F3BF62A725044008659F9 /* 🛠️ViewCustomize.swift in CopyFiles */,
+				F58F3BF62A725044008659F9 /* 🎚ViewCustomize.swift in CopyFiles */,
 				F58F3BCA2A723E04008659F9 /* 🗒️StaticInfo.swift in CopyFiles */,
 				F58F3BCB2A723E04008659F9 /* 📣ADModel.swift in CopyFiles */,
 				F58F3BCC2A723E04008659F9 /* 🛒InAppPurchaseModel.swift in CopyFiles */,
@@ -256,7 +256,7 @@
 		F58F3BE92A724C8A008659F9 /* 🔖TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔖TabView.swift"; sourceTree = "<group>"; };
 		F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝WidgetTab.swift"; sourceTree = "<group>"; };
 		F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👆Buttons.swift"; sourceTree = "<group>"; };
-		F58F3BF12A724F2E008659F9 /* 🛠️ViewCustomize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠️ViewCustomize.swift"; sourceTree = "<group>"; };
+		F58F3BF12A724F2E008659F9 /* 🎚ViewCustomize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚ViewCustomize.swift"; sourceTree = "<group>"; };
 		F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🖼️View.swift"; sourceTree = "<group>"; };
 		F5ABF3B929CFC69B006C4F66 /* watchOS - Complication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchOS - Complication.entitlements"; sourceTree = "<group>"; };
 		F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
@@ -344,7 +344,7 @@
 				F58F3BE92A724C8A008659F9 /* 🔖TabView.swift */,
 				F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */,
 				F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */,
-				F58F3BF12A724F2E008659F9 /* 🛠️ViewCustomize.swift */,
+				F58F3BF12A724F2E008659F9 /* 🎚ViewCustomize.swift */,
 				F566A85729CE9A0200ACCC63 /* 🛠MenuTab.swift */,
 				F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */,
 				F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */,
@@ -642,7 +642,7 @@
 				F531FA252A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift in Sources */,
 				F556951B28CCAC59004558FC /* 📱AppModel.swift in Sources */,
 				F5514EFE29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift in Sources */,
-				F58F3BF22A724F2E008659F9 /* 🛠️ViewCustomize.swift in Sources */,
+				F58F3BF22A724F2E008659F9 /* 🎚ViewCustomize.swift in Sources */,
 				F556953D28CCAFC3004558FC /* 📣ADComponents.swift in Sources */,
 				F566A85C29CED1A300ACCC63 /* ♻️BaseModel.swift in Sources */,
 				F58F3BEA2A724C8A008659F9 /* 🔖TabView.swift in Sources */,

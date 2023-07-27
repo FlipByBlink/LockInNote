@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 🛠️CustomizeFontLink<T: 🄵ontOptions>: View {
+struct 🎚CustomizeFontLink<T: 🄵ontOptions>: View {
     @Binding private var fontOptions: T
     var body: some View {
         NavigationLink {
@@ -69,7 +69,7 @@ struct 🎚WeightPicker: View {
     @Binding var value: 🅆eight
     var body: some View {
         HStack {
-            🄾ptionIcon(name: "bold")
+            🎚OptionIcon(name: "bold")
             Picker("Weight", selection: self.$value) {
                 ForEach(🅆eight.allCases) { ⓒase in
                     Text(LocalizedStringKey(ⓒase.rawValue))
@@ -88,7 +88,7 @@ struct 🎚DesignPicker: View {
     @Binding var value: 🄳esign
     var body: some View {
         HStack {
-            🄾ptionIcon(name: "a.magnify")
+            🎚OptionIcon(name: "a.magnify")
             Picker("Design", selection: self.$value) {
                 ForEach(🄳esign.allCases) { ⓒase in
                     Text(LocalizedStringKey(ⓒase.rawValue))
@@ -107,7 +107,7 @@ struct 🎚FontSizePicker: View {
     @Binding var value: Int
     var body: some View {
         HStack {
-            🄾ptionIcon(name: "textformat")
+            🎚OptionIcon(name: "textformat")
             Picker("Size", selection: self.$value) {
                 ForEach(8 ..< 50, id: \.self) { ⓟoint in
                     Text(ⓟoint.description)
@@ -126,7 +126,7 @@ struct 🎚LevelPicker: View {
     @Binding var value: 🄻evel
     var body: some View {
         HStack {
-            🄾ptionIcon(name: "camera.filters")
+            🎚OptionIcon(name: "camera.filters")
                 .symbolRenderingMode(.hierarchical)
             Picker("Level", selection: self.$value) {
                 ForEach(🄻evel.allCases) { ⓒase in
@@ -146,7 +146,7 @@ struct 🎚TextAlignmentPicker: View {
     @Binding var value: 🄼ultilineTextAlignment
     var body: some View {
         HStack {
-            🄾ptionIcon(name: "text.justify")
+            🎚OptionIcon(name: "text.justify")
             Picker("Multi text alignment", selection: self.$value) {
                 ForEach(🄼ultilineTextAlignment.allCases) { ⓒase in
                     Label(LocalizedStringKey(ⓒase.rawValue), systemImage: ⓒase.icon)
@@ -164,7 +164,7 @@ struct 🎚ItalicPicker: View {
     @Binding var value: Bool
     var body: some View {
         HStack {
-            🄾ptionIcon(name: "italic")
+            🎚OptionIcon(name: "italic")
             Toggle(isOn: self.$value) {
                 Text("Italic")
             }
@@ -175,7 +175,7 @@ struct 🎚ItalicPicker: View {
     }
 }
 
-struct 🄾ptionIcon: View {
+private struct 🎚OptionIcon: View {
     var name: String
     var body: some View {
         Image(systemName: self.name)
