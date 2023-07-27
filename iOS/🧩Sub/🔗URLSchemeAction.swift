@@ -49,7 +49,7 @@ struct 🔗URLSchemeActionMenuLink: View {
     var body: some View {
         Section {
             NavigationLink {
-                🔗URLSchemeActionMenu()
+                Self.MenuContent()
             } label: {
                 Label("Setting URL scheme action", systemImage: "command")
             }
@@ -74,87 +74,89 @@ struct 🔗URLSchemeActionMenuLink: View {
     }
 }
 
-private struct 🔗URLSchemeActionMenu: View {
-    @AppStorage("URLSchemeLeading") var leadingComponent: String = ""
-    @AppStorage("URLSchemeTrailing") var trailingComponent: String = ""
-    @AppStorage("URLSchemeButtonTitle") var buttonTitle: String = ""
-    @AppStorage("EraseTextAfterAction") var eraseTextAfterAction: Bool = false
-    var body: some View {
-        List {
-            Section {
-                VStack {
-                    HStack {
-                        if self.leadingComponent.isEmpty {
-                            Text(verbatim: "① +")
-                                .foregroundStyle(.secondary)
+private extension 🔗URLSchemeActionMenuLink {
+    private struct MenuContent: View {
+        @AppStorage("URLSchemeLeading") var leadingComponent: String = ""
+        @AppStorage("URLSchemeTrailing") var trailingComponent: String = ""
+        @AppStorage("URLSchemeButtonTitle") var buttonTitle: String = ""
+        @AppStorage("EraseTextAfterAction") var eraseTextAfterAction: Bool = false
+        var body: some View {
+            List {
+                Section {
+                    VStack {
+                        HStack {
+                            if self.leadingComponent.isEmpty {
+                                Text(verbatim: "① +")
+                                    .foregroundStyle(.secondary)
+                            }
+                            Text(self.leadingComponent + "TEXT" + self.trailingComponent)
+                                .italic()
+                                .font(.system(.subheadline, design: .monospaced))
+                                .multilineTextAlignment(.center)
+                                .padding(8)
+                                .frame(minHeight: 100)
+                            if self.trailingComponent.isEmpty {
+                                Text(verbatim: "+ ②")
+                                    .foregroundStyle(.secondary)
+                            }
                         }
-                        Text(self.leadingComponent + "TEXT" + self.trailingComponent)
-                            .italic()
-                            .font(.system(.subheadline, design: .monospaced))
-                            .multilineTextAlignment(.center)
-                            .padding(8)
-                            .frame(minHeight: 100)
-                        if self.trailingComponent.isEmpty {
-                            Text(verbatim: "+ ②")
-                                .foregroundStyle(.secondary)
-                        }
+                        TextField("① URL scheme", text: self.$leadingComponent)
+                        TextField("② Trailing component", text: self.$trailingComponent)
+                            .font(.subheadline)
+                            .padding(.bottom, 4)
                     }
-                    TextField("① URL scheme", text: self.$leadingComponent)
-                    TextField("② Trailing component", text: self.$trailingComponent)
-                        .font(.subheadline)
-                        .padding(.bottom, 4)
-                }
-                .textFieldStyle(.roundedBorder)
-            } header: {
-                Text("URL scheme")
-            }
-            Section {
-                TextField("Input text of button", text: self.$buttonTitle)
                     .textFieldStyle(.roundedBorder)
-            } header: {
-                Text("Button label")
-            }
-            Section {
-                Toggle(isOn: self.$eraseTextAfterAction) {
-                    Label("Erase text after action", systemImage: "eraser.line.dashed")
+                } header: {
+                    Text("URL scheme")
                 }
-            }
-            Section {
-                Text(verbatim: "shortcuts://run-shortcut?name=SHORTCUTTITLE&input=text&text=TEXT")
-                    .font(.system(.subheadline, design: .monospaced, weight: .medium))
-                    .multilineTextAlignment(.center)
-                    .padding(.vertical)
-                    .foregroundStyle(.secondary)
-                    .textSelection(.enabled)
-            } header: {
-                Text("Example 1")
-            } footer: {
-                Text("To run one shortcut of Shortcuts App with the text.")
-            }
-            Section {
-                HStack {
-                    Spacer()
-                    Text(verbatim: "https://duckduckgo.com/?q=TEXT")
+                Section {
+                    TextField("Input text of button", text: self.$buttonTitle)
+                        .textFieldStyle(.roundedBorder)
+                } header: {
+                    Text("Button label")
+                }
+                Section {
+                    Toggle(isOn: self.$eraseTextAfterAction) {
+                        Label("Erase text after action", systemImage: "eraser.line.dashed")
+                    }
+                }
+                Section {
+                    Text(verbatim: "shortcuts://run-shortcut?name=SHORTCUTTITLE&input=text&text=TEXT")
                         .font(.system(.subheadline, design: .monospaced, weight: .medium))
                         .multilineTextAlignment(.center)
                         .padding(.vertical)
                         .foregroundStyle(.secondary)
                         .textSelection(.enabled)
-                    Spacer()
+                } header: {
+                    Text("Example 1")
+                } footer: {
+                    Text("To run one shortcut of Shortcuts App with the text.")
                 }
-            } header: {
-                Text("Example 2")
-            } footer: {
-                Text("To search the text on DuckDuckGo.")
+                Section {
+                    HStack {
+                        Spacer()
+                        Text(verbatim: "https://duckduckgo.com/?q=TEXT")
+                            .font(.system(.subheadline, design: .monospaced, weight: .medium))
+                            .multilineTextAlignment(.center)
+                            .padding(.vertical)
+                            .foregroundStyle(.secondary)
+                            .textSelection(.enabled)
+                        Spacer()
+                    }
+                } header: {
+                    Text("Example 2")
+                } footer: {
+                    Text("To search the text on DuckDuckGo.")
+                }
+                Image(.urlSchemeActionExample)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(32)
+                    .shadow(radius: 4)
+                    .padding()
+                    .listRowBackground(Color.clear)
             }
-            Image(.urlSchemeActionExample)
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(32)
-                .shadow(radius: 4)
-                .padding()
-                .listRowBackground(Color.clear)
+            .navigationTitle("Customize Action")
         }
-        .navigationTitle("Customize Action")
     }
 }

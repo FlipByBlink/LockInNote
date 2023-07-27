@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 💬RequestUserReview: ViewModifier {//アプリ毎に個別に実装する
+struct 💬RequestUserReview: ViewModifier {
     @Environment(\.requestReview) var requestReview
     @AppStorage("launchCount") private var launchCount: Int = 0
     func body(content: Content) -> some View {
