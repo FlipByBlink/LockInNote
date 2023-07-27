@@ -283,7 +283,7 @@ struct 👆DoneButton: View { // ☑️
             Label("Done", systemImage: "checkmark")
                 .labelStyle(.iconOnly)
                 .foregroundColor(.white)
-                .font(.largeTitle.weight(.bold))o
+                .font(.largeTitle.weight(.bold))
                 .padding()
         }
         .background(Circle().foregroundColor(.accentColor))
