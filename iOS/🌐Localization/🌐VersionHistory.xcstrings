@@ -102,6 +102,17 @@
           }
         }
       }
+    },
+    "1.2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

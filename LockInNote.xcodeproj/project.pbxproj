@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F531FA1F2A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
-		F531FA202A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
-		F531FA212A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
-		F531FA222A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
 		F531FA252A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */; };
 		F531FA262A7239A4004BBFE0 /* 📣ADModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; };
 		F54BE1CA28CB480900532025 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* App.swift */; };
@@ -351,7 +348,6 @@
 				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
 				F55694FF28CCA88B004558FC /* iOS.entitlements */,
-				F556953628CCAFC3004558FC /* Configuration.storekit */,
 				F556953328CCAFC3004558FC /* 🗄️Rest */,
 			);
 			path = "🧩Sub";
@@ -370,8 +366,6 @@
 		F556950C28CCAB71004558FC /* iOS - Widget */ = {
 			isa = PBXGroup;
 			children = (
-				F556950D28CCAB71004558FC /* Widget.swift */,
-				F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */,
 				F556950F28CCAB72004558FC /* Assets.xcassets */,
 				F556951128CCAB72004558FC /* Info.plist */,
 				F556951D28CCAE21004558FC /* iOS - Widget.entitlements */,
@@ -405,12 +399,11 @@
 			isa = PBXGroup;
 			children = (
 				F566A85B29CED1A300ACCC63 /* ♻️BaseModel.swift */,
-				F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */,
 				F57E85C729D2B98400927561 /* 💾UserDefaults.swift */,
 				F57E85B829D28FD000927561 /* 🔖TabModel.swift */,
 				F57E85D129D3B17900927561 /* 🔗WidgetLink.swift */,
-				F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */,
-				F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */,
+				F5EAB5E02A7262B900B2CD9E /* 🪧Widget */,
+				F5EAB5E12A72644700B2CD9E /* 🗄️Rest */,
 				F58F3BBD2A723CEB008659F9 /* 🌐Localization */,
 			);
 			path = "♻️Shared";
@@ -451,6 +444,26 @@
 				F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */,
 			);
 			path = "🌐Localization";
+			sourceTree = "<group>";
+		};
+		F5EAB5E02A7262B900B2CD9E /* 🪧Widget */ = {
+			isa = PBXGroup;
+			children = (
+				F556950D28CCAB71004558FC /* Widget.swift */,
+				F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */,
+			);
+			path = "🪧Widget";
+			sourceTree = "<group>";
+		};
+		F5EAB5E12A72644700B2CD9E /* 🗄️Rest */ = {
+			isa = PBXGroup;
+			children = (
+				F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */,
+				F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */,
+				F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */,
+				F556953628CCAFC3004558FC /* Configuration.storekit */,
+			);
+			path = "🗄️Rest";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -670,7 +683,6 @@
 				F556950E28CCAB71004558FC /* Widget.swift in Sources */,
 				F57E85D329D3B17900927561 /* 🔗WidgetLink.swift in Sources */,
 				F57E85C929D2B98400927561 /* 💾UserDefaults.swift in Sources */,
-				F531FA202A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */,
 				F556951C28CCAC59004558FC /* 📱AppModel.swift in Sources */,
 				F566A85D29CED1C000ACCC63 /* ♻️BaseModel.swift in Sources */,
 				F57E85BA29D28FD000927561 /* 🔖TabModel.swift in Sources */,
@@ -681,7 +693,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F531FA212A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */,
 				F566A8FE29CEDA1200ACCC63 /* ContentView.swift in Sources */,
 				F566A8FC29CEDA1200ACCC63 /* App.swift in Sources */,
 				F57E85D429D3B17900927561 /* 🔗WidgetLink.swift in Sources */,
@@ -696,7 +707,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F531FA222A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */,
 				F57E85CB29D2B98400927561 /* 💾UserDefaults.swift in Sources */,
 				F58F3C2F2A7251B2008659F9 /* 🖼️View.swift in Sources */,
 				F57E85BC29D28FD000927561 /* 🔖TabModel.swift in Sources */,

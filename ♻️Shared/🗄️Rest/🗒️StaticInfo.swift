@@ -29,7 +29,8 @@ enum 🗒️StaticInfo {
 
 #if os(iOS)
 extension 🗒️StaticInfo {
-    static let versionInfos: [(version: String, date: String)] = [("1.1", "2023-03-28"),
+    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-08-01"),
+                                                                  ("1.1", "2023-03-28"),
                                                                   ("1.0.4", "2023-01-30"),
                                                                   ("1.0.3", "2022-12-09"),
                                                                   ("1.0.2", "2022-11-08"),

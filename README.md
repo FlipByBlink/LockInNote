@@ -1,13 +1,13 @@
-LockInNote - iPhone, Apple Watch
-------------------------------------
+LockInNote - iPhone, iPad, Mac, Apple Watch
+-------------------------------------------
 
-<img src="LockInNote/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
+<img src="iOS/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
 
 <a href="https://apps.apple.com/app/id1644879340" target="blank">
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
 </a>
 
-<img src="LockInNote/Assets.xcassets/ConceptImage.imageset/ConceptImage.png" width="600">
+<img src="iOS/Assets.xcassets/ConceptImage.imageset/ConceptImage.png" width="600">
 
 
 Description
@@ -35,13 +35,6 @@ The design of the memo note on the lock screen can be flexibly customized, so it
 Recommended for the latest iPhone 14 Pro models!
 
 The iPhone 14 Pro with Always On Display turns your iPhone into your most accessible notepad.
-
-
-Localization: All
-------------------
-- English
-
-- Japanese(native)
 
 
 Source code link
