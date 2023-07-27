@@ -27,7 +27,7 @@ let 🔗webRepositoryURL = URL(string: "https://github.com/FlipByBlink/LockInNot
 let 🔗webMirrorRepositoryURL = URL(string: "https://gitlab.com/FlipByBlink/LockInNote_Mirror")!
 
 enum 📁SourceCodeCategory: String, CaseIterable, Identifiable {
-    case main, Shared, Sub, Others, Widget, WatchApp
+    case main, Shared, Sub, Others, Widget
     var id: Self { self }
     var fileNames: [String] {
         switch self {
@@ -53,10 +53,6 @@ enum 📁SourceCodeCategory: String, CaseIterable, Identifiable {
                         "🛒InAppPurchase.swift"]
             case .Widget:
                 return ["LINWidget.swift"]
-            case .WatchApp:
-                return ["LIN_Watch_App.swift",
-                        "📱AppModel_watchOS.swift",
-                        "ContentView_watchOS.swift"]
         }
     }
 }

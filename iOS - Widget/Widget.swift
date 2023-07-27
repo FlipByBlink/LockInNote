@@ -2,7 +2,7 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct LINWidgetBundle: WidgetBundle {
+struct LockInNoteWidgetBundle: WidgetBundle {
     var body: some Widget {
         🅁ectangularWidget()
         🄲ircularWidget()

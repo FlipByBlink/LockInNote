@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct LockInNoteApp: App {
+struct LockInNote: App {
     @UIApplicationDelegateAdaptor var 📱: 📱AppModel
     private let 🛒 = 🛒StoreModel(id: "LockInNote.adfree")
     var body: some Scene {
