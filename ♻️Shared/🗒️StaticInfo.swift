@@ -37,7 +37,7 @@ extension 🗒️StaticInfo {
                                                                   ("1.0", "2022-09-13")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Sub, Rest
+        case main, Sub, Rest, Widget
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -62,6 +62,8 @@ extension 🗒️StaticInfo {
                              "📣ADComponents.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift"]
+                case .Widget: ["Widget.swift",
+                               "🖼️View.swift"]
             }
         }
     }
@@ -70,7 +72,7 @@ extension 🗒️StaticInfo {
 #elseif os(watchOS)
 extension 🗒️StaticInfo {
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Sub, Rest
+        case main, Sub, Rest, Complication
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -80,6 +82,8 @@ extension 🗒️StaticInfo {
                 case .Sub: []
                 case .Rest: ["🗒️StaticInfo.swift",
                              "ℹ️AboutApp.swift"]
+                case .Complication: ["Widget.swift",
+                                     "🖼️View.swift"]
             }
         }
     }
@@ -92,7 +96,7 @@ extension 🗒️StaticInfo {
                                                                   ("1.0", "2021-01-01")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Sub, Rest
+        case main, Sub, Rest, Widget
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -109,6 +113,8 @@ extension 🗒️StaticInfo {
                              "📣ADContent.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift"]
+                case .Widget: ["Widget.swift",
+                               "🖼️View.swift"]
             }
         }
     }

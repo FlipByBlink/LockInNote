@@ -98,10 +98,14 @@
 		F58F3BF42A725044008659F9 /* 📝WidgetTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */; };
 		F58F3BF52A725044008659F9 /* 👆Buttons.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */; };
 		F58F3BF62A725044008659F9 /* 🛠️ViewCustomize.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3BF12A724F2E008659F9 /* 🛠️ViewCustomize.swift */; };
+		F58F3C2D2A7251B2008659F9 /* 🖼️View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */; };
+		F58F3C2E2A7251B2008659F9 /* 🖼️View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */; };
+		F58F3C2F2A7251B2008659F9 /* 🖼️View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */; };
 		F5AA8C4228D0985F00C2047D /* App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1C928CB480900532025 /* App.swift */; };
 		F5AA8C4328D0985F00C2047D /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F54BE1CB28CB480900532025 /* ContentView.swift */; };
 		F5AA8C4428D0985F00C2047D /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556951A28CCAC59004558FC /* 📱AppModel.swift */; };
 		F5AA8C4528D0985F00C2047D /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556950D28CCAB71004558FC /* Widget.swift */; };
+		F5EAB5DF2A72579500B2CD9E /* 🖼️View.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */; };
 		F5F5317B2987425800E531E2 /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +173,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5EAB5DF2A72579500B2CD9E /* 🖼️View.swift in CopyFiles */,
 				F58F3BF32A725044008659F9 /* 🔖TabView.swift in CopyFiles */,
 				F58F3BF42A725044008659F9 /* 📝WidgetTab.swift in CopyFiles */,
 				F58F3BF52A725044008659F9 /* 👆Buttons.swift in CopyFiles */,
@@ -252,6 +257,7 @@
 		F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝WidgetTab.swift"; sourceTree = "<group>"; };
 		F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👆Buttons.swift"; sourceTree = "<group>"; };
 		F58F3BF12A724F2E008659F9 /* 🛠️ViewCustomize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠️ViewCustomize.swift"; sourceTree = "<group>"; };
+		F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🖼️View.swift"; sourceTree = "<group>"; };
 		F5ABF3B929CFC69B006C4F66 /* watchOS - Complication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchOS - Complication.entitlements"; sourceTree = "<group>"; };
 		F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
@@ -365,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				F556950D28CCAB71004558FC /* Widget.swift */,
+				F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */,
 				F556950F28CCAB72004558FC /* Assets.xcassets */,
 				F556951128CCAB72004558FC /* Info.plist */,
 				F556951D28CCAE21004558FC /* iOS - Widget.entitlements */,
@@ -642,6 +649,7 @@
 				F58F3BF02A724ECD008659F9 /* 👆Buttons.swift in Sources */,
 				F58F3BEC2A724DCC008659F9 /* 📝WidgetTab.swift in Sources */,
 				F57E85B929D28FD000927561 /* 🔖TabModel.swift in Sources */,
+				F58F3C2D2A7251B2008659F9 /* 🖼️View.swift in Sources */,
 				F54BE1CC28CB480900532025 /* ContentView.swift in Sources */,
 				F57E85CF29D2C3D600927561 /* 💁WidgetGuideTab.swift in Sources */,
 				F531FA1F2A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */,
@@ -658,6 +666,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58F3C2E2A7251B2008659F9 /* 🖼️View.swift in Sources */,
 				F556950E28CCAB71004558FC /* Widget.swift in Sources */,
 				F57E85D329D3B17900927561 /* 🔗WidgetLink.swift in Sources */,
 				F57E85C929D2B98400927561 /* 💾UserDefaults.swift in Sources */,
@@ -689,6 +698,7 @@
 			files = (
 				F531FA222A723987004BBFE0 /* 🗒️StaticInfo.swift in Sources */,
 				F57E85CB29D2B98400927561 /* 💾UserDefaults.swift in Sources */,
+				F58F3C2F2A7251B2008659F9 /* 🖼️View.swift in Sources */,
 				F57E85BC29D28FD000927561 /* 🔖TabModel.swift in Sources */,
 				F57E85BD29D2951D00927561 /* Widget.swift in Sources */,
 				F57E85D529D3B17900927561 /* 🔗WidgetLink.swift in Sources */,
