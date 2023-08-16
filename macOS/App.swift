@@ -3,12 +3,13 @@ import SwiftUI
 @main
 struct macOSApp: App {
     @NSApplicationDelegateAdaptor var model: 📱AppModel
+    private let iapModel: 🛒InAppPurchaseModel = .init(id: "LockInNote.adfree")
     var body: some Scene {
         📝NoteWindow(self.model)
         🎚️CustomizeWindow(self.model)
         🔗URLSchemeActionMenuWindow()
         Settings { 🔧Settings() }
-        //ℹ️HelpWindows()
-        //🛒InAppPurchaseWindow(🛒)
+        ℹ️HelpWindows()
+        🛒InAppPurchaseWindow(self.iapModel)
     }
 }

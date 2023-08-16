@@ -23,8 +23,8 @@ struct 🪄Commands: Commands {
         CommandMenu("Action") { 🔗URLSchemeActionCommand(self.app) }
         CommandGroup(replacing: .help) { EmptyView() }
         CommandGroup(after: .help) {
-            //Link(String(localized: "Open AppStore page", table: "🌐AboutApp"), destination: 🗒️StaticInfo.appStoreProductURL)
-            //Link(String(localized: "Review on AppStore", table: "🌐AboutApp"), destination: 🗒️StaticInfo.appStoreUserReviewURL)
+            Link(String(localized: "Open AppStore page", table: "🌐AboutApp"), destination: 🗒️StaticInfo.appStoreProductURL)
+            Link(String(localized: "Review on AppStore", table: "🌐AboutApp"), destination: 🗒️StaticInfo.appStoreUserReviewURL)
             Divider()
             Button(String(localized: "Description", table: "🌐AboutApp")) { self.openWindow(id: "Description") }
             Button(String(localized: "Privacy Policy", table: "🌐AboutApp")) { self.openWindow(id: "PrivacyPolicy") }

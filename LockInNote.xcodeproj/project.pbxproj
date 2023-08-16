@@ -156,6 +156,38 @@
 		F51E3A882A8CEA2100F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
 		F51E3A892A8CEA7000F32F4F /* WidgetBundle.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AB2A8CAA4700F32F4F /* WidgetBundle.swift */; };
 		F51E3A8A2A8CEA7000F32F4F /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
+		F51E3A8C2A8CEBD400F32F4F /* 📝NoteFamily.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */; };
+		F51E3A8D2A8CEBD400F32F4F /* 📝NoteProperty.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
+		F51E3A8E2A8CEBD400F32F4F /* 📝NoteModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
+		F51E3A8F2A8CEBD400F32F4F /* 🪧WidgetView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B92A8CAA4700F32F4F /* 🪧WidgetView.swift */; };
+		F51E3A902A8CEBD400F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
+		F51E3A912A8CEBD400F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
+		F51E3A922A8CEBD400F32F4F /* 💾ICloud.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
+		F51E3A932A8CEBD400F32F4F /* 🔗MenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B42A8CAA4700F32F4F /* 🔗MenuComponent.swift */; };
+		F51E3A942A8CEBD400F32F4F /* 🔗Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B52A8CAA4700F32F4F /* 🔗Model.swift */; };
+		F51E3A952A8CEBD400F32F4F /* 🔗Button.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B62A8CAA4700F32F4F /* 🔗Button.swift */; };
+		F51E3A962A8CEBD400F32F4F /* 🗒️StaticInfo.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
+		F51E3A972A8CEBD400F32F4F /* 📣ADModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; };
+		F51E3A982A8CEBD400F32F4F /* 🛒InAppPurchaseModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */; };
+		F51E3A992A8CEBEF00F32F4F /* App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C42A8CAA4700F32F4F /* App.swift */; };
+		F51E3A9A2A8CEBEF00F32F4F /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C22A8CAA4700F32F4F /* 📱AppModel.swift */; };
+		F51E3A9B2A8CEBEF00F32F4F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C52A8CAA4700F32F4F /* ContentView.swift */; };
+		F51E3A9C2A8CEBEF00F32F4F /* 📝NoteWindow.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */; };
+		F51E3A9D2A8CEBEF00F32F4F /* 📝NoteView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C62A8CAA4700F32F4F /* 📝NoteView.swift */; };
+		F51E3A9E2A8CEBEF00F32F4F /* 🎚️CustomizeMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */; };
+		F51E3A9F2A8CEBEF00F32F4F /* 💬Sheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */; };
+		F51E3AA02A8CEBEF00F32F4F /* 🪄Commands.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */; };
+		F51E3AA12A8CEBEF00F32F4F /* 🔧Settings.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C12A8CAA4700F32F4F /* 🔧Settings.swift */; };
+		F51E3AA22A8CEBEF00F32F4F /* 🔗Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BE2A8CAA4700F32F4F /* 🔗Menu.swift */; };
+		F51E3AA32A8CEBEF00F32F4F /* 🔗Command.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BF2A8CAA4700F32F4F /* 🔗Command.swift */; };
+		F51E3AA42A8CEBEF00F32F4F /* WidgetBundle.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AB2A8CAA4700F32F4F /* WidgetBundle.swift */; };
+		F51E3AA52A8CEBEF00F32F4F /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
+		F51E3AAA2A8CEC2800F32F4F /* 🛒InAppPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E3AA72A8CEC2800F32F4F /* 🛒InAppPurchaseView.swift */; };
+		F51E3AAB2A8CEC2800F32F4F /* ℹ️HelpWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E3AA82A8CEC2800F32F4F /* ℹ️HelpWindows.swift */; };
+		F51E3AAC2A8CEC2800F32F4F /* 📣ADContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E3AA92A8CEC2800F32F4F /* 📣ADContent.swift */; };
+		F51E3AAD2A8CEC5C00F32F4F /* ℹ️HelpWindows.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3AA82A8CEC2800F32F4F /* ℹ️HelpWindows.swift */; };
+		F51E3AAE2A8CEC5C00F32F4F /* 📣ADContent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3AA92A8CEC2800F32F4F /* 📣ADContent.swift */; };
+		F51E3AAF2A8CEC5C00F32F4F /* 🛒InAppPurchaseView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3AA72A8CEC2800F32F4F /* 🛒InAppPurchaseView.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
@@ -258,6 +290,44 @@
 				F51E3A7C2A8CEA0000F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */,
 				F51E3A7D2A8CEA0000F32F4F /* 💾ICloud.swift in CopyFiles */,
 				F51E3A7E2A8CEA0000F32F4F /* 🗒️StaticInfo.swift in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51E3A8B2A8CEBBF00F32F4F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "📁SourceCode";
+			dstSubfolderSpec = 7;
+			files = (
+				F51E3AAD2A8CEC5C00F32F4F /* ℹ️HelpWindows.swift in CopyFiles */,
+				F51E3AAE2A8CEC5C00F32F4F /* 📣ADContent.swift in CopyFiles */,
+				F51E3AAF2A8CEC5C00F32F4F /* 🛒InAppPurchaseView.swift in CopyFiles */,
+				F51E3A992A8CEBEF00F32F4F /* App.swift in CopyFiles */,
+				F51E3A9A2A8CEBEF00F32F4F /* 📱AppModel.swift in CopyFiles */,
+				F51E3A9B2A8CEBEF00F32F4F /* ContentView.swift in CopyFiles */,
+				F51E3A9C2A8CEBEF00F32F4F /* 📝NoteWindow.swift in CopyFiles */,
+				F51E3A9D2A8CEBEF00F32F4F /* 📝NoteView.swift in CopyFiles */,
+				F51E3A9E2A8CEBEF00F32F4F /* 🎚️CustomizeMenu.swift in CopyFiles */,
+				F51E3A9F2A8CEBEF00F32F4F /* 💬Sheet.swift in CopyFiles */,
+				F51E3AA02A8CEBEF00F32F4F /* 🪄Commands.swift in CopyFiles */,
+				F51E3AA12A8CEBEF00F32F4F /* 🔧Settings.swift in CopyFiles */,
+				F51E3AA22A8CEBEF00F32F4F /* 🔗Menu.swift in CopyFiles */,
+				F51E3AA32A8CEBEF00F32F4F /* 🔗Command.swift in CopyFiles */,
+				F51E3AA42A8CEBEF00F32F4F /* WidgetBundle.swift in CopyFiles */,
+				F51E3AA52A8CEBEF00F32F4F /* Widget.swift in CopyFiles */,
+				F51E3A8C2A8CEBD400F32F4F /* 📝NoteFamily.swift in CopyFiles */,
+				F51E3A8D2A8CEBD400F32F4F /* 📝NoteProperty.swift in CopyFiles */,
+				F51E3A8E2A8CEBD400F32F4F /* 📝NoteModel.swift in CopyFiles */,
+				F51E3A8F2A8CEBD400F32F4F /* 🪧WidgetView.swift in CopyFiles */,
+				F51E3A902A8CEBD400F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */,
+				F51E3A912A8CEBD400F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */,
+				F51E3A922A8CEBD400F32F4F /* 💾ICloud.swift in CopyFiles */,
+				F51E3A932A8CEBD400F32F4F /* 🔗MenuComponent.swift in CopyFiles */,
+				F51E3A942A8CEBD400F32F4F /* 🔗Model.swift in CopyFiles */,
+				F51E3A952A8CEBD400F32F4F /* 🔗Button.swift in CopyFiles */,
+				F51E3A962A8CEBD400F32F4F /* 🗒️StaticInfo.swift in CopyFiles */,
+				F51E3A972A8CEBD400F32F4F /* 📣ADModel.swift in CopyFiles */,
+				F51E3A982A8CEBD400F32F4F /* 🛒InAppPurchaseModel.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +457,9 @@
 		F51E3A352A8CB22900F32F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51E3A362A8CB22900F32F4F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
+		F51E3AA72A8CEC2800F32F4F /* 🛒InAppPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseView.swift"; sourceTree = "<group>"; };
+		F51E3AA82A8CEC2800F32F4F /* ℹ️HelpWindows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️HelpWindows.swift"; sourceTree = "<group>"; };
+		F51E3AA92A8CEC2800F32F4F /* 📣ADContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADContent.swift"; sourceTree = "<group>"; };
 		F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🗒️StaticInfo.swift"; sourceTree = "<group>"; };
 		F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseModel.swift"; sourceTree = "<group>"; };
 		F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADModel.swift"; sourceTree = "<group>"; };
@@ -625,6 +698,7 @@
 				F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */,
 				F51E39C12A8CAA4700F32F4F /* 🔧Settings.swift */,
 				F51E39BD2A8CAA4700F32F4F /* 🔗URLSchemeAction */,
+				F51E3AA62A8CEC0000F32F4F /* 🗄️Rest */,
 				F51E3A542A8CCF5600F32F4F /* 🧰SupportingFiles */,
 			);
 			path = macOS;
@@ -677,6 +751,16 @@
 				F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */,
 			);
 			path = "🧰SupportingFiles";
+			sourceTree = "<group>";
+		};
+		F51E3AA62A8CEC0000F32F4F /* 🗄️Rest */ = {
+			isa = PBXGroup;
+			children = (
+				F51E3AA82A8CEC2800F32F4F /* ℹ️HelpWindows.swift */,
+				F51E3AA92A8CEC2800F32F4F /* 📣ADContent.swift */,
+				F51E3AA72A8CEC2800F32F4F /* 🛒InAppPurchaseView.swift */,
+			);
+			path = "🗄️Rest";
 			sourceTree = "<group>";
 		};
 		F54BE1BD28CB480900532025 = {
@@ -843,6 +927,7 @@
 				F51E39FF2A8CAFB500F32F4F /* Frameworks */,
 				F51E3A002A8CAFB500F32F4F /* Resources */,
 				F51E3A3D2A8CB22900F32F4F /* Embed Foundation Extensions */,
+				F51E3A8B2A8CEBBF00F32F4F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1083,6 +1168,7 @@
 				F51E3A222A8CB05F00F32F4F /* 🎚️CustomizeModel.swift in Sources */,
 				F51E3A142A8CAFDD00F32F4F /* App.swift in Sources */,
 				F51E3A1D2A8CB05F00F32F4F /* 💾ICloud.swift in Sources */,
+				F51E3AAA2A8CEC2800F32F4F /* 🛒InAppPurchaseView.swift in Sources */,
 				F51E3A152A8CAFDD00F32F4F /* 📝NoteWindow.swift in Sources */,
 				F51E3A172A8CAFDD00F32F4F /* 📱AppModel.swift in Sources */,
 				F51E3A242A8CB06500F32F4F /* 🔗MenuComponent.swift in Sources */,
@@ -1092,9 +1178,11 @@
 				F51E3A1A2A8CAFE200F32F4F /* 🔗Command.swift in Sources */,
 				F51E3A112A8CAFDD00F32F4F /* ContentView.swift in Sources */,
 				F51E3A162A8CAFDD00F32F4F /* 💬Sheet.swift in Sources */,
+				F51E3AAB2A8CEC2800F32F4F /* ℹ️HelpWindows.swift in Sources */,
 				F51E3A252A8CB06500F32F4F /* 🔗Model.swift in Sources */,
 				F51E3A4B2A8CC58A00F32F4F /* 📣ADModel.swift in Sources */,
 				F51E3A182A8CAFDD00F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
+				F51E3AAC2A8CEC2800F32F4F /* 📣ADContent.swift in Sources */,
 				F51E3A4A2A8CC58A00F32F4F /* 🗒️StaticInfo.swift in Sources */,
 				F51E3A1C2A8CB05F00F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E3A132A8CAFDD00F32F4F /* 🪄Commands.swift in Sources */,

@@ -51,10 +51,10 @@ extension 🗒️StaticInfo {
                              "📝NoteFamily.swift",
                              "💾ICloud.swift",
                              "🎚️CustomizeModel.swift",
+                             "🎚️CustomizeMenu.swift",
                              "🎚️CustomizeMenuComponent.swift",
                              "👆Buttons.swift",
                              "💬Sheet.swift",
-                             "🎚️CustomizeMenu.swift",
                              "🔖Tab.swift",
                              "🛠️OptionTab.swift"]
                 case .Widget: ["Widget.swift",
@@ -89,13 +89,13 @@ extension 🗒️StaticInfo {
                              "ContentView.swift",
                              "📱AppModel.swift",
                              "📝NoteTab.swift",
+                             "📝NoteFamily.swift",
                              "📝NoteProperty.swift",
                              "📝NoteModel.swift",
-                             "📝NoteFamily.swift",
                              "💾ICloud.swift",
                              "🎚️CustomizeModel.swift",
-                             "🎚️CustomizeMenuComponent.swift",
                              "🎚️CustomizeMenu.swift",
+                             "🎚️CustomizeMenuComponent.swift",
                              "💬Sheet.swift",
                              "🔖Tab.swift",
                              "🛠️OptionTab.swift",
@@ -117,25 +117,39 @@ extension 🗒️StaticInfo {
                                                                   ("1.0", "2021-01-01")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Sub, Rest, Widget
+        case main, Widget, URLSchemeAction, Rest
         var id: Self { self }
         var fileNames: [String] {
             switch self {
                 case .main: ["App.swift",
                              "ContentView.swift",
-                             "📱AppModel.swift"]
-                case .Sub: ["📣ADSheet.swift",
-                            "🔧Settings.swift",
-                            "🪄Commands.swift",
-                            "💬RequestUserReview.swift"]
+                             "📱AppModel.swift",
+                             "📝NoteView.swift",
+                             "📝NoteWindow.swift",
+                             "📝NoteFamily.swift",
+                             "📝NoteProperty.swift",
+                             "📝NoteModel.swift",
+                             "💾ICloud.swift",
+                             "🎚️CustomizeModel.swift",
+                             "🎚️CustomizeMenu.swift",
+                             "🎚️CustomizeMenuComponent.swift",
+                             "💬Sheet.swift",
+                             "🔧Settings.swift",
+                             "🪄Commands.swift"]
+                case .Widget: ["Widget.swift",
+                               "WidgetBundle.swift",
+                               "🪧WidgetView.swift"]
+                case .URLSchemeAction: ["🔗Model.swift",
+                                        "🔗Button.swift",
+                                        "🔗Command.swift",
+                                        "🔗Menu.swift",
+                                        "🔗MenuComponent.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "ℹ️HelpWindows.swift",
                              "📣ADModel.swift",
                              "📣ADContent.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift"]
-                case .Widget: ["Widget.swift",
-                               "🖼️View.swift"]
             }
         }
     }
