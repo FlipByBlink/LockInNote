@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 🛠MenuTab: View { // ⚙️
+struct ℹ️InfoTab: View {
     var body: some View {
         NavigationStack {
             List {
@@ -16,9 +16,8 @@ struct 🛠MenuTab: View { // ⚙️
                     }
                 }
                 🛒InAppPurchaseMenuLink()
-                🔗URLSchemeActionMenuLink()
             }
-            .navigationTitle("Menu")
+            .navigationTitle("Info")
         }
     }
 }

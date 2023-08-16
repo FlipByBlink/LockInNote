@@ -2,7 +2,6 @@
   "sourceLanguage" : "en",
   "strings" : {
     "About AD" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -13,7 +12,6 @@
       }
     },
     "About AD / Purchase" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -24,7 +22,6 @@
       }
     },
     "AD" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -35,7 +32,6 @@
       }
     },
     "AD / Purchase" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -46,7 +42,6 @@
       }
     },
     "Buy" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -57,7 +52,6 @@
       }
     },
     "Description" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -68,7 +62,6 @@
       }
     },
     "Dismiss" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -79,7 +72,6 @@
       }
     },
     "Error" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -90,7 +82,6 @@
       }
     },
     "In-App Purchase" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -101,7 +92,6 @@
       }
     },
     "OK" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -123,7 +113,6 @@
       }
     },
     "Open AppStore page" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -145,7 +134,6 @@
       }
     },
     "Restore Purchases" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -167,7 +155,6 @@
       }
     },
     "This App shows advertisement about applications on AppStore. These are several Apps by this app's developer. It is activated after you launch this app 5 times." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

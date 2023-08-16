@@ -10,9 +10,9 @@ struct ContentView: View {
             🛠️OptionTab()
                 .tag(🔖Tab.option)
                 .tabItem { Label("Option", systemImage: "gearshape") }
-            Text("Placeholder")
-                .tag(🔖Tab.about)
-                .tabItem { Label("About", systemImage: "info") }
+            ℹ️InfoTab()
+                .tag(🔖Tab.info)
+                .tabItem { Label("Info", systemImage: "info") }
         }
         .sheet(item: self.$app.sheet) {
             switch $0 {

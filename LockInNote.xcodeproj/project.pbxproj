@@ -92,6 +92,16 @@
 		F51E3A432A8CB28900F32F4F /* 📝NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
 		F51E3A442A8CB29100F32F4F /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
 		F51E3A452A8CB29100F32F4F /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AB2A8CAA4700F32F4F /* WidgetBundle.swift */; };
+		F51E3A462A8CC58800F32F4F /* 🛒InAppPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */; };
+		F51E3A472A8CC58800F32F4F /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
+		F51E3A482A8CC58800F32F4F /* 📣ADModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; };
+		F51E3A492A8CC58A00F32F4F /* 🛒InAppPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */; };
+		F51E3A4A2A8CC58A00F32F4F /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
+		F51E3A4B2A8CC58A00F32F4F /* 📣ADModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; };
+		F51E3A4C2A8CC5D100F32F4F /* 🛒InAppPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953928CCAFC3004558FC /* 🛒InAppPurchaseView.swift */; };
+		F51E3A4D2A8CC5D100F32F4F /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */; };
+		F51E3A4E2A8CC5D100F32F4F /* 📣ADComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣ADComponents.swift */; };
+		F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
@@ -287,7 +297,7 @@
 		F556953828CCAFC3004558FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F556953928CCAFC3004558FC /* 🛒InAppPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseView.swift"; sourceTree = "<group>"; };
 		F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💬RequestUserReview.swift"; sourceTree = "<group>"; };
-		F566A85729CE9A0200ACCC63 /* 🛠MenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠MenuTab.swift"; sourceTree = "<group>"; };
+		F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ℹ️InfoTab.swift"; sourceTree = "<group>"; };
 		F566A85B29CED1A300ACCC63 /* ♻️BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "♻️BaseModel.swift"; sourceTree = "<group>"; };
 		F566A8F929CEDA1200ACCC63 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566A8FB29CEDA1200ACCC63 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -402,11 +412,13 @@
 				F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */,
 				F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */,
+				F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
 				F55694FF28CCA88B004558FC /* iOS.entitlements */,
 				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 				F556951E28CCAF7A004558FC /* 🌐Localization */,
 				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
+				F556953328CCAFC3004558FC /* 🗄️Rest */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -475,6 +487,8 @@
 				F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */,
 				F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */,
 				F51E39B32A8CAA4700F32F4F /* 🔗URLSchemeAction */,
+				F5EAB5E12A72644700B2CD9E /* 🗄️Rest */,
+				F58F3BBD2A723CEB008659F9 /* 🌐Localization */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -573,11 +587,9 @@
 				F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */,
 				F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */,
 				F58F3BF12A724F2E008659F9 /* 🎚ViewCustomize.swift */,
-				F566A85729CE9A0200ACCC63 /* 🛠MenuTab.swift */,
 				F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */,
 				F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */,
 				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
-				F556953328CCAFC3004558FC /* 🗄️Rest */,
 			);
 			path = "🧩Sub";
 			sourceTree = "<group>";
@@ -628,8 +640,6 @@
 				F57E85B829D28FD000927561 /* 🔖TabModel.swift */,
 				F57E85D129D3B17900927561 /* 🔗WidgetLink.swift */,
 				F5EAB5E02A7262B900B2CD9E /* 🪧Widget */,
-				F5EAB5E12A72644700B2CD9E /* 🗄️Rest */,
-				F58F3BBD2A723CEB008659F9 /* 🌐Localization */,
 			);
 			path = "♻️Shared";
 			sourceTree = "<group>";
@@ -937,12 +947,15 @@
 				F51E3A172A8CAFDD00F32F4F /* 📱AppModel.swift in Sources */,
 				F51E3A242A8CB06500F32F4F /* 🔗MenuComponent.swift in Sources */,
 				F51E3A192A8CAFDD00F32F4F /* 🔧Settings.swift in Sources */,
+				F51E3A492A8CC58A00F32F4F /* 🛒InAppPurchaseModel.swift in Sources */,
 				F51E3A1E2A8CB05F00F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */,
 				F51E3A1A2A8CAFE200F32F4F /* 🔗Command.swift in Sources */,
 				F51E3A112A8CAFDD00F32F4F /* ContentView.swift in Sources */,
 				F51E3A162A8CAFDD00F32F4F /* 💬Sheet.swift in Sources */,
 				F51E3A252A8CB06500F32F4F /* 🔗Model.swift in Sources */,
+				F51E3A4B2A8CC58A00F32F4F /* 📣ADModel.swift in Sources */,
 				F51E3A182A8CAFDD00F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
+				F51E3A4A2A8CC58A00F32F4F /* 🗒️StaticInfo.swift in Sources */,
 				F51E3A1C2A8CB05F00F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E3A132A8CAFDD00F32F4F /* 🪄Commands.swift in Sources */,
 				F51E3A1B2A8CAFE200F32F4F /* 🔗Menu.swift in Sources */,
@@ -971,25 +984,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				F51E39E52A8CAA9800F32F4F /* 👆Buttons.swift in Sources */,
+				F51E3A4C2A8CC5D100F32F4F /* 🛒InAppPurchaseView.swift in Sources */,
 				F51E39C72A8CAA7100F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E39EB2A8CAA9800F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
 				F51E39E42A8CAA9800F32F4F /* ContentView.swift in Sources */,
 				F51E39CB2A8CAA7100F32F4F /* 📝NoteProperty.swift in Sources */,
 				F51E39CF2A8CAA7900F32F4F /* 🔗Button.swift in Sources */,
+				F51E3A472A8CC58800F32F4F /* 🗒️StaticInfo.swift in Sources */,
 				F51E39C92A8CAA7100F32F4F /* 🪧WidgetView.swift in Sources */,
 				F51E39EA2A8CAA9800F32F4F /* 💬Sheet.swift in Sources */,
+				F51E3A462A8CC58800F32F4F /* 🛒InAppPurchaseModel.swift in Sources */,
 				F51E39EC2A8CAA9800F32F4F /* 📱AppModel.swift in Sources */,
 				F51E39C82A8CAA7100F32F4F /* 🎚️CustomizeModel.swift in Sources */,
 				F51E39E72A8CAA9800F32F4F /* 🔗URLSchemeActionMenu.swift in Sources */,
 				F51E39CC2A8CAA7100F32F4F /* 💾ICloud.swift in Sources */,
 				F51E39E92A8CAA9800F32F4F /* 🛠️OptionTab.swift in Sources */,
+				F51E3A4D2A8CC5D100F32F4F /* ℹ️AboutApp.swift in Sources */,
 				F51E39ED2A8CAA9800F32F4F /* App.swift in Sources */,
+				F51E3A482A8CC58800F32F4F /* 📣ADModel.swift in Sources */,
 				F51E39CE2A8CAA7900F32F4F /* 🔗Model.swift in Sources */,
 				F51E39E62A8CAA9800F32F4F /* 📝NoteTab.swift in Sources */,
 				F51E39CA2A8CAA7100F32F4F /* 📝NoteFamily.swift in Sources */,
 				F51E39D02A8CAA7900F32F4F /* 🔗MenuComponent.swift in Sources */,
 				F51E39CD2A8CAA7100F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */,
+				F51E3A4E2A8CC5D100F32F4F /* 📣ADComponents.swift in Sources */,
 				F51E39E82A8CAA9800F32F4F /* 🔖Tab.swift in Sources */,
+				F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

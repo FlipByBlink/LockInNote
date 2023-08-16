@@ -126,7 +126,6 @@
       }
     },
     "App for iPhone / iPad / Mac / Apple Watch" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -389,7 +388,6 @@
       }
     },
     "Error" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -470,6 +468,9 @@
           }
         }
       }
+    },
+    "Info" : {
+
     },
     "Inline" : {
       "extractionState" : "stale",
@@ -559,7 +560,6 @@
 
     },
     "LockInNote" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
