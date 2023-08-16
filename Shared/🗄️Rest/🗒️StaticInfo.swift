@@ -29,7 +29,7 @@ enum 🗒️StaticInfo {
 
 #if os(iOS)
 extension 🗒️StaticInfo {
-    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-08-01"),
+    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-01"),
                                                                   ("1.1", "2023-03-28"),
                                                                   ("1.0.4", "2023-01-30"),
                                                                   ("1.0.3", "2022-12-09"),
@@ -38,34 +38,41 @@ extension 🗒️StaticInfo {
                                                                   ("1.0", "2022-09-13")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Sub, Rest, Widget
+        case main, Widget, URLSchemeAction, Rest
         var id: Self { self }
         var fileNames: [String] {
             switch self {
                 case .main: ["App.swift",
                              "ContentView.swift",
                              "📱AppModel.swift",
-                             "♻️BaseModel.swift"]
-                case .Sub: ["💾UserDefaults.swift",
-                            "💾ICloud.swift",
-                            "🔖TabModel.swift",
-                            "🔖TabView.swift",
-                            "📝WidgetTab.swift",
-                            "👆Buttons.swift",
-                            "🎚ViewCustomize.swift",
-                            "🔗WidgetLink.swift",
-                            "🛠MenuTab.swift",
-                            "🔗URLSchemeAction.swift",
-                            "💁WidgetGuideTab.swift",
-                            "💬RequestUserReview.swift"]
+                             "📝NoteTab.swift",
+                             "📝NoteProperty.swift",
+                             "📝NoteModel.swift",
+                             "📝NoteFamily.swift",
+                             "💾ICloud.swift",
+                             "🎚️CustomizeModel.swift",
+                             "🎚️CustomizeMenuComponent.swift",
+                             "👆Buttons.swift",
+                             "💬Sheet.swift",
+                             "🎚️CustomizeMenu.swift",
+                             "🔖Tab.swift",
+                             "🛠️OptionTab.swift"]
+                case .Widget: ["Widget.swift",
+                               "WidgetBundle.swift",
+                               "🪧WidgetView.swift"]
+                case .URLSchemeAction: ["🔗Model.swift",
+                                        "🔗MenuComponent.swift",
+                                        "🔗Button.swift",
+                                        "🔗URLSchemeActionMenu.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
+                             "ℹ️InfoTab.swift",
+                             "💁WidgetGuideTab.swift",
+                             "💬RequestUserReview.swift",
                              "ℹ️AboutApp.swift",
                              "📣ADModel.swift",
                              "📣ADComponents.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift"]
-                case .Widget: ["Widget.swift",
-                               "🖼️View.swift"]
             }
         }
     }

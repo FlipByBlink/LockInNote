@@ -106,6 +106,37 @@
 		F51E3A512A8CC8B800F32F4F /* 💁WidgetGuideTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */; };
 		F51E3A562A8CD7AE00F32F4F /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */; };
 		F51E3A572A8CD7D800F32F4F /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
+		F51E3A582A8CE75E00F32F4F /* 📝NoteFamily.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */; };
+		F51E3A592A8CE75E00F32F4F /* 📝NoteProperty.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
+		F51E3A5A2A8CE75E00F32F4F /* 📝NoteModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
+		F51E3A5B2A8CE75E00F32F4F /* 🪧WidgetView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B92A8CAA4700F32F4F /* 🪧WidgetView.swift */; };
+		F51E3A5C2A8CE75E00F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
+		F51E3A5D2A8CE75E00F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
+		F51E3A5E2A8CE75E00F32F4F /* 💾ICloud.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
+		F51E3A5F2A8CE75E00F32F4F /* 🔗MenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B42A8CAA4700F32F4F /* 🔗MenuComponent.swift */; };
+		F51E3A602A8CE75E00F32F4F /* 🔗Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B52A8CAA4700F32F4F /* 🔗Model.swift */; };
+		F51E3A612A8CE75E00F32F4F /* 🔗Button.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B62A8CAA4700F32F4F /* 🔗Button.swift */; };
+		F51E3A622A8CE75E00F32F4F /* 🗒️StaticInfo.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
+		F51E3A632A8CE75E00F32F4F /* 📣ADModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; };
+		F51E3A642A8CE75E00F32F4F /* 🛒InAppPurchaseModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */; };
+		F51E3A652A8CE75E00F32F4F /* App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E399D2A8CAA4700F32F4F /* App.swift */; };
+		F51E3A662A8CE75E00F32F4F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E399E2A8CAA4700F32F4F /* ContentView.swift */; };
+		F51E3A672A8CE75E00F32F4F /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E399C2A8CAA4700F32F4F /* 📱AppModel.swift */; };
+		F51E3A682A8CE75E00F32F4F /* 📝NoteTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39972A8CAA4700F32F4F /* 📝NoteTab.swift */; };
+		F51E3A692A8CE75E00F32F4F /* 👆Buttons.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E399B2A8CAA4700F32F4F /* 👆Buttons.swift */; };
+		F51E3A6A2A8CE75E00F32F4F /* 🎚️CustomizeMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39982A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */; };
+		F51E3A6B2A8CE75E00F32F4F /* 🛠️OptionTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39992A8CAA4700F32F4F /* 🛠️OptionTab.swift */; };
+		F51E3A6C2A8CE75E00F32F4F /* 🔗URLSchemeActionMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */; };
+		F51E3A6D2A8CE75E00F32F4F /* 🔖Tab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */; };
+		F51E3A6E2A8CE75E00F32F4F /* 💬Sheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */; };
+		F51E3A6F2A8CE75E00F32F4F /* ℹ️InfoTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */; };
+		F51E3A702A8CE75E00F32F4F /* 💁WidgetGuideTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */; };
+		F51E3A712A8CE75E00F32F4F /* 💬RequestUserReview.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */; };
+		F51E3A722A8CE75E00F32F4F /* ℹ️AboutApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */; };
+		F51E3A732A8CE75E00F32F4F /* 📣ADComponents.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣ADComponents.swift */; };
+		F51E3A742A8CE75E00F32F4F /* 🛒InAppPurchaseView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F556953928CCAFC3004558FC /* 🛒InAppPurchaseView.swift */; };
+		F51E3A752A8CE7DD00F32F4F /* WidgetBundle.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AB2A8CAA4700F32F4F /* WidgetBundle.swift */; };
+		F51E3A762A8CE7DD00F32F4F /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
@@ -222,6 +253,37 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F51E3A752A8CE7DD00F32F4F /* WidgetBundle.swift in CopyFiles */,
+				F51E3A762A8CE7DD00F32F4F /* Widget.swift in CopyFiles */,
+				F51E3A582A8CE75E00F32F4F /* 📝NoteFamily.swift in CopyFiles */,
+				F51E3A592A8CE75E00F32F4F /* 📝NoteProperty.swift in CopyFiles */,
+				F51E3A5A2A8CE75E00F32F4F /* 📝NoteModel.swift in CopyFiles */,
+				F51E3A5B2A8CE75E00F32F4F /* 🪧WidgetView.swift in CopyFiles */,
+				F51E3A5C2A8CE75E00F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */,
+				F51E3A5D2A8CE75E00F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */,
+				F51E3A5E2A8CE75E00F32F4F /* 💾ICloud.swift in CopyFiles */,
+				F51E3A5F2A8CE75E00F32F4F /* 🔗MenuComponent.swift in CopyFiles */,
+				F51E3A602A8CE75E00F32F4F /* 🔗Model.swift in CopyFiles */,
+				F51E3A612A8CE75E00F32F4F /* 🔗Button.swift in CopyFiles */,
+				F51E3A622A8CE75E00F32F4F /* 🗒️StaticInfo.swift in CopyFiles */,
+				F51E3A632A8CE75E00F32F4F /* 📣ADModel.swift in CopyFiles */,
+				F51E3A642A8CE75E00F32F4F /* 🛒InAppPurchaseModel.swift in CopyFiles */,
+				F51E3A652A8CE75E00F32F4F /* App.swift in CopyFiles */,
+				F51E3A662A8CE75E00F32F4F /* ContentView.swift in CopyFiles */,
+				F51E3A672A8CE75E00F32F4F /* 📱AppModel.swift in CopyFiles */,
+				F51E3A682A8CE75E00F32F4F /* 📝NoteTab.swift in CopyFiles */,
+				F51E3A692A8CE75E00F32F4F /* 👆Buttons.swift in CopyFiles */,
+				F51E3A6A2A8CE75E00F32F4F /* 🎚️CustomizeMenu.swift in CopyFiles */,
+				F51E3A6B2A8CE75E00F32F4F /* 🛠️OptionTab.swift in CopyFiles */,
+				F51E3A6C2A8CE75E00F32F4F /* 🔗URLSchemeActionMenu.swift in CopyFiles */,
+				F51E3A6D2A8CE75E00F32F4F /* 🔖Tab.swift in CopyFiles */,
+				F51E3A6E2A8CE75E00F32F4F /* 💬Sheet.swift in CopyFiles */,
+				F51E3A6F2A8CE75E00F32F4F /* ℹ️InfoTab.swift in CopyFiles */,
+				F51E3A702A8CE75E00F32F4F /* 💁WidgetGuideTab.swift in CopyFiles */,
+				F51E3A712A8CE75E00F32F4F /* 💬RequestUserReview.swift in CopyFiles */,
+				F51E3A722A8CE75E00F32F4F /* ℹ️AboutApp.swift in CopyFiles */,
+				F51E3A732A8CE75E00F32F4F /* 📣ADComponents.swift in CopyFiles */,
+				F51E3A742A8CE75E00F32F4F /* 🛒InAppPurchaseView.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
