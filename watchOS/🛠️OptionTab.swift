@@ -9,10 +9,7 @@ struct 🛠️OptionTab: View {
                 }
                 .navigationTitle("Option")
             }
-            NavigationLink("About") {
-                Text("Placeholder")
-                    .navigationTitle("About")
-            }
+            ℹ️AboutAppLink()
         }
     }
 }

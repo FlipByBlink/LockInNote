@@ -104,6 +104,8 @@
 		F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */; };
 		F51E3A502A8CC8B800F32F4F /* 💬RequestUserReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */; };
 		F51E3A512A8CC8B800F32F4F /* 💁WidgetGuideTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */; };
+		F51E3A562A8CD7AE00F32F4F /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */; };
+		F51E3A572A8CD7D800F32F4F /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
@@ -275,6 +277,7 @@
 		F51E3A332A8CB22900F32F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F51E3A352A8CB22900F32F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51E3A362A8CB22900F32F4F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🗒️StaticInfo.swift"; sourceTree = "<group>"; };
 		F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseModel.swift"; sourceTree = "<group>"; };
 		F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADModel.swift"; sourceTree = "<group>"; };
@@ -432,6 +435,7 @@
 				F51E39A32A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
 				F51E39A02A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F51E39A42A8CAA4700F32F4F /* 🔖Tab.swift */,
+				F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */,
 				F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */,
 				F51E3A532A8CCF4100F32F4F /* 🧰SupportingFiles */,
 			);
@@ -1071,10 +1075,12 @@
 				F51E39DD2A8CAA9100F32F4F /* 🪧WidgetView.swift in Sources */,
 				F51E39DC2A8CAA9100F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E39F12A8CAAA000F32F4F /* 💬Sheet.swift in Sources */,
+				F51E3A572A8CD7D800F32F4F /* 🗒️StaticInfo.swift in Sources */,
 				F51E39F22A8CAAA000F32F4F /* 📝NoteTab.swift in Sources */,
 				F51E39D62A8CAA8A00F32F4F /* 💾ICloud.swift in Sources */,
 				F51E39D22A8CAA8300F32F4F /* 🎚️CustomizeModel.swift in Sources */,
 				F51E39F52A8CAAA000F32F4F /* 🔖Tab.swift in Sources */,
+				F51E3A562A8CD7AE00F32F4F /* ℹ️AboutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
