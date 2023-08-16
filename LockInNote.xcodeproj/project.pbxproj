@@ -414,9 +414,6 @@
 				F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */,
 				F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */,
-				F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */,
-				F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */,
-				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
 				F556953328CCAFC3004558FC /* 🗄️Rest */,
 				F556951E28CCAF7A004558FC /* 🌐Localization */,
 				F51E3A522A8CCDA400F32F4F /* 🧰SupportingFiles */,
@@ -650,6 +647,9 @@
 		F556953328CCAFC3004558FC /* 🗄️Rest */ = {
 			isa = PBXGroup;
 			children = (
+				F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */,
+				F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */,
+				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
 				F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */,
 				F556953728CCAFC3004558FC /* 📣ADComponents.swift */,
 				F556953928CCAFC3004558FC /* 🛒InAppPurchaseView.swift */,
