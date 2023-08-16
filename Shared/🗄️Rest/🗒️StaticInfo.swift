@@ -81,18 +81,30 @@ extension 🗒️StaticInfo {
 #elseif os(watchOS)
 extension 🗒️StaticInfo {
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Sub, Rest, Complication
+        case main, Complication, Rest
         var id: Self { self }
         var fileNames: [String] {
             switch self {
                 case .main: ["App.swift",
                              "ContentView.swift",
-                             "📱AppModel.swift"]
-                case .Sub: []
-                case .Rest: ["🗒️StaticInfo.swift",
+                             "📱AppModel.swift",
+                             "📝NoteTab.swift",
+                             "📝NoteProperty.swift",
+                             "📝NoteModel.swift",
+                             "📝NoteFamily.swift",
+                             "💾ICloud.swift",
+                             "🎚️CustomizeModel.swift",
+                             "🎚️CustomizeMenuComponent.swift",
+                             "🎚️CustomizeMenu.swift",
+                             "💬Sheet.swift",
+                             "🔖Tab.swift",
+                             "🛠️OptionTab.swift",
                              "ℹ️AboutApp.swift"]
                 case .Complication: ["Widget.swift",
-                                     "🖼️View.swift"]
+                                     "WidgetBundle.swift",
+                                     "🪧WidgetView.swift"]
+                case .Rest: ["🗒️StaticInfo.swift",
+                             "ℹ️AboutApp.swift"]
             }
         }
     }
