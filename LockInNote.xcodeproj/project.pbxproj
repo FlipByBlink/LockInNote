@@ -415,14 +415,11 @@
 				F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */,
-				F50D9B0228EEDE390089E680 /* Info.plist */,
-				F55694FF28CCA88B004558FC /* iOS.entitlements */,
-				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
-				F556951E28CCAF7A004558FC /* 🌐Localization */,
-				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
 				F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */,
 				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
 				F556953328CCAFC3004558FC /* 🗄️Rest */,
+				F556951E28CCAF7A004558FC /* 🌐Localization */,
+				F51E3A522A8CCDA400F32F4F /* 🧰SupportingFiles */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -438,10 +435,8 @@
 				F51E39A32A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
 				F51E39A02A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F51E39A42A8CAA4700F32F4F /* 🔖Tab.swift */,
-				F566A92329CEDE4300ACCC63 /* Info.plist */,
-				F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */,
-				F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */,
 				F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */,
+				F51E3A532A8CCF4100F32F4F /* 🧰SupportingFiles */,
 			);
 			path = watchOS;
 			sourceTree = "<group>";
@@ -519,9 +514,8 @@
 				F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */,
 				F51E39C12A8CAA4700F32F4F /* 🔧Settings.swift */,
-				F51E3A082A8CAFB800F32F4F /* Assets.xcassets */,
-				F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */,
 				F51E39BD2A8CAA4700F32F4F /* 🔗URLSchemeAction */,
+				F51E3A542A8CCF5600F32F4F /* 🧰SupportingFiles */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -543,6 +537,36 @@
 				F51E3A352A8CB22900F32F4F /* Info.plist */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		F51E3A522A8CCDA400F32F4F /* 🧰SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
+				F55694FF28CCA88B004558FC /* iOS.entitlements */,
+				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
+				F50D9B0228EEDE390089E680 /* Info.plist */,
+			);
+			path = "🧰SupportingFiles";
+			sourceTree = "<group>";
+		};
+		F51E3A532A8CCF4100F32F4F /* 🧰SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F566A92329CEDE4300ACCC63 /* Info.plist */,
+				F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */,
+				F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */,
+			);
+			path = "🧰SupportingFiles";
+			sourceTree = "<group>";
+		};
+		F51E3A542A8CCF5600F32F4F /* 🧰SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F51E3A082A8CAFB800F32F4F /* Assets.xcassets */,
+				F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */,
+			);
+			path = "🧰SupportingFiles";
 			sourceTree = "<group>";
 		};
 		F54BE1BD28CB480900532025 = {
@@ -1101,7 +1125,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "macOS/🧰SupportingFiles/macOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1134,7 +1158,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "macOS/🧰SupportingFiles/macOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1351,13 +1375,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "iOS/🧰SupportingFiles/iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = "iOS/🧰SupportingFiles/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1387,13 +1411,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "iOS/🧰SupportingFiles/iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = "iOS/🧰SupportingFiles/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1485,14 +1509,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = watchOS/watchOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "watchOS/🧰SupportingFiles/watchOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = watchOS/Info.plist;
+				INFOPLIST_FILE = "watchOS/🧰SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = net.aaaakkkkssssttttnnnn.LockInNote;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -1518,14 +1542,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = watchOS/watchOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "watchOS/🧰SupportingFiles/watchOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6696GEY228;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = watchOS/Info.plist;
+				INFOPLIST_FILE = "watchOS/🧰SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = net.aaaakkkkssssttttnnnn.LockInNote;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
