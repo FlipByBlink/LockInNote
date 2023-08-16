@@ -12,7 +12,23 @@
         }
       }
     },
+    "(Nothing)" : {
+
+    },
+    "%@" : {
+
+    },
+    "%lld" : {
+
+    },
+    "+ ②" : {
+
+    },
+    "×2" : {
+
+    },
     "□⃞  Rectangular" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -23,6 +39,7 @@
       }
     },
     "▷  Inline" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -33,6 +50,7 @@
       }
     },
     "○  Circular" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -43,6 +61,7 @@
       }
     },
     "🐛" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -51,6 +70,9 @@
           }
         }
       }
+    },
+    "① +" : {
+
     },
     "① URL scheme" : {
       "localizations" : {
@@ -72,7 +94,11 @@
         }
       }
     },
+    "About" : {
+
+    },
     "About Apple Watch app" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -81,6 +107,12 @@
           }
         }
       }
+    },
+    "Accessory widget" : {
+
+    },
+    "AD" : {
+
     },
     "App for iPhone / Apple Watch" : {
       "extractionState" : "manual",
@@ -94,6 +126,7 @@
       }
     },
     "App for iPhone / iPad / Mac / Apple Watch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -104,6 +137,7 @@
       }
     },
     "Apple Support Page Link" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -114,6 +148,7 @@
       }
     },
     "Apple Watch app" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -124,6 +159,7 @@
       }
     },
     "Background" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -133,7 +169,14 @@
         }
       }
     },
+    "Background color" : {
+
+    },
+    "Background gradient" : {
+
+    },
     "Blank icon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -176,6 +219,7 @@
       }
     },
     "Circular" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -186,6 +230,7 @@
       }
     },
     "Circular widget" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -195,7 +240,14 @@
         }
       }
     },
+    "Color" : {
+
+    },
+    "ContentAlignment" : {
+
+    },
     "Create a custom iPhone Lock Screen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -204,6 +256,9 @@
           }
         }
       }
+    },
+    "Customize \"%@\"" : {
+
     },
     "Customize Action" : {
       "localizations" : {
@@ -216,6 +271,7 @@
       }
     },
     "Customize font" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -289,6 +345,9 @@
         }
       }
     },
+    "Double in font-size/padding-size on large widget" : {
+
+    },
     "ellipsis" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -299,6 +358,15 @@
           }
         }
       }
+    },
+    "Ellipsis" : {
+
+    },
+    "Empty" : {
+
+    },
+    "Empty content" : {
+
     },
     "Erase" : {
       "localizations" : {
@@ -321,6 +389,7 @@
       }
     },
     "Error" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -330,7 +399,11 @@
         }
       }
     },
+    "etc." : {
+
+    },
     "Example 1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -341,6 +414,7 @@
       }
     },
     "Example 2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -351,6 +425,7 @@
       }
     },
     "Guide" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -360,7 +435,11 @@
         }
       }
     },
+    "Home screen, Notification center, StandBy, Desktop, Lock screen(iPad)" : {
+
+    },
     "How to add and edit widgets on your iPhone" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -371,6 +450,7 @@
       }
     },
     "How to add widgets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -392,6 +472,7 @@
       }
     },
     "Inline" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -402,6 +483,7 @@
       }
     },
     "Inline widget" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -463,6 +545,7 @@
       }
     },
     "Lock Screen Widgets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -472,7 +555,11 @@
         }
       }
     },
+    "Lock screen, Apple Watch complication" : {
+
+    },
     "LockInNote" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -483,6 +570,7 @@
       }
     },
     "Menu" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -493,6 +581,7 @@
       }
     },
     "Mirror the lock screen widget to the Apple Watch complication." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -501,6 +590,9 @@
           }
         }
       }
+    },
+    "Mode" : {
+
     },
     "monospaced" : {
       "extractionState" : "manual",
@@ -513,7 +605,14 @@
         }
       }
     },
+    "More" : {
+
+    },
+    "Multi line text alignment" : {
+
+    },
     "Multi text alignment" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -522,6 +621,15 @@
           }
         }
       }
+    },
+    "Not sync this option between devices" : {
+
+    },
+    "Not sync URL scheme between devices" : {
+
+    },
+    "Notice" : {
+
     },
     "OK" : {
       "extractionState" : "manual",
@@ -533,6 +641,9 @@
           }
         }
       }
+    },
+    "Onboarding" : {
+
     },
     "Open menu" : {
       "extractionState" : "manual",
@@ -555,6 +666,9 @@
         }
       }
     },
+    "Padding" : {
+
+    },
     "pencil" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -565,6 +679,18 @@
           }
         }
       }
+    },
+    "Pencil" : {
+
+    },
+    "Placeholder" : {
+
+    },
+    "Prevent the keyboard from starting up automatically" : {
+
+    },
+    "Preview" : {
+
     },
     "primary" : {
       "extractionState" : "manual",
@@ -589,6 +715,7 @@
       }
     },
     "Rectangular" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -599,6 +726,7 @@
       }
     },
     "Rectangular widget" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -642,6 +770,7 @@
       }
     },
     "Select Lock Screen." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -684,6 +813,7 @@
       }
     },
     "Show a note." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -714,7 +844,17 @@
         }
       }
     },
+    "Square and pencil" : {
+
+    },
+    "Standard" : {
+
+    },
+    "System widget" : {
+
+    },
     "Tap Add Widgets." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -725,6 +865,7 @@
       }
     },
     "Tap or drag the widgets that you want to add to the Lock Screen." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -745,6 +886,9 @@
         }
       }
     },
+    "Test" : {
+
+    },
     "TEXT" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -756,7 +900,11 @@
         }
       }
     },
+    "Text color" : {
+
+    },
     "The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -786,7 +934,11 @@
         }
       }
     },
+    "Toggle" : {
+
+    },
     "Touch and hold the Lock Screen until the Customize button appears, then tap Customize." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -828,6 +980,9 @@
         }
       }
     },
+    "User text" : {
+
+    },
     "Weight" : {
       "localizations" : {
         "ja" : {
@@ -839,6 +994,7 @@
       }
     },
     "When you're finished, tap the close button, then tap Done." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

@@ -1,13 +1,11 @@
 import SwiftUI
 
 @main
-struct LockInNote: App {
-    @UIApplicationDelegateAdaptor var 📱: 📱AppModel
-    private let 🛒 = 🛒InAppPurchaseModel(id: "LockInNote.adfree")
+struct iOSApp: App {
+    @UIApplicationDelegateAdaptor var model: 📱AppModel
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(🛒)
         }
     }
 }

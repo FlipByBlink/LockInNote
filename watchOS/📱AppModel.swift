@@ -1,66 +1,52 @@
 import SwiftUI
-import WatchConnectivity
 
 @MainActor
-class 📱AppModel: NSObject, ObservableObject {
-    @Published var widgetsModel = 🎛WidgetsModel()
-    @Published var reachable: Bool = true
-    @Published var tasks: Set<WKRefreshBackgroundTask> = []
+class 📱AppModel: NSObject, ObservableObject, WKApplicationDelegate {
+    @Published var tab: 🔖Tab = .note(.primary)
+    @Published var sheet: 💬Sheet? = nil
+    var primaryNote: 📝NoteModel = .init(.primary)
+    var secondaryNote: 📝NoteModel = .init(.secondary)
+    var tertiaryNote: 📝NoteModel = .init(.tertiary)
 }
 
 extension 📱AppModel {
-    func applyReceivedWCContext(_ ⓒontext: [String: Any]) {
-        Task { @MainActor in
-            self.widgetsModel.receiveWCContext_saveData_reloadWidget(ⓒontext)
-            self.tasks.forEach { $0.setTaskCompletedWithSnapshot(false) }
-            self.tasks.removeAll()
+    func note(_ ⓕamily: 📝NoteFamily) -> 📝NoteModel {
+        switch ⓕamily {
+            case .primary: self.primaryNote
+            case .secondary: self.secondaryNote
+            case .tertiary: self.tertiaryNote
         }
     }
-    func updateReachablity(_ ⓢession: WCSession) {
-        Task { @MainActor in
-            self.reachable = ⓢession.isReachable
+    func handle(_ ⓕamily: 📝NoteFamily, _ ⓦidgetURL: URL) throws {
+        guard ⓦidgetURL == ⓕamily.widgetURL else { throw Self.HandleError.notTarget }
+        guard let ⓣarget = 📝NoteFamily.decode(ⓦidgetURL) else { throw Self.HandleError.urlDecodeFailed }
+        switch self.sheet {
+            case .customize(let ⓒustomizingNote):
+                guard ⓣarget != ⓒustomizingNote else { throw Self.HandleError.customizing }
+                self.sheet = nil
+            case .fullText:
+                self.sheet = nil
+            case .none:
+                break
+        }
+        Task {
+            try? await Task.sleep(for: .seconds(0.1))
+            withAnimation { self.tab = .note(ⓣarget) }
         }
     }
-    func loadICloudTheFirstTime() {
-        if 💾UserDefaults.notExists {
-            if let ⓜodel = 💾ICloud.load() {
-                self.widgetsModel = ⓜodel
-                self.widgetsModel.saveData_reloadWidget()
-            }
+    enum HandleError: Error {
+        case notTarget, customizing, urlDecodeFailed
+    }
+    var navigationTitle: String {
+        switch self.tab {
+            case .note(let ⓝoteFamily):
+                switch ⓝoteFamily {
+                    case .primary: self.primaryNote.title
+                    case .secondary: self.secondaryNote.title
+                    case .tertiary: self.tertiaryNote.title
+                }
+            case .menu:
+                "Menu"
         }
-    }
-}
-
-extension 📱AppModel: WKApplicationDelegate {
-    func applicationDidFinishLaunching() {
-        if WCSession.isSupported() {
-            WCSession.default.delegate = self
-            WCSession.default.activate()
-        }
-    }
-    func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        for ⓣask in backgroundTasks {
-            if let ⓦcTask = ⓣask as? WKWatchConnectivityRefreshBackgroundTask {
-                self.tasks.insert(ⓦcTask)
-            } else {
-                ⓣask.setTaskCompletedWithSnapshot(false)
-            }
-        }
-    }
-}
-
-extension 📱AppModel: WCSessionDelegate {
-    //Required
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        self.applyReceivedWCContext(session.receivedApplicationContext)
-        self.updateReachablity(session)
-    }
-    //Optional
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        self.applyReceivedWCContext(applicationContext)
-    }
-    //Optional
-    func sessionReachabilityDidChange(_ session: WCSession) {
-        self.updateReachablity(session)
     }
 }

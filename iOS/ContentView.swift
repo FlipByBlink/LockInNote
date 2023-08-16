@@ -1,17 +1,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var 📱: 📱AppModel
-    @EnvironmentObject var 🛒: 🛒InAppPurchaseModel
-    @Environment(\.scenePhase) var scenePhase
+    @EnvironmentObject var app: 📱AppModel
     var body: some View {
-        🔖TabView()
-            .scrollDismissesKeyboard(.interactively)
-            .modifier(💬RequestUserReview())
-            .onSubmit { 📱.widgetsModel.saveData_reloadWidget_updateWCContext() }
-            .onChange(of: self.scenePhase) {
-                if $0 == .background { 📱.widgetsModel.saveData_reloadWidget_updateWCContext() }
+        TabView(selection: self.$app.tab) {
+            📝NoteTab().environmentObject(self.app.primaryNote)
+            📝NoteTab().environmentObject(self.app.secondaryNote)
+            📝NoteTab().environmentObject(self.app.tertiaryNote)
+            🛠️OptionTab()
+                .tag(🔖Tab.option)
+                .tabItem { Label("Option", systemImage: "gearshape") }
+            Text("Placeholder")
+                .tag(🔖Tab.about)
+                .tabItem { Label("About", systemImage: "info") }
+        }
+        .sheet(item: self.$app.sheet) {
+            switch $0 {
+                case .customize(let ⓝoteFamily):
+                    🎚️CustomizeMenu(ⓝoteFamily)
+                case .onboarding:
+                    Text("Onboarding")
+                case .ad:
+                    Text("AD")
             }
-        //.modifier(📣ADSheet())
+        }
     }
 }
