@@ -104,7 +104,7 @@ enum 🔗URLSchemeActionMenuComponent {
     }
     struct SampleImage: View {
         var body: some View {
-            Image(.urlSchemeActionExample)
+            Image("urlSchemeActionExample")
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(24)

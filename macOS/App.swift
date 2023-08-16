@@ -10,6 +10,5 @@ struct macOSApp: App {
         Settings { 🔧Settings() }
         //ℹ️HelpWindows()
         //🛒InAppPurchaseWindow(🛒)
-        🚏MenuBarExtras(self.model)
     }
 }
