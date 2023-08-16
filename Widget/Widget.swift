@@ -4,9 +4,9 @@ import SwiftUI
 private struct 🪧Provider: TimelineProvider {
     func placeholder(in context: Context) -> 🪧Entry { .init(situation: .placeholder) }
     func getSnapshot(in context: Context, completion: @escaping (🪧Entry) -> ()) { completion(.init(situation: .snapshot)) }
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<🪧Entry>) -> ()) {
         💾ICloud.synchronize()
-        completion(Timeline(entries: [Entry(situation: .timeline)],
+        completion(Timeline(entries: [.init(situation: .timeline)],
                             policy: .after(.now.addingTimeInterval(60 * 15))))
     }
 }

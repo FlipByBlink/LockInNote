@@ -461,10 +461,10 @@
 		F51E39AA2A8CAA4700F32F4F /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
-				F566A91729CEDA3000ACCC63 /* Info.plist */,
-				F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */,
 				F566A91529CEDA3000ACCC63 /* Assets.xcassets */,
 				F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */,
+				F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */,
+				F566A91729CEDA3000ACCC63 /* Info.plist */,
 			);
 			path = watchOS;
 			sourceTree = "<group>";
@@ -472,10 +472,10 @@
 		F51E39AC2A8CAA4700F32F4F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F556951128CCAB72004558FC /* Info.plist */,
 				F556950F28CCAB72004558FC /* Assets.xcassets */,
 				F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */,
 				F556951D28CCAE21004558FC /* iOS.entitlements */,
+				F556951128CCAB72004558FC /* Info.plist */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -539,8 +539,8 @@
 			isa = PBXGroup;
 			children = (
 				F51E3A332A8CB22900F32F4F /* Assets.xcassets */,
-				F51E3A352A8CB22900F32F4F /* Info.plist */,
 				F51E3A362A8CB22900F32F4F /* macOS.entitlements */,
+				F51E3A352A8CB22900F32F4F /* Info.plist */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
