@@ -98,7 +98,6 @@
 
     },
     "About Apple Watch app" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -136,7 +135,6 @@
       }
     },
     "Apple Support Page Link" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -147,7 +145,6 @@
       }
     },
     "Apple Watch app" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -246,7 +243,6 @@
 
     },
     "Create a custom iPhone Lock Screen" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -437,7 +433,6 @@
 
     },
     "How to add and edit widgets on your iPhone" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -448,7 +443,6 @@
       }
     },
     "How to add widgets" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -546,7 +540,6 @@
       }
     },
     "Lock Screen Widgets" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -581,7 +574,6 @@
       }
     },
     "Mirror the lock screen widget to the Apple Watch complication." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -770,7 +762,6 @@
       }
     },
     "Select Lock Screen." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -854,7 +845,6 @@
 
     },
     "Tap Add Widgets." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -865,7 +855,6 @@
       }
     },
     "Tap or drag the widgets that you want to add to the Lock Screen." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -904,7 +893,6 @@
 
     },
     "The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -938,7 +926,6 @@
 
     },
     "Touch and hold the Lock Screen until the Customize button appears, then tap Customize." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -994,7 +981,6 @@
       }
     },
     "When you're finished, tap the close button, then tap Done." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

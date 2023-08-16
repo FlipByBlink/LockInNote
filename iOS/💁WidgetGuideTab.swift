@@ -1,19 +1,21 @@
 import SwiftUI
 
-struct 💁WidgetGuideTab: View {
+struct 💁WidgetGuideMenuLink: View {
     var body: some View {
-        NavigationStack {
+        NavigationLink {
             List {
                 Self.StepByStepSection()
                 Self.AppleSupportLinkSection()
                 Self.AppleWatchSection()
             }
             .navigationTitle("How to add widgets")
+        } label: {
+            Label("How to add widgets", systemImage: "questionmark")
         }
     }
 }
 
-private extension 💁WidgetGuideTab {
+private extension 💁WidgetGuideMenuLink {
     private struct StepByStepSection: View {
         private let steps: [Int: LocalizedStringKey] = [
             1: "Touch and hold the Lock Screen until the Customize button appears, then tap Customize.",

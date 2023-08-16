@@ -14,6 +14,7 @@ struct ContentView: View {
                 .tag(🔖Tab.info)
                 .tabItem { Label("Info", systemImage: "info") }
         }
+        .modifier(💬RequestUserReview())
         .sheet(item: self.$app.sheet) {
             switch $0 {
                 case .customize(let ⓝoteFamily):

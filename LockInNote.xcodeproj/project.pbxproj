@@ -102,6 +102,8 @@
 		F51E3A4D2A8CC5D100F32F4F /* ℹ️AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */; };
 		F51E3A4E2A8CC5D100F32F4F /* 📣ADComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556953728CCAFC3004558FC /* 📣ADComponents.swift */; };
 		F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */; };
+		F51E3A502A8CC8B800F32F4F /* 💬RequestUserReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */; };
+		F51E3A512A8CC8B800F32F4F /* 💁WidgetGuideTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
@@ -418,6 +420,8 @@
 				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 				F556951E28CCAF7A004558FC /* 🌐Localization */,
 				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
+				F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */,
+				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
 				F556953328CCAFC3004558FC /* 🗄️Rest */,
 			);
 			path = iOS;
@@ -588,8 +592,6 @@
 				F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */,
 				F58F3BF12A724F2E008659F9 /* 🎚ViewCustomize.swift */,
 				F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */,
-				F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */,
-				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
 			);
 			path = "🧩Sub";
 			sourceTree = "<group>";
@@ -990,6 +992,7 @@
 				F51E39E42A8CAA9800F32F4F /* ContentView.swift in Sources */,
 				F51E39CB2A8CAA7100F32F4F /* 📝NoteProperty.swift in Sources */,
 				F51E39CF2A8CAA7900F32F4F /* 🔗Button.swift in Sources */,
+				F51E3A512A8CC8B800F32F4F /* 💁WidgetGuideTab.swift in Sources */,
 				F51E3A472A8CC58800F32F4F /* 🗒️StaticInfo.swift in Sources */,
 				F51E39C92A8CAA7100F32F4F /* 🪧WidgetView.swift in Sources */,
 				F51E39EA2A8CAA9800F32F4F /* 💬Sheet.swift in Sources */,
@@ -1010,6 +1013,7 @@
 				F51E3A4E2A8CC5D100F32F4F /* 📣ADComponents.swift in Sources */,
 				F51E39E82A8CAA9800F32F4F /* 🔖Tab.swift in Sources */,
 				F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */,
+				F51E3A502A8CC8B800F32F4F /* 💬RequestUserReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
