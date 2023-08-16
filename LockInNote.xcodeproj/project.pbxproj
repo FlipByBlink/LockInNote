@@ -63,7 +63,7 @@
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F556950B28CCAB70004558FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
 		F556951028CCAB72004558FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F556950F28CCAB72004558FC /* Assets.xcassets */; };
-		F556951428CCAB72004558FC /* iOS - Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* iOS - Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F556951428CCAB72004558FC /* Widget for iOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* Widget for iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F556953C28CCAFC3004558FC /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F556953628CCAFC3004558FC /* Configuration.storekit */; };
 		F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556953828CCAFC3004558FC /* Launch Screen.storyboard */; };
 		F566A90029CEDA1300ACCC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */; };
@@ -71,7 +71,7 @@
 		F566A91029CEDA2F00ACCC63 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F566A91129CEDA2F00ACCC63 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
 		F566A91629CEDA3000ACCC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F566A91529CEDA3000ACCC63 /* Assets.xcassets */; };
-		F566A91A29CEDA3000ACCC63 /* watchOS - Complication.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F566A90F29CEDA2F00ACCC63 /* watchOS - Complication.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F566A91A29CEDA3000ACCC63 /* Widget for watchOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F58F3BC22A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC32A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC42A723D00008659F9 /* 🌐AboutApp.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBF2A723CFF008659F9 /* 🌐AboutApp.xcstrings */; };
@@ -123,7 +123,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F556951428CCAB72004558FC /* iOS - Widget.appex in Embed Foundation Extensions */,
+				F556951428CCAB72004558FC /* Widget for iOS.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,7 +145,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F566A91A29CEDA3000ACCC63 /* watchOS - Complication.appex in Embed Foundation Extensions */,
+				F566A91A29CEDA3000ACCC63 /* Widget for watchOS.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,7 +214,7 @@
 		F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗URLSchemeAction.swift"; sourceTree = "<group>"; };
 		F55694FF28CCA88B004558FC /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		F556950128CCA8A5004558FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		F556950728CCAB70004558FC /* iOS - Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iOS - Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F556950728CCAB70004558FC /* Widget for iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F556950828CCAB70004558FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F556950A28CCAB70004558FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F556950D28CCAB71004558FC /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 		F566A8FB29CEDA1200ACCC63 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F566A8FD29CEDA1200ACCC63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F566A90F29CEDA2F00ACCC63 /* watchOS - Complication.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchOS - Complication.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for watchOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566A91529CEDA3000ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F566A91729CEDA3000ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
@@ -317,21 +317,21 @@
 		F51E39942A8CAA4700F32F4F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F51E399D2A8CAA4700F32F4F /* App.swift */,
+				F51E399E2A8CAA4700F32F4F /* ContentView.swift */,
+				F51E399C2A8CAA4700F32F4F /* 📱AppModel.swift */,
+				F51E39972A8CAA4700F32F4F /* 📝NoteTab.swift */,
+				F51E399B2A8CAA4700F32F4F /* 👆Buttons.swift */,
+				F51E39982A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
+				F51E39992A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
+				F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */,
+				F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */,
+				F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
 				F55694FF28CCA88B004558FC /* iOS.entitlements */,
 				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 				F556951E28CCAF7A004558FC /* 🌐Localization */,
 				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
-				F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */,
-				F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */,
-				F51E39972A8CAA4700F32F4F /* 📝NoteTab.swift */,
-				F51E39982A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
-				F51E39992A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
-				F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */,
-				F51E399B2A8CAA4700F32F4F /* 👆Buttons.swift */,
-				F51E399C2A8CAA4700F32F4F /* 📱AppModel.swift */,
-				F51E399D2A8CAA4700F32F4F /* App.swift */,
-				F51E399E2A8CAA4700F32F4F /* ContentView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -339,18 +339,18 @@
 		F51E399F2A8CAA4700F32F4F /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
+				F51E39A62A8CAA4700F32F4F /* App.swift */,
+				F51E39A52A8CAA4700F32F4F /* 📱AppModel.swift */,
+				F51E39A72A8CAA4700F32F4F /* ContentView.swift */,
+				F51E39A12A8CAA4700F32F4F /* 📝NoteTab.swift */,
+				F51E39A22A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
+				F51E39A32A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
+				F51E39A02A8CAA4700F32F4F /* 💬Sheet.swift */,
+				F51E39A42A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F566A92329CEDE4300ACCC63 /* Info.plist */,
 				F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */,
 				F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */,
 				F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */,
-				F51E39A02A8CAA4700F32F4F /* 💬Sheet.swift */,
-				F51E39A12A8CAA4700F32F4F /* 📝NoteTab.swift */,
-				F51E39A22A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
-				F51E39A32A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
-				F51E39A42A8CAA4700F32F4F /* 🔖Tab.swift */,
-				F51E39A52A8CAA4700F32F4F /* 📱AppModel.swift */,
-				F51E39A62A8CAA4700F32F4F /* App.swift */,
-				F51E39A72A8CAA4700F32F4F /* ContentView.swift */,
 			);
 			path = watchOS;
 			sourceTree = "<group>";
@@ -403,9 +403,9 @@
 				F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */,
 				F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */,
 				F51E39B92A8CAA4700F32F4F /* 🪧WidgetView.swift */,
-				F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */,
 				F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */,
 				F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */,
+				F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */,
 				F51E39B32A8CAA4700F32F4F /* 🔗URLSchemeAction */,
 			);
 			path = Shared;
@@ -424,16 +424,16 @@
 		F51E39BA2A8CAA4700F32F4F /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */,
+				F51E39C42A8CAA4700F32F4F /* App.swift */,
+				F51E39C22A8CAA4700F32F4F /* 📱AppModel.swift */,
+				F51E39C52A8CAA4700F32F4F /* ContentView.swift */,
+				F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */,
+				F51E39C62A8CAA4700F32F4F /* 📝NoteView.swift */,
 				F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
-				F51E39BD2A8CAA4700F32F4F /* 🔗URLSchemeAction */,
+				F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */,
 				F51E39C12A8CAA4700F32F4F /* 🔧Settings.swift */,
-				F51E39C22A8CAA4700F32F4F /* 📱AppModel.swift */,
-				F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */,
-				F51E39C42A8CAA4700F32F4F /* App.swift */,
-				F51E39C52A8CAA4700F32F4F /* ContentView.swift */,
-				F51E39C62A8CAA4700F32F4F /* 📝NoteView.swift */,
+				F51E39BD2A8CAA4700F32F4F /* 🔗URLSchemeAction */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -466,9 +466,9 @@
 			isa = PBXGroup;
 			children = (
 				F54BE1C628CB480900532025 /* iOS.app */,
-				F556950728CCAB70004558FC /* iOS - Widget.appex */,
+				F556950728CCAB70004558FC /* Widget for iOS.appex */,
 				F566A8F929CEDA1200ACCC63 /* LockInNote.app */,
-				F566A90F29CEDA2F00ACCC63 /* watchOS - Complication.appex */,
+				F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -626,9 +626,9 @@
 			productReference = F54BE1C628CB480900532025 /* iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F556950628CCAB70004558FC /* iOS - Widget */ = {
+		F556950628CCAB70004558FC /* Widget for iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F556951528CCAB72004558FC /* Build configuration list for PBXNativeTarget "iOS - Widget" */;
+			buildConfigurationList = F556951528CCAB72004558FC /* Build configuration list for PBXNativeTarget "Widget for iOS" */;
 			buildPhases = (
 				F556950328CCAB70004558FC /* Sources */,
 				F556950428CCAB70004558FC /* Frameworks */,
@@ -638,9 +638,9 @@
 			);
 			dependencies = (
 			);
-			name = "iOS - Widget";
+			name = "Widget for iOS";
 			productName = LINWidgetExtension;
-			productReference = F556950728CCAB70004558FC /* iOS - Widget.appex */;
+			productReference = F556950728CCAB70004558FC /* Widget for iOS.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		F566A8F829CEDA1200ACCC63 /* watchOS */ = {
@@ -662,9 +662,9 @@
 			productReference = F566A8F929CEDA1200ACCC63 /* LockInNote.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F566A90E29CEDA2F00ACCC63 /* watchOS - Complication */ = {
+		F566A90E29CEDA2F00ACCC63 /* Widget for watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F566A91B29CEDA3000ACCC63 /* Build configuration list for PBXNativeTarget "watchOS - Complication" */;
+			buildConfigurationList = F566A91B29CEDA3000ACCC63 /* Build configuration list for PBXNativeTarget "Widget for watchOS" */;
 			buildPhases = (
 				F566A90B29CEDA2F00ACCC63 /* Sources */,
 				F566A90C29CEDA2F00ACCC63 /* Frameworks */,
@@ -674,9 +674,9 @@
 			);
 			dependencies = (
 			);
-			name = "watchOS - Complication";
+			name = "Widget for watchOS";
 			productName = LINComplicationExtension;
-			productReference = F566A90F29CEDA2F00ACCC63 /* watchOS - Complication.appex */;
+			productReference = F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -718,9 +718,9 @@
 			projectRoot = "";
 			targets = (
 				F54BE1C528CB480900532025 /* iOS */,
-				F556950628CCAB70004558FC /* iOS - Widget */,
 				F566A8F829CEDA1200ACCC63 /* watchOS */,
-				F566A90E29CEDA2F00ACCC63 /* watchOS - Complication */,
+				F556950628CCAB70004558FC /* Widget for iOS */,
+				F566A90E29CEDA2F00ACCC63 /* Widget for watchOS */,
 			);
 		};
 /* End PBXProject section */
@@ -865,7 +865,7 @@
 /* Begin PBXTargetDependency section */
 		F556951328CCAB72004558FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F556950628CCAB70004558FC /* iOS - Widget */;
+			target = F556950628CCAB70004558FC /* Widget for iOS */;
 			targetProxy = F556951228CCAB72004558FC /* PBXContainerItemProxy */;
 		};
 		F566A90929CEDA2100ACCC63 /* PBXTargetDependency */ = {
@@ -875,7 +875,7 @@
 		};
 		F566A91929CEDA3000ACCC63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F566A90E29CEDA2F00ACCC63 /* watchOS - Complication */;
+			target = F566A90E29CEDA2F00ACCC63 /* Widget for watchOS */;
 			targetProxy = F566A91829CEDA3000ACCC63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1032,10 +1032,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1068,10 +1068,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1097,9 +1097,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.LINWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1125,9 +1128,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.LINWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1147,6 +1153,7 @@
 				INFOPLIST_FILE = watchOS/Info.plist;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = net.aaaakkkkssssttttnnnn.LockInNote;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1179,6 +1186,7 @@
 				INFOPLIST_FILE = watchOS/Info.plist;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = net.aaaakkkkssssttttnnnn.LockInNote;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1278,7 +1286,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F556951528CCAB72004558FC /* Build configuration list for PBXNativeTarget "iOS - Widget" */ = {
+		F556951528CCAB72004558FC /* Build configuration list for PBXNativeTarget "Widget for iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F556951628CCAB72004558FC /* Debug */,
@@ -1296,7 +1304,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F566A91B29CEDA3000ACCC63 /* Build configuration list for PBXNativeTarget "watchOS - Complication" */ = {
+		F566A91B29CEDA3000ACCC63 /* Build configuration list for PBXNativeTarget "Widget for watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F566A91C29CEDA3000ACCC63 /* Debug */,
