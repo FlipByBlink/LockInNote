@@ -1,13 +1,13 @@
 LockInNote - iPhone, iPad, Mac, Apple Watch
 -------------------------------------------
 
-<img src="iOS/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
+<img src="iOS/🧰SupportingFiles/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
 
 <a href="https://apps.apple.com/app/id1644879340" target="blank">
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
 </a>
 
-<img src="iOS/Assets.xcassets/ConceptImage.imageset/ConceptImage.png" width="600">
+<img src="iOS/🧰SupportingFiles/Assets.xcassets/ConceptImage.imageset/ConceptImage.png" width="600">
 
 
 Description

@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F51E3A2A2A8CB22500F32F4F"
-               BuildableName = "Widget for macOS.appex"
+               BuildableName = "LockInNote.appex"
                BlueprintName = "Widget for macOS"
                ReferencedContainer = "container:LockInNote.xcodeproj">
             </BuildableReference>
