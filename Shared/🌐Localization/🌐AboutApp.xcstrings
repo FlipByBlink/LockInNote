@@ -12,7 +12,6 @@
       }
     },
     "← Select file" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -43,7 +42,7 @@
       }
     },
     "Adopted In-App Purchase model for the first time on TapWeight ver 1.1.1" : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -124,7 +123,7 @@
       }
     },
     "Final year as an undergraduate student. Developed an iOS application(FlipByBlink) as software for the purpose of research experiments." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -135,7 +134,7 @@
       }
     },
     "Finished from high school in Okayama Prefecture. Entranced into University-of-the-Ryukyus/faculty-of-engineering in Okinawa Prefecture." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -146,7 +145,6 @@
       }
     },
     "Git repository is public on GitHub.com" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -157,7 +155,7 @@
       }
     },
     "Graduated from University-of-the-Ryukyus." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -228,7 +226,7 @@
       }
     },
     "Migrated to Okayama Prefecture." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -259,7 +257,7 @@
       }
     },
     "OK" : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -300,7 +298,7 @@
       }
     },
     "Released alarm clock app with taking a long time \"FadeInAlarm\" ver 1.0. First paid app." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -311,7 +309,6 @@
       }
     },
     "Released Apple TV app version of \"PlainShogiBoard\"." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -322,7 +319,6 @@
       }
     },
     "Released Apple Watch app version of \"TapTemperature\"." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -333,7 +329,7 @@
       }
     },
     "Released body temperature registration app \"TapTemperature\" ver 1.0." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -344,7 +340,7 @@
       }
     },
     "Released body weight registration app \"TapWeight\" ver 1.0." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -355,7 +351,7 @@
       }
     },
     "Released ebook reader app \"FlipByBlink\" ver 1.0 on AppStore. Special feature is to turn a page by slightly-longish-voluntary-blink." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -366,7 +362,7 @@
       }
     },
     "Released FadeInAlarm ver 2.0 for the first time in three years since ver 1.0." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -377,7 +373,7 @@
       }
     },
     "Released FlipByBlink ver 3.0 for the first time in three years since ver 2.0." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -388,7 +384,7 @@
       }
     },
     "Released LockInNote and MemorizeWidget on iOS16 release occasion." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -399,7 +395,6 @@
       }
     },
     "Released Mac app version of \"MemorizeWidget\"." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -420,7 +415,7 @@
       }
     },
     "Released simple shogi board app \"PlainShogiBoard\" ver 1.0." : {
-      "extractionState" : "manual",
+      "extractionState" : "migrated",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
