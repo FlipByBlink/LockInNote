@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct 📣ADContent: View {
-    @EnvironmentObject var 🛒: 🛒InAppPurchaseModel
+    @EnvironmentObject var model: 🛒InAppPurchaseModel
     @Environment(\.dismiss) var dismiss
     @Environment(\.openWindow) var openWindow
     @State private var disableDismiss: Bool = true
@@ -29,7 +29,7 @@ struct 📣ADContent: View {
             .modifier(Self.PurchasedEffect())
         }
         .frame(minWidth: 700, maxWidth: 1000, minHeight: 500, maxHeight: 600)
-        .onChange(of: 🛒.purchased) { if $0 { self.disableDismiss = false } }
+        .onChange(of: self.model.purchased) { if $0 { self.disableDismiss = false } }
         .onReceive(self.timer) { _ in
             if self.countDown > 1 {
                 self.countDown -= 1
@@ -70,7 +70,7 @@ private extension 📣ADContent {
                 .scaledToFit()
         }
         .accessibilityHidden(true)
-        .disabled(🛒.purchased)
+        .disabled(self.model.purchased)
     }
     private func appIcon() -> some View {
         Link(destination: self.targetApp.url) {
@@ -84,7 +84,7 @@ private extension 📣ADContent {
             }
         }
         .accessibilityHidden(true)
-        .disabled(🛒.purchased)
+        .disabled(self.model.purchased)
     }
     private func appName() -> some View {
         Link(destination: self.targetApp.url) {
@@ -93,7 +93,7 @@ private extension 📣ADContent {
         }
         .buttonStyle(.plain)
         .accessibilityHidden(true)
-        .disabled(🛒.purchased)
+        .disabled(self.model.purchased)
     }
     private func appDescription() -> some View {
         Text(self.targetApp.localizationKey, tableName: "🌐ADAppDescription")
@@ -110,7 +110,7 @@ private extension 📣ADContent {
             .foregroundColor(.primary)
         }
         .accessibilityLabel(Text("Open AppStore page", tableName: "🌐AD&InAppPurchase"))
-        .disabled(🛒.purchased)
+        .disabled(self.model.purchased)
     }
     private func menuLink() -> some View {
         Button {
@@ -133,9 +133,9 @@ private extension 📣ADContent {
         .keyboardShortcut(.cancelAction)
     }
     private struct PurchasedEffect: ViewModifier {
-        @EnvironmentObject var 🛒: 🛒InAppPurchaseModel
+        @EnvironmentObject var model: 🛒InAppPurchaseModel
         func body(content: Content) -> some View {
-            if 🛒.purchased {
+            if self.model.purchased {
                 content
                     .blur(radius: 6)
                     .overlay {
