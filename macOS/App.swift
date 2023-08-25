@@ -8,8 +8,8 @@ struct macOSApp: App {
         📝NoteWindow(self.model)
         🎚️CustomizeWindow(self.model)
         🔗URLSchemeActionMenuWindow()
-        Settings { 🔧Settings() }
         ℹ️HelpWindows()
         🛒InAppPurchaseWindow(self.iapModel)
+        🔧Settings()
     }
 }
