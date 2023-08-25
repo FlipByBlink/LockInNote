@@ -189,6 +189,7 @@
 		F51E3AAE2A8CEC5C00F32F4F /* 📣ADContent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3AA92A8CEC2800F32F4F /* 📣ADContent.swift */; };
 		F51E3AAF2A8CEC5C00F32F4F /* 🛒InAppPurchaseView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3AA72A8CEC2800F32F4F /* 🛒InAppPurchaseView.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
+		F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F556950B28CCAB70004558FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
@@ -467,6 +468,7 @@
 		F54BE1C928CB480900532025 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F54BE1CB28CB480900532025 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F54BE1CD28CB480A00532025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖NoteDetailView.swift"; sourceTree = "<group>"; };
 		F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗URLSchemeAction.swift"; sourceTree = "<group>"; };
 		F55694FF28CCA88B004558FC /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		F556950128CCA8A5004558FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -617,6 +619,7 @@
 				F51E39A32A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
 				F51E39A02A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F51E39A42A8CAA4700F32F4F /* 🔖Tab.swift */,
+				F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */,
 				F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */,
 				F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */,
 				F51E3A532A8CCF4100F32F4F /* 🧰SupportingFiles */,
@@ -1271,6 +1274,7 @@
 				F51E39EE2A8CAAA000F32F4F /* ContentView.swift in Sources */,
 				F51E39D42A8CAA8700F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */,
 				F51E39DD2A8CAA9100F32F4F /* 🪧WidgetView.swift in Sources */,
+				F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */,
 				F51E39DC2A8CAA9100F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E39F12A8CAAA000F32F4F /* 💬Sheet.swift in Sources */,
 				F51E3A572A8CD7D800F32F4F /* 🗒️StaticInfo.swift in Sources */,

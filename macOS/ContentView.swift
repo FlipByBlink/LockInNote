@@ -10,7 +10,7 @@ struct ContentView: View {
                 case .tertiary: 📝NoteView().environmentObject(self.app.tertiaryNote)
             }
         }
-        .frame(minWidth: 440, idealWidth: 440, minHeight: 200, idealHeight: 200)
+        .frame(minWidth: 400, idealWidth: 400, minHeight: 180, idealHeight: 180)
         .toolbarBackground(.clear, for: .automatic)
         .sheet(item: self.$app.sheet) {
             switch $0 {

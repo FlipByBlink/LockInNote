@@ -24,7 +24,7 @@ extension 📱AppModel {
             case .customize(let ⓒustomizingNote):
                 guard ⓣarget != ⓒustomizingNote else { throw Self.HandleError.customizing }
                 self.sheet = nil
-            case .fullText:
+            case .noteDetail:
                 self.sheet = nil
             case .none:
                 break

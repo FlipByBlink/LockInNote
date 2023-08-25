@@ -20,7 +20,7 @@ struct 📝NoteTab: View {
                 }
                 .disabled(self.note.text.isEmpty)
                 Button {
-                    self.app.sheet = .fullText
+                    self.app.sheet = .noteDetail
                     WKInterfaceDevice.current().play(.directionUp)
                 } label: {
                     Image(systemName: "doc.text.magnifyingglass")

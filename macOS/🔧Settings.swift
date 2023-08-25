@@ -2,12 +2,17 @@ import SwiftUI
 
 struct 🔧Settings: View {
     var body: some View {
-        TabView {
-//            🔗URLSchemeActionMenu()
-//                .tabItem { Label("URL Scheme Action", systemImage: "command") }
-            Text("2")
-                .tabItem { Label("2", systemImage: "2.circle") }
+        Form {
+            Toggle(isOn: .constant(false)) { Label("Hide share button", systemImage: "square.and.arrow.up") }
+            Toggle(isOn: .constant(false)) {
+                Label {
+                    Text("Monospaced font in app")
+                        .monospaced()
+                } icon: {
+                    Image(systemName: "space")
+                }
+            }
         }
-        .frame(minWidth: 400, minHeight: 500)
+        .frame(minWidth: 300, minHeight: 100)
     }
 }

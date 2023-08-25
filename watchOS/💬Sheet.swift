@@ -1,4 +1,4 @@
 enum 💬Sheet: Identifiable, Hashable {
-    case customize(📝NoteFamily), fullText
+    case customize(📝NoteFamily), noteDetail
     var id: Self { self }
 }

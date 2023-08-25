@@ -21,22 +21,8 @@ struct ContentView: View {
         }
         .sheet(item: self.$app.sheet) {
             switch $0 {
-                case .fullText:
-                    if case .note(let ⓕamily) = self.app.tab {
-                        ScrollView {
-                            Text(self.app.note(ⓕamily).text)
-                                .font(.title3)
-                                .multilineTextAlignment(.center)
-                                .padding(.vertical, 24)
-                        }
-                        .toolbar(.hidden, for: .automatic)
-                        .onTapGesture {
-                            self.app.sheet = nil
-                            WKInterfaceDevice.current().play(.directionDown)
-                        }
-                    }
-                case .customize(let ⓝoteFamily):
-                    🎚️CustomizeMenu(ⓝoteFamily)
+                case .noteDetail: 📖NoteDetailView()
+                case .customize(let ⓝoteFamily): 🎚️CustomizeMenu(ⓝoteFamily)
             }
         }
     }

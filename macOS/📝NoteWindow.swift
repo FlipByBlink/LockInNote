@@ -7,7 +7,7 @@ struct 📝NoteWindow: Scene {
         Window("Note", id: "note") {
             ContentView()
         }
-        .defaultSize(width: 440, height: 200)
+        .defaultSize(width: 400, height: 180)
         .commands { 🪄Commands(self.app) }
         .onChange(of: self.app.requestToOpenNote) {
             if $0 {
