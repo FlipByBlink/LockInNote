@@ -5,7 +5,7 @@ struct 🛠️OptionTab: View {
         List {
             NavigationLink("Option") {
                 List {
-                    Toggle("Toggle", isOn: .constant(false))
+                    Text(verbatim: "Palceholder")
                 }
                 .navigationTitle("Option")
             }

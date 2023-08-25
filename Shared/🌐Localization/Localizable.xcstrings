@@ -176,7 +176,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "ブラック"
           }
         }
       }
@@ -186,7 +186,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "ボールド"
           }
         }
       }
@@ -539,7 +539,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "ヘビー"
           }
         }
       }
@@ -639,7 +639,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "ライト"
           }
         }
       }
@@ -679,7 +679,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "ミディアム"
           }
         }
       }
@@ -899,7 +899,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "regular(標準)"
+            "value" : "標準"
           }
         }
       }
@@ -949,7 +949,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "セミボールド"
           }
         }
       }
@@ -1109,7 +1109,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "シン"
           }
         }
       }
@@ -1143,9 +1143,6 @@
           }
         }
       }
-    },
-    "Toggle" : {
-
     },
     "top" : {
       "localizations" : {
@@ -1202,7 +1199,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "ウルトラライト"
           }
         }
       }
