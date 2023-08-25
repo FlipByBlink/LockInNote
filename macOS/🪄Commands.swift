@@ -20,6 +20,7 @@ struct 🪄Commands: Commands {
             Button("Customize widget") { self.openWindow(id: "customize") }
                 .keyboardShortcut(",", modifiers: [.command, .shift])
         }
+        CommandGroup(after: .toolbar) {  Toggle("Monospaced font in app", isOn: .constant(false)) }
         CommandMenu("Action") { 🔗URLSchemeActionCommand(self.app) }
         CommandGroup(replacing: .help) { EmptyView() }
         CommandGroup(after: .help) {
