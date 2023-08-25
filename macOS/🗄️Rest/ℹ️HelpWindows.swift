@@ -22,8 +22,8 @@ private struct 📰DescriptionWindow: Scene {
                     .padding(24)
             }
             .textSelection(.enabled)
+            .frame(minWidth: 400, minHeight: 400)
         }
-        .defaultSize(width: 300, height: 300)
     }
 }
 
@@ -32,10 +32,10 @@ private struct 👤PrivacyPolicyWindow: Scene {
         Window(Text("Privacy Policy", tableName: "🌐AboutApp"),
                id: "PrivacyPolicy") {
             Text(🗒️StaticInfo.privacyPolicyDescription)
-                .padding(24)
+                .padding(32)
                 .textSelection(.enabled)
+                .frame(minWidth: 400, minHeight: 300)
         }
-        .defaultSize(width: 300, height: 300)
     }
 }
 
@@ -64,8 +64,8 @@ private struct 📜VersionHistoryWindow: Scene {
                     }
                 }
             }
+            .frame(minWidth: 400, minHeight: 600)
         }
-        .defaultSize(width: 300, height: 400)
     }
 }
 
@@ -86,8 +86,8 @@ private struct 📓SourceCodeWindow: Scene {
                 Text("← Select file", tableName: "🌐AboutApp")
                     .foregroundStyle(.tertiary)
             }
+            .frame(minWidth: 1000, minHeight: 600)
         }
-        .defaultSize(width: 400, height: 400)
     }
     private struct CodeSection: View {
         private var category: 🗒️StaticInfo.SourceCodeCategory
@@ -247,8 +247,8 @@ private struct 🧑‍💻DeveloperPublisherWindow: Scene {
                 }
                 Self.jobHuntSection()
             }
+            .frame(minWidth: 400, minHeight: 400)
         }
-        .defaultSize(width: 200, height: 300)
     }
     private struct TimelineSection: View {
         private static var values: [(date: String, description: String)] {
