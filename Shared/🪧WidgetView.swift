@@ -58,17 +58,7 @@ struct 🪧SystemFamilyView: View {
             .multilineTextAlignment(self.note.system_multilineTextAlignment.value)
             .padding(CGFloat(self.note.system_padding * self.scale))
         }
-        .animation(.default, value: self.note.system_fontSize)
-        .animation(.default, value: self.note.system_fontDesign)
-        .animation(.default, value: self.note.system_fontWeight)
-        .animation(.default, value: self.note.system_hierarchical)
-        .animation(.default, value: self.note.system_multilineTextAlignment)
-        .animation(.default, value: self.note.system_italic)
-        .animation(.default, value: self.note.system_padding)
-        .animation(.default, value: self.note.system_contentAlignment)
-        .animation(.default, value: self.note.system_textColor)
-        .animation(.default, value: self.note.system_backgroundColor)
-        .animation(.default, value: self.note.system_backgroundGradient)
+        .modifier(Self.Animation(self.isPreview))
     }
     private var scale: Int {
         switch self.widgetFamily {
@@ -130,6 +120,27 @@ struct 🪧SystemFamilyView: View {
                             content.foregroundStyle(self.note.system_textColor)
                     }
             }
+        }
+    }
+    private struct Animation: ViewModifier {
+        @EnvironmentObject var note: 📝NoteModel
+        var isPreview: Bool
+        func body(content: Content) -> some View {
+            content
+                .animation(.default, value: self.note.system_fontSize)
+                .animation(.default, value: self.note.system_fontDesign)
+                .animation(.default, value: self.note.system_fontWeight)
+                .animation(.default, value: self.note.system_hierarchical)
+                .animation(.default, value: self.note.system_multilineTextAlignment)
+                .animation(.default, value: self.note.system_italic)
+                .animation(.default, value: self.note.system_padding)
+                .animation(.default, value: self.note.system_contentAlignment)
+                .animation(.default, value: self.note.system_textColor)
+                .animation(.default, value: self.note.system_backgroundColor)
+                .animation(.default, value: self.note.system_backgroundGradient)
+        }
+        init(_ isPreview: Bool) {
+            self.isPreview = isPreview
         }
     }
 }
