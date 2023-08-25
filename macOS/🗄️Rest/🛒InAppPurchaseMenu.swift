@@ -20,6 +20,7 @@ struct 🛒InAppPurchaseMenu: View {
             .headerProminence(.increased)
         }
         .navigationTitle(Text("In-App Purchase", tableName: "🌐AD&InAppPurchase"))
+        .frame(minWidth: 400, minHeight: 640)
     }
 }
 

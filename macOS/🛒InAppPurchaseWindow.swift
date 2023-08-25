@@ -7,7 +7,7 @@ struct 🛒InAppPurchaseWindow: Scene {
             🛒InAppPurchaseMenu()
                 .environmentObject(self.app.inAppPurchaseModel)
         }
-        .defaultSize(width: 400, height: 600)
+        .defaultSize(width: 400, height: 640)
         .commandsRemoved()
     }
     init(_ app: 📱AppModel) {
