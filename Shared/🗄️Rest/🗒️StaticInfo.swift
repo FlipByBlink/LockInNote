@@ -98,8 +98,7 @@ extension 🗒️StaticInfo {
                              "🎚️CustomizeMenuComponent.swift",
                              "💬Sheet.swift",
                              "🔖Tab.swift",
-                             "🛠️OptionTab.swift",
-                             "ℹ️AboutApp.swift"]
+                             "🛠️OptionTab.swift"]
                 case .Complication: ["Widget.swift",
                                      "WidgetBundle.swift",
                                      "🪧WidgetView.swift"]
@@ -112,30 +111,27 @@ extension 🗒️StaticInfo {
 
 #elseif os(macOS)
 extension 🗒️StaticInfo {
-    static let versionInfos: [(version: String, date: String)] = [("1.1", "2021-03-01"),
-                                                                  ("1.0.1", "2021-02-01"),
-                                                                  ("1.0", "2021-01-01")] //降順。先頭の方が新しい
+    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-01")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Widget, URLSchemeAction, Rest
+        case main, Model, Scene, View, Widget, URLSchemeAction, Commands, Rest
         var id: Self { self }
         var fileNames: [String] {
             switch self {
-                case .main: ["App.swift",
-                             "ContentView.swift",
-                             "📱AppModel.swift",
-                             "📝NoteView.swift",
-                             "📝NoteWindow.swift",
-                             "📝NoteFamily.swift",
-                             "📝NoteProperty.swift",
-                             "📝NoteModel.swift",
-                             "💾ICloud.swift",
-                             "🎚️CustomizeModel.swift",
+                case .main: ["App.swift"]
+                case .Model: ["📱AppModel.swift",
+                              "📝NoteFamily.swift",
+                              "📝NoteProperty.swift",
+                              "📝NoteModel.swift",
+                              "💾ICloud.swift",
+                              "🎚️CustomizeModel.swift",
+                              "💬Sheet.swift"]
+                case .Scene: ["📝NoteWindow.swift",
+                              "🔧Settings.swift"]
+                case .View: ["ContentView.swift",
+                             "📝NoteEditor.swift",
                              "🎚️CustomizeMenu.swift",
-                             "🎚️CustomizeMenuComponent.swift",
-                             "💬Sheet.swift",
-                             "🔧Settings.swift",
-                             "🪄Commands.swift"]
+                             "🎚️CustomizeMenuComponent.swift"]
                 case .Widget: ["Widget.swift",
                                "WidgetBundle.swift",
                                "🪧WidgetView.swift"]
@@ -144,6 +140,7 @@ extension 🗒️StaticInfo {
                                         "🔗Command.swift",
                                         "🔗Menu.swift",
                                         "🔗MenuComponent.swift"]
+                case .Commands: ["🪄Commands.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "ℹ️HelpWindows.swift",
                              "📣ADModel.swift",

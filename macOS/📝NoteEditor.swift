@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 📝NoteView: View {
+struct 📝NoteEditor: View {
     @EnvironmentObject var app: 📱AppModel
     @EnvironmentObject var note: 📝NoteModel
     @Environment(\.openWindow) var openWindow

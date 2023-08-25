@@ -5,9 +5,9 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             switch self.app.target {
-                case .primary: 📝NoteView().environmentObject(self.app.primaryNote)
-                case .secondary: 📝NoteView().environmentObject(self.app.secondaryNote)
-                case .tertiary: 📝NoteView().environmentObject(self.app.tertiaryNote)
+                case .primary: 📝NoteEditor().environmentObject(self.app.primaryNote)
+                case .secondary: 📝NoteEditor().environmentObject(self.app.secondaryNote)
+                case .tertiary: 📝NoteEditor().environmentObject(self.app.tertiaryNote)
             }
         }
         .frame(minWidth: 400, idealWidth: 400, minHeight: 180, idealHeight: 180)

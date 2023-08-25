@@ -60,7 +60,7 @@
 		F51E39FD2A8CAAB700F32F4F /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
 		F51E3A092A8CAFB800F32F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51E3A082A8CAFB800F32F4F /* Assets.xcassets */; };
 		F51E3A112A8CAFDD00F32F4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C52A8CAA4700F32F4F /* ContentView.swift */; };
-		F51E3A122A8CAFDD00F32F4F /* 📝NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C62A8CAA4700F32F4F /* 📝NoteView.swift */; };
+		F51E3A122A8CAFDD00F32F4F /* 📝NoteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */; };
 		F51E3A132A8CAFDD00F32F4F /* 🪄Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */; };
 		F51E3A142A8CAFDD00F32F4F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C42A8CAA4700F32F4F /* App.swift */; };
 		F51E3A152A8CAFDD00F32F4F /* 📝NoteWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */; };
@@ -173,7 +173,7 @@
 		F51E3A9A2A8CEBEF00F32F4F /* 📱AppModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C22A8CAA4700F32F4F /* 📱AppModel.swift */; };
 		F51E3A9B2A8CEBEF00F32F4F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C52A8CAA4700F32F4F /* ContentView.swift */; };
 		F51E3A9C2A8CEBEF00F32F4F /* 📝NoteWindow.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */; };
-		F51E3A9D2A8CEBEF00F32F4F /* 📝NoteView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C62A8CAA4700F32F4F /* 📝NoteView.swift */; };
+		F51E3A9D2A8CEBEF00F32F4F /* 📝NoteEditor.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */; };
 		F51E3A9E2A8CEBEF00F32F4F /* 🎚️CustomizeMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */; };
 		F51E3A9F2A8CEBEF00F32F4F /* 💬Sheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */; };
 		F51E3AA02A8CEBEF00F32F4F /* 🪄Commands.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */; };
@@ -310,7 +310,7 @@
 				F51E3A9A2A8CEBEF00F32F4F /* 📱AppModel.swift in CopyFiles */,
 				F51E3A9B2A8CEBEF00F32F4F /* ContentView.swift in CopyFiles */,
 				F51E3A9C2A8CEBEF00F32F4F /* 📝NoteWindow.swift in CopyFiles */,
-				F51E3A9D2A8CEBEF00F32F4F /* 📝NoteView.swift in CopyFiles */,
+				F51E3A9D2A8CEBEF00F32F4F /* 📝NoteEditor.swift in CopyFiles */,
 				F51E3A9E2A8CEBEF00F32F4F /* 🎚️CustomizeMenu.swift in CopyFiles */,
 				F51E3A9F2A8CEBEF00F32F4F /* 💬Sheet.swift in CopyFiles */,
 				F51E3AA02A8CEBEF00F32F4F /* 🪄Commands.swift in CopyFiles */,
@@ -452,7 +452,7 @@
 		F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝NoteWindow.swift"; sourceTree = "<group>"; };
 		F51E39C42A8CAA4700F32F4F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F51E39C52A8CAA4700F32F4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F51E39C62A8CAA4700F32F4F /* 📝NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝NoteView.swift"; sourceTree = "<group>"; };
+		F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝NoteEditor.swift"; sourceTree = "<group>"; };
 		F51E3A022A8CAFB500F32F4F /* macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51E3A082A8CAFB800F32F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -697,9 +697,9 @@
 			children = (
 				F51E39C42A8CAA4700F32F4F /* App.swift */,
 				F51E39C22A8CAA4700F32F4F /* 📱AppModel.swift */,
-				F51E39C52A8CAA4700F32F4F /* ContentView.swift */,
 				F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */,
-				F51E39C62A8CAA4700F32F4F /* 📝NoteView.swift */,
+				F51E39C52A8CAA4700F32F4F /* ContentView.swift */,
+				F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */,
 				F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
 				F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */,
@@ -1171,7 +1171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F51E3A212A8CB05F00F32F4F /* 📝NoteProperty.swift in Sources */,
-				F51E3A122A8CAFDD00F32F4F /* 📝NoteView.swift in Sources */,
+				F51E3A122A8CAFDD00F32F4F /* 📝NoteEditor.swift in Sources */,
 				F51E3A1F2A8CB05F00F32F4F /* 🪧WidgetView.swift in Sources */,
 				F51E3A222A8CB05F00F32F4F /* 🎚️CustomizeModel.swift in Sources */,
 				F51E3A142A8CAFDD00F32F4F /* App.swift in Sources */,
