@@ -301,16 +301,6 @@
         }
       }
     },
-    "Customize \"%@\" - Widget" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"%@\"をカスタマイズ - ウィジェット"
-          }
-        }
-      }
-    },
     "Customize \"%@\" - Widget title" : {
       "localizations" : {
         "ja" : {
@@ -1350,7 +1340,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ウィジェットタイトル"
+            "value" : "タイトル"
           }
         }
       }

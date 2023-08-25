@@ -69,7 +69,7 @@ private struct 🎚️SystemWidgetMenuLink: View {
                 🎚️DoubleSizeOnLargeWidgetToggle()
             }
             .padding(32)
-            .navigationTitle("Customize \"\(self.note.title)\" - Widget")
+            .navigationTitle("Customize \"\(self.note.title)\"")
             .navigationSubtitle("Desktop, Notification center, Home screen, StandBy, Lock screen(iPad)")
             .animation(.default, value: self.note.system_appearanceMode)
             .frame(minWidth: 620)
