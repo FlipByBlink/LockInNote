@@ -854,6 +854,57 @@
         }
       }
     },
+    "presetTitle/primary" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Note"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ノート"
+          }
+        }
+      }
+    },
+    "presetTitle/secondary" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Secondary"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2冊目"
+          }
+        }
+      }
+    },
+    "presetTitle/tertiary" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tertiary"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3冊目"
+          }
+        }
+      }
+    },
     "Prevent the keyboard from starting up automatically" : {
       "localizations" : {
         "ja" : {
@@ -899,7 +950,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "標準"
+            "value" : "レギュラー(標準)"
           }
         }
       }
@@ -1110,6 +1161,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "シン"
+          }
+        }
+      }
+    },
+    "This is a note widget." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これはノートを表示するウィジェットです。"
+          }
+        }
+      }
+    },
+    "This is a secondary widget." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これは2冊目のウィジェットです。"
+          }
+        }
+      }
+    },
+    "This is a tertiary widget." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これは3冊目のウィジェットです。"
           }
         }
       }

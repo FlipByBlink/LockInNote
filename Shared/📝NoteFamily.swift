@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 
 enum 📝NoteFamily {
     case primary, secondary, tertiary
@@ -18,16 +18,16 @@ extension 📝NoteFamily: Identifiable, CaseIterable {
     }
     var widgetDescription: String {
         switch self {
-            case .primary: "This is a note widget."
-            case .secondary: "This is a secondary widget."
-            case .tertiary: "This is a tertiary widget."
+            case .primary: .init(localized: "This is a note widget.")
+            case .secondary: .init(localized: "This is a secondary widget.")
+            case .tertiary: .init(localized: "This is a tertiary widget.")
         }
     }
     var presetTitle: String {
         switch self {
-            case .primary: "Note"
-            case .secondary: "Secondary"
-            case .tertiary: "Tertiary"
+            case .primary: .init(localized: .init("presetTitle/primary", defaultValue: "Note"))
+            case .secondary: .init(localized: .init("presetTitle/secondary", defaultValue: "Secondary"))
+            case .tertiary: .init(localized: .init("presetTitle/tertiary", defaultValue: "Tertiary"))
         }
     }
     func loadTitle() -> String {
