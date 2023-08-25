@@ -126,8 +126,7 @@ extension 🗒️StaticInfo {
                               "💾ICloud.swift",
                               "🎚️CustomizeModel.swift",
                               "💬Sheet.swift"]
-                case .Scene: ["📝NoteWindow.swift",
-                              "🔧Settings.swift"]
+                case .Scene: ["📝NoteWindow.swift"]
                 case .View: ["ContentView.swift",
                              "📝NoteEditor.swift",
                              "🎚️CustomizeMenu.swift",

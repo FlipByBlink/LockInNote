@@ -8,7 +8,6 @@ struct macOSApp: App {
         🎚️CustomizeWindow(self.model)
         🔗URLSchemeActionMenuWindow()
         🛒InAppPurchaseWindow(self.model)
-        🔧Settings()
         ℹ️HelpWindows()
     }
 }
