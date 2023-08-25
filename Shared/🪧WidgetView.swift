@@ -105,14 +105,13 @@ struct 🪧SystemFamilyView: View {
         }
         @available(iOS 17.0, watchOS 10.0, macOS 14.0, *)
         private struct ContainerBackgroundRemove: ViewModifier {
-            //@Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
-            //TODO: iOS17beta6でクラッシュする。要再検討。
+            @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
             func body(content: Content) -> some View {
-                //if self.showsWidgetContainerBackground {
+                if self.showsWidgetContainerBackground {
                     content
-                //} else {
-                //    Color.clear
-                //}
+                } else {
+                    Color.clear
+                }
             }
         }
     }
