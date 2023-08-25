@@ -214,9 +214,12 @@ private struct 📓SourceCodeLink: View {
     private func bundleMainInfoDictionary() -> some View {
         Section {
             NavigationLink(String("Bundle.main.infoDictionary")) {
-                ScrollView {
-                    Text(Bundle.main.infoDictionary!.description)
-                        .padding()
+                List {
+                    if let ⓓictionary = Bundle.main.infoDictionary {
+                        ForEach(ⓓictionary.map({$0.key}), id: \.self) {
+                            LabeledContent($0, value: String(describing: ⓓictionary[$0] ?? "🐛"))
+                        }
+                    }
                 }
                 .navigationBarTitle(Text(verbatim: "Bundle.main.infoDictionary"))
                 .textSelection(.enabled)
