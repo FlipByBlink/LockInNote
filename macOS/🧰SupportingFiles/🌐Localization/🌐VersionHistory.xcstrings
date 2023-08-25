@@ -7,13 +7,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AAAA\nVarious bugfixes and improvements."
+            "value" : "Initial release"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ああああ\nいくつかの改善やバグ修正を行いました。"
+            "value" : "最初のリリース"
           }
         }
       }
