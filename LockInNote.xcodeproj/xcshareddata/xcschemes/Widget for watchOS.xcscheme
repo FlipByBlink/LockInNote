@@ -74,12 +74,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F566A90E29CEDA2F00ACCC63"
+            BuildableName = "Widget for watchOS.appex"
+            BlueprintName = "Widget for watchOS"
+            ReferencedContainer = "container:LockInNote.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
             BlueprintIdentifier = "F54BE1C528CB480900532025"
             BuildableName = "iOS.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"

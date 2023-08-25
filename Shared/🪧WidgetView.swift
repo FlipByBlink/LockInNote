@@ -168,17 +168,28 @@ struct 🪧AccessoryFamilyView: View {
         @EnvironmentObject var note: 📝NoteModel
         var isPreview: Bool
         @Environment(\.widgetRenderingMode) var widgetRenderingMode
+        @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
+        private var isSmartStackOnWatchOS10: Bool {
+            #if os(watchOS)
+            if #available(watchOS 10.0, *),
+               self.showsWidgetContainerBackground,
+               self.widgetRenderingMode == .fullColor {
+                return true
+            } else {
+                return false
+            }
+            #else
+            false
+            #endif
+        }
         func body(content: Content) -> some View {
             if self.isPreview {
                 content.foregroundStyle(self.note.accessory_hierarchical.value)
             } else {
-                switch self.widgetRenderingMode {
-                    case .vibrant, .accented:
-                        content.foregroundStyle(self.note.accessory_hierarchical.value)
-                    case .fullColor:
-                        content.foregroundStyle(.black)
-                    default:
-                        content
+                if self.isSmartStackOnWatchOS10 {
+                    content.foregroundStyle(.black)
+                } else {
+                    content.foregroundStyle(self.note.accessory_hierarchical.value)
                 }
             }
         }
@@ -254,7 +265,7 @@ private struct 🪧ContainerBackground: ViewModifier {
         if #available(iOS 17.0, watchOS 10.0, macOS 14.0, *) {
             #if os(watchOS)
             if self.widgetRenderingMode == .fullColor {
-                content.containerBackground(.white, for: .widget) //TODO: ちゃんと実装
+                content.containerBackground(.white, for: .widget)
             } else {
                 content.containerBackground(.clear, for: .widget)
             }
