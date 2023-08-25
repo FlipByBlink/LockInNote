@@ -459,7 +459,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "入力無し"
+            "value" : "白紙"
           }
         }
       }
