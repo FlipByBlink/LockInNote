@@ -1,0 +1,23 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "1.2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AAAA\nVarious bugfixes and improvements."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ああああ\nいくつかの改善やバグ修正を行いました。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

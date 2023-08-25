@@ -212,6 +212,12 @@
 		F56951772A986C7600B36339 /* 🌐AboutApp.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F56951762A986C7600B36339 /* 🌐AboutApp.xcstrings */; };
 		F56951782A986C7600B36339 /* 🌐AboutApp.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F56951762A986C7600B36339 /* 🌐AboutApp.xcstrings */; };
 		F56951792A986C7600B36339 /* 🌐AboutApp.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F56951762A986C7600B36339 /* 🌐AboutApp.xcstrings */; };
+		F569517E2A9896B700B36339 /* 🌐VersionHistory.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517B2A9896B600B36339 /* 🌐VersionHistory.xcstrings */; };
+		F569517F2A9896B700B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517C2A9896B600B36339 /* InfoPlist.xcstrings */; };
+		F56951802A9896B700B36339 /* 🌐AppStoreDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */; };
+		F56951812A9897CF00B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517C2A9896B600B36339 /* InfoPlist.xcstrings */; };
+		F56951822A9897D700B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE12A724419008659F9 /* InfoPlist.xcstrings */; };
+		F56951832A9897DE00B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */; };
 		F58F3BC22A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC62A723D00008659F9 /* 🌐ADAppDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC02A723CFF008659F9 /* 🌐ADAppDescription.xcstrings */; };
 		F58F3BC82A723D00008659F9 /* 🌐ADAppName.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */; };
@@ -502,6 +508,9 @@
 		F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
 		F566A92329CEDE4300ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56951762A986C7600B36339 /* 🌐AboutApp.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AboutApp.xcstrings"; sourceTree = "<group>"; };
+		F569517B2A9896B600B36339 /* 🌐VersionHistory.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐VersionHistory.xcstrings"; sourceTree = "<group>"; };
+		F569517C2A9896B600B36339 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AppStoreDescription.xcstrings"; sourceTree = "<group>"; };
 		F57E85B829D28FD000927561 /* 🔖TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔖TabModel.swift"; sourceTree = "<group>"; };
 		F57E85C729D2B98400927561 /* 💾UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaults.swift"; sourceTree = "<group>"; };
 		F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💁WidgetGuideTab.swift"; sourceTree = "<group>"; };
@@ -606,7 +615,6 @@
 				F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F556953328CCAFC3004558FC /* 🗄️Rest */,
-				F556951E28CCAF7A004558FC /* 🌐Localization */,
 				F51E3A522A8CCDA400F32F4F /* 🧰SupportingFiles */,
 			);
 			path = iOS;
@@ -625,7 +633,6 @@
 				F51E39A42A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */,
 				F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */,
-				F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */,
 				F51E3A532A8CCF4100F32F4F /* 🧰SupportingFiles */,
 			);
 			path = watchOS;
@@ -737,6 +744,7 @@
 				F55694FF28CCA88B004558FC /* iOS.entitlements */,
 				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
+				F556951E28CCAF7A004558FC /* 🌐Localization */,
 			);
 			path = "🧰SupportingFiles";
 			sourceTree = "<group>";
@@ -747,6 +755,7 @@
 				F566A92329CEDE4300ACCC63 /* Info.plist */,
 				F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */,
 				F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */,
+				F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */,
 			);
 			path = "🧰SupportingFiles";
 			sourceTree = "<group>";
@@ -756,6 +765,7 @@
 			children = (
 				F51E3A082A8CAFB800F32F4F /* Assets.xcassets */,
 				F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */,
+				F569517A2A98969C00B36339 /* 🌐Localization */,
 			);
 			path = "🧰SupportingFiles";
 			sourceTree = "<group>";
@@ -889,6 +899,16 @@
 			children = (
 			);
 			path = "watchOS - Complication";
+			sourceTree = "<group>";
+		};
+		F569517A2A98969C00B36339 /* 🌐Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F569517C2A9896B600B36339 /* InfoPlist.xcstrings */,
+				F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */,
+				F569517B2A9896B600B36339 /* 🌐VersionHistory.xcstrings */,
+			);
+			path = "🌐Localization";
 			sourceTree = "<group>";
 		};
 		F58F3BBD2A723CEB008659F9 /* 🌐Localization */ = {
@@ -1099,10 +1119,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F56951702A986B8900B36339 /* Localizable.xcstrings in Resources */,
+				F569517E2A9896B700B36339 /* 🌐VersionHistory.xcstrings in Resources */,
 				F56951792A986C7600B36339 /* 🌐AboutApp.xcstrings in Resources */,
 				F56951742A986B9B00B36339 /* 🌐ADAppName.xcstrings in Resources */,
 				F56951732A986B9600B36339 /* 🌐AD&InAppPurchase.xcstrings in Resources */,
+				F56951802A9896B700B36339 /* 🌐AppStoreDescription.xcstrings in Resources */,
 				F56951752A986B9B00B36339 /* 🌐ADAppDescription.xcstrings in Resources */,
+				F569517F2A9896B700B36339 /* InfoPlist.xcstrings in Resources */,
 				F51E3A092A8CAFB800F32F4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1113,6 +1136,7 @@
 			files = (
 				F569516F2A98697D00B36339 /* Assets.xcassets in Resources */,
 				F51E3A342A8CB22900F32F4F /* Assets.xcassets in Resources */,
+				F56951812A9897CF00B36339 /* InfoPlist.xcstrings in Resources */,
 				F56951712A986B8A00B36339 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1141,6 +1165,7 @@
 			files = (
 				F58F3BE42A7248D0008659F9 /* InfoPlist.xcstrings in Resources */,
 				F556951028CCAB72004558FC /* Assets.xcassets in Resources */,
+				F56951822A9897D700B36339 /* InfoPlist.xcstrings in Resources */,
 				F58F3BDE2A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1162,6 +1187,7 @@
 			files = (
 				F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */,
 				F566A91629CEDA3000ACCC63 /* Assets.xcassets in Resources */,
+				F56951832A9897DE00B36339 /* InfoPlist.xcstrings in Resources */,
 				F58F3BE02A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
