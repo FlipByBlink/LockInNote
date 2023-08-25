@@ -78,7 +78,7 @@ enum 🔗URLSchemeActionMenuComponent {
                     .textSelection(.enabled)
             }
         }
-        static var header: String { "Example 1" }
+        static var header: LocalizedStringKey { "Example 1" }
         struct Footer: View {
             var body: some View {
                 Text("To run one shortcut of Shortcuts App with the text.")
@@ -95,7 +95,7 @@ enum 🔗URLSchemeActionMenuComponent {
                     .textSelection(.enabled)
             }
         }
-        static var header: String { "Example 2" }
+        static var header: LocalizedStringKey { "Example 2" }
         struct Footer: View {
             var body: some View {
                 Text("To search the text on DuckDuckGo.")

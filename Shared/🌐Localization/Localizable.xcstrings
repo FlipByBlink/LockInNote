@@ -1,8 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "(nothing)" : {
-      "extractionState" : "manual",
+    "(Nothing)" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -12,23 +11,55 @@
         }
       }
     },
-    "(Nothing)" : {
-
-    },
     "%@" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%lld" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "+ ②" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "×2" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "① +" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "① URL scheme" : {
       "localizations" : {
@@ -61,21 +92,31 @@
       }
     },
     "Accessory widget" : {
-
-    },
-    "Action" : {
-
-    },
-    "AD" : {
-
-    },
-    "App for iPhone / Apple Watch" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iPhone/Apple Watch向けアプリ"
+            "value" : "小さめウィジェット"
+          }
+        }
+      }
+    },
+    "Action" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクション"
+          }
+        }
+      }
+    },
+    "AD" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広告"
           }
         }
       }
@@ -111,10 +152,74 @@
       }
     },
     "Background color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背景の色"
+          }
+        }
+      }
     },
     "Background gradient" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背景のグラデーション"
+          }
+        }
+      }
+    },
+    "black" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "bold" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "bottom" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下部"
+          }
+        }
+      }
+    },
+    "bottomLeading" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下部かつ先頭"
+          }
+        }
+      }
+    },
+    "bottomTrailing" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下部かつ末尾"
+          }
+        }
+      }
     },
     "Button label" : {
       "localizations" : {
@@ -126,19 +231,7 @@
         }
       }
     },
-    "Cancel" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "取り消す"
-          }
-        }
-      }
-    },
     "center" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -149,10 +242,24 @@
       }
     },
     "Color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カラー"
+          }
+        }
+      }
     },
     "ContentAlignment" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "揃える位置"
+          }
+        }
+      }
     },
     "Create a custom iPhone Lock Screen" : {
       "localizations" : {
@@ -165,22 +272,64 @@
       }
     },
     "Customize" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カスタマイズ"
+          }
+        }
+      }
     },
     "Customize \"%@\"" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\"をカスタマイズ"
+          }
+        }
+      }
     },
     "Customize \"%@\" - Empty content" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\"をカスタマイズ - 無入力時表記"
+          }
+        }
+      }
     },
     "Customize \"%@\" - Widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\"をカスタマイズ - ウィジェット"
+          }
+        }
+      }
     },
     "Customize \"%@\" - Widget title" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\"をカスタマイズ - ウィジェットタイトル"
+          }
+        }
+      }
     },
     "Customize action" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクションを設定"
+          }
+        }
+      }
     },
     "Customize Action" : {
       "localizations" : {
@@ -193,10 +342,16 @@
       }
     },
     "Customize widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウィジェットをカスタマイズ"
+          }
+        }
+      }
     },
     "default" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -207,13 +362,26 @@
       }
     },
     "Delete" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "消す"
+          }
+        }
+      }
     },
     "Delete note" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ノートを消す"
+          }
+        }
+      }
     },
     "Description" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -234,21 +402,16 @@
       }
     },
     "Desktop, Notification center, Home screen, StandBy, Lock screen(iPad)" : {
-
-    },
-    "Directions" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "注記"
+            "value" : "デスクトップ、通知センター、ホーム画面、スタンバイ、ロック画面(iPad)"
           }
         }
       }
     },
     "Dismiss" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -272,7 +435,6 @@
 
     },
     "ellipsis" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -283,13 +445,34 @@
       }
     },
     "Ellipsis" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3点ドット"
+          }
+        }
+      }
     },
     "Empty" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "何も無し"
+          }
+        }
+      }
     },
     "Empty content" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無入力時表記"
+          }
+        }
+      }
     },
     "Erase" : {
       "localizations" : {
@@ -322,10 +505,54 @@
       }
     },
     "etc." : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "など"
+          }
+        }
+      }
+    },
+    "Example 1" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "例1"
+          }
+        }
+      }
+    },
+    "Example 2" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "例2"
+          }
+        }
+      }
+    },
+    "heavy" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Home screen, Notification center, StandBy, Desktop, Lock screen(iPad)" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ホーム画面、通知センター、スタンバイ、デスクトップ、ロック画面(iPad)"
+          }
+        }
+      }
     },
     "How to add and edit widgets on your iPhone" : {
       "localizations" : {
@@ -347,19 +574,15 @@
         }
       }
     },
-    "If lock screen widgets don't update, please close this app or switch to another app." : {
-      "extractionState" : "manual",
+    "Info" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ロック画面ウィジェットが更新されない場合は、アプリを閉じたりアプリを切り替えたりすると変更が反映されます。"
+            "value" : "情報"
           }
         }
       }
-    },
-    "Info" : {
-
     },
     "Input text" : {
       "localizations" : {
@@ -392,7 +615,6 @@
       }
     },
     "leading" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -412,6 +634,16 @@
         }
       }
     },
+    "light" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "Lock Screen Widgets" : {
       "localizations" : {
         "ja" : {
@@ -423,7 +655,14 @@
       }
     },
     "Lock screen, Apple Watch complication" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ロック画面、Apple Watchコンプリケーション"
+          }
+        }
+      }
     },
     "LockInNote" : {
       "localizations" : {
@@ -431,6 +670,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ロックノート"
+          }
+        }
+      }
+    },
+    "medium" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -446,10 +695,16 @@
       }
     },
     "Mode" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モード"
+          }
+        }
+      }
     },
     "monospaced" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -460,28 +715,76 @@
       }
     },
     "More" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
+          }
+        }
+      }
     },
     "Multi line text alignment" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数行の揃え方"
+          }
+        }
+      }
     },
     "No text situation" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テキストが何も入力されていない場合に表示"
+          }
+        }
+      }
     },
     "Not sync this option between devices" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このオプションはデバイス間で同期されません"
+          }
+        }
+      }
     },
     "Not sync URL scheme between devices" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URLはデバイス間で同期されません"
+          }
+        }
+      }
     },
     "Note" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ノート"
+          }
+        }
+      }
     },
     "Notice" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "注意"
+          }
+        }
+      }
     },
     "OK" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -492,15 +795,11 @@
       }
     },
     "Onboarding" : {
-
-    },
-    "Open menu" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "メニューを開く"
+            "value" : "オンボーディング"
           }
         }
       }
@@ -516,10 +815,16 @@
       }
     },
     "Padding" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "余白"
+          }
+        }
+      }
     },
     "pencil" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -530,19 +835,46 @@
       }
     },
     "Pencil" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ペンシル"
+          }
+        }
+      }
     },
     "Placeholder" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレースホルダー"
+          }
+        }
+      }
     },
     "Prevent the keyboard from starting up automatically" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キーボードの自動起動を無効化"
+          }
+        }
+      }
     },
     "Preview" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレビュー"
+          }
+        }
+      }
     },
     "primary" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -553,7 +885,6 @@
       }
     },
     "quaternary" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -564,7 +895,6 @@
       }
     },
     "regular" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -575,7 +905,6 @@
       }
     },
     "rounded" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -586,7 +915,16 @@
       }
     },
     "secondary" : {
-      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2番目"
+          }
+        }
+      }
+    },
+    "Secondary" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -606,8 +944,17 @@
         }
       }
     },
+    "semibold" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "serif" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -627,19 +974,15 @@
         }
       }
     },
-    "Share" : {
-      "extractionState" : "manual",
+    "Share note" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "共有"
+            "value" : "ノートを共有"
           }
         }
       }
-    },
-    "Share note" : {
-
     },
     "Size" : {
       "localizations" : {
@@ -651,25 +994,35 @@
         }
       }
     },
-    "square and pencil" : {
-      "extractionState" : "manual",
+    "Square and pencil" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ペンと四角"
+            "value" : "四角とペンシル"
           }
         }
       }
     },
-    "Square and pencil" : {
-
-    },
     "Standard" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スタンダード"
+          }
+        }
+      }
     },
     "System widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きめウィジェット"
+          }
+        }
+      }
     },
     "Tap Add Widgets." : {
       "localizations" : {
@@ -692,7 +1045,16 @@
       }
     },
     "tertiary" : {
-      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3番目"
+          }
+        }
+      }
+    },
+    "Tertiary" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -703,10 +1065,16 @@
       }
     },
     "Test" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テスト"
+          }
+        }
+      }
     },
     "TEXT" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -717,7 +1085,14 @@
       }
     },
     "Text color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テキストの色"
+          }
+        }
+      }
     },
     "The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes." : {
       "localizations" : {
@@ -729,8 +1104,25 @@
         }
       }
     },
+    "thin" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "Title" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイトル"
+          }
+        }
+      }
     },
     "To run one shortcut of Shortcuts App with the text." : {
       "localizations" : {
@@ -755,6 +1147,36 @@
     "Toggle" : {
 
     },
+    "top" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上部"
+          }
+        }
+      }
+    },
+    "topLeading" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上部かつ先頭"
+          }
+        }
+      }
+    },
+    "topTrailing" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上部かつ末尾"
+          }
+        }
+      }
+    },
     "Touch and hold the Lock Screen until the Customize button appears, then tap Customize." : {
       "localizations" : {
         "ja" : {
@@ -766,12 +1188,21 @@
       }
     },
     "trailing" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "末尾"
+          }
+        }
+      }
+    },
+    "ultraLight" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -787,7 +1218,6 @@
       }
     },
     "URL Scheme Action" : {
-      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -798,7 +1228,14 @@
       }
     },
     "User text" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザーテキスト"
+          }
+        }
+      }
     },
     "Weight" : {
       "localizations" : {
@@ -821,10 +1258,24 @@
       }
     },
     "Widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウィジェット"
+          }
+        }
+      }
     },
     "Widget title" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウィジェットタイトル"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

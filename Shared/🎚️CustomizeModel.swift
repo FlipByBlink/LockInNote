@@ -27,7 +27,19 @@ enum 🎚️FontWeight: Codable, CaseIterable, Identifiable {
             case .black: .black
         }
     }
-    var label: LocalizedStringKey { .init(String(describing: self)) }
+    var label: LocalizedStringKey {
+        switch self {
+            case .ultraLight: "ultraLight"
+            case .thin: "thin"
+            case .light: "light"
+            case .regular: "regular"
+            case .medium: "medium"
+            case .semibold: "semibold"
+            case .bold: "bold"
+            case .heavy: "heavy"
+            case .black: "black"
+        }
+    }
 }
 
 enum 🎚️FontDesign: Codable, CaseIterable, Identifiable {
@@ -41,7 +53,14 @@ enum 🎚️FontDesign: Codable, CaseIterable, Identifiable {
             case .monospaced: .monospaced
         }
     }
-    var label: LocalizedStringKey { .init(String(describing: self)) }
+    var label: LocalizedStringKey {
+        switch self {
+            case .default: "default"
+            case .serif: "serif"
+            case .rounded: "rounded"
+            case .monospaced: "monospaced"
+        }
+    }
 }
 
 enum 🎚️Hierarchical: Codable, CaseIterable, Identifiable {
@@ -55,7 +74,14 @@ enum 🎚️Hierarchical: Codable, CaseIterable, Identifiable {
             case .quaternary: .quaternary
         }
     }
-    var label: LocalizedStringKey { .init(String(describing: self)) }
+    var label: LocalizedStringKey { 
+        switch self {
+            case .primary: "primary"
+            case .secondary: "secondary"
+            case .tertiary: "tertiary"
+            case .quaternary: "quaternary"
+        }
+    }
 }
 
 struct 🎚️Color: Codable {
@@ -89,7 +115,13 @@ enum 🎚️MultilineTextAlignment: Codable, CaseIterable, Identifiable {
             case .trailing: "text.justify.trailing"
         }
     }
-    var label: LocalizedStringKey { .init(String(describing: self)) }
+    var label: LocalizedStringKey {
+        switch self {
+            case .leading: "leading"
+            case .center: "center"
+            case .trailing: "trailing"
+        }
+    }
 }
 
 enum 🎚️ContentAlignment: Codable, CaseIterable, Identifiable {
@@ -110,7 +142,19 @@ enum 🎚️ContentAlignment: Codable, CaseIterable, Identifiable {
             case .bottomTrailing: .bottomTrailing
         }
     }
-    var label: LocalizedStringKey { .init(String(describing: self)) }
+    var label: LocalizedStringKey {
+        switch self {
+            case .topLeading: "topLeading"
+            case .top: "top"
+            case .topTrailing: "topTrailing"
+            case .leading: "leading"
+            case .center: "center"
+            case .trailing: "trailing"
+            case .bottomLeading: "bottomLeading"
+            case .bottom: "bottom"
+            case .bottomTrailing: "bottomTrailing"
+        }
+    }
 }
 
 enum 🎚️EmptyType: Codable, CaseIterable, Identifiable {
