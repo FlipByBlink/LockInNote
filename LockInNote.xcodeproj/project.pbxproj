@@ -203,6 +203,7 @@
 		F566A91129CEDA2F00ACCC63 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
 		F566A91629CEDA3000ACCC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F566A91529CEDA3000ACCC63 /* Assets.xcassets */; };
 		F566A91A29CEDA3000ACCC63 /* Widget for watchOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F569516F2A98697D00B36339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51E3A082A8CAFB800F32F4F /* Assets.xcassets */; };
 		F58F3BC22A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC32A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC42A723D00008659F9 /* 🌐AboutApp.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBF2A723CFF008659F9 /* 🌐AboutApp.xcstrings */; };
@@ -1102,6 +1103,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F569516F2A98697D00B36339 /* Assets.xcassets in Resources */,
 				F51E3A342A8CB22900F32F4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
