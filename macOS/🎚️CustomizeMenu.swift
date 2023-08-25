@@ -10,7 +10,7 @@ struct 🎚️CustomizeWindow: Scene {
                 case .tertiary: 🎚️CustomizeMenu().environmentObject(self.app.tertiaryNote)
             }
         }
-        .defaultSize(width: 720, height: 900)
+        .defaultSize(width: 800, height: 900)
         .defaultPosition(.bottomTrailing)
     }
     init(_ app: 📱AppModel) {
@@ -32,6 +32,7 @@ struct 🎚️CustomizeMenu: View {
                 🎚️WidgetTitleMenuLink()
                     .tag(2)
             }
+            .frame(minWidth: 160)
         } detail: {
             EmptyView()
         }
