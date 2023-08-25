@@ -52,14 +52,11 @@ struct 🔗URLSchemeActionMenuWindow: Scene {
                     .frame(maxWidth: .infinity)
                 }
                 Divider()
-                🔗URLSchemeActionMenuComponent.SampleImage()
-                    .frame(width: 250, height: 200)
-                Divider()
                 🔗URLSchemeActionMenuComponent.NoticeSection()
                     .foregroundStyle(.secondary)
             }
             .padding()
-            .frame(minWidth: 800, minHeight: 800)
+            .frame(minWidth: 800, minHeight: 600)
             .environmentObject(self.model)
         }
     }

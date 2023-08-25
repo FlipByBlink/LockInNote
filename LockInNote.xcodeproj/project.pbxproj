@@ -82,7 +82,7 @@
 		F51E3A2C2A8CB22500F32F4F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F51E3A2D2A8CB22500F32F4F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
 		F51E3A342A8CB22900F32F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51E3A332A8CB22900F32F4F /* Assets.xcassets */; };
-		F51E3A392A8CB22900F32F4F /* Widget for macOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F51E3A2B2A8CB22500F32F4F /* Widget for macOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F51E3A392A8CB22900F32F4F /* LockInNote.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F51E3A2B2A8CB22500F32F4F /* LockInNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F51E3A3E2A8CB28900F32F4F /* 📝NoteFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */; };
 		F51E3A3F2A8CB28900F32F4F /* 📝NoteProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
 		F51E3A402A8CB28900F32F4F /* 🎚️CustomizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
@@ -215,9 +215,7 @@
 		F569517E2A9896B700B36339 /* 🌐VersionHistory.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517B2A9896B600B36339 /* 🌐VersionHistory.xcstrings */; };
 		F569517F2A9896B700B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517C2A9896B600B36339 /* InfoPlist.xcstrings */; };
 		F56951802A9896B700B36339 /* 🌐AppStoreDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */; };
-		F56951812A9897CF00B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517C2A9896B600B36339 /* InfoPlist.xcstrings */; };
-		F56951822A9897D700B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE12A724419008659F9 /* InfoPlist.xcstrings */; };
-		F56951832A9897DE00B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */; };
+		F56B338A2A98A90D004510DE /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F56B33892A98A90D004510DE /* InfoPlist.xcstrings */; };
 		F58F3BC22A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC62A723D00008659F9 /* 🌐ADAppDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC02A723CFF008659F9 /* 🌐ADAppDescription.xcstrings */; };
 		F58F3BC82A723D00008659F9 /* 🌐ADAppName.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */; };
@@ -271,7 +269,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F51E3A392A8CB22900F32F4F /* Widget for macOS.appex in Embed Foundation Extensions */,
+				F51E3A392A8CB22900F32F4F /* LockInNote.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,7 +460,7 @@
 		F51E3A022A8CAFB500F32F4F /* macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51E3A082A8CAFB800F32F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		F51E3A2B2A8CB22500F32F4F /* Widget for macOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for macOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51E3A2B2A8CB22500F32F4F /* LockInNote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LockInNote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51E3A332A8CB22900F32F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F51E3A352A8CB22900F32F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51E3A362A8CB22900F32F4F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -511,6 +509,7 @@
 		F569517B2A9896B600B36339 /* 🌐VersionHistory.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐VersionHistory.xcstrings"; sourceTree = "<group>"; };
 		F569517C2A9896B600B36339 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AppStoreDescription.xcstrings"; sourceTree = "<group>"; };
+		F56B33892A98A90D004510DE /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F57E85B829D28FD000927561 /* 🔖TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔖TabModel.swift"; sourceTree = "<group>"; };
 		F57E85C729D2B98400927561 /* 💾UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaults.swift"; sourceTree = "<group>"; };
 		F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💁WidgetGuideTab.swift"; sourceTree = "<group>"; };
@@ -655,9 +654,9 @@
 			isa = PBXGroup;
 			children = (
 				F566A91529CEDA3000ACCC63 /* Assets.xcassets */,
-				F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */,
 				F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */,
 				F566A91729CEDA3000ACCC63 /* Info.plist */,
+				F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */,
 			);
 			path = watchOS;
 			sourceTree = "<group>";
@@ -666,9 +665,9 @@
 			isa = PBXGroup;
 			children = (
 				F556950F28CCAB72004558FC /* Assets.xcassets */,
-				F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */,
 				F556951D28CCAE21004558FC /* iOS.entitlements */,
 				F556951128CCAB72004558FC /* Info.plist */,
+				F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -734,6 +733,7 @@
 				F51E3A332A8CB22900F32F4F /* Assets.xcassets */,
 				F51E3A362A8CB22900F32F4F /* macOS.entitlements */,
 				F51E3A352A8CB22900F32F4F /* Info.plist */,
+				F56B33892A98A90D004510DE /* InfoPlist.xcstrings */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -743,8 +743,8 @@
 			children = (
 				F54BE1CD28CB480A00532025 /* Assets.xcassets */,
 				F55694FF28CCA88B004558FC /* iOS.entitlements */,
-				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
+				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
 				F556951E28CCAF7A004558FC /* 🌐Localization */,
 			);
 			path = "🧰SupportingFiles";
@@ -753,9 +753,9 @@
 		F51E3A532A8CCF4100F32F4F /* 🧰SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				F566A92329CEDE4300ACCC63 /* Info.plist */,
-				F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */,
 				F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */,
+				F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */,
+				F566A92329CEDE4300ACCC63 /* Info.plist */,
 				F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */,
 			);
 			path = "🧰SupportingFiles";
@@ -805,7 +805,7 @@
 				F566A8F929CEDA1200ACCC63 /* LockInNote.app */,
 				F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */,
 				F51E3A022A8CAFB500F32F4F /* macOS.app */,
-				F51E3A2B2A8CB22500F32F4F /* Widget for macOS.appex */,
+				F51E3A2B2A8CB22500F32F4F /* LockInNote.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -982,7 +982,7 @@
 			);
 			name = "Widget for macOS";
 			productName = WIDGETFORMACExtension;
-			productReference = F51E3A2B2A8CB22500F32F4F /* Widget for macOS.appex */;
+			productReference = F51E3A2B2A8CB22500F32F4F /* LockInNote.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		F54BE1C528CB480900532025 /* iOS */ = {
@@ -1138,7 +1138,7 @@
 			files = (
 				F569516F2A98697D00B36339 /* Assets.xcassets in Resources */,
 				F51E3A342A8CB22900F32F4F /* Assets.xcassets in Resources */,
-				F56951812A9897CF00B36339 /* InfoPlist.xcstrings in Resources */,
+				F56B338A2A98A90D004510DE /* InfoPlist.xcstrings in Resources */,
 				F56951712A986B8A00B36339 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1167,7 +1167,6 @@
 			files = (
 				F58F3BE42A7248D0008659F9 /* InfoPlist.xcstrings in Resources */,
 				F556951028CCAB72004558FC /* Assets.xcassets in Resources */,
-				F56951822A9897D700B36339 /* InfoPlist.xcstrings in Resources */,
 				F58F3BDE2A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1189,7 +1188,6 @@
 			files = (
 				F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */,
 				F566A91629CEDA3000ACCC63 /* Assets.xcassets in Resources */,
-				F56951832A9897DE00B36339 /* InfoPlist.xcstrings in Resources */,
 				F58F3BE02A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1382,7 +1380,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS/🧰SupportingFiles/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Ryo Yamashita";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1417,7 +1415,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS/🧰SupportingFiles/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Ryo Yamashita";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1445,8 +1443,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widget/macOS/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WIDGETFORMAC;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_CFBundleDisplayName = LockInNote;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Ryo Yamashita";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1455,7 +1453,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.widgetForMac;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LockInNote;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -1477,8 +1475,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widget/macOS/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WIDGETFORMAC;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_CFBundleDisplayName = LockInNote;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Ryo Yamashita";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1487,7 +1485,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.widgetForMac;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LockInNote;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1701,7 +1699,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widget/iOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LockInNote;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Ryo Yamashita";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1732,7 +1730,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widget/iOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LockInNote;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Ryo Yamashita";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1829,7 +1827,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widget/watchOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LockInNote;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Ryo Yamashita";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1860,7 +1858,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widget/watchOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LockInNote;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Ryo Yamashita";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

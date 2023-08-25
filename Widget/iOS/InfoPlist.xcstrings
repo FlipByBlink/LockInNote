@@ -10,6 +10,12 @@
             "state" : "new",
             "value" : "LockInNote"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ロックノート"
+          }
         }
       }
     },
@@ -22,6 +28,12 @@
             "state" : "new",
             "value" : "Widget for iOS"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ロックノート"
+          }
         }
       }
     },
@@ -32,6 +44,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "Ryo Yamashita"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : ""
           }
         }
