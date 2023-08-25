@@ -149,7 +149,8 @@ extension 🗒️StaticInfo {
                              "📣ADModel.swift",
                              "📣ADContent.swift",
                              "🛒InAppPurchaseModel.swift",
-                             "🛒InAppPurchaseView.swift"]
+                             "🛒InAppPurchaseWindow.swift",
+                             "🛒InAppPurchaseMenu.swift"]
             }
         }
     }

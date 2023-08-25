@@ -20,10 +20,13 @@ struct ContentView: View {
         }
         .overlay {
             if self.app.playFeedback {
-                RoundedRectangle(cornerRadius: 12).stroke(.tint, lineWidth: 5).ignoresSafeArea()
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(.tint, lineWidth: 5)
+                    .ignoresSafeArea()
             }
         }
         .animation(.default.speed(2), value: self.app.playFeedback)
         .animation(.default, value: self.app.target)
+        .environmentObject(self.app.inAppPurchaseModel)
     }
 }
