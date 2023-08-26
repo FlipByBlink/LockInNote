@@ -39,11 +39,5 @@ struct 🪧WidgetConfiguration: WidgetConfiguration {
 #endif
         .contentMarginsDisabled()
     }
-    private var kind: String {
-        switch self.noteFamily {
-            case .primary: "Rectangular" //Migration from ver1.1
-            case .secondary: "Circular" //Migration from ver1.1
-            case .tertiary: "Inline" //Migration from ver1.1
-        }
-    }
+    private var kind: String { 🗄️MigrationFromVer_1_1.widgetKind(self.noteFamily) }
 }
