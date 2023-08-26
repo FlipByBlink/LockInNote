@@ -25,3 +25,19 @@ struct ContentView: View {
         }
     }
 }
+
+
+
+
+//import WatchConnectivity
+//struct SyncAppleWatch: ViewModifier {
+//    @Environment(\.scenePhase) var scenePhase
+//    func body(content: Content) -> some View {
+//        content
+//            .onChange(of: scenePhase) {
+//                if $0 == .background {
+//                    WCSession.default.sendMessage(["pushedFromIPhone" : true], replyHandler: nil)
+//                }
+//            }
+//    }
+//}
