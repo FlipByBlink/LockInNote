@@ -19,7 +19,7 @@ private struct 🪧Entry: TimelineEntry {
 struct 🪧WidgetConfiguration: WidgetConfiguration {
     var noteFamily: 📝NoteFamily
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "\(self.noteFamily)", provider: 🪧Provider()) { ⓔntry in
+        StaticConfiguration(kind: self.kind, provider: 🪧Provider()) { ⓔntry in
             if ⓔntry.situation == .placeholder {
                 🪧PlaceholderView()
             } else {
@@ -38,5 +38,12 @@ struct 🪧WidgetConfiguration: WidgetConfiguration {
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
 #endif
         .contentMarginsDisabled()
+    }
+    private var kind: String {
+        switch self.noteFamily {
+            case .primary: "Rectangular" //Migration from ver1.1
+            case .secondary: "Circular" //Migration from ver1.1
+            case .tertiary: "Inline" //Migration from ver1.1
+        }
     }
 }
