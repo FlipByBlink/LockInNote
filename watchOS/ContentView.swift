@@ -21,8 +21,11 @@ struct ContentView: View {
         }
         .sheet(item: self.$app.sheet) {
             switch $0 {
-                case .noteDetail: 📖NoteDetailView()
-                case .customize(let ⓝoteFamily): 🎚️CustomizeMenu(ⓝoteFamily)
+                case .noteDetail: 
+                    📖NoteDetailView()
+                case .customize(let ⓝoteFamily):
+                    🎚️CustomizeMenu()
+                        .modifier(📋AddNoteToEnvironment(ⓝoteFamily))
             }
         }
     }

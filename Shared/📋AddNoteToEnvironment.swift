@@ -2,6 +2,8 @@ import SwiftUI
 
 struct 📋AddNoteToEnvironment: ViewModifier {
     @EnvironmentObject var app: 📱AppModel
+    
+#if os(iOS) || os(watchOS)
     var target: 📝NoteFamily
     func body(content: Content) -> some View {
         switch self.target {
@@ -13,4 +15,14 @@ struct 📋AddNoteToEnvironment: ViewModifier {
     init(_ target: 📝NoteFamily) {
         self.target = target
     }
+    
+#elseif os(macOS)
+    func body(content: Content) -> some View {
+        switch self.app.target {
+            case .primary: content.environmentObject(self.app.primaryNote)
+            case .secondary: content.environmentObject(self.app.secondaryNote)
+            case .tertiary: content.environmentObject(self.app.tertiaryNote)
+        }
+    }
+#endif
 }
