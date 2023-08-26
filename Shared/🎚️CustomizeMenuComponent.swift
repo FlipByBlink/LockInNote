@@ -16,7 +16,7 @@ struct 🎚AppearanceModePicker: View {
 struct 🎚️FontSizeStepper: View {
     @Binding var value: Int
     var body: some View {
-        Stepper(value: self.$value, in: 8 ... 80, step: 1) {
+        Stepper(value: self.$value, in: 8 ... 100, step: 1) {
             LabeledContent {
                 Text(self.value.formatted())
                     .monospacedDigit()

@@ -22,7 +22,7 @@ class 📝NoteModel: ObservableObject {
     @Published var system_doubleSizeOnLargeWidget: Bool = false
     
     //MARK: WidgetFamily.accessoryInline, .accessoryCircular, .accessoryRectangular
-    @Published var accessory_fontSize: Int = 12
+    @Published var accessory_fontSize: Int = 14
     @Published var accessory_fontWeight: 🎚️FontWeight = .regular
     @Published var accessory_fontDesign: 🎚️FontDesign = .default
     @Published var accessory_hierarchical: 🎚️Hierarchical = .primary
