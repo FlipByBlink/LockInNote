@@ -20,11 +20,7 @@ struct 🪄Commands: Commands {
             Button("Customize widget") { self.openWindow(id: "customize") }
                 .keyboardShortcut(",", modifiers: [.command, .shift])
         }
-        CommandGroup(before: .undoRedo) {
-            Button("Clear this note") { self.app.note(self.app.target).text.removeAll() }
-                .keyboardShortcut("d", modifiers: [.command, .shift])
-            Divider()
-        }
+        🪄ClearNoteCommand(self.app)
         CommandMenu("Action") { 🔗URLSchemeActionCommand(self.app) }
         CommandGroup(replacing: .help) { EmptyView() }
         CommandGroup(after: .help) {
@@ -69,5 +65,20 @@ private struct 🪄SwitchNoteButton: View {
     init(_ app: 📱AppModel, _ noteFamily: 📝NoteFamily) {
         self.app = app
         self.noteFamily = noteFamily
+    }
+}
+
+private struct 🪄ClearNoteCommand: Commands {
+    @ObservedObject var note: 📝NoteModel
+    var body: some Commands {
+        CommandGroup(before: .undoRedo) {
+            Button("Clear this note") { self.note.text.removeAll() }
+                .keyboardShortcut("d", modifiers: [.command, .shift])
+                .disabled(self.note.text.isEmpty)
+            Divider()
+        }
+    }
+    init(_ ⓐpp: 📱AppModel) {
+        self.note = ⓐpp.note(ⓐpp.target)
     }
 }

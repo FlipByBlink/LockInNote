@@ -241,6 +241,26 @@
         }
       }
     },
+    "Clear" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クリア"
+          }
+        }
+      }
+    },
+    "Clear note" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ノートをクリア"
+          }
+        }
+      }
+    },
     "Clear this note" : {
       "localizations" : {
         "ja" : {
@@ -357,26 +377,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "デフォルト"
-          }
-        }
-      }
-    },
-    "Delete" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "消す"
-          }
-        }
-      }
-    },
-    "Delete note" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ノートを消す"
           }
         }
       }

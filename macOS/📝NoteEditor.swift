@@ -27,9 +27,9 @@ struct 📝NoteEditor: View {
                 Button(role: .destructive) {
                     self.note.text.removeAll()
                 } label: {
-                    Label("Delete note", systemImage: "trash")
+                    Label("Clear note", systemImage: "trash")
                 }
-                .help("Delete")
+                .help("Clear")
                 🔗URLSchemeActionButton(self.$note.text)
                 ShareLink(item: self.note.text)
                     .help("Share note")
