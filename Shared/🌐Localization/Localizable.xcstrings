@@ -411,6 +411,16 @@
         }
       }
     },
+    "Detail" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全て表示"
+          }
+        }
+      }
+    },
     "Dismiss" : {
       "localizations" : {
         "ja" : {

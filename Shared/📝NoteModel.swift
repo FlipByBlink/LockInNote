@@ -17,8 +17,8 @@ class 📝NoteModel: ObservableObject {
     @Published var system_padding: Int = 12
     @Published var system_contentAlignment: 🎚️ContentAlignment = .center
     @Published var system_textColor: Color = .black
-    @Published var system_backgroundColor: Color = .teal
-    @Published var system_backgroundGradient: Bool = true
+    @Published var system_backgroundColor: Color = .white
+    @Published var system_backgroundGradient: Bool = false
     @Published var system_doubleSizeOnLargeWidget: Bool = false
     
     //MARK: WidgetFamily.accessoryInline, .accessoryCircular, .accessoryRectangular
@@ -102,6 +102,8 @@ extension 📝NoteModel {
                 self.system_appearanceMode = .color
                 self.system_fontSize = 30
                 self.system_fontWeight = .bold
+                self.system_textColor = .white
+                self.system_backgroundColor = .teal
                 self.accessory_fontWeight = .black
                 self.empty_type = .pencil
             case .tertiary:
@@ -109,8 +111,8 @@ extension 📝NoteModel {
                 self.system_fontSize = 34
                 self.system_fontWeight = .bold
                 self.system_fontDesign = .serif
-                self.system_textColor = .white
-                self.system_backgroundColor = .orange
+                self.system_textColor = .init(white: 0.3)
+                self.system_backgroundColor = .init(white: 0.89)
                 self.system_backgroundGradient = true
                 self.accessory_fontWeight = .bold
                 self.accessory_fontDesign = .serif
