@@ -232,6 +232,7 @@
 		F5F9D6582A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */; };
 		F5F9D65B2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */; };
 		F5F9D65D2A99E4EE008CD67F /* 📋AddNoteToEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D65C2A99E4EE008CD67F /* 📋AddNoteToEnvironment.swift */; };
+		F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -540,6 +541,7 @@
 		F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖OpenNoteFromWidget.swift"; sourceTree = "<group>"; };
 		F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔲WindowEdgeFeedback.swift"; sourceTree = "<group>"; };
 		F5F9D65C2A99E4EE008CD67F /* 📋AddNoteToEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📋AddNoteToEnvironment.swift"; sourceTree = "<group>"; };
+		F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📋AddNoteToEnvironment.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -618,6 +620,7 @@
 				F51E39982A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
 				F51E39992A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
 				F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */,
+				F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */,
 				F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F556953328CCAFC3004558FC /* 🗄️Rest */,
@@ -1262,6 +1265,7 @@
 			files = (
 				F51E39E52A8CAA9800F32F4F /* 👆Buttons.swift in Sources */,
 				F51E3A4C2A8CC5D100F32F4F /* 🛒InAppPurchaseView.swift in Sources */,
+				F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */,
 				F51E39C72A8CAA7100F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E39EB2A8CAA9800F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
 				F51E39E42A8CAA9800F32F4F /* ContentView.swift in Sources */,

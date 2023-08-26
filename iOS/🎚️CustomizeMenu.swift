@@ -1,40 +1,26 @@
 import SwiftUI
 
 struct 🎚️CustomizeMenu: View {
-    @EnvironmentObject var app: 📱AppModel
-    var target: 📝NoteFamily
+    @EnvironmentObject var note: 📝NoteModel
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        switch self.target {
-            case .primary: Self.Content().environmentObject(self.app.primaryNote)
-            case .secondary: Self.Content().environmentObject(self.app.secondaryNote)
-            case .tertiary: Self.Content().environmentObject(self.app.tertiaryNote)
-        }
-    }
-    init(_ target: 📝NoteFamily) {
-        self.target = target
-    }
-    private struct Content: View {
-        @EnvironmentObject var note: 📝NoteModel
-        @Environment(\.dismiss) var dismiss
-        var body: some View {
-            NavigationStack {
-                List {
-                    🎚️SystemWidgetMenuLink()
-                    🎚️AccessoryWidgetMenuLink()
-                    🎚️EmptyContentMenuLink()
-                }
-                .navigationTitle("Customize \"\(self.note.title)\"")
-                .toolbar {
-                    Button {
-                        self.dismiss()
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .grayscale(1)
-                    }
+        NavigationStack {
+            List {
+                🎚️SystemWidgetMenuLink()
+                🎚️AccessoryWidgetMenuLink()
+                🎚️EmptyContentMenuLink()
+            }
+            .navigationTitle("Customize \"\(self.note.title)\"")
+            .toolbar {
+                Button {
+                    self.dismiss()
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .grayscale(1)
                 }
             }
-            .modifier(🎚️SaveValues())
         }
+        .modifier(🎚️SaveValues())
     }
 }
 
