@@ -10,18 +10,21 @@ struct 🪄Commands: Commands {
         }
         CommandGroup(replacing: .systemServices) { EmptyView() }
         CommandGroup(after: .newItem) {
-            🪄SwitchNoteButton(self.app, .primary)
-                .keyboardShortcut("1")
-            🪄SwitchNoteButton(self.app, .secondary)
-                .keyboardShortcut("2")
-            🪄SwitchNoteButton(self.app, .tertiary)
-                .keyboardShortcut("3")
+            Group {
+                🪄SwitchNoteButton(.primary)
+                🪄SwitchNoteButton(.secondary)
+                🪄SwitchNoteButton(.tertiary)
+            }
+            .environmentObject(self.app)
             Divider()
             Button("Customize widget") { self.openWindow(id: "customize") }
                 .keyboardShortcut(",", modifiers: [.command, .shift])
         }
         🪄ClearNoteCommand(self.app)
-        CommandMenu("Action") { 🔗URLSchemeActionCommand(self.app) }
+        CommandMenu("Action") {
+            🔗URLSchemeActionCommand()
+                .environmentObject(self.app)
+        }
         CommandGroup(replacing: .help) { EmptyView() }
         CommandGroup(after: .help) {
             Link(String(localized: "Open AppStore page", table: "🌐AboutApp"), destination: 🗒️StaticInfo.appStoreProductURL)
@@ -41,7 +44,7 @@ struct 🪄Commands: Commands {
 }
 
 private struct 🪄SwitchNoteButton: View {
-    @ObservedObject var app: 📱AppModel
+    @EnvironmentObject var app: 📱AppModel
     var noteFamily: 📝NoteFamily
     @Environment(\.openWindow) var openWindow
     var body: some View {
@@ -57,9 +60,16 @@ private struct 🪄SwitchNoteButton: View {
                 self.openWindow(id: "note")
             }
         }
+        .keyboardShortcut(self.shortcutKey)
     }
-    init(_ app: 📱AppModel, _ noteFamily: 📝NoteFamily) {
-        self.app = app
+    private var shortcutKey: KeyEquivalent {
+        switch self.noteFamily {
+            case .primary: "1"
+            case .secondary: "2"
+            case .tertiary: "3"
+        }
+    }
+    init(_ noteFamily: 📝NoteFamily) {
         self.noteFamily = noteFamily
     }
 }

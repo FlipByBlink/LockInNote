@@ -5,7 +5,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             📝NoteEditor()
-                .modifier(📋AddNoteModelToEnvironment())
+                .modifier(📋AddNoteToEnvironment())
         }
         .frame(minWidth: 400, idealWidth: 400, minHeight: 180, idealHeight: 180)
         .toolbarBackground(.clear, for: .automatic)

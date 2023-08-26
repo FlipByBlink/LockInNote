@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 📋AddNoteModelToEnvironment: ViewModifier {
+struct 📋AddNoteToEnvironment: ViewModifier {
     @EnvironmentObject var app: 📱AppModel
     func body(content: Content) -> some View {
         switch self.app.target {

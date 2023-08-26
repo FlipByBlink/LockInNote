@@ -4,11 +4,8 @@ struct 🎚️CustomizeWindow: Scene {
     @ObservedObject var app: 📱AppModel
     var body: some Scene {
         Window("Customize", id: "customize") {
-            switch self.app.target {
-                case .primary: 🎚️CustomizeMenu().environmentObject(self.app.primaryNote)
-                case .secondary: 🎚️CustomizeMenu().environmentObject(self.app.secondaryNote)
-                case .tertiary: 🎚️CustomizeMenu().environmentObject(self.app.tertiaryNote)
-            }
+            🎚️CustomizeMenu()
+                .modifier(📋AddNoteToEnvironment())
         }
         .defaultSize(width: 800, height: 900)
         .defaultPosition(.bottomTrailing)
