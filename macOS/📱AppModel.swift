@@ -5,7 +5,7 @@ class 📱AppModel: NSObject, ObservableObject {
     @Published var target: 📝NoteFamily = .primary
     @Published var requestToOpenNote: Bool = false
     @Published var sheet: 💬Sheet? = nil
-    @Published var playingFeedback: Bool = false
+    @Published private(set) var playingFeedback: Bool = false
     let primaryNote: 📝NoteModel = .init(.primary)
     let secondaryNote: 📝NoteModel = .init(.secondary)
     let tertiaryNote: 📝NoteModel = .init(.tertiary)
