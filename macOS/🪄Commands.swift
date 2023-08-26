@@ -11,11 +11,11 @@ struct 🪄Commands: Commands {
         CommandGroup(replacing: .systemServices) { EmptyView() }
         CommandGroup(after: .newItem) {
             🪄SwitchNoteButton(self.app, .primary)
-                .keyboardShortcut("1", modifiers: .command)
+                .keyboardShortcut("1")
             🪄SwitchNoteButton(self.app, .secondary)
-                .keyboardShortcut("2", modifiers: .command)
+                .keyboardShortcut("2")
             🪄SwitchNoteButton(self.app, .tertiary)
-                .keyboardShortcut("3", modifiers: .command)
+                .keyboardShortcut("3")
             Divider()
             Button("Customize widget") { self.openWindow(id: "customize") }
                 .keyboardShortcut(",", modifiers: [.command, .shift])
@@ -49,9 +49,9 @@ private struct 🪄SwitchNoteButton: View {
             if self.app.target == self.noteFamily {
                 if NSApplication.shared.keyWindow?.identifier?.rawValue == "note" {
                     Task {
-                        self.app.playFeedback = true
+                        self.app.playingFeedback = true
                         try? await Task.sleep(for: .seconds(0.4))
-                        self.app.playFeedback = false
+                        self.app.playingFeedback = false
                     }
                 } else {
                     self.openWindow(id: "note")

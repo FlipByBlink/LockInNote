@@ -5,10 +5,10 @@ class 📱AppModel: NSObject, ObservableObject {
     @Published var target: 📝NoteFamily = .primary
     @Published var requestToOpenNote: Bool = false
     @Published var sheet: 💬Sheet? = nil
-    @Published var playFeedback: Bool = false
-    var primaryNote: 📝NoteModel = .init(.primary)
-    var secondaryNote: 📝NoteModel = .init(.secondary)
-    var tertiaryNote: 📝NoteModel = .init(.tertiary)
+    @Published var playingFeedback: Bool = false
+    let primaryNote: 📝NoteModel = .init(.primary)
+    let secondaryNote: 📝NoteModel = .init(.secondary)
+    let tertiaryNote: 📝NoteModel = .init(.tertiary)
     let inAppPurchaseModel: 🛒InAppPurchaseModel = .init(id: "LockInNote.adfree")
 }
 

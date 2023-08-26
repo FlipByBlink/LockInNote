@@ -19,13 +19,13 @@ struct ContentView: View {
             }
         }
         .overlay {
-            if self.app.playFeedback {
+            if self.app.playingFeedback {
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(.tint, lineWidth: 5)
                     .ignoresSafeArea()
             }
         }
-        .animation(.default.speed(2), value: self.app.playFeedback)
+        .animation(.default.speed(2), value: self.app.playingFeedback)
         .animation(.default, value: self.app.target)
         .environmentObject(self.app.inAppPurchaseModel)
     }
