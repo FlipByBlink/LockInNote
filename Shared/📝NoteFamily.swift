@@ -30,6 +30,10 @@ extension 📝NoteFamily: Identifiable, CaseIterable {
             case .tertiary: .init(localized: .init("presetTitle/tertiary", defaultValue: "Tertiary"))
         }
     }
+    var presetTitleOnSystemUI: String {
+        Self.primary.presetTitle
+            .appending(self != .primary ? "(\(self.presetTitle))" : "")
+    }
     func loadTitle() -> String {
         do {
             return try 💾ICloud.load(.title, self)

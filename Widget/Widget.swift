@@ -27,7 +27,7 @@ struct 🪧WidgetConfiguration: WidgetConfiguration {
                     .environmentObject(📝NoteModel(self.noteFamily, observeChange: false))
             }
         }
-        .configurationDisplayName(self.noteFamily.presetTitle)
+        .configurationDisplayName(self.noteFamily.presetTitleOnSystemUI)
         .description(self.noteFamily.widgetDescription)
 #if os(iOS)
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge,
