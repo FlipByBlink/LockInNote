@@ -20,6 +20,11 @@ struct 🪄Commands: Commands {
             Button("Customize widget") { self.openWindow(id: "customize") }
                 .keyboardShortcut(",", modifiers: [.command, .shift])
         }
+        CommandGroup(before: .undoRedo) {
+            Button("Clear this note") { self.app.note(self.app.target).text.removeAll() }
+                .keyboardShortcut("d", modifiers: [.command, .shift])
+            Divider()
+        }
         CommandMenu("Action") { 🔗URLSchemeActionCommand(self.app) }
         CommandGroup(replacing: .help) { EmptyView() }
         CommandGroup(after: .help) {

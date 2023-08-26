@@ -19,9 +19,11 @@ struct 🔗URLSchemeActionCommand: View {
             🔗URLSchemeActionButton(self.$note.text)
                 .keyboardShortcut("u")
             🔗URLSchemeActionMenuLink()
-            if let ⓤrl = self.model.url(self.note.text) {
-                Divider()
-                Text("\(ⓤrl)")
+            if !self.model.leading.isEmpty {
+                if let ⓤrl = self.model.url(self.note.text) {
+                    Divider()
+                    Text("\(ⓤrl)")
+                }
             }
         }
     }

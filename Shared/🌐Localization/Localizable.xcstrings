@@ -241,6 +241,16 @@
         }
       }
     },
+    "Clear this note" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ノートをクリア"
+          }
+        }
+      }
+    },
     "Color" : {
       "localizations" : {
         "ja" : {
