@@ -22,21 +22,6 @@ struct ContentView: View {
                         .modifier(📋AddNoteToEnvironment(ⓝoteFamily))
             }
         }
+        .modifier(PushToIPhone())
     }
 }
-
-
-
-
-//import WatchConnectivity
-//struct PushToIPhone: ViewModifier {
-//    @Environment(\.scenePhase) var scenePhase
-//    func body(content: Content) -> some View {
-//        content
-//            .onChange(of: scenePhase) {
-//                if $0 == .background {
-//                    WCSession.default.sendMessage(["pushedFromAppleWatch" : true], replyHandler: nil)
-//                }
-//            }
-//    }
-//}
