@@ -48,11 +48,7 @@ private struct 🪄SwitchNoteButton: View {
         Button(self.app.note(self.noteFamily).title) {
             if self.app.target == self.noteFamily {
                 if NSApplication.shared.keyWindow?.identifier?.rawValue == "note" {
-                    Task {
-                        self.app.playingFeedback = true
-                        try? await Task.sleep(for: .seconds(0.4))
-                        self.app.playingFeedback = false
-                    }
+                    self.app.playFeedback()
                 } else {
                     self.openWindow(id: "note")
                 }

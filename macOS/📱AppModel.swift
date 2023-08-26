@@ -39,4 +39,11 @@ extension 📱AppModel {
             case .tertiary: self.tertiaryNote
         }
     }
+    func playFeedback() {
+        Task {
+            self.playingFeedback = true
+            try? await Task.sleep(for: .seconds(0.4))
+            self.playingFeedback = false
+        }
+    }
 }

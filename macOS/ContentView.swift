@@ -18,15 +18,8 @@ struct ContentView: View {
                 case .ad: Text("AD")
             }
         }
-        .overlay {
-            if self.app.playingFeedback {
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(.tint, lineWidth: 5)
-                    .ignoresSafeArea()
-            }
-        }
+        .modifier(🔲WindowEdgeFeedback())
         .modifier(📖OpenNoteFromWidget())
-        .animation(.default.speed(2), value: self.app.playingFeedback)
         .animation(.default, value: self.app.target)
         .environmentObject(self.app.inAppPurchaseModel)
     }
