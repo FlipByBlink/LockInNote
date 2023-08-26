@@ -28,6 +28,7 @@ struct 🎚️CustomizeMenu: View {
                         🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
                     }
                     🎚️EmptyContentMenuLink()
+                    🎚️WidgetTitleEditLink()
                 }
                 .navigationTitle("Customize \"\(self.note.title)\"")
             }
@@ -69,6 +70,21 @@ private struct 🎚️EmptyContentMenuLink: View {
             } label: {
                 Label("Empty content", systemImage: "questionmark")
             }
+        }
+    }
+}
+
+private struct 🎚️WidgetTitleEditLink: View {
+    @EnvironmentObject var note: 📝NoteModel
+    var body: some View {
+        NavigationLink {
+            TextField("Title",
+                      text: self.$note.title,
+                      prompt: Text(self.note.family.presetTitle))
+            .navigationTitle("Widget title")
+            .onChange(of: self.note.title) { 💾ICloud.save(.title, self.note.family, $0) }
+        } label: {
+            Label("Widget title", systemImage: "tag")
         }
     }
 }
