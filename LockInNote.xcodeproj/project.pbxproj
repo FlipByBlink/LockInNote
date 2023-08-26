@@ -231,6 +231,7 @@
 		F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */; };
 		F5F9D6582A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */; };
 		F5F9D65B2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */; };
+		F5F9D65D2A99E4EE008CD67F /* 📋AddNoteModelToEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D65C2A99E4EE008CD67F /* 📋AddNoteModelToEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -538,6 +539,7 @@
 		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖OpenNoteFromWidget.swift"; sourceTree = "<group>"; };
 		F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔲WindowEdgeFeedback.swift"; sourceTree = "<group>"; };
+		F5F9D65C2A99E4EE008CD67F /* 📋AddNoteModelToEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📋AddNoteModelToEnvironment.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -713,6 +715,7 @@
 				F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */,
 				F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
 				F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */,
+				F5F9D65C2A99E4EE008CD67F /* 📋AddNoteModelToEnvironment.swift */,
 				F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */,
 				F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */,
 				F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */,
@@ -1211,6 +1214,7 @@
 				F51E3A222A8CB05F00F32F4F /* 🎚️CustomizeModel.swift in Sources */,
 				F51E3A142A8CAFDD00F32F4F /* App.swift in Sources */,
 				F51E3A1D2A8CB05F00F32F4F /* 💾ICloud.swift in Sources */,
+				F5F9D65D2A99E4EE008CD67F /* 📋AddNoteModelToEnvironment.swift in Sources */,
 				F51E3AAA2A8CEC2800F32F4F /* 🛒InAppPurchaseMenu.swift in Sources */,
 				F51E3A152A8CAFDD00F32F4F /* 📝NoteWindow.swift in Sources */,
 				F51E3A172A8CAFDD00F32F4F /* 📱AppModel.swift in Sources */,
