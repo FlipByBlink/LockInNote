@@ -25,6 +25,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
             }
         }
+        .modifier(📖OpenNoteFromWidget())
         .animation(.default.speed(2), value: self.app.playingFeedback)
         .animation(.default, value: self.app.target)
         .environmentObject(self.app.inAppPurchaseModel)

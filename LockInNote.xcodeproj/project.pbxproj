@@ -229,6 +229,7 @@
 		F58F3BE42A7248D0008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */; };
 		F58F3BE62A7248DE008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */; };
 		F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */; };
+		F5F9D6582A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -534,6 +535,7 @@
 		F5E51EB52A98A1B800C53268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5EAB5E22A72739100B2CD9E /* 💾ICloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾ICloud.swift"; sourceTree = "<group>"; };
 		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
+		F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖OpenNoteFromWidget.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -709,6 +711,7 @@
 				F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */,
 				F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
 				F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */,
+				F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */,
 				F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */,
 				F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */,
 				F51E39BD2A8CAA4700F32F4F /* 🔗URLSchemeAction */,
@@ -1218,6 +1221,7 @@
 				F51E3AAB2A8CEC2800F32F4F /* ℹ️HelpWindows.swift in Sources */,
 				F51E3A252A8CB06500F32F4F /* 🔗Model.swift in Sources */,
 				F51E3A4B2A8CC58A00F32F4F /* 📣ADModel.swift in Sources */,
+				F5F9D6582A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift in Sources */,
 				F51E3A182A8CAFDD00F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
 				F51E3AAC2A8CEC2800F32F4F /* 📣ADContent.swift in Sources */,
 				F51E3A4A2A8CC58A00F32F4F /* 🗒️StaticInfo.swift in Sources */,
