@@ -40,6 +40,7 @@ struct 📝NoteTab: View {
         }
         .onChange(of: self.note.text) { self.note.save(.text, $0) }
         .onOpenURL(perform: self.handleFocus(_:))
+        .tag(🔖Tab.note(self.note.family))
     }
     private func handleFocus(_ ⓤrl: URL) {
         do {

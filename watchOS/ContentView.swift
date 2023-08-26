@@ -5,17 +5,11 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             TabView(selection: self.$app.tab) {
-                📝NoteTab()
-                    .environmentObject(self.app.primaryNote)
-                    .tag(🔖Tab.note(.primary))
-                📝NoteTab()
-                    .environmentObject(self.app.secondaryNote)
-                    .tag(🔖Tab.note(.secondary))
-                📝NoteTab()
-                    .environmentObject(self.app.tertiaryNote)
-                    .tag(🔖Tab.note(.tertiary))
+                ForEach(📝NoteFamily.allCases) {
+                    📝NoteTab()
+                        .modifier(📋AddNoteToEnvironment($0))
+                }
                 🛠️OptionTab()
-                    .tag(🔖Tab.menu)
             }
             .navigationTitle(self.app.navigationTitle)
         }

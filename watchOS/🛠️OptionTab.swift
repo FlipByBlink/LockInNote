@@ -11,5 +11,6 @@ struct 🛠️OptionTab: View {
             }
             ℹ️AboutAppLink()
         }
+        .tag(🔖Tab.menu)
     }
 }
