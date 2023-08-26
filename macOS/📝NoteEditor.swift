@@ -16,7 +16,7 @@ struct 📝NoteEditor: View {
             .padding(.bottom)
             .background(.background)
             .navigationTitle(self.note.title)
-            .onChange(of: self.note.text) { 💾ICloud.save(.text, self.note.family, $0) }
+            .onChange(of: self.note.text) { self.note.save(.text, $0) }
             .toolbar {
                 Button {
                     self.openWindow(id: "customize")

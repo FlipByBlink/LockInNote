@@ -11,11 +11,11 @@ struct 📝NoteTab: View {
             Spacer()
             HStack {
                 Button(role: .destructive) {
-                    self.note.text = ""
+                    self.note.text.removeAll()
                     //self.📱.widgetsModel.sendWCMessageWithNewText()
                     WKInterfaceDevice.current().play(.success)
                 } label: {
-                    Image(systemName: "trash")
+                    Label("Clear note", systemImage: "trash")
                         .fontWeight(.medium)
                 }
                 .disabled(self.note.text.isEmpty)
@@ -23,7 +23,7 @@ struct 📝NoteTab: View {
                     self.app.sheet = .noteDetail
                     WKInterfaceDevice.current().play(.directionUp)
                 } label: {
-                    Image(systemName: "doc.text.magnifyingglass")
+                    Label("Detail", systemImage: "doc.text.magnifyingglass")
                         .fontWeight(.medium)
                         .foregroundStyle(self.note.text.isEmpty ? .secondary : .primary)
                 }
@@ -32,10 +32,11 @@ struct 📝NoteTab: View {
                     self.app.sheet = .customize(self.note.family)
                     WKInterfaceDevice.current().play(.directionUp)
                 } label: {
-                    Image(systemName: "slider.horizontal.3")
+                    Label("Customize", systemImage: "slider.horizontal.3")
                         .fontWeight(.medium)
                 }
             }
+            .labelStyle(.iconOnly)
         }
         .onChange(of: self.note.text) { self.note.save(.text, $0) }
         .onOpenURL(perform: self.handleFocus(_:))

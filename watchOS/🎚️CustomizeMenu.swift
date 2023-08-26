@@ -82,7 +82,7 @@ private struct 🎚️WidgetTitleEditLink: View {
                       text: self.$note.title,
                       prompt: Text(self.note.family.presetTitle))
             .navigationTitle("Widget title")
-            .onChange(of: self.note.title) { 💾ICloud.save(.title, self.note.family, $0) }
+            .onChange(of: self.note.title) { self.note.save(.title, $0) }
         } label: {
             Label("Widget title", systemImage: "tag")
         }

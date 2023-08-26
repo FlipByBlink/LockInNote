@@ -114,7 +114,7 @@ private struct 🎚️WidgetTitleMenuLink: View {
                 .padding(32)
             }
             .navigationTitle("Customize \"\(self.note.title)\" - Widget title")
-            .onChange(of: self.note.title) { 💾ICloud.save(.title, self.note.family, $0) }
+            .onChange(of: self.note.title) { self.note.save(.title, $0) }
         } label: {
             Label("Widget title", systemImage: "tag")
         }
