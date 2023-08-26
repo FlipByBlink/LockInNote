@@ -9,6 +9,8 @@ struct 🛠️OptionTab: View {
             }
             .navigationTitle("Option")
         }
+        .tag(🔖Tab.option)
+        .tabItem { Label("Option", systemImage: "gearshape") }
     }
 }
 

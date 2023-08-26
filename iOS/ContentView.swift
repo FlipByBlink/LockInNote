@@ -4,15 +4,12 @@ struct ContentView: View {
     @EnvironmentObject var app: 📱AppModel
     var body: some View {
         TabView(selection: self.$app.tab) {
-            📝NoteTab().environmentObject(self.app.primaryNote)
-            📝NoteTab().environmentObject(self.app.secondaryNote)
-            📝NoteTab().environmentObject(self.app.tertiaryNote)
+            ForEach(📝NoteFamily.allCases) {
+                📝NoteTab()
+                    .modifier(📋AddNoteToEnvironment($0))
+            }
             🛠️OptionTab()
-                .tag(🔖Tab.option)
-                .tabItem { Label("Option", systemImage: "gearshape") }
             ℹ️InfoTab()
-                .tag(🔖Tab.info)
-                .tabItem { Label("Info", systemImage: "info") }
         }
         .modifier(💬RequestUserReview())
         .sheet(item: self.$app.sheet) {

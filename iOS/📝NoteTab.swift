@@ -1,15 +1,6 @@
 import SwiftUI
 
 struct 📝NoteTab: View {
-    @EnvironmentObject var note: 📝NoteModel
-    var body: some View {
-        📝NoteView()
-            .tag(🔖Tab.note(self.note.family))
-            .tabItem { Label(self.note.title, systemImage: "note.text") }
-    }
-}
-
-private struct 📝NoteView: View {
     @EnvironmentObject var app: 📱AppModel
     @EnvironmentObject var note: 📝NoteModel
     @Environment(\.colorScheme) var colorScheme
@@ -65,6 +56,8 @@ private struct 📝NoteView: View {
         .onChange(of: self.note.text) { self.note.save(.text, $0) }
         .onChange(of: self.note.title) { self.note.save(.title, $0) }
         .onOpenURL(perform: self.handleFocus(_:))
+        .tag(🔖Tab.note(self.note.family))
+        .tabItem { Label(self.note.title, systemImage: "note.text") }
     }
     private func handleFocus(_ ⓤrl: URL) {
         do {

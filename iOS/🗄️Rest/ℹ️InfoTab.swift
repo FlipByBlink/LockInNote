@@ -20,5 +20,7 @@ struct ℹ️InfoTab: View {
             }
             .navigationTitle("Info")
         }
+        .tag(🔖Tab.info)
+        .tabItem { Label("Info", systemImage: "info") }
     }
 }
