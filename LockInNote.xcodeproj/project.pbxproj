@@ -231,12 +231,18 @@
 		F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */; };
 		F5F9D6622A99EF5B008CD67F /* 📋AddNoteToEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */; };
 		F5F9D6632A99F034008CD67F /* 📋AddNoteToEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */; };
-		F5F9D6652A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift */; };
-		F5F9D6662A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift */; };
-		F5F9D6672A9A295A008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift */; };
-		F5F9D6682A9A295F008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift */; };
-		F5F9D6692A9A295F008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift */; };
-		F5F9D66A2A9A2960008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift */; };
+		F5F9D6652A9A27F8008CD67F /* 🗄️FromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
+		F5F9D6662A9A27F8008CD67F /* 🗄️FromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
+		F5F9D6672A9A295A008CD67F /* 🗄️FromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
+		F5F9D6682A9A295F008CD67F /* 🗄️FromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
+		F5F9D6692A9A295F008CD67F /* 🗄️FromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
+		F5F9D66A2A9A2960008CD67F /* 🗄️FromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
+		F5F9D66D2A9AC543008CD67F /* 💾ICloudVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
+		F5F9D66E2A9AC550008CD67F /* 💾ICloudVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
+		F5F9D66F2A9AC5BE008CD67F /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
+		F5F9D6702A9AC5BE008CD67F /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
+		F5F9D6712A9AC5C6008CD67F /* 💾UserDefaultsVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */; };
+		F5F9D6722A9AC5C6008CD67F /* 💾UserDefaultsVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -500,7 +506,7 @@
 		F556953928CCAFC3004558FC /* 🛒InAppPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseView.swift"; sourceTree = "<group>"; };
 		F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💬RequestUserReview.swift"; sourceTree = "<group>"; };
 		F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ℹ️InfoTab.swift"; sourceTree = "<group>"; };
-		F566A85B29CED1A300ACCC63 /* ♻️BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "♻️BaseModel.swift"; sourceTree = "<group>"; };
+		F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "♻️BaseModelVer_1_1.swift"; sourceTree = "<group>"; };
 		F566A8F929CEDA1200ACCC63 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566A8FB29CEDA1200ACCC63 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F566A8FD29CEDA1200ACCC63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -516,7 +522,7 @@
 		F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AppStoreDescription.xcstrings"; sourceTree = "<group>"; };
 		F56B33892A98A90D004510DE /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F57E85B829D28FD000927561 /* 🔖TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔖TabModel.swift"; sourceTree = "<group>"; };
-		F57E85C729D2B98400927561 /* 💾UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaults.swift"; sourceTree = "<group>"; };
+		F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaultsVer_1_1.swift"; sourceTree = "<group>"; };
 		F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💁WidgetGuideTab.swift"; sourceTree = "<group>"; };
 		F57E85D129D3B17900927561 /* 🔗WidgetLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗WidgetLink.swift"; sourceTree = "<group>"; };
 		F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AD&InAppPurchase.xcstrings"; sourceTree = "<group>"; };
@@ -537,12 +543,12 @@
 		F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5E51EB52A98A1B800C53268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5EAB5E22A72739100B2CD9E /* 💾ICloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾ICloud.swift"; sourceTree = "<group>"; };
+		F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾ICloudVer_1_1.swift"; sourceTree = "<group>"; };
 		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖OpenNoteFromWidget.swift"; sourceTree = "<group>"; };
 		F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔲WindowEdgeFeedback.swift"; sourceTree = "<group>"; };
 		F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📋AddNoteToEnvironment.swift"; sourceTree = "<group>"; };
-		F5F9D6642A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗄️MigrationFromVer_1_1.swift"; sourceTree = "<group>"; };
+		F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🗄️FromVer_1_1.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -888,9 +894,6 @@
 		F566A85A29CED18C00ACCC63 /* ♻️Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F566A85B29CED1A300ACCC63 /* ♻️BaseModel.swift */,
-				F57E85C729D2B98400927561 /* 💾UserDefaults.swift */,
-				F5EAB5E22A72739100B2CD9E /* 💾ICloud.swift */,
 				F57E85B829D28FD000927561 /* 🔖TabModel.swift */,
 				F57E85D129D3B17900927561 /* 🔗WidgetLink.swift */,
 				F5EAB5E02A7262B900B2CD9E /* 🪧Widget */,
@@ -952,10 +955,29 @@
 				F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */,
 				F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */,
 				F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */,
-				F5F9D6642A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift */,
+				F5F9D66B2A9AC0D3008CD67F /* 🗄️Migration */,
 				F556953628CCAFC3004558FC /* Configuration.storekit */,
 			);
 			path = "🗄️Rest";
+			sourceTree = "<group>";
+		};
+		F5F9D66B2A9AC0D3008CD67F /* 🗄️Migration */ = {
+			isa = PBXGroup;
+			children = (
+				F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */,
+				F5F9D66C2A9AC0EC008CD67F /* 🗄️SourceCodeVer_1_1 */,
+			);
+			path = "🗄️Migration";
+			sourceTree = "<group>";
+		};
+		F5F9D66C2A9AC0EC008CD67F /* 🗄️SourceCodeVer_1_1 */ = {
+			isa = PBXGroup;
+			children = (
+				F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */,
+				F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */,
+				F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */,
+			);
+			path = "🗄️SourceCodeVer_1_1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1241,7 +1263,7 @@
 				F51E3A132A8CAFDD00F32F4F /* 🪄Commands.swift in Sources */,
 				F51E3A1B2A8CAFE200F32F4F /* 🔗Menu.swift in Sources */,
 				F51E3A202A8CB05F00F32F4F /* 📝NoteFamily.swift in Sources */,
-				F5F9D6672A9A295A008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */,
+				F5F9D6672A9A295A008CD67F /* 🗄️FromVer_1_1.swift in Sources */,
 				F51E3A232A8CB06500F32F4F /* 🔗Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1250,7 +1272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5F9D6692A9A295F008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */,
+				F5F9D6692A9A295F008CD67F /* 🗄️FromVer_1_1.swift in Sources */,
 				F51E3A412A8CB28900F32F4F /* 💾ICloud.swift in Sources */,
 				F51E3A422A8CB28900F32F4F /* 🪧WidgetView.swift in Sources */,
 				F51E3A402A8CB28900F32F4F /* 🎚️CustomizeModel.swift in Sources */,
@@ -1270,10 +1292,12 @@
 				F51E3A4C2A8CC5D100F32F4F /* 🛒InAppPurchaseView.swift in Sources */,
 				F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */,
 				F51E39C72A8CAA7100F32F4F /* 📝NoteModel.swift in Sources */,
+				F5F9D66D2A9AC543008CD67F /* 💾ICloudVer_1_1.swift in Sources */,
 				F51E39EB2A8CAA9800F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
 				F51E39E42A8CAA9800F32F4F /* ContentView.swift in Sources */,
 				F51E39CB2A8CAA7100F32F4F /* 📝NoteProperty.swift in Sources */,
 				F51E39CF2A8CAA7900F32F4F /* 🔗Button.swift in Sources */,
+				F5F9D66F2A9AC5BE008CD67F /* ♻️BaseModelVer_1_1.swift in Sources */,
 				F51E3A512A8CC8B800F32F4F /* 💁WidgetGuideTab.swift in Sources */,
 				F51E3A472A8CC58800F32F4F /* 🗒️StaticInfo.swift in Sources */,
 				F51E39C92A8CAA7100F32F4F /* 🪧WidgetView.swift in Sources */,
@@ -1295,7 +1319,8 @@
 				F51E3A4E2A8CC5D100F32F4F /* 📣ADComponents.swift in Sources */,
 				F51E39E82A8CAA9800F32F4F /* 🔖Tab.swift in Sources */,
 				F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */,
-				F5F9D6652A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */,
+				F5F9D6712A9AC5C6008CD67F /* 💾UserDefaultsVer_1_1.swift in Sources */,
+				F5F9D6652A9A27F8008CD67F /* 🗄️FromVer_1_1.swift in Sources */,
 				F51E3A502A8CC8B800F32F4F /* 💬RequestUserReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1304,7 +1329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5F9D6682A9A295F008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */,
+				F5F9D6682A9A295F008CD67F /* 🗄️FromVer_1_1.swift in Sources */,
 				F51E39D82A8CAA9000F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E39DA2A8CAA9000F32F4F /* 📝NoteProperty.swift in Sources */,
 				F51E39D92A8CAA9000F32F4F /* 🪧WidgetView.swift in Sources */,
@@ -1323,13 +1348,15 @@
 				F51E39EF2A8CAAA000F32F4F /* App.swift in Sources */,
 				F51E39F02A8CAAA000F32F4F /* 🛠️OptionTab.swift in Sources */,
 				F51E39DF2A8CAA9100F32F4F /* 📝NoteFamily.swift in Sources */,
-				F5F9D6662A9A27F8008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */,
+				F5F9D6662A9A27F8008CD67F /* 🗄️FromVer_1_1.swift in Sources */,
 				F51E39F42A8CAAA000F32F4F /* 📱AppModel.swift in Sources */,
+				F5F9D6722A9AC5C6008CD67F /* 💾UserDefaultsVer_1_1.swift in Sources */,
 				F51E39DE2A8CAA9100F32F4F /* 📝NoteProperty.swift in Sources */,
 				F51E39F32A8CAAA000F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
 				F51E39EE2A8CAAA000F32F4F /* ContentView.swift in Sources */,
 				F51E39D42A8CAA8700F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */,
 				F51E39DD2A8CAA9100F32F4F /* 🪧WidgetView.swift in Sources */,
+				F5F9D66E2A9AC550008CD67F /* 💾ICloudVer_1_1.swift in Sources */,
 				F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */,
 				F51E39DC2A8CAA9100F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E39F12A8CAAA000F32F4F /* 💬Sheet.swift in Sources */,
@@ -1339,6 +1366,7 @@
 				F51E39D62A8CAA8A00F32F4F /* 💾ICloud.swift in Sources */,
 				F51E39D22A8CAA8300F32F4F /* 🎚️CustomizeModel.swift in Sources */,
 				F51E39F52A8CAAA000F32F4F /* 🔖Tab.swift in Sources */,
+				F5F9D6702A9AC5BE008CD67F /* ♻️BaseModelVer_1_1.swift in Sources */,
 				F51E3A562A8CD7AE00F32F4F /* ℹ️AboutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1347,7 +1375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5F9D66A2A9A2960008CD67F /* 🗄️MigrationFromVer_1_1.swift in Sources */,
+				F5F9D66A2A9A2960008CD67F /* 🗄️FromVer_1_1.swift in Sources */,
 				F51E39E02A8CAA9100F32F4F /* 📝NoteModel.swift in Sources */,
 				F51E39E22A8CAA9100F32F4F /* 📝NoteProperty.swift in Sources */,
 				F51E39E12A8CAA9100F32F4F /* 🪧WidgetView.swift in Sources */,

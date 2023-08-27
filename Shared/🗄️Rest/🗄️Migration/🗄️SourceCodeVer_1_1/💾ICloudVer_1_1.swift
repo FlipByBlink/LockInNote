@@ -1,6 +1,6 @@
 import Foundation
 
-enum 💾ICloud {
+enum 💾ICloudVer_1_1 {
     private static let api = NSUbiquitousKeyValueStore.default
     static func load() -> 🎛WidgetsModel? {
         guard let ⓓata = Self.api.data(forKey: "ⓦidgetsModel") else { return nil }

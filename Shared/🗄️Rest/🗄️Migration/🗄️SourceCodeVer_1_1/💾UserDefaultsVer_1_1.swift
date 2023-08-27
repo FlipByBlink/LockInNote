@@ -1,6 +1,6 @@
 import Foundation
 
-enum 💾UserDefaults {
+enum 💾UserDefaultsVer_1_1 {
     private static let api = UserDefaults(suiteName: "group.net.aaaakkkkssssttttnnnn.LockInNote")
     enum 🄺ey: String {
         case Rectangular, Circular, Inline

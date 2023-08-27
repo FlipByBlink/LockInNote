@@ -17,7 +17,7 @@ extension 🎛WidgetsModel {
 #if os(iOS)
     func saveData_reloadWidget_updateWCContext() {
         self.save()
-        💾ICloud.save(self)
+        💾ICloudVer_1_1.save(self)
         WidgetCenter.shared.reloadAllTimelines()
         self.updateWCContext()
     }
@@ -73,8 +73,8 @@ struct 🎛RectangularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
     
     static var `default`: Self { Self() }
-    static func load() -> Self? { 💾UserDefaults.load(.Rectangular) }
-    func save() { 💾UserDefaults.save(.Rectangular, self) }
+    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Rectangular) }
+    func save() { 💾UserDefaultsVer_1_1.save(.Rectangular, self) }
 }
 
 struct 🎛CircularWidgetModel: Codable, Equatable, 🄵ontOptions {
@@ -90,8 +90,8 @@ struct 🎛CircularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
     
     static var `default`: Self { Self() }
-    static func load() -> Self? { 💾UserDefaults.load(.Circular) }
-    func save() { 💾UserDefaults.save(.Circular, self) }
+    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Circular) }
+    func save() { 💾UserDefaultsVer_1_1.save(.Circular, self) }
 }
 
 struct 🎛InlineWidgetModel: Codable, Equatable {
@@ -99,8 +99,8 @@ struct 🎛InlineWidgetModel: Codable, Equatable {
     var placeholder: 🄿laceholder = .squareAndPencil
     
     static var `default`: Self { Self() }
-    static func load() -> Self? { 💾UserDefaults.load(.Inline) }
-    func save() { 💾UserDefaults.save(.Inline, self) }
+    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Inline) }
+    func save() { 💾UserDefaultsVer_1_1.save(.Inline, self) }
 }
 
 protocol 🄵ontOptions {
