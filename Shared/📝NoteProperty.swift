@@ -17,7 +17,7 @@ enum 📝NoteProperty: CaseIterable {
     case system_backgroundGradient
     case system_doubleSizeOnLargeWidget
     
-    //MARK: WidgetFamily.accessoryInline, .accessoryCircular, .accessoryRectangular
+    //MARK: WidgetFamily.accessoryRectangular, .accessoryCircular
     case accessory_fontSize
     case accessory_fontWeight
     case accessory_fontDesign
