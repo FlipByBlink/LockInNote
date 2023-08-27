@@ -1,6 +1,6 @@
 import SwiftUI
-import WatchConnectivity
-import WidgetKit
+//import WatchConnectivity
+//import WidgetKit
 
 struct 🎛WidgetsModel: Codable, Equatable {
     var rectangular: 🎛RectangularWidgetModel = .load() ?? .default
@@ -9,55 +9,55 @@ struct 🎛WidgetsModel: Codable, Equatable {
 }
 
 extension 🎛WidgetsModel {
-    private func save() {
-        self.rectangular.save()
-        self.circular.save()
-        self.inline.save()
-    }
+//    private func save() {
+//        self.rectangular.save()
+//        self.circular.save()
+//        self.inline.save()
+//    }
 #if os(iOS)
-    func saveData_reloadWidget_updateWCContext() {
-        self.save()
-        💾ICloudVer_1_1.save(self)
-        WidgetCenter.shared.reloadAllTimelines()
-        self.updateWCContext()
-    }
-    private func updateWCContext() {
-        do {
-            let ⓓata = try JSONEncoder().encode(self)
-            try? WCSession.default.updateApplicationContext(["ⓝewModel": ⓓata])
-        } catch {
-            assertionFailure()
-        }
-    }
-    mutating func receiveWCMessageWithNewText(_ ⓜessage: [String : Any]) {
-        if let ⓓata = ⓜessage["ⓜodelWithNewText"] as? Data {
-            if let ⓜodel = try? JSONDecoder().decode(Self.self, from: ⓓata) {
-                self = ⓜodel
-                self.saveData_reloadWidget_updateWCContext()
-            }
-        }
-    }
+//    func saveData_reloadWidget_updateWCContext() {
+//        self.save()
+//        💾ICloudVer_1_1.save(self)
+//        WidgetCenter.shared.reloadAllTimelines()
+//        self.updateWCContext()
+//    }
+//    private func updateWCContext() {
+//        do {
+//            let ⓓata = try JSONEncoder().encode(self)
+//            try? WCSession.default.updateApplicationContext(["ⓝewModel": ⓓata])
+//        } catch {
+//            assertionFailure()
+//        }
+//    }
+//    mutating func receiveWCMessageWithNewText(_ ⓜessage: [String : Any]) {
+//        if let ⓓata = ⓜessage["ⓜodelWithNewText"] as? Data {
+//            if let ⓜodel = try? JSONDecoder().decode(Self.self, from: ⓓata) {
+//                self = ⓜodel
+//                self.saveData_reloadWidget_updateWCContext()
+//            }
+//        }
+//    }
 #elseif os(watchOS)
-    func saveData_reloadWidget() {
-        self.save()
-        WidgetCenter.shared.reloadAllTimelines()
-    }
-    func sendWCMessageWithNewText() {
-        guard let ⓓata = try? JSONEncoder().encode(self) else { return }
-        WCSession.default.sendMessage(["ⓜodelWithNewText": ⓓata], replyHandler: nil)
-    }
-    mutating func receiveWCContext_saveData_reloadWidget(_ ⓒontext: [String: Any]) {
-        if let ⓓata = ⓒontext["ⓝewModel"] as? Data {
-            do {
-                self = try JSONDecoder().decode(Self.self, from: ⓓata)
-                self.saveData_reloadWidget()
-            } catch {
-                print("🚨", error); assertionFailure()
-            }
-        } else {
-            //assertionFailure() シミュレーターだとダメ
-        }
-    }
+//    func saveData_reloadWidget() {
+//        self.save()
+//        WidgetCenter.shared.reloadAllTimelines()
+//    }
+//    func sendWCMessageWithNewText() {
+//        guard let ⓓata = try? JSONEncoder().encode(self) else { return }
+//        WCSession.default.sendMessage(["ⓜodelWithNewText": ⓓata], replyHandler: nil)
+//    }
+//    mutating func receiveWCContext_saveData_reloadWidget(_ ⓒontext: [String: Any]) {
+//        if let ⓓata = ⓒontext["ⓝewModel"] as? Data {
+//            do {
+//                self = try JSONDecoder().decode(Self.self, from: ⓓata)
+//                self.saveData_reloadWidget()
+//            } catch {
+//                print("🚨", error); assertionFailure()
+//            }
+//        } else {
+//            //assertionFailure() シミュレーターだとダメ
+//        }
+//    }
 #endif
 }
 
