@@ -128,8 +128,13 @@ private struct 🎚️EmptyContentMenuLink: View {
                     🎚️EmptyContentPreview()
                     Section {
                         🎚️EmptyTypePicker()
-                        if self.note.empty_type == .userText {
-                            🎚️EmptyTextField()
+                        switch self.note.empty_type {
+                            case .squareAndPencil, .ellipsis, .pencil:
+                                🎚️EmptyIconSizePicker()
+                            case .userText:
+                                🎚️EmptyTextField()
+                            case .nothing:
+                                EmptyView()
                         }
                     }
                 }

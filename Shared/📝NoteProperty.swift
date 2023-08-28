@@ -28,5 +28,6 @@ enum 📝NoteProperty: CaseIterable {
     
     //MARK: Empty content
     case empty_type
+    case empty_iconSize
     case empty_userText
 }

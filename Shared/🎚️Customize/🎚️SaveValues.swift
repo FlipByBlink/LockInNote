@@ -32,6 +32,7 @@ struct 🎚️SaveValues: ViewModifier {
         
         //MARK: Empty content
             .onChange(of: self.note.empty_type) { self.note.save(.empty_type, $0) }
+            .onChange(of: self.note.empty_iconSize) { self.note.save(.empty_iconSize, $0) }
             .onChange(of: self.note.empty_userText) { self.note.save(.empty_userText, $0) }
     }
 }

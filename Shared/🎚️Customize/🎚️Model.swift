@@ -178,3 +178,22 @@ enum 🎚️EmptyType: Codable, CaseIterable, Identifiable {
         }
     }
 }
+
+enum 🎚️EmptyIconSize: Codable, CaseIterable, Identifiable {
+    case small, medium, large
+    var id: Self { self }
+    var label: LocalizedStringKey {
+        switch self {
+            case .small: "Small"
+            case .medium: "Medium"
+            case .large: "Large"
+        }
+    }
+    var value: CGFloat {
+        switch self {
+            case .small: 0.2
+            case .medium: 0.35
+            case .large: 0.5
+        }
+    }
+}

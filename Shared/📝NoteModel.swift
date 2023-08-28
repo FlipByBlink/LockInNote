@@ -31,6 +31,7 @@ class 📝NoteModel: ObservableObject {
     @Published var accessoryCircular_backgroundForIOS16AndWatchOS: Bool = false
     
     @Published var empty_type: 🎚️EmptyType = .squareAndPencil
+    @Published var empty_iconSize: 🎚️EmptyIconSize = .medium
     @Published var empty_userText: String = ""
     
     init(_ ⓝoteFamily: 📝NoteFamily, observeChange ⓞbserveChange: Bool = true) {
@@ -89,6 +90,7 @@ extension 📝NoteModel {
                 case .accessoryCircular_backgroundForIOS16AndWatchOS: self.accessoryCircular_backgroundForIOS16AndWatchOS = try 💾ICloud.load(ⓟroperty, self.family)
                 case .empty_type: self.empty_type = try 💾ICloud.load(ⓟroperty, self.family)
                 case .empty_userText: self.empty_userText = try 💾ICloud.load(ⓟroperty, self.family)
+                case .empty_iconSize: self.empty_iconSize = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_doubleSizeOnLargeWidget: self.system_doubleSizeOnLargeWidget = try 💾ICloud.load(ⓟroperty, self.family)
             }
         } catch 💾ICloud.LoadError.noData {

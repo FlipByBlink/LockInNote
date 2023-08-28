@@ -607,6 +607,9 @@
         }
       }
     },
+    "Icon size" : {
+
+    },
     "Info" : {
       "localizations" : {
         "ja" : {
@@ -656,6 +659,9 @@
           }
         }
       }
+    },
+    "Large" : {
+
     },
     "leading" : {
       "localizations" : {
@@ -716,6 +722,9 @@
           }
         }
       }
+    },
+    "Medium" : {
+
     },
     "Mode" : {
       "localizations" : {
@@ -1060,6 +1069,9 @@
           }
         }
       }
+    },
+    "Small" : {
+
     },
     "Square and pencil" : {
       "localizations" : {

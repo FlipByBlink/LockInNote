@@ -190,6 +190,19 @@ struct 🎚️EmptyTypePicker: View {
     }
 }
 
+struct 🎚️EmptyIconSizePicker: View {
+    @EnvironmentObject var note: 📝NoteModel
+    var body: some View {
+        Picker(selection: self.$note.empty_iconSize) {
+            ForEach(🎚️EmptyIconSize.allCases) {
+                Text($0.label)
+            }
+        } label: {
+            Label("Icon size", systemImage: "textformat.size")
+        }
+    }
+}
+
 struct 🎚️EmptyTextField: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
