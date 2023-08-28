@@ -49,8 +49,9 @@ private struct 🎚️SystemWidgetMenuLink: View {
                                 🎚️BackgroundGradientToggle()
                         }
                     }
-                    DisclosureGroup {
-                        🎚️DoubleSizeOnLargeWidgetToggle()
+                    NavigationLink {
+                        List { 🎚️DoubleSizeOnLargeWidgetToggle() }
+                            .navigationTitle("More")
                     } label: {
                         Label("More", systemImage: "ellipsis")
                     }
@@ -91,8 +92,9 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                         🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
                     }
                     if #unavailable(iOS 17.0) {
-                        DisclosureGroup {
-                            🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9()
+                        NavigationLink {
+                            List { 🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9() }
+                                .navigationTitle("More")
                         } label: {
                             Label("More", systemImage: "ellipsis")
                         }

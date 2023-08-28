@@ -456,7 +456,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "特大サイズのウィジェットで、フォントとパディングのサイズを2倍にする"
+            "value" : "特大サイズのウィジェットで、フォントとパディングのサイズを2倍"
           }
         }
       }
@@ -1187,7 +1187,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "これはノートを表示するウィジェットです。"
+            "value" : "ノートを表示します。"
           }
         }
       }
@@ -1197,7 +1197,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "これは2冊目のウィジェットです。"
+            "value" : "2冊目のノートです。"
           }
         }
       }
@@ -1207,7 +1207,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "これは3冊目のウィジェットです。"
+            "value" : "3冊目のノートです。"
           }
         }
       }
