@@ -14,7 +14,11 @@ struct 🎚️CustomizeMenu: View {
                     🎚ItalicToggle(value: self.$note.accessory_italic)
                     🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
                     if #unavailable(watchOS 10.0) {
-                        🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9()
+                        NavigationLink {
+                            🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9()
+                        } label: {
+                            Label("More", systemImage: "ellipsis")
+                        }
                     }
                 }
                 🎚️EmptyContentMenuLink()

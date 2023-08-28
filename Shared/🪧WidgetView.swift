@@ -169,12 +169,7 @@ struct 🪧AccessoryFamilyView: View {
         .multilineTextAlignment(self.note.accessory_multilineTextAlignment.value)
         .widgetAccentable()
         .modifier(Self.ForegroundStyle(self.isPreview))
-        .animation(.default, value: self.note.accessory_fontSize)
-        .animation(.default, value: self.note.accessory_fontDesign)
-        .animation(.default, value: self.note.accessory_fontWeight)
-        .animation(.default, value: self.note.accessory_hierarchical)
-        .animation(.default, value: self.note.accessory_multilineTextAlignment)
-        .animation(.default, value: self.note.accessory_italic)
+        .modifier(Self.Animation(self.isPreview))
     }
     private struct Background: View {
         @EnvironmentObject var note: 📝NoteModel
@@ -220,6 +215,22 @@ struct 🪧AccessoryFamilyView: View {
                     content.foregroundStyle(self.note.accessory_hierarchical.value)
                 }
             }
+        }
+        init(_ isPreview: Bool) {
+            self.isPreview = isPreview
+        }
+    }
+    private struct Animation: ViewModifier {
+        @EnvironmentObject var note: 📝NoteModel
+        var isPreview: Bool
+        func body(content: Content) -> some View {
+            content
+                .animation(.default, value: self.note.accessory_fontSize)
+                .animation(.default, value: self.note.accessory_fontDesign)
+                .animation(.default, value: self.note.accessory_fontWeight)
+                .animation(.default, value: self.note.accessory_hierarchical)
+                .animation(.default, value: self.note.accessory_multilineTextAlignment)
+                .animation(.default, value: self.note.accessory_italic)
         }
         init(_ isPreview: Bool) {
             self.isPreview = isPreview
