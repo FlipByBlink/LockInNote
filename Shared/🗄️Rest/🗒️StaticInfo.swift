@@ -38,7 +38,7 @@ extension 🗒️StaticInfo {
                                                                   ("1.0", "2022-09-13")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Widget, WidgetView, Customize, URLSchemeAction, Migration, Rest
+        case main, Widget, WidgetView, Customize, URLSchemeAction, Rest, Migration
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -74,9 +74,6 @@ extension 🗒️StaticInfo {
                                         "🔗MenuComponent.swift",
                                         "🔗Button.swift",
                                         "🔗URLSchemeActionMenu.swift"]
-                case .Migration: ["🗄️FromVer_1_1.swift",
-                                  "♻️BaseModelVer_1_1.swift",
-                                  "💾ICloudVer_1_1.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "📋AddNoteToEnvironment.swift",
                              "ℹ️InfoTab.swift",
@@ -87,6 +84,9 @@ extension 🗒️StaticInfo {
                              "📣ADComponents.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift"]
+                case .Migration: ["🗄️FromVer_1_1.swift",
+                                  "♻️BaseModelVer_1_1.swift",
+                                  "💾ICloudVer_1_1.swift"]
             }
         }
     }
@@ -95,7 +95,7 @@ extension 🗒️StaticInfo {
 #elseif os(watchOS)
 extension 🗒️StaticInfo {
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Complication, WidgetView, Customize, Migration, Rest
+        case main, Complication, WidgetView, Customize, Rest, Migration
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -125,12 +125,12 @@ extension 🗒️StaticInfo {
                                   "🎚️MenuComponent.swift",
                                   "🎚️SaveValues.swift",
                                   "🎚️PreviewInApp.swift"]
-                case .Migration: ["🗄️FromVer_1_1.swift",
-                                  "♻️BaseModelVer_1_1.swift",
-                                  "💾ICloudVer_1_1.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "📋AddNoteToEnvironment.swift",
                              "ℹ️AboutApp.swift"]
+                case .Migration: ["🗄️FromVer_1_1.swift",
+                                  "♻️BaseModelVer_1_1.swift",
+                                  "💾ICloudVer_1_1.swift"]
             }
         }
     }
@@ -141,7 +141,7 @@ extension 🗒️StaticInfo {
     static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-01")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Widget, WidgetView, Customize, URLSchemeAction, Commands, Migration, Rest
+        case main, Widget, WidgetView, Customize, URLSchemeAction, Commands, Rest
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -175,9 +175,6 @@ extension 🗒️StaticInfo {
                                         "🔗Menu.swift",
                                         "🔗MenuComponent.swift"]
                 case .Commands: ["🪄Commands.swift"]
-                case .Migration: ["🗄️FromVer_1_1.swift",
-                                  "♻️BaseModelVer_1_1.swift",
-                                  "💾ICloudVer_1_1.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "📋AddNoteToEnvironment.swift",
                              "🔲WindowEdgeFeedback.swift",

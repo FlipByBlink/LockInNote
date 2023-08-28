@@ -270,9 +270,6 @@
 		F53858752A9C93B600A0D72D /* 🎚️SaveValues.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */; };
 		F53858762A9C93B600A0D72D /* 🎚️PreviewInApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */; };
 		F53858772A9C93B600A0D72D /* 📋AddNoteToEnvironment.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */; };
-		F53858782A9C93B600A0D72D /* 🗄️FromVer_1_1.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
-		F53858792A9C93B600A0D72D /* ♻️BaseModelVer_1_1.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
-		F538587A2A9C93B600A0D72D /* 💾ICloudVer_1_1.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
 		F538587B2A9C93B600A0D72D /* 📖OpenNoteFromWidget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */; };
 		F538587C2A9C93B600A0D72D /* 🔲WindowEdgeFeedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */; };
 		F538587D2A9C93B600A0D72D /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
@@ -437,9 +434,6 @@
 				F53858752A9C93B600A0D72D /* 🎚️SaveValues.swift in CopyFiles */,
 				F53858762A9C93B600A0D72D /* 🎚️PreviewInApp.swift in CopyFiles */,
 				F53858772A9C93B600A0D72D /* 📋AddNoteToEnvironment.swift in CopyFiles */,
-				F53858782A9C93B600A0D72D /* 🗄️FromVer_1_1.swift in CopyFiles */,
-				F53858792A9C93B600A0D72D /* ♻️BaseModelVer_1_1.swift in CopyFiles */,
-				F538587A2A9C93B600A0D72D /* 💾ICloudVer_1_1.swift in CopyFiles */,
 				F538587B2A9C93B600A0D72D /* 📖OpenNoteFromWidget.swift in CopyFiles */,
 				F538587C2A9C93B600A0D72D /* 🔲WindowEdgeFeedback.swift in CopyFiles */,
 				F538587D2A9C93B600A0D72D /* Widget.swift in CopyFiles */,
