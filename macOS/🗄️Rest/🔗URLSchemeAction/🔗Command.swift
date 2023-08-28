@@ -23,7 +23,7 @@ struct 🔗URLSchemeActionCommand: View {
             if !self.model.leading.isEmpty {
                 if let ⓤrl = self.model.url(self.note.text) {
                     Divider()
-                    Text("\(ⓤrl)")
+                    Text(verbatim: "\(ⓤrl)")
                 }
             }
         }

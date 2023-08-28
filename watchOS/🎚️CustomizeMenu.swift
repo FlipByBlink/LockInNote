@@ -15,7 +15,7 @@ struct 🎚️CustomizeMenu: View {
                     🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
                     if #unavailable(watchOS 10.0) {
                         NavigationLink {
-                            🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9()
+                            List { 🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9() }
                         } label: {
                             Label("More", systemImage: "ellipsis")
                         }
@@ -35,7 +35,7 @@ private struct 🎚️FontSizePicker: View {
     var body: some View {
         Picker(selection: self.$value) {
             ForEach(8 ..< 40, id: \.self) {
-                Text("\($0)")
+                Text(verbatim: "\($0)")
                     .font(.system(size: CGFloat($0)))
             }
         } label: {

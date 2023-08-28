@@ -11,7 +11,7 @@ struct 🔗URLSchemeActionButton: View {
                 Section {
                     self.button(ⓤrl)
                 } footer: {
-                    Text("\(ⓤrl)")
+                    Text(verbatim: "\(ⓤrl)")
                 }
 #elseif os(macOS)
                 self.button(ⓤrl)

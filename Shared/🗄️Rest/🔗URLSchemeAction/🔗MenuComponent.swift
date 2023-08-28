@@ -7,7 +7,7 @@ enum 🔗URLSchemeActionMenuComponent {
             HStack {
                 Spacer()
                 if self.model.leading.isEmpty {
-                    Text("① +")
+                    Text(verbatim: "① +")
                         .foregroundStyle(.secondary)
                 }
                 Text(self.model.leading + "TEXT" + self.model.trailing)
@@ -17,7 +17,7 @@ enum 🔗URLSchemeActionMenuComponent {
                     .padding(8)
                     .frame(minHeight: 100)
                 if self.model.trailing.isEmpty {
-                    Text("+ ②")
+                    Text(verbatim: "+ ②")
                         .foregroundStyle(.secondary)
                 }
                 Spacer()
