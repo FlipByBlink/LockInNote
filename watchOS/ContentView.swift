@@ -22,6 +22,7 @@ struct ContentView: View {
                         .modifier(📋AddNoteToEnvironment(ⓝoteFamily))
             }
         }
-        .modifier(PushToIPhone())
+        .modifier(🪧WidgetReload())
+        //.modifier(PushToIPhone())
     }
 }

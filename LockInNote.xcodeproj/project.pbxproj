@@ -239,6 +239,8 @@
 		F5EF8DA62A9C403B00650FAF /* 💾UserDefaultsVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */; };
 		F5EF8DA72A9C403E00650FAF /* 💾ICloudVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
 		F5EF8DA82A9C403F00650FAF /* 💾ICloudVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
+		F5EF8DAA2A9C56EE00650FAF /* 🪧WidgetReload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EF8DA92A9C56EE00650FAF /* 🪧WidgetReload.swift */; };
+		F5EF8DAB2A9C56EE00650FAF /* 🪧WidgetReload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EF8DA92A9C56EE00650FAF /* 🪧WidgetReload.swift */; };
 		F5F9D6582A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */; };
 		F5F9D65B2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */; };
 		F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */; };
@@ -550,6 +552,7 @@
 		F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5E51EB52A98A1B800C53268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾ICloudVer_1_1.swift"; sourceTree = "<group>"; };
+		F5EF8DA92A9C56EE00650FAF /* 🪧WidgetReload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧WidgetReload.swift"; sourceTree = "<group>"; };
 		F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
 		F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖OpenNoteFromWidget.swift"; sourceTree = "<group>"; };
 		F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔲WindowEdgeFeedback.swift"; sourceTree = "<group>"; };
@@ -700,6 +703,7 @@
 				F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */,
 				F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */,
 				F51E39B92A8CAA4700F32F4F /* 🪧WidgetView.swift */,
+				F5EF8DA92A9C56EE00650FAF /* 🪧WidgetReload.swift */,
 				F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */,
 				F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */,
 				F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */,
@@ -1296,6 +1300,7 @@
 			files = (
 				F51E39E52A8CAA9800F32F4F /* 👆Buttons.swift in Sources */,
 				F51E3A4C2A8CC5D100F32F4F /* 🛒InAppPurchaseView.swift in Sources */,
+				F5EF8DAA2A9C56EE00650FAF /* 🪧WidgetReload.swift in Sources */,
 				F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */,
 				F51E39C72A8CAA7100F32F4F /* 📝NoteModel.swift in Sources */,
 				F5F9D66D2A9AC543008CD67F /* 💾ICloudVer_1_1.swift in Sources */,
@@ -1369,6 +1374,7 @@
 				F5EF8DA52A9C403A00650FAF /* 💾UserDefaultsVer_1_1.swift in Sources */,
 				F5EF8DA32A9C403600650FAF /* ♻️BaseModelVer_1_1.swift in Sources */,
 				F51E39DC2A8CAA9100F32F4F /* 📝NoteModel.swift in Sources */,
+				F5EF8DAB2A9C56EE00650FAF /* 🪧WidgetReload.swift in Sources */,
 				F51E39F12A8CAAA000F32F4F /* 💬Sheet.swift in Sources */,
 				F5F9D6622A99EF5B008CD67F /* 📋AddNoteToEnvironment.swift in Sources */,
 				F51E3A572A8CD7D800F32F4F /* 🗒️StaticInfo.swift in Sources */,

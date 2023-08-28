@@ -48,7 +48,7 @@ class 📝NoteModel: ObservableObject {
 extension 📝NoteModel {
     func save(_ ⓟroperty: 📝NoteProperty, _ ⓥalue: some Codable) {
         💾ICloud.save(ⓟroperty, self.family, ⓥalue)
-        WidgetCenter.shared.reloadAllTimelines()
+        self.reloadWidgetOnMac()
     }
     @objc func iCloudDidChangeExternally(_ ⓝotification: Notification) {
         guard let ⓒhangedKeys = ⓝotification.userInfo?["NSUbiquitousKeyValueStoreChangedKeysKey"] as? [String] else {
@@ -60,7 +60,7 @@ extension 📝NoteModel {
                     self.loadICloud(ⓒhangedProperty)
                 }
             }
-            WidgetCenter.shared.reloadAllTimelines()
+            self.reloadWidgetOnMac()
         }
     }
     func loadICloud(_ ⓟroperty: 📝NoteProperty) {
@@ -128,6 +128,11 @@ private extension 📝NoteModel {
     private func migrateFromVer_1_1() {
         #if os(iOS) || (watchOS)
         🗄️MigrationFromVer_1_1.execute()
+        #endif
+    }
+    private func reloadWidgetOnMac() {
+        #if os(macOS)
+        WidgetCenter.shared.reloadAllTimelines()
         #endif
     }
 }

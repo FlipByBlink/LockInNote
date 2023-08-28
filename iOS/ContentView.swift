@@ -11,7 +11,6 @@ struct ContentView: View {
             🛠️OptionTab()
             ℹ️InfoTab()
         }
-        .modifier(💬RequestUserReview())
         .sheet(item: self.$app.sheet) {
             switch $0 {
                 case .customize(let ⓝoteFamily):
@@ -23,6 +22,8 @@ struct ContentView: View {
                     Text("AD")
             }
         }
-        .modifier(PushToAppleWatch())
+        .modifier(🪧WidgetReload())
+        .modifier(💬RequestUserReview())
+        //.modifier(PushToAppleWatch())
     }
 }
