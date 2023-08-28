@@ -81,17 +81,6 @@
         }
       }
     },
-    "About Apple Watch app" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Watchアプリについて"
-          }
-        }
-      }
-    },
     "Accessory widget" : {
       "localizations" : {
         "ja" : {
@@ -142,17 +131,6 @@
         }
       }
     },
-    "Apple Watch app" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Watchアプリ"
-          }
-        }
-      }
-    },
     "Background color" : {
       "localizations" : {
         "ja" : {
@@ -174,15 +152,11 @@
       }
     },
     "Background on circular widget for iOS 16 / watchOS" : {
-
-    },
-    "Background on circular widget for iOS 16 / watchOS 9" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "円形ウィジェットの背景を表示(iOS 16/watchOS 9)"
+            "value" : "円形ウィジェットの背景を表示(iOS 16/watchOS)"
           }
         }
       }
@@ -568,7 +542,14 @@
       }
     },
     "Guide" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ガイド"
+          }
+        }
+      }
     },
     "heavy" : {
       "localizations" : {
@@ -616,19 +597,15 @@
     "How to add lock screen widget" : {
 
     },
-    "How to add widgets" : {
-      "extractionState" : "stale",
+    "iCloud sync" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ウィジェット設定方法"
+            "value" : "iCloud同期"
           }
         }
       }
-    },
-    "iCloud sync" : {
-
     },
     "Info" : {
       "localizations" : {
@@ -660,8 +637,15 @@
         }
       }
     },
-    "It takes few minutes to sync data to other device's widget on background." : {
-
+    "It takes few minutes to sync data to other device's widget on background. At the latest, the changes will be applied in about 20 minutes." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バックグラウンドで同期する際はウィジェットに反映されるまで数分掛かります。遅くても20分程度で変更が適用されます。"
+          }
+        }
+      }
     },
     "Italic" : {
       "localizations" : {
@@ -694,10 +678,6 @@
       }
     },
     "Lock screen widget" : {
-
-    },
-    "Lock Screen Widgets" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -733,17 +713,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ミディアム"
-          }
-        }
-      }
-    },
-    "Mirror the lock screen widget to the Apple Watch complication." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ロック画面ウィジェットをApple Watchのコンプリケーションにも表示できます。"
           }
         }
       }
@@ -1191,17 +1160,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "テキストの色"
-          }
-        }
-      }
-    },
-    "The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Watchのコンプリケーションにすぐに反映されない場合があります。遅くても10分程度で変更が適用されます。"
           }
         }
       }

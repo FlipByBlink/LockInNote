@@ -170,7 +170,7 @@ private struct 💁ICloudSyncSection: View {
                         .aspectRatio(contentMode: .fit)
                         .padding(8)
                 } footer: {
-                    Text("It takes few minutes to sync data to other device's widget on background.")
+                    Text("It takes few minutes to sync data to other device's widget on background. At the latest, the changes will be applied in about 20 minutes.")
                 }
             }
             .navigationTitle("iCloud sync")
