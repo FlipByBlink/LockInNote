@@ -173,7 +173,11 @@
         }
       }
     },
+    "Background on circular widget for iOS 16 / watchOS" : {
+
+    },
     "Background on circular widget for iOS 16 / watchOS 9" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

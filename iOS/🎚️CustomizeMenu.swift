@@ -93,7 +93,7 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                     }
                     if #unavailable(iOS 17.0) {
                         NavigationLink {
-                            List { 🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9() }
+                            List { 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS() }
                                 .navigationTitle("More")
                         } label: {
                             Label("More", systemImage: "ellipsis")

@@ -13,12 +13,10 @@ struct 🎚️CustomizeMenu: View {
                     🎚MultilineTextAlignmentPicker(value: self.$note.accessory_multilineTextAlignment)
                     🎚ItalicToggle(value: self.$note.accessory_italic)
                     🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
-                    if #unavailable(watchOS 10.0) {
-                        NavigationLink {
-                            List { 🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9() }
-                        } label: {
-                            Label("More", systemImage: "ellipsis")
-                        }
+                    NavigationLink {
+                        List { 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS() }
+                    } label: {
+                        Label("More", systemImage: "ellipsis")
                     }
                 }
                 🎚️EmptyContentMenuLink()

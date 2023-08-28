@@ -36,7 +36,7 @@ extension 🗄️MigrationFromVer_1_1 {
                     💾ICloud.save(.accessory_italic, .secondary, ⓢource.italic)
                     💾ICloud.save(.accessory_hierarchical, .secondary, Self.convert(ⓢource.level))
                     💾ICloud.save(.accessory_multilineTextAlignment, .secondary, Self.convert(ⓢource.multilineTextAlignment))
-                    💾ICloud.save(.accessoryCircular_backgroundForIOS16WatchOS9, .secondary, ⓢource.background)
+                    💾ICloud.save(.accessoryCircular_backgroundForIOS16AndWatchOS, .secondary, ⓢource.background)
                 case .tertiary:
                     let ⓢource = ⓢources.circular
                     💾ICloud.save(.text, .tertiary, ⓢource.text)

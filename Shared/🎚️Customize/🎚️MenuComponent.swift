@@ -149,11 +149,11 @@ struct 🎚️BackgroundGradientToggle: View {
 }
 
 #if os(iOS) || os(watchOS)
-struct 🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9: View {
+struct 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
-        Toggle(isOn: self.$note.accessoryCircular_backgroundForIOS16WatchOS9) {
-            Label("Background on circular widget for iOS 16 / watchOS 9", systemImage: "largecircle.fill.circle")
+        Toggle(isOn: self.$note.accessoryCircular_backgroundForIOS16AndWatchOS) {
+            Label("Background on circular widget for iOS 16 / watchOS", systemImage: "largecircle.fill.circle")
         }
     }
 }

@@ -26,8 +26,8 @@ struct 🎚️SaveValues: ViewModifier {
             .onChange(of: self.note.accessory_hierarchical) { self.note.save(.accessory_hierarchical, $0) }
             .onChange(of: self.note.accessory_multilineTextAlignment) { self.note.save(.accessory_multilineTextAlignment, $0) }
             .onChange(of: self.note.accessory_italic) { self.note.save(.accessory_italic, $0) }
-            .onChange(of: self.note.accessoryCircular_backgroundForIOS16WatchOS9) {
-                self.note.save(.accessoryCircular_backgroundForIOS16WatchOS9, $0)
+            .onChange(of: self.note.accessoryCircular_backgroundForIOS16AndWatchOS) {
+                self.note.save(.accessoryCircular_backgroundForIOS16AndWatchOS, $0)
             }
         
         //MARK: Empty content

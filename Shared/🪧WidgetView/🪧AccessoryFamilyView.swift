@@ -39,14 +39,15 @@ private extension 🪧AccessoryFamilyView {
         var body: some View {
             ZStack {
                 Color.clear
-#if os(iOS) || os(watchOS)
-                if #unavailable(iOS 17.0, watchOS 10.0),
-                   self.widgetFamily == .accessoryCircular,
-                   self.note.accessoryCircular_backgroundForIOS16WatchOS9,
+                if self.widgetFamily == .accessoryCircular,
+                   self.note.accessoryCircular_backgroundForIOS16AndWatchOS,
                    !self.isPreviewInApp {
+#if os(watchOS)
                     AccessoryWidgetBackground()
-                }
+#elseif os(iOS)
+                    if #unavailable(iOS 17.0) { AccessoryWidgetBackground() }
 #endif
+                }
             }
         }
         init(_ isPreviewInApp: Bool) {

@@ -24,7 +24,7 @@ enum 📝NoteProperty: CaseIterable {
     case accessory_hierarchical
     case accessory_multilineTextAlignment
     case accessory_italic
-    case accessoryCircular_backgroundForIOS16WatchOS9
+    case accessoryCircular_backgroundForIOS16AndWatchOS
     
     //MARK: Empty content
     case empty_type
