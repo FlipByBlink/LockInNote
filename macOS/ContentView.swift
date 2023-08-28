@@ -7,12 +7,12 @@ struct ContentView: View {
             📝NoteEditor()
                 .modifier(📋AddNoteToEnvironment())
         }
-        .frame(minWidth: 400, idealWidth: 400, minHeight: 180, idealHeight: 180)
+        .frame(minWidth: 380, idealWidth: 380, minHeight: 180, idealHeight: 180)
         .toolbarBackground(.clear, for: .automatic)
         .sheet(item: self.$app.sheet) {
             switch $0 {
-                case .onboarding: Text("Onboarding")
-                case .ad: Text("AD")
+                case .onboarding: Text("Onboarding") //TODO: 実装
+                case .ad: Text("AD") //TODO: 実装
             }
         }
         .modifier(🔲WindowEdgeFeedback())
