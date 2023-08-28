@@ -623,6 +623,9 @@
         }
       }
     },
+    "iCloud sync" : {
+
+    },
     "Info" : {
       "localizations" : {
         "ja" : {
@@ -1032,6 +1035,9 @@
         }
       }
     },
+    "Select \"LockInNote\"." : {
+
+    },
     "Select Lock Screen." : {
       "localizations" : {
         "ja" : {
@@ -1103,9 +1109,6 @@
       }
     },
     "Sync data between devices by iCloud." : {
-
-    },
-    "Sync devices" : {
 
     },
     "System widget" : {
@@ -1299,6 +1302,9 @@
         }
       }
     },
+    "Touch and hold the home screen until the + button appears, then tap + button." : {
+
+    },
     "Touch and hold the Lock Screen until the Customize button appears, then tap Customize." : {
       "localizations" : {
         "ja" : {
@@ -1378,6 +1384,9 @@
           }
         }
       }
+    },
+    "When you're finished, tap the Done button." : {
+
     },
     "Widget" : {
       "localizations" : {

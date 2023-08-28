@@ -13,14 +13,7 @@ struct 💁HowToGuideSection: View {
             } label: {
                 Label("How to add lock screen widget", systemImage: "questionmark")
             }
-            NavigationLink {
-                List {
-                    Text("Sync data between devices by iCloud.")
-                    Text("It takes few minutes to sync data to other device's widget on background.")
-                }
-            } label: {
-                Label("Sync devices", systemImage: "icloud")
-            }
+            💁ICloudSyncSection()
         } header: {
             Text("How to")
         }
@@ -36,13 +29,55 @@ struct 💁HowToHomeScreen: View {
         .navigationTitle("Lock screen widget")
     }
     private struct StepByStepSection: View {
+        private let steps: [Int: LocalizedStringKey] = [
+            1: "Touch and hold the home screen until the + button appears, then tap + button.",
+            2: #"Select "LockInNote"."#,
+            3: "Tap or drag the widgets that you want to add to the Lock Screen.",
+            4: "When you're finished, tap the Done button."
+        ]
         var body: some View {
-            Text(verbatim: "StepByStepSection")
+            Section {
+                ForEach(1 ... 4, id: \.self) { ⓘndex in
+                    HStack {
+                        Label {
+                            if let ⓣext = self.steps[ⓘndex] {
+                                Text(ⓣext)
+                            }
+                        } icon: {
+                            Text(verbatim: "\(ⓘndex).")
+                                .font(.system(.title3, design: .rounded, weight: .semibold))
+                        }
+                        Spacer()
+                        Image("WidgetGuide/HomeScreen/\(ⓘndex)")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 120)
+                            .padding(.vertical, 4)
+                    }
+                }
+            }
         }
     }
     private struct AppleSupportLinkSection: View {
         var body: some View {
-            Text(verbatim: "AppleSupportLinkSection")
+            Section {
+                VStack(alignment: .leading, spacing: 6) {
+                    Link(destination: URL(string: "https://support.apple.com/HT207122")!) {
+                        Label("How to add and edit widgets on your iPhone", systemImage: "link")
+                    }
+                    HStack {
+                        Spacer()
+                        Text(verbatim: "https://support.apple.com/HT207122")
+                            .font(.caption2.italic())
+                            .multilineTextAlignment(.center)
+                        Spacer()
+                    }
+                }
+                .padding(.vertical, 4)
+            } header: {
+                Text("Apple Support Page Link")
+            }
+            .headerProminence(.increased)
         }
     }
 }
@@ -119,6 +154,20 @@ struct 💁HowToLockScreen: View {
                 Text("Apple Support Page Link")
             }
             .headerProminence(.increased)
+        }
+    }
+}
+
+private struct 💁ICloudSyncSection: View {
+    var body: some View {
+        NavigationLink {
+            List {
+                Text("Sync data between devices by iCloud.")
+                Text("It takes few minutes to sync data to other device's widget on background.")
+            }
+            .navigationTitle("iCloud sync")
+        } label: {
+            Label("iCloud sync", systemImage: "icloud")
         }
     }
 }
