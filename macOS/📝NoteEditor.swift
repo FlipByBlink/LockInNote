@@ -31,8 +31,8 @@ struct 📝NoteEditor: View {
                 }
                 .help("Clear")
                 🔗URLSchemeActionButton(self.$note.text)
-                ShareLink(item: self.note.text)
-                    .help("Share note")
+                //ShareLink(item: self.note.text)
+                //    .help("Share note")
             }
     }
 }

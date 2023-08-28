@@ -118,14 +118,14 @@ enum 🄿laceholder: String, Codable, CaseIterable, Identifiable {
     case ellipsis, pencil
     case nothing = "(nothing)"
     var id: Self { self }
-    var icon: String {
-        switch self {
-            case .squareAndPencil: "square.and.pencil"
-            case .ellipsis: "ellipsis"
-            case .pencil: "pencil"
-            case .nothing: "questionmark.square.dashed"
-        }
-    }
+//    var icon: String {
+//        switch self {
+//            case .squareAndPencil: "square.and.pencil"
+//            case .ellipsis: "ellipsis"
+//            case .pencil: "pencil"
+//            case .nothing: "questionmark.square.dashed"
+//        }
+//    }
 }
 
 enum 🅆eight: String, Codable, CaseIterable, Identifiable {
@@ -182,11 +182,11 @@ enum 🄼ultilineTextAlignment: String, Codable, CaseIterable, Identifiable {
             case .trailing: .trailing
         }
     }
-    var icon: String {
-        switch self {
-            case .leading: "text.justify.leading"
-            case .center: "text.aligncenter"
-            case .trailing: "text.justify.trailing"
-        }
-    }
+//    var icon: String {
+//        switch self {
+//            case .leading: "text.justify.leading"
+//            case .center: "text.aligncenter"
+//            case .trailing: "text.justify.trailing"
+//        }
+//    }
 }
