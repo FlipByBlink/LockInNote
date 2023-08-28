@@ -109,13 +109,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NEW\n- Support home-screen widget\n- Support iPadOS\n- Support macOS\n- Support StandBy(iOS17)\n- Add \"Disable automatically keyboard option\"(iOS/iPadOS)\n- Add User-text-mode to placeholder option\n\nNOTICE\n- You can set a note to any widget now\n- Change Apple Watch's corner widget design\n\nELSE\n- Support Smart Stack(watchOS10)\n- Refactoring\n- Small improve/fix"
+            "value" : "NEW\n- Support home-screen widget\n- Support iPadOS\n- Support macOS\n- Support data sync by iCloud\n- Support StandBy(iOS 17)\n- Add \"Disable automatically keyboard option\"(iOS)\n- Add User-text-mode to placeholder option\n\nNOTICE\n- You can set a note to any widget now\n- Change Apple Watch's corner widget design\n\nELSE\n- Support Smart Stack(watchOS 10)\n- Refactoring\n- Several improve/fix"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "新規\n- ホーム画面ウィジェットをサポート\n- iPadOSをサポート\n- macOSをサポート\n- スタンバイモードをサポート(iOS17)\n- キーボード自動立ち上げ機能をオフにするオプションの追加(iOS/iPadOS)\n- 無入力時表示コンテンツのオプションに任意テキストを設定できる選択肢を追加\n\n注意\n- どのウィジェットに対しても自由に設定できるようになりました\n- Apple Watchのコーナーウィジェットのデザインを変更しました\n\nその他\n- watchOS 10のスマートスタックを対応しました\n- リファクタリング\n- 様々な改善/修正"
+            "value" : "新規\n- ホーム画面ウィジェットをサポート\n- iPadOSをサポート\n- macOSをサポート\n- iCloudによるデータ同期をサポート\n- スタンバイモードをサポート(iOS 17)\n- キーボード自動立ち上げ機能をオフにするオプションの追加(iOS)\n- 無入力時表示コンテンツのオプションに任意テキストを設定できる選択肢を追加\n\n注意\n- どのウィジェットに対しても自由に設定できるようになりました\n- Apple Watchのコーナーウィジェットのデザインを変更しました\n\nその他\n- watchOS 10のスマートスタックを対応しました\n- リファクタリング\n- 様々な改善/修正"
           }
         }
       }
