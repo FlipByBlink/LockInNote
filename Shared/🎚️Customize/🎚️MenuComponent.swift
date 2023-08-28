@@ -66,7 +66,7 @@ struct 🎚HierarchicalPicker: View {
                     .foregroundStyle($0.value)
             }
         } label: {
-            Label("Level", systemImage: "camera.filters")
+            Label("Hierarchical level", systemImage: "camera.filters")
         }
         //.pickerStyle(.navigationLink) MARK: iOS16 Crash
     }
@@ -114,7 +114,7 @@ struct 🎚️ContentAlignmentPicker: View {
         Picker(selection: self.$note.system_contentAlignment) {
             ForEach(🎚️ContentAlignment.allCases) { Text($0.label) }
         } label: {
-            Label("ContentAlignment", systemImage: "squareshape.split.3x3")
+            Label("Content alignment", systemImage: "squareshape.split.3x3")
         }
     }
 }
@@ -153,7 +153,7 @@ struct 🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         Toggle(isOn: self.$note.accessoryCircular_backgroundForIOS16WatchOS9) {
-            Label("Background on circular widget for iOS16 / watchOS9", systemImage: "largecircle.fill.circle")
+            Label("Background on circular widget for iOS 16 / watchOS 9", systemImage: "largecircle.fill.circle")
         }
     }
 }
@@ -166,7 +166,7 @@ struct 🎚️DoubleSizeOnLargeWidgetToggle: View {
             Label {
                 Text("Double in font-size/padding-size on large widget")
             } icon: {
-                Text("×2")
+                Text(verbatim: "×2")
             }
         }
     }

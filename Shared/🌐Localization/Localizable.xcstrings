@@ -171,12 +171,12 @@
         }
       }
     },
-    "Background on circular widget for iOS16 / watchOS9" : {
+    "Background on circular widget for iOS 16 / watchOS 9" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "円形ウィジェットの背景を表示(iOS16/watchOS9のみ)"
+            "value" : "円形ウィジェットの背景を表示(iOS 16/watchOS 9)"
           }
         }
       }
@@ -291,7 +291,7 @@
         }
       }
     },
-    "ContentAlignment" : {
+    "Content alignment" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -456,7 +456,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "特大サイズのウィジェットで、フォントとパッディングのサイズを2倍にする"
+            "value" : "特大サイズのウィジェットで、フォントとパディングのサイズを2倍にする"
           }
         }
       }
@@ -571,6 +571,16 @@
         }
       }
     },
+    "Hierarchical level" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文字の濃さ"
+          }
+        }
+      }
+    },
     "Home screen, Notification center, StandBy, Desktop, Lock screen(iPad)" : {
       "localizations" : {
         "ja" : {
@@ -647,16 +657,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "先頭"
-          }
-        }
-      }
-    },
-    "Level" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "濃淡"
           }
         }
       }
