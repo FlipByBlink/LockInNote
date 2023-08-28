@@ -1,19 +1,14 @@
 import SwiftUI
 
-struct ℹ️AboutAppLink: View {
+struct ℹ️AboutAppMenu: View {
     var body: some View {
-        NavigationLink {
-            List {
-                🖼️IconAndName()
-                🏬AppStoreLink()
-                👤PrivacyPolicyLink()
-                📓SourceCodeLink()
-            }
-            .navigationTitle(Text("About App", tableName: "🌐AboutApp"))
-        } label: {
-            Label(String(localized: "About App", table: "🌐AboutApp"),
-                  systemImage: "questionmark")
+        List {
+            🖼️IconAndName()
+            🏬AppStoreLink()
+            👤PrivacyPolicyLink()
+            📓SourceCodeLink()
         }
+        .navigationTitle(Text("About App", tableName: "🌐AboutApp"))
     }
 }
 

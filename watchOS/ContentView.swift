@@ -9,9 +9,9 @@ struct ContentView: View {
                     📝NoteTab()
                         .modifier(📋AddNoteToEnvironment($0))
                 }
-                ℹ️InfoTab()
+                ℹ️AboutAppMenu()
+                    .tag(🔖Tab.info)
             }
-            .navigationTitle(self.app.navigationTitle)
         }
         .sheet(item: self.$app.sheet) {
             switch $0 {

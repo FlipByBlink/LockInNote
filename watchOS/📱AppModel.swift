@@ -37,18 +37,6 @@ extension 📱AppModel {
     enum HandleError: Error {
         case notTarget, customizing, urlDecodeFailed
     }
-    var navigationTitle: String {
-        switch self.tab {
-            case .note(let ⓝoteFamily):
-                switch ⓝoteFamily {
-                    case .primary: self.primaryNote.title
-                    case .secondary: self.secondaryNote.title
-                    case .tertiary: self.tertiaryNote.title
-                }
-            case .info:
-                "Info"
-        }
-    }
 }
 
 
