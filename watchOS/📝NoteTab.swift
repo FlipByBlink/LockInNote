@@ -12,7 +12,6 @@ struct 📝NoteTab: View {
             HStack {
                 Button(role: .destructive) {
                     self.note.text.removeAll()
-                    //self.📱.widgetsModel.sendWCMessageWithNewText()
                     WKInterfaceDevice.current().play(.success)
                 } label: {
                     Label("Clear note", systemImage: "trash")

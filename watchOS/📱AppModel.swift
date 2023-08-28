@@ -7,7 +7,6 @@ class 📱AppModel: NSObject, ObservableObject, WKApplicationDelegate {
     let primaryNote: 📝NoteModel = .init(.primary)
     let secondaryNote: 📝NoteModel = .init(.secondary)
     let tertiaryNote: 📝NoteModel = .init(.tertiary)
-//    private var ⓣasks: Set<WKRefreshBackgroundTask> = [] //TODO: Work in progress
 }
 
 extension 📱AppModel {
@@ -46,8 +45,8 @@ extension 📱AppModel {
                     case .secondary: self.secondaryNote.title
                     case .tertiary: self.tertiaryNote.title
                 }
-            case .menu:
-                "Menu"
+            case .info:
+                "Info"
         }
     }
 }
@@ -55,8 +54,15 @@ extension 📱AppModel {
 
 
 
-//import WatchConnectivity //TODO: Work in progress
+//TODO: Work in progress
+//import WatchConnectivity
 //import WidgetKit
+//
+//class 📱AppModel: NSObject, ObservableObject, WKApplicationDelegate {
+//    ========
+//    private var ⓣasks: Set<WKRefreshBackgroundTask> = []
+//    ========
+//}
 //
 //extension 📱AppModel: WKApplicationDelegate {
 //    func applicationDidFinishLaunching() {

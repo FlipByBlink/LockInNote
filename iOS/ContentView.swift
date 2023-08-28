@@ -24,6 +24,5 @@ struct ContentView: View {
         }
         .modifier(🪧WidgetReload())
         .modifier(💬RequestUserReview())
-        //.modifier(PushToAppleWatch())
     }
 }

@@ -9,7 +9,7 @@ struct ContentView: View {
                     📝NoteTab()
                         .modifier(📋AddNoteToEnvironment($0))
                 }
-                🛠️OptionTab()
+                ℹ️InfoTab()
             }
             .navigationTitle(self.app.navigationTitle)
         }
@@ -23,6 +23,5 @@ struct ContentView: View {
             }
         }
         .modifier(🪧WidgetReload())
-        //.modifier(PushToIPhone())
     }
 }

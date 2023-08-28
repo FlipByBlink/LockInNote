@@ -32,7 +32,8 @@ extension 📱AppModel {
 
 
 
-//import WatchConnectivity //TODO: Work in progress
+//TODO: Work in progress
+//import WatchConnectivity
 //import WidgetKit
 //
 //extension 📱AppModel: UIApplicationDelegate {
