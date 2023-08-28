@@ -7,7 +7,7 @@ struct ContentView: View {
             📝NoteEditor()
                 .modifier(📋AddNoteToEnvironment())
         }
-        .frame(minWidth: 380, idealWidth: 380, minHeight: 180, idealHeight: 180)
+        .frame(minWidth: 390, idealWidth: 390, minHeight: 180, idealHeight: 180)
         .toolbarBackground(.clear, for: .automatic)
         .sheet(item: self.$app.sheet) {
             switch $0 {

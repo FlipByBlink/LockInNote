@@ -141,33 +141,46 @@ extension 🗒️StaticInfo {
     static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-01")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Model, Scene, View, Widget, URLSchemeAction, Commands, Rest
+        case main, Widget, WidgetView, Customize, URLSchemeAction, Commands, Migration, Rest
         var id: Self { self }
         var fileNames: [String] {
             switch self {
-                case .main: ["App.swift"]
-                case .Model: ["📱AppModel.swift",
-                              "📝NoteFamily.swift",
-                              "📝NoteProperty.swift",
-                              "📝NoteModel.swift",
-                              "💾ICloud.swift",
-                              "🎚️CustomizeModel.swift",
-                              "💬Sheet.swift"]
-                case .Scene: ["📝NoteWindow.swift"]
-                case .View: ["ContentView.swift",
+                case .main: ["App.swift",
+                             "📱AppModel.swift",
+                             "📝NoteWindow.swift",
+                             "ContentView.swift",
                              "📝NoteEditor.swift",
-                             "🎚️CustomizeMenu.swift",
-                             "🎚️CustomizeMenuComponent.swift"]
-                case .Widget: ["Widget.swift",
-                               "WidgetBundle.swift",
-                               "🪧WidgetView.swift"]
+                             "📝NoteFamily.swift",
+                             "📝NoteProperty.swift",
+                             "📝NoteModel.swift",
+                             "💾ICloud.swift",
+                             "💬Sheet.swift",
+                             "📖OpenNoteFromWidget.swift"]
+                case .Widget: ["WidgetBundle.swift",
+                               "Widget.swift"]
+                case .WidgetView: ["🪧EntryView.swift",
+                                   "🪧SystemFamilyView.swift",
+                                   "🪧EmptyIconView.swift",
+                                   "🪧PlaceholderView.swift",
+                                   "🪧ContainerBackground.swift",
+                                   "🪧SnapshotTitle.swift"]
+                case .Customize: ["🎚️Model.swift",
+                                  "🎚️CustomizeMenu.swift",
+                                  "🎚️MenuComponent.swift",
+                                  "🎚️SaveValues.swift",
+                                  "🎚️PreviewInApp.swift"]
                 case .URLSchemeAction: ["🔗Model.swift",
                                         "🔗Button.swift",
                                         "🔗Command.swift",
                                         "🔗Menu.swift",
                                         "🔗MenuComponent.swift"]
                 case .Commands: ["🪄Commands.swift"]
+                case .Migration: ["🗄️FromVer_1_1.swift",
+                                  "♻️BaseModelVer_1_1.swift",
+                                  "💾ICloudVer_1_1.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
+                             "📋AddNoteToEnvironment.swift",
+                             "🔲WindowEdgeFeedback.swift",
                              "ℹ️HelpWindows.swift",
                              "📣ADModel.swift",
                              "📣ADContent.swift",

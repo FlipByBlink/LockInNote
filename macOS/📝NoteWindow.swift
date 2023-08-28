@@ -6,7 +6,7 @@ struct 📝NoteWindow: Scene {
         Window("Note", id: "note") {
             ContentView()
         }
-        .defaultSize(width: 380, height: 180)
+        .defaultSize(width: 390, height: 180)
         .commands { 🪄Commands(self.app) }
     }
     init(_ app: 📱AppModel) {
