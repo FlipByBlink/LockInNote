@@ -36,13 +36,13 @@ enum 🪧ViewSituation {
 struct 🪧SystemFamilyView: View {
     @EnvironmentObject var note: 📝NoteModel
     @Environment(\.widgetFamily) var widgetFamily
-    var isPreview: Bool = false
+    private var isPreviewInApp: Bool
     var body: some View {
         ZStack(alignment: self.note.system_contentAlignment.value) {
             Self.Background()
             Group {
                 if self.note.text.isEmpty {
-                    if self.isPreview {
+                    if self.isPreviewInApp {
                         🪧PreviewText()
                     } else {
                         🪧EmptyIconView()
@@ -59,7 +59,10 @@ struct 🪧SystemFamilyView: View {
             .multilineTextAlignment(self.note.system_multilineTextAlignment.value)
             .padding(CGFloat(self.note.system_padding * self.scale))
         }
-        .modifier(Self.Animation(self.isPreview))
+        .modifier(Self.Animation(self.isPreviewInApp))
+    }
+    init(isPreview: Bool = false) {
+        self.isPreviewInApp = isPreview
     }
     private var scale: Int {
         switch self.widgetFamily {
@@ -134,7 +137,7 @@ struct 🪧SystemFamilyView: View {
     }
     private struct Animation: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
-        var isPreview: Bool
+        var isPreviewInApp: Bool
         func body(content: Content) -> some View {
             content
                 .animation(.default, value: self.note.system_fontSize)
@@ -149,20 +152,20 @@ struct 🪧SystemFamilyView: View {
                 .animation(.default, value: self.note.system_backgroundColor)
                 .animation(.default, value: self.note.system_backgroundGradient)
         }
-        init(_ isPreview: Bool) {
-            self.isPreview = isPreview
+        init(_ isPreviewInApp: Bool) {
+            self.isPreviewInApp = isPreviewInApp
         }
     }
 }
 
 struct 🪧AccessoryFamilyView: View {
     @EnvironmentObject var note: 📝NoteModel
-    var isPreview: Bool = false
+    private var isPreviewInApp: Bool = false
     var body: some View {
         ZStack {
-            Self.Background(self.isPreview)
+            Self.Background(self.isPreviewInApp)
             if self.note.text.isEmpty {
-                if self.isPreview {
+                if self.isPreviewInApp {
                     🪧PreviewText()
                 } else {
                     🪧EmptyIconView()
@@ -177,13 +180,16 @@ struct 🪧AccessoryFamilyView: View {
         .italic(self.note.accessory_italic)
         .multilineTextAlignment(self.note.accessory_multilineTextAlignment.value)
         .widgetAccentable()
-        .modifier(Self.ForegroundStyle(self.isPreview))
-        .modifier(Self.Animation(self.isPreview))
+        .modifier(Self.ForegroundStyle(self.isPreviewInApp))
+        .modifier(Self.Animation(self.isPreviewInApp))
+    }
+    init(isPreview: Bool = false) {
+        self.isPreviewInApp = isPreview
     }
     private struct Background: View {
         @EnvironmentObject var note: 📝NoteModel
         @Environment(\.widgetFamily) var widgetFamily
-        var isPreview: Bool
+        var isPreviewInApp: Bool
         var body: some View {
             ZStack {
                 Color.clear
@@ -191,19 +197,19 @@ struct 🪧AccessoryFamilyView: View {
                 if #unavailable(iOS 17.0, watchOS 10.0),
                    self.widgetFamily == .accessoryCircular,
                    self.note.accessoryCircular_backgroundForIOS16WatchOS9,
-                   !self.isPreview {
+                   !self.isPreviewInApp {
                     AccessoryWidgetBackground()
                 }
                 #endif
             }
         }
-        init(_ isPreview: Bool) {
-            self.isPreview = isPreview
+        init(_ isPreviewInApp: Bool) {
+            self.isPreviewInApp = isPreviewInApp
         }
     }
     private struct ForegroundStyle: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
-        var isPreview: Bool
+        private var isPreviewInApp: Bool
         @Environment(\.widgetRenderingMode) var widgetRenderingMode
         @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
         private var isSmartStackOnWatchOS10: Bool {
@@ -220,7 +226,7 @@ struct 🪧AccessoryFamilyView: View {
             #endif
         }
         func body(content: Content) -> some View {
-            if self.isPreview {
+            if self.isPreviewInApp {
                 content.foregroundStyle(self.note.accessory_hierarchical.value)
             } else {
                 if self.isSmartStackOnWatchOS10 {
@@ -230,13 +236,13 @@ struct 🪧AccessoryFamilyView: View {
                 }
             }
         }
-        init(_ isPreview: Bool) {
-            self.isPreview = isPreview
+        init(_ isPreviewInApp: Bool) {
+            self.isPreviewInApp = isPreviewInApp
         }
     }
     private struct Animation: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
-        var isPreview: Bool
+        private var isPreviewInApp: Bool
         func body(content: Content) -> some View {
             content
                 .animation(.default, value: self.note.accessory_fontSize)
@@ -246,8 +252,8 @@ struct 🪧AccessoryFamilyView: View {
                 .animation(.default, value: self.note.accessory_multilineTextAlignment)
                 .animation(.default, value: self.note.accessory_italic)
         }
-        init(_ isPreview: Bool) {
-            self.isPreview = isPreview
+        init(_ isPreviewInApp: Bool) {
+            self.isPreviewInApp = isPreviewInApp
         }
     }
 }

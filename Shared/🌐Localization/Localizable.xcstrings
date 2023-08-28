@@ -1052,16 +1052,6 @@
         }
       }
     },
-    "Share note" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ノートを共有"
-          }
-        }
-      }
-    },
     "Size" : {
       "localizations" : {
         "ja" : {
