@@ -13,6 +13,9 @@ struct 🎚️CustomizeMenu: View {
                     🎚MultilineTextAlignmentPicker(value: self.$note.accessory_multilineTextAlignment)
                     🎚ItalicToggle(value: self.$note.accessory_italic)
                     🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
+                    if #unavailable(watchOS 10.0) {
+                        🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9()
+                    }
                 }
                 🎚️EmptyContentMenuLink()
                 🎚️WidgetTitleEditLink()

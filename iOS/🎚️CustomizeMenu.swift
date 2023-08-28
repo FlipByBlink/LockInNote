@@ -90,13 +90,13 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                         🎚ItalicToggle(value: self.$note.accessory_italic)
                         🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
                     }
-//                    if #unavailable(iOS 17.0) {
+                    if #unavailable(iOS 17.0) {
                         DisclosureGroup {
                             🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9()
                         } label: {
                             Label("More", systemImage: "ellipsis")
                         }
-//                    }
+                    }
                 }
                 .navigationTitle("Accessory widget")
             } label: {
