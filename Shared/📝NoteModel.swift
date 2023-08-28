@@ -96,6 +96,9 @@ extension 📝NoteModel {
             print(error, error.localizedDescription); assertionFailure()
         }
     }
+}
+
+private extension 📝NoteModel {
     private func presetValues() {
         switch self.family {
             case .primary:
@@ -120,5 +123,10 @@ extension 📝NoteModel {
                 self.accessory_fontDesign = .serif
                 self.empty_type = .userText
         }
+    }
+    private func migrateFromVer_1_1() {
+        #if os(iOS) || (watchOS)
+        🗄️MigrationFromVer_1_1.execute()
+        #endif
     }
 }
