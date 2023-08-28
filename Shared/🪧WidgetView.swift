@@ -74,28 +74,37 @@ struct 🪧SystemFamilyView: View {
             switch self.note.system_appearanceMode {
                 case .standard:
                     if #available(iOS 17.0, watchOS 10.0, macOS 14.0, *) {
-                        Rectangle().fill(.background)
-                            .modifier(Self.ContainerBackgroundRemove())
+                        Rectangle()
+                            .fill(.background)
+                            .modifier(Self.ContainerBackgroundRemover())
                     } else {
-                        Rectangle().fill(.background)
+                        Rectangle()
+                            .fill(.background)
                     }
                 case .color:
                     switch self.widgetRenderingMode {
                         case .fullColor:
                             if self.note.system_backgroundGradient {
-                                Rectangle().fill(self.note.system_backgroundColor.gradient)
+                                Rectangle()
+                                    .fill(self.note.system_backgroundColor.gradient)
                             } else {
                                 self.note.system_backgroundColor
                             }
                         case .vibrant, .accented:
-                            Color.clear
+                            if #available(iOS 17.0, watchOS 10.0, macOS 14.0, *) {
+                                Rectangle()
+                                    .fill(.background)
+                                    .modifier(Self.ContainerBackgroundRemover())
+                            } else {
+                                Color.clear
+                            }
                         default:
                             Color.clear
                     }
             }
         }
         @available(iOS 17.0, watchOS 10.0, macOS 14.0, *)
-        private struct ContainerBackgroundRemove: ViewModifier {
+        private struct ContainerBackgroundRemover: ViewModifier {
             @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
             func body(content: Content) -> some View {
                 if self.showsWidgetContainerBackground {
@@ -151,7 +160,7 @@ struct 🪧AccessoryFamilyView: View {
     var isPreview: Bool = false
     var body: some View {
         ZStack {
-            Self.Background()
+            Self.Background(self.isPreview)
             if self.note.text.isEmpty {
                 if self.isPreview {
                     🪧PreviewText()
@@ -174,17 +183,22 @@ struct 🪧AccessoryFamilyView: View {
     private struct Background: View {
         @EnvironmentObject var note: 📝NoteModel
         @Environment(\.widgetFamily) var widgetFamily
+        var isPreview: Bool
         var body: some View {
             ZStack {
                 Color.clear
                 #if os(iOS) || os(watchOS)
                 if #unavailable(iOS 17.0, watchOS 10.0),
                    self.widgetFamily == .accessoryCircular,
-                   self.note.accessoryCircular_backgroundForIOS16WatchOS9 {
+                   self.note.accessoryCircular_backgroundForIOS16WatchOS9,
+                   !self.isPreview {
                     AccessoryWidgetBackground()
                 }
                 #endif
             }
+        }
+        init(_ isPreview: Bool) {
+            self.isPreview = isPreview
         }
     }
     private struct ForegroundStyle: ViewModifier {
@@ -287,13 +301,15 @@ struct 🪧EmptyIconView: View {
 
 struct 🪧PlaceholderView : View {
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(verbatim: "AAAAAAAAAAAA")
-            Text(verbatim: "AAAAAAAA")
-            Text(verbatim: "AAAAAAAAAA")
+            Text(verbatim: "AAAAAAAAAAAA")
+            Text(verbatim: "AAAAAAAAAAAA")
+            Text(verbatim: "AAAAAAA")
         }
         .font(.title3)
         .redacted(reason: .placeholder)
+        .minimumScaleFactor(0.6)
         .modifier(🪧ContainerBackground())
     }
 }
