@@ -87,7 +87,6 @@
 		F51E3A252A8CB06500F32F4F /* 🔗Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B52A8CAA4700F32F4F /* 🔗Model.swift */; };
 		F51E3A2C2A8CB22500F32F4F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F51E3A2D2A8CB22500F32F4F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
-		F51E3A342A8CB22900F32F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51E3A332A8CB22900F32F4F /* Assets.xcassets */; };
 		F51E3A392A8CB22900F32F4F /* LockInNote.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F51E3A2B2A8CB22500F32F4F /* LockInNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F51E3A3E2A8CB28900F32F4F /* 📝NoteFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */; };
 		F51E3A3F2A8CB28900F32F4F /* 📝NoteProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
@@ -274,13 +273,13 @@
 		F538587C2A9C93B600A0D72D /* 🔲WindowEdgeFeedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F9D65A2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift */; };
 		F538587D2A9C93B600A0D72D /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
+		F55058232A9CCACF00D912F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */; };
 		F554BABD2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */; };
 		F554BABE2A98501A00CEAE68 /* 🛒InAppPurchaseWindow.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */; };
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F556950B28CCAB70004558FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
-		F556951028CCAB72004558FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F556950F28CCAB72004558FC /* Assets.xcassets */; };
 		F556951428CCAB72004558FC /* Widget for iOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* Widget for iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F556953C28CCAFC3004558FC /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F556953628CCAFC3004558FC /* Configuration.storekit */; };
 		F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556953828CCAFC3004558FC /* Launch Screen.storyboard */; };
@@ -288,7 +287,6 @@
 		F566A90729CEDA2100ACCC63 /* LockInNote.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F566A8F929CEDA1200ACCC63 /* LockInNote.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F566A91029CEDA2F00ACCC63 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F566A91129CEDA2F00ACCC63 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
-		F566A91629CEDA3000ACCC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F566A91529CEDA3000ACCC63 /* Assets.xcassets */; };
 		F566A91A29CEDA3000ACCC63 /* Widget for watchOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F569516F2A98697D00B36339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51E3A082A8CAFB800F32F4F /* Assets.xcassets */; };
 		F56951702A986B8900B36339 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BDC2A72406F008659F9 /* Localizable.xcstrings */; };
@@ -602,7 +600,6 @@
 		F51E3A082A8CAFB800F32F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F51E3A2B2A8CB22500F32F4F /* LockInNote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LockInNote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		F51E3A332A8CB22900F32F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F51E3A352A8CB22900F32F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51E3A362A8CB22900F32F4F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ℹ️AboutApp.swift"; sourceTree = "<group>"; };
@@ -632,7 +629,6 @@
 		F556950728CCAB70004558FC /* Widget for iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F556950828CCAB70004558FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F556950A28CCAB70004558FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		F556950F28CCAB72004558FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F556951128CCAB72004558FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F556951928CCAC33004558FC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F556951D28CCAE21004558FC /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
@@ -646,7 +642,6 @@
 		F566A8F929CEDA1200ACCC63 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for watchOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F566A91529CEDA3000ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F566A91729CEDA3000ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F566A92329CEDE4300ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56951762A986C7600B36339 /* 🌐AboutApp.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AboutApp.xcstrings"; sourceTree = "<group>"; };
@@ -782,7 +777,6 @@
 		F51E39AA2A8CAA4700F32F4F /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
-				F566A91529CEDA3000ACCC63 /* Assets.xcassets */,
 				F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */,
 				F566A91729CEDA3000ACCC63 /* Info.plist */,
 				F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */,
@@ -793,7 +787,6 @@
 		F51E39AC2A8CAA4700F32F4F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F556950F28CCAB72004558FC /* Assets.xcassets */,
 				F556951D28CCAE21004558FC /* iOS.entitlements */,
 				F556951128CCAB72004558FC /* Info.plist */,
 				F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */,
@@ -856,7 +849,6 @@
 		F51E3A2E2A8CB22500F32F4F /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				F51E3A332A8CB22900F32F4F /* Assets.xcassets */,
 				F51E3A362A8CB22900F32F4F /* macOS.entitlements */,
 				F51E3A352A8CB22900F32F4F /* Info.plist */,
 				F56B33892A98A90D004510DE /* InfoPlist.xcstrings */,
@@ -1255,7 +1247,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F569516F2A98697D00B36339 /* Assets.xcassets in Resources */,
-				F51E3A342A8CB22900F32F4F /* Assets.xcassets in Resources */,
 				F56B338A2A98A90D004510DE /* InfoPlist.xcstrings in Resources */,
 				F56951712A986B8A00B36339 /* Localizable.xcstrings in Resources */,
 			);
@@ -1284,7 +1275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58F3BE42A7248D0008659F9 /* InfoPlist.xcstrings in Resources */,
-				F556951028CCAB72004558FC /* Assets.xcassets in Resources */,
+				F55058232A9CCACF00D912F2 /* Assets.xcassets in Resources */,
 				F58F3BDE2A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1305,7 +1296,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */,
-				F566A91629CEDA3000ACCC63 /* Assets.xcassets in Resources */,
 				F58F3BE02A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
