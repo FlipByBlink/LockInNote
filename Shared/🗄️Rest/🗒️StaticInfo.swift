@@ -38,7 +38,7 @@ extension 🗒️StaticInfo {
                                                                   ("1.0", "2022-09-13")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Widget, URLSchemeAction, Rest
+        case main, Widget, WidgetView, Customize, URLSchemeAction, Migration, Rest
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -50,21 +50,35 @@ extension 🗒️StaticInfo {
                              "📝NoteModel.swift",
                              "📝NoteFamily.swift",
                              "💾ICloud.swift",
-                             "🎚️CustomizeModel.swift",
-                             "🎚️CustomizeMenu.swift",
-                             "🎚️CustomizeMenuComponent.swift",
                              "👆Buttons.swift",
                              "💬Sheet.swift",
                              "🔖Tab.swift",
                              "🛠️OptionTab.swift"]
-                case .Widget: ["Widget.swift",
-                               "WidgetBundle.swift",
-                               "🪧WidgetView.swift"]
+                case .Widget: ["WidgetBundle.swift",
+                               "Widget.swift"]
+                case .WidgetView: ["🪧EntryView.swift",
+                                   "🪧SystemFamilyView.swift",
+                                   "🪧AccessoryFamilyView.swift",
+                                   "🪧AccessoryCornerView.swift",
+                                   "🪧EmptyIconView.swift",
+                                   "🪧PlaceholderView.swift",
+                                   "🪧ContainerBackground.swift",
+                                   "🪧SnapshotTitle.swift",
+                                   "🪧WidgetReload.swift"]
+                case .Customize: ["🎚️Model.swift",
+                                  "🎚️CustomizeMenu.swift",
+                                  "🎚️MenuComponent.swift",
+                                  "🎚️SaveValues.swift",
+                                  "🎚️PreviewInApp.swift"]
                 case .URLSchemeAction: ["🔗Model.swift",
                                         "🔗MenuComponent.swift",
                                         "🔗Button.swift",
                                         "🔗URLSchemeActionMenu.swift"]
+                case .Migration: ["🗄️FromVer_1_1.swift",
+                                  "♻️BaseModelVer_1_1.swift",
+                                  "💾ICloudVer_1_1.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
+                             "📋AddNoteToEnvironment.swift",
                              "ℹ️InfoTab.swift",
                              "💁WidgetGuideTab.swift",
                              "💬RequestUserReview.swift",
