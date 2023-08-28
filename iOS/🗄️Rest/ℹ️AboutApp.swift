@@ -13,7 +13,7 @@ struct ℹ️AboutAppContent: View {
 
 struct ℹ️IconAndName: View {
     var body: some View {
-        GeometryReader { 📐 in
+        VStack(spacing: 0) {
             VStack(spacing: 8) {
                 Image(.roundedIcon)
                     .resizable()
@@ -29,12 +29,14 @@ struct ℹ️IconAndName: View {
                         .foregroundStyle(.secondary)
                 }
                 .lineLimit(1)
-                .minimumScaleFactor(0.1)
+                .minimumScaleFactor(0.6)
             }
-            .padding(20)
-            .frame(width: 📐.size.width)
+            .padding(32)
+            Divider()
+                .padding(.leading)
         }
-        .frame(height: 200)
+        .listRowSeparator(.hidden)
+        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }
 
