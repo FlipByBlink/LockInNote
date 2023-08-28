@@ -95,7 +95,7 @@ extension 🗒️StaticInfo {
 #elseif os(watchOS)
 extension 🗒️StaticInfo {
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Complication, Rest
+        case main, Complication, WidgetView, Customize, Migration, Rest
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -107,16 +107,29 @@ extension 🗒️StaticInfo {
                              "📝NoteProperty.swift",
                              "📝NoteModel.swift",
                              "💾ICloud.swift",
-                             "🎚️CustomizeModel.swift",
-                             "🎚️CustomizeMenu.swift",
-                             "🎚️CustomizeMenuComponent.swift",
+                             "📖NoteDetailView.swift",
                              "💬Sheet.swift",
-                             "🔖Tab.swift",
-                             "🛠️OptionTab.swift"]
-                case .Complication: ["Widget.swift",
-                                     "WidgetBundle.swift",
-                                     "🪧WidgetView.swift"]
+                             "🔖Tab.swift"]
+                case .Complication: ["WidgetBundle.swift",
+                                     "Widget.swift"]
+                case .WidgetView: ["🪧EntryView.swift",
+                                   "🪧AccessoryFamilyView.swift",
+                                   "🪧AccessoryCornerView.swift",
+                                   "🪧EmptyIconView.swift",
+                                   "🪧PlaceholderView.swift",
+                                   "🪧ContainerBackground.swift",
+                                   "🪧SnapshotTitle.swift",
+                                   "🪧WidgetReload.swift"]
+                case .Customize: ["🎚️Model.swift",
+                                  "🎚️CustomizeMenu.swift",
+                                  "🎚️MenuComponent.swift",
+                                  "🎚️SaveValues.swift",
+                                  "🎚️PreviewInApp.swift"]
+                case .Migration: ["🗄️FromVer_1_1.swift",
+                                  "♻️BaseModelVer_1_1.swift",
+                                  "💾ICloudVer_1_1.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
+                             "📋AddNoteToEnvironment.swift",
                              "ℹ️AboutApp.swift"]
             }
         }

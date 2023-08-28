@@ -196,8 +196,6 @@
 		F538581F2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538581D2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift */; };
 		F53858202A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538581D2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift */; };
 		F53858212A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538581D2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift */; };
-		F53858222A9C77F300A0D72D /* 🪧SystemFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858182A9C76DC00A0D72D /* 🪧SystemFamilyView.swift */; };
-		F53858232A9C77F400A0D72D /* 🪧SystemFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858182A9C76DC00A0D72D /* 🪧SystemFamilyView.swift */; };
 		F53858242A9C781200A0D72D /* 🪧AccessoryFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538581D2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift */; };
 		F53858252A9C781300A0D72D /* 🪧AccessoryFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538581D2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift */; };
 		F53858282A9C783E00A0D72D /* 🪧EmptyIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858272A9C783E00A0D72D /* 🪧EmptyIconView.swift */; };
@@ -247,6 +245,23 @@
 		F538585C2A9C8FC700A0D72D /* ♻️BaseModelVer_1_1.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
 		F538585D2A9C8FC700A0D72D /* 💾ICloudVer_1_1.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
 		F538585E2A9C902900A0D72D /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
+		F538585F2A9C919600A0D72D /* 🪧SystemFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858182A9C76DC00A0D72D /* 🪧SystemFamilyView.swift */; };
+		F53858602A9C919700A0D72D /* 🪧SystemFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858182A9C76DC00A0D72D /* 🪧SystemFamilyView.swift */; };
+		F53858612A9C91B300A0D72D /* 🪧AccessoryFamilyView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F538581D2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift */; };
+		F53858622A9C91B300A0D72D /* 🪧AccessoryCornerView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F538582E2A9C788A00A0D72D /* 🪧AccessoryCornerView.swift */; };
+		F53858632A9C91B300A0D72D /* 🪧EmptyIconView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53858272A9C783E00A0D72D /* 🪧EmptyIconView.swift */; };
+		F53858642A9C91B300A0D72D /* 🪧PlaceholderView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53858312A9C78CD00A0D72D /* 🪧PlaceholderView.swift */; };
+		F53858652A9C91B300A0D72D /* 🪧ContainerBackground.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F538583F2A9C797100A0D72D /* 🪧ContainerBackground.swift */; };
+		F53858662A9C91B300A0D72D /* 🪧SnapshotTitle.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53858382A9C78FD00A0D72D /* 🪧SnapshotTitle.swift */; };
+		F53858672A9C91B300A0D72D /* 🪧WidgetReload.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5EF8DA92A9C56EE00650FAF /* 🪧WidgetReload.swift */; };
+		F53858682A9C91D400A0D72D /* 🎚️SaveValues.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */; };
+		F53858692A9C91D400A0D72D /* 🎚️PreviewInApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */; };
+		F538586A2A9C91D400A0D72D /* 🗄️FromVer_1_1.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
+		F538586B2A9C91D400A0D72D /* ♻️BaseModelVer_1_1.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
+		F538586C2A9C91D400A0D72D /* 💾ICloudVer_1_1.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
+		F538586D2A9C91D400A0D72D /* 📖NoteDetailView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */; };
+		F538586E2A9C91D400A0D72D /* Widget.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AD2A8CAA4700F32F4F /* Widget.swift */; };
+		F538586F2A9C91E700A0D72D /* 📋AddNoteToEnvironment.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */; };
 		F554BABD2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */; };
@@ -359,6 +374,21 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F538586F2A9C91E700A0D72D /* 📋AddNoteToEnvironment.swift in CopyFiles */,
+				F53858682A9C91D400A0D72D /* 🎚️SaveValues.swift in CopyFiles */,
+				F53858692A9C91D400A0D72D /* 🎚️PreviewInApp.swift in CopyFiles */,
+				F538586A2A9C91D400A0D72D /* 🗄️FromVer_1_1.swift in CopyFiles */,
+				F538586B2A9C91D400A0D72D /* ♻️BaseModelVer_1_1.swift in CopyFiles */,
+				F538586C2A9C91D400A0D72D /* 💾ICloudVer_1_1.swift in CopyFiles */,
+				F538586D2A9C91D400A0D72D /* 📖NoteDetailView.swift in CopyFiles */,
+				F538586E2A9C91D400A0D72D /* Widget.swift in CopyFiles */,
+				F53858612A9C91B300A0D72D /* 🪧AccessoryFamilyView.swift in CopyFiles */,
+				F53858622A9C91B300A0D72D /* 🪧AccessoryCornerView.swift in CopyFiles */,
+				F53858632A9C91B300A0D72D /* 🪧EmptyIconView.swift in CopyFiles */,
+				F53858642A9C91B300A0D72D /* 🪧PlaceholderView.swift in CopyFiles */,
+				F53858652A9C91B300A0D72D /* 🪧ContainerBackground.swift in CopyFiles */,
+				F53858662A9C91B300A0D72D /* 🪧SnapshotTitle.swift in CopyFiles */,
+				F53858672A9C91B300A0D72D /* 🪧WidgetReload.swift in CopyFiles */,
 				F51E3A892A8CEA7000F32F4F /* WidgetBundle.swift in CopyFiles */,
 				F51E3A882A8CEA2100F32F4F /* 🎚️MenuComponent.swift in CopyFiles */,
 				F51E3A7F2A8CEA0C00F32F4F /* App.swift in CopyFiles */,
@@ -1495,7 +1525,6 @@
 				F51E39F42A8CAAA000F32F4F /* 📱AppModel.swift in Sources */,
 				F50310D72A9C18E10077EE5E /* 🗄️FromVer_1_1.swift in Sources */,
 				F51E39DE2A8CAA9100F32F4F /* 📝NoteProperty.swift in Sources */,
-				F53858222A9C77F300A0D72D /* 🪧SystemFamilyView.swift in Sources */,
 				F5EF8DA72A9C403E00650FAF /* 💾ICloudVer_1_1.swift in Sources */,
 				F51E39F32A8CAAA000F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
 				F51E39EE2A8CAAA000F32F4F /* ContentView.swift in Sources */,
@@ -1517,6 +1546,7 @@
 				F51E3A572A8CD7D800F32F4F /* 🗒️StaticInfo.swift in Sources */,
 				F51E39F22A8CAAA000F32F4F /* 📝NoteTab.swift in Sources */,
 				F538581F2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift in Sources */,
+				F538585F2A9C919600A0D72D /* 🪧SystemFamilyView.swift in Sources */,
 				F51E39D62A8CAA8A00F32F4F /* 💾ICloud.swift in Sources */,
 				F538584E2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */,
 				F51E39D22A8CAA8300F32F4F /* 🎚️Model.swift in Sources */,
@@ -1536,11 +1566,11 @@
 				F53858362A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
 				F538583D2A9C78FD00A0D72D /* 🪧SnapshotTitle.swift in Sources */,
 				F51E39E02A8CAA9100F32F4F /* 📝NoteModel.swift in Sources */,
-				F53858232A9C77F400A0D72D /* 🪧SystemFamilyView.swift in Sources */,
 				F51E39E22A8CAA9100F32F4F /* 📝NoteProperty.swift in Sources */,
 				F5EF8DA82A9C403F00650FAF /* 💾ICloudVer_1_1.swift in Sources */,
 				F51E39E12A8CAA9100F32F4F /* 🪧EntryView.swift in Sources */,
 				F51E39FD2A8CAAB700F32F4F /* Widget.swift in Sources */,
+				F53858602A9C919700A0D72D /* 🪧SystemFamilyView.swift in Sources */,
 				F51E39D72A8CAA8B00F32F4F /* 💾ICloud.swift in Sources */,
 				F53858302A9C788A00A0D72D /* 🪧AccessoryCornerView.swift in Sources */,
 				F51E39FC2A8CAAB700F32F4F /* WidgetBundle.swift in Sources */,
