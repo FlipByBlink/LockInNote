@@ -3,9 +3,9 @@ import SwiftUI
 //import WidgetKit
 
 struct 🎛WidgetsModel: Codable, Equatable {
-    var rectangular: 🎛RectangularWidgetModel = .load() ?? .default
-    var circular: 🎛CircularWidgetModel = .load() ?? .default
-    var inline: 🎛InlineWidgetModel = .load() ?? .default
+    var rectangular: 🎛RectangularWidgetModel //= .load() ?? .default
+    var circular: 🎛CircularWidgetModel //= .load() ?? .default
+    var inline: 🎛InlineWidgetModel //= .load() ?? .default
 }
 
 extension 🎛WidgetsModel {
@@ -72,9 +72,9 @@ struct 🎛RectangularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
     
-    static var `default`: Self { Self() }
-    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Rectangular) }
-    func save() { 💾UserDefaultsVer_1_1.save(.Rectangular, self) }
+//    static var `default`: Self { Self() }
+//    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Rectangular) }
+//    func save() { 💾UserDefaultsVer_1_1.save(.Rectangular, self) }
 }
 
 struct 🎛CircularWidgetModel: Codable, Equatable, 🄵ontOptions {
@@ -89,18 +89,18 @@ struct 🎛CircularWidgetModel: Codable, Equatable, 🄵ontOptions {
     var level: 🄻evel = .primary
     var multilineTextAlignment: 🄼ultilineTextAlignment = .center
     
-    static var `default`: Self { Self() }
-    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Circular) }
-    func save() { 💾UserDefaultsVer_1_1.save(.Circular, self) }
+//    static var `default`: Self { Self() }
+//    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Circular) }
+//    func save() { 💾UserDefaultsVer_1_1.save(.Circular, self) }
 }
 
 struct 🎛InlineWidgetModel: Codable, Equatable {
     var text: String = ""
     var placeholder: 🄿laceholder = .squareAndPencil
     
-    static var `default`: Self { Self() }
-    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Inline) }
-    func save() { 💾UserDefaultsVer_1_1.save(.Inline, self) }
+//    static var `default`: Self { Self() }
+//    static func load() -> Self? { 💾UserDefaultsVer_1_1.load(.Inline) }
+//    func save() { 💾UserDefaultsVer_1_1.save(.Inline, self) }
 }
 
 protocol 🄵ontOptions {
