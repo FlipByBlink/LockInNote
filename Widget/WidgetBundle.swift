@@ -7,11 +7,6 @@ struct 🪧WidgetBundle: WidgetBundle {
         🪧SecondaryWidget()
         🪧TertiaryWidget()
     }
-    init() {
-        #if os(iOS) || os(watchOS)
-        🗄️MigrationFromVer_1_1.execute()
-        #endif
-    }
 }
 
 private struct 🪧PrimaryWidget: Widget {

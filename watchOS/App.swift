@@ -8,7 +8,4 @@ struct watchOSApp: App {
             ContentView()
         }
     }
-    init() {
-        🗄️MigrationFromVer_1_1.execute()
-    }
 }

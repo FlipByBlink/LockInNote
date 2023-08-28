@@ -13,10 +13,7 @@ enum 🗄️MigrationFromVer_1_1 {
 #if os(iOS) || os(watchOS)
 extension 🗄️MigrationFromVer_1_1 {
     static func execute() {
-        guard NSUbiquitousKeyValueStore.default.object(forKey: "ⓦidgetsModel") != nil else {
-            return
-        }
-        let ⓢources = 🎛WidgetsModel()
+        guard let ⓢources = 💾ICloudVer_1_1.load() else { return }
         📝NoteFamily.allCases.forEach {
             switch $0 {
                 case .primary:

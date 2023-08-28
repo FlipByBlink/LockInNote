@@ -37,6 +37,7 @@ class 📝NoteModel: ObservableObject {
         self.family = ⓝoteFamily
         self.title = self.family.loadTitle()
         self.presetValues()
+        self.migrateFromVer_1_1()
         📝NoteProperty.allCases.forEach { self.loadICloud($0) }
         if ⓞbserveChange {
             💾ICloud.addObserver(self, #selector(self.iCloudDidChangeExternally(_:)))

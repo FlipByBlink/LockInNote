@@ -10,12 +10,12 @@ enum 💾ICloudVer_1_1 {
             assertionFailure(); return nil
         }
     }
-    static func save(_ ⓜodel: 🎛WidgetsModel) {
-        do {
-            let ⓓata = try JSONEncoder().encode(ⓜodel)
-            Self.api.set(ⓓata, forKey: "ⓦidgetsModel")
-        } catch {
-            assertionFailure()
-        }
-    }
+//    static func save(_ ⓜodel: 🎛WidgetsModel) {
+//        do {
+//            let ⓓata = try JSONEncoder().encode(ⓜodel)
+//            Self.api.set(ⓓata, forKey: "ⓦidgetsModel")
+//        } catch {
+//            assertionFailure()
+//        }
+//    }
 }

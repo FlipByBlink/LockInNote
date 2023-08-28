@@ -10,7 +10,4 @@ struct iOSApp: App {
                 .environmentObject(self.iapModel)
         }
     }
-    init() {
-        🗄️MigrationFromVer_1_1.execute()
-    }
 }
