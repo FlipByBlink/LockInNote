@@ -77,7 +77,7 @@ extension 🗒️StaticInfo {
                 case .Rest: ["🗒️StaticInfo.swift",
                              "📋AddNoteToEnvironment.swift",
                              "ℹ️InfoTab.swift",
-                             "💁WidgetGuideTab.swift",
+                             "💁HowToGuide.swift",
                              "💬RequestUserReview.swift",
                              "ℹ️AboutApp.swift",
                              "📣ADModel.swift",

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 💁WidgetGuideMenuLink: View {
+struct 💁HowToGuideMenuLink: View {
     var body: some View {
         NavigationLink {
             List {
@@ -15,7 +15,7 @@ struct 💁WidgetGuideMenuLink: View {
     }
 }
 
-private extension 💁WidgetGuideMenuLink {
+private extension 💁HowToGuideMenuLink {
     private struct StepByStepSection: View {
         private let steps: [Int: LocalizedStringKey] = [
             1: "Touch and hold the Lock Screen until the Customize button appears, then tap Customize.",
