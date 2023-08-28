@@ -625,6 +625,8 @@
 		F54BE1C928CB480900532025 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F54BE1CB28CB480900532025 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F54BE1CD28CB480A00532025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F55058212A9CAF3300D912F2 /* ⌚️WatchConnectivity(iOS).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️WatchConnectivity(iOS).swift"; sourceTree = "<group>"; };
+		F55058222A9CAF8100D912F2 /* ⌚️WatchConnectivity(watchOS).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️WatchConnectivity(watchOS).swift"; sourceTree = "<group>"; };
 		F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖NoteDetailView.swift"; sourceTree = "<group>"; };
 		F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗URLSchemeAction.swift"; sourceTree = "<group>"; };
 		F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseWindow.swift"; sourceTree = "<group>"; };
@@ -1002,6 +1004,15 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		F55058202A9CAEEB00D912F2 /* 🚧Suspension */ = {
+			isa = PBXGroup;
+			children = (
+				F55058212A9CAF3300D912F2 /* ⌚️WatchConnectivity(iOS).swift */,
+				F55058222A9CAF8100D912F2 /* ⌚️WatchConnectivity(watchOS).swift */,
+			);
+			path = "🚧Suspension";
+			sourceTree = "<group>";
+		};
 		F5514EF829CDDA7900FCA7EA /* 🧩Sub */ = {
 			isa = PBXGroup;
 			children = (
@@ -1121,6 +1132,7 @@
 				F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */,
 				F51E39B32A8CAA4700F32F4F /* 🔗URLSchemeAction */,
 				F5F9D66B2A9AC0D3008CD67F /* 🗄️Migration */,
+				F55058202A9CAEEB00D912F2 /* 🚧Suspension */,
 				F556953628CCAFC3004558FC /* Configuration.storekit */,
 			);
 			path = "🗄️Rest";
