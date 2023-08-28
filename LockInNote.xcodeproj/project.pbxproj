@@ -15,19 +15,19 @@
 		F50310D92A9C18E20077EE5E /* 🗄️FromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
 		F50310DA2A9C18E30077EE5E /* 🗄️FromVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9D6642A9A27F8008CD67F /* 🗄️FromVer_1_1.swift */; };
 		F51E39C72A8CAA7100F32F4F /* 📝NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
-		F51E39C82A8CAA7100F32F4F /* 🎚️CustomizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
+		F51E39C82A8CAA7100F32F4F /* 🎚️Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
 		F51E39C92A8CAA7100F32F4F /* 🪧EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B92A8CAA4700F32F4F /* 🪧EntryView.swift */; };
 		F51E39CA2A8CAA7100F32F4F /* 📝NoteFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */; };
 		F51E39CB2A8CAA7100F32F4F /* 📝NoteProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
 		F51E39CC2A8CAA7100F32F4F /* 💾ICloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
-		F51E39CD2A8CAA7100F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
+		F51E39CD2A8CAA7100F32F4F /* 🎚️MenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️MenuComponent.swift */; };
 		F51E39CE2A8CAA7900F32F4F /* 🔗Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B52A8CAA4700F32F4F /* 🔗Model.swift */; };
 		F51E39CF2A8CAA7900F32F4F /* 🔗Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B62A8CAA4700F32F4F /* 🔗Button.swift */; };
 		F51E39D02A8CAA7900F32F4F /* 🔗MenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B42A8CAA4700F32F4F /* 🔗MenuComponent.swift */; };
-		F51E39D12A8CAA8200F32F4F /* 🎚️CustomizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
-		F51E39D22A8CAA8300F32F4F /* 🎚️CustomizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
-		F51E39D32A8CAA8400F32F4F /* 🎚️CustomizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
-		F51E39D42A8CAA8700F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
+		F51E39D12A8CAA8200F32F4F /* 🎚️Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
+		F51E39D22A8CAA8300F32F4F /* 🎚️Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
+		F51E39D32A8CAA8400F32F4F /* 🎚️Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
+		F51E39D42A8CAA8700F32F4F /* 🎚️MenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️MenuComponent.swift */; };
 		F51E39D52A8CAA8A00F32F4F /* 💾ICloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
 		F51E39D62A8CAA8A00F32F4F /* 💾ICloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
 		F51E39D72A8CAA8B00F32F4F /* 💾ICloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
@@ -78,11 +78,11 @@
 		F51E3A1B2A8CAFE200F32F4F /* 🔗Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39BE2A8CAA4700F32F4F /* 🔗Menu.swift */; };
 		F51E3A1C2A8CB05F00F32F4F /* 📝NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
 		F51E3A1D2A8CB05F00F32F4F /* 💾ICloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
-		F51E3A1E2A8CB05F00F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
+		F51E3A1E2A8CB05F00F32F4F /* 🎚️MenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️MenuComponent.swift */; };
 		F51E3A1F2A8CB05F00F32F4F /* 🪧EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B92A8CAA4700F32F4F /* 🪧EntryView.swift */; };
 		F51E3A202A8CB05F00F32F4F /* 📝NoteFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */; };
 		F51E3A212A8CB05F00F32F4F /* 📝NoteProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
-		F51E3A222A8CB05F00F32F4F /* 🎚️CustomizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
+		F51E3A222A8CB05F00F32F4F /* 🎚️Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
 		F51E3A232A8CB06500F32F4F /* 🔗Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B62A8CAA4700F32F4F /* 🔗Button.swift */; };
 		F51E3A242A8CB06500F32F4F /* 🔗MenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B42A8CAA4700F32F4F /* 🔗MenuComponent.swift */; };
 		F51E3A252A8CB06500F32F4F /* 🔗Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B52A8CAA4700F32F4F /* 🔗Model.swift */; };
@@ -92,7 +92,7 @@
 		F51E3A392A8CB22900F32F4F /* LockInNote.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F51E3A2B2A8CB22500F32F4F /* LockInNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F51E3A3E2A8CB28900F32F4F /* 📝NoteFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */; };
 		F51E3A3F2A8CB28900F32F4F /* 📝NoteProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
-		F51E3A402A8CB28900F32F4F /* 🎚️CustomizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
+		F51E3A402A8CB28900F32F4F /* 🎚️Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
 		F51E3A412A8CB28900F32F4F /* 💾ICloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
 		F51E3A422A8CB28900F32F4F /* 🪧EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B92A8CAA4700F32F4F /* 🪧EntryView.swift */; };
 		F51E3A432A8CB28900F32F4F /* 📝NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
@@ -116,8 +116,8 @@
 		F51E3A592A8CE75E00F32F4F /* 📝NoteProperty.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
 		F51E3A5A2A8CE75E00F32F4F /* 📝NoteModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
 		F51E3A5B2A8CE75E00F32F4F /* 🪧EntryView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B92A8CAA4700F32F4F /* 🪧EntryView.swift */; };
-		F51E3A5C2A8CE75E00F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
-		F51E3A5D2A8CE75E00F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
+		F51E3A5C2A8CE75E00F32F4F /* 🎚️MenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️MenuComponent.swift */; };
+		F51E3A5D2A8CE75E00F32F4F /* 🎚️Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
 		F51E3A5E2A8CE75E00F32F4F /* 💾ICloud.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
 		F51E3A5F2A8CE75E00F32F4F /* 🔗MenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B42A8CAA4700F32F4F /* 🔗MenuComponent.swift */; };
 		F51E3A602A8CE75E00F32F4F /* 🔗Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B52A8CAA4700F32F4F /* 🔗Model.swift */; };
@@ -146,7 +146,7 @@
 		F51E3A792A8CEA0000F32F4F /* 📝NoteProperty.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
 		F51E3A7A2A8CEA0000F32F4F /* 📝NoteModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
 		F51E3A7B2A8CEA0000F32F4F /* 🪧EntryView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B92A8CAA4700F32F4F /* 🪧EntryView.swift */; };
-		F51E3A7C2A8CEA0000F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
+		F51E3A7C2A8CEA0000F32F4F /* 🎚️Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
 		F51E3A7D2A8CEA0000F32F4F /* 💾ICloud.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
 		F51E3A7E2A8CEA0000F32F4F /* 🗒️StaticInfo.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
 		F51E3A7F2A8CEA0C00F32F4F /* App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39A62A8CAA4700F32F4F /* App.swift */; };
@@ -158,14 +158,14 @@
 		F51E3A852A8CEA0C00F32F4F /* 💬Sheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39A02A8CAA4700F32F4F /* 💬Sheet.swift */; };
 		F51E3A862A8CEA0C00F32F4F /* 🔖Tab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39A42A8CAA4700F32F4F /* 🔖Tab.swift */; };
 		F51E3A872A8CEA0C00F32F4F /* ℹ️AboutApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */; };
-		F51E3A882A8CEA2100F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
+		F51E3A882A8CEA2100F32F4F /* 🎚️MenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️MenuComponent.swift */; };
 		F51E3A892A8CEA7000F32F4F /* WidgetBundle.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AB2A8CAA4700F32F4F /* WidgetBundle.swift */; };
 		F51E3A8C2A8CEBD400F32F4F /* 📝NoteFamily.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */; };
 		F51E3A8D2A8CEBD400F32F4F /* 📝NoteProperty.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */; };
 		F51E3A8E2A8CEBD400F32F4F /* 📝NoteModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */; };
 		F51E3A8F2A8CEBD400F32F4F /* 🪧EntryView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B92A8CAA4700F32F4F /* 🪧EntryView.swift */; };
-		F51E3A902A8CEBD400F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */; };
-		F51E3A912A8CEBD400F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */; };
+		F51E3A902A8CEBD400F32F4F /* 🎚️MenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39AF2A8CAA4700F32F4F /* 🎚️MenuComponent.swift */; };
+		F51E3A912A8CEBD400F32F4F /* 🎚️Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */; };
 		F51E3A922A8CEBD400F32F4F /* 💾ICloud.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */; };
 		F51E3A932A8CEBD400F32F4F /* 🔗MenuComponent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B42A8CAA4700F32F4F /* 🔗MenuComponent.swift */; };
 		F51E3A942A8CEBD400F32F4F /* 🔗Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B52A8CAA4700F32F4F /* 🔗Model.swift */; };
@@ -228,6 +228,12 @@
 		F53858432A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538583F2A9C797100A0D72D /* 🪧ContainerBackground.swift */; };
 		F53858442A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538583F2A9C797100A0D72D /* 🪧ContainerBackground.swift */; };
 		F53858452A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538583F2A9C797100A0D72D /* 🪧ContainerBackground.swift */; };
+		F53858482A9C7BEB00A0D72D /* 🎚️SaveValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */; };
+		F53858492A9C7BEB00A0D72D /* 🎚️SaveValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */; };
+		F538584A2A9C7BEB00A0D72D /* 🎚️SaveValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */; };
+		F538584D2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */; };
+		F538584E2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */; };
+		F538584F2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */; };
 		F554BABD2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */; };
@@ -341,7 +347,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				F51E3A892A8CEA7000F32F4F /* WidgetBundle.swift in CopyFiles */,
-				F51E3A882A8CEA2100F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */,
+				F51E3A882A8CEA2100F32F4F /* 🎚️MenuComponent.swift in CopyFiles */,
 				F51E3A7F2A8CEA0C00F32F4F /* App.swift in CopyFiles */,
 				F51E3A802A8CEA0C00F32F4F /* 📱AppModel.swift in CopyFiles */,
 				F51E3A812A8CEA0C00F32F4F /* ContentView.swift in CopyFiles */,
@@ -355,7 +361,7 @@
 				F51E3A792A8CEA0000F32F4F /* 📝NoteProperty.swift in CopyFiles */,
 				F51E3A7A2A8CEA0000F32F4F /* 📝NoteModel.swift in CopyFiles */,
 				F51E3A7B2A8CEA0000F32F4F /* 🪧EntryView.swift in CopyFiles */,
-				F51E3A7C2A8CEA0000F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */,
+				F51E3A7C2A8CEA0000F32F4F /* 🎚️Model.swift in CopyFiles */,
 				F51E3A7D2A8CEA0000F32F4F /* 💾ICloud.swift in CopyFiles */,
 				F51E3A7E2A8CEA0000F32F4F /* 🗒️StaticInfo.swift in CopyFiles */,
 			);
@@ -386,8 +392,8 @@
 				F51E3A8D2A8CEBD400F32F4F /* 📝NoteProperty.swift in CopyFiles */,
 				F51E3A8E2A8CEBD400F32F4F /* 📝NoteModel.swift in CopyFiles */,
 				F51E3A8F2A8CEBD400F32F4F /* 🪧EntryView.swift in CopyFiles */,
-				F51E3A902A8CEBD400F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */,
-				F51E3A912A8CEBD400F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */,
+				F51E3A902A8CEBD400F32F4F /* 🎚️MenuComponent.swift in CopyFiles */,
+				F51E3A912A8CEBD400F32F4F /* 🎚️Model.swift in CopyFiles */,
 				F51E3A922A8CEBD400F32F4F /* 💾ICloud.swift in CopyFiles */,
 				F51E3A932A8CEBD400F32F4F /* 🔗MenuComponent.swift in CopyFiles */,
 				F51E3A942A8CEBD400F32F4F /* 🔗Model.swift in CopyFiles */,
@@ -442,8 +448,8 @@
 				F51E3A592A8CE75E00F32F4F /* 📝NoteProperty.swift in CopyFiles */,
 				F51E3A5A2A8CE75E00F32F4F /* 📝NoteModel.swift in CopyFiles */,
 				F51E3A5B2A8CE75E00F32F4F /* 🪧EntryView.swift in CopyFiles */,
-				F51E3A5C2A8CE75E00F32F4F /* 🎚️CustomizeMenuComponent.swift in CopyFiles */,
-				F51E3A5D2A8CE75E00F32F4F /* 🎚️CustomizeModel.swift in CopyFiles */,
+				F51E3A5C2A8CE75E00F32F4F /* 🎚️MenuComponent.swift in CopyFiles */,
+				F51E3A5D2A8CE75E00F32F4F /* 🎚️Model.swift in CopyFiles */,
 				F51E3A5E2A8CE75E00F32F4F /* 💾ICloud.swift in CopyFiles */,
 				F51E3A5F2A8CE75E00F32F4F /* 🔗MenuComponent.swift in CopyFiles */,
 				F51E3A602A8CE75E00F32F4F /* 🔗Model.swift in CopyFiles */,
@@ -494,8 +500,8 @@
 		F51E39A72A8CAA4700F32F4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F51E39AB2A8CAA4700F32F4F /* WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundle.swift; sourceTree = "<group>"; };
 		F51E39AD2A8CAA4700F32F4F /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
-		F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️CustomizeMenuComponent.swift"; sourceTree = "<group>"; };
-		F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️CustomizeModel.swift"; sourceTree = "<group>"; };
+		F51E39AF2A8CAA4700F32F4F /* 🎚️MenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️MenuComponent.swift"; sourceTree = "<group>"; };
+		F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️Model.swift"; sourceTree = "<group>"; };
 		F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝NoteFamily.swift"; sourceTree = "<group>"; };
 		F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾ICloud.swift"; sourceTree = "<group>"; };
 		F51E39B42A8CAA4700F32F4F /* 🔗MenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗MenuComponent.swift"; sourceTree = "<group>"; };
@@ -535,6 +541,8 @@
 		F53858312A9C78CD00A0D72D /* 🪧PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧PlaceholderView.swift"; sourceTree = "<group>"; };
 		F53858382A9C78FD00A0D72D /* 🪧SnapshotTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧SnapshotTitle.swift"; sourceTree = "<group>"; };
 		F538583F2A9C797100A0D72D /* 🪧ContainerBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧ContainerBackground.swift"; sourceTree = "<group>"; };
+		F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SaveValues.swift"; sourceTree = "<group>"; };
+		F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️PreviewInApp.swift"; sourceTree = "<group>"; };
 		F54BE1C628CB480900532025 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54BE1C928CB480900532025 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F54BE1CB28CB480900532025 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -747,12 +755,9 @@
 				F51E39B12A8CAA4700F32F4F /* 📝NoteFamily.swift */,
 				F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */,
 				F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */,
-				F53858172A9C76AA00A0D72D /* 🪧WidgetView */,
-				F51E39AF2A8CAA4700F32F4F /* 🎚️CustomizeMenuComponent.swift */,
-				F51E39B02A8CAA4700F32F4F /* 🎚️CustomizeModel.swift */,
 				F51E39B22A8CAA4700F32F4F /* 💾ICloud.swift */,
-				F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */,
-				F51E39B32A8CAA4700F32F4F /* 🔗URLSchemeAction */,
+				F53858172A9C76AA00A0D72D /* 🪧WidgetView */,
+				F53858462A9C7BC600A0D72D /* 🎚️Customize */,
 				F5EAB5E12A72644700B2CD9E /* 🗄️Rest */,
 				F58F3BBD2A723CEB008659F9 /* 🌐Localization */,
 			);
@@ -868,6 +873,17 @@
 				F5EF8DA92A9C56EE00650FAF /* 🪧WidgetReload.swift */,
 			);
 			path = "🪧WidgetView";
+			sourceTree = "<group>";
+		};
+		F53858462A9C7BC600A0D72D /* 🎚️Customize */ = {
+			isa = PBXGroup;
+			children = (
+				F51E39AF2A8CAA4700F32F4F /* 🎚️MenuComponent.swift */,
+				F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */,
+				F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */,
+				F51E39B02A8CAA4700F32F4F /* 🎚️Model.swift */,
+			);
+			path = "🎚️Customize";
 			sourceTree = "<group>";
 		};
 		F54BE1BD28CB480900532025 = {
@@ -1025,6 +1041,8 @@
 				F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */,
 				F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */,
 				F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */,
+				F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */,
+				F51E39B32A8CAA4700F32F4F /* 🔗URLSchemeAction */,
 				F5F9D66B2A9AC0D3008CD67F /* 🗄️Migration */,
 				F556953628CCAFC3004558FC /* Configuration.storekit */,
 			);
@@ -1307,7 +1325,7 @@
 				F51E3A212A8CB05F00F32F4F /* 📝NoteProperty.swift in Sources */,
 				F51E3A122A8CAFDD00F32F4F /* 📝NoteEditor.swift in Sources */,
 				F51E3A1F2A8CB05F00F32F4F /* 🪧EntryView.swift in Sources */,
-				F51E3A222A8CB05F00F32F4F /* 🎚️CustomizeModel.swift in Sources */,
+				F51E3A222A8CB05F00F32F4F /* 🎚️Model.swift in Sources */,
 				F51E3A142A8CAFDD00F32F4F /* App.swift in Sources */,
 				F51E3A1D2A8CB05F00F32F4F /* 💾ICloud.swift in Sources */,
 				F51E3AAA2A8CEC2800F32F4F /* 🛒InAppPurchaseMenu.swift in Sources */,
@@ -1317,7 +1335,7 @@
 				F51E3A242A8CB06500F32F4F /* 🔗MenuComponent.swift in Sources */,
 				F51E3A492A8CC58A00F32F4F /* 🛒InAppPurchaseModel.swift in Sources */,
 				F554BABD2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift in Sources */,
-				F51E3A1E2A8CB05F00F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */,
+				F51E3A1E2A8CB05F00F32F4F /* 🎚️MenuComponent.swift in Sources */,
 				F51E3A1A2A8CAFE200F32F4F /* 🔗Command.swift in Sources */,
 				F51E3A112A8CAFDD00F32F4F /* ContentView.swift in Sources */,
 				F51E3A162A8CAFDD00F32F4F /* 💬Sheet.swift in Sources */,
@@ -1330,10 +1348,12 @@
 				F5F9D6582A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift in Sources */,
 				F538583B2A9C78FD00A0D72D /* 🪧SnapshotTitle.swift in Sources */,
 				F51E3A182A8CAFDD00F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
+				F538584F2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */,
 				F5F9D6632A99F034008CD67F /* 📋AddNoteToEnvironment.swift in Sources */,
 				F51E3AAC2A8CEC2800F32F4F /* 📣ADContent.swift in Sources */,
 				F51E3A4A2A8CC58A00F32F4F /* 🗒️StaticInfo.swift in Sources */,
 				F51E3A1C2A8CB05F00F32F4F /* 📝NoteModel.swift in Sources */,
+				F538584A2A9C7BEB00A0D72D /* 🎚️SaveValues.swift in Sources */,
 				F538581A2A9C76DC00A0D72D /* 🪧SystemFamilyView.swift in Sources */,
 				F538582A2A9C783E00A0D72D /* 🪧EmptyIconView.swift in Sources */,
 				F50310D82A9C18E20077EE5E /* 🗄️FromVer_1_1.swift in Sources */,
@@ -1352,7 +1372,7 @@
 				F538581C2A9C76DC00A0D72D /* 🪧SystemFamilyView.swift in Sources */,
 				F51E3A412A8CB28900F32F4F /* 💾ICloud.swift in Sources */,
 				F51E3A422A8CB28900F32F4F /* 🪧EntryView.swift in Sources */,
-				F51E3A402A8CB28900F32F4F /* 🎚️CustomizeModel.swift in Sources */,
+				F51E3A402A8CB28900F32F4F /* 🎚️Model.swift in Sources */,
 				F51E3A452A8CB29100F32F4F /* WidgetBundle.swift in Sources */,
 				F53858452A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */,
 				F53858372A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
@@ -1381,7 +1401,9 @@
 				F51E39EB2A8CAA9800F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
 				F51E39E42A8CAA9800F32F4F /* ContentView.swift in Sources */,
 				F51E39CB2A8CAA7100F32F4F /* 📝NoteProperty.swift in Sources */,
+				F538584D2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */,
 				F51E39CF2A8CAA7900F32F4F /* 🔗Button.swift in Sources */,
+				F53858482A9C7BEB00A0D72D /* 🎚️SaveValues.swift in Sources */,
 				F53858402A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */,
 				F5F9D66F2A9AC5BE008CD67F /* ♻️BaseModelVer_1_1.swift in Sources */,
 				F51E3A512A8CC8B800F32F4F /* 💁WidgetGuideTab.swift in Sources */,
@@ -1391,7 +1413,7 @@
 				F51E39EA2A8CAA9800F32F4F /* 💬Sheet.swift in Sources */,
 				F51E3A462A8CC58800F32F4F /* 🛒InAppPurchaseModel.swift in Sources */,
 				F51E39EC2A8CAA9800F32F4F /* 📱AppModel.swift in Sources */,
-				F51E39C82A8CAA7100F32F4F /* 🎚️CustomizeModel.swift in Sources */,
+				F51E39C82A8CAA7100F32F4F /* 🎚️Model.swift in Sources */,
 				F51E39E72A8CAA9800F32F4F /* 🔗URLSchemeActionMenu.swift in Sources */,
 				F51E39CC2A8CAA7100F32F4F /* 💾ICloud.swift in Sources */,
 				F51E39E92A8CAA9800F32F4F /* 🛠️OptionTab.swift in Sources */,
@@ -1403,7 +1425,7 @@
 				F51E39CA2A8CAA7100F32F4F /* 📝NoteFamily.swift in Sources */,
 				F51E39D02A8CAA7900F32F4F /* 🔗MenuComponent.swift in Sources */,
 				F53858392A9C78FD00A0D72D /* 🪧SnapshotTitle.swift in Sources */,
-				F51E39CD2A8CAA7100F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */,
+				F51E39CD2A8CAA7100F32F4F /* 🎚️MenuComponent.swift in Sources */,
 				F51E3A4E2A8CC5D100F32F4F /* 📣ADComponents.swift in Sources */,
 				F51E39E82A8CAA9800F32F4F /* 🔖Tab.swift in Sources */,
 				F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */,
@@ -1434,7 +1456,7 @@
 				F50310D32A9C18530077EE5E /* 💾ICloudVer_1_1.swift in Sources */,
 				F51E39F82A8CAAB600F32F4F /* WidgetBundle.swift in Sources */,
 				F50310D62A9C18C90077EE5E /* 💾UserDefaultsVer_1_1.swift in Sources */,
-				F51E39D12A8CAA8200F32F4F /* 🎚️CustomizeModel.swift in Sources */,
+				F51E39D12A8CAA8200F32F4F /* 🎚️Model.swift in Sources */,
 				F51E39DB2A8CAA9000F32F4F /* 📝NoteFamily.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1453,7 +1475,7 @@
 				F5EF8DA72A9C403E00650FAF /* 💾ICloudVer_1_1.swift in Sources */,
 				F51E39F32A8CAAA000F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
 				F51E39EE2A8CAAA000F32F4F /* ContentView.swift in Sources */,
-				F51E39D42A8CAA8700F32F4F /* 🎚️CustomizeMenuComponent.swift in Sources */,
+				F51E39D42A8CAA8700F32F4F /* 🎚️MenuComponent.swift in Sources */,
 				F538583A2A9C78FD00A0D72D /* 🪧SnapshotTitle.swift in Sources */,
 				F53858332A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
 				F538582F2A9C788A00A0D72D /* 🪧AccessoryCornerView.swift in Sources */,
@@ -1461,6 +1483,7 @@
 				F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */,
 				F5EF8DA52A9C403A00650FAF /* 💾UserDefaultsVer_1_1.swift in Sources */,
 				F53858412A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */,
+				F53858492A9C7BEB00A0D72D /* 🎚️SaveValues.swift in Sources */,
 				F5EF8DA32A9C403600650FAF /* ♻️BaseModelVer_1_1.swift in Sources */,
 				F53858292A9C783E00A0D72D /* 🪧EmptyIconView.swift in Sources */,
 				F51E39DC2A8CAA9100F32F4F /* 📝NoteModel.swift in Sources */,
@@ -1471,7 +1494,8 @@
 				F51E39F22A8CAAA000F32F4F /* 📝NoteTab.swift in Sources */,
 				F538581F2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift in Sources */,
 				F51E39D62A8CAA8A00F32F4F /* 💾ICloud.swift in Sources */,
-				F51E39D22A8CAA8300F32F4F /* 🎚️CustomizeModel.swift in Sources */,
+				F538584E2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */,
+				F51E39D22A8CAA8300F32F4F /* 🎚️Model.swift in Sources */,
 				F51E39F52A8CAAA000F32F4F /* 🔖Tab.swift in Sources */,
 				F51E3A562A8CD7AE00F32F4F /* ℹ️AboutApp.swift in Sources */,
 			);
@@ -1497,7 +1521,7 @@
 				F53858302A9C788A00A0D72D /* 🪧AccessoryCornerView.swift in Sources */,
 				F51E39FC2A8CAAB700F32F4F /* WidgetBundle.swift in Sources */,
 				F53858442A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */,
-				F51E39D32A8CAA8400F32F4F /* 🎚️CustomizeModel.swift in Sources */,
+				F51E39D32A8CAA8400F32F4F /* 🎚️Model.swift in Sources */,
 				F51E39E32A8CAA9100F32F4F /* 📝NoteFamily.swift in Sources */,
 				F50310D92A9C18E20077EE5E /* 🗄️FromVer_1_1.swift in Sources */,
 			);
