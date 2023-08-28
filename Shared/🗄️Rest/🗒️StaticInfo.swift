@@ -64,6 +64,7 @@ extension 🗒️StaticInfo {
                                    "🪧PlaceholderView.swift",
                                    "🪧ContainerBackground.swift",
                                    "🪧SnapshotTitle.swift",
+                                   "🪧SampleText.swift",
                                    "🪧WidgetReload.swift"]
                 case .Customize: ["🎚️Model.swift",
                                   "🎚️CustomizeMenu.swift",
@@ -119,6 +120,7 @@ extension 🗒️StaticInfo {
                                    "🪧PlaceholderView.swift",
                                    "🪧ContainerBackground.swift",
                                    "🪧SnapshotTitle.swift",
+                                   "🪧SampleText.swift",
                                    "🪧WidgetReload.swift"]
                 case .Customize: ["🎚️Model.swift",
                                   "🎚️CustomizeMenu.swift",
@@ -163,7 +165,8 @@ extension 🗒️StaticInfo {
                                    "🪧EmptyIconView.swift",
                                    "🪧PlaceholderView.swift",
                                    "🪧ContainerBackground.swift",
-                                   "🪧SnapshotTitle.swift"]
+                                   "🪧SnapshotTitle.swift",
+                                   "🪧SampleText.swift"]
                 case .Customize: ["🎚️Model.swift",
                                   "🎚️CustomizeMenu.swift",
                                   "🎚️MenuComponent.swift",

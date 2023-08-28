@@ -9,7 +9,7 @@ struct 🪧AccessoryFamilyView: View {
             Self.Background(self.isPreviewInApp)
             if self.note.text.isEmpty {
                 if self.isPreviewInApp {
-                    Text(verbatim: "This is sample.\nこれは仮の文章です。\n이것은 플레이스 홀더입니다.")
+                    🪧SampleText()
                 } else {
                     🪧EmptyIconView()
                 }
