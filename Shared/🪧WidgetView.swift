@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 
 struct 🪧EntryView: View {
     var situation: 🪧ViewSituation
@@ -150,7 +151,7 @@ struct 🪧AccessoryFamilyView: View {
     var isPreview: Bool = false
     var body: some View {
         ZStack {
-            Color.clear
+            Self.Background()
             if self.note.text.isEmpty {
                 if self.isPreview {
                     🪧PreviewText()
@@ -174,6 +175,22 @@ struct 🪧AccessoryFamilyView: View {
         .animation(.default, value: self.note.accessory_hierarchical)
         .animation(.default, value: self.note.accessory_multilineTextAlignment)
         .animation(.default, value: self.note.accessory_italic)
+    }
+    private struct Background: View {
+        @EnvironmentObject var note: 📝NoteModel
+        @Environment(\.widgetFamily) var widgetFamily
+        var body: some View {
+            ZStack {
+                Color.clear
+                #if os(iOS) || os(watchOS)
+                if #unavailable(iOS 17.0, watchOS 10.0),
+                   self.widgetFamily == .accessoryCircular,
+                   self.note.accessoryCircular_backgroundForIOS16WatchOS9 {
+                    AccessoryWidgetBackground()
+                }
+                #endif
+            }
+        }
     }
     private struct ForegroundStyle: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel

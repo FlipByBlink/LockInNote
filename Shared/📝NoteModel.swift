@@ -28,6 +28,7 @@ class 📝NoteModel: ObservableObject {
     @Published var accessory_hierarchical: 🎚️Hierarchical = .primary
     @Published var accessory_multilineTextAlignment: 🎚️MultilineTextAlignment = .center
     @Published var accessory_italic: Bool = false
+    @Published var accessoryCircular_backgroundForIOS16WatchOS9: Bool = false
     
     @Published var empty_type: 🎚️EmptyType = .squareAndPencil
     @Published var empty_userText: String = ""
@@ -84,6 +85,7 @@ extension 📝NoteModel {
                 case .accessory_hierarchical: self.accessory_hierarchical = try 💾ICloud.load(ⓟroperty, self.family)
                 case .accessory_multilineTextAlignment: self.accessory_multilineTextAlignment = try 💾ICloud.load(ⓟroperty, self.family)
                 case .accessory_italic: self.accessory_italic = try 💾ICloud.load(ⓟroperty, self.family)
+                case .accessoryCircular_backgroundForIOS16WatchOS9: self.accessoryCircular_backgroundForIOS16WatchOS9 = try 💾ICloud.load(ⓟroperty, self.family)
                 case .empty_type: self.empty_type = try 💾ICloud.load(ⓟroperty, self.family)
                 case .empty_userText: self.empty_userText = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_doubleSizeOnLargeWidget: self.system_doubleSizeOnLargeWidget = try 💾ICloud.load(ⓟroperty, self.family)

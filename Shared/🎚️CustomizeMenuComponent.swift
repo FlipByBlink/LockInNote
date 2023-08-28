@@ -148,6 +148,17 @@ struct 🎚️BackgroundGradientToggle: View {
     }
 }
 
+#if os(iOS) || os(watchOS)
+struct 🎚️AccessaryCircularBackgroundToggleForIOS16WatchOS9: View {
+    @EnvironmentObject var note: 📝NoteModel
+    var body: some View {
+        Toggle(isOn: self.$note.accessoryCircular_backgroundForIOS16WatchOS9) {
+            Label("Background on circular widget for iOS16 / watchOS9", systemImage: "largecircle.fill.circle")
+        }
+    }
+}
+#endif
+
 struct 🎚️DoubleSizeOnLargeWidgetToggle: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
@@ -321,6 +332,9 @@ struct 🎚️SaveValues: ViewModifier {
             .onChange(of: self.note.accessory_hierarchical) { self.note.save(.accessory_hierarchical, $0) }
             .onChange(of: self.note.accessory_multilineTextAlignment) { self.note.save(.accessory_multilineTextAlignment, $0) }
             .onChange(of: self.note.accessory_italic) { self.note.save(.accessory_italic, $0) }
+            .onChange(of: self.note.accessoryCircular_backgroundForIOS16WatchOS9) {
+                self.note.save(.accessoryCircular_backgroundForIOS16WatchOS9, $0)
+            }
         
         //MARK: Empty content
             .onChange(of: self.note.empty_type) { self.note.save(.empty_type, $0) }
