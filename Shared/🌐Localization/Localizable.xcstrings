@@ -172,7 +172,14 @@
       }
     },
     "Background on circular widget for iOS16 / watchOS9" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "円形ウィジェットの背景を表示(iOS16/watchOS9のみ)"
+          }
+        }
+      }
     },
     "black" : {
       "localizations" : {
@@ -445,7 +452,14 @@
       }
     },
     "Double in font-size/padding-size on large widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特大サイズのウィジェットで、フォントとパッディングのサイズを2倍にする"
+          }
+        }
+      }
     },
     "ellipsis" : {
       "localizations" : {
