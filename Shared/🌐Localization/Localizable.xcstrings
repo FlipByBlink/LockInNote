@@ -82,6 +82,7 @@
       }
     },
     "About Apple Watch app" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -142,6 +143,7 @@
       }
     },
     "Apple Watch app" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -591,6 +593,9 @@
         }
       }
     },
+    "How to" : {
+
+    },
     "How to add and edit widgets on your iPhone" : {
       "localizations" : {
         "ja" : {
@@ -601,7 +606,14 @@
         }
       }
     },
+    "How to add home screen widget" : {
+
+    },
+    "How to add lock screen widget" : {
+
+    },
     "How to add widgets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -641,6 +653,9 @@
         }
       }
     },
+    "It takes few minutes to sync data to other device's widget on background." : {
+
+    },
     "Italic" : {
       "localizations" : {
         "ja" : {
@@ -671,7 +686,11 @@
         }
       }
     },
+    "Lock screen widget" : {
+
+    },
     "Lock Screen Widgets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -712,6 +731,7 @@
       }
     },
     "Mirror the lock screen widget to the Apple Watch complication." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1082,6 +1102,12 @@
         }
       }
     },
+    "Sync data between devices by iCloud." : {
+
+    },
+    "Sync devices" : {
+
+    },
     "System widget" : {
       "localizations" : {
         "ja" : {
@@ -1163,6 +1189,7 @@
       }
     },
     "The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

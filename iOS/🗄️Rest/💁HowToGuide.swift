@@ -1,21 +1,60 @@
 import SwiftUI
 
-struct 💁HowToGuideMenuLink: View {
+struct 💁HowToGuideSection: View {
     var body: some View {
-        NavigationLink {
-            List {
-                Self.StepByStepSection()
-                Self.AppleSupportLinkSection()
-                Self.AppleWatchSection()
+        Section {
+            NavigationLink {
+                💁HowToHomeScreen()
+            } label: {
+                Label("How to add home screen widget", systemImage: "questionmark")
             }
-            .navigationTitle("How to add widgets")
-        } label: {
-            Label("How to add widgets", systemImage: "questionmark")
+            NavigationLink {
+                💁HowToLockScreen()
+            } label: {
+                Label("How to add lock screen widget", systemImage: "questionmark")
+            }
+            NavigationLink {
+                List {
+                    Text("Sync data between devices by iCloud.")
+                    Text("It takes few minutes to sync data to other device's widget on background.")
+                }
+            } label: {
+                Label("Sync devices", systemImage: "icloud")
+            }
+        } header: {
+            Text("How to")
         }
     }
 }
 
-private extension 💁HowToGuideMenuLink {
+struct 💁HowToHomeScreen: View {
+    var body: some View {
+        List {
+            Self.StepByStepSection()
+            Self.AppleSupportLinkSection()
+        }
+        .navigationTitle("Lock screen widget")
+    }
+    private struct StepByStepSection: View {
+        var body: some View {
+            Text(verbatim: "StepByStepSection")
+        }
+    }
+    private struct AppleSupportLinkSection: View {
+        var body: some View {
+            Text(verbatim: "AppleSupportLinkSection")
+        }
+    }
+}
+
+struct 💁HowToLockScreen: View {
+    var body: some View {
+        List {
+            Self.StepByStepSection()
+            Self.AppleSupportLinkSection()
+        }
+        .navigationTitle("Lock screen widget")
+    }
     private struct StepByStepSection: View {
         private let steps: [Int: LocalizedStringKey] = [
             1: "Touch and hold the Lock Screen until the Customize button appears, then tap Customize.",
@@ -44,12 +83,9 @@ private extension 💁HowToGuideMenuLink {
                             .padding(.vertical, 4)
                     }
                 }
-            } header: {
-                Text("Lock Screen Widgets")
             }
         }
     }
-    
     private struct AppleSupportLinkSection: View {
         var body: some View {
             Section {
@@ -80,37 +116,9 @@ private extension 💁HowToGuideMenuLink {
                 }
                 .padding(.vertical, 4)
             } header: {
-                Text("Apple Support Page Link")//, systemImage: "arrow.up.forward.app")
+                Text("Apple Support Page Link")
             }
             .headerProminence(.increased)
-        }
-    }
-    private struct AppleWatchSection: View {
-        var body: some View {
-            Section {
-                NavigationLink {
-                    List {
-                        Section {
-                            HStack {
-                                Text("Mirror the lock screen widget to the Apple Watch complication.")
-                                Image(.watchExample)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 120)
-                            }
-                            .padding(.vertical, 24)
-                        }
-                        Section {
-                            Label("The changes may not be immediately reflected in the Apple Watch complication. At the latest, the changes will be applied in about 10 minutes.",
-                                  systemImage: "exclamationmark.applewatch")
-                            .padding(.vertical, 8)
-                        }
-                    }
-                    .navigationTitle("Apple Watch app")
-                } label: {
-                    Label("About Apple Watch app", systemImage: "applewatch")
-                }
-            }
         }
     }
 }
