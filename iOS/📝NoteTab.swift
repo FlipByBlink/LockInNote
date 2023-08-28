@@ -62,6 +62,7 @@ struct 📝NoteTab: View {
     private func handleFocus(_ ⓤrl: URL) {
         do {
             try self.app.handleTab(self.note.family, ⓤrl)
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
             Task {
                 guard !UserDefaults.standard.bool(forKey: "preventAutomaticKeyboard") else { return }
                 try? await Task.sleep(for: .seconds(0.25))

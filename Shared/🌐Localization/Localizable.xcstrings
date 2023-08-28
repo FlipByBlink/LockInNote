@@ -563,6 +563,9 @@
         }
       }
     },
+    "Guide" : {
+
+    },
     "heavy" : {
       "localizations" : {
         "ja" : {
@@ -592,9 +595,6 @@
           }
         }
       }
-    },
-    "How to" : {
-
     },
     "How to add and edit widgets on your iPhone" : {
       "localizations" : {

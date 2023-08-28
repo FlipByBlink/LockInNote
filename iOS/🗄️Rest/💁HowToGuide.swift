@@ -15,7 +15,7 @@ struct 💁HowToGuideSection: View {
             }
             💁ICloudSyncSection()
         } header: {
-            Text("How to")
+            Text("Guide")
         }
     }
 }
@@ -111,7 +111,7 @@ struct 💁HowToLockScreen: View {
                                 .font(.system(.title3, design: .rounded, weight: .semibold))
                         }
                         Spacer()
-                        Image("WidgetGuide/\(ⓘndex)")
+                        Image("WidgetGuide/LockScreen/\(ⓘndex)")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 120)
@@ -162,8 +162,16 @@ private struct 💁ICloudSyncSection: View {
     var body: some View {
         NavigationLink {
             List {
-                Text("Sync data between devices by iCloud.")
-                Text("It takes few minutes to sync data to other device's widget on background.")
+                Section {
+                    Label("Sync data between devices by iCloud.", systemImage: "icloud")
+                        .listRowSeparator(.hidden)
+                    Image(.concept)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(8)
+                } footer: {
+                    Text("It takes few minutes to sync data to other device's widget on background.")
+                }
             }
             .navigationTitle("iCloud sync")
         } label: {

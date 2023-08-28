@@ -5,6 +5,7 @@ struct 👆EditButton: View { // 🖊️
     var body: some View {
         Button {
             self.focusAction()
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
         } label: {
             Image(systemName: "pencil")
                 .foregroundStyle(.white)
@@ -22,6 +23,7 @@ struct 👆DoneButton: View { // ☑️
     var body: some View {
         Button {
             self.unfocusAction()
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
         } label: {
             Label("Done", systemImage: "checkmark")
                 .labelStyle(.iconOnly)
@@ -66,6 +68,7 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
                 withAnimation {
                     self.note.text.removeAll()
                 }
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
             } label: {
                 Label("Erase", systemImage: "trash")
                     .foregroundStyle(self.iconColor)
