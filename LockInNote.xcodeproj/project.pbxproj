@@ -622,24 +622,19 @@
 		F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SaveValues.swift"; sourceTree = "<group>"; };
 		F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️PreviewInApp.swift"; sourceTree = "<group>"; };
 		F54BE1C628CB480900532025 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F54BE1C928CB480900532025 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		F54BE1CB28CB480900532025 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F54BE1CD28CB480A00532025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F55058212A9CAF3300D912F2 /* ⌚️WatchConnectivity(iOS).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️WatchConnectivity(iOS).swift"; sourceTree = "<group>"; };
 		F55058222A9CAF8100D912F2 /* ⌚️WatchConnectivity(watchOS).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️WatchConnectivity(watchOS).swift"; sourceTree = "<group>"; };
 		F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖NoteDetailView.swift"; sourceTree = "<group>"; };
-		F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗URLSchemeAction.swift"; sourceTree = "<group>"; };
 		F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseWindow.swift"; sourceTree = "<group>"; };
 		F55694FF28CCA88B004558FC /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		F556950128CCA8A5004558FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F556950728CCAB70004558FC /* Widget for iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F556950828CCAB70004558FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F556950A28CCAB70004558FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		F556950D28CCAB71004558FC /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		F556950F28CCAB72004558FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F556951128CCAB72004558FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F556951928CCAC33004558FC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F556951A28CCAC59004558FC /* 📱AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
 		F556951D28CCAE21004558FC /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		F556953628CCAFC3004558FC /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		F556953728CCAFC3004558FC /* 📣ADComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADComponents.swift"; sourceTree = "<group>"; };
@@ -649,23 +644,18 @@
 		F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ℹ️InfoTab.swift"; sourceTree = "<group>"; };
 		F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "♻️BaseModelVer_1_1.swift"; sourceTree = "<group>"; };
 		F566A8F929CEDA1200ACCC63 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F566A8FB29CEDA1200ACCC63 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		F566A8FD29CEDA1200ACCC63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for watchOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566A91529CEDA3000ACCC63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F566A91729CEDA3000ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📱AppModel.swift"; sourceTree = "<group>"; };
 		F566A92329CEDE4300ACCC63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56951762A986C7600B36339 /* 🌐AboutApp.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AboutApp.xcstrings"; sourceTree = "<group>"; };
 		F569517B2A9896B600B36339 /* 🌐VersionHistory.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐VersionHistory.xcstrings"; sourceTree = "<group>"; };
 		F569517C2A9896B600B36339 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AppStoreDescription.xcstrings"; sourceTree = "<group>"; };
 		F56B33892A98A90D004510DE /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
-		F57E85B829D28FD000927561 /* 🔖TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔖TabModel.swift"; sourceTree = "<group>"; };
 		F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaultsVer_1_1.swift"; sourceTree = "<group>"; };
 		F57E85CE29D2C3D600927561 /* 💁WidgetGuideTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💁WidgetGuideTab.swift"; sourceTree = "<group>"; };
-		F57E85D129D3B17900927561 /* 🔗WidgetLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗WidgetLink.swift"; sourceTree = "<group>"; };
 		F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AD&InAppPurchase.xcstrings"; sourceTree = "<group>"; };
 		F58F3BC02A723CFF008659F9 /* 🌐ADAppDescription.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐ADAppDescription.xcstrings"; sourceTree = "<group>"; };
 		F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐ADAppName.xcstrings"; sourceTree = "<group>"; };
@@ -676,11 +666,6 @@
 		F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
-		F58F3BE92A724C8A008659F9 /* 🔖TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔖TabView.swift"; sourceTree = "<group>"; };
-		F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝WidgetTab.swift"; sourceTree = "<group>"; };
-		F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👆Buttons.swift"; sourceTree = "<group>"; };
-		F58F3BF12A724F2E008659F9 /* 🎚ViewCustomize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚ViewCustomize.swift"; sourceTree = "<group>"; };
-		F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🖼️View.swift"; sourceTree = "<group>"; };
 		F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5E51EB52A98A1B800C53268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -746,18 +731,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F51E39912A8CA98500F32F4F /* ver 1.1 */ = {
-			isa = PBXGroup;
-			children = (
-				F566A85A29CED18C00ACCC63 /* ♻️Shared */,
-				F54BE1C828CB480900532025 /* iOS */,
-				F556950C28CCAB71004558FC /* iOS - Widget */,
-				F566A8FA29CEDA1200ACCC63 /* watchOS */,
-				F566A91229CEDA2F00ACCC63 /* watchOS - Complication */,
-			);
-			path = "ver 1.1";
-			sourceTree = "<group>";
-		};
 		F51E39942A8CAA4700F32F4F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,7 +947,6 @@
 				F51E399F2A8CAA4700F32F4F /* watchOS */,
 				F51E39BA2A8CAA4700F32F4F /* macOS */,
 				F51E39A82A8CAA4700F32F4F /* Widget */,
-				F51E39912A8CA98500F32F4F /* ver 1.1 */,
 				F54BE1C728CB480900532025 /* Products */,
 				F556950028CCA8A5004558FC /* Frameworks */,
 			);
@@ -993,17 +965,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F54BE1C828CB480900532025 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				F54BE1C928CB480900532025 /* App.swift */,
-				F54BE1CB28CB480900532025 /* ContentView.swift */,
-				F556951A28CCAC59004558FC /* 📱AppModel.swift */,
-				F5514EF829CDDA7900FCA7EA /* 🧩Sub */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
 		F55058202A9CAEEB00D912F2 /* 🚧Suspension */ = {
 			isa = PBXGroup;
 			children = (
@@ -1011,18 +972,6 @@
 				F55058222A9CAF8100D912F2 /* ⌚️WatchConnectivity(watchOS).swift */,
 			);
 			path = "🚧Suspension";
-			sourceTree = "<group>";
-		};
-		F5514EF829CDDA7900FCA7EA /* 🧩Sub */ = {
-			isa = PBXGroup;
-			children = (
-				F58F3BE92A724C8A008659F9 /* 🔖TabView.swift */,
-				F58F3BEB2A724DCC008659F9 /* 📝WidgetTab.swift */,
-				F58F3BEF2A724ECD008659F9 /* 👆Buttons.swift */,
-				F58F3BF12A724F2E008659F9 /* 🎚ViewCustomize.swift */,
-				F5514EFD29CE8CFC00FCA7EA /* 🔗URLSchemeAction.swift */,
-			);
-			path = "🧩Sub";
 			sourceTree = "<group>";
 		};
 		F556950028CCA8A5004558FC /* Frameworks */ = {
@@ -1033,13 +982,6 @@
 				F556950A28CCAB70004558FC /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F556950C28CCAB71004558FC /* iOS - Widget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "iOS - Widget";
 			sourceTree = "<group>";
 		};
 		F556951E28CCAF7A004558FC /* 🌐Localization */ = {
@@ -1065,33 +1007,6 @@
 			path = "🗄️Rest";
 			sourceTree = "<group>";
 		};
-		F566A85A29CED18C00ACCC63 /* ♻️Shared */ = {
-			isa = PBXGroup;
-			children = (
-				F57E85B829D28FD000927561 /* 🔖TabModel.swift */,
-				F57E85D129D3B17900927561 /* 🔗WidgetLink.swift */,
-				F5EAB5E02A7262B900B2CD9E /* 🪧Widget */,
-			);
-			path = "♻️Shared";
-			sourceTree = "<group>";
-		};
-		F566A8FA29CEDA1200ACCC63 /* watchOS */ = {
-			isa = PBXGroup;
-			children = (
-				F566A8FB29CEDA1200ACCC63 /* App.swift */,
-				F566A92129CEDB3500ACCC63 /* 📱AppModel.swift */,
-				F566A8FD29CEDA1200ACCC63 /* ContentView.swift */,
-			);
-			path = watchOS;
-			sourceTree = "<group>";
-		};
-		F566A91229CEDA2F00ACCC63 /* watchOS - Complication */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "watchOS - Complication";
-			sourceTree = "<group>";
-		};
 		F569517A2A98969C00B36339 /* 🌐Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -1112,15 +1027,6 @@
 				F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */,
 			);
 			path = "🌐Localization";
-			sourceTree = "<group>";
-		};
-		F5EAB5E02A7262B900B2CD9E /* 🪧Widget */ = {
-			isa = PBXGroup;
-			children = (
-				F556950D28CCAB71004558FC /* Widget.swift */,
-				F58F3C2C2A7251B2008659F9 /* 🖼️View.swift */,
-			);
-			path = "🪧Widget";
 			sourceTree = "<group>";
 		};
 		F5EAB5E12A72644700B2CD9E /* 🗄️Rest */ = {
