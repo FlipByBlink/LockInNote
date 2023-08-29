@@ -46,39 +46,30 @@ private extension 🪧SystemFamilyView {
         @EnvironmentObject var note: 📝NoteModel
         @Environment(\.widgetRenderingMode) var widgetRenderingMode
         var body: some View {
-            switch self.note.system_appearanceMode {
-                case .standard:
-                    if #available(iOS 17.0, watchOS 10.0, macOS 14.0, *) {
+            Group {
+                switch self.note.system_appearanceMode {
+                    case .standard:
                         Rectangle()
                             .fill(.background)
-                            .modifier(Self.ContainerBackgroundRemover())
-                    } else {
-                        Rectangle()
-                            .fill(.background)
-                    }
-                case .color:
-                    switch self.widgetRenderingMode {
-                        case .fullColor:
-                            if self.note.system_backgroundGradient {
-                                Rectangle()
-                                    .fill(self.note.system_backgroundColor.gradient)
-                            } else {
-                                self.note.system_backgroundColor
-                            }
-                        case .vibrant, .accented:
-                            if #available(iOS 17.0, watchOS 10.0, macOS 14.0, *) {
+                    case .color:
+                        switch self.widgetRenderingMode {
+                            case .fullColor:
+                                if self.note.system_backgroundGradient {
+                                    Rectangle()
+                                        .fill(self.note.system_backgroundColor.gradient)
+                                } else {
+                                    self.note.system_backgroundColor
+                                }
+                            case .vibrant, .accented:
                                 Rectangle()
                                     .fill(.background)
-                                    .modifier(Self.ContainerBackgroundRemover())
-                            } else {
+                            default:
                                 Color.clear
-                            }
-                        default:
-                            Color.clear
-                    }
+                        }
+                }
             }
+            .modifier(Self.ContainerBackgroundRemover())
         }
-        @available(iOS 17.0, watchOS 10.0, macOS 14.0, *)
         private struct ContainerBackgroundRemover: ViewModifier {
             @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
             func body(content: Content) -> some View {
@@ -92,6 +83,7 @@ private extension 🪧SystemFamilyView {
     }
     private struct ForegroundStyle: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
+        @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
         @Environment(\.widgetRenderingMode) var widgetRenderingMode
         func body(content: Content) -> some View {
             switch self.note.system_appearanceMode {
@@ -102,7 +94,11 @@ private extension 🪧SystemFamilyView {
                         case .vibrant, .accented:
                             content.foregroundStyle(self.note.system_hierarchical.value)
                         default:
-                            content.foregroundStyle(self.note.system_textColor)
+                            if self.showsWidgetContainerBackground {
+                                content.foregroundStyle(self.note.system_textColor)
+                            } else {
+                                content.foregroundStyle(self.note.system_hierarchical.value)
+                            }
                     }
             }
         }

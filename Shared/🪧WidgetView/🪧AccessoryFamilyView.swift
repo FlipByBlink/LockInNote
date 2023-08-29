@@ -7,22 +7,24 @@ struct 🪧AccessoryFamilyView: View {
     var body: some View {
         ZStack {
             Self.Background()
-            if self.note.text.isEmpty {
-                if self.situation == .previewInApp {
-                    🪧SampleTextInApp()
+            Group {
+                if self.note.text.isEmpty {
+                    if self.situation == .previewInApp {
+                        🪧SampleTextInApp()
+                    } else {
+                        🪧EmptyIconView()
+                    }
                 } else {
-                    🪧EmptyIconView()
+                    Text(self.note.text)
                 }
-            } else {
-                Text(self.note.text)
             }
+            .widgetAccentable()
         }
         .font(.system(size: CGFloat(self.note.accessory_fontSize),
                       weight: self.note.accessory_fontWeight.value,
                       design: self.note.accessory_fontDesign.value))
         .italic(self.note.accessory_italic)
         .multilineTextAlignment(self.note.accessory_multilineTextAlignment.value)
-        .widgetAccentable()
         .modifier(Self.ForegroundStyle())
         .modifier(Self.Animation())
     }
