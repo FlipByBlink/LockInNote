@@ -19,15 +19,13 @@ struct 🪧WidgetConfiguration: WidgetConfiguration {
     var noteFamily: 📝NoteFamily
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: self.kind, provider: 🪧Provider()) { ⓔntry in
-            Group {
-                if ⓔntry.situation == .placeholder {
-                    🪧PlaceholderView()
-                } else {
-                    🪧EntryView()
-                        .environmentObject(📝NoteModel(self.noteFamily, observeChange: false))
-                }
+            if ⓔntry.situation == .placeholder {
+                🪧PlaceholderView()
+            } else {
+                🪧EntryView()
+                    .environmentObject(📝NoteModel(self.noteFamily, observeChange: false))
+                    .environment(\.ⓢituation, ⓔntry.situation)
             }
-            .environment(\.ⓢituation, ⓔntry.situation)
         }
         .configurationDisplayName(self.noteFamily.presetTitleOnSystemUI)
         .description(self.noteFamily.widgetDescription)

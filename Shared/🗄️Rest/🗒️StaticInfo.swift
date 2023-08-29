@@ -57,6 +57,7 @@ extension 🗒️StaticInfo {
                 case .Widget: ["WidgetBundle.swift",
                                "Widget.swift"]
                 case .WidgetView: ["🪧EntryView.swift",
+                                   "🪧Situation.swift",
                                    "🪧SystemFamilyView.swift",
                                    "🪧AccessoryFamilyView.swift",
                                    "🪧AccessoryCornerView.swift",
@@ -114,6 +115,7 @@ extension 🗒️StaticInfo {
                 case .Complication: ["WidgetBundle.swift",
                                      "Widget.swift"]
                 case .WidgetView: ["🪧EntryView.swift",
+                                   "🪧Situation.swift",
                                    "🪧AccessoryFamilyView.swift",
                                    "🪧AccessoryCornerView.swift",
                                    "🪧EmptyIconView.swift",
@@ -161,6 +163,7 @@ extension 🗒️StaticInfo {
                 case .Widget: ["WidgetBundle.swift",
                                "Widget.swift"]
                 case .WidgetView: ["🪧EntryView.swift",
+                                   "🪧Situation.swift",
                                    "🪧SystemFamilyView.swift",
                                    "🪧EmptyIconView.swift",
                                    "🪧PlaceholderView.swift",

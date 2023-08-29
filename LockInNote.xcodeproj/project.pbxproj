@@ -298,6 +298,9 @@
 		F5606E6C2A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
 		F5606E6D2A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
 		F5606E6E2A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
+		F5606E762A9D92230046EC5D /* 🪧Situation.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
+		F5606E772A9D92280046EC5D /* 🪧Situation.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
+		F5606E782A9D922E0046EC5D /* 🪧Situation.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
 		F566A90029CEDA1300ACCC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */; };
 		F566A90729CEDA2100ACCC63 /* LockInNote.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F566A8F929CEDA1200ACCC63 /* LockInNote.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F566A91029CEDA2F00ACCC63 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
@@ -398,6 +401,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5606E772A9D92280046EC5D /* 🪧Situation.swift in CopyFiles */,
 				F53CB0C32A9D5CA80039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */,
 				F538586F2A9C91E700A0D72D /* 📋AddNoteToEnvironment.swift in CopyFiles */,
 				F53858682A9C91D400A0D72D /* 🎚️SaveValues.swift in CopyFiles */,
@@ -440,6 +444,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5606E782A9D922E0046EC5D /* 🪧Situation.swift in CopyFiles */,
 				F53CB0C42A9D5CB10039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */,
 				F53858702A9C93B600A0D72D /* 🪧SystemFamilyView.swift in CopyFiles */,
 				F53858712A9C93B600A0D72D /* 🪧EmptyIconView.swift in CopyFiles */,
@@ -522,6 +527,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5606E762A9D92230046EC5D /* 🪧Situation.swift in CopyFiles */,
 				F53CB0C22A9D5C9F0039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */,
 				F538585E2A9C902900A0D72D /* Widget.swift in CopyFiles */,
 				F53858582A9C8FC700A0D72D /* 🎚️SaveValues.swift in CopyFiles */,
