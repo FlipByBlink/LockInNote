@@ -62,11 +62,12 @@ private struct 🎚️SystemWidgetMenuLink: View {
                 HStack {
                     Text("System widget")
                     Spacer()
-                    Image(systemName: "photo")
+                    Image(.homeScreenExample)
                         .resizable()
                         .scaledToFit()
-                        .padding(4)
-                        .frame(width: 180, height: 180)
+                        .frame(width: 180)
+                        .shadow(radius: 2, y: 1)
+                        .padding(.vertical, 12)
                 }
                 .font(.title3.bold())
             }
@@ -105,11 +106,12 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                 HStack {
                     Text("Accessory widget")
                     Spacer()
-                    Image(systemName: "photo")
+                    Image(.lockScreenExample)
                         .resizable()
                         .scaledToFit()
-                        .padding(4)
-                        .frame(width: 180, height: 180)
+                        .frame(width: 180)
+                        .shadow(radius: 2)
+                        .padding(.vertical, 8)
                 }
                 .font(.title3.bold())
             }
