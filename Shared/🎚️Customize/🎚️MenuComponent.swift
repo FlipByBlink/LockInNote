@@ -207,9 +207,5 @@ struct 🎚️EmptyTextField: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         TextField("Input text", text: self.$note.empty_userText)
-            #if os(iOS)
-            .textFieldStyle(.roundedBorder)
-            #endif
-            .padding(8)
     }
 }

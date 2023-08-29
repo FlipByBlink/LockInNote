@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 🪧EmptyContentView: View {
+struct 🪧EmptyIconView: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         GeometryReader { ⓟroxy in

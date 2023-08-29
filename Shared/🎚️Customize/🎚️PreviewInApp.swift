@@ -71,7 +71,7 @@ struct 🎚️AccessoryWidgetPreview: View {
     }
 }
 
-struct 🎚️EmptyContentPreview: View {
+struct 🎚️EmptyIconPreview: View {
     var body: some View {
         Section {
             HStack {
@@ -80,7 +80,7 @@ struct 🎚️EmptyContentPreview: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .fill(.gray.opacity(0.5).gradient)
-                        🪧EmptyContentView()
+                        🪧EmptyIconView()
                             .padding(.horizontal, 8)
                     }
 #if os(iOS) || os(macOS)

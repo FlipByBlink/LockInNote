@@ -11,7 +11,7 @@ struct 🪧AccessoryFamilyView: View {
                 if self.isPreviewInApp {
                     🪧SampleTextInApp()
                 } else {
-                    🪧EmptyContentView()
+                    🪧EmptyIconView()
                 }
             } else {
                 Text(self.note.text)

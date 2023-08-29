@@ -311,7 +311,7 @@
         }
       }
     },
-    "Customize \"%@\" - Empty content" : {
+    "Customize \"%@\" - Empty icon" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -471,7 +471,7 @@
         }
       }
     },
-    "Empty content" : {
+    "Empty icon" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -608,7 +608,14 @@
       }
     },
     "Icon size" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きさ"
+          }
+        }
+      }
     },
     "Info" : {
       "localizations" : {
@@ -661,7 +668,14 @@
       }
     },
     "Large" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大"
+          }
+        }
+      }
     },
     "leading" : {
       "localizations" : {
@@ -724,7 +738,14 @@
       }
     },
     "Medium" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中"
+          }
+        }
+      }
     },
     "Mode" : {
       "localizations" : {
@@ -1071,7 +1092,14 @@
       }
     },
     "Small" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小"
+          }
+        }
+      }
     },
     "Square and pencil" : {
       "localizations" : {

@@ -23,7 +23,7 @@ struct 🎚️CustomizeMenu: View {
             List(selection: self.$index) {
                 🎚️SystemWidgetMenuLink()
                     .tag(0)
-                🎚️EmptyContentMenuLink()
+                🎚️EmptyIconMenuLink()
                     .tag(1)
                 Divider()
                 🎚️WidgetTitleMenuLink()
@@ -76,12 +76,12 @@ private struct 🎚️SystemWidgetMenuLink: View {
     }
 }
 
-private struct 🎚️EmptyContentMenuLink: View {
+private struct 🎚️EmptyIconMenuLink: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         NavigationLink {
             Form {
-                🎚️EmptyContentPreview()
+                🎚️EmptyIconPreview()
                 Section {
                     🎚️EmptyTypePicker()
                     if self.note.empty_type == .userText {
@@ -93,11 +93,11 @@ private struct 🎚️EmptyContentMenuLink: View {
                 }
             }
             .padding(32)
-            .navigationTitle("Customize \"\(self.note.title)\" - Empty content")
+            .navigationTitle("Customize \"\(self.note.title)\" - Empty icon")
             .navigationSubtitle("No text situation")
             .animation(.default, value: self.note.empty_type)
         } label: {
-            Label("Empty content", systemImage: "square.dotted")
+            Label("Empty icon", systemImage: "square.dotted")
         }
     }
 }

@@ -13,7 +13,7 @@ struct 🪧SystemFamilyView: View {
                         🪧SampleTextInApp()
                             .font(self.font)
                     } else {
-                        🪧EmptyContentView()
+                        🪧EmptyIconView()
                     }
                 } else {
                     Text(self.note.text)

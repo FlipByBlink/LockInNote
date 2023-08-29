@@ -19,7 +19,7 @@ struct 🎚️CustomizeMenu: View {
                         Label("More", systemImage: "ellipsis")
                     }
                 }
-                🎚️EmptyContentMenuLink()
+                🎚️EmptyIconMenuLink()
                 🎚️WidgetTitleEditLink()
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
@@ -42,13 +42,13 @@ private struct 🎚️FontSizePicker: View {
     }
 }
 
-private struct 🎚️EmptyContentMenuLink: View {
+private struct 🎚️EmptyIconMenuLink: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         Section {
             NavigationLink {
                 List {
-                    🎚️EmptyContentPreview()
+                    🎚️EmptyIconPreview()
                     Section {
                         🎚️EmptyTypePicker()
                         if self.note.empty_type == .userText {
@@ -59,10 +59,10 @@ private struct 🎚️EmptyContentMenuLink: View {
                         Section { 🎚️EmptyIconSizePicker() }
                     }
                 }
-                .navigationTitle("Empty content")
+                .navigationTitle("Empty icon")
                 .animation(.default, value: self.note.empty_type)
             } label: {
-                Label("Empty content", systemImage: "questionmark")
+                Label("Empty icon", systemImage: "questionmark")
             }
         }
     }
