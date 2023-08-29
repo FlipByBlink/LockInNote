@@ -81,6 +81,16 @@
         }
       }
     },
+    "Accessory\nwidget" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小さめ\nウィジェット"
+          }
+        }
+      }
+    },
     "Accessory widget" : {
       "localizations" : {
         "ja" : {
@@ -1158,6 +1168,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "データはiCloudによって同期されます。"
+          }
+        }
+      }
+    },
+    "System\nwidget" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きめ\nウィジェット"
           }
         }
       }

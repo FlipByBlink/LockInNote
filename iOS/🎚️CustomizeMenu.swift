@@ -26,6 +26,7 @@ struct 🎚️CustomizeMenu: View {
 
 private struct 🎚️SystemWidgetMenuLink: View {
     @EnvironmentObject var note: 📝NoteModel
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     var body: some View {
         Section {
             NavigationLink {
@@ -59,8 +60,13 @@ private struct 🎚️SystemWidgetMenuLink: View {
                 .navigationTitle("System widget")
                 .animation(.default, value: self.note.system_appearanceMode)
             } label: {
-                HStack {
-                    Text("System widget")
+                HStack(spacing: 0) {
+                    switch self.horizontalSizeClass {
+                        case .compact:
+                            Text("System\nwidget")
+                        default:
+                            Text("System widget")
+                    }
                     Spacer()
                     Image(.homeScreenExample)
                         .resizable()
@@ -79,6 +85,7 @@ private struct 🎚️SystemWidgetMenuLink: View {
 
 private struct 🎚️AccessoryWidgetMenuLink: View {
     @EnvironmentObject var note: 📝NoteModel
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     var body: some View {
         Section {
             NavigationLink {
@@ -103,8 +110,13 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                 }
                 .navigationTitle("Accessory widget")
             } label: {
-                HStack {
-                    Text("Accessory widget")
+                HStack(spacing: 0) {
+                    switch self.horizontalSizeClass {
+                        case .compact:
+                            Text("Accessory\nwidget")
+                        default:
+                            Text("Accessory widget")
+                    }
                     Spacer()
                     Image(.lockScreenExample)
                         .resizable()
