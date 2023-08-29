@@ -27,7 +27,22 @@ struct 🪧EmptyIconView: View {
                 .lineLimit(1)
             }
         }
-        .animation(.default, value: self.note.empty_type)
-        .animation(.default, value: self.note.empty_iconSize)
+        .modifier(Self.Animation())
+    }
+}
+
+private extension 🪧EmptyIconView {
+    private struct Animation: ViewModifier {
+        @EnvironmentObject var note: 📝NoteModel
+        @Environment(\.ⓢituation) var situation
+        func body(content: Content) -> some View {
+            if self.situation == .previewInApp {
+                content
+                    .animation(.default, value: self.note.empty_type)
+                    .animation(.default, value: self.note.empty_iconSize)
+            } else {
+                content
+            }
+        }
     }
 }

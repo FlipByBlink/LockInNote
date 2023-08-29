@@ -12,19 +12,22 @@ private struct 🪧Provider: TimelineProvider {
 
 private struct 🪧Entry: TimelineEntry {
     let date: Date = .now
-    var situation: 🪧ViewSituation
+    var situation: 🪧Situation
 }
 
 struct 🪧WidgetConfiguration: WidgetConfiguration {
     var noteFamily: 📝NoteFamily
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: self.kind, provider: 🪧Provider()) { ⓔntry in
-            if ⓔntry.situation == .placeholder {
-                🪧PlaceholderView()
-            } else {
-                🪧EntryView(ⓔntry.situation)
-                    .environmentObject(📝NoteModel(self.noteFamily, observeChange: false))
+            Group {
+                if ⓔntry.situation == .placeholder {
+                    🪧PlaceholderView()
+                } else {
+                    🪧EntryView()
+                        .environmentObject(📝NoteModel(self.noteFamily, observeChange: false))
+                }
             }
+            .environment(\.ⓢituation, ⓔntry.situation)
         }
         .configurationDisplayName(self.noteFamily.presetTitleOnSystemUI)
         .description(self.noteFamily.widgetDescription)

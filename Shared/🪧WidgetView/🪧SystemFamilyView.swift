@@ -3,13 +3,13 @@ import SwiftUI
 struct 🪧SystemFamilyView: View {
     @EnvironmentObject var note: 📝NoteModel
     @Environment(\.widgetFamily) var widgetFamily
-    private var isPreviewInApp: Bool
+    @Environment(\.ⓢituation) var situation
     var body: some View {
         ZStack(alignment: self.note.system_contentAlignment.value) {
             Self.Background()
             Group {
                 if self.note.text.isEmpty {
-                    if self.isPreviewInApp {
+                    if self.situation == .previewInApp {
                         🪧SampleTextInApp()
                             .font(self.font)
                     } else {
@@ -25,10 +25,7 @@ struct 🪧SystemFamilyView: View {
             .multilineTextAlignment(self.note.system_multilineTextAlignment.value)
             .padding(self.padding)
         }
-        .modifier(Self.Animation(self.isPreviewInApp))
-    }
-    init(isPreview: Bool = false) {
-        self.isPreviewInApp = isPreview
+        .modifier(Self.Animation())
     }
 }
 
@@ -112,23 +109,24 @@ private extension 🪧SystemFamilyView {
     }
     private struct Animation: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
-        var isPreviewInApp: Bool
+        @Environment(\.ⓢituation) var situation
         func body(content: Content) -> some View {
-            content
-                .animation(.default, value: self.note.system_fontSize)
-                .animation(.default, value: self.note.system_fontDesign)
-                .animation(.default, value: self.note.system_fontWeight)
-                .animation(.default, value: self.note.system_hierarchical)
-                .animation(.default, value: self.note.system_multilineTextAlignment)
-                .animation(.default, value: self.note.system_italic)
-                .animation(.default, value: self.note.system_padding)
-                .animation(.default, value: self.note.system_contentAlignment)
-                .animation(.default, value: self.note.system_textColor)
-                .animation(.default, value: self.note.system_backgroundColor)
-                .animation(.default, value: self.note.system_backgroundGradient)
-        }
-        init(_ isPreviewInApp: Bool) {
-            self.isPreviewInApp = isPreviewInApp
+            if self.situation == .previewInApp {
+                content
+                    .animation(.default, value: self.note.system_fontSize)
+                    .animation(.default, value: self.note.system_fontDesign)
+                    .animation(.default, value: self.note.system_fontWeight)
+                    .animation(.default, value: self.note.system_hierarchical)
+                    .animation(.default, value: self.note.system_multilineTextAlignment)
+                    .animation(.default, value: self.note.system_italic)
+                    .animation(.default, value: self.note.system_padding)
+                    .animation(.default, value: self.note.system_contentAlignment)
+                    .animation(.default, value: self.note.system_textColor)
+                    .animation(.default, value: self.note.system_backgroundColor)
+                    .animation(.default, value: self.note.system_backgroundGradient)
+            } else {
+                content
+            }
         }
     }
 }

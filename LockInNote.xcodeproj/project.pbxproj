@@ -292,6 +292,12 @@
 		F556951428CCAB72004558FC /* Widget for iOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* Widget for iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F556953C28CCAFC3004558FC /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F556953628CCAFC3004558FC /* Configuration.storekit */; };
 		F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556953828CCAFC3004558FC /* Launch Screen.storyboard */; };
+		F5606E692A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
+		F5606E6A2A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
+		F5606E6B2A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
+		F5606E6C2A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
+		F5606E6D2A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
+		F5606E6E2A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
 		F566A90029CEDA1300ACCC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F566A8FF29CEDA1300ACCC63 /* Assets.xcassets */; };
 		F566A90729CEDA2100ACCC63 /* LockInNote.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F566A8F929CEDA1200ACCC63 /* LockInNote.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F566A91029CEDA2F00ACCC63 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
@@ -649,6 +655,7 @@
 		F556953728CCAFC3004558FC /* 📣ADComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "📣ADComponents.swift"; sourceTree = "<group>"; };
 		F556953828CCAFC3004558FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F556953928CCAFC3004558FC /* 🛒InAppPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseView.swift"; sourceTree = "<group>"; };
+		F5606E682A9D87800046EC5D /* 🪧Situation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧Situation.swift"; sourceTree = "<group>"; };
 		F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💬RequestUserReview.swift"; sourceTree = "<group>"; };
 		F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ℹ️InfoTab.swift"; sourceTree = "<group>"; };
 		F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "♻️BaseModelVer_1_1.swift"; sourceTree = "<group>"; };
@@ -920,6 +927,7 @@
 			isa = PBXGroup;
 			children = (
 				F51E39B92A8CAA4700F32F4F /* 🪧EntryView.swift */,
+				F5606E682A9D87800046EC5D /* 🪧Situation.swift */,
 				F53858182A9C76DC00A0D72D /* 🪧SystemFamilyView.swift */,
 				F538581D2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift */,
 				F538582E2A9C788A00A0D72D /* 🪧AccessoryCornerView.swift */,
@@ -1326,6 +1334,7 @@
 				F51E3A1F2A8CB05F00F32F4F /* 🪧EntryView.swift in Sources */,
 				F51E3A222A8CB05F00F32F4F /* 🎚️Model.swift in Sources */,
 				F51E3A142A8CAFDD00F32F4F /* App.swift in Sources */,
+				F5606E6B2A9D87800046EC5D /* 🪧Situation.swift in Sources */,
 				F51E3A1D2A8CB05F00F32F4F /* 💾ICloud.swift in Sources */,
 				F51E3AAA2A8CEC2800F32F4F /* 🛒InAppPurchaseMenu.swift in Sources */,
 				F53858242A9C781200A0D72D /* 🪧AccessoryFamilyView.swift in Sources */,
@@ -1374,6 +1383,7 @@
 				F51E3A422A8CB28900F32F4F /* 🪧EntryView.swift in Sources */,
 				F51E3A402A8CB28900F32F4F /* 🎚️Model.swift in Sources */,
 				F51E3A452A8CB29100F32F4F /* WidgetBundle.swift in Sources */,
+				F5606E6E2A9D87800046EC5D /* 🪧Situation.swift in Sources */,
 				F53858452A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */,
 				F53858372A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
 				F51E3A432A8CB28900F32F4F /* 📝NoteModel.swift in Sources */,
@@ -1391,6 +1401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5606E692A9D87800046EC5D /* 🪧Situation.swift in Sources */,
 				F53858282A9C783E00A0D72D /* 🪧EmptyIconView.swift in Sources */,
 				F51E39E52A8CAA9800F32F4F /* 👆Buttons.swift in Sources */,
 				F51E3A4C2A8CC5D100F32F4F /* 🛒InAppPurchaseView.swift in Sources */,
@@ -1448,6 +1459,7 @@
 				F51E39DA2A8CAA9000F32F4F /* 📝NoteProperty.swift in Sources */,
 				F51E39D92A8CAA9000F32F4F /* 🪧EntryView.swift in Sources */,
 				F53858352A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
+				F5606E6C2A9D87800046EC5D /* 🪧Situation.swift in Sources */,
 				F51E39F92A8CAAB600F32F4F /* Widget.swift in Sources */,
 				F50310D42A9C18560077EE5E /* ♻️BaseModelVer_1_1.swift in Sources */,
 				F538581B2A9C76DC00A0D72D /* 🪧SystemFamilyView.swift in Sources */,
@@ -1480,6 +1492,7 @@
 				F538583A2A9C78FD00A0D72D /* 🪧SnapshotTitle.swift in Sources */,
 				F53858332A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
 				F538582F2A9C788A00A0D72D /* 🪧AccessoryCornerView.swift in Sources */,
+				F5606E6A2A9D87800046EC5D /* 🪧Situation.swift in Sources */,
 				F51E39DD2A8CAA9100F32F4F /* 🪧EntryView.swift in Sources */,
 				F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */,
 				F5EF8DA52A9C403A00650FAF /* 💾UserDefaultsVer_1_1.swift in Sources */,
@@ -1527,6 +1540,7 @@
 				F53858442A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */,
 				F51E39D32A8CAA8400F32F4F /* 🎚️Model.swift in Sources */,
 				F51E39E32A8CAA9100F32F4F /* 📝NoteFamily.swift in Sources */,
+				F5606E6D2A9D87800046EC5D /* 🪧Situation.swift in Sources */,
 				F50310D92A9C18E20077EE5E /* 🗄️FromVer_1_1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

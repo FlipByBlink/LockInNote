@@ -1,8 +1,6 @@
 import SwiftUI
-import WidgetKit
 
 struct 🪧EntryView: View {
-    var situation: 🪧ViewSituation
     @EnvironmentObject var note: 📝NoteModel
     @Environment(\.widgetFamily) var widgetFamily
     var body: some View {
@@ -21,14 +19,7 @@ struct 🪧EntryView: View {
             }
         }
         .modifier(🪧ContainerBackground())
+        .modifier(🪧SnapshotTitle())
         .widgetURL(self.note.family.widgetURL)
-        .modifier(🪧SnapshotTitle(self.situation))
     }
-    init(_ situation: 🪧ViewSituation) {
-        self.situation = situation
-    }
-}
-
-enum 🪧ViewSituation {
-    case timeline, snapshot, placeholder
 }

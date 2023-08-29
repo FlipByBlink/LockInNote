@@ -3,12 +3,12 @@ import WidgetKit
 
 struct 🪧AccessoryFamilyView: View {
     @EnvironmentObject var note: 📝NoteModel
-    private var isPreviewInApp: Bool = false
+    @Environment(\.ⓢituation) var situation
     var body: some View {
         ZStack {
-            Self.Background(self.isPreviewInApp)
+            Self.Background()
             if self.note.text.isEmpty {
-                if self.isPreviewInApp {
+                if self.situation == .previewInApp {
                     🪧SampleTextInApp()
                 } else {
                     🪧EmptyIconView()
@@ -23,11 +23,8 @@ struct 🪧AccessoryFamilyView: View {
         .italic(self.note.accessory_italic)
         .multilineTextAlignment(self.note.accessory_multilineTextAlignment.value)
         .widgetAccentable()
-        .modifier(Self.ForegroundStyle(self.isPreviewInApp))
-        .modifier(Self.Animation(self.isPreviewInApp))
-    }
-    init(isPreview: Bool = false) {
-        self.isPreviewInApp = isPreview
+        .modifier(Self.ForegroundStyle())
+        .modifier(Self.Animation())
     }
 }
 
@@ -35,12 +32,12 @@ private extension 🪧AccessoryFamilyView {
     private struct Background: View {
         @EnvironmentObject var note: 📝NoteModel
         @Environment(\.widgetFamily) var widgetFamily
-        var isPreviewInApp: Bool
+        @Environment(\.ⓢituation) var situation
         private var condition: Bool {
 #if os(watchOS) || os(iOS)
             self.widgetFamily == .accessoryCircular
             && self.note.accessoryCircular_backgroundForIOS16AndWatchOS
-            && !self.isPreviewInApp
+            && self.situation != .previewInApp
 #else
             false
 #endif
@@ -57,13 +54,10 @@ private extension 🪧AccessoryFamilyView {
                 }
             }
         }
-        init(_ isPreviewInApp: Bool) {
-            self.isPreviewInApp = isPreviewInApp
-        }
     }
     private struct ForegroundStyle: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
-        private var isPreviewInApp: Bool
+        @Environment(\.ⓢituation) var situation
         @Environment(\.widgetRenderingMode) var widgetRenderingMode
         @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
         private var isSmartStackOnWatchOS10: Bool {
@@ -80,7 +74,7 @@ private extension 🪧AccessoryFamilyView {
 #endif
         }
         func body(content: Content) -> some View {
-            if self.isPreviewInApp {
+            if self.situation == .previewInApp {
                 content.foregroundStyle(self.note.accessory_hierarchical.value)
             } else {
                 if self.isSmartStackOnWatchOS10 {
@@ -90,24 +84,22 @@ private extension 🪧AccessoryFamilyView {
                 }
             }
         }
-        init(_ isPreviewInApp: Bool) {
-            self.isPreviewInApp = isPreviewInApp
-        }
     }
     private struct Animation: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
-        private var isPreviewInApp: Bool
+        @Environment(\.ⓢituation) var situation
         func body(content: Content) -> some View {
-            content
-                .animation(.default, value: self.note.accessory_fontSize)
-                .animation(.default, value: self.note.accessory_fontDesign)
-                .animation(.default, value: self.note.accessory_fontWeight)
-                .animation(.default, value: self.note.accessory_hierarchical)
-                .animation(.default, value: self.note.accessory_multilineTextAlignment)
-                .animation(.default, value: self.note.accessory_italic)
-        }
-        init(_ isPreviewInApp: Bool) {
-            self.isPreviewInApp = isPreviewInApp
+            if self.situation == .previewInApp {
+                content
+                    .animation(.default, value: self.note.accessory_fontSize)
+                    .animation(.default, value: self.note.accessory_fontDesign)
+                    .animation(.default, value: self.note.accessory_fontWeight)
+                    .animation(.default, value: self.note.accessory_hierarchical)
+                    .animation(.default, value: self.note.accessory_multilineTextAlignment)
+                    .animation(.default, value: self.note.accessory_italic)
+            } else {
+                content
+            }
         }
     }
 }

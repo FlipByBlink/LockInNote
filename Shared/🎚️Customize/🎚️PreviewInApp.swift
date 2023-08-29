@@ -11,9 +11,9 @@ struct 🎚️SystemWidgetPreview: View {
                         case .standard:
                             HStack(spacing: 12) {
                                 Group {
-                                    🪧SystemFamilyView(isPreview: true)
+                                    🪧SystemFamilyView()
                                         .environment(\.colorScheme, .light)
-                                    🪧SystemFamilyView(isPreview: true)
+                                    🪧SystemFamilyView()
                                         .environment(\.colorScheme, .dark)
                                 }
                                 .frame(width: 160, height: 160)
@@ -21,7 +21,7 @@ struct 🎚️SystemWidgetPreview: View {
                             }
                             .padding(.horizontal, 8)
                         case .color:
-                            🪧SystemFamilyView(isPreview: true)
+                            🪧SystemFamilyView()
                                 .frame(width: 160, height: 160)
                                 .clipShape(RoundedRectangle(cornerRadius: 32, style: .continuous))
                     }
@@ -37,6 +37,7 @@ struct 🎚️SystemWidgetPreview: View {
             Spacer()
         }
         .listRowBackground(Color.clear)
+        .environment(\.ⓢituation, .previewInApp)
     }
 }
 
@@ -48,7 +49,7 @@ struct 🎚️AccessoryWidgetPreview: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .fill(.gray.opacity(0.5).gradient)
-                    🪧AccessoryFamilyView(isPreview: true)
+                    🪧AccessoryFamilyView()
                 }
 #if os(iOS) || os(macOS)
                 .frame(width: 210, height: 80)
@@ -68,6 +69,7 @@ struct 🎚️AccessoryWidgetPreview: View {
         .padding(.vertical, 8)
 #endif
         .listRowBackground(Color.clear)
+        .environment(\.ⓢituation, .previewInApp)
     }
 }
 
@@ -101,6 +103,7 @@ struct 🎚️EmptyIconPreview: View {
             .padding(.vertical, 4)
 #endif
             .listRowBackground(Color.clear)
+            .environment(\.ⓢituation, .previewInApp)
         }
     }
 }
