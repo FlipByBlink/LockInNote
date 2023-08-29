@@ -109,7 +109,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NEW\n- Support home-screen widget\n- Support iPadOS\n- Support macOS\n- Support data sync by iCloud\n- Support StandBy(iOS 17)\n- Add \"Disable automatically keyboard option\"(iOS)\n- Add User-text-mode to placeholder option\n\nNOTICE\n- You can set a note to any widget now\n- Change Apple Watch's corner widget design\n- Remove circular background option on iOS 17\n\nELSE\n- Support Smart Stack(watchOS 10)\n- Refactoring\n- Several improve/fix"
+            "value" : "NEW\n- Support home-screen widget\n- Support iPadOS\n- Support macOS\n- Support data sync by iCloud\n- Support StandBy(iOS 17)\n- Add a option to disable automatically keyboard(iOS)\n- Add User-text-mode to placeholder option\n\nNOTICE\n- You can set a note to any widget now\n- Change Apple Watch's corner widget design\n- Remove circular background option on iOS 17\n\nELSE\n- Support Smart Stack(watchOS 10)\n- Refactoring\n- Several improve/fix"
           }
         },
         "ja" : {
