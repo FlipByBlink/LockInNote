@@ -31,7 +31,7 @@ class 📝NoteModel: ObservableObject {
     @Published var accessoryCircular_backgroundForIOS16AndWatchOS: Bool = false
     
     @Published var empty_type: 🎚️EmptyType = .squareAndPencil
-    @Published var empty_iconSize: 🎚️EmptyIconSize = .medium
+    @Published var empty_iconSize: 🎚️EmptyIconSize = .small
     @Published var empty_userText: String = ""
     
     init(_ ⓝoteFamily: 📝NoteFamily, observeChange ⓞbserveChange: Bool = true) {
@@ -108,7 +108,6 @@ private extension 📝NoteModel {
                 break
             case .secondary:
                 self.system_appearanceMode = .color
-                self.system_fontSize = 30
                 self.system_fontWeight = .bold
                 self.system_textColor = .white
                 self.system_backgroundColor = .teal
@@ -116,7 +115,6 @@ private extension 📝NoteModel {
                 self.empty_type = .pencil
             case .tertiary:
                 self.system_appearanceMode = .color
-                self.system_fontSize = 34
                 self.system_fontWeight = .bold
                 self.system_fontDesign = .serif
                 self.system_textColor = .init(white: 0.3)
