@@ -6,14 +6,20 @@ class 📝NoteModel: ObservableObject {
     @Published var title: String
     @Published var text: String = ""
     
-    //MARK: WidgetFamily.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge
+    @Published var fontWeight: 🎚️FontWeight = .regular
+    @Published var fontDesign: 🎚️FontDesign = .default
+    @Published var italic: Bool = false
+    @Published var multilineTextAlignment: 🎚️MultilineTextAlignment = .center
+    
+    //==== Empty icon ====
+    @Published var empty_type: 🎚️EmptyType = .squareAndPencil
+    @Published var empty_iconSize: 🎚️EmptyIconSize = .small
+    @Published var empty_userText: String = ""
+    
+    //==== WidgetFamily.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge ====
     @Published var system_appearanceMode: 🎚️AppearanceMode = .standard
     @Published var system_fontSize: Int = 20
-    @Published var system_fontWeight: 🎚️FontWeight = .regular
-    @Published var system_fontDesign: 🎚️FontDesign = .default
     @Published var system_hierarchical: 🎚️Hierarchical = .primary
-    @Published var system_multilineTextAlignment: 🎚️MultilineTextAlignment = .center
-    @Published var system_italic: Bool = false
     @Published var system_padding: Int = 12
     @Published var system_contentAlignment: 🎚️ContentAlignment = .center
     @Published var system_textColor: Color = .black
@@ -21,18 +27,10 @@ class 📝NoteModel: ObservableObject {
     @Published var system_backgroundGradient: Bool = false
     @Published var system_doubleSizeOnLargeWidget: Bool = false
     
-    //MARK: WidgetFamily.accessoryRectangular, .accessoryCircular
+    //==== WidgetFamily.accessoryRectangular, .accessoryCircular ====
     @Published var accessory_fontSize: Int = 14
-    @Published var accessory_fontWeight: 🎚️FontWeight = .regular
-    @Published var accessory_fontDesign: 🎚️FontDesign = .default
     @Published var accessory_hierarchical: 🎚️Hierarchical = .primary
-    @Published var accessory_multilineTextAlignment: 🎚️MultilineTextAlignment = .center
-    @Published var accessory_italic: Bool = false
     @Published var accessoryCircular_backgroundForIOS16AndWatchOS: Bool = false
-    
-    @Published var empty_type: 🎚️EmptyType = .squareAndPencil
-    @Published var empty_iconSize: 🎚️EmptyIconSize = .small
-    @Published var empty_userText: String = ""
     
     init(_ ⓝoteFamily: 📝NoteFamily, observeChange ⓞbserveChange: Bool = true) {
         self.family = ⓝoteFamily
@@ -69,29 +67,25 @@ extension 📝NoteModel {
             switch ⓟroperty {
                 case .text: self.text = try 💾ICloud.load(ⓟroperty, self.family)
                 case .title: self.title = try 💾ICloud.load(ⓟroperty, self.family)
+                case .fontWeight: self.fontWeight = try 💾ICloud.load(ⓟroperty, self.family)
+                case .fontDesign: self.fontDesign = try 💾ICloud.load(ⓟroperty, self.family)
+                case .italic: self.italic = try 💾ICloud.load(ⓟroperty, self.family)
+                case .multilineTextAlignment: self.multilineTextAlignment = try 💾ICloud.load(ⓟroperty, self.family)
+                case .empty_type: self.empty_type = try 💾ICloud.load(ⓟroperty, self.family)
+                case .empty_userText: self.empty_userText = try 💾ICloud.load(ⓟroperty, self.family)
+                case .empty_iconSize: self.empty_iconSize = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_appearanceMode: self.system_appearanceMode = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_fontSize: self.system_fontSize = try 💾ICloud.load(ⓟroperty, self.family)
-                case .system_fontWeight: self.system_fontWeight = try 💾ICloud.load(ⓟroperty, self.family)
-                case .system_fontDesign: self.system_fontDesign = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_hierarchical: self.system_hierarchical = try 💾ICloud.load(ⓟroperty, self.family)
-                case .system_multilineTextAlignment: self.system_multilineTextAlignment = try 💾ICloud.load(ⓟroperty, self.family)
-                case .system_italic: self.system_italic = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_padding: self.system_padding = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_contentAlignment: self.system_contentAlignment = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_textColor: self.system_textColor = (try 💾ICloud.load(ⓟroperty, self.family) as 🎚️Color).swiftUIColor
                 case .system_backgroundColor: self.system_backgroundColor = (try 💾ICloud.load(ⓟroperty, self.family) as 🎚️Color).swiftUIColor
                 case .system_backgroundGradient: self.system_backgroundGradient = try 💾ICloud.load(ⓟroperty, self.family)
-                case .accessory_fontSize: self.accessory_fontSize = try 💾ICloud.load(ⓟroperty, self.family)
-                case .accessory_fontWeight: self.accessory_fontWeight = try 💾ICloud.load(ⓟroperty, self.family)
-                case .accessory_fontDesign: self.accessory_fontDesign = try 💾ICloud.load(ⓟroperty, self.family)
-                case .accessory_hierarchical: self.accessory_hierarchical = try 💾ICloud.load(ⓟroperty, self.family)
-                case .accessory_multilineTextAlignment: self.accessory_multilineTextAlignment = try 💾ICloud.load(ⓟroperty, self.family)
-                case .accessory_italic: self.accessory_italic = try 💾ICloud.load(ⓟroperty, self.family)
-                case .accessoryCircular_backgroundForIOS16AndWatchOS: self.accessoryCircular_backgroundForIOS16AndWatchOS = try 💾ICloud.load(ⓟroperty, self.family)
-                case .empty_type: self.empty_type = try 💾ICloud.load(ⓟroperty, self.family)
-                case .empty_userText: self.empty_userText = try 💾ICloud.load(ⓟroperty, self.family)
-                case .empty_iconSize: self.empty_iconSize = try 💾ICloud.load(ⓟroperty, self.family)
                 case .system_doubleSizeOnLargeWidget: self.system_doubleSizeOnLargeWidget = try 💾ICloud.load(ⓟroperty, self.family)
+                case .accessory_fontSize: self.accessory_fontSize = try 💾ICloud.load(ⓟroperty, self.family)
+                case .accessory_hierarchical: self.accessory_hierarchical = try 💾ICloud.load(ⓟroperty, self.family)
+                case .accessoryCircular_backgroundForIOS16AndWatchOS: self.accessoryCircular_backgroundForIOS16AndWatchOS = try 💾ICloud.load(ⓟroperty, self.family)
             }
         } catch 💾ICloud.LoadError.noData {
             return
@@ -107,22 +101,19 @@ private extension 📝NoteModel {
             case .primary:
                 break
             case .secondary:
+                self.fontWeight = .bold
+                self.empty_type = .pencil
                 self.system_appearanceMode = .color
-                self.system_fontWeight = .bold
                 self.system_textColor = .white
                 self.system_backgroundColor = .teal
-                self.accessory_fontWeight = .black
-                self.empty_type = .pencil
             case .tertiary:
+                self.fontWeight = .bold
+                self.fontDesign = .serif
+                self.empty_type = .userText
                 self.system_appearanceMode = .color
-                self.system_fontWeight = .bold
-                self.system_fontDesign = .serif
                 self.system_textColor = .init(white: 0.3)
                 self.system_backgroundColor = .init(white: 0.89)
                 self.system_backgroundGradient = true
-                self.accessory_fontWeight = .bold
-                self.accessory_fontDesign = .serif
-                self.empty_type = .userText
         }
     }
     private func migrateFromVer_1_1() {

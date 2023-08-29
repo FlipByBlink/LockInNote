@@ -8,10 +8,10 @@ struct 🎚️CustomizeMenu: View {
                 🎚️AccessoryWidgetPreview()
                 Section {
                     🎚️FontSizePicker(value: self.$note.accessory_fontSize)
-                    🎚FontWeightPicker(value: self.$note.accessory_fontWeight)
-                    🎚FontDesignPicker(value: self.$note.accessory_fontDesign)
-                    🎚MultilineTextAlignmentPicker(value: self.$note.accessory_multilineTextAlignment)
-                    🎚ItalicToggle(value: self.$note.accessory_italic)
+                    🎚FontWeightPicker()
+                    🎚FontDesignPicker()
+                    🎚MultilineTextAlignmentPicker()
+                    🎚ItalicToggle()
                     🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
                     NavigationLink {
                         List { 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS() }

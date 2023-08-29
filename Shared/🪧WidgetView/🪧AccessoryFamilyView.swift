@@ -21,10 +21,10 @@ struct 🪧AccessoryFamilyView: View {
             .widgetAccentable()
         }
         .font(.system(size: CGFloat(self.note.accessory_fontSize),
-                      weight: self.note.accessory_fontWeight.value,
-                      design: self.note.accessory_fontDesign.value))
-        .italic(self.note.accessory_italic)
-        .multilineTextAlignment(self.note.accessory_multilineTextAlignment.value)
+                      weight: self.note.fontWeight.value,
+                      design: self.note.fontDesign.value))
+        .italic(self.note.italic)
+        .multilineTextAlignment(self.note.multilineTextAlignment.value)
         .modifier(Self.ForegroundStyle())
         .modifier(Self.Animation())
     }
@@ -93,12 +93,12 @@ private extension 🪧AccessoryFamilyView {
         func body(content: Content) -> some View {
             if self.situation == .previewInApp {
                 content
+                    .animation(.default, value: self.note.fontDesign)
+                    .animation(.default, value: self.note.fontWeight)
+                    .animation(.default, value: self.note.italic)
+                    .animation(.default, value: self.note.multilineTextAlignment)
                     .animation(.default, value: self.note.accessory_fontSize)
-                    .animation(.default, value: self.note.accessory_fontDesign)
-                    .animation(.default, value: self.note.accessory_fontWeight)
                     .animation(.default, value: self.note.accessory_hierarchical)
-                    .animation(.default, value: self.note.accessory_multilineTextAlignment)
-                    .animation(.default, value: self.note.accessory_italic)
             } else {
                 content
             }

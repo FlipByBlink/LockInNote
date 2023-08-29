@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "・Home screen\n・Notification center\n・StandBy\n・Desktop\n・Lock screen(iPad)" : {
+
+    },
+    "・Lock screen\n・Apple Watch complication" : {
+
+    },
     "(Nothing)" : {
       "localizations" : {
         "ja" : {
@@ -82,6 +88,7 @@
       }
     },
     "Accessory\nwidget" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -592,6 +599,7 @@
       }
     },
     "Home screen, Notification center, StandBy, Desktop, Lock screen(iPad)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -742,6 +750,7 @@
       }
     },
     "Lock screen, Apple Watch complication" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1183,6 +1192,7 @@
       }
     },
     "System\nwidget" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

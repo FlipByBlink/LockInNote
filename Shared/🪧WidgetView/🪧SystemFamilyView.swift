@@ -21,8 +21,8 @@ struct 🪧SystemFamilyView: View {
                 }
             }
             .modifier(Self.ForegroundStyle())
-            .italic(self.note.system_italic)
-            .multilineTextAlignment(self.note.system_multilineTextAlignment.value)
+            .italic(self.note.italic)
+            .multilineTextAlignment(self.note.multilineTextAlignment.value)
             .padding(self.padding)
         }
         .modifier(Self.Animation())
@@ -32,8 +32,8 @@ struct 🪧SystemFamilyView: View {
 private extension 🪧SystemFamilyView {
     private var font: Font {
         .system(size: CGFloat(self.note.system_fontSize * self.scale),
-                weight: self.note.system_fontWeight.value,
-                design: self.note.system_fontDesign.value)
+                weight: self.note.fontWeight.value,
+                design: self.note.fontDesign.value)
     }
     private var padding: CGFloat { .init(self.note.system_padding * self.scale) }
     private var scale: Int {
@@ -109,12 +109,12 @@ private extension 🪧SystemFamilyView {
         func body(content: Content) -> some View {
             if self.situation == .previewInApp {
                 content
+                    .animation(.default, value: self.note.fontDesign)
+                    .animation(.default, value: self.note.fontWeight)
+                    .animation(.default, value: self.note.italic)
+                    .animation(.default, value: self.note.multilineTextAlignment)
                     .animation(.default, value: self.note.system_fontSize)
-                    .animation(.default, value: self.note.system_fontDesign)
-                    .animation(.default, value: self.note.system_fontWeight)
                     .animation(.default, value: self.note.system_hierarchical)
-                    .animation(.default, value: self.note.system_multilineTextAlignment)
-                    .animation(.default, value: self.note.system_italic)
                     .animation(.default, value: self.note.system_padding)
                     .animation(.default, value: self.note.system_contentAlignment)
                     .animation(.default, value: self.note.system_textColor)

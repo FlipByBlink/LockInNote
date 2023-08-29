@@ -13,8 +13,8 @@ struct 🪧EmptyIconView: View {
                         Color.clear
                         self.icon()
                             .font(.system(size: ⓟroxy.size.height * self.note.empty_iconSize.value,
-                                          weight: self.note.system_fontWeight.value,
-                                          design: self.note.system_fontDesign.value))
+                                          weight: self.note.fontWeight.value,
+                                          design: self.note.fontDesign.value))
                             .minimumScaleFactor(0.5)
                             .lineLimit(1)
                     }
