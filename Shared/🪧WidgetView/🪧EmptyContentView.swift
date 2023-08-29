@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct 🪧EmptyIconView: View {
+struct 🪧EmptyContentView: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         ZStack {

@@ -80,7 +80,7 @@ struct 🎚️EmptyContentPreview: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .fill(.gray.opacity(0.5).gradient)
-                        🪧EmptyIconView()
+                        🪧EmptyContentView()
 #if os(iOS) || os(macOS)
                             .font(.title)
 #elseif os(watchOS)

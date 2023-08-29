@@ -60,11 +60,11 @@ extension 🗒️StaticInfo {
                                    "🪧SystemFamilyView.swift",
                                    "🪧AccessoryFamilyView.swift",
                                    "🪧AccessoryCornerView.swift",
-                                   "🪧EmptyIconView.swift",
+                                   "🪧EmptyContentView.swift",
                                    "🪧PlaceholderView.swift",
                                    "🪧ContainerBackground.swift",
                                    "🪧SnapshotTitle.swift",
-                                   "🪧SampleText.swift",
+                                   "🪧SampleTextInApp.swift",
                                    "🪧WidgetReload.swift"]
                 case .Customize: ["🎚️Model.swift",
                                   "🎚️CustomizeMenu.swift",
@@ -116,11 +116,11 @@ extension 🗒️StaticInfo {
                 case .WidgetView: ["🪧EntryView.swift",
                                    "🪧AccessoryFamilyView.swift",
                                    "🪧AccessoryCornerView.swift",
-                                   "🪧EmptyIconView.swift",
+                                   "🪧EmptyContentView.swift",
                                    "🪧PlaceholderView.swift",
                                    "🪧ContainerBackground.swift",
                                    "🪧SnapshotTitle.swift",
-                                   "🪧SampleText.swift",
+                                   "🪧SampleTextInApp.swift",
                                    "🪧WidgetReload.swift"]
                 case .Customize: ["🎚️Model.swift",
                                   "🎚️CustomizeMenu.swift",
@@ -162,11 +162,11 @@ extension 🗒️StaticInfo {
                                "Widget.swift"]
                 case .WidgetView: ["🪧EntryView.swift",
                                    "🪧SystemFamilyView.swift",
-                                   "🪧EmptyIconView.swift",
+                                   "🪧EmptyContentView.swift",
                                    "🪧PlaceholderView.swift",
                                    "🪧ContainerBackground.swift",
                                    "🪧SnapshotTitle.swift",
-                                   "🪧SampleText.swift"]
+                                   "🪧SampleTextInApp.swift"]
                 case .Customize: ["🎚️Model.swift",
                                   "🎚️CustomizeMenu.swift",
                                   "🎚️MenuComponent.swift",

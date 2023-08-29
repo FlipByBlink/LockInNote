@@ -14,7 +14,7 @@ struct 🪧AccessoryCornerView: View {
                             .widgetLabel(self.note.empty_userText)
                     }
                 } else {
-                    🪧EmptyIconView()
+                    🪧EmptyContentView()
                 }
             } else {
                 Image(systemName: "text.justify.leading")

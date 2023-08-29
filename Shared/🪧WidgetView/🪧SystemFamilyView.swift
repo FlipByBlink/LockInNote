@@ -10,9 +10,9 @@ struct 🪧SystemFamilyView: View {
             Group {
                 if self.note.text.isEmpty {
                     if self.isPreviewInApp {
-                        🪧SampleText()
+                        🪧SampleTextInApp()
                     } else {
-                        🪧EmptyIconView()
+                        🪧EmptyContentView()
                     }
                 } else {
                     Text(self.note.text)

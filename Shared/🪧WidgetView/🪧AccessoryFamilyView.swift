@@ -9,9 +9,9 @@ struct 🪧AccessoryFamilyView: View {
             Self.Background(self.isPreviewInApp)
             if self.note.text.isEmpty {
                 if self.isPreviewInApp {
-                    🪧SampleText()
+                    🪧SampleTextInApp()
                 } else {
-                    🪧EmptyIconView()
+                    🪧EmptyContentView()
                 }
             } else {
                 Text(self.note.text)
@@ -36,12 +36,19 @@ private extension 🪧AccessoryFamilyView {
         @EnvironmentObject var note: 📝NoteModel
         @Environment(\.widgetFamily) var widgetFamily
         var isPreviewInApp: Bool
+        private var condition: Bool {
+#if os(watchOS) || os(iOS)
+            self.widgetFamily == .accessoryCircular
+            && self.note.accessoryCircular_backgroundForIOS16AndWatchOS
+            && !self.isPreviewInApp
+#else
+            false
+#endif
+        }
         var body: some View {
             ZStack {
                 Color.clear
-                if self.widgetFamily == .accessoryCircular,
-                   self.note.accessoryCircular_backgroundForIOS16AndWatchOS,
-                   !self.isPreviewInApp {
+                if self.condition {
 #if os(watchOS)
                     AccessoryWidgetBackground()
 #elseif os(iOS)
