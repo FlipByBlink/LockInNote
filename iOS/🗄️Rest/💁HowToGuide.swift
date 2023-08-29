@@ -32,7 +32,7 @@ struct 💁HowToHomeScreen: View {
         private let steps: [Int: LocalizedStringKey] = [
             1: "Touch and hold the home screen until the + button appears, then tap + button.",
             2: #"Select "LockInNote"."#,
-            3: "Tap or drag the widgets that you want to add to the Lock Screen.",
+            3: "Select or drag the widgets that you want to add to the Home Screen.",
             4: "When you're finished, tap the Done button."
         ]
         var body: some View {

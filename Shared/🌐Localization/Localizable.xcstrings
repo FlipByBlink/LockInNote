@@ -1092,6 +1092,16 @@
         }
       }
     },
+    "Select or drag the widgets that you want to add to the Home Screen." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ホーム画面に追加したいウィジェットを選択またはドラッグします。"
+          }
+        }
+      }
+    },
     "semibold" : {
       "localizations" : {
         "ja" : {
