@@ -111,7 +111,7 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                         .scaledToFit()
                         .frame(width: 180)
                         .shadow(radius: 2)
-                        .padding(.vertical, 8)
+                        .padding(.vertical, 12)
                 }
                 .font(.title3.bold())
             }

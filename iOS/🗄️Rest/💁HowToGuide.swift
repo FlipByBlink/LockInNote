@@ -26,7 +26,7 @@ struct 💁HowToHomeScreen: View {
             Self.StepByStepSection()
             Self.AppleSupportLinkSection()
         }
-        .navigationTitle("Lock screen widget")
+        .navigationTitle("Home screen widget")
     }
     private struct StepByStepSection: View {
         private let steps: [Int: LocalizedStringKey] = [
