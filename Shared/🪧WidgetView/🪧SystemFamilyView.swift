@@ -11,20 +11,19 @@ struct 🪧SystemFamilyView: View {
                 if self.note.text.isEmpty {
                     if self.isPreviewInApp {
                         🪧SampleTextInApp()
+                            .font(self.font)
                     } else {
                         🪧EmptyContentView()
                     }
                 } else {
                     Text(self.note.text)
+                        .font(self.font)
                 }
             }
             .modifier(Self.ForegroundStyle())
-            .font(.system(size: CGFloat(self.note.system_fontSize * self.scale),
-                          weight: self.note.system_fontWeight.value,
-                          design: self.note.system_fontDesign.value))
             .italic(self.note.system_italic)
             .multilineTextAlignment(self.note.system_multilineTextAlignment.value)
-            .padding(CGFloat(self.note.system_padding * self.scale))
+            .padding(self.padding)
         }
         .modifier(Self.Animation(self.isPreviewInApp))
     }
@@ -34,6 +33,12 @@ struct 🪧SystemFamilyView: View {
 }
 
 private extension 🪧SystemFamilyView {
+    private var font: Font {
+        .system(size: CGFloat(self.note.system_fontSize * self.scale),
+                weight: self.note.system_fontWeight.value,
+                design: self.note.system_fontDesign.value)
+    }
+    private var padding: CGFloat { .init(self.note.system_padding * self.scale) }
     private var scale: Int {
         switch self.widgetFamily {
             case .systemLarge, .systemExtraLarge: self.note.system_doubleSizeOnLargeWidget ? 2 : 1

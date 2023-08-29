@@ -51,14 +51,12 @@ private struct 🎚️EmptyContentMenuLink: View {
                     🎚️EmptyContentPreview()
                     Section {
                         🎚️EmptyTypePicker()
-                        switch self.note.empty_type {
-                            case .squareAndPencil, .ellipsis, .pencil:
-                                🎚️EmptyIconSizePicker()
-                            case .userText:
-                                🎚️EmptyTextField()
-                            case .nothing:
-                                EmptyView()
+                        if self.note.empty_type == .userText {
+                            🎚️EmptyTextField()
                         }
+                    }
+                    if self.note.empty_type != .nothing {
+                        Section { 🎚️EmptyIconSizePicker() }
                     }
                 }
                 .navigationTitle("Empty content")

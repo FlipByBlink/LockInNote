@@ -81,16 +81,12 @@ struct 🎚️EmptyContentPreview: View {
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .fill(.gray.opacity(0.5).gradient)
                         🪧EmptyContentView()
-#if os(iOS) || os(macOS)
-                            .font(.title)
-#elseif os(watchOS)
-                            .font(.title3)
-#endif
+                            .padding(.horizontal, 8)
                     }
 #if os(iOS) || os(macOS)
-                    .frame(width: 120, height: 120)
+                    .frame(width: 220, height: 160)
 #elseif os(watchOS)
-                    .frame(width: 60, height: 60)
+                    .frame(width: 90, height: 60)
 #endif
                     Text("Preview")
                         .foregroundStyle(.secondary)
