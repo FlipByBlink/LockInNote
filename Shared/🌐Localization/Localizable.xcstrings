@@ -571,6 +571,16 @@
         }
       }
     },
+    "Home screen widget" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ホーム画面ウィジェット"
+          }
+        }
+      }
+    },
     "Home screen, Notification center, StandBy, Desktop, Lock screen(iPad)" : {
       "localizations" : {
         "ja" : {
@@ -592,10 +602,24 @@
       }
     },
     "How to add home screen widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ホーム画面ウィジェットを追加する方法"
+          }
+        }
+      }
     },
     "How to add lock screen widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ロック画面ウィジェットを追加する方法"
+          }
+        }
+      }
     },
     "iCloud sync" : {
       "localizations" : {
@@ -1039,7 +1063,14 @@
       }
     },
     "Select \"LockInNote\"." : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「ロックノート」を選択する。"
+          }
+        }
+      }
     },
     "Select Lock Screen." : {
       "localizations" : {
@@ -1122,7 +1153,14 @@
       }
     },
     "Sync data between devices by iCloud." : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データはiCloudによって同期されます。"
+          }
+        }
+      }
     },
     "System widget" : {
       "localizations" : {
@@ -1305,7 +1343,14 @@
       }
     },
     "Touch and hold the home screen until the + button appears, then tap + button." : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコンや背景を長押しして + ボタンを表示します。そして、 + ボタンをタップします。"
+          }
+        }
+      }
     },
     "Touch and hold the Lock Screen until the Customize button appears, then tap Customize." : {
       "localizations" : {
@@ -1388,7 +1433,14 @@
       }
     },
     "When you're finished, tap the Done button." : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「完了」ボタンをタップします。"
+          }
+        }
+      }
     },
     "Widget" : {
       "localizations" : {
