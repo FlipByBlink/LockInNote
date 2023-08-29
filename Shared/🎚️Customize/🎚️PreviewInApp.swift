@@ -50,6 +50,7 @@ struct 🎚️AccessoryWidgetPreview: View {
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .fill(.gray.opacity(0.5).gradient)
                     🪧AccessoryFamilyView()
+                        .padding(.horizontal, 8)
                 }
 #if os(iOS) || os(macOS)
                 .frame(width: 210, height: 80)
