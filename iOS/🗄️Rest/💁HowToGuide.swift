@@ -52,7 +52,7 @@ struct 💁HowToHomeScreen: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 120)
-                            .padding(.vertical, 4)
+                            .padding(4)
                     }
                 }
             }
@@ -115,7 +115,7 @@ struct 💁HowToLockScreen: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 120)
-                            .padding(.vertical, 4)
+                            .padding(4)
                     }
                 }
             }
