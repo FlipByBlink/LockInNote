@@ -101,21 +101,20 @@ struct 🎚AppearanceModePicker: View {
         .listRowBackground(Color.clear)
     }
 }
-#endif
 
 struct 🎚️FontSizeStepper: View {
     @Binding var value: Int
     var body: some View {
         Stepper(value: self.$value, in: 8 ... 100, step: 1) {
-            LabeledContent {
-                Text(self.value.formatted())
-                    .monospacedDigit()
-            } label: {
-                Label("Size", systemImage: "textformat.size")
-            }
+            Label("Size", systemImage: "textformat.size")
+                .badge(
+                    Text(self.value.formatted())
+                        .monospacedDigit()
+                )
         }
     }
 }
+#endif
 
 struct 🎚HierarchicalPicker: View {
     @Binding var value: 🎚️Hierarchical
@@ -132,16 +131,16 @@ struct 🎚HierarchicalPicker: View {
     }
 }
 
+#if os(iOS) || os(macOS)
 struct 🎚️PaddingStepper: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         Stepper(value: self.$note.system_padding, in: 0 ... 16, step: 1) {
-            LabeledContent {
-                Text(self.note.system_padding.formatted())
-                    .monospacedDigit()
-            } label: {
-                Label("Padding", systemImage: "squareshape.squareshape.dashed")
-            }
+            Label("Padding", systemImage: "squareshape.squareshape.dashed")
+                .badge(
+                    Text(self.note.system_padding.formatted())
+                        .monospacedDigit()
+                )
         }
     }
 }
@@ -157,7 +156,6 @@ struct 🎚️ContentAlignmentPicker: View {
     }
 }
 
-#if os(iOS) || os(macOS)
 struct 🎚️TextColorPicker: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
@@ -175,7 +173,6 @@ struct 🎚️BackgroundColorPicker: View {
         }
     }
 }
-#endif
 
 struct 🎚️BackgroundGradientToggle: View {
     @EnvironmentObject var note: 📝NoteModel
@@ -198,6 +195,7 @@ struct 🎚️DoubleSizeOnLargeWidgetToggle: View {
         }
     }
 }
+#endif
 
 #if os(iOS) || os(watchOS)
 struct 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS: View {
