@@ -32,7 +32,7 @@ extension 💾ICloud {
         }
     }
     static func encodeKey(_ ⓟroperty: 📝NoteProperty, _ ⓝoteFamily: 📝NoteFamily) -> String {
-        "\(ⓟroperty)\(ⓝoteFamily)"
+        "\(ⓝoteFamily)/\(ⓟroperty)"
     }
     static func decodeKey(_ ⓚey: String, _ ⓝoteFamily: 📝NoteFamily) -> 📝NoteProperty? {
         .allCases.first {

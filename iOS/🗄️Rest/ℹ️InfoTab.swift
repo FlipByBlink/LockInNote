@@ -4,6 +4,7 @@ struct ℹ️InfoTab: View {
     var body: some View {
         NavigationStack {
             List {
+                🚧DebugMenu()
                 Section {
                     ℹ️IconAndName()
                     ℹ️AppStoreLink()

@@ -510,6 +510,9 @@
         }
       }
     },
+    "Erase all iCloudKVS" : {
+
+    },
     "Erase text after action" : {
       "localizations" : {
         "ja" : {
@@ -881,6 +884,9 @@
           }
         }
       }
+    },
+    "NSUbiquitousKeyValueStore.default.dictionaryRepresentation" : {
+
     },
     "OK" : {
       "localizations" : {
