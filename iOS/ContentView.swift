@@ -24,5 +24,6 @@ struct ContentView: View {
         }
         .modifier(🪧WidgetReload())
         .modifier(💬RequestUserReview())
+        .environmentObject(self.app.inAppPurchaseModel)
     }
 }

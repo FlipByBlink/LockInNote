@@ -7,6 +7,7 @@ class 📱AppModel: NSObject, ObservableObject, UIApplicationDelegate {
     let primaryNote: 📝NoteModel = .init(.primary)
     let secondaryNote: 📝NoteModel = .init(.secondary)
     let tertiaryNote: 📝NoteModel = .init(.tertiary)
+    let inAppPurchaseModel: 🛒InAppPurchaseModel = .init(id: "LockInNote.adfree")
 }
 
 extension 📱AppModel {

@@ -49,6 +49,9 @@
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <StoreKitConfigurationFileReference
+         identifier = "../../Shared/&#x1f5c4;&#xfe0f;Rest/Configuration.storekit">
+      </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
