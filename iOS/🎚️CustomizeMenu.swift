@@ -11,6 +11,7 @@ struct 🎚️CustomizeMenu: View {
                 🎚️AccessoryWidgetMenuLink()
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
+            //.navigationBarTitleDisplayMode(.inline) TODO: iOS17RCで挙動チェック
             .toolbar {
                 Button {
                     self.dismiss()
@@ -107,58 +108,58 @@ private struct 🎚️SystemWidgetMenuLink: View {
     @EnvironmentObject var note: 📝NoteModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     var body: some View {
-        Section {
-            NavigationLink {
-                List {
-                    Section { 🎚AppearanceModePicker() }
-                    🎚️SystemWidgetPreview()
-                    Section {
-                        🎚️FontSizeStepper(value: self.$note.system_fontSize)
-                        🎚️PaddingStepper()
-                        🎚️ContentAlignmentPicker()
-                        switch self.note.system_appearanceMode {
-                            case .standard:
-                                🎚HierarchicalPicker(value: self.$note.system_hierarchical)
-                            case .color:
-                                🎚️TextColorPicker()
-                                🎚️BackgroundColorPicker()
-                                🎚️BackgroundGradientToggle()
-                        }
-                        NavigationLink {
-                            List { 🎚️DoubleSizeOnLargeWidgetToggle() }
-                                .navigationTitle("More")
-                        } label: {
-                            Label("More", systemImage: "ellipsis")
-                        }
+        NavigationLink {
+            List {
+                Section { 🎚AppearanceModePicker() }
+                🎚️SystemWidgetPreview()
+                Section {
+                    🎚️FontSizeStepper(value: self.$note.system_fontSize)
+                    🎚️PaddingStepper()
+                    🎚️ContentAlignmentPicker()
+                    switch self.note.system_appearanceMode {
+                        case .standard:
+                            🎚HierarchicalPicker(value: self.$note.system_hierarchical)
+                        case .color:
+                            🎚️TextColorPicker()
+                            🎚️BackgroundColorPicker()
+                            🎚️BackgroundGradientToggle()
                     }
-                    Section { Self.about() }
+                    NavigationLink {
+                        List { 🎚️DoubleSizeOnLargeWidgetToggle() }
+                            .navigationTitle("More")
+                    } label: {
+                        Label("More", systemImage: "ellipsis")
+                    }
                 }
-                .navigationTitle("System widget")
-                .animation(.default, value: self.note.system_appearanceMode)
+                Section { Self.about() }
+            }
+            .navigationTitle("System widget")
+            .animation(.default, value: self.note.system_appearanceMode)
+        } label: {
+            LabeledContent {
+                Image(.homeScreenExample)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: self.horizontalSizeClass == .compact ? 120 : 180)
+                    .shadow(radius: 2, y: 1)
+                    .padding(8)
             } label: {
-                LabeledContent {
-                    Image(.homeScreenExample)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: self.horizontalSizeClass == .compact ? 120 : 180)
-                        .shadow(radius: 2, y: 1)
-                        .padding(8)
-                } label: {
-                    Label(self.horizontalSizeClass == .compact ? "System\nwidget" : "System widget",
-                          systemImage: "slider.horizontal.3")
-                }
+                Label(self.horizontalSizeClass == .compact ? "System\nwidget" : "System widget",
+                      systemImage: "slider.horizontal.3")
             }
         }
     }
     private static func about() -> some View {
-        VStack(alignment: .leading) {
-            Text("・Home screen")
-            Text("・Notification center")
-            Text("・StandBy")
-            Text("・Desktop")
-            Text("・Lock screen(iPad)")
-        }
-        .font(.subheadline)
+        Text("""
+        __Target__
+        Home screen
+        Notification center
+        StandBy
+        Desktop
+        Lock screen(iPad)
+        """)
+        .multilineTextAlignment(.center)
+        .font(.caption)
         .foregroundStyle(.secondary)
         .frame(maxWidth: .infinity)
         .listRowBackground(Color.clear)
@@ -169,46 +170,46 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
     @EnvironmentObject var note: 📝NoteModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     var body: some View {
-        Section {
-            NavigationLink {
-                List {
-                    🎚️AccessoryWidgetPreview()
-                    Section {
-                        🎚️FontSizeStepper(value: self.$note.accessory_fontSize)
-                        🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
-                    }
-                    if #unavailable(iOS 17.0) {
-                        NavigationLink {
-                            List { 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS() }
-                                .navigationTitle("More")
-                        } label: {
-                            Label("More", systemImage: "ellipsis")
-                        }
-                    }
-                    Self.about()
+        NavigationLink {
+            List {
+                🎚️AccessoryWidgetPreview()
+                Section {
+                    🎚️FontSizeStepper(value: self.$note.accessory_fontSize)
+                    🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
                 }
-                .navigationTitle("Accessory widget")
+                if #unavailable(iOS 17.0) {
+                    NavigationLink {
+                        List { 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS() }
+                            .navigationTitle("More")
+                    } label: {
+                        Label("More", systemImage: "ellipsis")
+                    }
+                }
+                Self.about()
+            }
+            .navigationTitle("Accessory widget")
+        } label: {
+            LabeledContent {
+                Image(.lockScreenExample)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: self.horizontalSizeClass == .compact ? 120 : 180)
+                    .shadow(radius: 2, y: 1)
+                    .padding(8)
             } label: {
-                LabeledContent {
-                    Image(.lockScreenExample)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: self.horizontalSizeClass == .compact ? 120 : 180)
-                        .shadow(radius: 2, y: 1)
-                        .padding(8)
-                } label: {
-                    Label(self.horizontalSizeClass == .compact ? "Accessory\nwidget" : "Accessory widget",
-                          systemImage: "slider.horizontal.3")
-                }
+                Label(self.horizontalSizeClass == .compact ? "Accessory\nwidget" : "Accessory widget",
+                      systemImage: "slider.horizontal.3")
             }
         }
     }
     private static func about() -> some View {
-        VStack(alignment: .leading) {
-            Text("・Lock screen")
-            Text("・Apple Watch complication")
-        }
-        .font(.subheadline)
+        Text("""
+        __Target__
+        Lock screen
+        Apple Watch complication
+        """)
+        .multilineTextAlignment(.center)
+        .font(.caption)
         .foregroundStyle(.secondary)
         .frame(maxWidth: .infinity)
         .listRowBackground(Color.clear)

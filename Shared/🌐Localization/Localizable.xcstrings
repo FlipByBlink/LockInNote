@@ -1,25 +1,10 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "・Apple Watch complication" : {
+    "__Target__\nHome screen\nNotification center\nStandBy\nDesktop\nLock screen(iPad)" : {
 
     },
-    "・Desktop" : {
-
-    },
-    "・Home screen" : {
-
-    },
-    "・Lock screen" : {
-
-    },
-    "・Lock screen(iPad)" : {
-
-    },
-    "・Notification center" : {
-
-    },
-    "・StandBy" : {
+    "__Target__\nLock screen\nApple Watch complication" : {
 
     },
     "(Nothing)" : {
