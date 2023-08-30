@@ -25,6 +25,8 @@ struct 🔗URLSchemeActionMenuLink: View {
             .foregroundStyle(.secondary)
             .scaleEffect(y: 1.33)
             .padding(.vertical, 32)
+        } header: {
+            Text("Custom action")
         }
     }
 }

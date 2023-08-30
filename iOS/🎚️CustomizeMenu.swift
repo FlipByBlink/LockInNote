@@ -131,7 +131,7 @@ private struct 🎚️SystemWidgetMenuLink: View {
                         Label("More", systemImage: "ellipsis")
                     }
                 }
-                Section { Self.about() }
+                Self.about()
             }
             .navigationTitle("System widget")
             .animation(.default, value: self.note.system_appearanceMode)

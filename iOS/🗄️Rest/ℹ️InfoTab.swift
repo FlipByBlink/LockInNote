@@ -15,7 +15,6 @@ struct ℹ️InfoTab: View {
                               systemImage: "doc")
                     }
                 }
-                🛒InAppPurchaseMenuLink()
                 💁HowToGuideSection()
             }
             .navigationTitle("Info")

@@ -13,7 +13,7 @@ class 📝NoteModel: ObservableObject {
     
     //==== Empty icon ====
     @Published var empty_type: 🎚️EmptyType = .squareAndPencil
-    @Published var empty_iconSize: 🎚️EmptyIconSize = .small
+    @Published var empty_iconSize: 🎚️EmptyIconSize = .medium
     @Published var empty_userText: String = ""
     
     //==== WidgetFamily.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge ====
@@ -110,6 +110,7 @@ private extension 📝NoteModel {
                 self.fontWeight = .bold
                 self.fontDesign = .serif
                 self.empty_type = .userText
+                self.empty_iconSize = .small
                 self.system_appearanceMode = .color
                 self.system_textColor = .init(white: 0.3)
                 self.system_backgroundColor = .init(white: 0.89)
