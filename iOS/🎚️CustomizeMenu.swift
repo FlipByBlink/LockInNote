@@ -11,7 +11,6 @@ struct 🎚️CustomizeMenu: View {
                 🎚️AccessoryWidgetMenuLink()
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
-            .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 Button {
                     self.dismiss()
@@ -125,46 +124,31 @@ private struct 🎚️SystemWidgetMenuLink: View {
                                 🎚️BackgroundColorPicker()
                                 🎚️BackgroundGradientToggle()
                         }
-                    }
-                    NavigationLink {
-                        List { 🎚️DoubleSizeOnLargeWidgetToggle() }
-                            .navigationTitle("More")
-                    } label: {
-                        Label("More", systemImage: "ellipsis")
+                        NavigationLink {
+                            List { 🎚️DoubleSizeOnLargeWidgetToggle() }
+                                .navigationTitle("More")
+                        } label: {
+                            Label("More", systemImage: "ellipsis")
+                        }
                     }
                     Section { Self.about() }
                 }
                 .navigationTitle("System widget")
                 .animation(.default, value: self.note.system_appearanceMode)
             } label: {
-                if self.horizontalSizeClass == .compact {
-                    VStack {
-                        HStack {
-                            Self.label()
-                            Spacer()
-                        }
-                        Self.exampleImage()
-                    }
-                } else {
-                    HStack {
-                        Self.label()
-                        Spacer()
-                        Self.exampleImage()
-                    }
+                LabeledContent {
+                    Image(.homeScreenExample)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: self.horizontalSizeClass == .compact ? 120 : 180)
+                        .shadow(radius: 2, y: 1)
+                        .padding(8)
+                } label: {
+                    Label(self.horizontalSizeClass == .compact ? "System\nwidget" : "System widget",
+                          systemImage: "slider.horizontal.3")
                 }
             }
         }
-    }
-    private static func label() -> some View {
-        Label("System widget", systemImage: "slider.horizontal.3")
-    }
-    private static func exampleImage() -> some View {
-        Image(.homeScreenExample)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 180)
-            .shadow(radius: 2, y: 1)
-            .padding(8)
     }
     private static func about() -> some View {
         VStack(alignment: .leading) {
@@ -205,34 +189,19 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                 }
                 .navigationTitle("Accessory widget")
             } label: {
-                if self.horizontalSizeClass == .compact {
-                    VStack {
-                        HStack {
-                            Self.label()
-                            Spacer()
-                        }
-                        Self.exampleImage()
-                    }
-                } else {
-                    HStack {
-                        Self.label()
-                        Spacer()
-                        Self.exampleImage()
-                    }
+                LabeledContent {
+                    Image(.lockScreenExample)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: self.horizontalSizeClass == .compact ? 120 : 180)
+                        .shadow(radius: 2, y: 1)
+                        .padding(8)
+                } label: {
+                    Label(self.horizontalSizeClass == .compact ? "Accessory\nwidget" : "Accessory widget",
+                          systemImage: "slider.horizontal.3")
                 }
             }
         }
-    }
-    private static func label() -> some View {
-        Label("Accessory widget", systemImage: "slider.horizontal.3")
-    }
-    private static func exampleImage() -> some View {
-        Image(.lockScreenExample)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 180)
-            .shadow(radius: 2, y: 1)
-            .padding(8)
     }
     private static func about() -> some View {
         VStack(alignment: .leading) {

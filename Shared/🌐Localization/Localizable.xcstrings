@@ -103,7 +103,6 @@
       }
     },
     "Accessory\nwidget" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1207,7 +1206,6 @@
       }
     },
     "System\nwidget" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
