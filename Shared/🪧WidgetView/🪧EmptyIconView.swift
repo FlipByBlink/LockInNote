@@ -43,10 +43,12 @@ private extension 🪧EmptyIconView {
         }
     }
     private var isLargeFamily: Bool {
-        #if os(watchOS)
-        false
-        #else
+        #if os(iOS)
         [.systemLarge, .systemExtraLarge].contains(self.widgetFamily)
+        #elseif os(macOS)
+        [.systemLarge].contains(self.widgetFamily)
+        #elseif os(watchOS)
+        false
         #endif
     }
     private struct Animation: ViewModifier {
