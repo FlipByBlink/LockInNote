@@ -11,6 +11,7 @@ struct 🎚️CustomizeMenu: View {
                 🎚️AccessoryWidgetMenuLink()
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
+            .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 Button {
                     self.dismiss()
@@ -131,31 +132,52 @@ private struct 🎚️SystemWidgetMenuLink: View {
                     } label: {
                         Label("More", systemImage: "ellipsis")
                     }
+                    Section { Self.about() }
                 }
                 .navigationTitle("System widget")
                 .animation(.default, value: self.note.system_appearanceMode)
             } label: {
-                Label("System widget", systemImage: "slider.horizontal.3")
-            }
-            HStack {
-                Text("""
-                ・Home screen
-                ・Notification center
-                ・StandBy
-                ・Desktop
-                ・Lock screen(iPad)
-                """)
-                .font(.footnote)
-                .foregroundStyle(.secondary)
-                Spacer()
-                Image(.homeScreenExample)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 180)
-                    .shadow(radius: 2, y: 1)
-                    .padding(.vertical, 8)
+                if self.horizontalSizeClass == .compact {
+                    VStack {
+                        HStack {
+                            Self.label()
+                            Spacer()
+                        }
+                        Self.exampleImage()
+                    }
+                } else {
+                    HStack {
+                        Self.label()
+                        Spacer()
+                        Self.exampleImage()
+                    }
+                }
             }
         }
+    }
+    private static func label() -> some View {
+        Label("System widget", systemImage: "slider.horizontal.3")
+    }
+    private static func exampleImage() -> some View {
+        Image(.homeScreenExample)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 180)
+            .shadow(radius: 2, y: 1)
+            .padding(8)
+    }
+    private static func about() -> some View {
+        VStack(alignment: .leading) {
+            Text("・Home screen")
+            Text("・Notification center")
+            Text("・StandBy")
+            Text("・Desktop")
+            Text("・Lock screen(iPad)")
+        }
+        .font(.subheadline)
+        .foregroundStyle(.secondary)
+        .frame(maxWidth: .infinity)
+        .listRowBackground(Color.clear)
     }
 }
 
@@ -179,26 +201,47 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                             Label("More", systemImage: "ellipsis")
                         }
                     }
+                    Self.about()
                 }
                 .navigationTitle("Accessory widget")
             } label: {
-                Label("Accessory widget", systemImage: "slider.horizontal.3")
-            }
-            HStack {
-                Text("""
-                ・Lock screen
-                ・Apple Watch complication
-                """)
-                .font(.footnote)
-                .foregroundStyle(.secondary)
-                Spacer()
-                Image(.lockScreenExample)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 180)
-                    .shadow(radius: 2, y: 1)
-                    .padding(.vertical, 8)
+                if self.horizontalSizeClass == .compact {
+                    VStack {
+                        HStack {
+                            Self.label()
+                            Spacer()
+                        }
+                        Self.exampleImage()
+                    }
+                } else {
+                    HStack {
+                        Self.label()
+                        Spacer()
+                        Self.exampleImage()
+                    }
+                }
             }
         }
+    }
+    private static func label() -> some View {
+        Label("Accessory widget", systemImage: "slider.horizontal.3")
+    }
+    private static func exampleImage() -> some View {
+        Image(.lockScreenExample)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 180)
+            .shadow(radius: 2, y: 1)
+            .padding(8)
+    }
+    private static func about() -> some View {
+        VStack(alignment: .leading) {
+            Text("・Lock screen")
+            Text("・Apple Watch complication")
+        }
+        .font(.subheadline)
+        .foregroundStyle(.secondary)
+        .frame(maxWidth: .infinity)
+        .listRowBackground(Color.clear)
     }
 }
