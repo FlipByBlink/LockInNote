@@ -13,16 +13,21 @@ struct 🪧PlaceholderView : View {
                         Text(verbatim: "AAAAA")
                     }
                     .font(.title3)
-                case .accessoryCircular, .accessoryRectangular:
+                case .accessoryCircular:
                     Text(verbatim: "AAAAA")
                     Text(verbatim: "AAAAA")
                     Text(verbatim: "AAA")
+                case .accessoryRectangular:
+                    Text(verbatim: "AAAAAAAAAA")
+                    Text(verbatim: "AAAAAAAAAA")
+                    Text(verbatim: "AAAAA")
                 default:
                     Text(verbatim: "AAAAA")
                     Text(verbatim: "AAAAA")
                     Text(verbatim: "AAA")
             }
         }
+        .font(.subheadline)
         .minimumScaleFactor(0.4)
         .lineLimit(1)
         .redacted(reason: .placeholder)
