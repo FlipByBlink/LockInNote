@@ -25,7 +25,9 @@ struct 🚧DebugMenu: View {
                 Text(verbatim: "NSUbiquitousKeyValueStore.default.dictionaryRepresentation")
             }
             Button {
+                #if DEBUG
                 💾ICloud.eraseAll()
+                #endif
             } label: {
                 Text(verbatim: "Erase all iCloudKVS")
             }
