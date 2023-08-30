@@ -85,7 +85,8 @@ extension 🗒️StaticInfo {
                              "📣ADModel.swift",
                              "📣ADComponents.swift",
                              "🛒InAppPurchaseModel.swift",
-                             "🛒InAppPurchaseView.swift"]
+                             "🛒InAppPurchaseView.swift",
+                             "🚧DebugMenu.swift"]
                 case .Migration: ["🗄️FromVer_1_1.swift",
                                   "♻️BaseModelVer_1_1.swift",
                                   "💾ICloudVer_1_1.swift"]

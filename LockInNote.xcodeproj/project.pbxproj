@@ -332,6 +332,7 @@
 		F58F3BE42A7248D0008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */; };
 		F58F3BE62A7248DE008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */; };
 		F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */; };
+		F5AD41012A9EF26C00202C2D /* 🚧DebugMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */; };
 		F5B7C7312A9EE6D40040B15E /* 🚧DebugMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */; };
 		F5EF8DA32A9C403600650FAF /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
 		F5EF8DA42A9C403700650FAF /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
@@ -528,6 +529,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5AD41012A9EF26C00202C2D /* 🚧DebugMenu.swift in CopyFiles */,
 				F5606E762A9D92230046EC5D /* 🪧Situation.swift in CopyFiles */,
 				F53CB0C22A9D5C9F0039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */,
 				F538585E2A9C902900A0D72D /* Widget.swift in CopyFiles */,
