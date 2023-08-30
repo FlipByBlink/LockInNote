@@ -14,7 +14,7 @@ struct 🎚️SaveValues: ViewModifier {
             .onChange(of: self.note.empty_iconSize) { self.note.save(.empty_iconSize, $0) }
             .onChange(of: self.note.empty_userText) { self.note.save(.empty_userText, $0) }
         
-        //MARK: WidgetFamily.systemSmall, .systemMedium, .systemLarge
+        //MARK: WidgetFamily.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge
             .onChange(of: self.note.system_appearanceMode) { self.note.save(.system_appearanceMode, $0) }
             .onChange(of: self.note.system_fontSize) { self.note.save(.system_fontSize, $0) }
             .onChange(of: self.note.system_hierarchical) { self.note.save(.system_hierarchical, $0) }

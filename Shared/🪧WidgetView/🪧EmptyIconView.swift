@@ -17,6 +17,7 @@ struct 🪧EmptyIconView: View {
                                           design: self.note.fontDesign.value))
                             .minimumScaleFactor(0.5)
                             .lineLimit(1)
+                            .scaleEffect(self.isLargeFamily ? 0.8 : 1)
                     }
                 }
                 .modifier(Self.Animation())
@@ -40,6 +41,13 @@ private extension 🪧EmptyIconView {
                     EmptyView()
             }
         }
+    }
+    private var isLargeFamily: Bool {
+        #if os(watchOS)
+        false
+        #else
+        [.systemLarge, .systemExtraLarge].contains(self.widgetFamily)
+        #endif
     }
     private struct Animation: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
