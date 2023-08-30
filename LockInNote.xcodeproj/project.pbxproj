@@ -333,6 +333,9 @@
 		F58F3BE62A7248DE008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */; };
 		F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */; };
 		F5AD41012A9EF26C00202C2D /* 🚧DebugMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */; };
+		F5AD41032A9F1C1300202C2D /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */; };
+		F5AD41042A9F1D8B00202C2D /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */; };
+		F5AD41062A9F1D9D00202C2D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AD41052A9F1D9D00202C2D /* StoreKit.framework */; };
 		F5B7C7312A9EE6D40040B15E /* 🚧DebugMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */; };
 		F5EF8DA32A9C403600650FAF /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
 		F5EF8DA42A9C403700650FAF /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
@@ -529,6 +532,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5AD41042A9F1D8B00202C2D /* 📣ADSheet.swift in CopyFiles */,
 				F5AD41012A9EF26C00202C2D /* 🚧DebugMenu.swift in CopyFiles */,
 				F5606E762A9D92230046EC5D /* 🪧Situation.swift in CopyFiles */,
 				F53CB0C22A9D5C9F0039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */,
@@ -692,6 +696,8 @@
 		F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
+		F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
+		F5AD41052A9F1D9D00202C2D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🚧DebugMenu.swift"; sourceTree = "<group>"; };
 		F5E51EB52A98A1B800C53268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾ICloudVer_1_1.swift"; sourceTree = "<group>"; };
@@ -708,6 +714,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5AD41062A9F1D9D00202C2D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,6 +1008,7 @@
 		F556950028CCA8A5004558FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5AD41052A9F1D9D00202C2D /* StoreKit.framework */,
 				F556950128CCA8A5004558FC /* StoreKit.framework */,
 				F556950828CCAB70004558FC /* WidgetKit.framework */,
 				F556950A28CCAB70004558FC /* SwiftUI.framework */,
@@ -1025,6 +1033,7 @@
 				F57E85CE29D2C3D600927561 /* 💁HowToGuide.swift */,
 				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
 				F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */,
+				F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */,
 				F556953728CCAFC3004558FC /* 📣ADComponents.swift */,
 				F556953928CCAFC3004558FC /* 🛒InAppPurchaseView.swift */,
 			);
@@ -1459,6 +1468,7 @@
 				F53858392A9C78FD00A0D72D /* 🪧SnapshotTitle.swift in Sources */,
 				F51E39CD2A8CAA7100F32F4F /* 🎚️MenuComponent.swift in Sources */,
 				F51E3A4E2A8CC5D100F32F4F /* 📣ADComponents.swift in Sources */,
+				F5AD41032A9F1C1300202C2D /* 📣ADSheet.swift in Sources */,
 				F51E39E82A8CAA9800F32F4F /* 🔖Tab.swift in Sources */,
 				F53CB0BC2A9D5C1B0039FC31 /* 🪧SampleTextInApp.swift in Sources */,
 				F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */,

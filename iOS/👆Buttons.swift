@@ -19,11 +19,14 @@ struct 👆EditButton: View { // 🖊️
 }
 
 struct 👆DoneButton: View { // ☑️
+    @EnvironmentObject var app: 📱AppModel
+    @EnvironmentObject var iap: 🛒InAppPurchaseModel
     var unfocusAction: () -> Void
     var body: some View {
         Button {
             self.unfocusAction()
             UINotificationFeedbackGenerator().notificationOccurred(.success)
+            if self.iap.checkToShowADSheet() { self.app.sheet = .ad }
         } label: {
             Label("Done", systemImage: "checkmark")
                 .labelStyle(.iconOnly)

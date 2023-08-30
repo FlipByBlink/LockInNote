@@ -83,6 +83,7 @@ extension 🗒️StaticInfo {
                              "💬RequestUserReview.swift",
                              "ℹ️AboutApp.swift",
                              "📣ADModel.swift",
+                             "📣ADSheet.swift",
                              "📣ADComponents.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseView.swift",

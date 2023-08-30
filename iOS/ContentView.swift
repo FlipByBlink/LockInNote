@@ -17,9 +17,9 @@ struct ContentView: View {
                     🎚️CustomizeMenu()
                         .modifier(📋AddNoteToEnvironment(ⓝoteFamily))
                 case .onboarding:
-                    Text("Onboarding")
+                    Text(verbatim: "Onboarding")
                 case .ad:
-                    Text("AD")
+                    📣ADSheet()
             }
         }
         .modifier(🪧WidgetReload())
