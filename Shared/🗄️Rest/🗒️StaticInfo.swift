@@ -188,6 +188,7 @@ extension 🗒️StaticInfo {
                              "🔲WindowEdgeFeedback.swift",
                              "ℹ️HelpWindows.swift",
                              "📣ADModel.swift",
+                             "📣ADSheet.swift",
                              "📣ADContent.swift",
                              "🛒InAppPurchaseModel.swift",
                              "🛒InAppPurchaseWindow.swift",

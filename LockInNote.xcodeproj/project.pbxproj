@@ -336,6 +336,8 @@
 		F5AD41032A9F1C1300202C2D /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */; };
 		F5AD41042A9F1D8B00202C2D /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */; };
 		F5AD41062A9F1D9D00202C2D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AD41052A9F1D9D00202C2D /* StoreKit.framework */; };
+		F5AD41082A9F226400202C2D /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD41072A9F226400202C2D /* 📣ADSheet.swift */; };
+		F5AD41092A9F23CF00202C2D /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5AD41072A9F226400202C2D /* 📣ADSheet.swift */; };
 		F5B7C7312A9EE6D40040B15E /* 🚧DebugMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */; };
 		F5EF8DA32A9C403600650FAF /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
 		F5EF8DA42A9C403700650FAF /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
@@ -449,6 +451,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5AD41092A9F23CF00202C2D /* 📣ADSheet.swift in CopyFiles */,
 				F5606E782A9D922E0046EC5D /* 🪧Situation.swift in CopyFiles */,
 				F53CB0C42A9D5CB10039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */,
 				F53858702A9C93B600A0D72D /* 🪧SystemFamilyView.swift in CopyFiles */,
@@ -698,6 +701,7 @@
 		F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
 		F5AD41052A9F1D9D00202C2D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		F5AD41072A9F226400202C2D /* 📣ADSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
 		F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🚧DebugMenu.swift"; sourceTree = "<group>"; };
 		F5E51EB52A98A1B800C53268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾ICloudVer_1_1.swift"; sourceTree = "<group>"; };
@@ -931,6 +935,7 @@
 			isa = PBXGroup;
 			children = (
 				F51E3AA82A8CEC2800F32F4F /* ℹ️HelpWindows.swift */,
+				F5AD41072A9F226400202C2D /* 📣ADSheet.swift */,
 				F51E3AA92A8CEC2800F32F4F /* 📣ADContent.swift */,
 				F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */,
 				F51E3AA72A8CEC2800F32F4F /* 🛒InAppPurchaseMenu.swift */,
@@ -1395,6 +1400,7 @@
 				F53CB0BE2A9D5C1B0039FC31 /* 🪧SampleTextInApp.swift in Sources */,
 				F50310D82A9C18E20077EE5E /* 🗄️FromVer_1_1.swift in Sources */,
 				F51E3A132A8CAFDD00F32F4F /* 🪄Commands.swift in Sources */,
+				F5AD41082A9F226400202C2D /* 📣ADSheet.swift in Sources */,
 				F51E3A1B2A8CAFE200F32F4F /* 🔗Menu.swift in Sources */,
 				F51E3A202A8CB05F00F32F4F /* 📝NoteFamily.swift in Sources */,
 				F51E3A232A8CB06500F32F4F /* 🔗Button.swift in Sources */,
