@@ -13,6 +13,7 @@ enum 🗄️MigrationFromVer_1_1 {
 #if os(iOS) || os(watchOS)
 extension 🗄️MigrationFromVer_1_1 {
     static func execute() {
+        guard !NSUbiquitousKeyValueStore.default.bool(forKey: "ⓒompletedMigrationFromVer_1_1") else { return }
         guard let ⓢources = 💾ICloudVer_1_1.load() else { return }
         📝NoteFamily.allCases.forEach {
             switch $0 {
@@ -43,7 +44,7 @@ extension 🗄️MigrationFromVer_1_1 {
                     💾ICloud.save(.empty_type, .tertiary, Self.convert(ⓢource.placeholder))
             }
         }
-        NSUbiquitousKeyValueStore.default.removeObject(forKey: "ⓦidgetsModel")
+        NSUbiquitousKeyValueStore.default.set(true, forKey: "ⓒompletedMigrationFromVer_1_1")
     }
     static func convert(_ ⓥalue: 🄿laceholder) -> 🎚️EmptyType {
         switch ⓥalue {
