@@ -2,10 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     "__Target__\nHome screen\nNotification center\nStandBy\nDesktop\nLock screen(iPad)" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "__対象__\nホーム画面\n通知センター\nスタンバイ\nデスクトップ\nロック画面(iPad)"
+          }
+        }
+      }
     },
     "__Target__\nLock screen\nApple Watch complication" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "__対象__\nロック画面\nApple Watchコンプリケーション"
+          }
+        }
+      }
     },
     "(Nothing)" : {
       "localizations" : {
@@ -308,7 +322,14 @@
       }
     },
     "Custom action" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カスタムアクション"
+          }
+        }
+      }
     },
     "Customize" : {
       "localizations" : {

@@ -12,16 +12,19 @@ struct 🎚️CustomizeMenu: View {
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
             //.navigationBarTitleDisplayMode(.inline) TODO: iOS17RCで挙動チェック
-            .toolbar {
-                Button {
-                    self.dismiss()
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .grayscale(1)
-                }
-            }
+            .toolbar { self.dismissButton() }
         }
         .modifier(🎚️SaveValues())
+    }
+    private func dismissButton() -> some View {
+        Button {
+            self.dismiss()
+        } label: {
+            Image(systemName: "xmark.circle.fill")
+                .symbolRenderingMode(.hierarchical)
+                .foregroundStyle(Color.secondary)
+                .font(.title3)
+        }
     }
 }
 
@@ -42,7 +45,7 @@ private struct 🎚️SharedOptionSection: View {
         var body: some View {
             HStack {
                 Spacer()
-                VStack(spacing: 6) {
+                VStack(spacing: 4) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .fill(.gray.opacity(0.5).gradient)
@@ -68,7 +71,7 @@ private struct 🎚️SharedOptionSection: View {
                     Text("Preview")
                         .foregroundStyle(.secondary)
                         .tracking(0.5)
-                        .font(.subheadline.italic().weight(.light))
+                        .font(.caption.italic().weight(.light))
                 }
                 Spacer()
             }

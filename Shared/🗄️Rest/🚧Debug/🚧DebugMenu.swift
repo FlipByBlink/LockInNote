@@ -5,7 +5,7 @@ struct 🚧DebugMenu: View {
     var body: some View {
 #if DEBUG
         Section {
-            NavigationLink("NSUbiquitousKeyValueStore.default.dictionaryRepresentation" as String) {
+            NavigationLink {
                 List {
                     ForEach(self.iCloudKVSDictionary.keys.sorted(), id: \.self) { ⓚey in
                         LabeledContent {
@@ -22,8 +22,14 @@ struct 🚧DebugMenu: View {
                 .refreshable {
                     self.iCloudKVSDictionary = NSUbiquitousKeyValueStore.default.dictionaryRepresentation
                 }
+            } label: {
+                Text(verbatim: "NSUbiquitousKeyValueStore.default.dictionaryRepresentation")
             }
-            Button("Erase all iCloudKVS" as String) { 💾ICloud.eraseAll() }
+            Button {
+                💾ICloud.eraseAll()
+            } label: {
+                Text(verbatim: "Erase all iCloudKVS")
+            }
         } header: {
             Text(verbatim: "Debug")
         }
