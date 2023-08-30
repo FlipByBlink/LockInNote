@@ -4,7 +4,7 @@ struct ℹ️InfoTab: View {
     var body: some View {
         NavigationStack {
             List {
-                🚧DebugMenu()
+                self.debugMenu()
                 Section {
                     ℹ️IconAndName()
                     ℹ️AppStoreLink()
@@ -22,5 +22,15 @@ struct ℹ️InfoTab: View {
         }
         .tag(🔖Tab.info)
         .tabItem { Label("Info", systemImage: "info") }
+    }
+}
+
+private extension ℹ️InfoTab {
+    private func debugMenu() -> some View {
+        #if DEBUG
+        🚧DebugMenu()
+        #else
+        EmptyView()
+        #endif
     }
 }
