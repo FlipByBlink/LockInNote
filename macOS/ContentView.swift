@@ -16,7 +16,7 @@ struct ContentView: View {
             }
         }
         .modifier(🔲WindowEdgeFeedback())
-        .modifier(📖OpenNoteFromWidget())
+//        .modifier(📖OpenNoteFromWidget()) //TODO: 削除
         .animation(.default, value: self.app.target)
         .environmentObject(self.app.inAppPurchaseModel)
     }

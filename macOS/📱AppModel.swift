@@ -3,7 +3,7 @@ import SwiftUI
 @MainActor
 class 📱AppModel: NSObject, ObservableObject {
     @Published var target: 📝NoteFamily = .primary
-    @Published var requestToOpenNote: Bool = false
+//    @Published var requestToOpenNote: Bool = false TODO: 削除
     @Published var sheet: 💬Sheet? = nil
     @Published private(set) var playingFeedback: Bool = false
     let primaryNote: 📝NoteModel = .init(.primary)
@@ -21,7 +21,8 @@ extension 📱AppModel: NSApplicationDelegate {
                 throw Self.OpenURLError.urlDecodeFailed
             }
             self.target = ⓣarget
-            self.requestToOpenNote = true
+            self.showNoteWindow()
+            if self.inAppPurchaseModel.checkToShowADSheet() { self.sheet = .ad }
         } catch {
             print("🚨", error, error.localizedDescription)
         }
@@ -45,5 +46,13 @@ extension 📱AppModel {
             try? await Task.sleep(for: .seconds(0.4))
             self.playingFeedback = false
         }
+    }
+}
+
+private extension 📱AppModel {
+    private func showNoteWindow() {
+        NSApplication.shared.windows
+            .first { $0.identifier?.rawValue == "note" }?
+            .makeKeyAndOrderFront(nil)
     }
 }
