@@ -40,13 +40,3 @@ extension 💾ICloud {
         }
     }
 }
-
-#if DEBUG
-extension 💾ICloud {
-    static func eraseAll() {
-        Self.api.dictionaryRepresentation.keys.forEach {
-            Self.api.removeObject(forKey: $0)
-        }
-    }
-}
-#endif

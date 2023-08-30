@@ -30,7 +30,7 @@ class 📝NoteModel: ObservableObject {
     //==== WidgetFamily.accessoryRectangular, .accessoryCircular ====
     @Published var accessory_fontSize: Int = 14
     @Published var accessory_hierarchical: 🎚️Hierarchical = .primary
-    @Published var accessoryCircular_backgroundForIOS16AndWatchOS: Bool = false
+    @Published var accessoryCircular_backgroundForIOS16AndWatchOS: Bool = true
     
     init(_ ⓝoteFamily: 📝NoteFamily, observeChange ⓞbserveChange: Bool = true) {
         self.family = ⓝoteFamily
