@@ -531,9 +531,6 @@
         }
       }
     },
-    "Erase all iCloudKVS" : {
-
-    },
     "Erase text after action" : {
       "localizations" : {
         "ja" : {
@@ -620,17 +617,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ホーム画面ウィジェット"
-          }
-        }
-      }
-    },
-    "Home screen, Notification center, StandBy, Desktop, Lock screen(iPad)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ホーム画面、通知センター、スタンバイ、デスクトップ、ロック画面(iPad)"
           }
         }
       }
@@ -775,17 +761,6 @@
         }
       }
     },
-    "Lock screen, Apple Watch complication" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ロック画面、Apple Watchコンプリケーション"
-          }
-        }
-      }
-    },
     "LockInNote" : {
       "localizations" : {
         "ja" : {
@@ -905,9 +880,6 @@
           }
         }
       }
-    },
-    "NSUbiquitousKeyValueStore.default.dictionaryRepresentation" : {
-
     },
     "OK" : {
       "localizations" : {

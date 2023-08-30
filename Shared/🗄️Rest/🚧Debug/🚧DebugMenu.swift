@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct 🚧DebugMenu: View {
-    @State var iCloudKVSDictionary: [String: Any] = NSUbiquitousKeyValueStore.default.dictionaryRepresentation
+    @State private var iCloudKVSDictionary: [String: Any] = NSUbiquitousKeyValueStore.default.dictionaryRepresentation
     var body: some View {
-#if DEBUG
         Section {
             NavigationLink {
                 List {
@@ -33,8 +32,5 @@ struct 🚧DebugMenu: View {
         } header: {
             Text(verbatim: "Debug")
         }
-#else
-        EmptyView()
-#endif
     }
 }
