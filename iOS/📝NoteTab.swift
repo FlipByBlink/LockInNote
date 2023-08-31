@@ -19,6 +19,7 @@ struct 📝NoteTab: View {
                                   axis: .vertical)
                         .font(.title3)
                         .padding(.vertical, 8)
+                        .onChange(of: self.note.text) { self.note.save(.text, $0) }
                         .focused(self.$focus)
                         .onChange(of: self.app.preferTextFieldFocus) {
                             if $0 == self.note.family { self.app.handle(&self.focus) }
@@ -28,8 +29,9 @@ struct 📝NoteTab: View {
                 }
                 .frame(maxWidth: 650)
             }
-            .navigationTitle(self.$note.title)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(self.$note.title)
+            .onChange(of: self.note.title) { self.note.save(.title, $0) }
             .safeAreaInset(edge: .bottom) {
                 if self.focus {
                     HStack {
@@ -56,8 +58,6 @@ struct 📝NoteTab: View {
             .animation(.default, value: self.focus)
         }
         .scrollDismissesKeyboard(.interactively)
-        .onChange(of: self.note.text) { self.note.save(.text, $0) }
-        .onChange(of: self.note.title) { self.note.save(.title, $0) }
         .tag(🔖Tab.note(self.note.family))
         .tabItem { Label(self.note.title, systemImage: "note.text") }
     }

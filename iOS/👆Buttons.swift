@@ -68,9 +68,7 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
     var body: some View {
         HStack(spacing: 12) {
             Button {
-                withAnimation {
-                    self.note.text.removeAll()
-                }
+                withAnimation { self.note.text.removeAll() }
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
             } label: {
                 Label("Erase", systemImage: "trash")
