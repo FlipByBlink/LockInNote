@@ -17,12 +17,13 @@ struct ContentView: View {
                     🎚️CustomizeMenu()
                         .modifier(📋AddNoteToEnvironment(ⓝoteFamily))
                 case .onboarding:
-                    Text(verbatim: "Onboarding")
+                    💁HowToOnBoarding()
                 case .ad:
                     📣ADSheet()
             }
         }
         .modifier(🪧WidgetReload())
+        .modifier(💁OnBoardingHandle())
         .modifier(💬RequestUserReview())
         .environmentObject(self.app.inAppPurchaseModel)
     }

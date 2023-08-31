@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct watchOSApp: App {
-    @WKApplicationDelegateAdaptor var model: 📱AppModel
+    @WKApplicationDelegateAdaptor var appModel: 📱AppModel
     var body: some Scene {
         WindowGroup {
             ContentView()

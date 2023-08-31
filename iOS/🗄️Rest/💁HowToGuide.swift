@@ -20,7 +20,60 @@ struct 💁HowToGuideSection: View {
     }
 }
 
-struct 💁HowToHomeScreen: View {
+struct 💁HowToOnBoarding: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    NavigationLink {
+                        💁HowToHomeScreen()
+                    } label: {
+                        VStack {
+                            Label("Add home screen widget", systemImage: "questionmark")
+                            Image(.homeScreenExample)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: self.horizontalSizeClass == .compact ? 120 : 180)
+                                .shadow(radius: 2, y: 1)
+                                .padding(8)
+                        }
+                    }
+                }
+                Section {
+                    NavigationLink {
+                        💁HowToLockScreen()
+                    } label: {
+                        VStack {
+                            Label("Add lock screen widget", systemImage: "questionmark")
+                            Image(.lockScreenExample)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: self.horizontalSizeClass == .compact ? 120 : 180)
+                                .shadow(radius: 2, y: 1)
+                                .padding(8)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("How to")
+        }
+    }
+}
+
+struct 💁OnBoardingHandle: ViewModifier {
+    @EnvironmentObject var app: 📱AppModel
+    func body(content: Content) -> some View {
+        content
+            .task {
+                if NSUbiquitousKeyValueStore.default.dictionaryRepresentation.isEmpty {
+                    self.app.sheet = .onboarding
+                }
+            }
+    }
+}
+
+private struct 💁HowToHomeScreen: View {
     var body: some View {
         List {
             Self.StepByStepSection()
@@ -82,7 +135,7 @@ struct 💁HowToHomeScreen: View {
     }
 }
 
-struct 💁HowToLockScreen: View {
+private struct 💁HowToLockScreen: View {
     var body: some View {
         List {
             Self.StepByStepSection()

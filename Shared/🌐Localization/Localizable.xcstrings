@@ -141,6 +141,12 @@
         }
       }
     },
+    "Add home screen widget" : {
+
+    },
+    "Add lock screen widget" : {
+
+    },
     "App for iPhone / iPad / Mac / Apple Watch" : {
       "localizations" : {
         "ja" : {
@@ -620,6 +626,9 @@
           }
         }
       }
+    },
+    "How to" : {
+
     },
     "How to add and edit widgets on your iPhone" : {
       "localizations" : {
