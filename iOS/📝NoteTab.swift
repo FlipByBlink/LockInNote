@@ -18,8 +18,13 @@ struct 📝NoteTab: View {
                                   text: self.$note.text,
                                   axis: .vertical)
                         .font(.title3)
-                        .focused(self.$focus)
                         .padding(.vertical, 8)
+                        .focused(self.$focus)
+                        .onChange(of: self.app.preferTextFieldFocus) {
+                            guard $0 == self.note.family else { return }
+                            self.focus = true
+                            self.app.completeFocusHandle()
+                        }
                     }
                     🔗URLSchemeActionButton(self.$note.text)
                 }
@@ -55,24 +60,7 @@ struct 📝NoteTab: View {
         .scrollDismissesKeyboard(.interactively)
         .onChange(of: self.note.text) { self.note.save(.text, $0) }
         .onChange(of: self.note.title) { self.note.save(.title, $0) }
-        .onOpenURL(perform: self.handleFocus(_:))
         .tag(🔖Tab.note(self.note.family))
         .tabItem { Label(self.note.title, systemImage: "note.text") }
-    }
-    private func handleFocus(_ ⓤrl: URL) {
-        do {
-            try self.app.handleTab(self.note.family, ⓤrl)
-            UIImpactFeedbackGenerator(style: .light).impactOccurred()
-            Task {
-                guard !UserDefaults.standard.bool(forKey: "preventAutomaticKeyboard") else { return }
-                try? await Task.sleep(for: .seconds(0.25))
-                self.focus = true
-            }
-        } catch {
-            switch error as? 📱AppModel.HandleError {
-                case .customizing, .notTarget, .presentedSheet: break
-                case .urlDecodeFailed, .none: assertionFailure()
-            }
-        }
     }
 }

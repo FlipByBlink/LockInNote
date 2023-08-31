@@ -3,6 +3,7 @@ import SwiftUI
 class 📱AppModel: ObservableObject {
     @Published var tab: 🔖Tab = .note(.primary)
     @Published var sheet: 💬Sheet? = nil
+    @Published private(set) var preferTextFieldFocus: 📝NoteFamily? = nil
     let primaryNote: 📝NoteModel = .init(.primary)
     let secondaryNote: 📝NoteModel = .init(.secondary)
     let tertiaryNote: 📝NoteModel = .init(.tertiary)
@@ -10,21 +11,32 @@ class 📱AppModel: ObservableObject {
 }
 
 extension 📱AppModel {
-    func handleTab(_ ⓕamily: 📝NoteFamily, _ ⓦidgetURL: URL) throws {
-        guard ⓦidgetURL == ⓕamily.widgetURL else { throw Self.HandleError.notTarget }
-        guard let ⓣarget = 📝NoteFamily.decode(ⓦidgetURL) else { throw Self.HandleError.urlDecodeFailed }
+    func handle(_ ⓦidgetURL: URL) {
+        guard let ⓣarget = 📝NoteFamily.decode(ⓦidgetURL) else {
+            assertionFailure("Failed url decode")
+            return
+        }
         switch self.sheet {
-            case .ad, .onboarding:
-                throw Self.HandleError.presentedSheet
-            case .customize(let ⓒustomizingNote):
-                guard ⓣarget != ⓒustomizingNote else { throw Self.HandleError.customizing }
+            case .ad: 
+                return
+            case .onboarding:
                 self.sheet = nil
                 self.tab = .note(ⓣarget)
+            case .customize(let ⓒustomizingNote):
+                guard ⓣarget != ⓒustomizingNote else { return }
+                self.sheet = nil
             case .none:
                 self.tab = .note(ⓣarget)
         }
+        if !UserDefaults.standard.bool(forKey: "preventAutomaticKeyboard") {
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(0.25))
+                self.preferTextFieldFocus = ⓣarget
+            }
+        }
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
-    enum HandleError: Error {
-        case notTarget, customizing, urlDecodeFailed, presentedSheet
+    func completeFocusHandle() {
+        self.preferTextFieldFocus = nil
     }
 }
