@@ -8,6 +8,7 @@ struct 📝NoteTab: View {
             Spacer()
             TextField("Input text", text: self.$note.text)
                 .font(.title3)
+                .onChange(of: self.note.text) { self.note.save(.text, $0) }
             Spacer()
             HStack {
                 Button(role: .destructive) {
@@ -37,19 +38,7 @@ struct 📝NoteTab: View {
             }
             .labelStyle(.iconOnly)
         }
-        .onChange(of: self.note.text) { self.note.save(.text, $0) }
-        .onOpenURL(perform: self.handleFocus(_:))
         .navigationTitle(self.note.title)
         .tag(🔖Tab.note(self.note.family))
-    }
-    private func handleFocus(_ ⓤrl: URL) {
-        do {
-            try self.app.handle(self.note.family, ⓤrl)
-        } catch {
-            switch error as? 📱AppModel.HandleError {
-                case .customizing, .notTarget: break
-                case .urlDecodeFailed, .none: assertionFailure()
-            }
-        }
     }
 }

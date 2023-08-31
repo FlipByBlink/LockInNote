@@ -23,5 +23,6 @@ struct ContentView: View {
             }
         }
         .modifier(🪧WidgetReload())
+        .onOpenURL { self.app.handle($0) }
     }
 }

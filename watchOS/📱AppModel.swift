@@ -9,19 +9,14 @@ class 📱AppModel: ObservableObject {
 }
 
 extension 📱AppModel {
-    func note(_ ⓕamily: 📝NoteFamily) -> 📝NoteModel {
-        switch ⓕamily {
-            case .primary: self.primaryNote
-            case .secondary: self.secondaryNote
-            case .tertiary: self.tertiaryNote
+    func handle(_ ⓦidgetURL: URL) {
+        guard let ⓣarget = 📝NoteFamily.decode(ⓦidgetURL) else {
+            assertionFailure("Failed url decode")
+            return
         }
-    }
-    func handle(_ ⓕamily: 📝NoteFamily, _ ⓦidgetURL: URL) throws {
-        guard ⓦidgetURL == ⓕamily.widgetURL else { throw Self.HandleError.notTarget }
-        guard let ⓣarget = 📝NoteFamily.decode(ⓦidgetURL) else { throw Self.HandleError.urlDecodeFailed }
         switch self.sheet {
             case .customize(let ⓒustomizingNote):
-                guard ⓣarget != ⓒustomizingNote else { throw Self.HandleError.customizing }
+                guard ⓣarget != ⓒustomizingNote else { return }
                 self.sheet = nil
             case .noteDetail:
                 self.sheet = nil
@@ -33,7 +28,11 @@ extension 📱AppModel {
             withAnimation { self.tab = .note(ⓣarget) }
         }
     }
-    enum HandleError: Error {
-        case notTarget, customizing, urlDecodeFailed
+    func note(_ ⓕamily: 📝NoteFamily) -> 📝NoteModel {
+        switch ⓕamily {
+            case .primary: self.primaryNote
+            case .secondary: self.secondaryNote
+            case .tertiary: self.tertiaryNote
+        }
     }
 }
