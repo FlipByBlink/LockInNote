@@ -80,7 +80,7 @@ extension 🗒️StaticInfo {
                              "📋AddNoteToEnvironment.swift",
                              "ℹ️InfoTab.swift",
                              "💁HowToGuide.swift",
-                             "🅧DismissButtonLabel",
+                             "🅧DismissButtonLabel.swift",
                              "💬RequestUserReview.swift",
                              "ℹ️AboutApp.swift",
                              "📣ADModel.swift",

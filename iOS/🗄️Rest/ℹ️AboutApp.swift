@@ -218,7 +218,7 @@ private struct 📓SourceCodeLink: View {
             NavigationLink(String("Bundle.main.infoDictionary")) {
                 List {
                     if let ⓓictionary = Bundle.main.infoDictionary {
-                        ForEach(ⓓictionary.map({$0.key}), id: \.self) {
+                        ForEach(ⓓictionary.map({$0.key}).sorted(), id: \.self) {
                             LabeledContent($0, value: String(describing: ⓓictionary[$0] ?? "🐛"))
                         }
                     }
