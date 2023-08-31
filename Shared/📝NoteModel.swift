@@ -82,8 +82,8 @@ private extension 📝NoteModel {
                 case .system_hierarchical: self.system_hierarchical = try self.load(ⓟroperty)
                 case .system_padding: self.system_padding = try self.load(ⓟroperty)
                 case .system_contentAlignment: self.system_contentAlignment = try self.load(ⓟroperty)
-                case .system_textColor: self.system_textColor = try self.load(ⓟroperty)
-                case .system_backgroundColor: self.system_backgroundColor = try self.load(ⓟroperty)
+                case .system_textColor: self.system_textColor = (try self.load(ⓟroperty) as 🎚️Color).value
+                case .system_backgroundColor: self.system_backgroundColor = (try self.load(ⓟroperty) as 🎚️Color).value
                 case .system_backgroundGradient: self.system_backgroundGradient = try self.load(ⓟroperty)
                 case .system_doubleSizeOnLargeWidget: self.system_doubleSizeOnLargeWidget = try self.load(ⓟroperty)
                 case .accessory_fontSize: self.accessory_fontSize = try self.load(ⓟroperty)
@@ -98,9 +98,6 @@ private extension 📝NoteModel {
     }
     private func load<T: Codable>(_ ⓟroperty: 📝NoteProperty) throws -> T {
         try 💾ICloud.load(ⓟroperty, self.family)
-    }
-    private func load(_ ⓟroperty: 📝NoteProperty) throws -> Color {
-        (try self.load(ⓟroperty) as 🎚️Color).swiftUIColor
     }
     private func presetValues() {
         switch self.family {

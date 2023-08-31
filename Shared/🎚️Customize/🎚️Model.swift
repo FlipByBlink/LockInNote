@@ -86,7 +86,7 @@ enum 🎚️Hierarchical: Codable, CaseIterable, Identifiable {
 
 struct 🎚️Color: Codable {
     var r, g, b: Double
-    var swiftUIColor: Color { .init(red: self.r, green: self.g, blue: self.b) }
+    var value: Color { .init(red: self.r, green: self.g, blue: self.b) }
     init(_ ⓢwiftUIColor: Color) {
         if let ⓒolor = ⓢwiftUIColor.cgColor?.components {
             self.r = Double(ⓒolor[0])
