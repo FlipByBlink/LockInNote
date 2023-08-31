@@ -14,21 +14,15 @@ class 📱AppModel: NSObject, ObservableObject {
 
 extension 📱AppModel: NSApplicationDelegate {
     func application(_ application: NSApplication, open urls: [URL]) {
-        do {
-            guard let ⓤrl = urls.first else { throw Self.OpenURLError.noURL }
-            guard self.sheet != .ad else { throw Self.OpenURLError.presentedAD }
-            guard let ⓣarget = 📝NoteFamily.decode(ⓤrl) else {
-                throw Self.OpenURLError.urlDecodeFailed
-            }
-            self.target = ⓣarget
-            self.showNoteWindow()
-            if self.inAppPurchaseModel.checkToShowADSheet() { self.sheet = .ad }
-        } catch {
-            print("🚨", error, error.localizedDescription)
+        guard let ⓤrl = urls.first else { return }
+        guard self.sheet != .ad else { return }
+        guard let ⓣarget = 📝NoteFamily.decode(ⓤrl) else {
+            assertionFailure("Failed url decode")
+            return
         }
-    }
-    enum OpenURLError: Error {
-        case noURL, urlDecodeFailed, presentedAD
+        self.target = ⓣarget
+        self.showNoteWindow()
+        if self.inAppPurchaseModel.checkToShowADSheet() { self.sheet = .ad }
     }
 }
 
