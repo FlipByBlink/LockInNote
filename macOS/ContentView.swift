@@ -9,12 +9,7 @@ struct ContentView: View {
         }
         .frame(minWidth: 390, idealWidth: 390, minHeight: 180, idealHeight: 180)
         .toolbarBackground(.clear, for: .automatic)
-        .sheet(item: self.$app.sheet) {
-            switch $0 {
-                case .onboarding: Text(verbatim: "Onboarding") //TODO: 実装
-                case .ad: 📣ADSheet() //TODO: 実装
-            }
-        }
+        .modifier(📣ADSheet())
         .modifier(🔲WindowEdgeFeedback())
 //        .modifier(📖OpenNoteFromWidget()) //TODO: 削除
         .animation(.default, value: self.app.target)

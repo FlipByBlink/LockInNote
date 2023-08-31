@@ -161,7 +161,6 @@ extension 🗒️StaticInfo {
                              "📝NoteProperty.swift",
                              "📝NoteModel.swift",
                              "💾ICloud.swift",
-                             "💬Sheet.swift",
                              "📖OpenNoteFromWidget.swift"]
                 case .Widget: ["WidgetBundle.swift",
                                "Widget.swift"]

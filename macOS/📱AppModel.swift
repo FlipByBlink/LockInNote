@@ -4,7 +4,7 @@ import SwiftUI
 class 📱AppModel: NSObject, ObservableObject {
     @Published var target: 📝NoteFamily = .primary
 //    @Published var requestToOpenNote: Bool = false TODO: 削除
-    @Published var sheet: 💬Sheet? = nil
+    @Published var showADSheet: Bool = false
     @Published private(set) var playingFeedback: Bool = false
     let primaryNote: 📝NoteModel = .init(.primary)
     let secondaryNote: 📝NoteModel = .init(.secondary)
@@ -15,14 +15,14 @@ class 📱AppModel: NSObject, ObservableObject {
 extension 📱AppModel: NSApplicationDelegate {
     func application(_ application: NSApplication, open urls: [URL]) {
         guard let ⓤrl = urls.first else { return }
-        guard self.sheet != .ad else { return }
+        guard !self.showADSheet else { return }
         guard let ⓣarget = 📝NoteFamily.decode(ⓤrl) else {
             assertionFailure("Failed url decode")
             return
         }
         self.target = ⓣarget
         self.showNoteWindow()
-        if self.inAppPurchaseModel.checkToShowADSheet() { self.sheet = .ad }
+        if self.inAppPurchaseModel.checkToShowADSheet() { self.showADSheet = true }
     }
 }
 

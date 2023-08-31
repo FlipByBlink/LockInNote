@@ -901,6 +901,7 @@
       }
     },
     "Onboarding" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

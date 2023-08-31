@@ -70,7 +70,6 @@
 		F51E3A132A8CAFDD00F32F4F /* 🪄Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */; };
 		F51E3A142A8CAFDD00F32F4F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C42A8CAA4700F32F4F /* App.swift */; };
 		F51E3A152A8CAFDD00F32F4F /* 📝NoteWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */; };
-		F51E3A162A8CAFDD00F32F4F /* 💬Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */; };
 		F51E3A172A8CAFDD00F32F4F /* 📱AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39C22A8CAA4700F32F4F /* 📱AppModel.swift */; };
 		F51E3A182A8CAFDD00F32F4F /* 🎚️CustomizeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */; };
 		F51E3A1A2A8CAFE200F32F4F /* 🔗Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39BF2A8CAA4700F32F4F /* 🔗Command.swift */; };
@@ -176,7 +175,6 @@
 		F51E3A9C2A8CEBEF00F32F4F /* 📝NoteWindow.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */; };
 		F51E3A9D2A8CEBEF00F32F4F /* 📝NoteEditor.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */; };
 		F51E3A9E2A8CEBEF00F32F4F /* 🎚️CustomizeMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */; };
-		F51E3A9F2A8CEBEF00F32F4F /* 💬Sheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */; };
 		F51E3AA02A8CEBEF00F32F4F /* 🪄Commands.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */; };
 		F51E3AA22A8CEBEF00F32F4F /* 🔗Menu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BE2A8CAA4700F32F4F /* 🔗Menu.swift */; };
 		F51E3AA32A8CEBEF00F32F4F /* 🔗Command.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39BF2A8CAA4700F32F4F /* 🔗Command.swift */; };
@@ -477,7 +475,6 @@
 				F51E3A9C2A8CEBEF00F32F4F /* 📝NoteWindow.swift in CopyFiles */,
 				F51E3A9D2A8CEBEF00F32F4F /* 📝NoteEditor.swift in CopyFiles */,
 				F51E3A9E2A8CEBEF00F32F4F /* 🎚️CustomizeMenu.swift in CopyFiles */,
-				F51E3A9F2A8CEBEF00F32F4F /* 💬Sheet.swift in CopyFiles */,
 				F51E3AA02A8CEBEF00F32F4F /* 🪄Commands.swift in CopyFiles */,
 				F51E3AA22A8CEBEF00F32F4F /* 🔗Menu.swift in CopyFiles */,
 				F51E3AA32A8CEBEF00F32F4F /* 🔗Command.swift in CopyFiles */,
@@ -623,7 +620,6 @@
 		F51E39B72A8CAA4700F32F4F /* 📝NoteProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝NoteProperty.swift"; sourceTree = "<group>"; };
 		F51E39B82A8CAA4700F32F4F /* 📝NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📝NoteModel.swift"; sourceTree = "<group>"; };
 		F51E39B92A8CAA4700F32F4F /* 🪧EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧EntryView.swift"; sourceTree = "<group>"; };
-		F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💬Sheet.swift"; sourceTree = "<group>"; };
 		F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️CustomizeMenu.swift"; sourceTree = "<group>"; };
 		F51E39BE2A8CAA4700F32F4F /* 🔗Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗Menu.swift"; sourceTree = "<group>"; };
 		F51E39BF2A8CAA4700F32F4F /* 🔗Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗Command.swift"; sourceTree = "<group>"; };
@@ -873,7 +869,6 @@
 				F51E39C52A8CAA4700F32F4F /* ContentView.swift */,
 				F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */,
 				F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
-				F51E39BB2A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F5F9D6572A99C1D8008CD67F /* 📖OpenNoteFromWidget.swift */,
 				F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */,
 				F51E3AA62A8CEC0000F32F4F /* 🗄️Rest */,
@@ -1384,7 +1379,6 @@
 				F51E3A1E2A8CB05F00F32F4F /* 🎚️MenuComponent.swift in Sources */,
 				F51E3A1A2A8CAFE200F32F4F /* 🔗Command.swift in Sources */,
 				F51E3A112A8CAFDD00F32F4F /* ContentView.swift in Sources */,
-				F51E3A162A8CAFDD00F32F4F /* 💬Sheet.swift in Sources */,
 				F51E3AAB2A8CEC2800F32F4F /* ℹ️HelpWindows.swift in Sources */,
 				F5F9D65B2A99C36B008CD67F /* 🔲WindowEdgeFeedback.swift in Sources */,
 				F51E3A252A8CB06500F32F4F /* 🔗Model.swift in Sources */,
