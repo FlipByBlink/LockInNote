@@ -1,7 +1,6 @@
 import SwiftUI
 
-@MainActor
-class 📱AppModel: NSObject, ObservableObject, UIApplicationDelegate {
+class 📱AppModel: ObservableObject {
     @Published var tab: 🔖Tab = .note(.primary)
     @Published var sheet: 💬Sheet? = nil
     let primaryNote: 📝NoteModel = .init(.primary)

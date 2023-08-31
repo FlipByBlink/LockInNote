@@ -1,7 +1,6 @@
 import SwiftUI
 
-@MainActor
-class 📱AppModel: NSObject, ObservableObject, WKApplicationDelegate {
+class 📱AppModel: ObservableObject {
     @Published var tab: 🔖Tab = .note(.primary)
     @Published var sheet: 💬Sheet? = nil
     let primaryNote: 📝NoteModel = .init(.primary)
@@ -29,7 +28,7 @@ extension 📱AppModel {
             case .none:
                 break
         }
-        Task {
+        Task { @MainActor in
             try? await Task.sleep(for: .seconds(0.1))
             withAnimation { self.tab = .note(ⓣarget) }
         }
