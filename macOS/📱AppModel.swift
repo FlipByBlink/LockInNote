@@ -33,18 +33,23 @@ extension 📱AppModel: NSApplicationDelegate {
 }
 
 extension 📱AppModel {
+    func switchNote(_ ⓝoteFamily: 📝NoteFamily, _ ⓞpenWindow: OpenWindowAction) {
+        if self.target == ⓝoteFamily {
+            if NSApplication.shared.keyWindow?.identifier?.rawValue == "note" {
+                self.playFeedback()
+            } else {
+                ⓞpenWindow(id: "note")
+            }
+        } else {
+            self.target = ⓝoteFamily
+            ⓞpenWindow(id: "note")
+        }
+    }
     func note(_ ⓕamily: 📝NoteFamily) -> 📝NoteModel {
         switch ⓕamily {
             case .primary: self.primaryNote
             case .secondary: self.secondaryNote
             case .tertiary: self.tertiaryNote
-        }
-    }
-    func playFeedback() {
-        Task {
-            self.playingFeedback = true
-            try? await Task.sleep(for: .seconds(0.4))
-            self.playingFeedback = false
         }
     }
 }
@@ -54,5 +59,12 @@ private extension 📱AppModel {
         NSApplication.shared.windows
             .first { $0.identifier?.rawValue == "note" }?
             .makeKeyAndOrderFront(nil)
+    }
+    private func playFeedback() {
+        Task {
+            self.playingFeedback = true
+            try? await Task.sleep(for: .seconds(0.4))
+            self.playingFeedback = false
+        }
     }
 }

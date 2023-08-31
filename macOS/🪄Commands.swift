@@ -49,16 +49,7 @@ private struct 🪄SwitchNoteButton: View {
     @Environment(\.openWindow) var openWindow
     var body: some View {
         Button(self.app.note(self.noteFamily).title) {
-            if self.app.target == self.noteFamily {
-                if NSApplication.shared.keyWindow?.identifier?.rawValue == "note" {
-                    self.app.playFeedback()
-                } else {
-                    self.openWindow(id: "note")
-                }
-            } else {
-                self.app.target = self.noteFamily
-                self.openWindow(id: "note")
-            }
+            self.app.switchNote(self.noteFamily, self.openWindow)
         }
         .keyboardShortcut(self.shortcutKey)
     }
