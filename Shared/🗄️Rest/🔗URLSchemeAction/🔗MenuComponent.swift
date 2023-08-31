@@ -114,7 +114,7 @@ enum 🔗URLSchemeActionMenuComponent {
     }
     struct NoticeSection: View {
         var body: some View {
-            Text("Not sync URL scheme between devices")
+            Text("Not sync this option between devices")
         }
     }
 }

@@ -142,10 +142,24 @@
       }
     },
     "Add home screen widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ホーム画面ウィジェットを追加する"
+          }
+        }
+      }
     },
     "Add lock screen widget" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ロック画面ウィジェットを追加する"
+          }
+        }
+      }
     },
     "App for iPhone / iPad / Mac / Apple Watch" : {
       "localizations" : {
@@ -628,7 +642,14 @@
       }
     },
     "How to" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使い方"
+          }
+        }
+      }
     },
     "How to add and edit widgets on your iPhone" : {
       "localizations" : {
@@ -860,16 +881,6 @@
         }
       }
     },
-    "Not sync URL scheme between devices" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "URLはデバイス間で同期されません"
-          }
-        }
-      }
-    },
     "Note" : {
       "localizations" : {
         "ja" : {
@@ -896,17 +907,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "了解しました"
-          }
-        }
-      }
-    },
-    "Onboarding" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "オンボーディング"
           }
         }
       }
