@@ -175,13 +175,13 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
                 Section {
                     🎚️FontSizeStepper(value: self.$note.accessory_fontSize)
                     🎚HierarchicalPicker(value: self.$note.accessory_hierarchical)
-                }
-                if #unavailable(iOS 17.0) {
-                    NavigationLink {
-                        List { 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS() }
-                            .navigationTitle("More")
-                    } label: {
-                        Label("More", systemImage: "ellipsis")
+                    if #unavailable(iOS 17.0) {
+                        NavigationLink {
+                            List { 🎚️AccessaryCircularBackgroundToggleForIOS16AndWatchOS() }
+                                .navigationTitle("More")
+                        } label: {
+                            Label("More", systemImage: "ellipsis")
+                        }
                     }
                 }
                 Self.about()
