@@ -21,9 +21,7 @@ struct 📝NoteTab: View {
                         .padding(.vertical, 8)
                         .focused(self.$focus)
                         .onChange(of: self.app.preferTextFieldFocus) {
-                            guard $0 == self.note.family else { return }
-                            self.focus = true
-                            self.app.completeFocusHandle()
+                            if $0 == self.note.family { self.app.handle(&self.focus) }
                         }
                     }
                     🔗URLSchemeActionButton(self.$note.text)

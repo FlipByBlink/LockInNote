@@ -25,6 +25,7 @@ extension 📱AppModel {
             case .customize(let ⓒustomizingNote):
                 guard ⓣarget != ⓒustomizingNote else { return }
                 self.sheet = nil
+                self.tab = .note(ⓣarget)
             case .none:
                 self.tab = .note(ⓣarget)
         }
@@ -36,7 +37,8 @@ extension 📱AppModel {
         }
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
-    func completeFocusHandle() {
+    func handle(_ ⓕocus: inout Bool) {
+        ⓕocus = true
         self.preferTextFieldFocus = nil
     }
 }
