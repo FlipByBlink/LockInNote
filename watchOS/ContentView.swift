@@ -22,7 +22,6 @@ struct ContentView: View {
                         .modifier(📋AddNoteToEnvironment(ⓝoteFamily))
             }
         }
-        .modifier(🪧WidgetReload())
         .onOpenURL { self.app.handle($0) }
     }
 }

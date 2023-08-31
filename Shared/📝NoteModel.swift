@@ -47,7 +47,7 @@ class 📝NoteModel: ObservableObject {
 extension 📝NoteModel {
     func save(_ ⓟroperty: 📝NoteProperty, _ ⓥalue: some Codable) {
         💾ICloud.save(ⓟroperty, self.family, ⓥalue)
-        self.reloadWidgetOnMac()
+        self.reloadWidget()
     }
 }
 
@@ -62,7 +62,7 @@ private extension 📝NoteModel {
                     self.loadICloud(ⓒhangedProperty)
                 }
             }
-            self.reloadWidgetOnMac()
+            self.reloadWidget()
         }
     }
     private func loadICloud(_ ⓟroperty: 📝NoteProperty) {
@@ -99,6 +99,9 @@ private extension 📝NoteModel {
     private func load<T: Codable>(_ ⓟroperty: 📝NoteProperty) throws -> T {
         try 💾ICloud.load(ⓟroperty, self.family)
     }
+    private func reloadWidget() {
+        WidgetCenter.shared.reloadTimelines(ofKind: 🗄️MigrationFromVer_1_1.widgetKind(self.family))
+    }
     private func presetValues() {
         switch self.family {
             case .primary:
@@ -125,9 +128,9 @@ private extension 📝NoteModel {
         🗄️MigrationFromVer_1_1.execute()
         #endif
     }
-    private func reloadWidgetOnMac() {
-        #if os(macOS)
-        WidgetCenter.shared.reloadAllTimelines()
-        #endif
-    }
+    //private func reloadWidgetOnMac() { //TODO: 再検討
+    //    #if os(macOS)
+    //    WidgetCenter.shared.reloadAllTimelines()
+    //    #endif
+    //}
 }

@@ -23,7 +23,6 @@ struct ContentView: View {
             }
         }
         .onOpenURL { self.app.handle($0) }
-        .modifier(🪧WidgetReload())
         .modifier(💁OnBoardingHandle())
         .modifier(💬RequestUserReview())
         .environmentObject(self.app.inAppPurchaseModel)
