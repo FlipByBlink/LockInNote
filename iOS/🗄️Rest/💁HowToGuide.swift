@@ -22,6 +22,7 @@ struct 💁HowToGuideSection: View {
 
 struct 💁HowToOnBoarding: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
             List {
@@ -29,8 +30,9 @@ struct 💁HowToOnBoarding: View {
                     NavigationLink {
                         💁HowToHomeScreen()
                     } label: {
-                        VStack {
+                        HStack {
                             Label("Add home screen widget", systemImage: "questionmark")
+                            Spacer()
                             Image(.homeScreenExample)
                                 .resizable()
                                 .scaledToFit()
@@ -44,8 +46,9 @@ struct 💁HowToOnBoarding: View {
                     NavigationLink {
                         💁HowToLockScreen()
                     } label: {
-                        VStack {
+                        HStack {
                             Label("Add lock screen widget", systemImage: "questionmark")
+                            Spacer()
                             Image(.lockScreenExample)
                                 .resizable()
                                 .scaledToFit()
@@ -57,7 +60,15 @@ struct 💁HowToOnBoarding: View {
                 }
             }
             .navigationTitle("How to")
+            .toolbar{
+                Button {
+                    self.dismiss()
+                } label: {
+                    🅧DismissButtonLabel()
+                }
+            }
         }
+        .presentationDetents([.medium])
     }
 }
 

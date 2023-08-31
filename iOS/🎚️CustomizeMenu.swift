@@ -12,19 +12,15 @@ struct 🎚️CustomizeMenu: View {
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
             //.navigationBarTitleDisplayMode(.inline) TODO: iOS17RCで挙動チェック
-            .toolbar { self.dismissButton() }
+            .toolbar {
+                Button {
+                    self.dismiss()
+                } label: {
+                    🅧DismissButtonLabel()
+                }
+            }
         }
         .modifier(🎚️SaveValues())
-    }
-    private func dismissButton() -> some View {
-        Button {
-            self.dismiss()
-        } label: {
-            Image(systemName: "xmark.circle.fill")
-                .symbolRenderingMode(.hierarchical)
-                .foregroundStyle(Color.secondary)
-                .font(.title3)
-        }
     }
 }
 

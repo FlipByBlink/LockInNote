@@ -338,6 +338,8 @@
 		F5AD41062A9F1D9D00202C2D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AD41052A9F1D9D00202C2D /* StoreKit.framework */; };
 		F5AD41082A9F226400202C2D /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD41072A9F226400202C2D /* 📣ADSheet.swift */; };
 		F5AD41092A9F23CF00202C2D /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5AD41072A9F226400202C2D /* 📣ADSheet.swift */; };
+		F5AD410B2AA015B400202C2D /* 🅧DismissButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD410A2AA015B400202C2D /* 🅧DismissButtonLabel.swift */; };
+		F5AD410C2AA0171200202C2D /* 🅧DismissButtonLabel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5AD410A2AA015B400202C2D /* 🅧DismissButtonLabel.swift */; };
 		F5B7C7312A9EE6D40040B15E /* 🚧DebugMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */; };
 		F5EF8DA32A9C403600650FAF /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
 		F5EF8DA42A9C403700650FAF /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
@@ -535,6 +537,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F5AD410C2AA0171200202C2D /* 🅧DismissButtonLabel.swift in CopyFiles */,
 				F5AD41042A9F1D8B00202C2D /* 📣ADSheet.swift in CopyFiles */,
 				F5AD41012A9EF26C00202C2D /* 🚧DebugMenu.swift in CopyFiles */,
 				F5606E762A9D92230046EC5D /* 🪧Situation.swift in CopyFiles */,
@@ -702,6 +705,7 @@
 		F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
 		F5AD41052A9F1D9D00202C2D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		F5AD41072A9F226400202C2D /* 📣ADSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
+		F5AD410A2AA015B400202C2D /* 🅧DismissButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🅧DismissButtonLabel.swift"; sourceTree = "<group>"; };
 		F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🚧DebugMenu.swift"; sourceTree = "<group>"; };
 		F5E51EB52A98A1B800C53268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾ICloudVer_1_1.swift"; sourceTree = "<group>"; };
@@ -1037,6 +1041,7 @@
 				F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */,
 				F57E85CE29D2C3D600927561 /* 💁HowToGuide.swift */,
 				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
+				F5AD410A2AA015B400202C2D /* 🅧DismissButtonLabel.swift */,
 				F5F5317A2987425700E531E2 /* ℹ️AboutApp.swift */,
 				F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */,
 				F556953728CCAFC3004558FC /* 📣ADComponents.swift */,
@@ -1446,6 +1451,7 @@
 				F53858322A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
 				F5F9D66D2A9AC543008CD67F /* 💾ICloudVer_1_1.swift in Sources */,
 				F51E39EB2A8CAA9800F32F4F /* 🎚️CustomizeMenu.swift in Sources */,
+				F5AD410B2AA015B400202C2D /* 🅧DismissButtonLabel.swift in Sources */,
 				F51E39E42A8CAA9800F32F4F /* ContentView.swift in Sources */,
 				F51E39CB2A8CAA7100F32F4F /* 📝NoteProperty.swift in Sources */,
 				F538584D2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */,
