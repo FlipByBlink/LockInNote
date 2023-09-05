@@ -21,5 +21,6 @@ struct 🪧EntryView: View {
         .modifier(🪧ContainerBackground())
         .modifier(🪧SnapshotTitle())
         .widgetURL(self.note.family.widgetURL)
+        .accessibilityLabel("Note")
     }
 }

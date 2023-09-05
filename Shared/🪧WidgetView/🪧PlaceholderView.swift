@@ -27,7 +27,7 @@ struct 🪧PlaceholderView : View {
                     Text(verbatim: "AAA")
             }
         }
-        .font(.subheadline)
+        .font(.caption)
         .minimumScaleFactor(0.4)
         .lineLimit(1)
         .redacted(reason: .placeholder)

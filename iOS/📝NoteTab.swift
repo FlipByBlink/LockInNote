@@ -48,6 +48,7 @@ struct 📝NoteTab: View {
                 Button {
                     self.focus = false
                     self.app.sheet = .customize(self.note.family)
+                    UISelectionFeedbackGenerator().selectionChanged()
                 } label: {
                     Label("Customize \"\(self.note.title)\"",
                           systemImage: "slider.horizontal.3")
