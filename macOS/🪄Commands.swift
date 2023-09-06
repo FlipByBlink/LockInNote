@@ -11,16 +11,16 @@ struct 🪄Commands: Commands {
         CommandGroup(replacing: .systemServices) { EmptyView() }
         CommandGroup(after: .newItem) {
             Group {
-                🪄SwitchNoteButton(.primary)
-                🪄SwitchNoteButton(.secondary)
-                🪄SwitchNoteButton(.tertiary)
+                Self.SwitchNoteButton(.primary)
+                Self.SwitchNoteButton(.secondary)
+                Self.SwitchNoteButton(.tertiary)
             }
             .environmentObject(self.app)
             Divider()
             Button("Customize widget") { self.openWindow(id: "customize") }
                 .keyboardShortcut(",", modifiers: [.command, .shift])
         }
-        🪄ClearNoteCommand(self.app)
+        Self.ClearNoteCommand(self.app)
         CommandMenu("Action") {
             🔗URLSchemeActionCommand()
                 .environmentObject(self.app)
@@ -43,39 +43,40 @@ struct 🪄Commands: Commands {
     }
 }
 
-private struct 🪄SwitchNoteButton: View {
-    @EnvironmentObject var app: 📱AppModel
-    var noteFamily: 📝NoteFamily
-    @Environment(\.openWindow) var openWindow
-    var body: some View {
-        Button(self.app.note(self.noteFamily).title) {
-            self.app.switchNote(self.noteFamily, self.openWindow)
+private extension 🪄Commands {
+    private struct SwitchNoteButton: View {
+        @EnvironmentObject var app: 📱AppModel
+        var noteFamily: 📝NoteFamily
+        @Environment(\.openWindow) var openWindow
+        var body: some View {
+            Button(self.app.note(self.noteFamily).title) {
+                self.app.switchNote(self.noteFamily, self.openWindow)
+            }
+            .keyboardShortcut(self.shortcutKey)
         }
-        .keyboardShortcut(self.shortcutKey)
-    }
-    private var shortcutKey: KeyEquivalent {
-        switch self.noteFamily {
-            case .primary: "1"
-            case .secondary: "2"
-            case .tertiary: "3"
+        private var shortcutKey: KeyEquivalent {
+            switch self.noteFamily {
+                case .primary: "1"
+                case .secondary: "2"
+                case .tertiary: "3"
+            }
         }
-    }
-    init(_ noteFamily: 📝NoteFamily) {
-        self.noteFamily = noteFamily
-    }
-}
-
-private struct 🪄ClearNoteCommand: Commands {
-    @ObservedObject var note: 📝NoteModel
-    var body: some Commands {
-        CommandGroup(before: .undoRedo) {
-            Button("Clear this note") { self.note.text.removeAll() }
-                .keyboardShortcut("d", modifiers: [.command, .shift])
-                .disabled(self.note.text.isEmpty)
-            Divider()
+        init(_ noteFamily: 📝NoteFamily) {
+            self.noteFamily = noteFamily
         }
     }
-    init(_ ⓐpp: 📱AppModel) {
-        self.note = ⓐpp.note(ⓐpp.target)
+    private struct ClearNoteCommand: Commands {
+        @ObservedObject var note: 📝NoteModel
+        var body: some Commands {
+            CommandGroup(before: .undoRedo) {
+                Button("Clear this note") { self.note.text.removeAll() }
+                    .keyboardShortcut("d", modifiers: [.command, .shift])
+                    .disabled(self.note.text.isEmpty)
+                Divider()
+            }
+        }
+        init(_ ⓐpp: 📱AppModel) {
+            self.note = ⓐpp.note(ⓐpp.target)
+        }
     }
 }

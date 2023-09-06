@@ -128,9 +128,4 @@ private extension 📝NoteModel {
         🗄️MigrationFromVer_1_1.execute()
         #endif
     }
-    //private func reloadWidgetOnMac() { //TODO: 再検討
-    //    #if os(macOS)
-    //    WidgetCenter.shared.reloadAllTimelines()
-    //    #endif
-    //}
 }

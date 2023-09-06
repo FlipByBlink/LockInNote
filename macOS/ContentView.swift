@@ -11,7 +11,6 @@ struct ContentView: View {
         .toolbarBackground(.clear, for: .automatic)
         .modifier(📣ADSheet())
         .modifier(🔲WindowEdgeFeedback())
-//        .modifier(📖OpenNoteFromWidget()) //TODO: 削除
         .animation(.default, value: self.app.target)
         .environmentObject(self.app.inAppPurchaseModel)
     }

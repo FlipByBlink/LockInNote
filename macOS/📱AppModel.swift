@@ -3,7 +3,6 @@ import SwiftUI
 @MainActor
 class 📱AppModel: NSObject, ObservableObject {
     @Published var target: 📝NoteFamily = .primary
-//    @Published var requestToOpenNote: Bool = false TODO: 削除
     @Published var showADSheet: Bool = false
     @Published private(set) var playingFeedback: Bool = false
     let primaryNote: 📝NoteModel = .init(.primary)
