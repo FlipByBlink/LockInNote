@@ -1004,6 +1004,7 @@
 			isa = PBXGroup;
 			children = (
 				F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */,
+				F556953628CCAFC3004558FC /* Configuration.storekit */,
 				F5B7C72E2A9EE6A90040B15E /* 🚧Suspension */,
 			);
 			path = "🚧Debug";
@@ -1086,7 +1087,6 @@
 				F51E39B32A8CAA4700F32F4F /* 🔗URLSchemeAction */,
 				F5F9D66B2A9AC0D3008CD67F /* 🗄️Migration */,
 				F55058202A9CAEEB00D912F2 /* 🚧Debug */,
-				F556953628CCAFC3004558FC /* Configuration.storekit */,
 			);
 			path = "🗄️Rest";
 			sourceTree = "<group>";

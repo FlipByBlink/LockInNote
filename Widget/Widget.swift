@@ -2,11 +2,15 @@ import WidgetKit
 import SwiftUI
 
 private struct 🪧Provider: TimelineProvider {
-    func placeholder(in context: Context) -> 🪧Entry { .init(situation: .placeholder) }
-    func getSnapshot(in context: Context, completion: @escaping (🪧Entry) -> ()) { completion(.init(situation: .snapshot)) }
+    func placeholder(in context: Context) -> 🪧Entry { 
+        .init(situation: .placeholder)
+    }
+    func getSnapshot(in context: Context, completion: @escaping (🪧Entry) -> ()) {
+        completion(.init(situation: .snapshot))
+    }
     func getTimeline(in context: Context, completion: @escaping (Timeline<🪧Entry>) -> ()) {
         completion(Timeline(entries: [.init(situation: .timeline)],
-                            policy: .after(.now.addingTimeInterval(60 * 15))))
+                            policy: .after(.now.addingTimeInterval(60 * 20))))
     }
 }
 
