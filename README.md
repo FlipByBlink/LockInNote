@@ -19,17 +19,17 @@ When you want to take a memo, you can write it out right away on the widgets, an
 The design of the memo note on the widgets can be flexibly customized, so it can be used for various purposes.
 
 
-- Tap the widget to immediately launch the keyboard and edit the memo note.
+- Tap the widget to immediately edit the memo note.
 
 - Font "size", "design", "color", and "weight" can be adjusted.
 
 - You can also select the alignment of multiple lines, the display pattern when no text is entered, and more.
 
-- Share sheets allow you to easily share text to other applications.
-
 - Sync notes between devices by iCloud
 
-- You can set any "URL scheme action" to link with other apps.
+- You can set any "URL scheme action" to link with other apps.(iOS, iPadOS, macOS)
+
+- Share sheets allow you to easily share text to other applications.(iOS, iPadOS)
 
 
 Multi platform support
