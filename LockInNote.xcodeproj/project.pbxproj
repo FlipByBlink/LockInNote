@@ -300,7 +300,6 @@
 		F566A91029CEDA2F00ACCC63 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F566A91129CEDA2F00ACCC63 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
 		F566A91A29CEDA3000ACCC63 /* Widget for watchOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F569516F2A98697D00B36339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51E3A082A8CAFB800F32F4F /* Assets.xcassets */; };
 		F56951702A986B8900B36339 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BDC2A72406F008659F9 /* Localizable.xcstrings */; };
 		F56951712A986B8A00B36339 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BDC2A72406F008659F9 /* Localizable.xcstrings */; };
 		F56951732A986B9600B36339 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
@@ -313,7 +312,9 @@
 		F569517F2A9896B700B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517C2A9896B600B36339 /* InfoPlist.xcstrings */; };
 		F56951802A9896B700B36339 /* 🌐AppStoreDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */; };
 		F56B338A2A98A90D004510DE /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F56B33892A98A90D004510DE /* InfoPlist.xcstrings */; };
-		F56DDC532AA9824A002BD832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
+		F56DDC892AA98AB3002BD832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56DDC882AA98AB3002BD832 /* Assets.xcassets */; };
+		F56DDCB52AA98AFB002BD832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56DDCB42AA98AFB002BD832 /* Assets.xcassets */; };
+		F56DDCE12AA98B3C002BD832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56DDCE02AA98B3C002BD832 /* Assets.xcassets */; };
 		F58F3BC22A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC62A723D00008659F9 /* 🌐ADAppDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC02A723CFF008659F9 /* 🌐ADAppDescription.xcstrings */; };
 		F58F3BC82A723D00008659F9 /* 🌐ADAppName.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */; };
@@ -676,6 +677,9 @@
 		F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AppStoreDescription.xcstrings"; sourceTree = "<group>"; };
 		F56B33892A98A90D004510DE /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F56DDC542AA9830C002BD832 /* 1200w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1200w.png; sourceTree = "<group>"; };
+		F56DDC882AA98AB3002BD832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F56DDCB42AA98AFB002BD832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F56DDCE02AA98B3C002BD832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaultsVer_1_1.swift"; sourceTree = "<group>"; };
 		F57E85CE29D2C3D600927561 /* 💁HowToGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💁HowToGuide.swift"; sourceTree = "<group>"; };
 		F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AD&InAppPurchase.xcstrings"; sourceTree = "<group>"; };
@@ -808,6 +812,7 @@
 		F51E39AA2A8CAA4700F32F4F /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
+				F56DDCB42AA98AFB002BD832 /* Assets.xcassets */,
 				F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */,
 				F566A91729CEDA3000ACCC63 /* Info.plist */,
 				F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */,
@@ -818,6 +823,7 @@
 		F51E39AC2A8CAA4700F32F4F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F56DDC882AA98AB3002BD832 /* Assets.xcassets */,
 				F556951D28CCAE21004558FC /* iOS.entitlements */,
 				F556951128CCAB72004558FC /* Info.plist */,
 				F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */,
@@ -878,6 +884,7 @@
 		F51E3A2E2A8CB22500F32F4F /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				F56DDCE02AA98B3C002BD832 /* Assets.xcassets */,
 				F51E3A362A8CB22900F32F4F /* macOS.entitlements */,
 				F51E3A352A8CB22900F32F4F /* Info.plist */,
 				F56B33892A98A90D004510DE /* InfoPlist.xcstrings */,
@@ -1298,8 +1305,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F569516F2A98697D00B36339 /* Assets.xcassets in Resources */,
 				F56B338A2A98A90D004510DE /* InfoPlist.xcstrings in Resources */,
+				F56DDCE12AA98B3C002BD832 /* Assets.xcassets in Resources */,
 				F56951712A986B8A00B36339 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1327,7 +1334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58F3BE42A7248D0008659F9 /* InfoPlist.xcstrings in Resources */,
-				F56DDC532AA9824A002BD832 /* Assets.xcassets in Resources */,
+				F56DDC892AA98AB3002BD832 /* Assets.xcassets in Resources */,
 				F58F3BDE2A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1348,6 +1355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */,
+				F56DDCB52AA98AFB002BD832 /* Assets.xcassets in Resources */,
 				F58F3BE02A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
