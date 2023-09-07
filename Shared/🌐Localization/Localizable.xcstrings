@@ -21,6 +21,16 @@
         }
       }
     },
+    "・Note text\n・Note title\n・Customize options" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "・ノートテキスト\n・ノートタイトル\n・カスタマイズオプション"
+          }
+        }
+      }
+    },
     "(Nothing)" : {
       "localizations" : {
         "ja" : {

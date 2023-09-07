@@ -277,7 +277,6 @@
 		F53CB0C32A9D5CA80039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53CB0BB2A9D5C1B0039FC31 /* 🪧SampleTextInApp.swift */; };
 		F53CB0C42A9D5CB10039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F53CB0BB2A9D5C1B0039FC31 /* 🪧SampleTextInApp.swift */; };
 		F54BE1CE28CB480A00532025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
-		F55058232A9CCACF00D912F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F55104BE2A982CF700262935 /* 📖NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */; };
 		F554BABD2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */; };
 		F554BABE2A98501A00CEAE68 /* 🛒InAppPurchaseWindow.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */; };
@@ -314,6 +313,7 @@
 		F569517F2A9896B700B36339 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517C2A9896B600B36339 /* InfoPlist.xcstrings */; };
 		F56951802A9896B700B36339 /* 🌐AppStoreDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */; };
 		F56B338A2A98A90D004510DE /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F56B33892A98A90D004510DE /* InfoPlist.xcstrings */; };
+		F56DDC532AA9824A002BD832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BE1CD28CB480A00532025 /* Assets.xcassets */; };
 		F58F3BC22A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC62A723D00008659F9 /* 🌐ADAppDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC02A723CFF008659F9 /* 🌐ADAppDescription.xcstrings */; };
 		F58F3BC82A723D00008659F9 /* 🌐ADAppName.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */; };
@@ -675,6 +675,7 @@
 		F569517C2A9896B600B36339 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F569517D2A9896B700B36339 /* 🌐AppStoreDescription.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AppStoreDescription.xcstrings"; sourceTree = "<group>"; };
 		F56B33892A98A90D004510DE /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		F56DDC542AA9830C002BD832 /* 1200w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1200w.png; sourceTree = "<group>"; };
 		F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaultsVer_1_1.swift"; sourceTree = "<group>"; };
 		F57E85CE29D2C3D600927561 /* 💁HowToGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💁HowToGuide.swift"; sourceTree = "<group>"; };
 		F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AD&InAppPurchase.xcstrings"; sourceTree = "<group>"; };
@@ -1043,6 +1044,14 @@
 			path = "🌐Localization";
 			sourceTree = "<group>";
 		};
+		F56DDC522AA97D5D002BD832 /* ForREADME */ = {
+			isa = PBXGroup;
+			children = (
+				F56DDC542AA9830C002BD832 /* 1200w.png */,
+			);
+			path = ForREADME;
+			sourceTree = "<group>";
+		};
 		F58F3BBD2A723CEB008659F9 /* 🌐Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -1074,6 +1083,7 @@
 				F51E39B32A8CAA4700F32F4F /* 🔗URLSchemeAction */,
 				F5F9D66B2A9AC0D3008CD67F /* 🗄️Migration */,
 				F55058202A9CAEEB00D912F2 /* 🚧Debug */,
+				F56DDC522AA97D5D002BD832 /* ForREADME */,
 			);
 			path = "🗄️Rest";
 			sourceTree = "<group>";
@@ -1317,7 +1327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58F3BE42A7248D0008659F9 /* InfoPlist.xcstrings in Resources */,
-				F55058232A9CCACF00D912F2 /* Assets.xcassets in Resources */,
+				F56DDC532AA9824A002BD832 /* Assets.xcassets in Resources */,
 				F58F3BDE2A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -228,11 +228,20 @@ private struct 💁ICloudSyncSection: View {
             List {
                 Section {
                     Label("Sync data between devices by iCloud.", systemImage: "icloud")
-                        .listRowSeparator(.hidden)
-                    Image(.concept)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding(8)
+                    HStack {
+                        Text("""
+                        ・Note text
+                        ・Note title
+                        ・Customize options
+                        """)
+                        .font(.subheadline)
+                        Spacer()
+                        Image(.concept)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 120)
+                    }
+                    .padding(8)
                 } footer: {
                     Text("It takes few minutes to sync data to other device's widget on background. At the latest, the changes will be applied in about 20 minutes.")
                 }
