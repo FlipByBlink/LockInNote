@@ -132,6 +132,7 @@ extension 🗒️StaticInfo {
                                   "🎚️PreviewInApp.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "📋AddNoteToEnvironment.swift",
+                             "ℹ️InfoTab.swift",
                              "ℹ️AboutApp.swift"]
                 case .Migration: ["🗄️FromVer_1_1.swift",
                                   "♻️BaseModelVer_1_1.swift",

@@ -3,23 +3,20 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var app: 📱AppModel
     var body: some View {
-        NavigationStack {
-            TabView(selection: self.$app.tab) {
-                ForEach(📝NoteFamily.allCases) {
-                    📝NoteTab()
-                        .modifier(📋AddNoteToEnvironment($0))
-                }
-                ℹ️AboutAppMenu()
-                    .tag(🔖Tab.info)
+        TabView(selection: self.$app.tab) {
+            ForEach(📝NoteFamily.allCases) {
+               📝NoteTab()
+                    .modifier(📋AddNoteToEnvironment($0))
             }
+            ℹ️InfoTab()
         }
         .sheet(item: self.$app.sheet) {
             switch $0 {
-                case .noteDetail: 
+                case .noteDetail:
                     📖NoteDetailView()
-                case .customize(let ⓝoteFamily):
+                case .customize(let ⓣarget):
                     🎚️CustomizeMenu()
-                        .modifier(📋AddNoteToEnvironment(ⓝoteFamily))
+                        .modifier(📋AddNoteToEnvironment(ⓣarget))
             }
         }
         .onOpenURL { self.app.handle($0) }
