@@ -107,14 +107,11 @@ private struct 🎚️WidgetTitleMenuLink: View {
     var body: some View {
         NavigationLink {
             Form {
-                TextField("Title",
-                          text: self.$note.title,
-                          prompt: Text(self.note.family.presetTitle))
-                .font(.title2)
-                .padding(32)
+                🎚️TitleTextField()
+                    .font(.title2)
+                    .padding(32)
             }
             .navigationTitle("Customize \"\(self.note.title)\" - Widget title")
-            .onChange(of: self.note.title) { self.note.save(.title, $0) }
         } label: {
             Label("Widget title", systemImage: "tag")
         }

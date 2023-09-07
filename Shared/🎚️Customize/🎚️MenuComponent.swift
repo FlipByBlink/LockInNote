@@ -90,6 +90,16 @@ struct 🎚️EmptyTextField: View {
     }
 }
 
+struct 🎚️TitleTextField: View {
+    @EnvironmentObject var note: 📝NoteModel
+    var body: some View {
+        TextField("Title",
+                  text: self.$note.title,
+                  prompt: Text(self.note.family.presetTitle))
+        .onChange(of: self.note.title) { self.note.save(.title, $0) }
+    }
+}
+
 #if os(iOS) || os(macOS)
 struct 🎚AppearanceModePicker: View {
     @EnvironmentObject var note: 📝NoteModel

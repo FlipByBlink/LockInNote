@@ -9,6 +9,7 @@ struct 🎚️CustomizeMenu: View {
                 🎚️SharedOptionSection()
                 🎚️SystemWidgetMenuLink()
                 🎚️AccessoryWidgetMenuLink()
+                🎚️TitleTextFieldLink()
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
             //.navigationBarTitleDisplayMode(.inline) TODO: iOS17RCで挙動チェック
@@ -212,5 +213,26 @@ private struct 🎚️AccessoryWidgetMenuLink: View {
         .foregroundStyle(.secondary)
         .frame(maxWidth: .infinity)
         .listRowBackground(Color.clear)
+    }
+}
+
+private struct 🎚️TitleTextFieldLink: View {
+    @EnvironmentObject var note: 📝NoteModel
+    var body: some View {
+        Section {
+            NavigationLink {
+                List {
+                    🎚️TitleTextField()
+                        .textFieldStyle(.roundedBorder)
+                }
+                .navigationTitle("Widget title")
+            } label: {
+                LabeledContent {
+                    Text(self.note.title)
+                } label: {
+                    Label("Widget title", systemImage: "tag")
+                }
+            }
+        }
     }
 }

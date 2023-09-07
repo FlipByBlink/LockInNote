@@ -72,13 +72,14 @@ private struct 🎚️WidgetTitleEditLink: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         NavigationLink {
-            TextField("Title",
-                      text: self.$note.title,
-                      prompt: Text(self.note.family.presetTitle))
-            .navigationTitle("Widget title")
-            .onChange(of: self.note.title) { self.note.save(.title, $0) }
+            🎚️TitleTextField()
+                .navigationTitle("Widget title")
         } label: {
-            Label("Widget title", systemImage: "tag")
+            LabeledContent {
+                Text(self.note.title)
+            } label: {
+                Label("Widget title", systemImage: "tag")
+            }
         }
     }
 }
