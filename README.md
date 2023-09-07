@@ -34,13 +34,13 @@ The design of the memo note on the widgets can be flexibly customized, so it can
 
 Multi platform support
 
-iPhone: Home screen, Lock screen, StandBy
+iPhone: Home screen, Lock screen, StandBy(iOS 17)
 
-iPad: Home screen, Lock screen
+iPad: Home screen, Lock screen(iPadOS 17)
 
-Mac: Notification center, Desktop
+Mac: Notification center, Desktop(macOS 14)
 
-Apple Watch: Complication, Smart Stack
+Apple Watch: Complication, Smart Stack(watchOS 10)
 
 
 Source code link
