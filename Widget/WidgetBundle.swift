@@ -7,6 +7,9 @@ struct 🪧WidgetBundle: WidgetBundle {
         Self.SecondaryWidget()
         Self.TertiaryWidget()
     }
+}
+
+private extension 🪧WidgetBundle {
     private struct PrimaryWidget: Widget {
         var body: some WidgetConfiguration {
             🪧WidgetConfiguration(noteFamily: .primary)

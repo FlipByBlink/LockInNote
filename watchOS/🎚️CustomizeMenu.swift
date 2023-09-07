@@ -7,7 +7,7 @@ struct 🎚️CustomizeMenu: View {
             List {
                 🎚️AccessoryWidgetPreview()
                 Section {
-                    🎚️FontSizePicker(value: self.$note.accessory_fontSize)
+                    Self.FontSizePicker(value: self.$note.accessory_fontSize)
                     🎚FontWeightPicker()
                     🎚FontDesignPicker()
                     🎚MultilineTextAlignmentPicker()
@@ -19,8 +19,8 @@ struct 🎚️CustomizeMenu: View {
                         Label("More", systemImage: "ellipsis")
                     }
                 }
-                🎚️EmptyIconMenuLink()
-                🎚️WidgetTitleEditLink()
+                Self.EmptyIconMenuLink()
+                Self.WidgetTitleEditLink()
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
         }
@@ -28,57 +28,57 @@ struct 🎚️CustomizeMenu: View {
     }
 }
 
-private struct 🎚️FontSizePicker: View {
-    @Binding var value: Int
-    var body: some View {
-        Picker(selection: self.$value) {
-            ForEach(8 ..< 40, id: \.self) {
-                Text(verbatim: "\($0)")
-                    .font(.system(size: CGFloat($0)))
+private extension 🎚️CustomizeMenu {
+    private struct FontSizePicker: View {
+        @Binding var value: Int
+        var body: some View {
+            Picker(selection: self.$value) {
+                ForEach(8 ..< 40, id: \.self) {
+                    Text(verbatim: "\($0)")
+                        .font(.system(size: CGFloat($0)))
+                }
+            } label: {
+                Label("Size", systemImage: "textformat.size")
             }
-        } label: {
-            Label("Size", systemImage: "textformat.size")
         }
     }
-}
-
-private struct 🎚️EmptyIconMenuLink: View {
-    @EnvironmentObject var note: 📝NoteModel
-    var body: some View {
-        Section {
-            NavigationLink {
-                List {
-                    🎚️EmptyIconPreview()
-                    Section {
-                        🎚️EmptyTypePicker()
-                        if self.note.empty_type == .userText {
-                            🎚️EmptyTextField()
+    private struct EmptyIconMenuLink: View {
+        @EnvironmentObject var note: 📝NoteModel
+        var body: some View {
+            Section {
+                NavigationLink {
+                    List {
+                        🎚️EmptyIconPreview()
+                        Section {
+                            🎚️EmptyTypePicker()
+                            if self.note.empty_type == .userText {
+                                🎚️EmptyTextField()
+                            }
+                        }
+                        if self.note.empty_type != .nothing {
+                            Section { 🎚️EmptyIconSizePicker() }
                         }
                     }
-                    if self.note.empty_type != .nothing {
-                        Section { 🎚️EmptyIconSizePicker() }
-                    }
+                    .navigationTitle("Empty icon")
+                    .animation(.default, value: self.note.empty_type)
+                } label: {
+                    Label("Empty icon", systemImage: "questionmark")
                 }
-                .navigationTitle("Empty icon")
-                .animation(.default, value: self.note.empty_type)
-            } label: {
-                Label("Empty icon", systemImage: "questionmark")
             }
         }
     }
-}
-
-private struct 🎚️WidgetTitleEditLink: View {
-    @EnvironmentObject var note: 📝NoteModel
-    var body: some View {
-        NavigationLink {
-            🎚️TitleTextField()
-                .navigationTitle("Widget title")
-        } label: {
-            LabeledContent {
-                Text(self.note.title)
+    private struct WidgetTitleEditLink: View {
+        @EnvironmentObject var note: 📝NoteModel
+        var body: some View {
+            NavigationLink {
+                🎚️TitleTextField()
+                    .navigationTitle("Widget title")
             } label: {
-                Label("Widget title", systemImage: "tag")
+                LabeledContent {
+                    Text(self.note.title)
+                } label: {
+                    Label("Widget title", systemImage: "tag")
+                }
             }
         }
     }

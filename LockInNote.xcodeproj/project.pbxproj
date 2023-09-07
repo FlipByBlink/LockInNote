@@ -332,6 +332,8 @@
 		F58F3BE42A7248D0008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */; };
 		F58F3BE62A7248DE008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */; };
 		F58F3BE82A7248E7008659F9 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */; };
+		F592C3302AAA8C4D0045960E /* 🎚️CustomizeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F592C32F2AAA8C4D0045960E /* 🎚️CustomizeWindow.swift */; };
+		F592C3312AAA8CB50045960E /* 🎚️CustomizeWindow.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F592C32F2AAA8C4D0045960E /* 🎚️CustomizeWindow.swift */; };
 		F5AD41012A9EF26C00202C2D /* 🚧DebugMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5B7C7302A9EE6D40040B15E /* 🚧DebugMenu.swift */; };
 		F5AD41032A9F1C1300202C2D /* 📣ADSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */; };
 		F5AD41042A9F1D8B00202C2D /* 📣ADSheet.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */; };
@@ -451,6 +453,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F592C3312AAA8CB50045960E /* 🎚️CustomizeWindow.swift in CopyFiles */,
 				F5AD41092A9F23CF00202C2D /* 📣ADSheet.swift in CopyFiles */,
 				F5606E782A9D922E0046EC5D /* 🪧Situation.swift in CopyFiles */,
 				F53CB0C42A9D5CB10039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */,
@@ -700,6 +703,7 @@
 		F58F3BE32A7248D0008659F9 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F58F3BE52A7248DE008659F9 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F58F3BE72A7248E7008659F9 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		F592C32F2AAA8C4D0045960E /* 🎚️CustomizeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️CustomizeWindow.swift"; sourceTree = "<group>"; };
 		F5ABF3B929CFC69B006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5ABF3BA29CFC6AC006C4F66 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		F5AD41022A9F1C1300202C2D /* 📣ADSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📣ADSheet.swift"; sourceTree = "<group>"; };
@@ -874,6 +878,7 @@
 				F51E39C32A8CAA4700F32F4F /* 📝NoteWindow.swift */,
 				F51E39C52A8CAA4700F32F4F /* ContentView.swift */,
 				F51E39C62A8CAA4700F32F4F /* 📝NoteEditor.swift */,
+				F592C32F2AAA8C4D0045960E /* 🎚️CustomizeWindow.swift */,
 				F51E39BC2A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
 				F51E39C02A8CAA4700F32F4F /* 🪄Commands.swift */,
 				F51E3AA62A8CEC0000F32F4F /* 🗄️Rest */,
@@ -1387,6 +1392,7 @@
 				F51E3AAA2A8CEC2800F32F4F /* 🛒InAppPurchaseMenu.swift in Sources */,
 				F53858242A9C781200A0D72D /* 🪧AccessoryFamilyView.swift in Sources */,
 				F51E3A152A8CAFDD00F32F4F /* 📝NoteWindow.swift in Sources */,
+				F592C3302AAA8C4D0045960E /* 🎚️CustomizeWindow.swift in Sources */,
 				F51E3A172A8CAFDD00F32F4F /* 📱AppModel.swift in Sources */,
 				F51E3A242A8CB06500F32F4F /* 🔗MenuComponent.swift in Sources */,
 				F51E3A492A8CC58A00F32F4F /* 🛒InAppPurchaseModel.swift in Sources */,

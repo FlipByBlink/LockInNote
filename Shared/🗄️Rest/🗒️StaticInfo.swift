@@ -172,6 +172,7 @@ extension 🗒️StaticInfo {
                                    "🪧SnapshotTitle.swift",
                                    "🪧SampleTextInApp.swift"]
                 case .Customize: ["🎚️Model.swift",
+                                  "🎚️CustomizeWindow.swift",
                                   "🎚️CustomizeMenu.swift",
                                   "🎚️MenuComponent.swift",
                                   "🎚️SaveValues.swift",
