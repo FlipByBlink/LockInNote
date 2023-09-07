@@ -19,6 +19,7 @@ struct ContentView: View {
                         .modifier(📋AddNoteToEnvironment(ⓣarget))
             }
         }
+        .modifier(🪧ReloadOnActive())
         .onOpenURL { self.app.handle($0) }
     }
 }
