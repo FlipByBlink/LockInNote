@@ -6,6 +6,7 @@ struct 🪧SnapshotTitle: ViewModifier {
     @Environment(\.ⓢituation) var situation
     private var condition: Bool {
         self.situation == .snapshot
+        && !self.note.title.isEmpty
         && self.note.title != self.note.family.presetTitle
     }
     func body(content: Content) -> some View {
@@ -16,11 +17,12 @@ struct 🪧SnapshotTitle: ViewModifier {
 #if os(iOS) || os(macOS)
                         case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
                             Text(self.note.title)
-                                .fontWeight(.semibold)
-                                .padding(8)
+                                .font(.caption)
+                                .fontWeight(.medium)
+                                .padding(4)
                                 .foregroundStyle(.secondary)
                                 .background(.regularMaterial)
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                                .clipShape(RoundedRectangle(cornerRadius: 6))
                                 .padding(8)
 #endif
 #if os(iOS) || os(watchOS)
