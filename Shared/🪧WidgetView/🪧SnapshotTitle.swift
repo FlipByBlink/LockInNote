@@ -20,7 +20,9 @@ struct 🪧SnapshotTitle: ViewModifier {
                                 .font(.caption)
                                 .fontWeight(.medium)
                                 .padding(4)
+                                #if os(iOS)
                                 .foregroundStyle(.secondary)
+                                #endif
                                 .background(.regularMaterial)
                                 .clipShape(RoundedRectangle(cornerRadius: 6))
                                 .padding(8)
