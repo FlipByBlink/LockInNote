@@ -19,13 +19,14 @@ struct 🪧AccessoryFamilyView: View {
                 }
             }
             .widgetAccentable()
+            .modifier(Self.SmartStackPadding())
         }
         .font(.system(size: CGFloat(self.note.accessory_fontSize),
                       weight: self.note.fontWeight.value,
                       design: self.note.fontDesign.value))
         .italic(self.note.italic)
         .multilineTextAlignment(self.note.multilineTextAlignment.value)
-        .modifier(Self.ForegroundStyle())
+        .foregroundStyle(self.note.accessory_hierarchical.value)
         .modifier(Self.Animation())
     }
 }
@@ -57,7 +58,7 @@ private extension 🪧AccessoryFamilyView {
             }
         }
     }
-    private struct ForegroundStyle: ViewModifier {
+    private struct SmartStackPadding: ViewModifier {
         @EnvironmentObject var note: 📝NoteModel
         @Environment(\.ⓢituation) var situation
         @Environment(\.widgetRenderingMode) var widgetRenderingMode
@@ -67,9 +68,9 @@ private extension 🪧AccessoryFamilyView {
             if #available(watchOS 10.0, *),
                self.showsWidgetContainerBackground,
                self.widgetRenderingMode == .fullColor {
-                return true
+                true
             } else {
-                return false
+                false
             }
 #else
             false
@@ -77,12 +78,12 @@ private extension 🪧AccessoryFamilyView {
         }
         func body(content: Content) -> some View {
             if self.situation == .previewInApp {
-                content.foregroundStyle(self.note.accessory_hierarchical.value)
+                content
             } else {
                 if self.isSmartStackOnWatchOS10 {
-                    content.foregroundStyle(.black)
+                    content.padding(9)
                 } else {
-                    content.foregroundStyle(self.note.accessory_hierarchical.value)
+                    content
                 }
             }
         }
