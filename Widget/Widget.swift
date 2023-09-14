@@ -33,15 +33,22 @@ struct 🪧WidgetConfiguration: WidgetConfiguration {
         }
         .configurationDisplayName(self.noteFamily.presetTitleOnSystemUI)
         .description(self.noteFamily.widgetDescription)
-#if os(iOS)
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge,
-                            .accessoryInline, .accessoryCircular, .accessoryRectangular])
-#elseif os(watchOS)
-        .supportedFamilies([.accessoryInline, .accessoryCircular, .accessoryRectangular, .accessoryCorner])
-#elseif os(macOS)
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
-#endif
+        .supportedFamilies(self.supportedFamilies)
         .contentMarginsDisabled()
     }
     private var kind: String { 🗄️MigrationFromVer_1_1.widgetKind(self.noteFamily) }
+    private var supportedFamilies: [WidgetFamily] {
+#if os(iOS)
+        [.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge,
+         .accessoryInline, .accessoryCircular, .accessoryRectangular]
+#elseif os(watchOS)
+        [.accessoryInline, .accessoryCircular, .accessoryRectangular, .accessoryCorner]
+#elseif os(macOS)
+        if #available(macOS 14.0, *) {
+            [.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge]
+        } else {
+            [.systemSmall, .systemMedium, .systemLarge]
+        }
+#endif
+    }
 }
