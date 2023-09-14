@@ -13,13 +13,13 @@ enum 📣ADTargetApp: String, CaseIterable {
     
     var url: URL {
         switch self {
-            case .FlipByBlink: URL(string: "https://apps.apple.com/app/id1444571751")!
-            case .FadeInAlarm: URL(string: "https://apps.apple.com/app/id1465336070")!
-            case .PlainShogiBoard: URL(string: "https://apps.apple.com/app/id1620268476")!
-            case .TapWeight: URL(string: "https://apps.apple.com/app/id1624159721")!
-            case .TapTemperature: URL(string: "https://apps.apple.com/app/id1626760566")!
-            case .MemorizeWidget: URL(string: "https://apps.apple.com/app/id1644276262")!
-            case .LockInNote: URL(string: "https://apps.apple.com/app/id1644879340")!
+            case .FlipByBlink: .init(string: "https://apps.apple.com/app/id1444571751")!
+            case .FadeInAlarm: .init(string: "https://apps.apple.com/app/id1465336070")!
+            case .PlainShogiBoard: .init(string: "https://apps.apple.com/app/id1620268476")!
+            case .TapWeight: .init(string: "https://apps.apple.com/app/id1624159721")!
+            case .TapTemperature: .init(string: "https://apps.apple.com/app/id1626760566")!
+            case .MemorizeWidget: .init(string: "https://apps.apple.com/app/id1644276262")!
+            case .LockInNote: .init(string: "https://apps.apple.com/app/id1644879340")!
         }
     }
     

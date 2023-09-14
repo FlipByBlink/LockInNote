@@ -12,7 +12,8 @@ struct 🎚️CustomizeMenu: View {
                 Self.TitleTextFieldLink()
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
-            //.navigationBarTitleDisplayMode(.inline) TODO: iOS17RCで挙動チェック
+            .navigationBarTitleDisplayMode(.inline)
+            //MARK: ↑ WorkaroundIOS17Bug(navigationTitleMode/navigationLinkPotision)
             .toolbar {
                 Button {
                     self.dismiss()

@@ -18,6 +18,7 @@ struct ℹ️InfoTab: View {
                 💁HowToGuideSection()
             }
             .navigationTitle("Info")
+            .navigationBarTitleDisplayMode(.inline)
             .modifier(🚧DebugMenu())
         }
         .tag(🔖Tab.info)
