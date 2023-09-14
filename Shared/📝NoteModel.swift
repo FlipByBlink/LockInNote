@@ -20,7 +20,7 @@ class 📝NoteModel: ObservableObject {
     @Published var system_appearanceMode: 🎚️AppearanceMode = .standard
     @Published var system_fontSize: Int = 20
     @Published var system_hierarchical: 🎚️Hierarchical = .primary
-    @Published var system_padding: Int = 8
+    @Published var system_padding: Int = 10
     @Published var system_contentAlignment: 🎚️ContentAlignment = .center
     @Published var system_textColor: Color = .black
     @Published var system_backgroundColor: Color = .white

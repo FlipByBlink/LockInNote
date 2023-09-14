@@ -8,7 +8,7 @@ struct 📖NoteDetailView: View {
                 Text(self.app.note(ⓕamily).text)
                     .font(.title3)
                     .multilineTextAlignment(.center)
-                    .padding(.vertical, 24)
+                    .padding(.vertical, 28)
             }
         } else {
             EmptyView()
