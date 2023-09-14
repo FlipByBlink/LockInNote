@@ -10,11 +10,6 @@ struct 📖NoteDetailView: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 24)
             }
-            .toolbar(.hidden, for: .automatic)
-            .onTapGesture {
-                self.app.sheet = nil
-                WKInterfaceDevice.current().play(.directionDown)
-            }
         } else {
             EmptyView()
         }
