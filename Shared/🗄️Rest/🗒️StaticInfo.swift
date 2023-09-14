@@ -29,7 +29,7 @@ enum 🗒️StaticInfo {
 
 #if os(iOS)
 extension 🗒️StaticInfo {
-    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-01"),
+    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-14"),
                                                                   ("1.1", "2023-03-28"),
                                                                   ("1.0.4", "2023-01-30"),
                                                                   ("1.0.3", "2022-12-09"),
@@ -145,7 +145,7 @@ extension 🗒️StaticInfo {
 
 #elseif os(macOS)
 extension 🗒️StaticInfo {
-    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-01")] //降順。先頭の方が新しい
+    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-14")] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
         case main, Widget, WidgetView, Customize, URLSchemeAction, Commands, Rest
