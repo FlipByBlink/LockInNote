@@ -53,7 +53,7 @@ struct 📝NoteTab: View {
                     Label("Customize \"\(self.note.title)\"",
                           systemImage: "slider.horizontal.3")
                 }
-                .grayscale(self.focus ? 1 : 0) //TODO: iOS17betaでは変化しない。要チェック
+                .grayscale(self.focus ? 1 : 0) //iOS17では変化しない
             }
             .animation(.default, value: self.note.text.isEmpty)
             .animation(.default, value: self.focus)
