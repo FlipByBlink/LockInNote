@@ -31,11 +31,8 @@ extension 📝NoteFamily: Identifiable, CaseIterable {
         }
     }
     var presetTitleOnSystemUI: String {
-        switch self {
-            case .primary: "1. " + Self.primary.presetTitle
-            case .secondary: "2. " + Self.primary.presetTitle
-            case .tertiary: "3. " + Self.primary.presetTitle
-        }
+        Self.primary.presetTitle
+            .appending(self != .primary ? "(\(self.presetTitle))" : "")
     }
     func loadTitle() -> String {
         do {
