@@ -1,104 +1,101 @@
 import SwiftUI
 
 struct 🎚️CustomizeMenu: View {
-    @EnvironmentObject var note: 📝NoteModel
-    @State private var index: Int = 0
+    @State private var selection: Self.Selection = .systemWidget
     var body: some View {
         NavigationSplitView {
-            List(selection: self.$index) {
-                Self.SystemWidgetMenuLink()
-                    .tag(0)
-                Self.EmptyIconMenuLink()
-                    .tag(1)
+            List(selection: self.$selection) {
+                Label("Widget", systemImage: "app")
+                    .tag(Self.Selection.systemWidget)
+                Label("Empty icon", systemImage: "square.dotted")
+                    .tag(Self.Selection.emptyIcon)
                 Divider()
-                Self.WidgetTitleMenuLink()
-                    .tag(2)
+                Label("Widget title", systemImage: "tag")
+                    .tag(Self.Selection.widgetTitle)
             }
             .frame(minWidth: 160)
         } detail: {
-            EmptyView()
+            Group {
+                switch self.selection {
+                    case .systemWidget: Self.SystemWidgetMenu()
+                    case .emptyIcon: Self.EmptyIconMenu()
+                    case .widgetTitle: Self.WidgetTitleMenu()
+                }
+            }
+            .modifier(🎚️SaveValues())
+            .modifier(📋AddNoteToEnvironment())
         }
-        .modifier(🎚️SaveValues())
+    }
+    private enum Selection {
+        case systemWidget, emptyIcon, widgetTitle
     }
 }
 
 private extension 🎚️CustomizeMenu {
-    private struct SystemWidgetMenuLink: View {
+    private struct SystemWidgetMenu: View {
         @EnvironmentObject var note: 📝NoteModel
         var body: some View {
-            NavigationLink {
-                Form {
-                    Section { 🎚AppearanceModePicker() }
-                    🎚️SystemWidgetPreview()
-                    Section {
-                        🎚️FontSizeStepper(value: self.$note.system_fontSize)
-                        🎚FontWeightPicker()
-                        🎚FontDesignPicker()
-                        🎚ItalicToggle()
-                        🎚MultilineTextAlignmentPicker()
-                        🎚️PaddingStepper()
-                        🎚️ContentAlignmentPicker()
-                        Divider()
-                        switch self.note.system_appearanceMode {
-                            case .standard:
-                                🎚HierarchicalPicker(value: self.$note.system_hierarchical)
-                            case .color:
-                                🎚️TextColorPicker()
-                                🎚️BackgroundColorPicker()
-                                🎚️BackgroundGradientToggle()
-                        }
-                    }
+            Form {
+                Section { 🎚AppearanceModePicker() }
+                🎚️SystemWidgetPreview()
+                Section {
+                    🎚️FontSizeStepper(value: self.$note.system_fontSize)
+                    🎚FontWeightPicker()
+                    🎚FontDesignPicker()
+                    🎚ItalicToggle()
+                    🎚MultilineTextAlignmentPicker()
+                    🎚️PaddingStepper()
+                    🎚️ContentAlignmentPicker()
                     Divider()
-                    🎚️DoubleSizeOnLargeWidgetToggle()
-                }
-                .padding(32)
-                .navigationTitle("Customize \"\(self.note.title)\"")
-                .navigationSubtitle("Desktop, Notification center, Home screen, StandBy, Lock screen(iPad)")
-                .animation(.default, value: self.note.system_appearanceMode)
-                .frame(minWidth: 620)
-            } label: {
-                Label("Widget", systemImage: "app")
-            }
-        }
-    }
-    private struct EmptyIconMenuLink: View {
-        @EnvironmentObject var note: 📝NoteModel
-        var body: some View {
-            NavigationLink {
-                Form {
-                    🎚️EmptyIconPreview()
-                    Section {
-                        🎚️EmptyTypePicker()
-                        if self.note.empty_type == .userText {
-                            🎚️EmptyTextField()
-                        }
-                    }
-                    if self.note.empty_type != .nothing {
-                        Section { 🎚️EmptyIconSizePicker() }
+                    switch self.note.system_appearanceMode {
+                        case .standard:
+                            🎚HierarchicalPicker(value: self.$note.system_hierarchical)
+                        case .color:
+                            🎚️TextColorPicker()
+                            🎚️BackgroundColorPicker()
+                            🎚️BackgroundGradientToggle()
                     }
                 }
-                .padding(32)
-                .navigationTitle("Customize \"\(self.note.title)\" - Empty icon")
-                .navigationSubtitle("No text situation")
-                .animation(.default, value: self.note.empty_type)
-            } label: {
-                Label("Empty icon", systemImage: "square.dotted")
+                Divider()
+                🎚️DoubleSizeOnLargeWidgetToggle()
             }
+            .padding(32)
+            .navigationTitle("Customize \"\(self.note.title)\"")
+            .navigationSubtitle("Desktop, Notification center, Home screen, StandBy, Lock screen(iPad)")
+            .animation(.default, value: self.note.system_appearanceMode)
+            .frame(minWidth: 620)
         }
     }
-    private struct WidgetTitleMenuLink: View {
+    private struct EmptyIconMenu: View {
         @EnvironmentObject var note: 📝NoteModel
         var body: some View {
-            NavigationLink {
-                Form {
-                    🎚️TitleTextField()
-                        .font(.title2)
-                        .padding(32)
+            Form {
+                🎚️EmptyIconPreview()
+                Section {
+                    🎚️EmptyTypePicker()
+                    if self.note.empty_type == .userText {
+                        🎚️EmptyTextField()
+                    }
                 }
-                .navigationTitle("Customize \"\(self.note.title)\" - Widget title")
-            } label: {
-                Label("Widget title", systemImage: "tag")
+                if self.note.empty_type != .nothing {
+                    Section { 🎚️EmptyIconSizePicker() }
+                }
             }
+            .padding(32)
+            .navigationTitle("Customize \"\(self.note.title)\" - Empty icon")
+            .navigationSubtitle("No text situation")
+            .animation(.default, value: self.note.empty_type)
+        }
+    }
+    private struct WidgetTitleMenu: View {
+        @EnvironmentObject var note: 📝NoteModel
+        var body: some View {
+            Form {
+                🎚️TitleTextField()
+                    .font(.title2)
+                    .padding(32)
+            }
+            .navigationTitle("Customize \"\(self.note.title)\" - Widget title")
         }
     }
 }

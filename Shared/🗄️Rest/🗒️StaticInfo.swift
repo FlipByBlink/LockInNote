@@ -77,6 +77,7 @@ extension 🗒️StaticInfo {
                                         "🔗URLSchemeActionMenu.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "📋AddNoteToEnvironment.swift",
+                             "🪧ReloadWidgetsOnActive.swift",
                              "ℹ️InfoTab.swift",
                              "💁HowToGuide.swift",
                              "🅧DismissButtonLabel.swift",
@@ -132,7 +133,7 @@ extension 🗒️StaticInfo {
                                   "🎚️PreviewInApp.swift"]
                 case .Rest: ["🗒️StaticInfo.swift",
                              "📋AddNoteToEnvironment.swift",
-                             "🪧ReloadOnActive.swift",
+                             "🪧ReloadWidgetsOnActive.swift",
                              "ℹ️InfoTab.swift",
                              "ℹ️AboutApp.swift"]
                 case .Migration: ["🗄️FromVer_1_1.swift",

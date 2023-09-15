@@ -185,6 +185,8 @@
 		F51E3AAD2A8CEC5C00F32F4F /* ℹ️HelpWindows.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3AA82A8CEC2800F32F4F /* ℹ️HelpWindows.swift */; };
 		F51E3AAE2A8CEC5C00F32F4F /* 📣ADContent.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3AA92A8CEC2800F32F4F /* 📣ADContent.swift */; };
 		F51E3AAF2A8CEC5C00F32F4F /* 🛒InAppPurchaseMenu.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E3AA72A8CEC2800F32F4F /* 🛒InAppPurchaseMenu.swift */; };
+		F52F12142AB4029500F6474B /* 🪧ReloadWidgetsOnActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DDCE62AA9A326002BD832 /* 🪧ReloadWidgetsOnActive.swift */; };
+		F52F12152AB4038200F6474B /* 🪧ReloadWidgetsOnActive.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F56DDCE62AA9A326002BD832 /* 🪧ReloadWidgetsOnActive.swift */; };
 		F53858192A9C76DC00A0D72D /* 🪧SystemFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858182A9C76DC00A0D72D /* 🪧SystemFamilyView.swift */; };
 		F538581A2A9C76DC00A0D72D /* 🪧SystemFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858182A9C76DC00A0D72D /* 🪧SystemFamilyView.swift */; };
 		F538581B2A9C76DC00A0D72D /* 🪧SystemFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53858182A9C76DC00A0D72D /* 🪧SystemFamilyView.swift */; };
@@ -317,8 +319,8 @@
 		F56DDCE12AA98B3C002BD832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56DDCE02AA98B3C002BD832 /* Assets.xcassets */; };
 		F56DDCE42AA99F8A002BD832 /* ℹ️InfoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DDCE32AA99F8A002BD832 /* ℹ️InfoTab.swift */; };
 		F56DDCE52AA9A044002BD832 /* ℹ️InfoTab.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F56DDCE32AA99F8A002BD832 /* ℹ️InfoTab.swift */; };
-		F56DDCE72AA9A326002BD832 /* 🪧ReloadOnActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DDCE62AA9A326002BD832 /* 🪧ReloadOnActive.swift */; };
-		F56DDCE82AA9A3FE002BD832 /* 🪧ReloadOnActive.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F56DDCE62AA9A326002BD832 /* 🪧ReloadOnActive.swift */; };
+		F56DDCE72AA9A326002BD832 /* 🪧ReloadWidgetsOnActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DDCE62AA9A326002BD832 /* 🪧ReloadWidgetsOnActive.swift */; };
+		F56DDCE82AA9A3FE002BD832 /* 🪧ReloadWidgetsOnActive.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F56DDCE62AA9A326002BD832 /* 🪧ReloadWidgetsOnActive.swift */; };
 		F58F3BC22A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */; };
 		F58F3BC62A723D00008659F9 /* 🌐ADAppDescription.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC02A723CFF008659F9 /* 🌐ADAppDescription.xcstrings */; };
 		F58F3BC82A723D00008659F9 /* 🌐ADAppName.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */; };
@@ -409,7 +411,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
-				F56DDCE82AA9A3FE002BD832 /* 🪧ReloadOnActive.swift in CopyFiles */,
+				F56DDCE82AA9A3FE002BD832 /* 🪧ReloadWidgetsOnActive.swift in CopyFiles */,
 				F56DDCE52AA9A044002BD832 /* ℹ️InfoTab.swift in CopyFiles */,
 				F5606E772A9D92280046EC5D /* 🪧Situation.swift in CopyFiles */,
 				F53CB0C32A9D5CA80039FC31 /* 🪧SampleTextInApp.swift in CopyFiles */,
@@ -536,6 +538,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				F52F12152AB4038200F6474B /* 🪧ReloadWidgetsOnActive.swift in CopyFiles */,
 				F5AD410C2AA0171200202C2D /* 🅧DismissButtonLabel.swift in CopyFiles */,
 				F5AD41042A9F1D8B00202C2D /* 📣ADSheet.swift in CopyFiles */,
 				F5AD41012A9EF26C00202C2D /* 🚧DebugMenu.swift in CopyFiles */,
@@ -690,7 +693,7 @@
 		F56DDCB42AA98AFB002BD832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F56DDCE02AA98B3C002BD832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F56DDCE32AA99F8A002BD832 /* ℹ️InfoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ℹ️InfoTab.swift"; sourceTree = "<group>"; };
-		F56DDCE62AA9A326002BD832 /* 🪧ReloadOnActive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧ReloadOnActive.swift"; sourceTree = "<group>"; };
+		F56DDCE62AA9A326002BD832 /* 🪧ReloadWidgetsOnActive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧ReloadWidgetsOnActive.swift"; sourceTree = "<group>"; };
 		F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💾UserDefaultsVer_1_1.swift"; sourceTree = "<group>"; };
 		F57E85CE29D2C3D600927561 /* 💁HowToGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💁HowToGuide.swift"; sourceTree = "<group>"; };
 		F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = "🌐AD&InAppPurchase.xcstrings"; sourceTree = "<group>"; };
@@ -803,7 +806,6 @@
 				F51E39A02A8CAA4700F32F4F /* 💬Sheet.swift */,
 				F51E39A42A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F55104BD2A982CF700262935 /* 📖NoteDetailView.swift */,
-				F56DDCE62AA9A326002BD832 /* 🪧ReloadOnActive.swift */,
 				F56DDCE32AA99F8A002BD832 /* ℹ️InfoTab.swift */,
 				F51E3A552A8CD7AE00F32F4F /* ℹ️AboutApp.swift */,
 				F51E3A532A8CCF4100F32F4F /* 🧰SupportingFiles */,
@@ -1101,6 +1103,7 @@
 				F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */,
 				F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */,
 				F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */,
+				F56DDCE62AA9A326002BD832 /* 🪧ReloadWidgetsOnActive.swift */,
 				F5F9D6602A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift */,
 				F51E39B32A8CAA4700F32F4F /* 🔗URLSchemeAction */,
 				F5F9D66B2A9AC0D3008CD67F /* 🗄️Migration */,
@@ -1460,6 +1463,7 @@
 				F51E3A4C2A8CC5D100F32F4F /* 🛒InAppPurchaseView.swift in Sources */,
 				F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */,
 				F5B7C7312A9EE6D40040B15E /* 🚧DebugMenu.swift in Sources */,
+				F52F12142AB4029500F6474B /* 🪧ReloadWidgetsOnActive.swift in Sources */,
 				F51E39C72A8CAA7100F32F4F /* 📝NoteModel.swift in Sources */,
 				F53858322A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
 				F5F9D66D2A9AC543008CD67F /* 💾ICloudVer_1_1.swift in Sources */,
@@ -1566,7 +1570,7 @@
 				F53CB0BD2A9D5C1B0039FC31 /* 🪧SampleTextInApp.swift in Sources */,
 				F51E39D62A8CAA8A00F32F4F /* 💾ICloud.swift in Sources */,
 				F538584E2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift in Sources */,
-				F56DDCE72AA9A326002BD832 /* 🪧ReloadOnActive.swift in Sources */,
+				F56DDCE72AA9A326002BD832 /* 🪧ReloadWidgetsOnActive.swift in Sources */,
 				F51E39D22A8CAA8300F32F4F /* 🎚️Model.swift in Sources */,
 				F51E39F52A8CAAA000F32F4F /* 🔖Tab.swift in Sources */,
 				F51E3A562A8CD7AE00F32F4F /* ℹ️AboutApp.swift in Sources */,
