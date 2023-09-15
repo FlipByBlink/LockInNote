@@ -21,6 +21,7 @@ struct 👆EditButton: View { // 🖊️
 struct 👆DoneButton: View { // ☑️
     @EnvironmentObject var app: 📱AppModel
     @EnvironmentObject var iap: 🛒InAppPurchaseModel
+    @Environment(\.verticalSizeClass) var verticalSizeClass
     var unfocusAction: () -> Void
     var body: some View {
         Button {
@@ -31,8 +32,9 @@ struct 👆DoneButton: View { // ☑️
             Label("Done", systemImage: "checkmark")
                 .labelStyle(.iconOnly)
                 .foregroundStyle(.white)
-                .font(.largeTitle.weight(.bold))
-                .padding()
+                .font(self.verticalSizeClass == .compact ? .title3 : .largeTitle)
+                .fontWeight(.semibold)
+                .padding(self.verticalSizeClass == .compact ? 8 : 16)
         }
         .background(Circle().fill(.tint))
         .shadow(radius: 3)
@@ -42,6 +44,7 @@ struct 👆DoneButton: View { // ☑️
 struct 👆EraseButtonAndShareButton: View { // 🗑 📤
     @EnvironmentObject var note: 📝NoteModel
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.verticalSizeClass) var verticalSizeClass
     private var disable: Bool { self.note.text.isEmpty }
     private var iconColor: Color {
         if self.disable {
@@ -74,8 +77,9 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
                 Label("Erase", systemImage: "trash")
                     .foregroundStyle(self.iconColor)
                     .labelStyle(.iconOnly)
-                    .font(.largeTitle.weight(.semibold))
-                    .padding()
+                    .font(self.verticalSizeClass == .compact ? .title3 : .largeTitle)
+                    .fontWeight(.semibold)
+                    .padding(self.verticalSizeClass == .compact ? 8 : 16)
                     .shadow(radius: self.disable ? 0 : 3)
             }
             .disabled(self.disable)
@@ -90,8 +94,9 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
                 .disabled(self.disable)
                 .shadow(radius: self.disable ? 0 : 3)
                 .foregroundStyle(self.iconColor)
-                .font(.largeTitle.weight(.semibold))
-                .padding()
+                .font(self.verticalSizeClass == .compact ? .title3 : .largeTitle)
+                .fontWeight(.semibold)
+                .padding(self.verticalSizeClass == .compact ? 8 : 16)
                 .background {
                     Circle()
                         .foregroundStyle(self.backgroundColor(.teal))
