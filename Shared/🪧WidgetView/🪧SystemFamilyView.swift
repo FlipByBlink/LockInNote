@@ -45,6 +45,7 @@ private extension 🪧SystemFamilyView {
     private struct Background: View {
         @EnvironmentObject var note: 📝NoteModel
         @Environment(\.widgetRenderingMode) var widgetRenderingMode
+        @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
         var body: some View {
             Group {
                 switch self.note.system_appearanceMode {
@@ -68,17 +69,19 @@ private extension 🪧SystemFamilyView {
                         }
                 }
             }
-            .modifier(Self.ContainerBackgroundRemover())
+            .opacity(self.showsWidgetContainerBackground ? 1 : 0)
+            .opacity(self.isInactiveDesktopOnMacOS14 ? 0 : 1)
         }
-        private struct ContainerBackgroundRemover: ViewModifier {
-            @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
-            func body(content: Content) -> some View {
-                if self.showsWidgetContainerBackground {
-                    content
-                } else {
-                    Color.clear
-                }
+        private var isInactiveDesktopOnMacOS14: Bool {
+            #if os(macOS)
+            if #available(macOS 14.0, *) {
+                self.widgetRenderingMode != .fullColor
+            } else {
+                false
             }
+            #else
+            false
+            #endif
         }
     }
     private struct ForegroundStyle: ViewModifier {
