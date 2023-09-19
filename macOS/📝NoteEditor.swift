@@ -9,7 +9,7 @@ struct 📝NoteEditor: View {
         TextEditor(text: self.$note.text)
             .focused(self.$focus)
             .onAppear { self.focus = true }
-            .clipShape(RoundedRectangle(cornerRadius: 12)) //TODO: スクロールバー表示される際に不恰好。修正する。
+            .clipShape(RoundedRectangle(cornerRadius: 12)) //TODO: スクロールバー表示される際に不恰好。次回のアップデートで修正する。
             .font(.title)
             .padding(.top, 4)
             .padding(.horizontal)
