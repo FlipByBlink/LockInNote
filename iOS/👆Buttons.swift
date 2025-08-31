@@ -5,7 +5,7 @@ struct 👆EditButton: View { // 🖊️
     var body: some View {
         Button {
             self.focusAction()
-            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            💥Feedback.light()
         } label: {
             Image(systemName: "pencil")
                 .foregroundStyle(.white)
@@ -26,7 +26,7 @@ struct 👆DoneButton: View { // ☑️
     var body: some View {
         Button {
             self.unfocusAction()
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
+            💥Feedback.success()
             if self.iap.checkToShowADSheet() { self.app.sheet = .ad }
         } label: {
             Label("Done", systemImage: "checkmark")
@@ -72,7 +72,7 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
         HStack(spacing: 12) {
             Button {
                 withAnimation { self.note.text.removeAll() }
-                UINotificationFeedbackGenerator().notificationOccurred(.error)
+                💥Feedback.error()
             } label: {
                 Label("Erase", systemImage: "trash")
                     .foregroundStyle(self.iconColor)

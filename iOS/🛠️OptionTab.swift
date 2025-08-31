@@ -4,7 +4,9 @@ struct 🛠️OptionTab: View {
     var body: some View {
         NavigationStack {
             List {
+#if !os(visionOS)
                 🛒InAppPurchaseMenuLink()
+#endif
                 🔗URLSchemeActionMenuLink()
                 Self.PreventAutomaticKeyboardOption()
             }

@@ -3,6 +3,7 @@ import SwiftUI
 struct 💁HowToGuideSection: View {
     var body: some View {
         Section {
+#if os(iOS)
             NavigationLink {
                 💁HowToHomeScreen()
             } label: {
@@ -13,6 +14,7 @@ struct 💁HowToGuideSection: View {
             } label: {
                 Label("How to add lock screen widget", systemImage: "questionmark")
             }
+#endif
             💁ICloudSyncSection()
         } header: {
             Text("Guide")
@@ -76,11 +78,13 @@ struct 💁OnBoardingHandle: ViewModifier {
     @EnvironmentObject var app: 📱AppModel
     func body(content: Content) -> some View {
         content
+#if !os(visionOS)
             .task {
                 if NSUbiquitousKeyValueStore.default.dictionaryRepresentation.isEmpty {
                     self.app.sheet = .onboarding
                 }
             }
+#endif
     }
 }
 

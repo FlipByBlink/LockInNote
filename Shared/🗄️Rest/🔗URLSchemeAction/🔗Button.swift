@@ -7,7 +7,7 @@ struct 🔗URLSchemeActionButton: View {
     var body: some View {
         if !self.model.leading.isEmpty {
             if let ⓤrl = self.model.url(self.query) {
-#if os(iOS)
+#if os(iOS) || os(visionOS)
                 Section {
                     self.button(ⓤrl)
                 } footer: {

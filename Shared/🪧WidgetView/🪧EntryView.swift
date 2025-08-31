@@ -8,12 +8,18 @@ struct 🪧EntryView: View {
             switch self.widgetFamily {
                 case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
                     🪧SystemFamilyView()
+#if os(visionOS)
+                case .systemExtraLargePortrait:
+                    🪧SystemFamilyView()
+#endif
+#if os(iOS) || os(watchOS)
                 case .accessoryInline, .accessoryCircular, .accessoryRectangular:
                     🪧AccessoryFamilyView()
-                #if os(watchOS)
+#endif
+#if os(watchOS)
                 case .accessoryCorner:
                     🪧AccessoryCornerView()
-                #endif
+#endif
                 default:
                     🪧PlaceholderView()
             }

@@ -3,7 +3,7 @@ import SwiftUI
 struct 📋AddNoteToEnvironment: ViewModifier {
     @EnvironmentObject var app: 📱AppModel
     
-#if os(iOS) || os(watchOS)
+#if os(iOS) || os(visionOS) || os(watchOS)
     var target: 📝NoteFamily
     func body(content: Content) -> some View {
         switch self.target {

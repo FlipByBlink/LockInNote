@@ -41,6 +41,9 @@ struct 🪧WidgetConfiguration: WidgetConfiguration {
 #if os(iOS)
         [.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge,
          .accessoryInline, .accessoryCircular, .accessoryRectangular]
+#elseif os(visionOS)
+        [.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge,
+         .systemExtraLargePortrait]
 #elseif os(watchOS)
         [.accessoryInline, .accessoryCircular, .accessoryRectangular, .accessoryCorner]
 #elseif os(macOS)

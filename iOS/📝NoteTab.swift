@@ -48,7 +48,7 @@ struct 📝NoteTab: View {
                 Button {
                     self.focus = false
                     self.app.sheet = .customize(self.note.family)
-                    UISelectionFeedbackGenerator().selectionChanged()
+                    💥Feedback.selection()
                 } label: {
                     Label("Customize \"\(self.note.title)\"",
                           systemImage: "slider.horizontal.3")
@@ -58,7 +58,9 @@ struct 📝NoteTab: View {
             .animation(.default, value: self.note.text.isEmpty)
             .animation(.default, value: self.focus)
         }
+#if os(iOS)
         .scrollDismissesKeyboard(.interactively)
+#endif
         .tag(🔖Tab.note(self.note.family))
         .tabItem { Label(self.note.title, systemImage: "note.text") }
     }

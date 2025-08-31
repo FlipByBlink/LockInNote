@@ -37,10 +37,16 @@ private extension 🪧SystemFamilyView {
     }
     private var padding: CGFloat { .init(self.note.system_padding * self.scale) }
     private var scale: Int {
-        switch self.widgetFamily {
-            case .systemLarge, .systemExtraLarge: self.note.system_doubleSizeOnLargeWidget ? 2 : 1
-            default: 1
-        }
+        let isLarge = {
+            switch self.widgetFamily {
+                case .systemLarge, .systemExtraLarge: true
+#if os(visionOS)
+                case .systemExtraLargePortrait: true
+#endif
+                default: false
+            }
+        }()
+        return isLarge ? 2 : 1
     }
     private struct Background: View {
         @EnvironmentObject var note: 📝NoteModel
@@ -71,6 +77,7 @@ private extension 🪧SystemFamilyView {
             }
             .opacity(self.showsWidgetContainerBackground ? 1 : 0)
             .opacity(self.isInactiveDesktopOnMacOS14 ? 0 : 1)
+            .opacity(self.isFullColorOnVisionOS ? 1 : 0)
         }
         private var isInactiveDesktopOnMacOS14: Bool {
             #if os(macOS)
@@ -82,6 +89,13 @@ private extension 🪧SystemFamilyView {
             #else
             false
             #endif
+        }
+        private var isFullColorOnVisionOS: Bool {
+#if os(visionOS)
+            self.widgetRenderingMode == .fullColor
+#else
+            true
+#endif
         }
     }
     private struct ForegroundStyle: ViewModifier {

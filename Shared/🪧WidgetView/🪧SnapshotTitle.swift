@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 
 struct 🪧SnapshotTitle: ViewModifier {
     @EnvironmentObject var note: 📝NoteModel
@@ -14,18 +15,13 @@ struct 🪧SnapshotTitle: ViewModifier {
             .overlay(alignment: .bottom) {
                 if self.condition {
                     switch self.widgetFamily {
-#if os(iOS) || os(macOS)
+#if os(iOS) || os(macOS) || os(visionOS)
                         case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
-                            Text(self.note.title)
-                                .font(.caption)
-                                .fontWeight(.medium)
-                                .padding(4)
-                                #if os(iOS)
-                                .foregroundStyle(.secondary)
-                                #endif
-                                .background(.regularMaterial)
-                                .clipShape(RoundedRectangle(cornerRadius: 6))
-                                .padding(8)
+                            self.viewForSystemFamily()
+#endif
+#if os(visionOS)
+                        case .systemExtraLargePortrait:
+                            self.viewForSystemFamily()
 #endif
 #if os(iOS) || os(watchOS)
                         case .accessoryCircular, .accessoryRectangular:
@@ -42,4 +38,18 @@ struct 🪧SnapshotTitle: ViewModifier {
                 }
             }
     }
+#if os(iOS) || os(macOS) || os(visionOS)
+    private func viewForSystemFamily() -> some View {
+        Text(self.note.title)
+            .font(.caption)
+            .fontWeight(.medium)
+            .padding(4)
+#if os(iOS)
+            .foregroundStyle(.secondary)
+#endif
+            .background(.regularMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .padding(8)
+    }
+#endif
 }

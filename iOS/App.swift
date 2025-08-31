@@ -8,5 +8,8 @@ struct iOSApp: App {
             ContentView()
                 .environmentObject(self.model)
         }
+#if os(visionOS)
+        .defaultSize(width: 450, height: 450)
+#endif
     }
 }

@@ -86,7 +86,7 @@ struct 🎚️EmptyIconPreview: View {
                         🪧EmptyIconView()
                             .padding(.horizontal, 8)
                     }
-#if os(iOS) || os(macOS)
+#if os(iOS) || os(macOS) || os(visionOS)
                     .frame(width: 220, height: 160)
 #elseif os(watchOS)
                     .frame(width: 90, height: 60)
@@ -98,7 +98,7 @@ struct 🎚️EmptyIconPreview: View {
                 }
                 Spacer()
             }
-#if os(iOS) || os(macOS)
+#if os(iOS) || os(macOS) || os(visionOS)
             .padding(.vertical, 32)
 #elseif os(watchOS)
             .padding(.vertical, 4)

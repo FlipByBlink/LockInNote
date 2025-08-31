@@ -100,7 +100,7 @@ struct 🎚️TitleTextField: View {
     }
 }
 
-#if os(iOS) || os(macOS)
+#if os(iOS) || os(visionOS) || os(macOS)
 struct 🎚AppearanceModePicker: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
@@ -142,7 +142,7 @@ struct 🎚HierarchicalPicker: View {
     }
 }
 
-#if os(iOS) || os(macOS)
+#if os(iOS) || os(visionOS) || os(macOS)
 struct 🎚️PaddingStepper: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {

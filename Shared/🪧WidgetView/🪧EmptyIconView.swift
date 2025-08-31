@@ -5,8 +5,10 @@ struct 🪧EmptyIconView: View {
     @Environment(\.widgetFamily) var widgetFamily
     var body: some View {
         switch self.widgetFamily {
+#if !os(visionOS)
             case .accessoryInline:
                 self.icon()
+#endif
             default:
                 GeometryReader { ⓟroxy in
                     ZStack {
@@ -45,6 +47,9 @@ private extension 🪧EmptyIconView {
     private var isLargeFamily: Bool {
         #if os(iOS)
         [.systemLarge, .systemExtraLarge].contains(self.widgetFamily)
+        #elseif os(visionOS)
+        [.systemLarge, .systemExtraLarge, .systemExtraLargePortrait]
+            .contains(self.widgetFamily)
         #elseif os(macOS)
         [.systemLarge].contains(self.widgetFamily)
         #elseif os(watchOS)

@@ -27,7 +27,7 @@ enum 🗒️StaticInfo {
     static let webMirrorRepositoryURL = URL(string: "https://gitlab.com/FlipByBlink/LockInNote_Mirror")!
 }
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 extension 🗒️StaticInfo {
     static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-14"),
                                                                   ("1.1", "2023-03-28"),

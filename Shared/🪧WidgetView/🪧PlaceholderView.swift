@@ -13,6 +13,7 @@ struct 🪧PlaceholderView : View {
                         Text(verbatim: "AAAAA")
                     }
                     .font(.title3)
+#if os(iOS) || os(watchOS)
                 case .accessoryCircular:
                     Text(verbatim: "AAAAA")
                     Text(verbatim: "AAAAA")
@@ -21,6 +22,7 @@ struct 🪧PlaceholderView : View {
                     Text(verbatim: "AAAAAAAAAA")
                     Text(verbatim: "AAAAAAAAAA")
                     Text(verbatim: "AAAAA")
+#endif
                 default:
                     Text(verbatim: "AAAAA")
                     Text(verbatim: "AAAAA")

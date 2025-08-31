@@ -35,7 +35,7 @@ extension 📱AppModel {
                 self.preferTextFieldFocus = ⓣarget
             }
         }
-        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        💥Feedback.light()
     }
     func handle(_ ⓕocus: inout Bool) {
         ⓕocus = true

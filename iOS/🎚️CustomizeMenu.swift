@@ -8,7 +8,9 @@ struct 🎚️CustomizeMenu: View {
             List {
                 Self.SharedOptionSection()
                 Self.SystemWidgetMenuLink()
+#if os(iOS)
                 Self.AccessoryWidgetMenuLink()
+#endif
                 Self.TitleTextFieldLink()
             }
             .navigationTitle("Customize \"\(self.note.title)\"")
@@ -165,6 +167,7 @@ private extension 🎚️CustomizeMenu {
             .listRowBackground(Color.clear)
         }
     }
+#if os(iOS)
     private struct AccessoryWidgetMenuLink: View {
         @EnvironmentObject var note: 📝NoteModel
         @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -214,6 +217,7 @@ private extension 🎚️CustomizeMenu {
             .listRowBackground(Color.clear)
         }
     }
+#endif
     private struct TitleTextFieldLink: View {
         @EnvironmentObject var note: 📝NoteModel
         var body: some View {
