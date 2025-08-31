@@ -7,8 +7,8 @@ struct 🛠️OptionTab: View {
 #if !os(visionOS)
                 🛒InAppPurchaseMenuLink()
 #endif
-                🔗URLSchemeActionMenuLink()
                 Self.PreventAutomaticKeyboardOption()
+                🔗URLSchemeActionMenuLink()
             }
             .navigationTitle("Option")
         }

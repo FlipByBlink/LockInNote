@@ -3,6 +3,7 @@ import SwiftUI
 struct 👆EditButton: View { // 🖊️
     var focusAction: () -> Void
     var body: some View {
+#if os(iOS)
         Button {
             self.focusAction()
             💥Feedback.light()
@@ -15,6 +16,20 @@ struct 👆EditButton: View { // 🖊️
         .background(Circle().fill(.tint))
         .shadow(radius: 3)
         .padding()
+#elseif os(visionOS)
+        Button {
+            self.focusAction()
+        } label: {
+            Image(systemName: "pencil")
+                .foregroundStyle(.white)
+                .font(.largeTitle.weight(.black))
+                .padding()
+                .background(Circle().fill(.tint))
+        }
+        .buttonStyle(.plain)
+        .shadow(radius: 3)
+        .padding()
+#endif
     }
 }
 

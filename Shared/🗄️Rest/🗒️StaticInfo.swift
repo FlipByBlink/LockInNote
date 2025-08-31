@@ -2,7 +2,7 @@ import SwiftUI
 
 enum 🗒️StaticInfo {
     static let appName: LocalizedStringKey = "LockInNote"
-    static let appSubTitle: LocalizedStringKey = "App for iPhone / iPad / Mac / Apple Watch"
+    static let appSubTitle: LocalizedStringKey = "App for iPhone / iPad / Mac / Apple Watch / Apple Vision Pro"
     
     static let appStoreProductURL = URL(string: "https://apps.apple.com/app/id1644879340")!
     static var appStoreUserReviewURL: URL { .init(string: "\(Self.appStoreProductURL)?action=write-review")! }
@@ -15,7 +15,7 @@ enum 🗒️StaticInfo {
         
         English
         
-        This application don't collect user infomation.
+        This application don't collect user information.
         
         
         (日本語)Japanese
@@ -29,16 +29,27 @@ enum 🗒️StaticInfo {
 
 #if os(iOS) || os(visionOS)
 extension 🗒️StaticInfo {
-    static let versionInfos: [(version: String, date: String)] = [("1.2", "2023-09-14"),
-                                                                  ("1.1", "2023-03-28"),
-                                                                  ("1.0.4", "2023-01-30"),
-                                                                  ("1.0.3", "2022-12-09"),
-                                                                  ("1.0.2", "2022-11-08"),
-                                                                  ("1.0.1", "2022-09-15"),
-                                                                  ("1.0", "2022-09-13")] //降順。先頭の方が新しい
+#if os(iOS)
+    static let versionInfos: [(version: String, date: String)] = [
+        ("1.2", "2023-09-14"),
+        ("1.1", "2023-03-28"),
+        ("1.0.4", "2023-01-30"),
+        ("1.0.3", "2022-12-09"),
+        ("1.0.2", "2022-11-08"),
+        ("1.0.1", "2022-09-15"),
+        ("1.0", "2022-09-13")
+    ] //降順。先頭の方が新しい
+#elseif os(visionOS)
+    static let versionInfos: [(version: String, date: String)] = [
+        ("1.3", "2025-09-09")
+    ] //降順。先頭の方が新しい
+#endif
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Widget, WidgetView, Customize, URLSchemeAction, Rest, Migration
+        case main, Widget, WidgetView, Customize, URLSchemeAction, Rest
+#if os(iOS)
+        case Migration
+#endif
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -75,23 +86,31 @@ extension 🗒️StaticInfo {
                                         "🔗MenuComponent.swift",
                                         "🔗Button.swift",
                                         "🔗URLSchemeActionMenu.swift"]
-                case .Rest: ["🗒️StaticInfo.swift",
-                             "📋AddNoteToEnvironment.swift",
-                             "🪧ReloadWidgetsOnActive.swift",
-                             "ℹ️InfoTab.swift",
-                             "💁HowToGuide.swift",
-                             "🅧DismissButtonLabel.swift",
-                             "💬RequestUserReview.swift",
-                             "ℹ️AboutApp.swift",
-                             "📣ADModel.swift",
-                             "📣ADSheet.swift",
-                             "📣ADComponents.swift",
-                             "🛒InAppPurchaseModel.swift",
-                             "🛒InAppPurchaseView.swift",
-                             "🚧DebugMenu.swift"]
+                case .Rest: {
+                    var value = ["🗒️StaticInfo.swift",
+                                 "📋AddNoteToEnvironment.swift",
+                                 "🪧ReloadWidgetsOnActive.swift",
+                                 "ℹ️InfoTab.swift",
+                                 "💁HowToGuide.swift",
+                                 "🅧DismissButtonLabel.swift",
+                                 "💥Feedback.swift",
+                                 "💬RequestUserReview.swift",
+                                 "ℹ️AboutApp.swift",]
+#if os(iOS)
+                    value.append(contentsOf: ["📣ADModel.swift",
+                                              "📣ADSheet.swift",
+                                              "📣ADComponents.swift",
+                                              "🛒InAppPurchaseModel.swift",
+                                              "🛒InAppPurchaseView.swift",])
+#endif
+                    value.append("🚧DebugMenu.swift")
+                    return value
+                }()
+#if os(iOS)
                 case .Migration: ["🗄️FromVer_1_1.swift",
                                   "♻️BaseModelVer_1_1.swift",
                                   "💾ICloudVer_1_1.swift"]
+#endif
             }
         }
     }

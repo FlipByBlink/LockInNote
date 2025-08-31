@@ -52,6 +52,17 @@
         }
       }
     },
+    "%@  Input text" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@  テキストを入力"
+          }
+        }
+      }
+    },
     "%lld" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -177,6 +188,7 @@
       }
     },
     "App for iPhone / iPad / Mac / Apple Watch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -185,6 +197,9 @@
           }
         }
       }
+    },
+    "App for iPhone / iPad / Mac / Apple Watch / Apple Vision Pro" : {
+
     },
     "Apple Support Page Link" : {
       "localizations" : {

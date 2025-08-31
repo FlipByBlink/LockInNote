@@ -1,5 +1,6 @@
-LockInNote - iPhone, iPad, Mac, Apple Watch
--------------------------------------------
+LockInNote
+-----------------
+Platform: iPhone, iPad, Mac, Apple Watch, Apple Vision Pro
 
 <img src="iOS/🧰SupportingFiles/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
 
@@ -42,6 +43,8 @@ Mac: Notification center, Desktop(macOS 14)
 
 Apple Watch: Complication, Smart Stack(watchOS 10)
 
+Apple Vision Pro: Widget
+
 
 Source code link
 -------------------
@@ -56,7 +59,7 @@ Contact
 sear_pandora_0x@icloud.com
 
 
-AppStore link
+App Store link
 --------------
 https://apps.apple.com/app/id1644879340
 
@@ -79,7 +82,7 @@ Privacy Policy for AppStore
 
 English
 
-This application don't collect user infomation.
+This application don't collect user information.
 
 
 (日本語)Japanese
