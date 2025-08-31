@@ -9,7 +9,7 @@ struct 📝NoteTab: View {
                 Spacer()
                 TextField("Input text", text: self.$note.text)
                     .font(.title3)
-                    .onChange(of: self.note.text) { self.note.save(.text, $0) }
+                    .onChange(of: self.note.text) { self.note.save(.text, $1) }
                 Spacer()
                 HStack {
                     Button(role: .destructive) {

@@ -19,10 +19,10 @@ struct 📝NoteTab: View {
                                   axis: .vertical)
                         .font(.title3)
                         .padding(.vertical, 8)
-                        .onChange(of: self.note.text) { self.note.save(.text, $0) }
+                        .onChange(of: self.note.text) { self.note.save(.text, $1) }
                         .focused(self.$focus)
                         .onChange(of: self.app.preferTextFieldFocus) {
-                            if $0 == self.note.family { self.app.handle(&self.focus) }
+                            if $1 == self.note.family { self.app.handle(&self.focus) }
                         }
                     }
                     🔗URLSchemeActionButton(self.$note.text)
@@ -31,7 +31,7 @@ struct 📝NoteTab: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(self.$note.title)
-            .onChange(of: self.note.title) { self.note.save(.title, $0) }
+            .onChange(of: self.note.title) { self.note.save(.title, $1) }
             .safeAreaInset(edge: .bottom) {
                 if self.focus {
                     HStack {

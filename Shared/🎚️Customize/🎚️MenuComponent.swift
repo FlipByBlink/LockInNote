@@ -96,7 +96,7 @@ struct 🎚️TitleTextField: View {
         TextField("Title",
                   text: self.$note.title,
                   prompt: Text(self.note.family.presetTitle))
-        .onChange(of: self.note.title) { self.note.save(.title, $0) }
+        .onChange(of: self.note.title) { self.note.save(.title, $1) }
     }
 }
 

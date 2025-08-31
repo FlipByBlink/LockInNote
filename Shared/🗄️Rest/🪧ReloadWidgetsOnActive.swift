@@ -6,7 +6,7 @@ struct 🪧ReloadWidgetsOnActive: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onChange(of: self.scenePhase) {
-                if $0 == .active {
+                if $1 == .active {
                     WidgetCenter.shared.reloadAllTimelines()
                 }
             }
