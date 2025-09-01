@@ -46,7 +46,14 @@ extension 🗒️StaticInfo {
 #endif
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Widget, WidgetView, Customize, CustomizeMenu, URLSchemeAction, Rest, Migration
+        case main,
+             Widget,
+             WidgetView,
+             Customize,
+             CustomizeMenu,
+             Rest,
+             URLSchemeAction,
+             Migration
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -86,10 +93,6 @@ extension 🗒️StaticInfo {
                                       "🎚️AccessoryWidgetMenuLink.swift",
                                       "🎚️TitleTextFieldLink.swift",
                                       "🎚️DoubleSizeOnLargeWidgetMenuLink.swift",]
-                case .URLSchemeAction: ["🔗Model.swift",
-                                        "🔗MenuComponent.swift",
-                                        "🔗Button.swift",
-                                        "🔗URLSchemeActionMenu.swift"]
                 case .Rest: {
                     var value = ["🗒️StaticInfo.swift",
                                  "📋AddNoteToEnvironment.swift",
@@ -112,6 +115,10 @@ extension 🗒️StaticInfo {
                     value.append("🚧DebugMenu.swift")
                     return value
                 }()
+                case .URLSchemeAction: ["🔗Model.swift",
+                                        "🔗MenuComponent.swift",
+                                        "🔗Button.swift",
+                                        "🔗URLSchemeActionMenu.swift"]
                 case .Migration: ["🗄️FromVer_1_1.swift",
                                   "♻️BaseModelVer_1_1.swift",
                                   "💾ICloudVer_1_1.swift"]

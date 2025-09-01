@@ -1,5 +1,7 @@
 import SwiftUI
 
+//Not supported on visionOS.
+
 enum 🔗URLSchemeActionMenuComponent {
     struct InputView: View {
         @EnvironmentObject var model: 🔗URLSchemeActionModel

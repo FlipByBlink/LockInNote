@@ -1,5 +1,7 @@
 import SwiftUI
 
+//Not supported on visionOS.
+
 struct 🔗URLSchemeActionMenuLink: View {
     var body: some View {
 #if os(iOS)

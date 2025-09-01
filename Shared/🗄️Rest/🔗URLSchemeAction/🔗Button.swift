@@ -1,5 +1,7 @@
 import SwiftUI
 
+//Not supported on visionOS.
+
 struct 🔗URLSchemeActionButton: View {
     @StateObject private var model: 🔗URLSchemeActionModel = .init()
     @Environment(\.openURL) var openURL

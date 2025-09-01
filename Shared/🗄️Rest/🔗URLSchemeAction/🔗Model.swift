@@ -1,5 +1,7 @@
 import SwiftUI
 
+//Not supported on visionOS.
+
 class 🔗URLSchemeActionModel: ObservableObject {
     @AppStorage("URLSchemeLeading") var leading: String = ""
     @AppStorage("URLSchemeTrailing") var trailing: String = ""
