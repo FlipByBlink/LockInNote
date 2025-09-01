@@ -8,10 +8,7 @@ struct 📝NoteTab: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                if self.colorScheme == .light {
-                    Color(uiColor: .secondarySystemBackground)
-                        .ignoresSafeArea()
-                }
+                self.backgroundColor()
                 List {
                     Section {
                         TextField("Input text",
@@ -25,7 +22,7 @@ struct 📝NoteTab: View {
                             if $1 == self.note.family { self.app.handle(&self.focus) }
                         }
                     }
-                    🔗URLSchemeActionButton(self.$note.text)
+                    self.urlSchemeActionButton()
                 }
                 .frame(maxWidth: 650)
             }
@@ -44,17 +41,7 @@ struct 📝NoteTab: View {
                     👆EditButton { self.focus = true }
                 }
             }
-            .toolbar {
-                Button {
-                    self.focus = false
-                    self.app.sheet = .customize(self.note.family)
-                    💥Feedback.selection()
-                } label: {
-                    Label("Customize \"\(self.note.title)\"",
-                          systemImage: "slider.horizontal.3")
-                }
-                .grayscale(self.focus ? 1 : 0) //iOS17では変化しない
-            }
+            .toolbar { self.customizeButton() }
             .animation(.default, value: self.note.text.isEmpty)
             .animation(.default, value: self.focus)
         }
@@ -63,5 +50,33 @@ struct 📝NoteTab: View {
 #endif
         .tag(🔖Tab.note(self.note.family))
         .tabItem { Label(self.note.title, systemImage: "note.text") }
+    }
+}
+
+private extension 📝NoteTab {
+    @ViewBuilder
+    private func backgroundColor() -> some View {
+        if self.colorScheme == .light {
+            Color(uiColor: .secondarySystemBackground)
+                .ignoresSafeArea()
+        }
+    }
+    private func urlSchemeActionButton() -> some View {
+#if os(iOS)
+        🔗URLSchemeActionButton(self.$note.text)
+#elseif os(visionOS)
+        EmptyView()
+#endif
+    }
+    private func customizeButton() -> some View {
+        Button {
+            self.focus = false
+            self.app.sheet = .customize(self.note.family)
+            💥Feedback.selection()
+        } label: {
+            Label("Customize \"\(self.note.title)\"",
+                  systemImage: "slider.horizontal.3")
+        }
+        .grayscale(self.focus ? 1 : 0) //iOS17では変化しない
     }
 }

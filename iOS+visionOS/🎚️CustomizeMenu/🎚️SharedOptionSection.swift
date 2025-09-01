@@ -9,14 +9,16 @@ struct 🎚️SharedOptionSection: View {
             🎚FontDesignPicker()
             🎚ItalicToggle()
             🎚MultilineTextAlignmentPicker()
-#if os(visionOS)
+#if os(iOS)
+            🎚EmptyIconMenuLink()
+#elseif os(visionOS)
             🎚️FontSizeStepper(value: self.$note.system_fontSize)
             🎚️PaddingStepper()
             🎚️ContentAlignmentPicker()
             🎚️SystemWidgetMenuLink()
+            🎚EmptyIconMenuLink()
             🎚️DoubleSizeOnLargeWidgetMenuLink()
 #endif
-            🎚EmptyIconMenuLink()
         }
     }
 }

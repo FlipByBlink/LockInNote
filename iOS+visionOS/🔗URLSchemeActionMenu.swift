@@ -2,6 +2,7 @@ import SwiftUI
 
 struct 🔗URLSchemeActionMenuLink: View {
     var body: some View {
+#if os(iOS)
         Section {
             NavigationLink {
                 🔗URLSchemeActionMenu()
@@ -28,6 +29,9 @@ struct 🔗URLSchemeActionMenuLink: View {
         } header: {
             Text("Custom action")
         }
+#elseif os(visionOS)
+        EmptyView()
+#endif
     }
 }
 

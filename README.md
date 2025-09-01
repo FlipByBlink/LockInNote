@@ -28,9 +28,9 @@ The design of the memo note on the widgets can be flexibly customized, so it can
 
 - Sync notes between devices by iCloud
 
-- You can set any "URL scheme action" to link with other apps.(iOS, iPadOS, macOS, visionOS)
-
 - Share sheets allow you to easily share text to other applications.(iOS, iPadOS, visionOS)
+
+- You can set any "URL scheme action" to link with other apps.(iOS, iPadOS, macOS)
 
 
 Multi platform support
