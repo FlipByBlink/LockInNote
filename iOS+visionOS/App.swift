@@ -12,7 +12,7 @@ struct iOS_and_visionOS_App: App {
                 .environmentObject(self.model)
         }
 #if os(visionOS)
-        .defaultSize(width: 450, height: 450)
+        .defaultSize(width: 450, height: 320)
 #endif
         
     }

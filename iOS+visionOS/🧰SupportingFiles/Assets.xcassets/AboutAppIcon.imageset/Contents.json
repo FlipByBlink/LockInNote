@@ -3,6 +3,10 @@
     {
       "filename" : "RoundedIcon.png",
       "idiom" : "universal"
+    },
+    {
+      "filename" : "VisionIcon.png",
+      "idiom" : "vision"
     }
   ],
   "info" : {

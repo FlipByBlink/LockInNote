@@ -16,13 +16,7 @@ struct 🎚️CustomizeMenu: View {
             .navigationTitle("Customize \"\(self.note.title)\"")
             .navigationBarTitleDisplayMode(.inline)
             //MARK: ↑ WorkaroundIOS17Bug(navigationTitleMode/navigationLinkPotision)
-            .toolbar {
-                Button {
-                    self.dismiss()
-                } label: {
-                    🅧DismissButtonLabel()
-                }
-            }
+            .toolbar { self.dismissButton() }
         }
         .modifier(🎚️SaveValues())
     }
@@ -237,5 +231,16 @@ private extension 🎚️CustomizeMenu {
                 }
             }
         }
+    }
+    private func dismissButton() -> some View {
+#if os(visionOS)
+        Button(role: .close) { self.dismiss() }
+#else
+        Button {
+            self.dismiss()
+        } label: {
+            🅧DismissButtonLabel()
+        }
+#endif
     }
 }

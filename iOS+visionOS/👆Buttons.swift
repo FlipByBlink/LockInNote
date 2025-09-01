@@ -104,19 +104,32 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
                     .shadow(radius: 3)
             }
             .animation(.default, value: self.disable)
-            ShareLink(item: self.note.text)
-                .labelStyle(.iconOnly)
-                .disabled(self.disable)
-                .shadow(radius: self.disable ? 0 : 3)
-                .foregroundStyle(self.iconColor)
-                .font(self.verticalSizeClass == .compact ? .title3 : .largeTitle)
-                .fontWeight(.semibold)
-                .padding(self.verticalSizeClass == .compact ? 8 : 16)
-                .background {
-                    Circle()
-                        .foregroundStyle(self.backgroundColor(.teal))
-                        .shadow(radius: 3)
-                }
+            self.shareLink()
         }
+    }
+    private func shareLink() -> some View {
+#if os(iOS)
+        ShareLink(item: self.note.text)
+            .labelStyle(.iconOnly)
+            .disabled(self.disable)
+            .shadow(radius: self.disable ? 0 : 3)
+#elseif os(visionOS)
+        ShareLink(item: self.note.text) {
+            Label("Share", systemImage: "square.and.arrow.up")
+                .foregroundStyle(self.iconColor)
+                .labelStyle(.iconOnly)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .padding(16)
+                .shadow(radius: self.disable ? 0 : 3)
+        }
+        .disabled(self.disable)
+        .background {
+            Circle()
+                .foregroundStyle(self.backgroundColor(.teal))
+                .shadow(radius: 3)
+        }
+        .animation(.default, value: self.disable)
+#endif
     }
 }

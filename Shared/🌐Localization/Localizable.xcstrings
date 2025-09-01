@@ -41,72 +41,6 @@
         }
       }
     },
-    "%@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "%@  Input text" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@  テキストを入力"
-          }
-        }
-      }
-    },
-    "%lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "+ ②" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "×2" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "① +" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "① URL scheme" : {
       "localizations" : {
         "ja" : {
@@ -187,19 +121,15 @@
         }
       }
     },
-    "App for iPhone / iPad / Mac / Apple Watch" : {
-      "extractionState" : "stale",
+    "App for iPhone / iPad / Mac / Apple Watch / Apple Vision Pro" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iPhone/iPad/Mac/Apple Watch向けアプリ"
+            "value" : "iPhone、iPad、Mac、Apple Watch、\nApple Vision Pro向けアプリ"
           }
         }
       }
-    },
-    "App for iPhone / iPad / Mac / Apple Watch / Apple Vision Pro" : {
-
     },
     "Apple Support Page Link" : {
       "localizations" : {
@@ -1178,6 +1108,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "URLスキームアクションを設定する"
+          }
+        }
+      }
+    },
+    "Share" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共有"
           }
         }
       }

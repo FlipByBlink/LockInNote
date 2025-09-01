@@ -106,7 +106,7 @@
 		F51E3A452A8CB29100F32F4F /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E39AB2A8CAA4700F32F4F /* WidgetBundle.swift */; };
 		F51E3A462A8CC58800F32F4F /* 🛒InAppPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */; platformFilter = ios; };
 		F51E3A472A8CC58800F32F4F /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
-		F51E3A482A8CC58800F32F4F /* 📣ADModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; };
+		F51E3A482A8CC58800F32F4F /* 📣ADModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; platformFilter = ios; };
 		F51E3A492A8CC58A00F32F4F /* 🛒InAppPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */; };
 		F51E3A4A2A8CC58A00F32F4F /* 🗒️StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
 		F51E3A4B2A8CC58A00F32F4F /* 📣ADModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; };
@@ -129,7 +129,7 @@
 		F51E3A602A8CE75E00F32F4F /* 🔗Model.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B52A8CAA4700F32F4F /* 🔗Model.swift */; };
 		F51E3A612A8CE75E00F32F4F /* 🔗Button.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E39B62A8CAA4700F32F4F /* 🔗Button.swift */; };
 		F51E3A622A8CE75E00F32F4F /* 🗒️StaticInfo.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA1E2A723987004BBFE0 /* 🗒️StaticInfo.swift */; };
-		F51E3A632A8CE75E00F32F4F /* 📣ADModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; };
+		F51E3A632A8CE75E00F32F4F /* 📣ADModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA242A7239A4004BBFE0 /* 📣ADModel.swift */; platformFilter = ios; };
 		F51E3A642A8CE75E00F32F4F /* 🛒InAppPurchaseModel.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F531FA232A7239A4004BBFE0 /* 🛒InAppPurchaseModel.swift */; platformFilter = ios; };
 		F51E3A652A8CE75E00F32F4F /* App.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E399D2A8CAA4700F32F4F /* App.swift */; };
 		F51E3A662A8CE75E00F32F4F /* ContentView.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51E399E2A8CAA4700F32F4F /* ContentView.swift */; };

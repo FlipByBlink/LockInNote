@@ -1,8 +1,8 @@
 import SwiftUI
 
 enum 🗒️StaticInfo {
-    static let appName: LocalizedStringKey = "LockInNote"
-    static let appSubTitle: LocalizedStringKey = "App for iPhone / iPad / Mac / Apple Watch / Apple Vision Pro"
+    static let appName: LocalizedStringResource = "LockInNote"
+    static let appSubTitle: LocalizedStringResource = "App for iPhone / iPad / Mac / Apple Watch / Apple Vision Pro"
     
     static let appStoreProductURL = URL(string: "https://apps.apple.com/app/id1644879340")!
     static var appStoreUserReviewURL: URL { .init(string: "\(Self.appStoreProductURL)?action=write-review")! }
@@ -46,10 +46,7 @@ extension 🗒️StaticInfo {
 #endif
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Widget, WidgetView, Customize, URLSchemeAction, Rest
-#if os(iOS)
-        case Migration
-#endif
+        case main, Widget, WidgetView, Customize, URLSchemeAction, Rest, Migration
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -106,11 +103,9 @@ extension 🗒️StaticInfo {
                     value.append("🚧DebugMenu.swift")
                     return value
                 }()
-#if os(iOS)
                 case .Migration: ["🗄️FromVer_1_1.swift",
                                   "♻️BaseModelVer_1_1.swift",
                                   "💾ICloudVer_1_1.swift"]
-#endif
             }
         }
     }
