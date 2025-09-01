@@ -23,6 +23,14 @@
 		1DF9F7612E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F7602E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift */; };
 		1DF9F7632E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F7622E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift */; };
 		1DF9F7652E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F7642E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift */; };
+		1DF9F7662E65335900DB9E09 /* 🎚️SharedOptionSection.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F7582E652AE500DB9E09 /* 🎚️SharedOptionSection.swift */; };
+		1DF9F7672E65335900DB9E09 /* 🎚️SharedOptionPreview.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F7622E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift */; };
+		1DF9F7682E65335900DB9E09 /* 🎚EmptyIconMenuLink.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F7602E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift */; };
+		1DF9F7692E65335900DB9E09 /* 🎚️SystemWidgetMenuLink.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F75A2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift */; };
+		1DF9F76A2E65335900DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F75C2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift */; };
+		1DF9F76B2E65335900DB9E09 /* 🎚️TitleTextFieldLink.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F75E2E652B2200DB9E09 /* 🎚️TitleTextFieldLink.swift */; };
+		1DF9F76C2E65335900DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F7642E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift */; };
+		1DF9F76D2E65335900DB9E09 /* temporary.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DC0D2132E6435A400240332 /* temporary.swift */; platformFilters = (xros, ); };
 		F50310D32A9C18530077EE5E /* 💾ICloudVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
 		F50310D42A9C18560077EE5E /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
 		F50310D62A9C18C90077EE5E /* 💾UserDefaultsVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */; };
@@ -554,6 +562,14 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				1DF9F7662E65335900DB9E09 /* 🎚️SharedOptionSection.swift in CopyFiles */,
+				1DF9F7672E65335900DB9E09 /* 🎚️SharedOptionPreview.swift in CopyFiles */,
+				1DF9F7682E65335900DB9E09 /* 🎚EmptyIconMenuLink.swift in CopyFiles */,
+				1DF9F7692E65335900DB9E09 /* 🎚️SystemWidgetMenuLink.swift in CopyFiles */,
+				1DF9F76A2E65335900DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift in CopyFiles */,
+				1DF9F76B2E65335900DB9E09 /* 🎚️TitleTextFieldLink.swift in CopyFiles */,
+				1DF9F76C2E65335900DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift in CopyFiles */,
+				1DF9F76D2E65335900DB9E09 /* temporary.swift in CopyFiles */,
 				1DC0D22F2E646FB300240332 /* 💥Feedback.swift in CopyFiles */,
 				F52F12152AB4038200F6474B /* 🪧ReloadWidgetsOnActive.swift in CopyFiles */,
 				F5AD410C2AA0171200202C2D /* 🅧DismissButtonLabel.swift in CopyFiles */,
@@ -2000,7 +2016,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
@@ -2036,7 +2052,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
@@ -2068,7 +2084,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.LINWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2101,7 +2117,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.LINWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

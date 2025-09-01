@@ -46,7 +46,7 @@ extension 🗒️StaticInfo {
 #endif
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
-        case main, Widget, WidgetView, Customize, URLSchemeAction, Rest, Migration
+        case main, Widget, WidgetView, Customize, CustomizeMenu, URLSchemeAction, Rest, Migration
         var id: Self { self }
         var fileNames: [String] {
             switch self {
@@ -75,10 +75,17 @@ extension 🗒️StaticInfo {
                                    "🪧SnapshotTitle.swift",
                                    "🪧SampleTextInApp.swift"]
                 case .Customize: ["🎚️Model.swift",
-                                  "🎚️CustomizeMenu.swift",
                                   "🎚️MenuComponent.swift",
                                   "🎚️SaveValues.swift",
                                   "🎚️PreviewInApp.swift"]
+                case .CustomizeMenu: ["🎚️CustomizeMenu.swift",
+                                      "🎚️SharedOptionSection.swift",
+                                      "🎚️SharedOptionPreview.swift",
+                                      "🎚EmptyIconMenuLink.swift",
+                                      "🎚️SystemWidgetMenuLink.swift",
+                                      "🎚️AccessoryWidgetMenuLink.swift",
+                                      "🎚️TitleTextFieldLink.swift",
+                                      "🎚️DoubleSizeOnLargeWidgetMenuLink.swift",]
                 case .URLSchemeAction: ["🔗Model.swift",
                                         "🔗MenuComponent.swift",
                                         "🔗Button.swift",
@@ -99,6 +106,8 @@ extension 🗒️StaticInfo {
                                               "📣ADComponents.swift",
                                               "🛒InAppPurchaseModel.swift",
                                               "🛒InAppPurchaseView.swift",])
+#elseif os(visionOS)
+                    value.append("temporary.swift")
 #endif
                     value.append("🚧DebugMenu.swift")
                     return value
@@ -116,7 +125,7 @@ extension 🗒️StaticInfo {
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
         case main, Complication, WidgetView, Customize, Rest, Migration
         var id: Self { self }
-        var fileNames: [String] {
+        var fileNames: [String] {dx
             switch self {
                 case .main: ["App.swift",
                              "ContentView.swift",

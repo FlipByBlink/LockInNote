@@ -132,7 +132,14 @@
       }
     },
     "Appearance" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "見た目"
+          }
+        }
+      }
     },
     "Apple Support Page Link" : {
       "localizations" : {

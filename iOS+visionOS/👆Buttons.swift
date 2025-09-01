@@ -29,6 +29,7 @@ struct 👆EditButton: View { // 🖊️
         .buttonStyle(.plain)
         .shadow(radius: 3)
         .padding()
+        .modifier(👆PaddingForVisionOS())
 #endif
     }
 }
@@ -53,6 +54,7 @@ struct 👆DoneButton: View { // ☑️
         }
         .background(Circle().fill(.tint))
         .shadow(radius: 3)
+        .modifier(👆PaddingForVisionOS())
     }
 }
 
@@ -84,7 +86,7 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
         }
     }
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: Self.hStackSpacing) {
             Button {
                 withAnimation { self.note.text.removeAll() }
                 💥Feedback.error()
@@ -106,6 +108,14 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
             .animation(.default, value: self.disable)
             self.shareLink()
         }
+        .modifier(👆PaddingForVisionOS())
+    }
+    private static var hStackSpacing: CGFloat {
+#if os(iOS)
+        12
+#elseif os(visionOS)
+        18
+#endif
     }
     private func shareLink() -> some View {
 #if os(iOS)
@@ -130,6 +140,16 @@ struct 👆EraseButtonAndShareButton: View { // 🗑 📤
                 .shadow(radius: 3)
         }
         .animation(.default, value: self.disable)
+#endif
+    }
+}
+
+struct 👆PaddingForVisionOS: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+#if os(visionOS)
+            .padding(.horizontal, 8)
+            .padding(.bottom, 8)
 #endif
     }
 }

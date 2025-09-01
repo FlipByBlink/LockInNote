@@ -245,7 +245,9 @@ private struct 💁ICloudSyncSection: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 120)
                     }
+                    #if os(iOS)
                     .padding(8)
+                    #endif
                 } footer: {
                     Text("It takes few minutes to sync data to other device's widget on background. At the latest, the changes will be applied in about 20 minutes.")
                 }

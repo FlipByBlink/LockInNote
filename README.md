@@ -35,13 +35,13 @@ The design of the memo note on the widgets can be flexibly customized, so it can
 
 Multi platform support
 
-iPhone: Home screen, Lock screen, StandBy(iOS 17)
+iPhone: Home screen, Lock screen, StandBy
 
-iPad: Home screen, Lock screen(iPadOS 17)
+iPad: Home screen, Lock screen
 
 Mac: Notification center, Desktop(macOS 14)
 
-Apple Watch: Complication, Smart Stack(watchOS 10)
+Apple Watch: Complication, Smart Stack
 
 Apple Vision Pro: Widget
 
