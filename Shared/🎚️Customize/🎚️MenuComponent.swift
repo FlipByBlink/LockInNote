@@ -116,11 +116,13 @@ struct 🎚️FontSizeStepper: View {
     @Binding var value: Int
     var body: some View {
         Stepper(value: self.$value, in: 8 ... 100, step: 1) {
-            LabeledContent {
-                Text(self.value.formatted())
-                    .monospacedDigit()
-            } label: {
-                Label("Size", systemImage: "textformat.size")
+            Label {
+                LabeledContent("Size") {
+                    Text(self.value.formatted())
+                        .monospacedDigit()
+                }
+            } icon: {
+                Image(systemName: "textformat.size")
             }
         }
     }
@@ -147,11 +149,13 @@ struct 🎚️PaddingStepper: View {
     @EnvironmentObject var note: 📝NoteModel
     var body: some View {
         Stepper(value: self.$note.system_padding, in: 0 ... 16, step: 1) {
-            LabeledContent {
-                Text(self.note.system_padding.formatted())
-                    .monospacedDigit()
-            } label: {
-                Label("Padding", systemImage: "squareshape.squareshape.dashed")
+            Label {
+                LabeledContent("Padding") {
+                    Text(self.note.system_padding.formatted())
+                        .monospacedDigit()
+                }
+            } icon: {
+                Image(systemName: "squareshape.squareshape.dashed")
             }
         }
     }

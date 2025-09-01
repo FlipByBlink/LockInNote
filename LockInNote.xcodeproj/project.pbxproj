@@ -16,6 +16,13 @@
 		1DC0D22F2E646FB300240332 /* 💥Feedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DC0D20E2E64304D00240332 /* 💥Feedback.swift */; };
 		1DC0D2302E64717600240332 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC0D2162E64417B00240332 /* AppIcon.xcassets */; platformFilter = ios; };
 		1DC0D2312E64717F00240332 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC0D21A2E6441AF00240332 /* AppIcon.xcassets */; platformFilters = (xros, ); };
+		1DF9F7592E652AE500DB9E09 /* 🎚️SharedOptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F7582E652AE500DB9E09 /* 🎚️SharedOptionSection.swift */; };
+		1DF9F75B2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F75A2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift */; };
+		1DF9F75D2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F75C2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift */; };
+		1DF9F75F2E652B2200DB9E09 /* 🎚️TitleTextFieldLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F75E2E652B2200DB9E09 /* 🎚️TitleTextFieldLink.swift */; };
+		1DF9F7612E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F7602E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift */; };
+		1DF9F7632E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F7622E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift */; };
+		1DF9F7652E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F7642E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift */; };
 		F50310D32A9C18530077EE5E /* 💾ICloudVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
 		F50310D42A9C18560077EE5E /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
 		F50310D62A9C18C90077EE5E /* 💾UserDefaultsVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */; };
@@ -608,6 +615,13 @@
 		1DC0D2132E6435A400240332 /* temporary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temporary.swift; sourceTree = "<group>"; };
 		1DC0D2162E64417B00240332 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		1DC0D21A2E6441AF00240332 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
+		1DF9F7582E652AE500DB9E09 /* 🎚️SharedOptionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SharedOptionSection.swift"; sourceTree = "<group>"; };
+		1DF9F75A2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SystemWidgetMenuLink.swift"; sourceTree = "<group>"; };
+		1DF9F75C2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️AccessoryWidgetMenuLink.swift"; sourceTree = "<group>"; };
+		1DF9F75E2E652B2200DB9E09 /* 🎚️TitleTextFieldLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️TitleTextFieldLink.swift"; sourceTree = "<group>"; };
+		1DF9F7602E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚EmptyIconMenuLink.swift"; sourceTree = "<group>"; };
+		1DF9F7622E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SharedOptionPreview.swift"; sourceTree = "<group>"; };
+		1DF9F7642E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️DoubleSizeOnLargeWidgetMenuLink.swift"; sourceTree = "<group>"; };
 		F50D9B0228EEDE390089E680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💬Sheet.swift"; sourceTree = "<group>"; };
 		F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗URLSchemeActionMenu.swift"; sourceTree = "<group>"; };
@@ -814,6 +828,21 @@
 			path = visionOS;
 			sourceTree = "<group>";
 		};
+		1DF9F7572E652A7D00DB9E09 /* 🎚️CustomizeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F51E39982A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
+				1DF9F7582E652AE500DB9E09 /* 🎚️SharedOptionSection.swift */,
+				1DF9F7622E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift */,
+				1DF9F7602E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift */,
+				1DF9F75A2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift */,
+				1DF9F75C2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift */,
+				1DF9F75E2E652B2200DB9E09 /* 🎚️TitleTextFieldLink.swift */,
+				1DF9F7642E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift */,
+			);
+			path = "🎚️CustomizeMenu";
+			sourceTree = "<group>";
+		};
 		F51E39942A8CAA4700F32F4F /* iOS+visionOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -822,11 +851,11 @@
 				F51E399C2A8CAA4700F32F4F /* 📱AppModel.swift */,
 				F51E39972A8CAA4700F32F4F /* 📝NoteTab.swift */,
 				F51E399B2A8CAA4700F32F4F /* 👆Buttons.swift */,
-				F51E39982A8CAA4700F32F4F /* 🎚️CustomizeMenu.swift */,
 				F51E39992A8CAA4700F32F4F /* 🛠️OptionTab.swift */,
 				F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */,
 				F51E399A2A8CAA4700F32F4F /* 🔖Tab.swift */,
 				F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */,
+				1DF9F7572E652A7D00DB9E09 /* 🎚️CustomizeMenu */,
 				F556953328CCAFC3004558FC /* 🗄️Rest */,
 				F51E3A522A8CCDA400F32F4F /* 🧰SupportingFiles */,
 			);
@@ -1511,6 +1540,7 @@
 				F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */,
 				F5B7C7312A9EE6D40040B15E /* 🚧DebugMenu.swift in Sources */,
 				F52F12142AB4029500F6474B /* 🪧ReloadWidgetsOnActive.swift in Sources */,
+				1DF9F7592E652AE500DB9E09 /* 🎚️SharedOptionSection.swift in Sources */,
 				F51E39C72A8CAA7100F32F4F /* 📝NoteModel.swift in Sources */,
 				1DC0D2112E64305C00240332 /* 💥Feedback.swift in Sources */,
 				F53858322A9C78CD00A0D72D /* 🪧PlaceholderView.swift in Sources */,
@@ -1523,6 +1553,7 @@
 				F51E39CF2A8CAA7900F32F4F /* 🔗Button.swift in Sources */,
 				F53858482A9C7BEB00A0D72D /* 🎚️SaveValues.swift in Sources */,
 				F53858402A9C797100A0D72D /* 🪧ContainerBackground.swift in Sources */,
+				1DF9F7612E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift in Sources */,
 				1DC0D2142E6435AF00240332 /* temporary.swift in Sources */,
 				F5F9D66F2A9AC5BE008CD67F /* ♻️BaseModelVer_1_1.swift in Sources */,
 				F51E3A512A8CC8B800F32F4F /* 💁HowToGuide.swift in Sources */,
@@ -1539,6 +1570,7 @@
 				F51E3A4D2A8CC5D100F32F4F /* ℹ️AboutApp.swift in Sources */,
 				F51E39ED2A8CAA9800F32F4F /* App.swift in Sources */,
 				F51E3A482A8CC58800F32F4F /* 📣ADModel.swift in Sources */,
+				1DF9F7632E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift in Sources */,
 				F51E39CE2A8CAA7900F32F4F /* 🔗Model.swift in Sources */,
 				F51E39E62A8CAA9800F32F4F /* 📝NoteTab.swift in Sources */,
 				F51E39CA2A8CAA7100F32F4F /* 📝NoteFamily.swift in Sources */,
@@ -1546,13 +1578,17 @@
 				F53858392A9C78FD00A0D72D /* 🪧SnapshotTitle.swift in Sources */,
 				F51E39CD2A8CAA7100F32F4F /* 🎚️MenuComponent.swift in Sources */,
 				F51E3A4E2A8CC5D100F32F4F /* 📣ADComponents.swift in Sources */,
+				1DF9F75F2E652B2200DB9E09 /* 🎚️TitleTextFieldLink.swift in Sources */,
 				F5AD41032A9F1C1300202C2D /* 📣ADSheet.swift in Sources */,
 				F51E39E82A8CAA9800F32F4F /* 🔖Tab.swift in Sources */,
 				F53CB0BC2A9D5C1B0039FC31 /* 🪧SampleTextInApp.swift in Sources */,
 				F51E3A4F2A8CC63000F32F4F /* ℹ️InfoTab.swift in Sources */,
 				F5F9D6712A9AC5C6008CD67F /* 💾UserDefaultsVer_1_1.swift in Sources */,
 				F5F9D6652A9A27F8008CD67F /* 🗄️FromVer_1_1.swift in Sources */,
+				1DF9F75B2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift in Sources */,
+				1DF9F75D2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift in Sources */,
 				F51E3A502A8CC8B800F32F4F /* 💬RequestUserReview.swift in Sources */,
+				1DF9F7652E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift in Sources */,
 				F538581E2A9C76F100A0D72D /* 🪧AccessoryFamilyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
