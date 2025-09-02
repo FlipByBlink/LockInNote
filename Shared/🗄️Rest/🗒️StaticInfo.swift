@@ -2,7 +2,12 @@ import SwiftUI
 
 enum 🗒️StaticInfo {
     static let appName: LocalizedStringResource = "LockInNote"
-    static let appSubTitle: LocalizedStringResource = "App for iPhone / iPad / Mac / Apple Watch / Apple Vision Pro"
+    static var appSubTitle: LocalizedStringResource {
+        """
+        iPhone, iPad, Apple Watch,
+        Mac, Apple Vision Pro
+        """
+    }
     
     static let appStoreProductURL = URL(string: "https://apps.apple.com/app/id1644879340")!
     static var appStoreUserReviewURL: URL { .init(string: "\(Self.appStoreProductURL)?action=write-review")! }

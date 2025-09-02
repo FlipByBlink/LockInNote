@@ -193,7 +193,6 @@ private struct 📓SourceCodeLink: View {
             List {
                 Self.DebugView()
                 ForEach(🗒️StaticInfo.SourceCodeCategory.allCases) { Self.CodeSection($0) }
-                Self.bundleMainInfoDictionary()
                 Self.RepositoryLinks()
             }
             .navigationTitle(.init("Source code", tableName: "🌐AboutApp"))
@@ -261,21 +260,6 @@ private struct 📓SourceCodeLink: View {
             .textSelection(.enabled)
         }
     }
-    private static func bundleMainInfoDictionary() -> some View {
-        Section {
-            NavigationLink(String("Bundle.main.infoDictionary")) {
-                List {
-                    if let ⓓictionary = Bundle.main.infoDictionary {
-                        ForEach(ⓓictionary.map({$0.key}).sorted(), id: \.self) {
-                            LabeledContent($0, value: String(describing: ⓓictionary[$0] ?? "🐛"))
-                        }
-                    }
-                }
-                .navigationBarTitle(.init(verbatim: "Bundle.main.infoDictionary"))
-                .textSelection(.enabled)
-            }
-        }
-    }
     private struct RepositoryLinks: View {
         @Environment(\.openURL) var openURL
         var body: some View {
@@ -300,13 +284,8 @@ private struct 📓SourceCodeLink: View {
                     LabeledContent {
                         Image(systemName: "arrow.up.forward.app")
                     } label: {
-                        HStack {
-                            Label(String(localized: "Web Repository", table: "🌐AboutApp"),
-                                  systemImage: "link")
-                            Text("(Mirror)", tableName: "🌐AboutApp")
-                                .font(.subheadline.bold())
-                                .foregroundStyle(.secondary)
-                        }
+                        Label(String(localized: "Web Repository (Mirror)", table: "🌐AboutApp"),
+                              systemImage: "link")
                     }
                 }
             } footer: {

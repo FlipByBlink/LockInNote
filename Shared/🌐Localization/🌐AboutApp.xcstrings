@@ -255,9 +255,6 @@
         }
       }
     },
-    "If you are interested in hiring or acquiring, please contact me." : {
-
-    },
     "Image" : {
       "localizations" : {
         "en" : {
@@ -321,9 +318,6 @@
           }
         }
       }
-    },
-    "Job hunting now!" : {
-
     },
     "Name" : {
       "localizations" : {
@@ -405,9 +399,6 @@
           }
         }
       }
-    },
-    "Open AppStore page" : {
-
     },
     "Privacy Policy" : {
       "localizations" : {
@@ -565,6 +556,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Web リポジトリー"
+          }
+        }
+      }
+    },
+    "Web Repository (Mirror)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Web リポジトリー (ミラー)"
           }
         }
       }

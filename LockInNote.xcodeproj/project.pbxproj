@@ -31,6 +31,9 @@
 		1DF9F76B2E65335900DB9E09 /* 🎚️TitleTextFieldLink.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F75E2E652B2200DB9E09 /* 🎚️TitleTextFieldLink.swift */; };
 		1DF9F76C2E65335900DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DF9F7642E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift */; };
 		1DF9F76D2E65335900DB9E09 /* temporary.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DC0D2132E6435A400240332 /* temporary.swift */; platformFilters = (xros, ); };
+		1DF9F7EE2E666A9F00DB9E09 /* 🌐Timeline.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1DF9F7ED2E666A9F00DB9E09 /* 🌐Timeline.xcstrings */; };
+		1DF9F7EF2E666A9F00DB9E09 /* 🌐Timeline.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1DF9F7ED2E666A9F00DB9E09 /* 🌐Timeline.xcstrings */; };
+		1DF9F7F02E666A9F00DB9E09 /* 🌐Timeline.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1DF9F7ED2E666A9F00DB9E09 /* 🌐Timeline.xcstrings */; };
 		F50310D32A9C18530077EE5E /* 💾ICloudVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB5E22A72739100B2CD9E /* 💾ICloudVer_1_1.swift */; };
 		F50310D42A9C18560077EE5E /* ♻️BaseModelVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A85B29CED1A300ACCC63 /* ♻️BaseModelVer_1_1.swift */; };
 		F50310D62A9C18C90077EE5E /* 💾UserDefaultsVer_1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E85C729D2B98400927561 /* 💾UserDefaultsVer_1_1.swift */; };
@@ -638,6 +641,7 @@
 		1DF9F7602E652C1700DB9E09 /* 🎚EmptyIconMenuLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚EmptyIconMenuLink.swift"; sourceTree = "<group>"; };
 		1DF9F7622E652C3900DB9E09 /* 🎚️SharedOptionPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SharedOptionPreview.swift"; sourceTree = "<group>"; };
 		1DF9F7642E652FAE00DB9E09 /* 🎚️DoubleSizeOnLargeWidgetMenuLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️DoubleSizeOnLargeWidgetMenuLink.swift"; sourceTree = "<group>"; };
+		1DF9F7ED2E666A9F00DB9E09 /* 🌐Timeline.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "🌐Timeline.xcstrings"; sourceTree = "<group>"; };
 		F50D9B0228EEDE390089E680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51E39952A8CAA4700F32F4F /* 💬Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💬Sheet.swift"; sourceTree = "<group>"; };
 		F51E39962A8CAA4700F32F4F /* 🔗URLSchemeActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔗URLSchemeActionMenu.swift"; sourceTree = "<group>"; };
@@ -1167,6 +1171,7 @@
 			children = (
 				F58F3BDC2A72406F008659F9 /* Localizable.xcstrings */,
 				F56951762A986C7600B36339 /* 🌐AboutApp.xcstrings */,
+				1DF9F7ED2E666A9F00DB9E09 /* 🌐Timeline.xcstrings */,
 				F58F3BBE2A723CFF008659F9 /* 🌐AD&InAppPurchase.xcstrings */,
 				F58F3BC02A723CFF008659F9 /* 🌐ADAppDescription.xcstrings */,
 				F58F3BC12A723CFF008659F9 /* 🌐ADAppName.xcstrings */,
@@ -1402,6 +1407,7 @@
 				F56951802A9896B700B36339 /* 🌐AppStoreDescription.xcstrings in Resources */,
 				F56951752A986B9B00B36339 /* 🌐ADAppDescription.xcstrings in Resources */,
 				F569517F2A9896B700B36339 /* InfoPlist.xcstrings in Resources */,
+				1DF9F7EE2E666A9F00DB9E09 /* 🌐Timeline.xcstrings in Resources */,
 				F51E3A092A8CAFB800F32F4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1424,6 +1430,7 @@
 				F58F3BDB2A72406F008659F9 /* 🌐VersionHistory.xcstrings in Resources */,
 				1DC0D2172E64417B00240332 /* AppIcon.xcassets in Resources */,
 				F58F3BC62A723D00008659F9 /* 🌐ADAppDescription.xcstrings in Resources */,
+				1DF9F7EF2E666A9F00DB9E09 /* 🌐Timeline.xcstrings in Resources */,
 				F58F3BC22A723D00008659F9 /* 🌐AD&InAppPurchase.xcstrings in Resources */,
 				1DC0D21B2E6441AF00240332 /* AppIcon.xcassets in Resources */,
 				F56951772A986C7600B36339 /* 🌐AboutApp.xcstrings in Resources */,
@@ -1455,6 +1462,7 @@
 				F58F3BE62A7248DE008659F9 /* InfoPlist.xcstrings in Resources */,
 				F56951782A986C7600B36339 /* 🌐AboutApp.xcstrings in Resources */,
 				F566A90029CEDA1300ACCC63 /* Assets.xcassets in Resources */,
+				1DF9F7F02E666A9F00DB9E09 /* 🌐Timeline.xcstrings in Resources */,
 				F58F3BDF2A72406F008659F9 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

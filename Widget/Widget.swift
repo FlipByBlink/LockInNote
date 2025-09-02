@@ -35,6 +35,9 @@ struct 🪧WidgetConfiguration: WidgetConfiguration {
         .description(self.noteFamily.widgetDescription)
         .supportedFamilies(self.supportedFamilies)
         .contentMarginsDisabled()
+#if os(visionOS)
+        .widgetTexture(.paper)
+#endif
     }
     private var kind: String { 🗄️MigrationFromVer_1_1.widgetKind(self.noteFamily) }
     private var supportedFamilies: [WidgetFamily] {
