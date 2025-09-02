@@ -2,7 +2,7 @@ LockInNote
 -----------------
 Platform: iPhone, iPad, Mac, Apple Watch, Apple Vision Pro
 
-<img src="iOS/🧰SupportingFiles/Assets.xcassets/RoundedIcon.imageset/RoundedIcon.png" width="64">
+<img src="iOS/🧰SupportingFiles/Assets.xcassets/AboutAppIcon.imageset/RoundedIcon.png" width="64">
 
 <a href="https://apps.apple.com/app/id1644879340" target="blank">
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
@@ -75,14 +75,14 @@ https://apps.apple.com/app/id1644879340
 <br>
 
 
-Privacy Policy for AppStore
-----------------------------
+Privacy Policy for App Store
+-------------------------------
 2022-09-12
 
 
 English
 
-This application don't collect user information.
+This application doesn't collect user information.
 
 
 (日本語)Japanese
@@ -100,7 +100,7 @@ This application don't collect user information.
 <br>
 <br>
 
-<!-- URL "Support page for AppStore" -->
+<!-- URL "Support page for App Store" -->
 <!-- https://flipbyblink.github.io/LockInNote/ -->
-<!-- URL "Privacy Policy for AppStore" -->
+<!-- URL "Privacy Policy for App Store" -->
 <!-- https://flipbyblink.github.io/LockInNote/#privacy-policy-for-appstore -->
