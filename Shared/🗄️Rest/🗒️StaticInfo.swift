@@ -137,7 +137,7 @@ extension 🗒️StaticInfo {
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
         case main, Complication, WidgetView, Customize, Rest, Migration
         var id: Self { self }
-        var fileNames: [String] {dx
+        var fileNames: [String] {
             switch self {
                 case .main: ["App.swift",
                              "ContentView.swift",
