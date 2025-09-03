@@ -26,7 +26,7 @@ The design of the memo note on the widgets can be flexibly customized, so it can
 
 - You can also select the alignment of multiple lines, the display pattern when no text is entered, and more.
 
-- Sync notes between devices by iCloud
+- Sync notes between devices by iCloud.
 
 - Share sheets allow you to easily share text to other applications.(iOS, iPadOS, visionOS)
 
