@@ -14,12 +14,11 @@ struct 🪧EmptyIconView: View {
                     ZStack {
                         Color.clear
                         self.icon()
-                            .font(.system(size: ⓟroxy.size.height * self.note.empty_iconSize.value,
+                            .font(.system(size: self.fontSize(ⓟroxy),
                                           weight: self.note.fontWeight.value,
                                           design: self.note.fontDesign.value))
                             .minimumScaleFactor(0.5)
                             .lineLimit(1)
-                            .scaleEffect(self.isLargeFamily ? 0.8 : 1)
                     }
                 }
                 .modifier(Self.Animation())
@@ -43,6 +42,13 @@ private extension 🪧EmptyIconView {
                     EmptyView()
             }
         }
+    }
+    private func fontSize(_ ⓟroxy: GeometryProxy) -> CGFloat {
+        var value = self.note.empty_iconSize.value
+        value *= min(ⓟroxy.size.width,
+                     ⓟroxy.size.height)
+        value *= self.isLargeFamily ? 0.8 : 1
+        return value
     }
     private var isLargeFamily: Bool {
         #if os(iOS)
