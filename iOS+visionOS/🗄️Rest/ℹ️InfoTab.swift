@@ -5,7 +5,9 @@ struct ℹ️InfoTab: View {
         NavigationStack {
             List {
                 Section {
+#if os(iOS)
                     ℹ️IconAndName()
+#endif
                     ℹ️AppStoreLink()
                     NavigationLink {
                         List { ℹ️AboutAppContent() }
