@@ -2,7 +2,7 @@ LockInNote
 -----------------
 Platform: iPhone, iPad, Mac, Apple Watch, Apple Vision Pro
 
-<img src="iOS+visionOS/🧰SupportingFiles/Assets.xcassets/AboutAppIcon.imageset/RoundedIcon.png" width="64">
+<img src="iOS, visionOS/🧰SupportingFiles/Assets.xcassets/AboutAppIcon.imageset/RoundedIcon.png" width="64">
 
 <a href="https://apps.apple.com/app/id1644879340" target="blank">
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">

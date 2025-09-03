@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F556950628CCAB70004558FC"
-               BuildableName = "Widget for iOS+visionOS.appex"
-               BlueprintName = "Widget for iOS+visionOS"
+               BuildableName = "Widget for iOS, visionOS.appex"
+               BlueprintName = "Widget for iOS, visionOS"
                ReferencedContainer = "container:LockInNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F54BE1C528CB480900532025"
-               BuildableName = "iOS+visionOS.app"
-               BlueprintName = "iOS+visionOS"
+               BuildableName = "iOS, visionOS.app"
+               BlueprintName = "iOS, visionOS"
                ReferencedContainer = "container:LockInNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F556950628CCAB70004558FC"
-            BuildableName = "Widget for iOS+visionOS.appex"
-            BlueprintName = "Widget for iOS+visionOS"
+            BuildableName = "Widget for iOS, visionOS.appex"
+            BlueprintName = "Widget for iOS, visionOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
@@ -71,8 +71,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F54BE1C528CB480900532025"
-            BuildableName = "iOS+visionOS.app"
-            BlueprintName = "iOS+visionOS"
+            BuildableName = "iOS, visionOS.app"
+            BlueprintName = "iOS, visionOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -107,8 +107,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F54BE1C528CB480900532025"
-            BuildableName = "iOS+visionOS.app"
-            BlueprintName = "iOS+visionOS"
+            BuildableName = "iOS, visionOS.app"
+            BlueprintName = "iOS, visionOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

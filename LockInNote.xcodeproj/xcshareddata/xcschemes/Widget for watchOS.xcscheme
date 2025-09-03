@@ -30,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F54BE1C528CB480900532025"
-               BuildableName = "iOS+visionOS.app"
-               BlueprintName = "iOS+visionOS"
+               BuildableName = "iOS, visionOS.app"
+               BlueprintName = "iOS, visionOS"
                ReferencedContainer = "container:LockInNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -84,8 +84,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F54BE1C528CB480900532025"
-            BuildableName = "iOS+visionOS.app"
-            BlueprintName = "iOS+visionOS"
+            BuildableName = "iOS, visionOS.app"
+            BlueprintName = "iOS, visionOS"
             ReferencedContainer = "container:LockInNote.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
