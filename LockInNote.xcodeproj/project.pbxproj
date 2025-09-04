@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D83FD4A2E6911C40040E67C /* 🛠️PreventAutomaticKeyboardOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83FD492E6911C40040E67C /* 🛠️PreventAutomaticKeyboardOption.swift */; };
+		1D83FD4C2E6916730040E67C /* 🛠️PreventAutomaticKeyboardOption.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D83FD492E6911C40040E67C /* 🛠️PreventAutomaticKeyboardOption.swift */; };
 		1DC0D20F2E64305C00240332 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC0D20E2E64304D00240332 /* 💥Feedback.swift */; };
 		1DC0D2102E64305C00240332 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC0D20E2E64304D00240332 /* 💥Feedback.swift */; };
 		1DC0D2112E64305C00240332 /* 💥Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC0D20E2E64304D00240332 /* 💥Feedback.swift */; };
@@ -565,6 +567,7 @@
 			dstPath = "📁SourceCode";
 			dstSubfolderSpec = 7;
 			files = (
+				1D83FD4C2E6916730040E67C /* 🛠️PreventAutomaticKeyboardOption.swift in CopyFiles */,
 				1DF9F7662E65335900DB9E09 /* 🎚️SharedOptionSection.swift in CopyFiles */,
 				1DF9F7672E65335900DB9E09 /* 🎚️SharedOptionPreview.swift in CopyFiles */,
 				1DF9F7682E65335900DB9E09 /* 🎚EmptyIconMenuLink.swift in CopyFiles */,
@@ -630,6 +633,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D83FD492E6911C40040E67C /* 🛠️PreventAutomaticKeyboardOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠️PreventAutomaticKeyboardOption.swift"; sourceTree = "<group>"; };
 		1DC0D20E2E64304D00240332 /* 💥Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💥Feedback.swift"; sourceTree = "<group>"; };
 		1DC0D2132E6435A400240332 /* temporary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temporary.swift; sourceTree = "<group>"; };
 		1DC0D2162E64417B00240332 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
@@ -1137,6 +1141,7 @@
 			children = (
 				1DC0D2122E64359E00240332 /* visionOS */,
 				F566A85729CE9A0200ACCC63 /* ℹ️InfoTab.swift */,
+				1D83FD492E6911C40040E67C /* 🛠️PreventAutomaticKeyboardOption.swift */,
 				F57E85CE29D2C3D600927561 /* 💁HowToGuide.swift */,
 				F566A84E29CE939B00ACCC63 /* 💬RequestUserReview.swift */,
 				F5AD410A2AA015B400202C2D /* 🅧DismissButtonLabel.swift */,
@@ -1562,6 +1567,7 @@
 				F51E39E52A8CAA9800F32F4F /* 👆Buttons.swift in Sources */,
 				F51E3A4C2A8CC5D100F32F4F /* 🛒InAppPurchaseView.swift in Sources */,
 				F5F9D6612A99ECBC008CD67F /* 📋AddNoteToEnvironment.swift in Sources */,
+				1D83FD4A2E6911C40040E67C /* 🛠️PreventAutomaticKeyboardOption.swift in Sources */,
 				F5B7C7312A9EE6D40040B15E /* 🚧DebugMenu.swift in Sources */,
 				F52F12142AB4029500F6474B /* 🪧ReloadWidgetsOnActive.swift in Sources */,
 				1DF9F7592E652AE500DB9E09 /* 🎚️SharedOptionSection.swift in Sources */,

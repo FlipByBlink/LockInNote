@@ -121,17 +121,6 @@
         }
       }
     },
-    "App for iPhone / iPad / Mac / Apple Watch / Apple Vision Pro" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iPhone、iPad、Mac、Apple Watch、\nApple Vision Pro向けアプリ"
-          }
-        }
-      }
-    },
     "Appearance" : {
       "localizations" : {
         "ja" : {
@@ -703,7 +692,14 @@
       }
     },
     "iPhone, iPad, Apple Watch,\nMac, Apple Vision Pro" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone、iPad、Apple Watch、\nMac、Apple Vision Pro"
+          }
+        }
+      }
     },
     "It takes few minutes to sync data to other device's widget on background. At the latest, the changes will be applied in about 20 minutes." : {
       "localizations" : {
@@ -791,6 +787,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "中"
+          }
+        }
+      }
+    },
+    "Menu" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニュー"
           }
         }
       }

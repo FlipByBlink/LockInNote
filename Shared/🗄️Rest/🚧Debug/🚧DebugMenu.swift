@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct 🚧DebugMenu: ViewModifier {
-    @State private var show: Bool = false
+    @State private var isPresented: Bool = false
     @State private var iCloudKVSDictionary: [String: Any] = NSUbiquitousKeyValueStore.default.dictionaryRepresentation
     func body(content: Content) -> some View {
 #if DEBUG
         content
-            .refreshable { self.show.toggle() }
-            .sheet(isPresented: self.$show) { self.menu() }
+            .refreshable { self.isPresented.toggle() }
+            .sheet(isPresented: self.$isPresented) { self.menu() }
 #else
         content
 #endif
@@ -44,6 +44,9 @@ struct 🚧DebugMenu: ViewModifier {
                 }
             }
             .navigationTitle(Text(verbatim: "Debug"))
+            .toolbar {
+                Button("Dismiss") { self.isPresented.toggle() }
+            }
         }
     }
 }

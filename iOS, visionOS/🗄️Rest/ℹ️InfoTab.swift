@@ -4,6 +4,9 @@ struct ℹ️InfoTab: View {
     var body: some View {
         NavigationStack {
             List {
+#if os(visionOS)
+                🛠️PreventAutomaticKeyboardOption()
+#endif
                 Section {
 #if os(iOS)
                     ℹ️IconAndName()
@@ -19,11 +22,21 @@ struct ℹ️InfoTab: View {
                 }
                 💁HowToGuideSection()
             }
-            .navigationTitle("Info")
+            .navigationTitle(Self.title)
             .navigationBarTitleDisplayMode(.inline)
             .modifier(🚧DebugMenu())
         }
         .tag(🔖Tab.info)
-        .tabItem { Label("Info", systemImage: "info") }
+        .tabItem { Label(Self.title, systemImage: "info") }
+    }
+}
+
+private extension ℹ️InfoTab {
+    static var title: LocalizedStringResource {
+#if os(iOS)
+        "Info"
+#elseif os(visionOS)
+        "Menu"
+#endif
     }
 }

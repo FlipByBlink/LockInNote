@@ -102,6 +102,7 @@ extension 🗒️StaticInfo {
                     var value = ["🗒️StaticInfo.swift",
                                  "📋AddNoteToEnvironment.swift",
                                  "🪧ReloadWidgetsOnActive.swift",
+                                 "🛠️PreventAutomaticKeyboardOption.swift",
                                  "ℹ️InfoTab.swift",
                                  "💁HowToGuide.swift",
                                  "🅧DismissButtonLabel.swift",

@@ -1,3 +1,7 @@
 enum 🔖Tab: Hashable {
-    case note(📝NoteFamily), option, info
+    case note(📝NoteFamily)
+#if os(iOS)
+    case option
+#endif
+    case info
 }
