@@ -634,6 +634,7 @@
 
 /* Begin PBXFileReference section */
 		1D83FD492E6911C40040E67C /* 🛠️PreventAutomaticKeyboardOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛠️PreventAutomaticKeyboardOption.swift"; sourceTree = "<group>"; };
+		1D83FF1A2E6F051D0040E67C /* widget1200w.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = widget1200w.jpeg; sourceTree = "<group>"; };
 		1DC0D20E2E64304D00240332 /* 💥Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💥Feedback.swift"; sourceTree = "<group>"; };
 		1DC0D2132E6435A400240332 /* temporary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temporary.swift; sourceTree = "<group>"; };
 		1DC0D2162E64417B00240332 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
@@ -1167,6 +1168,7 @@
 			isa = PBXGroup;
 			children = (
 				F56DDC542AA9830C002BD832 /* 1200w.png */,
+				1D83FF1A2E6F051D0040E67C /* widget1200w.jpeg */,
 			);
 			path = ForREADME;
 			sourceTree = "<group>";
