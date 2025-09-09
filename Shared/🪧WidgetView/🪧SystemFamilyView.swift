@@ -46,7 +46,7 @@ private extension 🪧SystemFamilyView {
                 default: false
             }
         }()
-        return isLarge ? 2 : 1
+        return isLarge && self.note.system_doubleSizeOnLargeWidget ? 2 : 1
     }
     private struct Background: View {
         @EnvironmentObject var note: 📝NoteModel
