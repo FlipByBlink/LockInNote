@@ -26,13 +26,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Widget for iOS, visionOS"
+            "value" : "LockInNoteWidget"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "ロックノート"
+            "state" : "translated",
+            "value" : "ロックノートWidget"
           }
         }
       }
