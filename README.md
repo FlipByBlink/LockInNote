@@ -106,4 +106,4 @@ This application doesn't collect user information.
 <!-- URL "Support page for App Store" -->
 <!-- https://flipbyblink.github.io/LockInNote/ -->
 <!-- URL "Privacy Policy for App Store" -->
-<!-- https://flipbyblink.github.io/LockInNote/#privacy-policy-for-appstore -->
+<!-- https://flipbyblink.github.io/LockInNote/#privacy-policy-for-app-store -->
