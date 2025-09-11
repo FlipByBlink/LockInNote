@@ -46,7 +46,7 @@ extension 🗒️StaticInfo {
     ] //降順。先頭の方が新しい
 #elseif os(visionOS)
     static let versionInfos: [(version: String, date: String)] = [
-        ("1.3", "2025-09-09")
+        ("1.3", "2025-09-11")
     ] //降順。先頭の方が新しい
 #endif
     
