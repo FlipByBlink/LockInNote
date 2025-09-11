@@ -320,7 +320,7 @@
 		F556950228CCA8A5004558FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950128CCA8A5004558FC /* StoreKit.framework */; };
 		F556950928CCAB70004558FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950828CCAB70004558FC /* WidgetKit.framework */; };
 		F556950B28CCAB70004558FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556950A28CCAB70004558FC /* SwiftUI.framework */; };
-		F556951428CCAB72004558FC /* Widget for iOS, visionOS.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* Widget for iOS, visionOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F556951428CCAB72004558FC /* LockInNote.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F556950728CCAB70004558FC /* LockInNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F556953C28CCAFC3004558FC /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = F556953628CCAFC3004558FC /* Configuration.storekit */; };
 		F556953E28CCAFC3004558FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556953828CCAFC3004558FC /* Launch Screen.storyboard */; platformFilter = ios; };
 		F5606E692A9D87800046EC5D /* 🪧Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606E682A9D87800046EC5D /* 🪧Situation.swift */; };
@@ -540,7 +540,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F556951428CCAB72004558FC /* Widget for iOS, visionOS.appex in Embed Foundation Extensions */,
+				F556951428CCAB72004558FC /* LockInNote.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,7 +716,7 @@
 		F53858472A9C7BEB00A0D72D /* 🎚️SaveValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SaveValues.swift"; sourceTree = "<group>"; };
 		F538584C2A9C7C0800A0D72D /* 🎚️PreviewInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️PreviewInApp.swift"; sourceTree = "<group>"; };
 		F53CB0BB2A9D5C1B0039FC31 /* 🪧SampleTextInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪧SampleTextInApp.swift"; sourceTree = "<group>"; };
-		F54BE1C628CB480900532025 /* iOS, visionOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS, visionOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54BE1C628CB480900532025 /* LockInNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockInNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54BE1CD28CB480A00532025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F55058212A9CAF3300D912F2 /* ⌚️WatchConnectivity(iOS).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️WatchConnectivity(iOS).swift"; sourceTree = "<group>"; };
 		F55058222A9CAF8100D912F2 /* ⌚️WatchConnectivity(watchOS).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⌚️WatchConnectivity(watchOS).swift"; sourceTree = "<group>"; };
@@ -724,7 +724,7 @@
 		F554BABC2A984F7400CEAE68 /* 🛒InAppPurchaseWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🛒InAppPurchaseWindow.swift"; sourceTree = "<group>"; };
 		F55694FF28CCA88B004558FC /* iOS, visionOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS, visionOS.entitlements"; sourceTree = "<group>"; };
 		F556950128CCA8A5004558FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		F556950728CCAB70004558FC /* Widget for iOS, visionOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget for iOS, visionOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F556950728CCAB70004558FC /* LockInNote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LockInNote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F556950828CCAB70004558FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F556950A28CCAB70004558FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F556951128CCAB72004558FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1104,8 +1104,8 @@
 		F54BE1C728CB480900532025 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F54BE1C628CB480900532025 /* iOS, visionOS.app */,
-				F556950728CCAB70004558FC /* Widget for iOS, visionOS.appex */,
+				F54BE1C628CB480900532025 /* LockInNote.app */,
+				F556950728CCAB70004558FC /* LockInNote.appex */,
 				F566A8F929CEDA1200ACCC63 /* LockInNote.app */,
 				F566A90F29CEDA2F00ACCC63 /* Widget for watchOS.appex */,
 				F51E3A022A8CAFB500F32F4F /* macOS.app */,
@@ -1298,7 +1298,7 @@
 			);
 			name = "iOS, visionOS";
 			productName = LockInNote;
-			productReference = F54BE1C628CB480900532025 /* iOS, visionOS.app */;
+			productReference = F54BE1C628CB480900532025 /* LockInNote.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F556950628CCAB70004558FC /* Widget for iOS, visionOS */ = {
@@ -1315,7 +1315,7 @@
 			);
 			name = "Widget for iOS, visionOS";
 			productName = LINWidgetExtension;
-			productReference = F556950728CCAB70004558FC /* Widget for iOS, visionOS.appex */;
+			productReference = F556950728CCAB70004558FC /* LockInNote.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		F566A8F829CEDA1200ACCC63 /* watchOS */ = {
@@ -2035,6 +2035,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS, visionOS/🧰SupportingFiles/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = LockInNote;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2048,7 +2049,7 @@
 				);
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LockInNote;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2071,6 +2072,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS, visionOS/🧰SupportingFiles/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = LockInNote;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2084,7 +2086,7 @@
 				);
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LockInNote;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2116,7 +2118,7 @@
 				);
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.LINWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LockInNote;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -2149,7 +2151,7 @@
 				);
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.LINWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LockInNote;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
