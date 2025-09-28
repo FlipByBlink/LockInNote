@@ -24,6 +24,8 @@
 		1DC0D22F2E646FB300240332 /* 💥Feedback.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DC0D20E2E64304D00240332 /* 💥Feedback.swift */; };
 		1DC0D2302E64717600240332 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC0D2162E64417B00240332 /* AppIcon.xcassets */; platformFilter = ios; };
 		1DC0D2312E64717F00240332 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC0D21A2E6441AF00240332 /* AppIcon.xcassets */; platformFilters = (xros, ); };
+		1DF0AC2F2E8963700086ED8B /* APP_ICON.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1DF0AC2E2E8963700086ED8B /* APP_ICON.icon */; };
+		1DF0AC302E8963700086ED8B /* APP_ICON.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1DF0AC2E2E8963700086ED8B /* APP_ICON.icon */; };
 		1DF9F7592E652AE500DB9E09 /* 🎚️SharedOptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F7582E652AE500DB9E09 /* 🎚️SharedOptionSection.swift */; };
 		1DF9F75B2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F75A2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift */; };
 		1DF9F75D2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9F75C2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift */; };
@@ -646,6 +648,7 @@
 		1DC0D2132E6435A400240332 /* temporary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temporary.swift; sourceTree = "<group>"; };
 		1DC0D2162E64417B00240332 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		1DC0D21A2E6441AF00240332 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
+		1DF0AC2E2E8963700086ED8B /* APP_ICON.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = APP_ICON.icon; sourceTree = "<group>"; };
 		1DF9F7582E652AE500DB9E09 /* 🎚️SharedOptionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SharedOptionSection.swift"; sourceTree = "<group>"; };
 		1DF9F75A2E652AF300DB9E09 /* 🎚️SystemWidgetMenuLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️SystemWidgetMenuLink.swift"; sourceTree = "<group>"; };
 		1DF9F75C2E652B0700DB9E09 /* 🎚️AccessoryWidgetMenuLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎚️AccessoryWidgetMenuLink.swift"; sourceTree = "<group>"; };
@@ -1039,6 +1042,7 @@
 			children = (
 				F51E3A082A8CAFB800F32F4F /* Assets.xcassets */,
 				F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */,
+				1DF0AC2E2E8963700086ED8B /* APP_ICON.icon */,
 				F5E51EB52A98A1B800C53268 /* Info.plist */,
 				F569517A2A98969C00B36339 /* 🌐Localization */,
 			);
@@ -1419,6 +1423,7 @@
 				F569517E2A9896B700B36339 /* 🌐VersionHistory.xcstrings in Resources */,
 				F56951792A986C7600B36339 /* 🌐AboutApp.xcstrings in Resources */,
 				F56951742A986B9B00B36339 /* 🌐ADAppName.xcstrings in Resources */,
+				1DF0AC302E8963700086ED8B /* APP_ICON.icon in Resources */,
 				F56951732A986B9600B36339 /* 🌐AD&InAppPurchase.xcstrings in Resources */,
 				F56951802A9896B700B36339 /* 🌐AppStoreDescription.xcstrings in Resources */,
 				F56951752A986B9B00B36339 /* 🌐ADAppDescription.xcstrings in Resources */,
@@ -1435,6 +1440,7 @@
 				F56B338A2A98A90D004510DE /* InfoPlist.xcstrings in Resources */,
 				F56DDCE12AA98B3C002BD832 /* Assets.xcassets in Resources */,
 				1D83FF212E6FC2660040E67C /* PrivacyInfo.xcprivacy in Resources */,
+				1DF0AC2F2E8963700086ED8B /* APP_ICON.icon in Resources */,
 				F56951712A986B8A00B36339 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1767,7 +1773,7 @@
 		F51E3A0F2A8CAFB800F32F4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = APP_ICON;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS/🧰SupportingFiles/macOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -1803,7 +1809,7 @@
 		F51E3A102A8CAFB800F32F4F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = APP_ICON;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS/🧰SupportingFiles/macOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
