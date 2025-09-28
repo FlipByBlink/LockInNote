@@ -50,7 +50,7 @@ private struct 🏬AppStoreLink: View {
                 LabeledContent {
                     Image(systemName: "arrow.up.forward.app")
                 } label: {
-                    Label(String(localized: "Open AppStore page", table: "🌐AboutApp"),
+                    Label(String(localized: "Open App Store page", table: "🌐AboutApp"),
                           systemImage: "link")
                 }
             }
