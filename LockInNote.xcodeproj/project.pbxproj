@@ -839,6 +839,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D78E0252E8C04FC00DEEFF0 /* 🧰SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1DF0AC2E2E8963700086ED8B /* APP_ICON.icon */,
+			);
+			path = "🧰SupportingFiles";
+			sourceTree = "<group>";
+		};
 		1DC0D2122E64359E00240332 /* visionOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -960,6 +968,7 @@
 				F53858462A9C7BC600A0D72D /* 🎚️Customize */,
 				F5EAB5E12A72644700B2CD9E /* 🗄️Rest */,
 				F58F3BBD2A723CEB008659F9 /* 🌐Localization */,
+				1D78E0252E8C04FC00DEEFF0 /* 🧰SupportingFiles */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -1042,7 +1051,6 @@
 			children = (
 				F51E3A082A8CAFB800F32F4F /* Assets.xcassets */,
 				F51E3A0D2A8CAFB800F32F4F /* macOS.entitlements */,
-				1DF0AC2E2E8963700086ED8B /* APP_ICON.icon */,
 				F5E51EB52A98A1B800C53268 /* Info.plist */,
 				F569517A2A98969C00B36339 /* 🌐Localization */,
 			);
@@ -1795,8 +1803,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1831,8 +1839,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1861,8 +1869,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.widgetForMac;
 				PRODUCT_NAME = LockInNote;
 				SDKROOT = macosx;
@@ -1893,8 +1901,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.aaaakkkkssssttttnnnn.LockInNote.widgetForMac;
 				PRODUCT_NAME = LockInNote;
 				SDKROOT = macosx;

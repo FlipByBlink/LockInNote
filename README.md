@@ -39,7 +39,7 @@ iPhone: Home screen, Lock screen, StandBy
 
 iPad: Home screen, Lock screen
 
-Mac: Notification center, Desktop(macOS 14)
+Mac: Notification center, Desktop
 
 Apple Watch: Complication, Smart Stack
 

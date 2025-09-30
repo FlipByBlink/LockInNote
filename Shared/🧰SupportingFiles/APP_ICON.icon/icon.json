@@ -20,6 +20,7 @@
         }
       ],
       "lighting" : "individual",
+      "opacity" : 1,
       "shadow" : {
         "kind" : "neutral",
         "opacity" : 0.5
@@ -27,7 +28,7 @@
       "specular" : true,
       "translucency" : {
         "enabled" : true,
-        "value" : 0.5
+        "value" : 0.42
       }
     }
   ],
