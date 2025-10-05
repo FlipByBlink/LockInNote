@@ -28,7 +28,7 @@
       "specular" : true,
       "translucency" : {
         "enabled" : true,
-        "value" : 0.42
+        "value" : 0.2
       }
     }
   ],

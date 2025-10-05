@@ -24,7 +24,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Support macOS  Tahoe 26.x\nUnsupport macOS 14.x\nFix several bugs"
+            "value" : "Support macOS Tahoe 26.x\nUnsupport macOS 14.x\nFix several bugs"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS Tahoe 26をサポートしました。\nmacOS 14.xのサポートを終了しました。\n軽微なバグや修正。"
           }
         }
       }
