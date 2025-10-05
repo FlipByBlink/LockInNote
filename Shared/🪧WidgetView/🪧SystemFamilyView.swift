@@ -76,16 +76,12 @@ private extension 🪧SystemFamilyView {
                 }
             }
             .opacity(self.showsWidgetContainerBackground ? 1 : 0)
-            .opacity(self.isInactiveDesktopOnMacOS14 ? 0 : 1)
+            .opacity(self.isInactiveDesktopOnMac ? 0 : 1)
             .opacity(self.isFullColorOnVisionOS ? 1 : 0)
         }
-        private var isInactiveDesktopOnMacOS14: Bool {
+        private var isInactiveDesktopOnMac: Bool {
             #if os(macOS)
-            if #available(macOS 14.0, *) {
-                self.widgetRenderingMode != .fullColor
-            } else {
-                false
-            }
+            self.widgetRenderingMode != .fullColor
             #else
             false
             #endif

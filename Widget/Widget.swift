@@ -50,11 +50,7 @@ struct 🪧WidgetConfiguration: WidgetConfiguration {
 #elseif os(watchOS)
         [.accessoryInline, .accessoryCircular, .accessoryRectangular, .accessoryCorner]
 #elseif os(macOS)
-        if #available(macOS 14.0, *) {
-            [.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge]
-        } else {
-            [.systemSmall, .systemMedium, .systemLarge]
-        }
+        [.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge]
 #endif
     }
 }

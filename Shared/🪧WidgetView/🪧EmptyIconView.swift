@@ -57,7 +57,7 @@ private extension 🪧EmptyIconView {
         [.systemLarge, .systemExtraLarge, .systemExtraLargePortrait]
             .contains(self.widgetFamily)
         #elseif os(macOS)
-        [.systemLarge].contains(self.widgetFamily)
+        [.systemLarge, .systemExtraLarge].contains(self.widgetFamily)
         #elseif os(watchOS)
         false
         #endif
