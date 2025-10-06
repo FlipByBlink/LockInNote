@@ -19,6 +19,12 @@ struct 📋AddNoteToEnvironment: ViewModifier {
 #elseif os(macOS)
     func body(content: Content) -> some View {
         content.environmentObject(self.app.note(self.app.target))
+        //TODO: ↓を再検討。↑だとTextEditorが壊れそう。
+        //switch self.app.target {
+        //    case .primary: content.environmentObject(self.app.primaryNote)
+        //    case .secondary: content.environmentObject(self.app.secondaryNote)
+        //    case .tertiary: content.environmentObject(self.app.tertiaryNote)
+        //}
     }
 #endif
 }
