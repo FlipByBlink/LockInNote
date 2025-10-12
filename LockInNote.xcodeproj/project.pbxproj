@@ -843,6 +843,7 @@
 			isa = PBXGroup;
 			children = (
 				1DF0AC2E2E8963700086ED8B /* APP_ICON.icon */,
+				1D83FF1B2E6FC2660040E67C /* PrivacyInfo.xcprivacy */,
 			);
 			path = "🧰SupportingFiles";
 			sourceTree = "<group>";
@@ -1029,7 +1030,6 @@
 				F55694FF28CCA88B004558FC /* iOS, visionOS.entitlements */,
 				F50D9B0228EEDE390089E680 /* Info.plist */,
 				F556953828CCAFC3004558FC /* Launch Screen.storyboard */,
-				1D83FF1B2E6FC2660040E67C /* PrivacyInfo.xcprivacy */,
 				F556951E28CCAF7A004558FC /* 🌐Localization */,
 			);
 			path = "🧰SupportingFiles";
