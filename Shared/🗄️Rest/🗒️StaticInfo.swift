@@ -184,7 +184,7 @@ extension 🗒️StaticInfo {
 extension 🗒️StaticInfo {
     static let versionInfos: [(version: String, date: String)] = [
         ("1.2", "2023-09-14"),
-        ("1.4", "2025-10-05"),
+        ("1.4", "2025-10-12"),
     ] //降順。先頭の方が新しい
     
     enum SourceCodeCategory: String, CaseIterable, Identifiable {
