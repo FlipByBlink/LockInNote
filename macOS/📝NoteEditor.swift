@@ -8,8 +8,7 @@ struct 📝NoteEditor: View {
     var body: some View {
         TextEditor(text: self.$note.text)
             .focused(self.$focus)
-            .onAppear { self.focus = true }
-            .clipShape(RoundedRectangle(cornerRadius: 12)) //TODO: スクロールバー表示される際に不恰好。次回のアップデートで修正する。
+            .clipShape(.rect(cornerRadius: 12))
             .font(.title)
             .padding(.top, 4)
             .padding(.horizontal)
@@ -31,8 +30,10 @@ struct 📝NoteEditor: View {
                 }
                 .help("Clear")
                 🔗URLSchemeActionButton(self.$note.text)
-                //ShareLink(item: self.note.text)
-                //    .help("Share note")
+            }
+            .task {
+                try? await Task.sleep(for: .seconds(0.2)) //workaround
+                self.focus = true
             }
     }
 }
