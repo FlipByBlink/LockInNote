@@ -78,60 +78,56 @@ private struct 📓SourceCodeWindow: Scene {
         Window(.init("Source code", tableName: "🌐AboutApp"), id: "SourceCode") {
             NavigationSplitView {
                 List {
-                    ForEach(🗒️StaticInfo.SourceCodeCategory.allCases) { Self.CodeSection($0) }
+                    ForEach(🗒️StaticInfo.SourceCodeCategory.allCases) { ⓒategory in
+                        Section {
+                            ForEach(ⓒategory.fileNames, id: \.self) {
+                                NavigationLink($0, value: $0)
+                            }
+                            if ⓒategory.fileNames.isEmpty { Text(verbatim: "🐛BUG") }
+                        } header: {
+                            Text(ⓒategory.rawValue)
+                                .textCase(.none)
+                        }
+                    }
                     Divider()
-                    self.repositoryLinks()
+                    Self.repositoryLinks()
                 }
                 .navigationTitle(.init("Source code", tableName: "🌐AboutApp"))
                 .frame(minWidth: 270)
+                .navigationDestination(for: String.self) {
+                    Self.sourceCodeView($0)
+                }
             } detail: {
                 Text("← Select file", tableName: "🌐AboutApp")
                     .foregroundStyle(.tertiary)
             }
-            .frame(minWidth: 1100, minHeight: 600)
+            .frame(minWidth: 900, minHeight: 300)
         }
         .windowResizability(.contentMinSize)
     }
-    private struct CodeSection: View {
-        private var category: 🗒️StaticInfo.SourceCodeCategory
-        private var url: URL {
-            Bundle.main.bundleURL.appendingPathComponent("Contents/Resources/📁SourceCode")
-        }
-        var body: some View {
-            Section {
-                ForEach(self.category.fileNames, id: \.self) { ⓕileName in
-                    if let ⓒode = try? String(
-                        contentsOf: self.url.appendingPathComponent(ⓕileName),
-                        encoding: .utf8
-                    ) {
-                        NavigationLink(ⓕileName) { self.sourceCodeView(ⓒode, ⓕileName) }
-                    } else {
-                        Text(verbatim: "🐛")
-                    }
-                }
-                if self.category.fileNames.isEmpty { Text(verbatim: "🐛") }
-            } header: {
-                Text(self.category.rawValue)
-                    .textCase(.none)
-            }
-        }
-        init(_ category: 🗒️StaticInfo.SourceCodeCategory) {
-            self.category = category
-        }
-        private func sourceCodeView(_ ⓣext: String, _ ⓣitle: String) -> some View {
-            ScrollView {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    Text(ⓣext)
+    private static var folderURL: URL {
+        Bundle.main.bundleURL.appendingPathComponent("Contents/Resources/📁SourceCode")
+    }
+    private static func sourceCodeView(_ ⓕileName: String) -> some View {
+        ScrollView {
+            ScrollView(.horizontal, showsIndicators: false) {
+                if let ⓒode = try? String(
+                    contentsOf: Self.folderURL.appendingPathComponent(ⓕileName),
+                    encoding: .utf8
+                ) {
+                    Text(ⓒode)
                         .monospaced()
                         .padding()
+                } else {
+                    Text(verbatim: "🐛BUG")
                 }
             }
-            .environment(\.layoutDirection, .leftToRight)
-            .navigationTitle(LocalizedStringKey(ⓣitle))
-            .textSelection(.enabled)
         }
+        .environment(\.layoutDirection, .leftToRight)
+        .navigationTitle(LocalizedStringKey(ⓕileName))
+        .textSelection(.enabled)
     }
-    private func repositoryLinks() -> some View {
+    private static func repositoryLinks() -> some View {
         NavigationLink {
             VStack {
                 Spacer()
@@ -195,7 +191,7 @@ private struct 🧑‍💻DeveloperPublisherWindow: Scene {
                     GroupBox {
                         LabeledContent("山下 亮" as String, value: "Yamashita Ryo")
                             .padding(4)
-                            .modifier(Self.TypeSettingLanguage())
+                            .typesettingLanguage(.init(languageCode: .japanese))
                     }
                     .listRowSeparator(.hidden)
                 } header: {
@@ -249,15 +245,6 @@ private struct 🧑‍💻DeveloperPublisherWindow: Scene {
             .frame(width: 540, height: 540)
         }
         .windowResizability(.contentSize)
-    }
-    private struct TypeSettingLanguage: ViewModifier {
-        func body(content: Content) -> some View {
-            if #available(macOS 14.0, *) {
-                content.typesettingLanguage(.init(languageCode: .japanese))
-            } else {
-                content
-            }
-        }
     }
     private struct TimelineSection: View {
         private static var localizedStringResources: [LocalizedStringResource] {
