@@ -6,13 +6,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Memo note app specialized for widgets.\n\nWhen you want to take a memo, you can write it out right away on the widgets, and you can easily check the memo on the widgets anytime!\n\nThe design of the memo note on the widgets can be flexibly customized, so it can be used for various purposes.\n\n\n- Font \"size\", \"design\", \"color\", and \"weight\" can be adjusted.\n\n- You can also select the alignment of multiple lines, the display pattern when no text is entered, and more.\n\n- You can set any \"URL scheme action\" to link with other apps.\n\n\nMulti platform support\n\niPhone: Home screen, Lock screen, StandBy\n\niPad: Home screen, Lock screen\n\nMac: Notification center, Desktop\n\nApple Watch: Complication, Smart Stack"
+            "value" : "Memo note app specialized for widgets.\n\nWhen you want to take a memo, you can write it out right away on the widgets, and you can easily check the memo on the widgets anytime!\n\nThe design of the memo note on the widgets can be flexibly customized, so it can be used for various purposes.\n\n\n- Tap the widget to immediately edit the memo note.\n\n- Font \"size\", \"design\", \"color\", and \"weight\" can be adjusted.\n\n- You can also select the alignment of multiple lines, the display pattern when no text is entered, and more.\n\n- Sync notes between devices by iCloud.\n\n- You can set any \"URL scheme action\" to link with other apps.(iOS, iPadOS, macOS)\n\n\nMulti platform support\n\niPhone: Home screen, Lock screen, StandBy\n\niPad: Home screen, Lock screen\n\nMac: Notification center, Desktop\n\nApple Watch: Complication, Smart Stack\n\nApple Vision Pro: Widget"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ウィジェットに特化したメモノートアプリです。\n\nメモを取リたい時にウィジェットからすぐにメモを書き出して、そのメモはウィジェット上でいつでも気軽に確認することができます！\n\nまた、ウィジェット上のメモノートのデザインは柔軟にカスタマイズできるので、様々な目的に沿った運用が可能です。\n\n\n- フォントのサイズやデザイン、色合い、太さなどを調整可能です。\n\n- 「複数行の揃え方」や、「テキスト未入力時の表示パターン」なども選択できます。\n\n- 任意の「URLスキームアクション」を設定して他のアプリと連携できます。\n\n- iCloudによってデバイス間でノートが同期されます。\n\n\nマルチプラットフォーム対応\n\niPhone: ホーム画面、ロック画面、スタンバイ\n\niPad: ホーム画面、ロック画面、\n\nMac: 通知センター、デスクトップ\n\nApple Watch: コンプリケーション、スマートスタック"
+            "value" : "ウィジェットに特化したメモノートアプリです。\n\nメモを取リたい時にウィジェットからすぐにメモを書き出して、そのメモはウィジェット上でいつでも気軽に確認することができます！\n\nまた、ウィジェット上のメモノートのデザインは柔軟にカスタマイズできるので、様々な目的に沿った運用が可能です。\n\n\n- ウィジェットをタップすると、すぐにメモノートを編集できます。\n\n- フォントのサイズやデザイン、色合い、太さなどを調整可能です。\n\n- 「複数行の揃え方」や、「テキスト未入力時の表示パターン」なども選択できます。\n\n- iCloudによってデバイス間でノートが同期されます。\n\n- 任意の「URLスキームアクション」を設定して他のアプリと連携できます。(iOS、iPadOS、macOS)\n\n\nマルチプラットフォーム対応\n\niPhone: ホーム画面、ロック画面、スタンバイ(iOS 17)\n\niPad: ホーム画面、ロック画面\n\nMac: 通知センター、デスクトップ\n\nApple Watch: コンプリケーション、スマートスタック\n\nApple Vision Pro: ウィジェット"
           }
         }
       }
